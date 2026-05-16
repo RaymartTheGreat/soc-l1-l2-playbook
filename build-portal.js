@@ -3,8 +3,8 @@ const path = require("path");
 const crypto = require("crypto");
 
 const root = __dirname;
-const sourceRootMd = path.join(root, "Omar Amir — Blue Team Notes.md");
-const sourceDir = path.join(root, "Omar Amir — Blue Team Notes");
+const sourceRootMd = path.join(root, "Blue Team Notes.md");
+const sourceDir = path.join(root, "Blue Team Notes");
 const outDir = path.join(root, "blue-team-study-portal");
 const pagesDir = path.join(outDir, "pages");
 const jsonDir = path.join(outDir, "data", "json");
