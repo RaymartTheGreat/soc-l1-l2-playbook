@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Pagefile sys &amp; Swapfile &amp; Hibernation file | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="memory-forensics-2c39b2e1.html">Memory forensics</a><span>/</span><span>Pagefile sys &amp; Swapfile &amp; Hibernation file</span></div>
+      <h1>Pagefile sys &amp; Swapfile &amp; Hibernation file</h1>
+      <p>Pagefile.sys is a hidden system file in Windows used to support virtual memory. When the system’s physical RAM becomes full, less frequently accessed memory pages are moved (paged out) to this file, freeing up RAM for active tasks.</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">DFIR</span><span class="tag">Memory</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Memory forensics</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="memory-forensics-2c39b2e1.html"><span>Memory forensics</span><em>L1.5</em></a>
+      <b>3</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="memory-forensics.html"><span>Memory Forensics</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="memory-forensics-playbook.html"><span>Memory Forensics Playbook</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="pagefile-sys-swapfile-hibernation-file.html"><span>Pagefile sys &amp; Swapfile &amp; Hibernation file</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Pagefile.sys is a hidden system file in Windows used to support virtual memory. When the system’s physical RAM becomes full, less frequently accessed memory pages are moved (paged out) to this file, freeing up RAM for active tasks.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Pagefile.sys &amp; Swapfile &amp; Hibernation file</li><li>Pagefile.sys (Windows)</li><li>Functionality</li><li>For DFIR/SOC:</li><li>Extracting using FTK Imager</li><li>Swap Space (Linux)</li><li>Commands:</li><li>Tuning Swap Usage:</li><li>For DFIR/SOC:</li><li>Hibernation File (hiberfil.sys)</li><li>For DFIR/SOC:</li><li>Extracting the hibernation File</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>free -h           # View total, used, and available swap
+swapon --show     # Show current swap devices/files</code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>cat /proc/sys/vm/swappiness   # Check current value</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>Volatility</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="pagefile.sys-swapfile-hibernation-file">Pagefile.sys &amp; Swapfile &amp; Hibernation file</h2>
+<h3 id="pagefile.sys-windows">Pagefile.sys (Windows)</h3>
+<p><code>Pagefile.sys</code> is a hidden system file in Windows used to support <strong>virtual memory</strong>. When the system’s <strong>physical RAM</strong> becomes full, less frequently accessed memory pages are moved (paged out) to this file, freeing up RAM for active tasks.</p>
+<p><button class="image-button" data-src="../assets/images/memory-forensicspagefile-sys-swapfile-hibernation-file-image-38fced4a.png" data-alt="image.png"><img src="../assets/images/memory-forensicspagefile-sys-swapfile-hibernation-file-image-38fced4a.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li>Located at the root of the system drive (typically <code>C:\</code>).</li>
+<li>The configuration related to the page file can be found in the location <code>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management</code> within the <code>SYSTEM Hive</code></li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/memory-forensicspagefile-sys-swapfile-hibernation-file-image-1-1d263615.png" data-alt="image.png"><img src="../assets/images/memory-forensicspagefile-sys-swapfile-hibernation-file-image-1-1d263615.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li>It is a <strong>contiguous file</strong>, allowing faster read/write than fragmented disk data.</li>
+<li>Acts as an overflow area for RAM, helping prevent crashes and performance drops.</li>
+</ul>
+<h4 id="functionality">Functionality</h4>
+<ul>
+<li>Enables Windows to offload idle data from RAM.</li>
+<li>Acts as a <strong>fail-safe</strong> during crashes some crash dumps (like complete memory dumps) require an active page file.</li>
+<li>Windows automatically manages the size of the page file, though it can be manually configured.</li>
+</ul>
+<h4 id="for-dfirsoc">For DFIR/SOC:</h4>
+<ul>
+<li><strong>Forensics Value</strong>: Contains fragments of past memory data including:</li>
+<ul>
+<li>Command-line arguments</li>
+<li>Residual credentials</li>
+<li>Potential malware artifacts</li>
+</ul>
+<li>Use tools like <strong>Volatility</strong>, <strong>X-Ways</strong>, or <strong>FTK Imager</strong> to parse artifacts from it.</li>
+<li>Always consider acquiring the page file during disk imaging.</li>
+</ul>
+<h4 id="extracting-using-ftk-imager"><strong>Extracting using FTK Imager</strong></h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensicspagefile-sys-swapfile-hibernation-file-image-2-3109819d.png" data-alt="image.png"><img src="../assets/images/memory-forensicspagefile-sys-swapfile-hibernation-file-image-2-3109819d.png" alt="image.png" loading="lazy"></button></p>
+<p><strong>The output folder shows the files extracted from the pagefile below.</strong></p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/a7e85772c0532dd63197fc112907900d.png">External image reference: Image showing bulk extractor output</a></p>
+<p><strong>Examining the URLs</strong></p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/a8a7971deb28ccd88fa1667a3c7d5bb8.png">External image reference: Shows Content of URLs extracted</a></p>
+<p><strong>Examining the Domains</strong></p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/a0fe92bb6146a9acd634c60830835a32.png">External image reference: Shows Content of domain extracted</a></p>
+<h3 id="swap-space-linux">Swap Space (Linux)</h3>
+<p>In Linux systems, <strong>swap space</strong> serves the same purpose as the page file in Windows: offloading idle RAM content when physical memory is fully utilized.</p>
+<ul>
+<li>Traditionally implemented as a <strong>dedicated partition</strong>.</li>
+<li>Alternatively, a <strong>swap file</strong> can be created on the filesystem.</li>
+</ul>
+<h4 id="commands">Commands:</h4>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">free -h           # View total, used, and available swap
+swapon --show     # Show current swap devices/files</code></pre></div>
+<h4 id="tuning-swap-usage">Tuning Swap Usage:</h4>
+<p>Linux uses a <strong>swappiness</strong> value (0–100) to control how aggressively it uses swap:</p>
+<ul>
+<li><code>0</code>: Minimize swap usage (ideal for servers)</li>
+<li><code>100</code>: Swap more aggressively (for desktops)</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">cat /proc/sys/vm/swappiness   # Check current value</code></pre></div>
+<h4 id="for-dfirsoc">For DFIR/SOC:</h4>
+<ul>
+<li>Like Windows pagefile, Linux swap may contain memory remnants.</li>
+<li>Acquire the swap partition or swap file during disk imaging.</li>
+<li>Analyze using memory carving tools like <code>bulk_extractor</code>, <code>strings</code>, or custom scripts.</li>
+</ul>
+<hr>
+<h3 id="hibernation-file-hiberfil.sys">Hibernation File (hiberfil.sys)</h3>
+<p><code>hiberfil.sys</code> is a system file used by Windows to store the <strong>entire contents of RAM</strong> when the system enters <strong>hibernation mode</strong>.</p>
+<p><button class="image-button" data-src="../assets/images/memory-forensicspagefile-sys-swapfile-hibernation-file-image-3-5b909427.png" data-alt="image.png"><img src="../assets/images/memory-forensicspagefile-sys-swapfile-hibernation-file-image-3-5b909427.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li>Introduced in <strong>Windows 2000</strong> and still used today.</li>
+<li>Located at <code>C:\hiberfil.sys</code> and hidden by default.</li>
+<li>Enables the system to power off completely while saving the active session.</li>
+</ul>
+<h4 id="for-dfirsoc">For DFIR/SOC:</h4>
+<ul>
+<li><strong>Extremely valuable</strong> for memory forensics:</li>
+<ul>
+<li>Captures the exact system state at hibernation.</li>
+<li>Contains running processes, command history, credentials, and memory-resident malware.</li>
+</ul>
+<li>Does <strong>not</strong> require special live memory acquisition tools.</li>
+<li>Can be parsed using:</li>
+<ul>
+<li><strong>Volatility</strong></li>
+<li><strong>Hibr2Bin</strong> (converts to raw memory image)</li>
+</ul>
+</ul>
+<h4 id="extracting-the-hibernation-file"><strong>Extracting the hibernation File</strong></h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensicspagefile-sys-swapfile-hibernation-file-image-4-373886df.png" data-alt="image.png"><img src="../assets/images/memory-forensicspagefile-sys-swapfile-hibernation-file-image-4-373886df.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="examining-hibernation-file">Examining hibernation File</h4>
+<p>As we know, this hibernation file is the compressed version of the Windows Memory; we must first uncompress the compressed file we just extracted to analyze the hibernation file.</p>
+<p>To uncompress this file, we will use a very handy forensic tool called Hibernation Recon. Click on the <code>Process hiberfil.sys</code> button and provide the hibernation file. It will parse the file and place the raw image in a folder on the Desktop, as shown in the image below:</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/53c1a62a0bbfacf8f4885c9da09065c8.png">External image reference: Shows Volatility output</a></p>
+<p>It will create a folder on the Desktop with the uncompressed Memory image. This process takes about <strong>5 minutes</strong>. We can use volatility to extract information from the uncompressed hibernation file</p>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#pagefile.sys-swapfile-hibernation-file">Pagefile.sys &amp; Swapfile &amp; Hibernation file</a><a href="#pagefile.sys-windows">Pagefile.sys (Windows)</a><a href="#functionality">Functionality</a><a href="#for-dfirsoc">For DFIR/SOC:</a><a href="#extracting-using-ftk-imager">Extracting using FTK Imager</a><a href="#swap-space-linux">Swap Space (Linux)</a><a href="#commands">Commands:</a><a href="#tuning-swap-usage">Tuning Swap Usage:</a><a href="#for-dfirsoc">For DFIR/SOC:</a><a href="#hibernation-file-hiberfil.sys">Hibernation File (hiberfil.sys)</a><a href="#for-dfirsoc">For DFIR/SOC:</a><a href="#extracting-the-hibernation-file">Extracting the hibernation File</a><a href="#examining-hibernation-file">Examining hibernation File</a></details>
+    </div>
+    
+    <footer class="pager"><a href="memory-forensics-playbook.html">← Memory Forensics Playbook</a><a href="memory-forensics-labs.html">Memory Forensics Labs →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

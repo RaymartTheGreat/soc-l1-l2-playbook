@@ -1,0 +1,215 @@
+{
+  "id": "detection engineering",
+  "title": "Detection Engineering",
+  "slug": "detection-engineering",
+  "relPath": "Detection Engineering.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-detection-engineering",
+  "curriculumSectionTitle": "Detection Engineering & Automation",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "EDR",
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Memory",
+    "Detection",
+    "Threat Intel",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1105",
+    "T1059"
+  ],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "detection engineering",
+      "title": "Detection Engineering",
+      "slug": "detection-engineering"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Detection Engineering"
+    },
+    {
+      "level": 1,
+      "text": "What is Detection Engineering?"
+    },
+    {
+      "level": 2,
+      "text": "What Makes a Good Detection?"
+    },
+    {
+      "level": 2,
+      "text": "Detection Types"
+    },
+    {
+      "level": 3,
+      "text": "Environment-Based Detections"
+    },
+    {
+      "level": 3,
+      "text": "Configuration Detection"
+    },
+    {
+      "level": 3,
+      "text": "Modeling-Based Detection"
+    },
+    {
+      "level": 3,
+      "text": "Threat-Based Detections"
+    },
+    {
+      "level": 3,
+      "text": "Indicator-Based Detection (IOCs)"
+    },
+    {
+      "level": 3,
+      "text": "Baseline-Based Detection"
+    },
+    {
+      "level": 3,
+      "text": "Threat Behavior Detection"
+    },
+    {
+      "level": 3,
+      "text": "Explanation of Each Layer"
+    },
+    {
+      "level": 1,
+      "text": "Detection Engineering in Practice"
+    },
+    {
+      "level": 2,
+      "text": "Detection as Code (DaC)"
+    },
+    {
+      "level": 2,
+      "text": "Detection Gap Analysis"
+    },
+    {
+      "level": 2,
+      "text": "Baseline Creation"
+    },
+    {
+      "level": 2,
+      "text": "Rule Writing"
+    },
+    {
+      "level": 3,
+      "text": "Example Rule Approaches:"
+    },
+    {
+      "level": 3,
+      "text": "Example:"
+    },
+    {
+      "level": 2,
+      "text": "Validation and Testing"
+    },
+    {
+      "level": 3,
+      "text": "Example Methods:"
+    },
+    {
+      "level": 2,
+      "text": "Deployment, Automation, and Tuning"
+    },
+    {
+      "level": 1,
+      "text": "Detection Strategies"
+    },
+    {
+      "level": 2,
+      "text": "Implementing Tripwires and Honeypots"
+    },
+    {
+      "level": 3,
+      "text": "Common Tripwire Types:"
+    },
+    {
+      "level": 2,
+      "text": "IOC Transformation Using Sigma"
+    },
+    {
+      "level": 2,
+      "text": "Using Public Sigma Repositories and Uncoder"
+    },
+    {
+      "level": 2,
+      "text": "Alerting & Detection Strategy (ADS Framework)"
+    },
+    {
+      "level": 2,
+      "text": "Detection Maturity Level (DML)"
+    },
+    {
+      "level": 3,
+      "text": "Simplified DML Levels:"
+    },
+    {
+      "level": 2,
+      "text": "Tools and Resources"
+    },
+    {
+      "level": 3,
+      "text": "Rule Development & Translation"
+    },
+    {
+      "level": 3,
+      "text": "Testing & Simulation"
+    },
+    {
+      "level": 3,
+      "text": "Frameworks (for mapping & analysis)"
+    },
+    {
+      "level": 2,
+      "text": "Summary"
+    }
+  ],
+  "overview": "Detection Engineering is the backbone of modern security operations. As threats become more advanced and frequent, reactive security is no longer sufficient. Detection engineering shifts the approach: from generic alerting to precision-crafted, validated detection logic that targets adversarial behavior in context.",
+  "study": {
+    "overview": "Detection Engineering is the backbone of modern security operations. As threats become more advanced and frequent, reactive security is no longer sufficient. Detection engineering shifts the approach: from generic alerting to precision-crafted, validated detection logic that targets adversarial behavior in context.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Detection Engineering",
+      "What is Detection Engineering?",
+      "What Makes a Good Detection?",
+      "Detection Types",
+      "Environment-Based Detections",
+      "Configuration Detection",
+      "Modeling-Based Detection",
+      "Threat-Based Detections",
+      "Indicator-Based Detection (IOCs)",
+      "Baseline-Based Detection",
+      "Threat Behavior Detection",
+      "Explanation of Each Layer"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM",
+      "EDR",
+      "PowerShell",
+      "YARA",
+      "Sigma"
+    ],
+    "tips": []
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "id": "forensics labs/countdown (btlo)",
+  "title": "CountDown (BTLO)",
+  "slug": "countdown-btlo",
+  "relPath": "Forensics Labs/CountDown (BTLO).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Web",
+    "DFIR",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "forensics labs",
+      "title": "Forensics Labs",
+      "slug": "forensics-labs"
+    },
+    {
+      "id": "forensics labs/countdown (btlo)",
+      "title": "CountDown (BTLO)",
+      "slug": "countdown-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "CountDown (BTLO)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Verify the Disk Image. Submit SectorCount and MD5"
+    },
+    {
+      "level": 3,
+      "text": "25165823,5c4e94315039f890e839d6992aeb6c58"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the decryption key of the online messenger app used by Zerry?"
+    },
+    {
+      "level": 3,
+      "text": "0xc2a0e8d6f0853449cfcf4b75176c277535b3677de1bb59186b32f0dc6ed69998"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the registered phone number and profile name of Zerry in the messenger application used?"
+    },
+    {
+      "level": 3,
+      "text": "+13026482364,ZerryThe🔥"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the email id found in the chat?"
+    },
+    {
+      "level": 3,
+      "text": "eekurk@baybabes.com"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the filename(including extension) that is received as an attachment via email?"
+    },
+    {
+      "level": 3,
+      "text": "⌛📅.PNG"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the Date and Time of the planned attack?"
+    },
+    {
+      "level": 3,
+      "text": "01-02-2021 09:00 AM"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the GPS location of the blast? The format is the same as found in the evidence . [Hint: Encode(XX Degrees,XX Minutes, XX Seconds)]"
+    },
+    {
+      "level": 3,
+      "text": "40 degrees 45 minutes 28.6776 seconds N, 73 degrees 59 minutes 7.944 seconds W"
+    }
+  ],
+  "overview": "NYC Police received information that a gang of attackers has entered the city and are planning to detonate an explosive device. Law enforcement have begun investigating all leads to determine whether this is true or a hoax.Persons of interest were taken into custody, and one additional suspect named ‘Zerry’ was detained while officers raided his house. Durin",
+  "study": {
+    "overview": "NYC Police received information that a gang of attackers has entered the city and are planning to detonate an explosive device. Law enforcement have begun investigating all leads to determine whether this is true or a hoax.Persons of interest were taken into custody, and one additional suspect named ‘Zerry’ was detained while officers raided his house. Durin",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "CountDown (BTLO)",
+      "Scenario",
+      "1- Verify the Disk Image. Submit SectorCount and MD5",
+      "25165823,5c4e94315039f890e839d6992aeb6c58",
+      "2- What is the decryption key of the online messenger app used by Zerry?",
+      "0xc2a0e8d6f0853449cfcf4b75176c277535b3677de1bb59186b32f0dc6ed69998",
+      "3- What is the registered phone number and profile name of Zerry in the messenger application used?",
+      "+13026482364,ZerryThe🔥",
+      "4- What is the email id found in the chat?",
+      "eekurk@baybabes.com",
+      "5- What is the filename(including extension) that is received as an attachment via email?",
+      "⌛📅.PNG"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "id": "web fundamentals",
+  "title": "Web Fundamentals",
+  "slug": "web-fundamentals",
+  "relPath": "Web Fundamentals.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "SIEM",
+    "Windows",
+    "Linux",
+    "Network",
+    "Web",
+    "Detection",
+    "Incident Response",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "web fundamentals",
+      "title": "Web Fundamentals",
+      "slug": "web-fundamentals"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Web Fundamentals"
+    },
+    {
+      "level": 2,
+      "text": "1- URL anatomy"
+    },
+    {
+      "level": 2,
+      "text": "2- Before web: DNS"
+    },
+    {
+      "level": 3,
+      "text": "What DNS actually does"
+    },
+    {
+      "level": 3,
+      "text": "Domain hierarchy"
+    },
+    {
+      "level": 3,
+      "text": "Important DNS record types"
+    },
+    {
+      "level": 3,
+      "text": "dig example"
+    },
+    {
+      "level": 3,
+      "text": "Common DNS pitfalls & triage tips"
+    },
+    {
+      "level": 2,
+      "text": "3- How web servers work"
+    },
+    {
+      "level": 3,
+      "text": "What is a web server?"
+    },
+    {
+      "level": 3,
+      "text": "Virtual hosts (vhosts)"
+    },
+    {
+      "level": 3,
+      "text": "How dynamic content is served"
+    },
+    {
+      "level": 2,
+      "text": "4- Supporting infrastructure: CDN, Load Balancer, WAF, Databases"
+    },
+    {
+      "level": 3,
+      "text": "CDN (Content Delivery Network)"
+    },
+    {
+      "level": 3,
+      "text": "Load Balancer"
+    },
+    {
+      "level": 3,
+      "text": "WAF (Web Application Firewall)"
+    },
+    {
+      "level": 3,
+      "text": "Databases"
+    },
+    {
+      "level": 2,
+      "text": "5- Frontend vs Backend"
+    },
+    {
+      "level": 3,
+      "text": "Frontend (client-side)"
+    },
+    {
+      "level": 3,
+      "text": "Backend (server-side)"
+    },
+    {
+      "level": 2,
+      "text": "6- HTML / CSS / JavaScript"
+    },
+    {
+      "level": 2,
+      "text": "7- Logging"
+    },
+    {
+      "level": 2,
+      "text": "8- HTTP internals: requests, responses, methods and status codes"
+    },
+    {
+      "level": 3,
+      "text": "HTTP request structure"
+    },
+    {
+      "level": 3,
+      "text": "HTTP response structure"
+    },
+    {
+      "level": 3,
+      "text": "Methods"
+    },
+    {
+      "level": 3,
+      "text": "Status codes"
+    },
+    {
+      "level": 2,
+      "text": "9- Headers & Cookies"
+    },
+    {
+      "level": 3,
+      "text": "Request headers"
+    },
+    {
+      "level": 3,
+      "text": "Response headers to care about"
+    },
+    {
+      "level": 3,
+      "text": "Cookies"
+    },
+    {
+      "level": 3,
+      "text": "Debugging headers & cookies"
+    },
+    {
+      "level": 2,
+      "text": "10- Security headers"
+    },
+    {
+      "level": 2,
+      "text": "11- TLS / TLS handshake & certificates"
+    },
+    {
+      "level": 3,
+      "text": "Why TLS matters"
+    },
+    {
+      "level": 3,
+      "text": "TLS 1.2 handshake (simplified)"
+    },
+    {
+      "level": 3,
+      "text": "TLS 1.3 differences"
+    },
+    {
+      "level": 3,
+      "text": "Certificate concepts"
+    },
+    {
+      "level": 3,
+      "text": "Inspect a certificate"
+    },
+    {
+      "level": 2,
+      "text": "12- HTTP/2 & HTTP/3"
+    },
+    {
+      "level": 3,
+      "text": "HTTP/2"
+    },
+    {
+      "level": 3,
+      "text": "HTTP/3 (QUIC)"
+    },
+    {
+      "level": 2,
+      "text": "13- WebSockets"
+    },
+    {
+      "level": 2,
+      "text": "14- Hardening checklist"
+    },
+    {
+      "level": 3,
+      "text": "Web Server & App"
+    },
+    {
+      "level": 3,
+      "text": "TLS & Certificates"
+    },
+    {
+      "level": 3,
+      "text": "CDN & Load Balancer"
+    },
+    {
+      "level": 3,
+      "text": "WAF & Rate Limiting"
+    },
+    {
+      "level": 3,
+      "text": "Cookies & Session Management"
+    },
+    {
+      "level": 3,
+      "text": "Logging & Detection"
+    },
+    {
+      "level": 3,
+      "text": "Databases & Backups"
+    },
+    {
+      "level": 3,
+      "text": "DevOps & CI/CD"
+    }
+  ],
+  "overview": "Before you dig into web servers, HTTP, cookies, or other web concepts, you need two things firmly understood:",
+  "study": {
+    "overview": "Before you dig into web servers, HTTP, cookies, or other web concepts, you need two things firmly understood:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Web Fundamentals",
+      "1- URL anatomy",
+      "2- Before web: DNS",
+      "What DNS actually does",
+      "Domain hierarchy",
+      "Important DNS record types",
+      "dig example",
+      "Common DNS pitfalls & triage tips",
+      "3- How web servers work",
+      "What is a web server?",
+      "Virtual hosts (vhosts)",
+      "How dynamic content is served"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "dig +nocmd +noall +answer shop.acme.local A"
+      },
+      {
+        "language": "text",
+        "code": "shop.acme.local.         300  IN  CNAME  cdn-3.edge.example.net.\ncdn-3.edge.example.net.   60  IN  A      198.51.100.24"
+      },
+      {
+        "language": "python",
+        "code": "POST /login HTTP/1.1\nHost: app.example.com\nUser-Agent: curl/8.2\nAccept: application/json\nContent-Type: application/json\nContent-Length: 53\nCookie: session=abc123\n\n{\"username\":\"alice\",\"password\":\"p@ssw0rd\"}"
+      },
+      {
+        "language": "python",
+        "code": "HTTP/1.1 302 Found\nLocation: /dashboard\nSet-Cookie: session=abc123; HttpOnly; Secure; SameSite=Lax\nContent-Length: 0"
+      },
+      {
+        "language": "python",
+        "code": "Set-Cookie: name=value; Expires=Wed, 09 Jun 2026 10:18:14 GMT; Path=/; Domain=.example.com; Secure; HttpOnly; SameSite=Strict"
+      }
+    ],
+    "tools": [
+      "SIEM"
+    ],
+    "tips": []
+  }
+}

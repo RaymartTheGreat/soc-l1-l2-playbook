@@ -1,0 +1,106 @@
+{
+  "id": "network/fundamentals/topologies",
+  "title": "Topologies",
+  "slug": "topologies",
+  "relPath": "Network/Fundamentals/Topologies.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/topologies",
+      "title": "Topologies",
+      "slug": "topologies"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Topologies"
+    },
+    {
+      "level": 1,
+      "text": "Network Topologies"
+    },
+    {
+      "level": 3,
+      "text": "1- Point-to-Point"
+    },
+    {
+      "level": 3,
+      "text": "2- Bus"
+    },
+    {
+      "level": 3,
+      "text": "3- Star"
+    },
+    {
+      "level": 3,
+      "text": "4- Ring"
+    },
+    {
+      "level": 3,
+      "text": "5- Mesh"
+    },
+    {
+      "level": 3,
+      "text": "6- Tree"
+    },
+    {
+      "level": 3,
+      "text": "7- Hybrid"
+    },
+    {
+      "level": 3,
+      "text": "8- Daisy Chain"
+    }
+  ],
+  "overview": "A network topology describes how devices (hosts) and interconnection equipment (switches, routers, etc.) are arranged and how data flows between them. You can think of it two ways:",
+  "study": {
+    "overview": "A network topology describes how devices (hosts) and interconnection equipment (switches, routers, etc.) are arranged and how data flows between them. You can think of it two ways:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Topologies",
+      "Network Topologies",
+      "1- Point-to-Point",
+      "2- Bus",
+      "3- Star",
+      "4- Ring",
+      "5- Mesh",
+      "6- Tree",
+      "7- Hybrid",
+      "8- Daisy Chain"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

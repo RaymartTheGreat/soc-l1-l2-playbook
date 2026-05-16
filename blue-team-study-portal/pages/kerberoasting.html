@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Kerberoasting | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="detecting-ad-attacks.html">Detecting AD Attacks</a><span>/</span><span>Kerberoasting</span></div>
+      <h1>Kerberoasting</h1>
+      <p>Kerberoasting is an attack targeting service accounts within Active Directory by exploiting Service Principal Names (SPNs). In this attack, an adversary requests Kerberos service tickets, extracts the encrypted credential data, and then attempts to crack the ticket offline to recover the plaintext password.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Kerberos</span><span class="tag">Web</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag">Persistence</span><span class="tag">Lateral Movement</span><span class="tag mitre">T1558.003</span><span class="tag mitre">T1558</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Detecting AD Attacks</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>L2</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="dcsync.html"><span>DCSync</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="kerberoasting.html"><span>Kerberoasting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pass-the-hash-pth.html"><span>Pass-the-Hash (PtH)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pass-the-ticket-ptt.html"><span>Pass-the-Ticket (PtT)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="overpass-the-hash.html"><span>Overpass-the-Hash</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="golden-ticket.html"><span>Golden Ticket</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="silver-ticket.html"><span>Silver Ticket</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="dcshadow.html"><span>DCSHADOW</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="as-reproasting.html"><span>AS-REPRoasting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="skeleton-key.html"><span>Skeleton Key</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntlm-relay-attacks.html"><span>NTLM Relay Attacks</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="llmnr-nbt-ns-poisoning.html"><span>LLMNR NBT-NS Poisoning</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="credential-dumping-general.html"><span>Credential Dumping (General)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="attacker-targets-in-active-directory-environments.html"><span>Attacker Targets in Active Directory Environments</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="putting-it-all-together-ad-attack-scenario.html"><span>Putting It All Together AD Attack Scenario</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Kerberoasting is an attack targeting service accounts within Active Directory by exploiting Service Principal Names (SPNs). In this attack, an adversary requests Kerberos service tickets, extracts the encrypted credential data, and then attempts to crack the ticket offline to recover the plaintext password.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Kerberoasting</li><li>1- How Kerberoasting Works</li><li>a. Service Ticket Request</li><li>b. Ticket Retrieval and Offline Cracking</li><li>2- Attack Impact</li><li>3- Key Tools and Techniques</li><li>4- Mitigation Strategies</li><li>5- Detection and Defensive Strategies</li><li>Detection</li><li>Defensive Strategies</li><li>6- Summary</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="kerberoasting">Kerberoasting</h2>
+<p><strong>Kerberoasting</strong> is an attack targeting service accounts within Active Directory by exploiting Service Principal Names (SPNs). In this attack, an adversary requests Kerberos service tickets, extracts the encrypted credential data, and then attempts to crack the ticket offline to recover the plaintext password.</p>
+<p><button class="image-button" data-src="../assets/images/detecting-ad-attackskerberoasting-image-a532ed68.png" data-alt="image.png"><img src="../assets/images/detecting-ad-attackskerberoasting-image-a532ed68.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li>Service Principal Name (SPN)</li>
+<p>is a unique identifier for a service in <strong>Active Directory (AD)</strong>. It is used by <strong>Kerberos authentication</strong> to associate a service with a specific account (usually a service account)</p>
+</ul>
+<p><strong>How SPNs Work:</strong></p>
+<ul>
+<ul>
+<li>When a client needs to authenticate to a service (e.g., SQL Server, web applications, or file shares), it uses the <strong>SPN</strong> to request a Kerberos ticket.</li>
+<li>The <strong>Domain Controller (DC)</strong> checks the SPN to find which account is running that service.</li>
+<li>The <strong>Kerberos Ticket Granting Service (TGS)</strong> then issues a <strong>service ticket</strong> encrypted with the service account’s password hash.</li>
+</ul>
+</ul>
+<p><a class="note-link" href="https://attack.mitre.org/techniques/T1558/003/"><strong>MITRE ATT&amp;amp;CK ID: T1558.003</strong></a></p>
+<hr>
+<h3 id="1-how-kerberoasting-works">1- How Kerberoasting Works</h3>
+<h4 id="a.-service-ticket-request">a. Service Ticket Request</h4>
+<ul>
+<li><strong>Identify SPNs:</strong></li>
+</ul>
+<p>The attacker searches for service accounts with associated SPNs. These SPNs uniquely identify network services (e.g., SQL Server, Exchange).</p>
+<p><em>Example Command (PowerShell):</em></p>
+<p>``<code>jsx Get-ADUser -Filter {ServicePrincipalName -ne &quot;$null&quot;} -Properties ServicePrincipalName </code>``</p>
+<ul>
+<li><strong>Ticket Request:</strong></li>
+</ul>
+<p>For each identified SPN, the attacker requests a Kerberos service ticket from the Ticket Granting Service (TGS). The issued ticket is encrypted using the service account’s password hash.</p>
+<p><button class="image-button" data-src="../assets/images/detecting-ad-attackskerberoasting-d4cdcf0f-c60a-4054-93cb-346635cb56f0-94d06002.png" data-alt="image.png"><img src="../assets/images/detecting-ad-attackskerberoasting-d4cdcf0f-c60a-4054-93cb-346635cb56f0-94d06002.png" alt="image.png" loading="lazy"></button></p>
+<p>User with SPN found</p>
+<h4 id="b.-ticket-retrieval-and-offline-cracking">b. Ticket Retrieval and Offline Cracking</h4>
+<ul>
+<li><strong>Ticket Extraction:</strong></li>
+</ul>
+<p>Tools such as Rubeus or Mimikatz are used to extract the service ticket from the target system’s memory.</p>
+<p><em>Example Command (Rubeus):</em></p>
+<p>``<code>python Rubeus.exe kerberoast </code>``</p>
+<ul>
+<li><strong>Offline Cracking:</strong></li>
+</ul>
+<p>The attacker extracts the encrypted hash from the ticket and employs offline cracking tools like Hashcat to retrieve the plaintext password.</p>
+<p><button class="image-button" data-src="../assets/images/detecting-ad-attackskerberoasting-057d37e4-7bb4-4c84-a565-973f03d9b123-8408674d.png" data-alt="Screenshot 2025-05-04 030529.png"><img src="../assets/images/detecting-ad-attackskerberoasting-057d37e4-7bb4-4c84-a565-973f03d9b123-8408674d.png" alt="Screenshot 2025-05-04 030529.png" loading="lazy"></button></p>
+<hr>
+<h3 id="2-attack-impact">2- Attack Impact</h3>
+<ul>
+<li><strong>Privilege Escalation:</strong></li>
+</ul>
+<p>Cracking a service account’s password may allow an attacker to gain high-level privileges, especially if the account is misconfigured with excessive rights.</p>
+<ul>
+<li><strong>Lateral Movement:</strong></li>
+</ul>
+<p>With the compromised service account credentials, attackers can move laterally within the network to access additional systems and data.</p>
+<ul>
+<li><strong>Persistence:</strong></li>
+</ul>
+<p>Weak or long-lived passwords increase the risk of ongoing unauthorized access to critical resources.</p>
+<hr>
+<h3 id="3-key-tools-and-techniques">3- Key Tools and Techniques</h3>
+<ul>
+<li><strong>Rubeus:</strong></li>
+</ul>
+<p>Used for both requesting and harvesting Kerberos tickets.</p>
+<ul>
+<li><strong>PowerShell:</strong></li>
+</ul>
+<p>Employed for SPN enumeration and initial ticket requests.</p>
+<ul>
+<li><strong>Mimikatz:</strong></li>
+</ul>
+<p>Can be used to dump tickets from memory and assist in offline extraction.</p>
+<ul>
+<li><strong>Offline Cracking Tools:</strong></li>
+</ul>
+<p>Tools like Hashcat are used to perform brute-force or dictionary attacks on the captured ticket hash.</p>
+<hr>
+<h3 id="4-mitigation-strategies">4- Mitigation Strategies</h3>
+<ul>
+<li><strong>Use Strong, Complex Passwords:</strong></li>
+</ul>
+<p>Ensure that service account passwords are long and complex to resist offline cracking efforts.</p>
+<ul>
+<li><strong>Implement Managed Service Accounts (MSAs):</strong></li>
+</ul>
+<p>MSAs reduce the risk of weak or stale passwords and automate password management.</p>
+<ul>
+<li><strong>Enforce Kerberos Pre-Authentication:</strong></li>
+</ul>
+<p>Require valid pre-authentication data to limit unauthorized ticket requests.</p>
+<ul>
+<li><strong>Monitor TGS Requests:</strong></li>
+</ul>
+<p>Use SIEM systems to detect abnormal volumes of TGS requests, particularly for high-value service accounts.</p>
+<ul>
+<li><strong>Restrict Service Account Privileges:</strong></li>
+</ul>
+<p>Limit each service account to only the permissions necessary for its function.</p>
+<ul>
+<li><strong>Network Segmentation and Service Account Monitoring:</strong></li>
+</ul>
+<p>Segment your network and continuously audit service account activity to quickly identify anomalous behavior.</p>
+<hr>
+<h3 id="5-detection-and-defensive-strategies">5- Detection and Defensive Strategies</h3>
+<h4 id="detection">Detection</h4>
+<ul>
+<li><strong>Service Ticket Requests (Event ID 4769)</strong></li>
+</ul>
+<p>Focus on TGS requests that use <strong>RC4 encryption (etype 0x17)</strong>, since these are commonly targeted for offline cracking.</p>
+<ul>
+<li><strong>Filtering Out Noise:</strong></li>
+</ul>
+<p>Exclude requests for the <code>krbtgt</code> account, machine accounts (ending in <code>$</code>), and well-known noisy service accounts (e.g., <code>sqlsvc</code>, generic <code>svc-*</code> accounts). This reduces false positives.</p>
+<ul>
+<li><strong>Abnormal Patterns:</strong></li>
+</ul>
+<p>Look for spikes in ticket requests against service accounts or repeated RC4-based TGS requests from a single host.</p>
+<ul>
+<li><strong>Example Detection Query:</strong></li>
+</ul>
+<p>``<code>jsx (event.code: 4769 OR event.code: 4768) AND winlog.event_data.TicketEncryptionType: &quot;0x17&quot; AND NOT winlog.event_data.ServiceName: &quot;krbtgt&quot; AND NOT winlog.event_data.TargetUserName: (&quot;sqlsvc&quot; OR &quot;svc-<em>&quot; OR </em>$*) </code>``</p>
+<p>This query isolates RC4-HMAC TGS requests while filtering out noise, making it easier to spot Kerberoasting attempts.</p>
+<h4 id="defensive-strategies">Defensive Strategies</h4>
+<ul>
+<li><strong>Disable RC4 Where Possible:</strong></li>
+</ul>
+<p>Enforce stronger encryption types in Kerberos (AES-based), reducing the usefulness of Kerberoasting.</p>
+<ul>
+<li><strong>Service Account Hygiene:</strong></li>
+</ul>
+<p>Use long, complex passwords for service accounts, and rotate them regularly. Avoid giving unnecessary privileges to these accounts.</p>
+<ul>
+<li><strong>Monitoring and Alerting:</strong></li>
+</ul>
+<p>Configure SIEM rules to detect unusual volumes of TGS requests against service accounts, especially if they all use RC4.</p>
+<hr>
+<h3 id="6-summary">6- Summary</h3>
+<ul>
+<li><strong>Protocol Targeted:</strong> Kerberos</li>
+<li><strong>Authentication Material:</strong> Service tickets (encrypted with the service account’s password hash)</li>
+<li><strong>Scope of Attack:</strong> Credential compromise leading to lateral movement, privilege escalation, and persistent access in a Kerberos-based environment</li>
+<li><strong>Key Tools:</strong> Rubeus, PowerShell, Mimikatz, offline cracking tools (e.g., Hashcat)</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#kerberoasting">Kerberoasting</a><a href="#1-how-kerberoasting-works">1- How Kerberoasting Works</a><a href="#a.-service-ticket-request">a. Service Ticket Request</a><a href="#b.-ticket-retrieval-and-offline-cracking">b. Ticket Retrieval and Offline Cracking</a><a href="#2-attack-impact">2- Attack Impact</a><a href="#3-key-tools-and-techniques">3- Key Tools and Techniques</a><a href="#4-mitigation-strategies">4- Mitigation Strategies</a><a href="#5-detection-and-defensive-strategies">5- Detection and Defensive Strategies</a><a href="#detection">Detection</a><a href="#defensive-strategies">Defensive Strategies</a><a href="#6-summary">6- Summary</a></details>
+    </div>
+    
+    <footer class="pager"><a href="dcsync.html">← DCSync</a><a href="pass-the-hash-pth.html">Pass-the-Hash (PtH) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

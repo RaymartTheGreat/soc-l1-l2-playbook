@@ -1,0 +1,236 @@
+{
+  "id": "threat hunting module/threat hunting foothold",
+  "title": "Threat Hunting Foothold",
+  "slug": "threat-hunting-foothold",
+  "relPath": "Threat Hunting module/Threat Hunting Foothold.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "EDR",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Phishing",
+    "Network",
+    "Web",
+    "Detection",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [
+    "TA0001",
+    "TA0002",
+    "TA0011"
+  ],
+  "parentId": "threat hunting module",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting module"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting module",
+      "title": "Threat Hunting module",
+      "slug": "threat-hunting-module"
+    },
+    {
+      "id": "threat hunting module/threat hunting foothold",
+      "title": "Threat Hunting Foothold",
+      "slug": "threat-hunting-foothold"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Threat Hunting: Foothold"
+    },
+    {
+      "level": 1,
+      "text": "1- Initial Access (TA0001)"
+    },
+    {
+      "level": 3,
+      "text": "Definition:"
+    },
+    {
+      "level": 3,
+      "text": "Examples of Methods:"
+    },
+    {
+      "level": 2,
+      "text": "Hunting for Initial Access Attempts"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 1: Brute-Forcing via SSH on Jumphost"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 2: Remote Code Execution on Web01"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 3: Phishing Links and Attachments"
+    },
+    {
+      "level": 1,
+      "text": "2- Execution (TA0002)"
+    },
+    {
+      "level": 3,
+      "text": "Goal:"
+    },
+    {
+      "level": 3,
+      "text": "Examples of Methods:"
+    },
+    {
+      "level": 2,
+      "text": "Hunting for Malicious Execution"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 1: Usage of Command-Line Tools"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 2: Abuse of Built-In System Tools (LOLBAS)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 3: Scripting and Programming Tools"
+    },
+    {
+      "level": 1,
+      "text": "3- Defense Evasion"
+    },
+    {
+      "level": 3,
+      "text": "Overview:"
+    },
+    {
+      "level": 3,
+      "text": "Objective:"
+    },
+    {
+      "level": 3,
+      "text": "Common Techniques Include:"
+    },
+    {
+      "level": 2,
+      "text": "Hunting for Defense Evasion"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 1: Disabling Security Software"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 2: Log Deletion Attempts"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 3: Execution through Process Injection"
+    },
+    {
+      "level": 1,
+      "text": "4- Persistence (TA003)"
+    },
+    {
+      "level": 3,
+      "text": "Overview:"
+    },
+    {
+      "level": 3,
+      "text": "Key Methods Include:"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 1:Scheduled Task Creation"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 2: Registry Key Modification"
+    },
+    {
+      "level": 1,
+      "text": "5- Command and Control (TA0011)"
+    },
+    {
+      "level": 3,
+      "text": "Overview:"
+    },
+    {
+      "level": 3,
+      "text": "Purpose:"
+    },
+    {
+      "level": 3,
+      "text": "Common Communication Channels:"
+    },
+    {
+      "level": 3,
+      "text": "Key Characteristics to Monitor:"
+    },
+    {
+      "level": 2,
+      "text": "Hunting Command and Control"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 1: Command and Control over DNS"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 2: Command and Control over Cloud Applications"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 3: Command and Control over Encrypted HTTP Traffic"
+    },
+    {
+      "level": 1,
+      "text": "Conclusion"
+    }
+  ],
+  "overview": "This section focuses on how to detect early intrusion attempts (initial foothold) and the subsequent execution phase once adversaries breach defenses. It outlines the attacker’s mindset, various tactics to gain initial access, and methods to execute malicious commands using built-in tools or scripting.",
+  "study": {
+    "overview": "This section focuses on how to detect early intrusion attempts (initial foothold) and the subsequent execution phase once adversaries breach defenses. It outlines the attacker’s mindset, various tactics to gain initial access, and methods to execute malicious commands using built-in tools or scripting.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Threat Hunting: Foothold",
+      "1- Initial Access (TA0001)",
+      "Definition:",
+      "Examples of Methods:",
+      "Hunting for Initial Access Attempts",
+      "Scenario 1: Brute-Forcing via SSH on Jumphost",
+      "Scenario 2: Remote Code Execution on Web01",
+      "Scenario 3: Phishing Links and Attachments",
+      "2- Execution (TA0002)",
+      "Goal:",
+      "Examples of Methods:",
+      "Hunting for Malicious Execution"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": [
+      "Key Point:",
+      "The foothold isn’t limited to workstations—it extends to any entry point (account or machine) that an attacker can leverage.",
+      "Note: The key idea is that while adversaries try to hide, their actions still leave traces in logs and process metadata that can be hunted."
+    ]
+  }
+}

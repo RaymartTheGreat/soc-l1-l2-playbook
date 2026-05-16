@@ -1,0 +1,176 @@
+{
+  "id": "threat hunting module/threat hunting endgame",
+  "title": "Threat Hunting Endgame",
+  "slug": "threat-hunting-endgame",
+  "relPath": "Threat Hunting module/Threat Hunting Endgame.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Web",
+    "Memory",
+    "Detection",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [
+    "TA0009",
+    "TA0010",
+    "TA0040"
+  ],
+  "parentId": "threat hunting module",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting module"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting module",
+      "title": "Threat Hunting module",
+      "slug": "threat-hunting-module"
+    },
+    {
+      "id": "threat hunting module/threat hunting endgame",
+      "title": "Threat Hunting Endgame",
+      "slug": "threat-hunting-endgame"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Threat Hunting: Endgame"
+    },
+    {
+      "level": 1,
+      "text": "1- Collection (TA0009)"
+    },
+    {
+      "level": 3,
+      "text": "Definition:"
+    },
+    {
+      "level": 3,
+      "text": "Commonly Used Techniques :"
+    },
+    {
+      "level": 2,
+      "text": "Hunting Collection Activities"
+    },
+    {
+      "level": 3,
+      "text": "Case Example: Hunting Keylogging"
+    },
+    {
+      "level": 3,
+      "text": "Keylogging Characteristics:"
+    },
+    {
+      "level": 3,
+      "text": "Hunting Methodology:"
+    },
+    {
+      "level": 1,
+      "text": "2- Exfiltration (TA0010)"
+    },
+    {
+      "level": 3,
+      "text": "Definition:"
+    },
+    {
+      "level": 3,
+      "text": "Examples of Methods:"
+    },
+    {
+      "level": 1,
+      "text": "Case Example: Data Exfiltration over ICMP"
+    },
+    {
+      "level": 2,
+      "text": "Hunting Methodology"
+    },
+    {
+      "level": 3,
+      "text": "1. Initial Pattern Search"
+    },
+    {
+      "level": 3,
+      "text": "2. Focusing on Suspicious System Calls"
+    },
+    {
+      "level": 3,
+      "text": "3. Detailed Analysis of the Exfiltration Script"
+    },
+    {
+      "level": 1,
+      "text": "3- Impact (TA0040)"
+    },
+    {
+      "level": 3,
+      "text": "Definition:"
+    },
+    {
+      "level": 3,
+      "text": "Examples of Methods:"
+    },
+    {
+      "level": 2,
+      "text": "Case Example: Data Disruption/Manipulation"
+    },
+    {
+      "level": 2,
+      "text": "Hunting Methodology"
+    },
+    {
+      "level": 3,
+      "text": "1. Initial Pattern Search"
+    },
+    {
+      "level": 3,
+      "text": "2. Visualizing Log Sources"
+    },
+    {
+      "level": 3,
+      "text": "3. Narrowing Down to Specific Events"
+    },
+    {
+      "level": 1,
+      "text": "Conclusion"
+    }
+  ],
+  "overview": "This room focuses on the \"Actions on Objectives\" phase of the Cyber Kill Chain—where attackers execute their final goals such as data exfiltration, data destruction, encryption for ransom, or credential theft. The objective is to implement the threat hunting process to detect and investigate these advanced adversary actions using the MITRE ATT&CK framework a",
+  "study": {
+    "overview": "This room focuses on the \"Actions on Objectives\" phase of the Cyber Kill Chain—where attackers execute their final goals such as data exfiltration, data destruction, encryption for ransom, or credential theft. The objective is to implement the threat hunting process to detect and investigate these advanced adversary actions using the MITRE ATT&CK framework a",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Threat Hunting: Endgame",
+      "1- Collection (TA0009)",
+      "Definition:",
+      "Commonly Used Techniques :",
+      "Hunting Collection Activities",
+      "Case Example: Hunting Keylogging",
+      "Keylogging Characteristics:",
+      "Hunting Methodology:",
+      "2- Exfiltration (TA0010)",
+      "Definition:",
+      "Examples of Methods:",
+      "Case Example: Data Exfiltration over ICMP"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

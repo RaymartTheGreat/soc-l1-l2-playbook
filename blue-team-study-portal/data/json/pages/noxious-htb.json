@@ -1,0 +1,161 @@
+{
+  "id": "network analysis labs/noxious (htb)",
+  "title": "Noxious (HTB)",
+  "slug": "noxious-htb",
+  "relPath": "Network Analysis Labs/Noxious (HTB).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Network",
+    "Active Directory",
+    "DFIR",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [
+    "network analysis labs/noxious (htb)/llmnr poisoning overview",
+    "network analysis labs/noxious (htb)/example of llmnr poisoning"
+  ],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/noxious (htb)",
+      "title": "Noxious (HTB)",
+      "slug": "noxious-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Noxious (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Its suspected by the security team that there was a rogue device in Forela's internal network running responder tool to perform an LLMNR Poisoning attack. Please find the malicious IP Address of the machine."
+    },
+    {
+      "level": 3,
+      "text": "172.17.79.135"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the hostname of the rogue machine?"
+    },
+    {
+      "level": 3,
+      "text": "kali"
+    },
+    {
+      "level": 3,
+      "text": "3- Now we need to confirm whether the attacker captured the user's hash and it is crackable!! What is the username whose hash was captured?"
+    },
+    {
+      "level": 3,
+      "text": "john.deacon"
+    },
+    {
+      "level": 3,
+      "text": "4- In NTLM traffic we can see that the victim credentials were relayed multiple times to the attacker's machine. When were the hashes captured the First time?"
+    },
+    {
+      "level": 3,
+      "text": "2024-06-24 11:18:30"
+    },
+    {
+      "level": 3,
+      "text": "5- What was the typo made by the victim when navigating to the file share that caused his credentials to be leaked?"
+    },
+    {
+      "level": 3,
+      "text": "DCC01"
+    },
+    {
+      "level": 3,
+      "text": "6- To get the actual credentials of the victim user we need to stitch together multiple values from the ntlm negotiation packets. What is the NTLM server challenge value?"
+    },
+    {
+      "level": 3,
+      "text": "601019d191f054f1"
+    },
+    {
+      "level": 3,
+      "text": "7- Now doing something similar find the NTProofStr value."
+    },
+    {
+      "level": 3,
+      "text": "c0cc803a6d9fb5a9082253a04dbd4cd4"
+    },
+    {
+      "level": 3,
+      "text": "8- To test the password complexity, try recovering the password from the information found from packet capture. This is a crucial step as this way we can find whether the attacker was able to crack this and how quickly."
+    },
+    {
+      "level": 3,
+      "text": "NotMyPassword0K?"
+    },
+    {
+      "level": 3,
+      "text": "9- Just to get more context surrounding the incident, what is the actual file share that the victim was trying to navigate to?"
+    },
+    {
+      "level": 3,
+      "text": "\\\\DC01\\DC-Confidential"
+    }
+  ],
+  "overview": "The IDS device alerted us to a possible rogue device in the internal Active Directory network. The Intrusion Detection System also indicated signs of LLMNR traffic, which is unusual. It is suspected that an LLMNR poisoning attack occurred. The LLMNR traffic was directed towards Forela-WKstn002, which has the IP address 172.17.79.136. A limited packet capture",
+  "study": {
+    "overview": "The IDS device alerted us to a possible rogue device in the internal Active Directory network. The Intrusion Detection System also indicated signs of LLMNR traffic, which is unusual. It is suspected that an LLMNR poisoning attack occurred. The LLMNR traffic was directed towards Forela-WKstn002, which has the IP address 172.17.79.136. A limited packet capture",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Noxious (HTB)",
+      "Scenario",
+      "1- Its suspected by the security team that there was a rogue device in Forela's internal network running responder tool to perform an LLMNR Poisoning attack. Please find the malicious IP Address of the machine.",
+      "172.17.79.135",
+      "2- What is the hostname of the rogue machine?",
+      "kali",
+      "3- Now we need to confirm whether the attacker captured the user's hash and it is crackable!! What is the username whose hash was captured?",
+      "john.deacon",
+      "4- In NTLM traffic we can see that the victim credentials were relayed multiple times to the attacker's machine. When were the hashes captured the First time?",
+      "2024-06-24 11:18:30",
+      "5- What was the typo made by the victim when navigating to the file share that caused his credentials to be leaked?",
+      "DCC01"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "john.deacon::FORELA:601019d191f054f1:c0cc803a6d9fb5a9082253a04dbd4cd4:010100000000000080e4d59406c6da01cc3dcfc0de9b5f2600000000020008004e0042004600590001001e00570049004e002d00360036004100530035004c003100470052005700540004003400570049004e002d00360036004100530035004c00310047005200570054002e004e004200460059002e004c004f00430041004c00030014004e004200460059002e004c004f00430041004c00050014004e004200460059002e004c004f00430041004c000700080080e4d59406c6da0106000400020000000800300030000000000000000000000000200000eb2ecbc5200a40b89ad5831abf821f4f20a2c7f352283a35600377e1f294f1c90a001000000000000000000000000000000000000900140063006900660073002f00440043004300300031000000000000000000"
+      }
+    ],
+    "tools": [],
+    "tips": [
+      "Q6 and Q7 Quick review",
+      "NTLMv2 works as a challenge–response protocol:",
+      "1. Server sends a challenge (random 8-byte value).",
+      "2. Client computes a response using:",
+      "- User’s NTLM hash (derived from the password)",
+      "- The challenge"
+    ]
+  }
+}

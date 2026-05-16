@@ -1,0 +1,135 @@
+{
+  "id": "digital forensics/anti forensics",
+  "title": "Anti forensics",
+  "slug": "anti-forensics",
+  "relPath": "Digital Forensics/Anti forensics.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "EDR",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "digital forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "digital forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "digital forensics",
+      "title": "Digital Forensics",
+      "slug": "digital-forensics"
+    },
+    {
+      "id": "digital forensics/anti forensics",
+      "title": "Anti forensics",
+      "slug": "anti-forensics"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Anti forensics"
+    },
+    {
+      "level": 1,
+      "text": "Common anti‑forensic methods include:"
+    },
+    {
+      "level": 2,
+      "text": "Network Anonymisation"
+    },
+    {
+      "level": 2,
+      "text": "Timestomping"
+    },
+    {
+      "level": 2,
+      "text": "Secure Delete & Disk Wiping"
+    },
+    {
+      "level": 2,
+      "text": "Encryption"
+    },
+    {
+      "level": 2,
+      "text": "Event‑Log Manipulation"
+    },
+    {
+      "level": 3,
+      "text": "Clearing Logs"
+    },
+    {
+      "level": 3,
+      "text": "Log Tampering (Unix)"
+    },
+    {
+      "level": 2,
+      "text": "Alternate Data Streams (ADS)"
+    },
+    {
+      "level": 2,
+      "text": "Steganography"
+    },
+    {
+      "level": 2,
+      "text": "Memory‑Forensics Evasion"
+    },
+    {
+      "level": 2,
+      "text": "Physical Hardware Manipulation"
+    },
+    {
+      "level": 3,
+      "text": "Overall Defense Strategy"
+    }
+  ],
+  "overview": "Anti-forensics refers to a malicious actor's techniques and strategies to undermine forensic investigations. While digital forensics and IR involve collecting, analyzing, and preserving electronic evidence during investigations, anti-forensics techniques erase, hide, or manipulate this evidence, making it difficult for investigators to work with.",
+  "study": {
+    "overview": "Anti-forensics refers to a malicious actor's techniques and strategies to undermine forensic investigations. While digital forensics and IR involve collecting, analyzing, and preserving electronic evidence during investigations, anti-forensics techniques erase, hide, or manipulate this evidence, making it difficult for investigators to work with.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Anti forensics",
+      "Common anti‑forensic methods include:",
+      "Network Anonymisation",
+      "Timestomping",
+      "Secure Delete & Disk Wiping",
+      "Encryption",
+      "Event‑Log Manipulation",
+      "Clearing Logs",
+      "Log Tampering (Unix)",
+      "Alternate Data Streams (ADS)",
+      "Steganography",
+      "Memory‑Forensics Evasion"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM",
+      "EDR",
+      "Sysmon",
+      "PowerShell",
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

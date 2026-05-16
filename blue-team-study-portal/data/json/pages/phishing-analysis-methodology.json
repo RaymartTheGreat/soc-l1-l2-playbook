@@ -1,0 +1,113 @@
+{
+  "id": "phishing analysis/phishing analysis methodology",
+  "title": "Phishing Analysis Methodology",
+  "slug": "phishing-analysis-methodology",
+  "relPath": "Phishing analysis/Phishing Analysis Methodology.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-initial-triage",
+  "curriculumSectionTitle": "Initial Triage & Analysis",
+  "tags": [
+    "SIEM",
+    "Phishing",
+    "Detection",
+    "C2",
+    "YARA"
+  ],
+  "mitre": [],
+  "parentId": "phishing analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "phishing analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "phishing analysis",
+      "title": "Phishing analysis",
+      "slug": "phishing-analysis"
+    },
+    {
+      "id": "phishing analysis/phishing analysis methodology",
+      "title": "Phishing Analysis Methodology",
+      "slug": "phishing-analysis-methodology"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Phishing Analysis Methodology"
+    },
+    {
+      "level": 3,
+      "text": "1- Initial Triage"
+    },
+    {
+      "level": 3,
+      "text": "2- Header and Sender Examination"
+    },
+    {
+      "level": 3,
+      "text": "3- Content Analysis"
+    },
+    {
+      "level": 3,
+      "text": "4- URL and Link Inspection"
+    },
+    {
+      "level": 3,
+      "text": "5- Attachment Analysis"
+    },
+    {
+      "level": 3,
+      "text": "6- Domain and Host Reputation"
+    },
+    {
+      "level": 3,
+      "text": "7- Behavioral/Sandbox Testing"
+    },
+    {
+      "level": 3,
+      "text": "8- Contextual Correlation"
+    },
+    {
+      "level": 3,
+      "text": "9- Response & Defense"
+    },
+    {
+      "level": 3,
+      "text": "10- Reporting & Documentation"
+    }
+  ],
+  "overview": "- Identify user impact and urgency. - Prioritize based on sender, content, and user role. - Check for prior similar reports or incidents.",
+  "study": {
+    "overview": "- Identify user impact and urgency. - Prioritize based on sender, content, and user role. - Check for prior similar reports or incidents.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Phishing Analysis Methodology",
+      "1- Initial Triage",
+      "2- Header and Sender Examination",
+      "3- Content Analysis",
+      "4- URL and Link Inspection",
+      "5- Attachment Analysis",
+      "6- Domain and Host Reputation",
+      "7- Behavioral/Sandbox Testing",
+      "8- Contextual Correlation",
+      "9- Response & Defense",
+      "10- Reporting & Documentation"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "YARA"
+    ],
+    "tips": []
+  }
+}

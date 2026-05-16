@@ -1,0 +1,163 @@
+{
+  "id": "threat hunting labs (siem)/servidae (thm)",
+  "title": "Servidae (THM)",
+  "slug": "servidae-thm",
+  "relPath": "Threat hunting Labs (SIEM)/Servidae (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "EDR",
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Network",
+    "Web",
+    "Detection",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/servidae (thm)",
+      "title": "Servidae (THM)",
+      "slug": "servidae-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Servidae (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Look at the Top values under the destination.ip field. Which IP address stands out?"
+    },
+    {
+      "level": 3,
+      "text": "84.237.252.156"
+    },
+    {
+      "level": 3,
+      "text": "2- Use an IP address lookup tool (such as iplocation.io). What country does this IP address originate from?"
+    },
+    {
+      "level": 3,
+      "text": "3- Which process name is running the most frequently on the compromised workstation?"
+    },
+    {
+      "level": 3,
+      "text": "4- What was the process ID (PID) of the potentially malicious PowerShell script?"
+    },
+    {
+      "level": 3,
+      "text": "5- What was the parent process name of the process that spawned powershell.exe?"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the domain name of the attacker's server hosting the winPEAS executable?"
+    },
+    {
+      "level": 3,
+      "text": "evilparrot.thm"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the full path of the HKEYLOCALMACHINE registry entry that was queried?"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the name of the malicious .msi file?"
+    },
+    {
+      "level": 3,
+      "text": "adminshell.msi"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the name of the user account that the attacker created to maintain privileged access?"
+    },
+    {
+      "level": 3,
+      "text": "backdoor"
+    },
+    {
+      "level": 3,
+      "text": "10- What is the flag sent via cURL requests to the evilparrot.thm server?"
+    },
+    {
+      "level": 3,
+      "text": "11- What is the name of the registry value that the attacker added?"
+    },
+    {
+      "level": 3,
+      "text": "12- What was the password that the attacker used to access Bill's user account on the internal payroll website?"
+    },
+    {
+      "level": 3,
+      "text": "Password123!"
+    },
+    {
+      "level": 3,
+      "text": "13- What flag was included within the HTTP requests during the attacker's successful logins?"
+    },
+    {
+      "level": 3,
+      "text": "14- What was the session cookie value that the attacker included in the cURL request at 18:58:08.001?"
+    },
+    {
+      "level": 3,
+      "text": "15- What is the name of the sensitive file that the attacker downloaded?"
+    }
+  ],
+  "overview": "Bill Smith, a senior Finance Executive at Servidae Industries, stated that he received an email from an unknown sender containing a PDF file attachment that required his action. At first glance, this email appeared legitimate, and he downloaded and opened it without any suspicion. After some time, Bill noticed his computer was acting abnormally and contacted",
+  "study": {
+    "overview": "Bill Smith, a senior Finance Executive at Servidae Industries, stated that he received an email from an unknown sender containing a PDF file attachment that required his action. At first glance, this email appeared legitimate, and he downloaded and opened it without any suspicion. After some time, Bill noticed his computer was acting abnormally and contacted",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Servidae (THM)",
+      "Scenario",
+      "1- Look at the Top values under the destination.ip field. Which IP address stands out?",
+      "84.237.252.156",
+      "2- Use an IP address lookup tool (such as iplocation.io). What country does this IP address originate from?",
+      "3- Which process name is running the most frequently on the compromised workstation?",
+      "4- What was the process ID (PID) of the potentially malicious PowerShell script?",
+      "5- What was the parent process name of the process that spawned powershell.exe?",
+      "6- What is the domain name of the attacker's server hosting the winPEAS executable?",
+      "evilparrot.thm",
+      "7- What is the full path of the HKEYLOCALMACHINE registry entry that was queried?",
+      "8- What is the name of the malicious .msi file?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

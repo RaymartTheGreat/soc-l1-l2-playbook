@@ -1,0 +1,111 @@
+{
+  "id": "hunting persistence (mitre ta0003)/persistence using vba macros and com (t1566 001, t/persistence via com hijacking",
+  "title": "Persistence via COM Hijacking",
+  "slug": "persistence-via-com-hijacking",
+  "relPath": "Hunting Persistence (MITRE TA0003)/Persistence Using VBA Macros and COM (T1566 001, T/Persistence via COM Hijacking.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "TA0003",
+    "T1566"
+  ],
+  "parentId": "hunting persistence (mitre ta0003)/persistence using vba macros and com (t1566 001, t",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "hunting persistence (mitre ta0003)",
+      "title": "Hunting Persistence (MITRE TA0003)",
+      "slug": "hunting-persistence-mitre-ta0003"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/persistence using vba macros and com (t1566 001, t",
+      "title": "Persistence Using VBA Macros and COM (T1566 001, T",
+      "slug": "persistence-using-vba-macros-and-com-t1566-001-t"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/persistence using vba macros and com (t1566 001, t/persistence via com hijacking",
+      "title": "Persistence via COM Hijacking",
+      "slug": "persistence-via-com-hijacking"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Persistence via COM Hijacking"
+    },
+    {
+      "level": 3,
+      "text": "Key Concepts"
+    },
+    {
+      "level": 2,
+      "text": "How Attackers Use It"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 2,
+      "text": "Threat Hunting"
+    },
+    {
+      "level": 2,
+      "text": "Splunk Query"
+    },
+    {
+      "level": 2,
+      "text": "Summary"
+    }
+  ],
+  "overview": "The Component Object Model (COM) is a Windows framework that allows software components to communicate and create dynamic objects. COM objects are often implemented as DLLs and registered in the Windows Registry with unique Class Identifiers (CLSID). Attackers manipulate COM registrations to execute malicious code whenever a COM object is instantiated, provi",
+  "study": {
+    "overview": "The Component Object Model (COM) is a Windows framework that allows software components to communicate and create dynamic objects. COM objects are often implemented as DLLs and registered in the Windows Registry with unique Class Identifiers (CLSID). Attackers manipulate COM registrations to execute malicious code whenever a COM object is instantiated, provi",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Persistence via COM Hijacking",
+      "Key Concepts",
+      "How Attackers Use It",
+      "Detection",
+      "Threat Hunting",
+      "Splunk Query",
+      "Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "python",
+        "code": "index=windows EventCode=4657\nRegistryKeyPath=\"*\\\\CLSID\\\\*\"\n| stats count by EventCode, RegistryKeyPath, ProcessName, User\n| where count > 10"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "reg add \"HKCU\\Software\\Classes\\CLSID\\{MaliciousCLSID}\\InProcServer32\" /ve /t REG_SZ /d \"C:\\malicious.dll\" /f"
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

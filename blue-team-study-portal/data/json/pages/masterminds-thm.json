@@ -1,0 +1,271 @@
+{
+  "id": "network analysis labs/masterminds (thm)",
+  "title": "Masterminds (THM)",
+  "slug": "masterminds-thm",
+  "relPath": "Network Analysis Labs/Masterminds (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Phishing",
+    "Network",
+    "OSINT",
+    "Incident Response",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/masterminds (thm)",
+      "title": "Masterminds (THM)",
+      "slug": "masterminds-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Masterminds (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 2,
+      "text": "[Infection 1]"
+    },
+    {
+      "level": 3,
+      "text": "1- Provide the victim's IP address."
+    },
+    {
+      "level": 3,
+      "text": "192.168.75.249"
+    },
+    {
+      "level": 3,
+      "text": "2- The victim attempted to make HTTP connections to two suspicious domains with the status '404 Not Found'. Provide the hosts/domains requested."
+    },
+    {
+      "level": 3,
+      "text": "cambiasuhistoria.growlab.es,www.letscompareonline.com"
+    },
+    {
+      "level": 3,
+      "text": "3- The victim made a successful HTTP connection to one of the domains and received the responsebodylen of 1,309 (uncompressed content size of the data transferred from the server). Provide the domain and the destination IP address."
+    },
+    {
+      "level": 3,
+      "text": "ww25.gocphongthe.com,199.59.242.153"
+    },
+    {
+      "level": 3,
+      "text": "4- How many unique DNS requests were made to cab[.]myfkn[.]com domain (including the capitalized domain)?"
+    },
+    {
+      "level": 3,
+      "text": "7"
+    },
+    {
+      "level": 3,
+      "text": "5- Provide the URI of the domain bhaktivrind[.]com that the victim reached out over HTTP."
+    },
+    {
+      "level": 3,
+      "text": "/cgi-bin/JBbb8/"
+    },
+    {
+      "level": 3,
+      "text": "6- Provide the IP address of the malicious server and the executable that the victim downloaded from the server."
+    },
+    {
+      "level": 3,
+      "text": "185.239.243.112,catzx.exe"
+    },
+    {
+      "level": 3,
+      "text": "7- Based on the information gathered from the second question, provide the name of the malware using VirusTotal."
+    },
+    {
+      "level": 3,
+      "text": "Emotet"
+    },
+    {
+      "level": 2,
+      "text": "[Infection 2]"
+    },
+    {
+      "level": 3,
+      "text": "1- Provide the IP address of the victim machine."
+    },
+    {
+      "level": 3,
+      "text": "192.168.75.146"
+    },
+    {
+      "level": 3,
+      "text": "2- Provide the IP address the victim made the POST connections to."
+    },
+    {
+      "level": 3,
+      "text": "5.181.156.252"
+    },
+    {
+      "level": 3,
+      "text": "3- How many POST connections were made to the IP address in the previous question?"
+    },
+    {
+      "level": 3,
+      "text": "3"
+    },
+    {
+      "level": 3,
+      "text": "4- Provide the domain where the binary was downloaded from."
+    },
+    {
+      "level": 3,
+      "text": "hypercustom.top"
+    },
+    {
+      "level": 3,
+      "text": "5- Provide the name of the binary including the full URI."
+    },
+    {
+      "level": 3,
+      "text": "/jollion/apines.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- Provide the IP address of the domain that hosts the binary."
+    },
+    {
+      "level": 3,
+      "text": "45.95.203.28"
+    },
+    {
+      "level": 3,
+      "text": "7- There were 2 Suricata \"A Network Trojan was detected\" alerts. What were the source and destination IP addresses?"
+    },
+    {
+      "level": 3,
+      "text": "192.168.75.146,45.95.203.28"
+    },
+    {
+      "level": 3,
+      "text": "8- Taking a look at .top domain in HTTP requests, provide the name of the stealer (Trojan that gathers information from a system) involved in this packet capture using URLhaus Database."
+    },
+    {
+      "level": 3,
+      "text": "Redline Stealer"
+    },
+    {
+      "level": 2,
+      "text": "[Infection 3]"
+    },
+    {
+      "level": 3,
+      "text": "1- Provide the IP address of the victim machine."
+    },
+    {
+      "level": 3,
+      "text": "192.168.75.232"
+    },
+    {
+      "level": 3,
+      "text": "2- Provide three C2 domains from which the binaries were downloaded (starting from the earliest to the latest in the timestamp)"
+    },
+    {
+      "level": 3,
+      "text": "efhoahegue.ru,afhoahegue.ru,xfhoahegue.ru"
+    },
+    {
+      "level": 3,
+      "text": "3- Provide the IP addresses for all three domains in the previous question."
+    },
+    {
+      "level": 3,
+      "text": "162.217.98.146,199.21.76.77,63.251.106.25"
+    },
+    {
+      "level": 3,
+      "text": "4- How many unique DNS queries were made to the domain associated from the first IP address from the previous answer?"
+    },
+    {
+      "level": 3,
+      "text": "2"
+    },
+    {
+      "level": 3,
+      "text": "5- How many binaries were downloaded from the above domain in total?"
+    },
+    {
+      "level": 3,
+      "text": "5"
+    },
+    {
+      "level": 3,
+      "text": "6- Provided the user-agent listed to download the binaries."
+    },
+    {
+      "level": 3,
+      "text": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:25.0) Gecko/20100101 Firefox/25.0"
+    },
+    {
+      "level": 3,
+      "text": "7- Provide the amount of DNS connections made in total for this packet capture."
+    },
+    {
+      "level": 3,
+      "text": "986"
+    },
+    {
+      "level": 3,
+      "text": "8- With some OSINT skills, provide the name of the worm using the first domain you have managed to collect from Question 2. (Please use quotation marks for Google searches, don't use .ru in your search, and DO NOT interact with the domain directly)."
+    },
+    {
+      "level": 3,
+      "text": "Phorphiex"
+    }
+  ],
+  "overview": "Three machines in the Finance department at Pfeffer PLC were compromised. We suspect the initial source of the compromise happened through a phishing attempt and by an infected USB drive. The Incident Response team managed to pull the network traffic logs from the endpoints. Use Brim to investigate the network traffic for any indicators of an attack and dete",
+  "study": {
+    "overview": "Three machines in the Finance department at Pfeffer PLC were compromised. We suspect the initial source of the compromise happened through a phishing attempt and by an infected USB drive. The Incident Response team managed to pull the network traffic logs from the endpoints. Use Brim to investigate the network traffic for any indicators of an attack and dete",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Masterminds (THM)",
+      "Scenario",
+      "[Infection 1]",
+      "1- Provide the victim's IP address.",
+      "192.168.75.249",
+      "2- The victim attempted to make HTTP connections to two suspicious domains with the status '404 Not Found'. Provide the hosts/domains requested.",
+      "cambiasuhistoria.growlab.es,www.letscompareonline.com",
+      "3- The victim made a successful HTTP connection to one of the domains and received the responsebodylen of 1,309 (uncompressed content size of the data transferred from the server). Provide the domain and the destination IP address.",
+      "ww25.gocphongthe.com,199.59.242.153",
+      "4- How many unique DNS requests were made to cab[.]myfkn[.]com domain (including the capitalized domain)?",
+      "7",
+      "5- Provide the URI of the domain bhaktivrind[.]com that the victim reached out over HTTP."
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

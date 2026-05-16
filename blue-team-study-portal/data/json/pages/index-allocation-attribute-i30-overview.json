@@ -1,0 +1,92 @@
+{
+  "id": "windows forensics/ntfs analysis/index allocation attribute ($i30) overview",
+  "title": "Index Allocation Attribute ($I30) Overview",
+  "slug": "index-allocation-attribute-i30-overview",
+  "relPath": "Windows Forensics/NTFS Analysis/Index Allocation Attribute ($I30) Overview.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/ntfs analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/ntfs analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/ntfs analysis",
+      "title": "NTFS Analysis",
+      "slug": "ntfs-analysis"
+    },
+    {
+      "id": "windows forensics/ntfs analysis/index allocation attribute ($i30) overview",
+      "title": "Index Allocation Attribute ($I30) Overview",
+      "slug": "index-allocation-attribute-i30-overview"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Index Allocation Attribute ($I30) Overview"
+    },
+    {
+      "level": 2,
+      "text": "Index Allocation Attribute ($I30)"
+    },
+    {
+      "level": 2,
+      "text": "Slack Space"
+    },
+    {
+      "level": 2,
+      "text": "Forensics Value"
+    },
+    {
+      "level": 2,
+      "text": "Analyzing $I30"
+    },
+    {
+      "level": 2,
+      "text": "File Attributes in the $I30"
+    },
+    {
+      "level": 3,
+      "text": "Answer the questions below"
+    }
+  ],
+  "overview": "The $I30 file is an NTFS index attribute, which can also be classified as the directory index that maintains a structured layout of files and directories within an NTFS volume. The Windows OS uses it to store and retrieve information about directory entries. As we examined the directories in FTK Imager, we observed that $I30 is present in some directories co",
+  "study": {
+    "overview": "The $I30 file is an NTFS index attribute, which can also be classified as the directory index that maintains a structured layout of files and directories within an NTFS volume. The Windows OS uses it to store and retrieve information about directory entries. As we examined the directories in FTK Imager, we observed that $I30 is present in some directories co",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Index Allocation Attribute ($I30) Overview",
+      "Index Allocation Attribute ($I30)",
+      "Slack Space",
+      "Forensics Value",
+      "Analyzing $I30",
+      "File Attributes in the $I30",
+      "Answer the questions below"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

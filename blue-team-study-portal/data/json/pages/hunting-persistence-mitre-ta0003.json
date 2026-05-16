@@ -1,0 +1,91 @@
+{
+  "id": "hunting persistence (mitre ta0003)",
+  "title": "Hunting Persistence (MITRE TA0003)",
+  "slug": "hunting-persistence-mitre-ta0003",
+  "relPath": "Hunting Persistence (MITRE TA0003).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Windows",
+    "Persistence"
+  ],
+  "mitre": [
+    "TA0003",
+    "T1547.001",
+    "T1547",
+    "T1053.005",
+    "T1053",
+    "T1543.003",
+    "T1543",
+    "T1197",
+    "T1546.003",
+    "T1546",
+    "T1098",
+    "T1574",
+    "T1547.009",
+    "T1566.001",
+    "T1546.015",
+    "T1566",
+    "T1574.001",
+    "T1574.002"
+  ],
+  "parentId": null,
+  "children": [
+    "hunting persistence (mitre ta0003)/persistence in the windows registry(t1547 001)",
+    "hunting persistence (mitre ta0003)/persistence with windows services (t1543 003)",
+    "hunting persistence (mitre ta0003)/bits jobs persistence (t1197)",
+    "hunting persistence (mitre ta0003)/persistence via account manipulation (t1098)",
+    "hunting persistence (mitre ta0003)/rid hijacking (t1574)",
+    "hunting persistence (mitre ta0003)/persistence using vba macros and com (t1566 001, t",
+    "hunting persistence (mitre ta0003)/persistence via boot or logon autostart (t1547 009",
+    "hunting persistence (mitre ta0003)/persistence via dll hijacking (search order hijack",
+    "hunting persistence (mitre ta0003)/persistence via lnk (shortcut) file abuse (t1547 0",
+    "hunting persistence (mitre ta0003)/persistence with windows scheduled tasks (t1053 00",
+    "hunting persistence (mitre ta0003)/persistence with wmi event subscription (t1546 003"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "hunting persistence (mitre ta0003)",
+      "title": "Hunting Persistence (MITRE TA0003)",
+      "slug": "hunting-persistence-mitre-ta0003"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Hunting Persistence (MITRE TA0003)"
+    },
+    {
+      "level": 2,
+      "text": "Understanding Persistence"
+    },
+    {
+      "level": 3,
+      "text": "\"Each of these techniques is discussed in detail on the pages above.”"
+    }
+  ],
+  "overview": "Persistence is a crucial technique used by malware authors to maintain access to a compromised system, even after reboots, logoffs, or credential changes. Attackers use various methods to achieve persistence, such as:",
+  "study": {
+    "overview": "Persistence is a crucial technique used by malware authors to maintain access to a compromised system, even after reboots, logoffs, or credential changes. Attackers use various methods to achieve persistence, such as:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Hunting Persistence (MITRE TA0003)",
+      "Understanding Persistence",
+      "\"Each of these techniques is discussed in detail on the pages above.”"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

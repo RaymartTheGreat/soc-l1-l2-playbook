@@ -1,0 +1,169 @@
+{
+  "id": "network analysis labs/packetdetective lab (cyberdefenders)",
+  "title": "PacketDetective Lab (CyberDefenders)",
+  "slug": "packetdetective-lab-cyberdefenders",
+  "relPath": "Network Analysis Labs/PacketDetective Lab (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network",
+    "Detection",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/packetdetective lab (cyberdefenders)",
+      "title": "PacketDetective Lab (CyberDefenders)",
+      "slug": "packetdetective-lab-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "PacketDetective Lab (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- The attacker’s activity showed extensive SMB protocol usage, indicating a potential pattern of significant data transfer or file access."
+    },
+    {
+      "level": 3,
+      "text": "What is the total number of bytes of the SMB protocol?"
+    },
+    {
+      "level": 3,
+      "text": "4406"
+    },
+    {
+      "level": 3,
+      "text": "2- Authentication through SMB was a critical step in gaining access to the targeted system. Identifying the username used for this authentication will help determine if a privileged account was compromised."
+    },
+    {
+      "level": 3,
+      "text": "Administrator"
+    },
+    {
+      "level": 3,
+      "text": "3- During the attack, the adversary accessed certain files. Identifying which files were accessed can reveal the attacker's intent."
+    },
+    {
+      "level": 3,
+      "text": "What is the name of the file that was opened by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "eventlog"
+    },
+    {
+      "level": 3,
+      "text": "4- Clearing event logs is a common tactic to hide malicious actions and evade detection. Pinpointing the timestamp of this action is essential for building a timeline of the attacker’s behavior."
+    },
+    {
+      "level": 3,
+      "text": "What is the timestamp of the attempt to clear the event log? (24-hour UTC format)"
+    },
+    {
+      "level": 3,
+      "text": "2020-09-23 16:50:16"
+    },
+    {
+      "level": 3,
+      "text": "5- The attacker used \"named pipes\" for communication, suggesting they may have utilized Remote Procedure Calls (RPC) for lateral movement across the network. RPC allows one program to request services from another remotely, which could grant the attacker unauthorized access or control."
+    },
+    {
+      "level": 3,
+      "text": "What is the name of the service that communicated using this named pipe?"
+    },
+    {
+      "level": 3,
+      "text": "atsvc"
+    },
+    {
+      "level": 3,
+      "text": "6- Measuring the duration of suspicious communication can reveal how long the attacker maintained unauthorized access, providing insights into the scope and persistence of the attack."
+    },
+    {
+      "level": 3,
+      "text": "What was the duration of communication between the identified addresses 172.16.66.1 and 172.16.66.36?"
+    },
+    {
+      "level": 3,
+      "text": "11.7247"
+    },
+    {
+      "level": 3,
+      "text": "7-The attacker used a non-standard username to set up requests, indicating an attempt to maintain covert access. Identifying this username is essential for understanding how persistence was established."
+    },
+    {
+      "level": 3,
+      "text": "Which username was used to set up these potentially suspicious requests?"
+    },
+    {
+      "level": 3,
+      "text": "backdoor"
+    },
+    {
+      "level": 3,
+      "text": "8- The attacker leveraged a specific executable file to execute processes remotely on the compromised system. Recognizing this file name can assist in pinpointing the tools used in the attack."
+    },
+    {
+      "level": 3,
+      "text": "What is the name of the executable file utilized to execute processes remotely?"
+    },
+    {
+      "level": 3,
+      "text": "PSEXESVC.exe"
+    }
+  ],
+  "overview": "In September 2020, your SOC detected suspicious activity from a user device, flagged by unusual SMB protocol usage. Initial analysis indicates a possible compromise of a privileged account and remote access tool usage by an attacker.",
+  "study": {
+    "overview": "In September 2020, your SOC detected suspicious activity from a user device, flagged by unusual SMB protocol usage. Initial analysis indicates a possible compromise of a privileged account and remote access tool usage by an attacker.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "PacketDetective Lab (CyberDefenders)",
+      "Scenario",
+      "1- The attacker’s activity showed extensive SMB protocol usage, indicating a potential pattern of significant data transfer or file access.",
+      "What is the total number of bytes of the SMB protocol?",
+      "4406",
+      "2- Authentication through SMB was a critical step in gaining access to the targeted system. Identifying the username used for this authentication will help determine if a privileged account was compromised.",
+      "Administrator",
+      "3- During the attack, the adversary accessed certain files. Identifying which files were accessed can reveal the attacker's intent.",
+      "What is the name of the file that was opened by the attacker?",
+      "eventlog",
+      "4- Clearing event logs is a common tactic to hide malicious actions and evade detection. Pinpointing the timestamp of this action is essential for building a timeline of the attacker’s behavior.",
+      "What is the timestamp of the attempt to clear the event log? (24-hour UTC format)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "Named Pipes are a Windows mechanism for inter-process communication (IPC). They let different processes / either on the same machine or across the network / exchange data. Think of them as special “virtual files” where one process writes data and another reads it. Each pipe is identified by a unique name, usually in the format: \\\\.\\PIPE\\PipeName Because of this naming convention, they’re called named pipes. Windows uses them heavily for communication between applications, services, and system components. Unfortunately, attackers also take advantage of these pipes to interact with sensitive services, escalate privileges, or move laterally."
+    ]
+  }
+}

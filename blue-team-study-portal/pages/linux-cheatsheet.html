@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Linux CheatSheet | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link active" href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Linux CheatSheet</span></div>
+      <h1>Linux CheatSheet</h1>
+      <p>- wc : Display word, line, and byte counts. - wc -l : Count lines. - wc -w : Count words. - wc -c : Count bytes.</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Linux</span><span class="tag">Network</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Linux CheatSheet</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="linux-cheatsheet.html"><span>Linux CheatSheet</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>- wc : Display word, line, and byte counts. - wc -l : Count lines. - wc -w : Count words. - wc -c : Count bytes.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Linux CheatSheet</li><li>Word and Line Counting</li><li>File Head and Tail</li><li>Text Filtering and Sorting</li><li>Search and Pattern Matching</li><li>Cutting and Extracting Data</li><li>Scripting and JSON Filtering</li><li>File Searching and Processing</li><li>Filesystem Navigation</li><li>File Permissions</li><li>Networking and System Monitoring</li><li>Process Management</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="linux-cheatsheet">Linux CheatSheet</h2>
+<h4 id="word-and-line-counting"><strong>Word and Line Counting</strong></h4>
+<ul>
+<li><strong><code>wc</code></strong> : Display word, line, and byte counts.</li>
+<li><strong><code>wc -l</strong></code> : Count lines.</li>
+<li><strong><code>wc -w</strong></code> : Count words.</li>
+<li><strong><code>wc -c</strong> :</code> Count bytes.</li>
+</ul>
+<hr>
+<h4 id="file-head-and-tail"><strong>File Head and Tail</strong></h4>
+<ul>
+<li><strong><code>head</code></strong> : Display the first 10 lines.</li>
+<li><strong><code>head -n</code></strong> : Display the first <em>n</em> lines.</li>
+<li><strong><code>tail</strong> :</code> Display the last 10 lines.</li>
+<li><strong><code>tail -n</strong></code> : Display the last <em>n</em> lines.</li>
+</ul>
+<hr>
+<h4 id="text-filtering-and-sorting"><strong>Text Filtering and Sorting</strong></h4>
+<ul>
+<li><strong><code>cut file -d &quot;&quot; -f 1</strong></code> : Extract the first field using a delimiter.</li>
+<li><strong><code>sort</code></strong> : Sort lines alphabetically or numerically.</li>
+<li><strong><code>sort -nr</strong></code> : Sort numerically in reverse order.</li>
+<li><strong><code>uniq</strong></code>  :Remove duplicate lines.</li>
+<li><strong><code>uniq -c</strong></code> : Count and display duplicate lines.</li>
+</ul>
+<hr>
+<h4 id="search-and-pattern-matching"><strong>Search and Pattern Matching</strong></h4>
+<ul>
+<li><strong><code>grep -v</code></strong> : Exclude lines matching a pattern.</li>
+<li><strong><code>grep -i</strong></code> : Case-insensitive search.</li>
+<li><strong><code>grep -n</code></strong> : Show line numbers of matches.</li>
+<li><strong><code>grep -B</strong></code> : Show <em>n</em> lines before a match.</li>
+<li><strong><code>grep -A</strong></code> : Show <em>n</em> lines after a match.</li>
+<li><strong><code>grep -C</strong></code> : Show <em>n</em> lines of context around a match.</li>
+<li><strong><code>grep -u</strong></code>  : Remove duplicates</li>
+<li><code>grep -r</code>  : searches recursively through all files in the current directory and its subdirectories for lines containing the word</li>
+<li><code>grep -P '(?=.<em>value1)(?=.</em>value2)'</code> : Match lines containing both <code>value1</code> and <code>value2</code> (any order; requires <code>grep -P</code> for Perl regex).</li>
+<li><code>grep -E 'value1|value2'</code> : Match lines containing either <code>value1</code> or <code>value2</code> (OR).</li>
+<li><strong><code>grep 'x' file | grep 'y'</code></strong> : Match lines containing <strong>both</strong> <code>x</code> and <code>y</code> by piping two <code>grep</code> commands (order doesn't matter).</li>
+</ul>
+<hr>
+<h4 id="cutting-and-extracting-data"><strong>Cutting and Extracting Data</strong></h4>
+<ul>
+<li><strong><code>cut -d 'delimiter' -f field_number</code></strong>: Extract specific field(s) from a delimited file.</li>
+<li><strong><code>cut -d ' ' -f 1</code></strong>: Extract the first field (space-delimited).</li>
+<li><strong><code>cut -c position_range</code></strong>: Extract characters by position (e.g., <code>cut -c 1-5</code> for first 5 characters).</li>
+<li><strong><code>cut -f field_number</code></strong>: Extract fields when the delimiter is tab (default delimiter).</li>
+<li><strong><code>cut -d ',' -f 1,3</code></strong>: Extract the 1st and 3rd fields using a comma as the delimiter.</li>
+</ul>
+<hr>
+<h4 id="scripting-and-json-filtering"><strong>Scripting and JSON Filtering</strong></h4>
+<ul>
+<li><strong><code>awk</code></strong> : Pattern scanning and text processing.</li>
+<li><strong><code>select (.event.PROCESS_ID == 200) logs.json</code></strong> : Filter JSON for events with PROCESS_ID 200.</li>
+</ul>
+<hr>
+<h4 id="file-searching-and-processing"><strong>File Searching and Processing</strong></h4>
+<ul>
+<li><strong><code>find</strong></code> : Search for files and directories.</li>
+<li><strong><code>find /path -name &quot;file.txt&quot;</code></strong> : Search for a file by name in a specific path.</li>
+<li><strong><code>find /path -type d</strong></code> : Search for directories only.</li>
+<li><strong><code>find /path -size +1M</code></strong> : Search for files larger than 1MB.</li>
+<li><strong><code>grep &quot;pattern&quot; file.txt</code></strong> : Search for a pattern in a file.</li>
+<li><strong><code>grep -r &quot;pattern&quot; /path</code></strong> : Search recursively in a directory.</li>
+<li><strong><code>sed -n '10p'</strong></code> : Print the 10th line of a file.</li>
+<li><strong><code>sed -n '10,15p'</code></strong> : Print lines 10 to 15 of a file.</li>
+<li><strong><code>sed 's/old/new/g' file.txt</code></strong> : Replace all occurrences of &quot;old&quot; with &quot;new&quot; in a file.</li>
+<li><strong><code>awk 'NR &lt; 11 {print $0}'</strong></code> : Print the first 10 lines of a file.</li>
+<li><strong><code>awk '{print $1, $3}' file.txt</strong></code> : Print the first and third columns of a file.</li>
+<li><strong><code>sort file.txt</strong></code> : Sort lines in a file alphabetically.</li>
+<li><strong><code>sort -r file.txt</strong></code> : Sort lines in reverse order.</li>
+<li><strong><code>uniq file.txt</strong></code> : Remove duplicate lines in a file.</li>
+<li><strong><code>uniq -c file.txt</strong></code> : Count duplicate lines in a file.</li>
+<li><strong><code>cut -d',' -f1 file.txt</strong></code> : Extract the first field from a comma-separated file.</li>
+<li><strong><code>xargs command</strong></code> : Build and execute commands from standard input.</li>
+</ul>
+<hr>
+<h4 id="filesystem-navigation"><strong>Filesystem Navigation</strong></h4>
+<ul>
+<li><strong><code>ls</strong></code> : List directory contents.</li>
+<li><strong><code>ls -a</code></strong> : Show all files, including hidden files.</li>
+<li><strong><code>ls -h</code></strong> : Show file sizes in human-readable format.</li>
+<li><strong><code>ls -R</code></strong> : Recursively list all subdirectories.</li>
+<li><code>*<em>ls -d /</em></code> : Show only directories.</li>
+<li><strong><code>ls -1</code></strong> : List one file per line.</li>
+<li><strong><code>cd</code></strong> : Change the current directory.</li>
+<li><strong><code>pwd</code></strong> : Print the current directory path.</li>
+<li><strong><code>mkdir</strong></code> : Create a new directory.</li>
+<li><strong><code>rm -r</code></strong> : Remove directories and their contents.</li>
+<li><strong><code>cp</code></strong> : Copy files or directories.</li>
+<li><strong><code>mv</code></strong> : Move or rename files or directories.</li>
+<li><strong><code>history</strong></code> : Show the list of recently executed commands.</li>
+</ul>
+<hr>
+<h4 id="file-permissions"><strong>File Permissions</strong></h4>
+<ul>
+<li><strong><code>chmod</code></strong> : Change file permissions.</li>
+<li><strong><code>chown</code></strong> : Change file ownership.</li>
+<li><strong><code>ls -l</code></strong> : View file permissions and ownership.</li>
+</ul>
+<hr>
+<h4 id="networking-and-system-monitoring"><strong>Networking and System Monitoring</strong></h4>
+<ul>
+<li><strong><code>ping</code></strong> : Check connectivity to a host.</li>
+<li><strong><code>netstat -tuln</code></strong> : List open ports and listening services.</li>
+<li><strong><code>ifconfig</code></strong> : Display network interface information.</li>
+<li><strong><code>top</strong></code> : Monitor system processes in real-time.</li>
+<li><strong><code>htop</code></strong> : Interactive process monitor (if installed).</li>
+<li><strong><code>df -h</strong></code> : Show disk usage in human-readable format.</li>
+<li><strong><code>du -sh</code></strong> : Display the size of a directory.</li>
+<li><strong><code>traceroute</strong></code> : Trace the route packets take to a host.</li>
+</ul>
+<hr>
+<h4 id="process-management"><strong>Process Management</strong></h4>
+<ul>
+<li><strong><code>ps aux</code></strong> : View running processes.</li>
+<li><strong><code>kill -9 [PID]</strong></code> : Force terminate a process.</li>
+<li><strong><code>jobs</code></strong> : List background jobs.</li>
+<li><strong><code>fg</code></strong> : Bring a background job to the foreground.</li>
+<li><strong><code>hash-identifier</strong></code> : Identify hash types</li>
+</ul>
+<hr>
+<h4 id="package-management"><strong>Package Management</strong></h4>
+<ul>
+<li><strong><code>apt update</strong></code> : Update package lists (Debian/Ubuntu).</li>
+<li><strong><code>apt upgrade</code></strong> : Upgrade installed packages.</li>
+<li><strong><code>yum install [package]</strong></code> : Install a package (CentOS/RHEL).</li>
+<li><strong><code>dnf remove [package]</code></strong> : Remove a package (CentOS/RHEL).</li>
+</ul>
+<hr>
+<h4 id="user-and-identity-management"><strong>User and Identity Management</strong></h4>
+<ul>
+<li><strong><code>whoami</strong></code> : Show the current logged-in user.</li>
+<li><strong><code>su</strong></code> : Switch user.</li>
+<li><strong><code>useradd</code></strong> : Add a new user.</li>
+<li><strong><code>userdel</strong></code> : Delete a user.</li>
+<li><strong><code>passwd user</code></strong> : Change the password for a user.</li>
+</ul>
+<hr>
+<h4 id="creating-and-writing-to-files"><strong>Creating and Writing to Files</strong></h4>
+<ul>
+<li><strong><code>touch filename</code></strong> : Create an empty file (e.g., <code>touch file.txt</code>).</li>
+<li><strong><code>echo &quot;text&quot; &gt; file.txt</code></strong> : Create a file and write a line of text to it (overwrites if it exists).</li>
+<li><strong><code>echo &quot;text&quot; &gt;&gt; file.txt</code></strong> : Append a line of text to an existing file.</li>
+<li><strong><code>cat &gt; file.txt</code></strong> : Create a file and type text into it manually (press <code>Ctrl+D</code> to save).</li>
+<li><strong><code>nano file.txt</code></strong> : Create or edit a file using a text editor.</li>
+<li><strong><code>&gt; file.txt</code></strong> : Create an empty file or truncate an existing file.</li>
+</ul>
+<hr>
+<hr>
+<h2 id="linux-modules-extension"><strong>Linux Modules Extension</strong></h2>
+<hr>
+<p><strong><code>du</code></strong> – Estimate disk usage of files and directories.</p>
+<p>Useful for inspecting space usage recursively.</p>
+<ul>
+<li><code>du -sh /var/log</code> : Show total size of <code>/var/log</code> in human-readable format.</li>
+<li><code>du -a --time</code> : Include all files and show last modification times.</li>
+</ul>
+<hr>
+<p><strong><code>egrep</code> / <code>fgrep</code></strong> – Variants of <code>grep</code>.</p>
+<ul>
+<li><code>egrep</code> supports extended regex.</li>
+<li><code>fgrep</code> matches fixed strings (no regex interpretation).</li>
+<li><code>egrep &quot;error|fail&quot;</code> logfile.txt : Match either “error” or “fail”.</li>
+<li><code>fgrep &quot;GET /index.html&quot;</code> access.log : Match this exact line.</li>
+</ul>
+<hr>
+<p><strong><code>tr</code></strong> – Translate or delete characters from input.</p>
+<ul>
+<li><code>tr 'A-Z' 'a-z'</code> : Convert uppercase to lowercase.</li>
+<li><code>cat file | tr -cd '[:alnum:] \n'</code> : Remove non-alphanumeric characters.</li>
+</ul>
+<hr>
+<p><strong><code>awk</code></strong> – Field-based pattern scanning and reporting.</p>
+<ul>
+<li><code>awk '{print $1}' file.txt</code> : Print first word of each line.</li>
+<li><code>awk 'BEGIN { FS=&quot;,&quot; } {print $2}'</code> : Use comma as field separator.</li>
+</ul>
+<hr>
+<p><strong><code>sed</code></strong> – Stream editor for transforming text.</p>
+<ul>
+<li><code>sed 's/old/new/g' file.txt</code> : Replace all “old” with “new”.</li>
+<li><code>sed -n '3,5p' file.txt</code> : Print only lines 3 to 5.</li>
+</ul>
+<hr>
+<p><strong><code>xargs</code></strong> – Build command arguments from standard input.</p>
+<ul>
+<li><code>find . -name '*.log' | xargs rm</code> : Delete all <code>.log</code> files found.</li>
+<li><code>cat list.txt | xargs -n 1 echo</code> : Print each line separately.</li>
+</ul>
+<hr>
+<p><strong><code>curl</code></strong> – Transfer data from or to a server using protocols like HTTP, FTP.</p>
+<ul>
+<li><code>curl -O http://example.com/file.txt</code> : Download file with original name.</li>
+<li><code>curl -I http://example.com</code> : Show headers only (no body).</li>
+</ul>
+<hr>
+<p><strong><code>wget</code></strong> – Command-line file downloader.</p>
+<ul>
+<li><code>wget http://example.com/file.txt</code> : Download file.</li>
+<li><code>wget -r --no-parent http://example.com/folder/</code> : Recursive download.</li>
+</ul>
+<hr>
+<p><strong><code>xxd</code></strong> – Create or reverse hex dumps.</p>
+<ul>
+<li><code>xxd file.bin</code> : View contents as hex and ASCII side-by-side.</li>
+<li><code>xxd -r hexfile.txt &gt; binary.out</code> : Convert hex back to binary.</li>
+</ul>
+<hr>
+<p><strong><code>gpg</code></strong> – GNU Privacy Guard, for encryption and digital signatures.</p>
+<ul>
+<li><code>gpg -c file.txt</code> : Encrypt a file with a passphrase.</li>
+<li><code>gpg file.txt.gpg</code> : Decrypt an encrypted file.</li>
+</ul>
+<hr>
+<p><strong><code>tar</code></strong> – Archive files.</p>
+<ul>
+<li><code>tar -cvf archive.tar dir/</code> : Create <code>.tar</code> archive of directory.</li>
+<li><code>tar -xvf archive.tar</code> : Extract contents.</li>
+</ul>
+<hr>
+<p><strong><code>id</code> / <code>pwd</code> / <code>uname</code></strong> – Identity and system introspection.</p>
+<ul>
+<li><code>id</code> : Show UID, GID, and group memberships.</li>
+<li><code>pwd</code> : Print current working directory.</li>
+<li><code>uname -a</code> : Print system name, kernel version, architecture.</li>
+</ul>
+<hr>
+<p><strong><code>ps</code> / <code>kill</code></strong> – Process listing and termination.</p>
+<ul>
+<li><code>ps aux</code> : Show all running processes with details.</li>
+<li><code>kill -9 1234</code> : Forcefully terminate process with PID 1234.</li>
+<li><code>ps -ef | grep nginx</code> : Search for a specific process.</li>
+</ul>
+<hr>
+<p><strong><code>netstat</code></strong> – View active network connections and listening services.</p>
+<ul>
+<li><code>netstat -tuln</code> : Show listening TCP/UDP ports numerically.</li>
+<li><code>netstat -natp</code> : Show active TCP connections with PID/program names.</li>
+</ul>
+<hr>
+<p><strong><code>less</code> / <code>more</code></strong> – View file contents page-by-page.</p>
+<ul>
+<li><code>less file.txt</code> : Scroll through a large file (supports backward search).</li>
+<li><code>more file.txt</code> : Paginate through file, but no reverse search.</li>
+</ul>
+<hr>
+<p><strong><code>diff</code> / <code>tee</code></strong> – Compare files or duplicate output.</p>
+<ul>
+<li><code>diff file1.txt file2.txt</code> : Show line differences between two files.</li>
+<li><code>command | tee output.txt</code> : Write output to both terminal and a file.</li>
+</ul>
+<hr>
+<p><strong><code>file</code> / <code>stat</code></strong> – Determine file type or metadata.</p>
+<ul>
+<li><code>file filename</code> : Output file type (text, binary, etc).</li>
+<li><code>stat filename</code> : Show timestamps (access, modify, change), permissions, and inode info.</li>
+</ul>
+<hr>
+<p><strong><code>export</code></strong> – Set or modify environment variables.</p>
+<ul>
+<li><code>export PATH=$PATH:/new/path</code> : Temporarily add directory to system path.</li>
+<li><code>export VAR=value</code> : Set shell variable for current session.</li>
+</ul>
+<hr>
+<p><strong><code>reset</code></strong> – Reinitialize terminal settings.</p>
+<ul>
+<li><code>reset</code> : Clear terminal and restore display settings (useful if the screen breaks due to binary dump or bad characters).</li>
+</ul>
+<hr>
+<p><strong><code>systemctl</code> / <code>service</code></strong> – Manage services and daemons.</p>
+<ul>
+<li><code>systemctl status ssh</code> : Check if SSH service is running (systemd systems).</li>
+<li><code>systemctl start apache2</code> / <code>stop</code> / <code>restart</code> / <code>enable</code></li>
+<li><code>service nginx status</code> : For SysVinit systems (older distros).</li>
+</ul>
+<hr>
+<p><button class="image-button" data-src="../assets/images/linux-cheatsheet-image-26609dc6.png" data-alt="image.png"><img src="../assets/images/linux-cheatsheet-image-26609dc6.png" alt="image.png" loading="lazy"></button></p>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#linux-cheatsheet">Linux CheatSheet</a><a href="#word-and-line-counting">Word and Line Counting</a><a href="#file-head-and-tail">File Head and Tail</a><a href="#text-filtering-and-sorting">Text Filtering and Sorting</a><a href="#search-and-pattern-matching">Search and Pattern Matching</a><a href="#cutting-and-extracting-data">Cutting and Extracting Data</a><a href="#scripting-and-json-filtering">Scripting and JSON Filtering</a><a href="#file-searching-and-processing">File Searching and Processing</a><a href="#filesystem-navigation">Filesystem Navigation</a><a href="#file-permissions">File Permissions</a><a href="#networking-and-system-monitoring">Networking and System Monitoring</a><a href="#process-management">Process Management</a><a href="#package-management">Package Management</a><a href="#user-and-identity-management">User and Identity Management</a><a href="#creating-and-writing-to-files">Creating and Writing to Files</a><a href="#linux-modules-extension">Linux Modules Extension</a></details>
+    </div>
+    
+    <footer class="pager"><a href="kerberos-authentication.html">← Kerberos authentication</a><a href="linux-artifacts-forensic-evidence-collection.html">Linux Artifacts &amp; Forensic Evidence Collection →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+{
+  "id": "memory forensics labs/boogeyman 2 (thm)",
+  "title": "Boogeyman 2 (THM)",
+  "slug": "boogeyman-2-thm",
+  "relPath": "Memory Forensics Labs/Boogeyman 2 (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Network",
+    "DFIR",
+    "Memory",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/boogeyman 2 (thm)",
+      "title": "Boogeyman 2 (THM)",
+      "slug": "boogeyman-2-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Boogeyman 2 (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What email was used to send the phishing email?"
+    },
+    {
+      "level": 3,
+      "text": "westaylor23@outlook.com"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the email of the victim employee?"
+    },
+    {
+      "level": 3,
+      "text": "maxine.beck@quicklogisticsorg.onmicrosoft.com"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the name of the attached malicious document?"
+    },
+    {
+      "level": 3,
+      "text": "ResumeWesleyTaylor.doc"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the MD5 hash of the malicious attachment?"
+    },
+    {
+      "level": 3,
+      "text": "52c4384a0b9e248b95804352ebec6c5b"
+    },
+    {
+      "level": 3,
+      "text": "5- What URL is used to download the stage 2 payload based on the document's macro?"
+    },
+    {
+      "level": 3,
+      "text": "https://files.boogeymanisback.lol/aa2a9c53cbb80416d3b47d85538d9971/update.png"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the name of the process that executed the newly downloaded stage 2 payload?"
+    },
+    {
+      "level": 3,
+      "text": "wscript.exe"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the full file path of the malicious stage 2 payload?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\ProgramData\\update.js"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the PID of the process that executed the stage 2 payload?"
+    },
+    {
+      "level": 3,
+      "text": "4260"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the parent PID of the process that executed the stage 2 payload?"
+    },
+    {
+      "level": 3,
+      "text": "1124"
+    },
+    {
+      "level": 3,
+      "text": "10- What URL is used to download the malicious binary executed by the stage 2 payload?"
+    },
+    {
+      "level": 3,
+      "text": "https://files.boogeymanisback.lol/aa2a9c53cbb80416d3b47d85538d9971/update.exe"
+    },
+    {
+      "level": 3,
+      "text": "11- What is the PID of the malicious process used to establish the C2 connection?"
+    },
+    {
+      "level": 3,
+      "text": "6216"
+    },
+    {
+      "level": 3,
+      "text": "12- What is the full file path of the malicious process used to establish the C2 connection?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\Tasks\\updater.exe"
+    },
+    {
+      "level": 3,
+      "text": "13- What is the IP address and port of the C2 connection initiated by the malicious binary? (Format: IP address:port)"
+    },
+    {
+      "level": 3,
+      "text": "128.199.95.189:8080"
+    },
+    {
+      "level": 3,
+      "text": "14- What is the full file path of the malicious email attachment based on the memory dump?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\maxine.beck\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\WQHGZCFI\\ResumeWesleyTaylor (002).doc"
+    },
+    {
+      "level": 3,
+      "text": "15- The attacker implanted a scheduled task right after establishing the c2 callback. What is the full command used by the attacker to maintain persistent access?"
+    },
+    {
+      "level": 3,
+      "text": "schtasks /Create /F /SC DAILY /ST 09:00 /TN Updater /TR 'C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -NonI -W hidden -c \\\"IEX ([Text.Encoding]::UNICODE.GetString([Convert]::FromBase64String((gp HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion debug).debug)))\\\"’"
+    }
+  ],
+  "overview": "Maxine, a Human Resource Specialist working for Quick Logistics LLC, received an application from one of the open positions in the company. Unbeknownst to her, the attached resume was malicious and compromised her workstation.",
+  "study": {
+    "overview": "Maxine, a Human Resource Specialist working for Quick Logistics LLC, received an application from one of the open positions in the company. Unbeknownst to her, the attached resume was malicious and compromised her workstation.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Boogeyman 2 (THM)",
+      "Scenario",
+      "1- What email was used to send the phishing email?",
+      "westaylor23@outlook.com",
+      "2- What is the email of the victim employee?",
+      "maxine.beck@quicklogisticsorg.onmicrosoft.com",
+      "3- What is the name of the attached malicious document?",
+      "ResumeWesleyTaylor.doc",
+      "4- What is the MD5 hash of the malicious attachment?",
+      "52c4384a0b9e248b95804352ebec6c5b",
+      "5- What URL is used to download the stage 2 payload based on the document's macro?",
+      "https://files.boogeymanisback.lol/aa2a9c53cbb80416d3b47d85538d9971/update.png"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell",
+      "Volatility"
+    ],
+    "tips": [
+      "olevba is a tool for parsing OLE and OpenXML files, such as Microsoft Office documents (e.g., Word, Excel). It can detect VBA macros, extract their source code in plain text, decode common malware obfuscation techniques (Hex, Base64, StrReverse, Dridex), and identify security-related patterns like auto-executable macros, suspicious VBA keywords, and potential IOCs (e.g., IP addresses, URLs, executable names)."
+    ]
+  }
+}

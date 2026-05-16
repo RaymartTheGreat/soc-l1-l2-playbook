@@ -1,0 +1,182 @@
+{
+  "id": "sigma/sighunt",
+  "title": "SigHunt",
+  "slug": "sighunt",
+  "relPath": "Sigma/SigHunt.md",
+  "level": "L1.5",
+  "curriculumLevelId": null,
+  "curriculumSectionId": null,
+  "curriculumSectionTitle": null,
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Phishing",
+    "Web",
+    "Detection",
+    "Incident Response",
+    "Persistence",
+    "Sigma"
+  ],
+  "mitre": [
+    "T1110"
+  ],
+  "parentId": "sigma",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "sigma"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "sigma",
+      "title": "Sigma",
+      "slug": "sigma-0592b140"
+    },
+    {
+      "id": "sigma/sighunt",
+      "title": "SigHunt",
+      "slug": "sighunt"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "SigHunt"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Indicators of Compromise"
+    },
+    {
+      "level": 3,
+      "text": "Rule Creation Standards"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the Challenge 1 flag?"
+    },
+    {
+      "level": 3,
+      "text": "THM{ph1sh1ngmsht4101}"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the Challenge 2 flag?"
+    },
+    {
+      "level": 3,
+      "text": "THM{n0tjust4c3rts}"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the Challenge 3 flag?"
+    },
+    {
+      "level": 3,
+      "text": "THM{cl4ss1cn3tc4tr3vs}"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the Challenge 4 flag?"
+    },
+    {
+      "level": 3,
+      "text": "THM{p0wp0wp0w3rup3num}"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the Challenge 5 flag?"
+    },
+    {
+      "level": 3,
+      "text": "THM{ov3rpr1v1l3g3ds3rv1c3}"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the Challenge 6 flag?"
+    },
+    {
+      "level": 3,
+      "text": "THM{h1d3m31nrun0nc3}"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the Challenge 7 flag?"
+    },
+    {
+      "level": 3,
+      "text": "THM{c0ll3ct1ng7zftw}"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the Challenge 8 flag?"
+    },
+    {
+      "level": 3,
+      "text": "THM{cUrling0nw1nd0ws}"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the Challenge 9 flag?"
+    },
+    {
+      "level": 3,
+      "text": "THM{huntm3pl34s3}"
+    }
+  ],
+  "overview": "You are hired as a Detection Engineer for your organization. During your first week, a ransomware incident has just concluded, and the Incident Responders of your organization have successfully mitigated the threat. With their collective effort, the Incident Response (IR) Team provided the IOCs based on their investigation. Your task is to create Sigma rules",
+  "study": {
+    "overview": "You are hired as a Detection Engineer for your organization. During your first week, a ransomware incident has just concluded, and the Incident Responders of your organization have successfully mitigated the threat. With their collective effort, the Incident Response (IR) Team provided the IOCs based on their investigation. Your task is to create Sigma rules",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "SigHunt",
+      "Scenario",
+      "Indicators of Compromise",
+      "Rule Creation Standards",
+      "1- What is the Challenge 1 flag?",
+      "THM{ph1sh1ngmsht4101}",
+      "2- What is the Challenge 2 flag?",
+      "THM{n0tjust4c3rts}",
+      "3- What is the Challenge 3 flag?",
+      "THM{cl4ss1cn3tc4tr3vs}",
+      "4- What is the Challenge 4 flag?",
+      "THM{p0wp0wp0w3rup3num}"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "yaml",
+        "code": "title: Malicious mshta\nid: #Universally Unique Identifier (UUID) Generate one from https://www.uuidgenerator.net\nstatus: #stage of your rule testing \ndescription: Detects the usage of Malicious HTML Application\nauthor: mama mia albertooooo \ndate: #When was the rule written.\nmodified: #When was it updated\nlogsource:\n  product: windows\n  service: sysmon\ndetection:\n  selection:\n     EventID: 1 #Search identifiers for the detection. Refer to the required fields provided in the task. \n     Image: C:\\Windows\\SysWOW64\\mshta.exe\n     ParentImage: C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\n  condition: selection #Action to be taken. Can use condition operators such as OR, AND, NOT, \nfields: #List of associated fields that are important for the detection\n\nfalsepositives: #Any possible false positives that could trigger the rule.\n\nlevel: medium #Severity level of the detection rule.\ntags: #Associated TTPs from MITRE ATT&CK\n  - attack.credential_access #MITRE Tactic\n  - attack.t1110 #MITRE Technique"
+      },
+      {
+        "language": "yaml",
+        "code": "detection:\n  selection1:\n    EventID: 1\n    Image|contains: 'powershell.exe'\n    CommandLine|contains|all:\n      - 'downloadstring'\n      - 'powershell'\n      - 'Invoke-AllChecks'\n      - 'new-object net.webclient'\n\n  condition: selection1"
+      },
+      {
+        "language": "yaml",
+        "code": "detection:\n  selection:\n    EventID: 1\n    Image|contains:\n      - 'reg.exe'\n    CommandLine|contains|all:\n      - ' add '\n      - 'RunOnce'\n\n  condition: selection"
+      },
+      {
+        "language": "yaml",
+        "code": "detection:\n  selection:\n    EventID: 1\n    Image|endswith: '\\curl.exe'\n    CommandLine|contains|all:\n      - '.zip'\n      - 'curl'\n      - ' -d '\n\n  condition: selection"
+      }
+    ],
+    "tools": [
+      "Sysmon",
+      "PowerShell",
+      "Sigma"
+    ],
+    "tips": []
+  }
+}

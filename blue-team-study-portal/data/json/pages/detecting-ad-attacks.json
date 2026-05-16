@@ -1,0 +1,65 @@
+{
+  "id": "detecting ad attacks",
+  "title": "Detecting AD Attacks",
+  "slug": "detecting-ad-attacks",
+  "relPath": "Detecting AD Attacks.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Active Directory"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "detecting ad attacks/dcsync",
+    "detecting ad attacks/kerberoasting",
+    "detecting ad attacks/pass-the-hash (pth)",
+    "detecting ad attacks/pass-the-ticket (ptt)",
+    "detecting ad attacks/overpass-the-hash",
+    "detecting ad attacks/golden ticket",
+    "detecting ad attacks/silver ticket",
+    "detecting ad attacks/dcshadow",
+    "detecting ad attacks/as-reproasting",
+    "detecting ad attacks/skeleton key",
+    "detecting ad attacks/ntlm relay attacks",
+    "detecting ad attacks/llmnr nbt-ns poisoning",
+    "detecting ad attacks/credential dumping (general)",
+    "detecting ad attacks/attacker targets in active directory environments",
+    "detecting ad attacks/putting it all together ad attack scenario"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Detecting AD Attacks"
+    }
+  ],
+  "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+  "study": {
+    "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Detecting AD Attacks"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

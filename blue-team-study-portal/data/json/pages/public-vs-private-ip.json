@@ -1,0 +1,67 @@
+{
+  "id": "network/fundamentals/public vs private ip",
+  "title": "Public vs Private IP",
+  "slug": "public-vs-private-ip",
+  "relPath": "Network/Fundamentals/Public vs Private IP.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/public vs private ip",
+      "title": "Public vs Private IP",
+      "slug": "public-vs-private-ip"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Public vs Private IP"
+    },
+    {
+      "level": 3,
+      "text": "Private IP Ranges (Memorize These for Fast Identification)"
+    }
+  ],
+  "overview": "| Type | Private IP | Public IP | | --- | --- | --- | | Definition | Used within local networks (home, office, etc.) | Used to communicate over the internet | | Routing | Not routable on the internet | Routable over the internet | | IP Ranges | 10.0.0.0 – 10.255.255.255 (10.0.0.0/8) 172.16.0.0 – 172.31.255.255 (172.16.0.0/12) 192.168.0.0 – 192.168.255.255 (1",
+  "study": {
+    "overview": "| Type | Private IP | Public IP | | --- | --- | --- | | Definition | Used within local networks (home, office, etc.) | Used to communicate over the internet | | Routing | Not routable on the internet | Routable over the internet | | IP Ranges | 10.0.0.0 – 10.255.255.255 (10.0.0.0/8) 172.16.0.0 – 172.31.255.255 (172.16.0.0/12) 192.168.0.0 – 192.168.255.255 (1",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Public vs Private IP",
+      "Private IP Ranges (Memorize These for Fast Identification)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

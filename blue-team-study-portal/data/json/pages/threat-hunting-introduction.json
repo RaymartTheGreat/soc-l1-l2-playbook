@@ -1,0 +1,99 @@
+{
+  "id": "threat hunting module/threat hunting introduction",
+  "title": "Threat Hunting Introduction",
+  "slug": "threat-hunting-introduction",
+  "relPath": "Threat Hunting module/Threat Hunting Introduction.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Detection",
+    "Threat Intel",
+    "Incident Response",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting module",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting module"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting module",
+      "title": "Threat Hunting module",
+      "slug": "threat-hunting-module"
+    },
+    {
+      "id": "threat hunting module/threat hunting introduction",
+      "title": "Threat Hunting Introduction",
+      "slug": "threat-hunting-introduction"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Threat Hunting: Introduction"
+    },
+    {
+      "level": 2,
+      "text": "1- Overview"
+    },
+    {
+      "level": 2,
+      "text": "2- Threat Hunting vs. Incident Response"
+    },
+    {
+      "level": 2,
+      "text": "3- Threat Intelligence"
+    },
+    {
+      "level": 2,
+      "text": "4- What Do We Hunt For?"
+    },
+    {
+      "level": 2,
+      "text": "5- Hunting Methodologies"
+    },
+    {
+      "level": 2,
+      "text": "6- Leveraging the MITRE ATT&CK Navigator"
+    },
+    {
+      "level": 2,
+      "text": "7- When to Move On from a Hunt"
+    },
+    {
+      "level": 2,
+      "text": "8- Why Threat Hunting Matters"
+    }
+  ],
+  "overview": "- Definition: Threat hunting is a proactive approach to identify malicious activity in an organization by actively searching for indicators of compromise rather than waiting for alerts. - Purpose: Strengthen security posture and complement reactive Incident Response processes.",
+  "study": {
+    "overview": "- Definition: Threat hunting is a proactive approach to identify malicious activity in an organization by actively searching for indicators of compromise rather than waiting for alerts. - Purpose: Strengthen security posture and complement reactive Incident Response processes.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Threat Hunting: Introduction",
+      "1- Overview",
+      "2- Threat Hunting vs. Incident Response",
+      "3- Threat Intelligence",
+      "4- What Do We Hunt For?",
+      "5- Hunting Methodologies",
+      "6- Leveraging the MITRE ATT&CK Navigator",
+      "7- When to Move On from a Hunt",
+      "8- Why Threat Hunting Matters"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

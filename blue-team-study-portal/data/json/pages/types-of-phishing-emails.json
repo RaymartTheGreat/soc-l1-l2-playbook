@@ -1,0 +1,124 @@
+{
+  "id": "phishing analysis/types of phishing emails",
+  "title": "Types of Phishing Emails",
+  "slug": "types-of-phishing-emails",
+  "relPath": "Phishing analysis/Types of Phishing Emails.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-initial-triage",
+  "curriculumSectionTitle": "Initial Triage & Analysis",
+  "tags": [
+    "Phishing",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "phishing analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "phishing analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "phishing analysis",
+      "title": "Phishing analysis",
+      "slug": "phishing-analysis"
+    },
+    {
+      "id": "phishing analysis/types of phishing emails",
+      "title": "Types of Phishing Emails",
+      "slug": "types-of-phishing-emails"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Types of Phishing Emails"
+    },
+    {
+      "level": 2,
+      "text": "Reconnaissance Emails (Recon Emails)"
+    },
+    {
+      "level": 3,
+      "text": "Spam Recon Emails"
+    },
+    {
+      "level": 3,
+      "text": "Social Engineering Recon Emails"
+    },
+    {
+      "level": 3,
+      "text": "Tracking Pixel Emails"
+    },
+    {
+      "level": 2,
+      "text": "Credential Harvesters"
+    },
+    {
+      "level": 2,
+      "text": "Impersonation & Social Engineering Attacks"
+    },
+    {
+      "level": 2,
+      "text": "Smishing (SMS Phishing)"
+    },
+    {
+      "level": 2,
+      "text": "Quishing (QR Code Phishing)"
+    },
+    {
+      "level": 2,
+      "text": "Vishing (Voice Phishing)"
+    },
+    {
+      "level": 2,
+      "text": "Whaling"
+    },
+    {
+      "level": 2,
+      "text": "Malicious Attachments"
+    },
+    {
+      "level": 2,
+      "text": "Hosted Malware (Malicious Links)"
+    },
+    {
+      "level": 2,
+      "text": "Malspam vs. Spam"
+    },
+    {
+      "level": 2,
+      "text": "Extortion / Blackmail Emails"
+    }
+  ],
+  "overview": "Recon emails are used to check if a mailbox is active. If confirmed, the address can be targeted later with more focused attacks. There are a few types of recon tactics:",
+  "study": {
+    "overview": "Recon emails are used to check if a mailbox is active. If confirmed, the address can be targeted later with more focused attacks. There are a few types of recon tactics:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Types of Phishing Emails",
+      "Reconnaissance Emails (Recon Emails)",
+      "Spam Recon Emails",
+      "Social Engineering Recon Emails",
+      "Tracking Pixel Emails",
+      "Credential Harvesters",
+      "Impersonation & Social Engineering Attacks",
+      "Smishing (SMS Phishing)",
+      "Quishing (QR Code Phishing)",
+      "Vishing (Voice Phishing)",
+      "Whaling",
+      "Malicious Attachments"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

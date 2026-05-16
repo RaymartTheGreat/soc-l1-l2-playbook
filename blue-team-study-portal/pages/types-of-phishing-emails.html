@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Types of Phishing Emails | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="phishing-analysis.html">Phishing analysis</a><span>/</span><span>Types of Phishing Emails</span></div>
+      <h1>Types of Phishing Emails</h1>
+      <p>Recon emails are used to check if a mailbox is active. If confirmed, the address can be targeted later with more focused attacks. There are a few types of recon tactics:</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Phishing</span><span class="tag">Web</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Phishing analysis</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-analysis.html"><span>Phishing analysis</span><em>L1</em></a>
+      <b>14</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-anatomy.html"><span>Email Anatomy</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-protocols-722922f5.html"><span>Email Protocols</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-authentication.html"><span>Email Authentication</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing.html"><span>Phishing</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="types-of-phishing-emails.html"><span>Types of Phishing Emails</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="tracking-pixel-reconnaissance.html"><span>Tracking Pixel Reconnaissance</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-analysis-methodology.html"><span>Phishing Analysis Methodology</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-attack-techniques.html"><span>Phishing Attack Techniques</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-security.html"><span>Email Security</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-header-artifact-analysis.html"><span>Email Header &amp; Artifact Analysis</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="url-analysis-in-phishing-emails.html"><span>URL Analysis in Phishing Emails</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="attachment-analysis.html"><span>Attachment Analysis</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="tools.html"><span>Tools</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="writing-reports-after-phishing-email-analysis.html"><span>Writing Reports After Phishing Email Analysis</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Recon emails are used to check if a mailbox is active. If confirmed, the address can be targeted later with more focused attacks. There are a few types of recon tactics:</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Types of Phishing Emails</li><li>Reconnaissance Emails (Recon Emails)</li><li>Spam Recon Emails</li><li>Social Engineering Recon Emails</li><li>Tracking Pixel Emails</li><li>Credential Harvesters</li><li>Impersonation &amp; Social Engineering Attacks</li><li>Smishing (SMS Phishing)</li><li>Quishing (QR Code Phishing)</li><li>Vishing (Voice Phishing)</li><li>Whaling</li><li>Malicious Attachments</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="types-of-phishing-emails">Types of Phishing Emails</h2>
+<hr>
+<h3 id="reconnaissance-emails-recon-emails"><strong>Reconnaissance Emails (Recon Emails)</strong></h3>
+<p>Recon emails are used to check if a mailbox is active. If confirmed, the address can be targeted later with more focused attacks. There are a few types of recon tactics:</p>
+<h4 id="spam-recon-emails"><strong>Spam Recon Emails</strong></h4>
+<ul>
+<li>Contain meaningless or random text (e.g., &quot;ajsdhf&quot;).</li>
+<li>Sent to check if the mailbox returns a bounce message like “undeliverable.”</li>
+<li>No bounce = the address is active.</li>
+</ul>
+<h4 id="social-engineering-recon-emails"><strong>Social Engineering Recon Emails</strong></h4>
+<ul>
+<li>Designed to provoke a response using urgency or impersonation.</li>
+<li>Often sent from lookalike domains or spoofed identities (e.g., pretending to be a manager).</li>
+<li>Common in business email compromise (BEC) attacks.</li>
+</ul>
+<h4 id="tracking-pixel-emails"><strong>Tracking Pixel Emails</strong></h4>
+<ul>
+<li>Use hidden images to confirm the email was opened.</li>
+<li>When loaded, the pixel connects back to the attacker’s server.</li>
+</ul>
+<hr>
+<h3 id="credential-harvesters"><strong>Credential Harvesters</strong></h3>
+<p>These phishing emails are designed to steal login credentials. They usually:</p>
+<ul>
+<li>Mimic popular services (Outlook, Amazon, DHL).</li>
+<li>Include a link or button that leads to a fake login page.</li>
+<li>Capture entered credentials and forward them to the attacker.</li>
+</ul>
+<p>In targeted attacks, these fake login pages may match the branding of the victim's organization, making them harder to spot.</p>
+<hr>
+<h3 id="impersonation-social-engineering-attacks"><strong>Impersonation &amp; Social Engineering Attacks</strong></h3>
+<p>Phishing works by tricking users into trusting the sender. Social engineering is the core technique behind this.</p>
+<p><strong>Examples include:</strong></p>
+<ul>
+<li>Posing as executives to request wire transfers or sensitive info.</li>
+<li>Faking messages from HR, IT, or trusted vendors.</li>
+<li>Using urgency, authority, or fear to rush decisions.</li>
+</ul>
+<p>Most phishing emails rely on <strong>some level of social engineering</strong> — the attacker is trying to manipulate the person, not hack the system.</p>
+<hr>
+<h3 id="smishing-sms-phishing"><strong>Smishing (SMS Phishing)</strong></h3>
+<ul>
+<li>Sent via text message with a malicious link.</li>
+<li>Often impersonate banks, delivery services, or payment platforms.</li>
+<li>May link to fake login portals or request sensitive info.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>A fake PayPal message with a link like <code>paypal.verification-procedure[.]com</code>.</p>
+<hr>
+<h3 id="quishing-qr-code-phishing"><strong>Quishing (QR Code Phishing)</strong></h3>
+<ul>
+<li>Uses QR codes to direct victims to malicious websites.</li>
+<li>Often included in emails, posters, or printed materials.</li>
+<li>The user scans the code, thinking it’s a trusted resource, and is redirected to a phishing site or malware download.</li>
+<li>Harder to detect visually since URLs are hidden until scanned.</li>
+</ul>
+<hr>
+<h3 id="vishing-voice-phishing"><strong>Vishing (Voice Phishing)</strong></h3>
+<ul>
+<li>Conducted over the phone.</li>
+<li>Attackers impersonate support staff, vendors, or internal employees.</li>
+<li>May ask for login credentials, payment authorization, or account access.</li>
+</ul>
+<hr>
+<h3 id="whaling"><strong>Whaling</strong></h3>
+<p>Whaling is highly targeted phishing aimed at senior executives (e.g., CEO, CFO, COO). The stakes are higher, and the emails are usually:</p>
+<ul>
+<li>Refined using open-source info (e.g., LinkedIn, press releases).</li>
+<li>Personalized to appear legitimate.</li>
+<li>Designed to extract credentials, deliver malware, or request sensitive data.</li>
+</ul>
+<hr>
+<h3 id="malicious-attachments"><strong>Malicious Attachments</strong></h3>
+<p>Attackers often use Microsoft Office files (Word, Excel) with <strong>macros</strong> to deliver malware. Macros are disabled by default, so attackers:</p>
+<ul>
+<li>Embed fake instructions to trick users into enabling macros.</li>
+<li>Once enabled, the macro runs and downloads malware (ransomware, keyloggers, trojans, etc.).</li>
+</ul>
+<p><strong>Best practices:</strong></p>
+<ul>
+<li>Disable macros by default.</li>
+<li>Educate users on recognizing suspicious documents.</li>
+<li>Use attack surface reduction (ASR) rules in enterprise environments.</li>
+</ul>
+<hr>
+<h3 id="hosted-malware-malicious-links"><strong>Hosted Malware (Malicious Links)</strong></h3>
+<p>Instead of attaching files, attackers may host malware on external sites and include links in phishing emails.</p>
+<p><strong>Two common scenarios:</strong></p>
+<ul>
+<li><strong>Malicious Domains</strong> – Cheap, newly registered domains created just to host malware.</li>
+<li><strong>Compromised Legitimate Sites</strong> – Real websites that have been hacked and used to host malicious files in hidden directories.</li>
+</ul>
+<p>Once clicked, these links download malware to the user’s system.</p>
+<hr>
+<h3 id="malspam-vs.-spam"><strong>Malspam vs. Spam</strong></h3>
+<ul>
+<li><strong>Spam</strong> – Unwanted or unexpected emails, often marketing or promotional. Not always malicious.</li>
+<li><strong>Malspam</strong> – Mass-distributed malicious emails (e.g., malware campaigns, phishing lures).</li>
+</ul>
+<p><strong>Example malspam topics:</strong></p>
+<ul>
+<li>Fake COVID-19 alerts</li>
+<li>Cryptocurrency scams</li>
+<li>Diet products or “get rich” schemes</li>
+<li>Adult content and fake dating offers</li>
+</ul>
+<p>A lot of malspam blends in with junk email. That’s why user awareness and filtering are critical.</p>
+<hr>
+<h3 id="extortion-blackmail-emails"><strong>Extortion / Blackmail Emails</strong></h3>
+<p>These messages threaten to expose sensitive data or embarrassing behavior unless the recipient pays a ransom (usually in cryptocurrency) or performs some action.</p>
+<ul>
+<li><strong>Sextortion Scams</strong></li>
+</ul>
+<p>Attackers claim they’ve recorded you via webcam or have compromising screenshots. Demand payment (e.g., “send 0.5 BTC or I’ll leak your video to all your contacts”).</p>
+<ul>
+<li><strong>Data Breach Threats</strong></li>
+</ul>
+<p>“We’ve stolen your password/emails. If you don’t pay, we’ll sell your data on the dark web.” Often they include a real password you’ve used (from a prior breach) to prove legitimacy.</p>
+<ul>
+<li><strong>Ransomware Precursor Emails</strong></li>
+</ul>
+<p>Demand upfront payment or you’ll be hit with file-encrypting malware or DDoS attacks.</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#types-of-phishing-emails">Types of Phishing Emails</a><a href="#reconnaissance-emails-recon-emails">Reconnaissance Emails (Recon Emails)</a><a href="#spam-recon-emails">Spam Recon Emails</a><a href="#social-engineering-recon-emails">Social Engineering Recon Emails</a><a href="#tracking-pixel-emails">Tracking Pixel Emails</a><a href="#credential-harvesters">Credential Harvesters</a><a href="#impersonation-social-engineering-attacks">Impersonation &amp; Social Engineering Attacks</a><a href="#smishing-sms-phishing">Smishing (SMS Phishing)</a><a href="#quishing-qr-code-phishing">Quishing (QR Code Phishing)</a><a href="#vishing-voice-phishing">Vishing (Voice Phishing)</a><a href="#whaling">Whaling</a><a href="#malicious-attachments">Malicious Attachments</a><a href="#hosted-malware-malicious-links">Hosted Malware (Malicious Links)</a><a href="#malspam-vs.-spam">Malspam vs. Spam</a><a href="#extortion-blackmail-emails">Extortion / Blackmail Emails</a></details>
+    </div>
+    
+    <footer class="pager"><a href="phishing.html">← Phishing</a><a href="tracking-pixel-reconnaissance.html">Tracking Pixel Reconnaissance →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

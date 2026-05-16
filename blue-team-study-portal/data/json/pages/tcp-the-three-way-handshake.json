@@ -1,0 +1,114 @@
+{
+  "id": "network/fundamentals/tcp (the three-way handshake)",
+  "title": "TCP (The Three-Way Handshake)",
+  "slug": "tcp-the-three-way-handshake",
+  "relPath": "Network/Fundamentals/TCP (The Three-Way Handshake).md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network",
+    "Web",
+    "Memory",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/tcp (the three-way handshake)",
+      "title": "TCP (The Three-Way Handshake)",
+      "slug": "tcp-the-three-way-handshake"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "TCP (The Three-Way Handshake)"
+    },
+    {
+      "level": 3,
+      "text": "Key Characteristics"
+    },
+    {
+      "level": 3,
+      "text": "TCP Segment Structure"
+    },
+    {
+      "level": 3,
+      "text": "Three‑Way Handshake"
+    },
+    {
+      "level": 3,
+      "text": "Data Transfer & Flow Control"
+    },
+    {
+      "level": 3,
+      "text": "Connection Teardown"
+    },
+    {
+      "level": 3,
+      "text": "Advantages & Disadvantages"
+    },
+    {
+      "level": 3,
+      "text": "Understanding the sequence and acknowledgment numbers"
+    },
+    {
+      "level": 3,
+      "text": "Example handshake and number progression"
+    },
+    {
+      "level": 3,
+      "text": "Why these numbers matter for detection and hijacking"
+    },
+    {
+      "level": 3,
+      "text": "Quick example of an injected packet that would be suspicious"
+    }
+  ],
+  "overview": "TCP is a connection‑oriented, reliable transport‑layer protocol. Before any data is exchanged, TCP establishes a session using a three‑way handshake, then guarantees in‑order, error‑free delivery via sequencing, acknowledgments, flow control, and retransmissions. Finally, it cleanly tears down the connection with a four‑step FIN sequence.",
+  "study": {
+    "overview": "TCP is a connection‑oriented, reliable transport‑layer protocol. Before any data is exchanged, TCP establishes a session using a three‑way handshake, then guarantees in‑order, error‑free delivery via sequencing, acknowledgments, flow control, and retransmissions. Finally, it cleanly tears down the connection with a four‑step FIN sequence.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "TCP (The Three-Way Handshake)",
+      "Key Characteristics",
+      "TCP Segment Structure",
+      "Three‑Way Handshake",
+      "Data Transfer & Flow Control",
+      "Connection Teardown",
+      "Advantages & Disadvantages",
+      "Understanding the sequence and acknowledgment numbers",
+      "Example handshake and number progression",
+      "Why these numbers matter for detection and hijacking",
+      "Quick example of an injected packet that would be suspicious"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

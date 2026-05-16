@@ -1,0 +1,112 @@
+{
+  "id": "intro to powershell",
+  "title": "Intro to PowerShell",
+  "slug": "intro-to-powershell",
+  "relPath": "Intro to PowerShell.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-os-command-line",
+  "curriculumSectionTitle": "Operating System & Command Line Basics",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Kerberos",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "intro to powershell",
+      "title": "Intro to PowerShell",
+      "slug": "intro-to-powershell"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Intro to PowerShell"
+    },
+    {
+      "level": 2,
+      "text": "Quick Mental Map"
+    },
+    {
+      "level": 2,
+      "text": "How to discover commands & help"
+    },
+    {
+      "level": 2,
+      "text": "Cmdlets, parameters & aliases"
+    },
+    {
+      "level": 2,
+      "text": "Useful Basic Cmdlets"
+    },
+    {
+      "level": 2,
+      "text": "Common parameters & switches"
+    },
+    {
+      "level": 2,
+      "text": "Exporting & importing data"
+    },
+    {
+      "level": 2,
+      "text": "Modules, remoting & jobs"
+    },
+    {
+      "level": 2,
+      "text": "Scripting essentials"
+    },
+    {
+      "level": 2,
+      "text": "Error handling & debugging"
+    },
+    {
+      "level": 2,
+      "text": "Quick practical examples"
+    },
+    {
+      "level": 2,
+      "text": "Short cheat-sheet"
+    }
+  ],
+  "overview": "PowerShell is an object-oriented command-line shell, scripting language, and remote-management framework built on .NET",
+  "study": {
+    "overview": "PowerShell is an object-oriented command-line shell, scripting language, and remote-management framework built on .NET",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Intro to PowerShell",
+      "Quick Mental Map",
+      "How to discover commands & help",
+      "Cmdlets, parameters & aliases",
+      "Useful Basic Cmdlets",
+      "Common parameters & switches",
+      "Exporting & importing data",
+      "Modules, remoting & jobs",
+      "Scripting essentials",
+      "Error handling & debugging",
+      "Quick practical examples",
+      "Short cheat-sheet"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": [
+      "If you want to learn PowerShell, I recommend these YouTube resources:"
+    ]
+  }
+}

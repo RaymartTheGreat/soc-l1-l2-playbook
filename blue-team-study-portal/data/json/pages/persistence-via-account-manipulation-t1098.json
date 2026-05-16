@@ -1,0 +1,104 @@
+{
+  "id": "hunting persistence (mitre ta0003)/persistence via account manipulation (t1098)",
+  "title": "Persistence via Account Manipulation (T1098)",
+  "slug": "persistence-via-account-manipulation-t1098",
+  "relPath": "Hunting Persistence (MITRE TA0003)/Persistence via Account Manipulation (T1098).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1098",
+    "TA0003"
+  ],
+  "parentId": "hunting persistence (mitre ta0003)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "hunting persistence (mitre ta0003)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "hunting persistence (mitre ta0003)",
+      "title": "Hunting Persistence (MITRE TA0003)",
+      "slug": "hunting-persistence-mitre-ta0003"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/persistence via account manipulation (t1098)",
+      "title": "Persistence via Account Manipulation (T1098)",
+      "slug": "persistence-via-account-manipulation-t1098"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Persistence via Account Manipulation (T1098)"
+    },
+    {
+      "level": 3,
+      "text": "How Attackers Use Account Manipulation for Persistence"
+    },
+    {
+      "level": 3,
+      "text": "Detection & Logging"
+    },
+    {
+      "level": 3,
+      "text": "Windows Event Logs (⭐ = High Priority)"
+    },
+    {
+      "level": 3,
+      "text": "Sysmon Event IDs (⭐ = High Priority)"
+    },
+    {
+      "level": 3,
+      "text": "Threat Hunting Tips"
+    },
+    {
+      "level": 3,
+      "text": "Splunk Query for Account Persistence Detection"
+    }
+  ],
+  "overview": "Persistence through account manipulation involves creating new accounts or modifying existing ones to maintain long-term access to a compromised system. Attackers leverage these accounts to avoid detection and regain access even after reboots or security measures.",
+  "study": {
+    "overview": "Persistence through account manipulation involves creating new accounts or modifying existing ones to maintain long-term access to a compromised system. Attackers leverage these accounts to avoid detection and regain access even after reboots or security measures.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Persistence via Account Manipulation (T1098)",
+      "How Attackers Use Account Manipulation for Persistence",
+      "Detection & Logging",
+      "Windows Event Logs (⭐ = High Priority)",
+      "Sysmon Event IDs (⭐ = High Priority)",
+      "Threat Hunting Tips",
+      "Splunk Query for Account Persistence Detection"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "python",
+        "code": "index=windows (EventCode=4720 OR EventCode=4732 OR EventCode=4781 OR EventCode=4648 OR EventCode=4672)\n| stats count by EventCode, Account_Name, TargetUserName, Logon_Type, Group_Name, ComputerName\n| rename Account_Name AS \"Attacker Account\", TargetUserName AS \"Modified User\", Group_Name AS \"Privilege Escalation\""
+      }
+    ],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

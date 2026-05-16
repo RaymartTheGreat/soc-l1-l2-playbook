@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>SIEM | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link active" href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>SIEM</span></div>
+      <h1>SIEM</h1>
+      <p>SIEM (Security Information and Event Management) is a cybersecurity solution that collects, aggregates, normalizes, and analyzes logs and event data from across an organization’s IT infrastructure to detect threats, support incident response, and facilitate forensic investigations.</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Splunk</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Sysmon</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">DFIR</span><span class="tag">Detection</span><span class="tag">Incident Response</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>SIEM</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="siem.html"><span>SIEM</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>SIEM (Security Information and Event Management) is a cybersecurity solution that collects, aggregates, normalizes, and analyzes logs and event data from across an organization’s IT infrastructure to detect threats, support incident response, and facilitate forensic investigations.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>SIEM</li><li>Log Sources</li><li>SIEM Architecture and Workflow</li><li>Core Capabilities</li><li>Dashboards and Reporting</li><li>Correlation Rules</li><li>Rule Creation Steps:</li><li>SIEM Rules: Out of the Box vs Custom</li><li>What Are SIEM Rules?</li><li>Examples of Rule Functionality</li><li>False‑Positive Reduction &amp; Tuning</li><li>Writing Search Queries &amp; Alerts</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>Splunk</li><li>SIEM</li><li>Sysmon</li><li>PowerShell</li><li>Osquery</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="siem">SIEM</h2>
+<p><strong>SIEM (Security Information and Event Management) is a cybersecurity solution that collects, aggregates, normalizes, and analyzes logs and event data from across an organization’s IT infrastructure to detect threats, support incident response, and facilitate forensic investigations.</strong></p>
+<p><a class="external-asset" href="https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/49a6c77bbfcef3a385e505df805208c2a0b49ab2aef86b91fa3e8c5239024bc66b58c2c5271a72ae38e143222b98.png">External image reference: https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/49a6c77bbfcef3a385e505df805208c2a0b49ab2aef86b91fa3e8c5239024bc66b58c2c5271a72ae38e143222b98.png</a></p>
+<hr>
+<h3 id="log-sources">Log Sources</h3>
+<p><strong>Host‑Centric Logs</strong></p>
+<ul>
+<li>Windows Event Logs (e.g., login attempts, file access)</li>
+<li>Sysmon (process execution, registry changes)</li>
+<li>Osquery</li>
+<li>Examples:</li>
+<ul>
+<li>User accessing or modifying a file</li>
+<li>Process execution (Event ID 4688)</li>
+<li>Registry key creation or deletion</li>
+<li>PowerShell command execution</li>
+</ul>
+</ul>
+<p><strong>Network‑Centric Logs</strong></p>
+<ul>
+<li>Protocols: SSH, VPN, HTTP/S, FTP, SMB</li>
+<li>Examples:</li>
+<ul>
+<li>SSH and VPN connections</li>
+<li>Web traffic and HTTP requests</li>
+<li>File transfers via FTP or network shares</li>
+<li>Outbound data transfer (potential exfiltration)</li>
+</ul>
+</ul>
+<hr>
+<h3 id="siem-architecture-and-workflow">SIEM Architecture and Workflow</h3>
+<p><a class="external-asset" href="https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/156e333389c9e8c20566023ee01d3e5e43fd6ce76d19ca7085a9d9c1587c54acf54fd32c74a920e81644df3b3094.png">External image reference: https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/156e333389c9e8c20566023ee01d3e5e43fd6ce76d19ca7085a9d9c1587c54acf54fd32c74a920e81644df3b3094.png</a></p>
+<ol>
+<li><strong>Data Collection</strong>: Agents, port forwarding, or APIs ingest logs in real time.</li>
+<ul>
+<li><strong>Time Pitfalls</strong></li>
+</ul>
+</ol>
+<p>One common challenge analysts face when working with a SIEM is dealing with time differences across log sources.</p>
+<p>Logs may come from systems in different time zones. Some might use UTC, others local time, and some might not include any timezone information at all.</p>
+<p>It is important to remember that the time shown in your SIEM might not match your local time.</p>
+<p>For example, if you are in UTC-2 and the SIEM is set to UTC+2, an event that happens at 5 PM local time could appear as 9 PM in the SIEM.</p>
+<p>This does not mean the log was delayed in ingestion. It only reflects the timezone difference.</p>
+<p>Always check which time zone each log source uses before analyzing events.</p>
+<p>Being aware of time differences helps maintain accurate timelines and prevents confusion during investigations.</p>
+<ol>
+<li><strong>Normalization</strong>: Convert diverse log formats into a consistent schema.</li>
+<ul>
+<li><strong>Log normalization</strong></li>
+<ul>
+<li>Normalisation = transform diverse log formats into a single schema so fields are consistent and searchable.</li>
+<li>Purpose: simplify searches, reduce parsing overhead, and make correlation rules reliable.</li>
+<li>Typical steps: parse raw message, map fields to standard names, convert types (timestamps, IPs), and add metadata (source, device role).</li>
+<li>Use or document the standard schema you adopt (examples: CEF, LEEF, ECS) so mappings stay consistent across sources.</li>
+<li>Without normalisation each new log source requires custom parsing and rule adjustments, which slows detection and triage.</li>
+</ul>
+</ul>
+<li><strong>Storage</strong>: Centralized, scalable repository for short‑ and long‑term retention.</li>
+<li><strong>Correlation &amp; Analytics</strong>:</li>
+<ul>
+<li>Rule‑based detection (e.g., threshold, pattern matching)</li>
+<li>Statistical and behavioral analytics</li>
+</ul>
+<li><strong>Alerting &amp; Notification</strong>: Generate alerts for suspicious or anomalous events.</li>
+<li><strong>Dashboard &amp; Reporting</strong>: Visualize key metrics, trends, and incidents.</li>
+<li><strong>Investigation &amp; Response</strong>: Triage alerts, perform root‑cause analysis, and remediate.</li>
+</ol>
+<hr>
+<h3 id="core-capabilities">Core Capabilities</h3>
+<ul>
+<li><strong>Real‑Time Monitoring</strong>: Continuous log ingestion and analysis</li>
+<li><strong>Event Correlation</strong>: Link events across hosts and network devices</li>
+<li><strong>Alerting</strong>: Trigger on predefined rules or dynamic thresholds</li>
+<li><strong>Threat Hunting</strong>: Query raw logs for Indicators of Compromise (IoCs)</li>
+<li><strong>Forensics</strong>: Historical log retention for incident investigation</li>
+<li><strong>Compliance</strong>: Reporting templates for HIPAA, PCI‑DSS, SOX, etc.</li>
+<li><strong>Visualization</strong>: Customizable dashboards, charts, and heat maps</li>
+</ul>
+<hr>
+<h3 id="dashboards-and-reporting">Dashboards and Reporting</h3>
+<p><button class="image-button" data-src="../assets/images/siem-image-4418953c.png" data-alt="image.png"><img src="../assets/images/siem-image-4418953c.png" alt="image.png" loading="lazy"></button></p>
+<p>Dashboards provide a high‑level view of security posture:</p>
+<ul>
+<li><strong>Alert Summary</strong>: Recent triggers, severity, and status</li>
+<li><strong>Login Activity</strong>: Failed vs. successful attempts over time</li>
+<li><strong>Event Volume</strong>: Logs ingested per source and time interval</li>
+<li><strong>Top Indicators</strong>: Frequently triggered rules, top IPs/domains</li>
+<li><strong>System Health</strong>: Data pipeline status, agent connectivity</li>
+</ul>
+<hr>
+<h3 id="correlation-rules">Correlation Rules</h3>
+<p>Correlation rules define conditions to detect suspicious behavior:</p>
+<div class="table-wrap"><table><thead><tr><th>Use‑Case</th><th>Rule Logic</th><th>Alert Name</th></tr></thead><tbody><tr><td>Multiple failed logins</td><td>≥5 failed logins in 10 seconds</td><td>Multiple Failed Login Attempts</td></tr><tr><td>Success after failures</td><td>Success following multiple failures</td><td>Successful Login After Multiple Attempts</td></tr><tr><td>USB insertion</td><td>USB device connect event</td><td>USB Device Detected</td></tr><tr><td>High outbound traffic</td><td>&gt;25 MB outbound in session</td><td>Potential Data Exfiltration</td></tr><tr><td>Event log clearing</td><td>EventID 104 in Windows logs</td><td>Event Log Cleared</td></tr><tr><td>Execution of sensitive tool</td><td>EventID 4688 and process name contains <code>whoami</code></td><td>WHOAMI Command Executed</td></tr></tbody></table></div>
+<h4 id="rule-creation-steps"><strong>Rule Creation Steps</strong>:</h4>
+<ol>
+<li>Identify relevant Event IDs and log sources</li>
+<li>Define threshold or pattern (e.g., time window, count)</li>
+<li>Map field names (e.g., <code>EventID</code>, <code>NewProcessName</code>)</li>
+<li>Test rules against historical data</li>
+<li>Tune alert thresholds to minimize false positives</li>
+</ol>
+<hr>
+<h3 id="siem-rules-out-of-the-box-vs-custom">SIEM Rules: Out of the Box vs Custom</h3>
+<p>SIEM rules form the backbone of proactive threat detection. There are two main categories:</p>
+<ul>
+<li><strong>Vendor Provided (Out of the Box) Rules</strong>: Prebuilt by the SIEM vendor to cover generic attack scenarios and common suspicious patterns (e.g., brute‑force login attempts, known malware hashes, port scans).</li>
+<li><strong>Custom (Human Written) Rules</strong>: Developed by in‑house defenders who tailor queries to the organization’s unique environment and normal operational baselines.</li>
+</ul>
+<h4 id="what-are-siem-rules"><strong>What Are SIEM Rules?</strong></h4>
+<p>They are search queries—running continuously (real‑time) or on a schedule—that inspect incoming log data. When a query matches one or more events, actions can be triggered such as:</p>
+<ul>
+<li>Generating an alert in the dashboard</li>
+<li>Sending an email/SMS to the security team</li>
+<li>Writing the record to a dedicated incident index or ticketing system</li>
+</ul>
+<h4 id="examples-of-rule-functionality">Examples of Rule Functionality</h4>
+<div class="table-wrap"><table><thead><tr><th>Category</th><th>Monitored Activity</th></tr></thead><tbody><tr><td><strong>Authentication</strong></td><td>Failed logons; logins to disabled accounts; use of high‑privilege accounts; SID changes</td></tr><tr><td><strong>Process Execution</strong></td><td>Execution from suspicious paths (temp folders, browser cache); parent/child anomalies (WinWord → cmd.exe); known‑bad file hashes</td></tr><tr><td><strong>Network Activity</strong></td><td>Port scans; service enumeration; host discovery; unusual outbound volume</td></tr></tbody></table></div>
+<h4 id="falsepositive-reduction-tuning">False‑Positive Reduction &amp; Tuning</h4>
+<p>Rules tuned too loosely generate noise. Techniques to reduce false positives:</p>
+<ol>
+<li><strong>Thresholds &amp; Time Windows</strong>: e.g., only alert on ≥10 failed logins within 10 minutes to catch brute‑force attacks.</li>
+<li><strong>Value Exclusions</strong>: Exclude known benign sources—e.g., internal vulnerability scanner IPs—to prevent non‑malicious scans from firing alerts.</li>
+<li><strong>Conditional Filters</strong>: Refine queries by asset group, user role, or business hours.</li>
+<li><strong>Rule Testing</strong>: Validate against historical logs before production rollout.</li>
+</ol>
+<h4 id="writing-search-queries-alerts">Writing Search Queries &amp; Alerts</h4>
+<ul>
+<li>Familiarize yourself with the SIEM’s search language (e.g., Splunk SPL, Elastic DSL).</li>
+<li>Identify key fields (EventID, src_ip, user, process_path) and their normalized names.</li>
+<li>Start with a broad query, then iteratively narrow scope (add filters or thresholds).</li>
+<li>Convert queries into alerts by specifying trigger conditions and notification channels.</li>
+</ul>
+<hr>
+<h3 id="alert-investigation-and-triage">Alert Investigation and Triage</h3>
+<p>When an alert triggers:</p>
+<ol>
+<li><strong>Review Rule Details</strong>: Which conditions were met?</li>
+<li><strong>Examine Associated Events</strong>: Timeline and related logs</li>
+<li><strong>Determine Validity</strong>:</li>
+<ul>
+<li>False Positive: Tune or disable rule</li>
+<li>True Positive: Escalate</li>
+</ul>
+<li><strong>Incident Response</strong>:</li>
+<ul>
+<li>Query asset owner</li>
+<li>Contain or isolate affected host</li>
+<li>Block malicious IPs or domains</li>
+</ul>
+<li><strong>Post‑Incident</strong>: Document findings, improve rules</li>
+</ol>
+<hr>
+<h3 id="sim-vs-sem-vs-siem">SIM vs SEM vs SIEM</h3>
+<ul>
+<li><strong>Security Information Management (SIM)</strong>:</li>
+<ul>
+<li>Log collection, storage, and reporting</li>
+<li>Historical analysis and compliance</li>
+</ul>
+<li><strong>Security Event Management (SEM)</strong>:</li>
+<ul>
+<li>Real‑time event monitoring and alerting</li>
+<li>Incident detection and response</li>
+</ul>
+<li><strong>SIEM</strong>:</li>
+<ul>
+<li>Combination of SIM and SEM capabilities</li>
+<li>Unified platform for end‑to‑end log management and security analytics</li>
+</ul>
+</ul>
+<hr>
+<h3 id="advantages-and-disadvantages">Advantages and Disadvantages</h3>
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li>Centralized log aggregation and normalization</li>
+<li>Real‑time threat detection and alerting</li>
+<li>Improved forensic capabilities</li>
+<li>Compliance reporting and audit readiness</li>
+<li>Scalability for large data volumes</li>
+</ul>
+<p><strong>Disadvantages</strong>:</p>
+<ul>
+<li>High deployment and licensing costs</li>
+<li>Complexity of integration with diverse log sources</li>
+<li>Potential for false positives requiring tuning</li>
+<li>Requires skilled personnel for optimization</li>
+</ul>
+<hr>
+<h3 id="popular-siem-platforms">Popular SIEM Platforms</h3>
+<ul>
+<li>Splunk</li>
+<li>IBM QRadar</li>
+<li>LogRhythm</li>
+<li>Micro Focus ArcSight</li>
+<li>Elastic Security (ELK Stack)</li>
+<li>Microsoft Sentinel</li>
+<li>Graylog</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#siem">SIEM</a><a href="#log-sources">Log Sources</a><a href="#siem-architecture-and-workflow">SIEM Architecture and Workflow</a><a href="#core-capabilities">Core Capabilities</a><a href="#dashboards-and-reporting">Dashboards and Reporting</a><a href="#correlation-rules">Correlation Rules</a><a href="#rule-creation-steps">Rule Creation Steps:</a><a href="#siem-rules-out-of-the-box-vs-custom">SIEM Rules: Out of the Box vs Custom</a><a href="#what-are-siem-rules">What Are SIEM Rules?</a><a href="#examples-of-rule-functionality">Examples of Rule Functionality</a><a href="#falsepositive-reduction-tuning">False‑Positive Reduction &amp; Tuning</a><a href="#writing-search-queries-alerts">Writing Search Queries &amp; Alerts</a><a href="#alert-investigation-and-triage">Alert Investigation and Triage</a><a href="#sim-vs-sem-vs-siem">SIM vs SEM vs SIEM</a><a href="#advantages-and-disadvantages">Advantages and Disadvantages</a><a href="#popular-siem-platforms">Popular SIEM Platforms</a></details>
+    </div>
+    
+    <footer class="pager"><a href="phantom-check-htb.html">← Phantom Check (HTB)</a><a href="splunk.html">Splunk →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+{
+  "id": "forensics labs/insider (cyberdefenders)",
+  "title": "Insider (CyberDefenders)",
+  "slug": "insider-cyberdefenders",
+  "relPath": "Forensics Labs/Insider (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Linux",
+    "Network",
+    "Kerberos",
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "forensics labs",
+      "title": "Forensics Labs",
+      "slug": "forensics-labs"
+    },
+    {
+      "id": "forensics labs/insider (cyberdefenders)",
+      "title": "Insider (CyberDefenders)",
+      "slug": "insider-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Insider (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Q1 : Which Linux distribution is being used on this machine?"
+    },
+    {
+      "level": 3,
+      "text": "kali"
+    },
+    {
+      "level": 3,
+      "text": "Q2 : What is the MD5 hash of the Apache access.log file?"
+    },
+    {
+      "level": 3,
+      "text": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "level": 3,
+      "text": "Q3 : It is suspected that a credential dumping tool was downloaded. What is the name of the downloaded file?"
+    },
+    {
+      "level": 3,
+      "text": "mimikatztrunk.zip"
+    },
+    {
+      "level": 3,
+      "text": "Q4: A super-secret file was created. What is the absolute path to this file?"
+    },
+    {
+      "level": 3,
+      "text": "/root/Desktop/SuperSecretFile.txt"
+    },
+    {
+      "level": 3,
+      "text": "Q5 : What program used the file didyouthinkwedmakeiteasy.jpg during its execution?"
+    },
+    {
+      "level": 3,
+      "text": "binwalk"
+    },
+    {
+      "level": 3,
+      "text": "Q6 : What is the third goal from the checklist Karen created?"
+    },
+    {
+      "level": 3,
+      "text": "profit"
+    },
+    {
+      "level": 3,
+      "text": "Q7 : How many times was Apache run?"
+    },
+    {
+      "level": 3,
+      "text": "0"
+    },
+    {
+      "level": 3,
+      "text": "Q8 : This machine was used to launch an attack on another. Which file contains the evidence for this?"
+    },
+    {
+      "level": 3,
+      "text": "Q9 : It is believed that Karen was taunting a fellow computer expert through a bash script within the Documents directory. Who was the expert that Karen was taunting?"
+    },
+    {
+      "level": 3,
+      "text": "Young"
+    },
+    {
+      "level": 3,
+      "text": "Q10 : A user executed the su command to gain root access multiple times at 11:26. Who was the user?"
+    },
+    {
+      "level": 3,
+      "text": "Q11 : Based on the bash history, what is the current working directory?"
+    }
+  ],
+  "overview": "After Karen started working for 'TAAUSAI,' she began doing illegal activities inside the company. 'TAAUSAI' hired you as a soc analyst to kick off an investigation on this case.",
+  "study": {
+    "overview": "After Karen started working for 'TAAUSAI,' she began doing illegal activities inside the company. 'TAAUSAI' hired you as a soc analyst to kick off an investigation on this case.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Insider (CyberDefenders)",
+      "Scenario",
+      "Q1 : Which Linux distribution is being used on this machine?",
+      "kali",
+      "Q2 : What is the MD5 hash of the Apache access.log file?",
+      "d41d8cd98f00b204e9800998ecf8427e",
+      "Q3 : It is suspected that a credential dumping tool was downloaded. What is the name of the downloaded file?",
+      "mimikatztrunk.zip",
+      "Q4: A super-secret file was created. What is the absolute path to this file?",
+      "/root/Desktop/SuperSecretFile.txt",
+      "Q5 : What program used the file didyouthinkwedmakeiteasy.jpg during its execution?",
+      "binwalk"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "The access.log file records all HTTP requests made to the Apache server, including client IPs, timestamps, requested URLs, HTTP methods, response codes, and user-agent information. This log is crucial for monitoring server activity and detecting potential security incidents.",
+      "Mimikatzis a post-exploitation tool that can extract plaintext passwords, hashes, PINs, and Kerberos tickets from memory, perform pass-the-hash attacks, manipulate authentication tokens, and export certificates. While used by penetration testers for security assessments, it is also commonly exploited by attackers for credential theft.",
+      "The .bashhistory file, located in a user’s home directory, logs all commands executed in the terminal. It is especially valuable in forensic investigations, as it provides a chronological record of user activity, including file creation, system modifications, and potential attempts to cover tracks.",
+      "Binwalkis a forensic tool for inspecting binary files and firmware images, commonly used to extract embedded files, hidden data, or compressed archives within a file.",
+      "FlightSim is a tool for generating malicious network traffic, including port scans, brute-force attacks, and DNS tunneling. Its execution in the terminal, along with the presence of irZLAohL.jpeg, indicates that this machine was used to simulate or perform attacks on other systems."
+    ]
+  }
+}

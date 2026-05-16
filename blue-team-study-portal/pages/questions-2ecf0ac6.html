@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Questions | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="windows-security-monitoring.html">Windows Security Monitoring</a><span>/</span><a href="windows-threat-detection-2.html">Windows Threat Detection 2</a><span>/</span><span>Questions</span></div>
+      <h1>Questions</h1>
+      <p>1 - Open CMD and type “net user Administrator”. Which privileged group does the user belong to?</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">EDR</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Sysmon</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Detection</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Windows Security Monitoring</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>L1.5</em></a>
+      <b>4</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-logging-for-soc.html"><span>Windows Logging for SOC</span><em>L1.5</em></a>
+      <b>7</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="what-is-logged.html"><span>What Is Logged</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="security-log-authentication.html"><span>Security Log Authentication</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="security-log-user-management.html"><span>Security Log User Management</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="sysmon-process-monitoring.html"><span>Sysmon Process Monitoring</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="sysmon-file-and-network.html"><span>Sysmon File and Network</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="powershell-logging-commands.html"><span>PowerShell Logging Commands</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="questions.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-threat-detection-1.html"><span>Windows Threat Detection 1</span><em>L1.5</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="intro-to-initial-access.html"><span>Intro to Initial Access</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="initial-access-via-rdp.html"><span>Initial Access via RDP</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="initial-access-via-phishing.html"><span>Initial Access via Phishing</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="continuing-phishing-topic.html"><span>Continuing Phishing Topic</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="initial-access-via-usb.html"><span>Initial Access via USB</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="questions-63e5ebed.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-threat-detection-2.html"><span>Windows Threat Detection 2</span><em>L1.5</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="discovery-overview.html"><span>Discovery Overview</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="detecting-discovery.html"><span>Detecting Discovery</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="collection-overview.html"><span>Collection Overview</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="detecting-collection.html"><span>Detecting Collection</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ingress-tool-transfer.html"><span>Ingress Tool Transfer</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="questions-2ecf0ac6.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-threat-detection-3.html"><span>Windows Threat Detection 3</span><em>L1.5</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="command-and-control.html"><span>Command and Control</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="persistence-overview.html"><span>Persistence Overview</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="persistence-tasks-and-services.html"><span>Persistence Tasks and Services</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="persistence-run-keys-and-startup.html"><span>Persistence Run Keys and Startup</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="impact-and-threat-detection-recap.html"><span>Impact and Threat Detection Recap</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="questions-ac88b105.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>1 - Open CMD and type “net user Administrator”. Which privileged group does the user belong to?</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Questions</li><li>1 - Open CMD and type “net user Administrator”. Which privileged group does the user belong to?</li><li>Administrators</li><li>2 - Open Event Viewer and try to find your command in Sysmon logs. What is the “Image” field of the net command you just run?</li><li>C:\Windows\System32\net.exe</li><li>3 - Looking at Sysmon logs, what is the first command the invoice.pdf.exe executes?</li><li>whoami</li><li>4 - Which command did the malware use to check the presence of MS Defender EDR?</li><li>cmd /c “tasklist /v | findstr MsSense.exe || echo No MS Defender EDR”</li><li>5 - To which domain did the malware send the discovered data?</li><li>exfil.beecz.cafe</li><li>6 - What is the Facebook password that the user saved in Chrome? (Chrome menu Passwords and autofill Password Manager)</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>EDR</li><li>Sysmon</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="questions">Questions</h2>
+<h4 id="1-open-cmd-and-type-net-user-administrator.-which-privileged-group-does-the-user-belong-to">1 - Open CMD and type “net user Administrator”. Which privileged group does the user belong to?</h4>
+<h4 id="administrators">Administrators</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-25_185904-13b36539.png" data-alt="Screenshot 2025-08-25 185904.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-25_185904-13b36539.png" alt="Screenshot 2025-08-25 185904.png" loading="lazy"></button></p>
+<h4 id="2-open-event-viewer-and-try-to-find-your-command-in-sysmon-logs.-what-is-the-image-field-o">2 - Open Event Viewer and try to find your command in Sysmon logs. What is the “Image” field of the net command you just run?</h4>
+<h4 id="cwindowssystem32net.exe">C:\Windows\System32\net.exe</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-25_190831-1c5a20dd.png" data-alt="Screenshot 2025-08-25 190831.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-25_190831-1c5a20dd.png" alt="Screenshot 2025-08-25 190831.png" loading="lazy"></button></p>
+<h4 id="3-looking-at-sysmon-logs-what-is-the-first-command-the-invoice.pdf.exe-executes">3 - Looking at Sysmon logs, what is the first command the invoice.pdf.exe executes?</h4>
+<h4 id="whoami">whoami</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_004237-37e10365.png" data-alt="Screenshot 2025-08-26 004237.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_004237-37e10365.png" alt="Screenshot 2025-08-26 004237.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_004310-c35b6a69.png" data-alt="Screenshot 2025-08-26 004310.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_004310-c35b6a69.png" alt="Screenshot 2025-08-26 004310.png" loading="lazy"></button></p>
+<h4 id="4-which-command-did-the-malware-use-to-check-the-presence-of-ms-defender-edr">4 - Which command did the malware use to check the presence of MS Defender EDR?</h4>
+<h4 id="cmd-c-tasklist-v-findstr-mssense.exe-echo-no-ms-defender-edr">cmd /c “tasklist /v | findstr MsSense.exe || echo No MS Defender EDR”</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_004458-c44b2e99.png" data-alt="Screenshot 2025-08-26 004458.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_004458-c44b2e99.png" alt="Screenshot 2025-08-26 004458.png" loading="lazy"></button></p>
+<h4 id="5-to-which-domain-did-the-malware-send-the-discovered-data">5 - To which domain did the malware send the discovered data?</h4>
+<h4 id="exfil.beecz.cafe">exfil.beecz.cafe</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_004532-f8cc3cd5.png" data-alt="Screenshot 2025-08-26 004532.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_004532-f8cc3cd5.png" alt="Screenshot 2025-08-26 004532.png" loading="lazy"></button></p>
+<h4 id="6-what-is-the-facebook-password-that-the-user-saved-in-chrome-chrome-menu-passwords-and-au">6 - What is the Facebook password that the user saved in Chrome? (Chrome menu &gt; Passwords and autofill &gt; Password Manager)</h4>
+<h4 id="nsaghv51bbav90">nsAghv51BBav90!</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_004725-b8bb1f5d.png" data-alt="Screenshot 2025-08-26 004725.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_004725-b8bb1f5d.png" alt="Screenshot 2025-08-26 004725.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005317-4712ddf0.png" data-alt="Screenshot 2025-08-26 005317.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005317-4712ddf0.png" alt="Screenshot 2025-08-26 005317.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005308-22b1d240.png" data-alt="Screenshot 2025-08-26 005308.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005308-22b1d240.png" alt="Screenshot 2025-08-26 005308.png" loading="lazy"></button></p>
+<h4 id="7-which-interesting-ssh-key-does-the-user-store-on-disk-start-your-search-from-cusersadmin">7 - Which interesting SSH key does the user store on disk? (Start your search from C:\Users\Administrator)</h4>
+<h4 id="thm-access-database.key">thm-access-database.key</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005415-6a7dabbd.png" data-alt="Screenshot 2025-08-26 005415.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005415-6a7dabbd.png" alt="Screenshot 2025-08-26 005415.png" loading="lazy"></button></p>
+<h4 id="8-what-is-the-secret-pdf-file-explaining-tryhackmes-internal-network">8 - What is the secret PDF file explaining TryHackMe’s internal network?</h4>
+<h4 id="thm-network-diagram-2025.pdf">thm-network-diagram-2025.pdf</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005458-d1ff015b.png" data-alt="Screenshot 2025-08-26 005458.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005458-d1ff015b.png" alt="Screenshot 2025-08-26 005458.png" loading="lazy"></button></p>
+<h4 id="9-looking-at-sysmon-logs-what-directory-does-the-stealer-create">9 - Looking at Sysmon logs, what directory does the stealer create?</h4>
+<h4 id="staging58f1">staging_58f1</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005555-425da187.png" data-alt="Screenshot 2025-08-26 005555.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005555-425da187.png" alt="Screenshot 2025-08-26 005555.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005603-6de6e3b5.png" data-alt="Screenshot 2025-08-26 005603.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005603-6de6e3b5.png" alt="Screenshot 2025-08-26 005603.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005650-06458604.png" data-alt="Screenshot 2025-08-26 005650.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005650-06458604.png" alt="Screenshot 2025-08-26 005650.png" loading="lazy"></button></p>
+<h4 id="10-which-three-file-extensions-does-the-malware-search-for">10 - Which three file extensions does the malware search for?</h4>
+<h4 id="docx-pdf-xlsx">docx, pdf, xlsx</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005800-2d2eb35d.png" data-alt="Screenshot 2025-08-26 005800.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005800-2d2eb35d.png" alt="Screenshot 2025-08-26 005800.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005810-92da31ad.png" data-alt="Screenshot 2025-08-26 005810.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005810-92da31ad.png" alt="Screenshot 2025-08-26 005810.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005820-d1ecf12a.png" data-alt="Screenshot 2025-08-26 005820.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005820-d1ecf12a.png" alt="Screenshot 2025-08-26 005820.png" loading="lazy"></button></p>
+<h4 id="11-which-powershell-cmdlet-does-the-malware-use-to-get-clipboard-content">11 - Which PowerShell cmdlet does the malware use to get clipboard content?</h4>
+<h4 id="get-clipboard">Get-ClipBoard</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005940-20f1b3a7.png" data-alt="Screenshot 2025-08-26 005940.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005940-20f1b3a7.png" alt="Screenshot 2025-08-26 005940.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005948-4d4cff6d.png" data-alt="Screenshot 2025-08-26 005948.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_005948-4d4cff6d.png" alt="Screenshot 2025-08-26 005948.png" loading="lazy"></button></p>
+<h4 id="12-which-domain-does-the-malware-exfiltrate-the-data-to">12 - Which domain does the malware exfiltrate the data to?</h4>
+<h4 id="collecteddata-storage-2025.s3.amazonaws.com">collecteddata-storage-2025.s3.amazonaws.com</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_010026-e6b85b83.png" data-alt="Screenshot 2025-08-26 010026.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_010026-e6b85b83.png" alt="Screenshot 2025-08-26 010026.png" loading="lazy"></button></p>
+<h4 id="13-open-the-chrome-browser-on-the-vm-and-navigate-to-the-url.-what-is-the-flag-in-the-resp">13 - Open the Chrome browser on the VM and navigate to the URL. What is the flag in the response?</h4>
+<h4 id="thmjustusewebbrowser">THM{just_use_web_browser}</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_010225-8c29537e.png" data-alt="Screenshot 2025-08-26 010225.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_010225-8c29537e.png" alt="Screenshot 2025-08-26 010225.png" loading="lazy"></button></p>
+<h4 id="14-next-open-cmd-and-download-the-file-from-the-same-url-using-curl.exe.-what-is-the-flag-">14 - Next, open CMD and download the file from the same URL using curl.exe. What is the flag in the response?</h4>
+<h4 id="thmcurliscool">THM{curl_is_cool}</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_011536-b20ae6d5.png" data-alt="Screenshot 2025-08-26 011536.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_011536-b20ae6d5.png" alt="Screenshot 2025-08-26 011536.png" loading="lazy"></button></p>
+<h4 id="15-continue-with-the-same-cmd-and-url-but-now-using-certutil.exe.-what-is-the-flag-in-the-">15 - Continue with the same CMD and URL, but now using certutil.exe. What is the flag in the response?</h4>
+<h4 id="thmabusingcertutil">THM{abusing_certutil}</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_011906-52bf645b.png" data-alt="Screenshot 2025-08-26 011906.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_011906-52bf645b.png" alt="Screenshot 2025-08-26 011906.png" loading="lazy"></button></p>
+<h4 id="16-finally-download-the-same-file-using-powershell-iwr.-what-is-the-flag-in-the-response">16 - Finally, download the same file using PowerShell IWR. What is the flag in the response?</h4>
+<h4 id="thmpowerofpowershell">THM{power_of_powershell}</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_012059-5a4ee33f.png" data-alt="Screenshot 2025-08-26 012059.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-2questions-screenshot_2025-08-26_012059-5a4ee33f.png" alt="Screenshot 2025-08-26 012059.png" loading="lazy"></button></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#questions">Questions</a><a href="#1-open-cmd-and-type-net-user-administrator.-which-privileged-group-does-the-user-belong-to">1 - Open CMD and type “net user Administrator”. Which privileged group does the user belong to?</a><a href="#administrators">Administrators</a><a href="#2-open-event-viewer-and-try-to-find-your-command-in-sysmon-logs.-what-is-the-image-field-o">2 - Open Event Viewer and try to find your command in Sysmon logs. What is the “Image” field of the net command you just run?</a><a href="#cwindowssystem32net.exe">C:\Windows\System32\net.exe</a><a href="#3-looking-at-sysmon-logs-what-is-the-first-command-the-invoice.pdf.exe-executes">3 - Looking at Sysmon logs, what is the first command the invoice.pdf.exe executes?</a><a href="#whoami">whoami</a><a href="#4-which-command-did-the-malware-use-to-check-the-presence-of-ms-defender-edr">4 - Which command did the malware use to check the presence of MS Defender EDR?</a><a href="#cmd-c-tasklist-v-findstr-mssense.exe-echo-no-ms-defender-edr">cmd /c “tasklist /v | findstr MsSense.exe || echo No MS Defender EDR”</a><a href="#5-to-which-domain-did-the-malware-send-the-discovered-data">5 - To which domain did the malware send the discovered data?</a><a href="#exfil.beecz.cafe">exfil.beecz.cafe</a><a href="#6-what-is-the-facebook-password-that-the-user-saved-in-chrome-chrome-menu-passwords-and-au">6 - What is the Facebook password that the user saved in Chrome? (Chrome menu Passwords and autofill Password Manager)</a><a href="#nsaghv51bbav90">nsAghv51BBav90!</a><a href="#7-which-interesting-ssh-key-does-the-user-store-on-disk-start-your-search-from-cusersadmin">7 - Which interesting SSH key does the user store on disk? (Start your search from C:\Users\Administrator)</a><a href="#thm-access-database.key">thm-access-database.key</a><a href="#8-what-is-the-secret-pdf-file-explaining-tryhackmes-internal-network">8 - What is the secret PDF file explaining TryHackMe’s internal network?</a><a href="#thm-network-diagram-2025.pdf">thm-network-diagram-2025.pdf</a><a href="#9-looking-at-sysmon-logs-what-directory-does-the-stealer-create">9 - Looking at Sysmon logs, what directory does the stealer create?</a><a href="#staging58f1">staging58f1</a><a href="#10-which-three-file-extensions-does-the-malware-search-for">10 - Which three file extensions does the malware search for?</a><a href="#docx-pdf-xlsx">docx, pdf, xlsx</a><a href="#11-which-powershell-cmdlet-does-the-malware-use-to-get-clipboard-content">11 - Which PowerShell cmdlet does the malware use to get clipboard content?</a><a href="#get-clipboard">Get-ClipBoard</a><a href="#12-which-domain-does-the-malware-exfiltrate-the-data-to">12 - Which domain does the malware exfiltrate the data to?</a><a href="#collecteddata-storage-2025.s3.amazonaws.com">collecteddata-storage-2025.s3.amazonaws.com</a><a href="#13-open-the-chrome-browser-on-the-vm-and-navigate-to-the-url.-what-is-the-flag-in-the-resp">13 - Open the Chrome browser on the VM and navigate to the URL. What is the flag in the response?</a><a href="#thmjustusewebbrowser">THM{justusewebbrowser}</a><a href="#14-next-open-cmd-and-download-the-file-from-the-same-url-using-curl.exe.-what-is-the-flag-">14 - Next, open CMD and download the file from the same URL using curl.exe. What is the flag in the response?</a><a href="#thmcurliscool">THM{curliscool}</a><a href="#15-continue-with-the-same-cmd-and-url-but-now-using-certutil.exe.-what-is-the-flag-in-the-">15 - Continue with the same CMD and URL, but now using certutil.exe. What is the flag in the response?</a><a href="#thmabusingcertutil">THM{abusingcertutil}</a><a href="#16-finally-download-the-same-file-using-powershell-iwr.-what-is-the-flag-in-the-response">16 - Finally, download the same file using PowerShell IWR. What is the flag in the response?</a><a href="#thmpowerofpowershell">THM{powerofpowershell}</a></details>
+    </div>
+    
+    <footer class="pager"><a href="ingress-tool-transfer.html">← Ingress Tool Transfer</a><a href="windows-threat-detection-3.html">Windows Threat Detection 3 →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

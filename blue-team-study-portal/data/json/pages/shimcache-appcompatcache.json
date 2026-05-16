@@ -1,0 +1,90 @@
+{
+  "id": "windows forensics/shimcache (appcompatcache)",
+  "title": "ShimCache (AppCompatCache)",
+  "slug": "shimcache-appcompatcache",
+  "relPath": "Windows Forensics/ShimCache (AppCompatCache).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/shimcache (appcompatcache)",
+      "title": "ShimCache (AppCompatCache)",
+      "slug": "shimcache-appcompatcache"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "ShimCache (AppCompatCache)"
+    },
+    {
+      "level": 3,
+      "text": "Overview"
+    },
+    {
+      "level": 3,
+      "text": "Forensic Value"
+    },
+    {
+      "level": 3,
+      "text": "How It Works"
+    },
+    {
+      "level": 3,
+      "text": "Tools"
+    }
+  ],
+  "overview": "ShimCache is a Windows artifact that logs executables checked for compatibility. Also known as AppCompatCache, it’s a valuable source of historical program execution data—even if the binary has been deleted or never run.",
+  "study": {
+    "overview": "ShimCache is a Windows artifact that logs executables checked for compatibility. Also known as AppCompatCache, it’s a valuable source of historical program execution data—even if the binary has been deleted or never run.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "ShimCache (AppCompatCache)",
+      "Overview",
+      "Forensic Value",
+      "How It Works",
+      "Tools"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "appcompatcacheparser.exe --csvf %OUTPUT_FILENAME%.csv --csv %OUTPUT_DIRECTORY%"
+      },
+      {
+        "language": "powershell",
+        "code": "appcompatcacheparser.exe -f /PATH/TO/SYSTEM hive --csvf %OUTPUT_FILENAME%.csv --csv %OUTPUT_DIRECTORY%"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

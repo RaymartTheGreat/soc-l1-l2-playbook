@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>TShark | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="network-analysis-tools.html">Network Analysis Tools</a><span>/</span><span>TShark</span></div>
+      <h1>TShark</h1>
+      <p>| Utility | Purpose | | --- | --- | | capinfos | Summarize capture file metadata before deep dives | | grep | Search packet text dumps or CSV exports | | awk | Field-based filtering, counting, and reporting | | cut | Extract specific columns or fields from text output | | uniq | Deduplicate sorted output; often paired with sort | | nl | Number lines of outpu</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">Network</span><span class="tag">Web</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Network Analysis Tools</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="network-analysis-tools.html"><span>Network Analysis Tools</span><em>L1.5</em></a>
+      <b>3</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="wireshark.html"><span>Wireshark</span><em>L1.5</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="osi-layers-in-wireshark.html"><span>OSI Layers in Wireshark</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="tshark.html"><span>TShark</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="brim-zui.html"><span>Brim (zui)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>| Utility | Purpose | | --- | --- | | capinfos | Summarize capture file metadata before deep dives | | grep | Search packet text dumps or CSV exports | | awk | Field-based filtering, counting, and reporting | | cut | Extract specific columns or fields from text output | | uniq | Deduplicate sorted output; often paired with sort | | nl | Number lines of outpu</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>TShark</li><li>Essential Utilities</li><li>Core Options</li><li>Capture Autostop &amp; Ring Buffers</li><li>Capture vs. Display Filters</li><li>BPF Qualifiers</li><li>Display Filter Examples</li><li>Statistics &amp; Analysis (z)</li><li>Exporting Objects</li><li>Field Extraction (T fields)</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code># Live capture on interface 2 (press Ctrl+C to stop)
+tshark -i 2
+
+# Read from a saved file and display packet summary
+tshark -r capture.pcapng
+
+# Save live capture to file
+tshark -i eth0 -w output.pcap</code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code># Stop after 30s
+tshark -i eth0 -w file.pcap -a duration:30
+# Stop at 10 MB
+tshark -i eth0 -w file.pcap -a filesize:10240
+# Rotate into 3 files of ≤10 MB each
+tshark -i eth0 -w file.pcap -a filesize:10240 -a files:3
+</code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code># New file every 60s, keep last 5
+tshark -i eth0 -w rotating.pcap -b duration:60 -b files:5
+# Rotate by filesize
+tshark -i eth0 -w rotating.pcap -b filesize:5120 -b files:4
+</code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code># IP filtering
+tshark -Y 'ip.src == 10.10.10.10'
+
+# TCP ports
+tshark -Y 'tcp.dstport == 22'
+
+# HTTP traffic &amp; status
+tshark -Y &quot;http &amp;&amp; http.response.code == 200&quot;
+
+# DNS queries
+tshark -Y 'dns.qry.type == 1'
+
+# Combine filters
+tshark -Y 'ip.addr == 192.168.1.5 &amp;&amp; tcp.port == 443'</code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code># Quick protocol hierarchy
+tshark -z io,phs
+
+# HTTP request statistics
+tshark -z http,tree -q
+
+# Top talkers by IP
+tshark -z endpoints,ip
+
+# DNS query tree
+tshark -z dns,tree -q
+
+# Follow streams
+# TCP flow
+tshark -z follow,tcp,ascii,0
+</code></pre></div></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="tshark">TShark</h2>
+<p><button class="image-button" data-src="../assets/images/network-analysis-toolstshark-image-8478581c.png" data-alt="image.png"><img src="../assets/images/network-analysis-toolstshark-image-8478581c.png" alt="image.png" loading="lazy"></button></p>
+<h3 id="essential-utilities">Essential Utilities</h3>
+<div class="table-wrap"><table><thead><tr><th>Utility</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>capinfos</strong></td><td>Summarize capture file metadata before deep dives</td></tr><tr><td><strong>grep</strong></td><td>Search packet text dumps or CSV exports</td></tr><tr><td><strong>awk</strong></td><td>Field-based filtering, counting, and reporting</td></tr><tr><td><strong>cut</strong></td><td>Extract specific columns or fields from text output</td></tr><tr><td><strong>uniq</strong></td><td>Deduplicate sorted output; often paired with <code>sort</code></td></tr><tr><td><strong>nl</strong></td><td>Number lines of output for easy reference</td></tr><tr><td><strong>sed</strong></td><td>Stream editor for in-line text transformations</td></tr></tbody></table></div>
+<hr>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash"># Live capture on interface 2 (press Ctrl+C to stop)
+tshark -i 2
+
+# Read from a saved file and display packet summary
+tshark -r capture.pcapng
+
+# Save live capture to file
+tshark -i eth0 -w output.pcap</code></pre></div>
+<hr>
+<h3 id="core-options">Core Options</h3>
+<div class="table-wrap"><table><thead><tr><th>Flag</th><th>Function</th><th>Example</th></tr></thead><tbody><tr><td><code>-h</code></td><td>Help page (common flags)</td><td><code>tshark -h</code></td></tr><tr><td><code>-v</code></td><td>Version information</td><td><code>tshark -v</code></td></tr><tr><td><code>-D</code></td><td>List available capture interfaces</td><td><code>tshark -D</code></td></tr><tr><td><code>-i</code></td><td>Select interface (by number or name)</td><td><code>tshark -i ens33</code></td></tr><tr><td><code>-c</code></td><td>Stop after N packets</td><td><code>tshark -c 100</code></td></tr><tr><td><code>-w</code></td><td>Write packets to file</td><td><code>tshark -w filtered.pcap</code></td></tr><tr><td><code>-r</code></td><td>Read from file instead of live capture</td><td><code>tshark -r demo.pcapng</code></td></tr><tr><td><code>-V</code></td><td>Verbose: show full packet details</td><td><code>tshark -V</code></td></tr><tr><td><code>-q</code></td><td>Quiet mode: suppress packet summary output</td><td><code>tshark -q</code></td></tr><tr><td><code>--color</code></td><td>Colorize terminal output</td><td><code>tshark --color</code></td></tr><tr><td><code>-x</code></td><td>Hex+ASCII dump of packet payload</td><td><code>tshark -x</code></td></tr></tbody></table></div>
+<hr>
+<h3 id="capture-autostop-ring-buffers">Capture Autostop &amp; Ring Buffers</h3>
+<p><strong>One-shot stop conditions (<code>-a</code>)</strong></p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash"># Stop after 30s
+tshark -i eth0 -w file.pcap -a duration:30
+# Stop at 10 MB
+tshark -i eth0 -w file.pcap -a filesize:10240
+# Rotate into 3 files of ≤10 MB each
+tshark -i eth0 -w file.pcap -a filesize:10240 -a files:3
+</code></pre></div>
+<p><strong>Continuous ring buffer (<code>-b</code>)</strong></p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash"># New file every 60s, keep last 5
+tshark -i eth0 -w rotating.pcap -b duration:60 -b files:5
+# Rotate by filesize
+tshark -i eth0 -w rotating.pcap -b filesize:5120 -b files:4
+</code></pre></div>
+<ul>
+<li><strong>Autostop (<code>a</code>)</strong> stops the capture once a single condition (e.g. duration or max size) is met.</li>
+<li><strong>Ring buffer (<code>b</code>)</strong> continuously rotates through multiple files, overwriting the oldest when a threshold is reached.</li>
+</ul>
+<hr>
+<h3 id="capture-vs.-display-filters">Capture vs. Display Filters</h3>
+<div class="table-wrap"><table><thead><tr><th>Filter Type</th><th>Option</th><th>Syntax</th><th>Description</th></tr></thead><tbody><tr><td><strong>Capture (BPF)</strong></td><td><code>-f</code></td><td><code>&quot;host 10.0.0.5&quot;</code></td><td>Filters at packet capture time</td></tr><tr><td></td><td></td><td><code>&quot;net 192.168.1.0/24&quot;</code></td><td></td></tr><tr><td></td><td></td><td><code>&quot;port 80&quot;</code></td><td></td></tr><tr><td><strong>Display</strong></td><td><code>-Y</code></td><td><code>'ip.addr == 10.0.0.5'</code></td><td>Filters after packets are captured/read</td></tr><tr><td></td><td></td><td><code>'tcp.port == 443'</code></td><td></td></tr><tr><td></td><td></td><td><code>'http.request.method == &quot;GET&quot;'</code></td><td></td></tr></tbody></table></div>
+<hr>
+<h3 id="bpf-qualifiers">BPF Qualifiers</h3>
+<div class="table-wrap"><table><thead><tr><th>Qualifier</th><th>Meaning</th><th>Examples</th></tr></thead><tbody><tr><td><strong>host</strong></td><td>Single IP or hostname</td><td><code>-f &quot;host 1.2.3.4&quot;</code></td></tr><tr><td><strong>net</strong></td><td>IP subnet</td><td><code>-f &quot;net 10.0.0.0/16&quot;</code></td></tr><tr><td><strong>port</strong></td><td>Single port</td><td><code>-f &quot;port 53&quot;</code></td></tr><tr><td><strong>portrange</strong></td><td>Port range</td><td><code>-f &quot;portrange 1000-2000&quot;</code></td></tr><tr><td><strong>src/dst</strong></td><td>Source or destination only</td><td><code>-f &quot;src host 5.6.7.8&quot;</code></td></tr><tr><td><strong>protocol</strong></td><td>By protocol name or number</td><td><code>-f &quot;tcp&quot;</code> / <code>-f &quot;ip proto 1&quot;</code> (ICMP)</td></tr></tbody></table></div>
+<hr>
+<h3 id="display-filter-examples">Display Filter Examples</h3>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash"># IP filtering
+tshark -Y 'ip.src == 10.10.10.10'
+
+# TCP ports
+tshark -Y 'tcp.dstport == 22'
+
+# HTTP traffic &amp; status
+tshark -Y &quot;http &amp;&amp; http.response.code == 200&quot;
+
+# DNS queries
+tshark -Y 'dns.qry.type == 1'
+
+# Combine filters
+tshark -Y 'ip.addr == 192.168.1.5 &amp;&amp; tcp.port == 443'</code></pre></div>
+<hr>
+<h3 id="statistics-analysis-z">Statistics &amp; Analysis (<code>z</code>)</h3>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash"># Quick protocol hierarchy
+tshark -z io,phs
+
+# HTTP request statistics
+tshark -z http,tree -q
+
+# Top talkers by IP
+tshark -z endpoints,ip
+
+# DNS query tree
+tshark -z dns,tree -q
+
+# Follow streams
+# TCP flow
+tshark -z follow,tcp,ascii,0
+</code></pre></div>
+<p><em>(Append <code>-q</code> to suppress raw packet list and show only stats.)</em></p>
+<hr>
+<h3 id="exporting-objects">Exporting Objects</h3>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash"># Extract HTTP, SMB, TFTP objects to folder
+tshark -r capture.pcap -q --export-objects &quot;http,./http_objs&quot; --export-objects &quot;smb,./smb_objs&quot;
+</code></pre></div>
+<hr>
+<h3 id="field-extraction-t-fields">Field Extraction (<code>T fields</code>)</h3>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash"># Print src and dst IP with headers
+tshark -r capture.pcap -T fields -e ip.src -e ip.dst -E header=y
+
+# Extract DHCP hostnames
+tshark -r dhcp.pcap -T fields -e dhcp.option.hostname | awk NF | sort | uniq -c | sort -r
+
+# Count unique User-Agents
+tshark -r web.pcap -T fields -e http.user_agent | sort | uniq -c | sort -r</code></pre></div>
+<hr>
+<p><em>Use <code>awk</code>, <code>sort</code>, and <code>uniq</code> to refine and summarize output.</em></p>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#tshark">TShark</a><a href="#essential-utilities">Essential Utilities</a><a href="#core-options">Core Options</a><a href="#capture-autostop-ring-buffers">Capture Autostop &amp; Ring Buffers</a><a href="#capture-vs.-display-filters">Capture vs. Display Filters</a><a href="#bpf-qualifiers">BPF Qualifiers</a><a href="#display-filter-examples">Display Filter Examples</a><a href="#statistics-analysis-z">Statistics &amp; Analysis (z)</a><a href="#exporting-objects">Exporting Objects</a><a href="#field-extraction-t-fields">Field Extraction (T fields)</a></details>
+    </div>
+    
+    <footer class="pager"><a href="osi-layers-in-wireshark.html">← OSI Layers in Wireshark</a><a href="brim-zui.html">Brim (zui) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

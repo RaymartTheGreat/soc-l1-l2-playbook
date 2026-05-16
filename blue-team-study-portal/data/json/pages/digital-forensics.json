@@ -1,0 +1,61 @@
+{
+  "id": "digital forensics",
+  "title": "Digital Forensics",
+  "slug": "digital-forensics",
+  "relPath": "Digital Forensics.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "digital forensics/what is digital forensics",
+    "digital forensics/order of volatility",
+    "digital forensics/digital‑forensics workflow",
+    "digital forensics/chain of custody",
+    "digital forensics/live forensics",
+    "digital forensics/anti forensics",
+    "digital forensics/file carving",
+    "digital forensics/evidence destruction",
+    "digital forensics/acpo principles"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "digital forensics",
+      "title": "Digital Forensics",
+      "slug": "digital-forensics"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Digital Forensics"
+    }
+  ],
+  "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+  "study": {
+    "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Digital Forensics"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

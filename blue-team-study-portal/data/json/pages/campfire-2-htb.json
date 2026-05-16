@@ -1,0 +1,121 @@
+{
+  "id": "log analysis labs/campfire-2 (htb)",
+  "title": "Campfire-2 (HTB)",
+  "slug": "campfire-2-htb",
+  "relPath": "Log Analysis Labs/Campfire-2 (HTB).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Windows",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/campfire-2 (htb)",
+      "title": "Campfire-2 (HTB)",
+      "slug": "campfire-2-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Campfire-2 (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Detecting AS-REP Roasting in Logs"
+    },
+    {
+      "level": 3,
+      "text": "1- When did the ASREP Roasting attack occur, and when did the attacker request the Kerberos ticket for the vulnerable user?"
+    },
+    {
+      "level": 3,
+      "text": "2024-05-29 06:36:40"
+    },
+    {
+      "level": 3,
+      "text": "2- Please confirm the User Account that was targeted by the attacker."
+    },
+    {
+      "level": 3,
+      "text": "arthur.kyle"
+    },
+    {
+      "level": 3,
+      "text": "3- What was the SID of the account?"
+    },
+    {
+      "level": 3,
+      "text": "S-1-5-21-3239415629-1862073780-2394361899-1601"
+    },
+    {
+      "level": 3,
+      "text": "4- It is crucial to identify the compromised user account and the workstation responsible for this attack. Please list the internal IP address of the compromised asset to assist our threat-hunting team."
+    },
+    {
+      "level": 3,
+      "text": "172.17.79.129"
+    },
+    {
+      "level": 3,
+      "text": "5- We do not have any artifacts from the source machine yet. Using the same DC Security logs, can you confirm the user account used to perform the ASREP Roasting attack so we can contain the compromised account/s?"
+    },
+    {
+      "level": 3,
+      "text": "happy.grunwald"
+    }
+  ],
+  "overview": "Forela's Network is constantly under attack. The security system raised an alert about an old admin account requesting a ticket from KDC on a domain controller. Inventory shows that this user account is not used as of now so you are tasked to take a look at this. This may be an AsREP roasting attack as anyone can request any user's ticket which has preauthen",
+  "study": {
+    "overview": "Forela's Network is constantly under attack. The security system raised an alert about an old admin account requesting a ticket from KDC on a domain controller. Inventory shows that this user account is not used as of now so you are tasked to take a look at this. This may be an AsREP roasting attack as anyone can request any user's ticket which has preauthen",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Campfire-2 (HTB)",
+      "Scenario",
+      "Detecting AS-REP Roasting in Logs",
+      "1- When did the ASREP Roasting attack occur, and when did the attacker request the Kerberos ticket for the vulnerable user?",
+      "2024-05-29 06:36:40",
+      "2- Please confirm the User Account that was targeted by the attacker.",
+      "arthur.kyle",
+      "3- What was the SID of the account?",
+      "S-1-5-21-3239415629-1862073780-2394361899-1601",
+      "4- It is crucial to identify the compromised user account and the workstation responsible for this attack. Please list the internal IP address of the compromised asset to assist our threat-hunting team.",
+      "172.17.79.129",
+      "5- We do not have any artifacts from the source machine yet. Using the same DC Security logs, can you confirm the user account used to perform the ASREP Roasting attack so we can contain the compromised account/s?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "Tip: Filtering for Pre-Authentication Type = 0 will eliminate most noise and help you focus on accounts that are truly vulnerable to AS-REP Roasting."
+    ]
+  }
+}

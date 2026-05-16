@@ -1,0 +1,61 @@
+{
+  "id": "windows event ids/mahmoud shaker event ids notes",
+  "title": "Mahmoud Shaker Event IDs notes",
+  "slug": "mahmoud-shaker-event-ids-notes",
+  "relPath": "Windows Event IDs/Mahmoud Shaker Event IDs notes.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "Windows"
+  ],
+  "mitre": [],
+  "parentId": "windows event ids",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows event ids"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows event ids",
+      "title": "Windows Event IDs",
+      "slug": "windows-event-ids"
+    },
+    {
+      "id": "windows event ids/mahmoud shaker event ids notes",
+      "title": "Mahmoud Shaker Event IDs notes",
+      "slug": "mahmoud-shaker-event-ids-notes"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Mahmoud Shaker Event IDs notes"
+    },
+    {
+      "level": 2,
+      "text": "My friend Mahmoud has great notes on Windows Event IDs and other topics check them out!"
+    }
+  ],
+  "overview": "My friend Mahmoud has great notes on Windows Event IDs and other topics check them out!",
+  "study": {
+    "overview": "My friend Mahmoud has great notes on Windows Event IDs and other topics check them out!",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Mahmoud Shaker Event IDs notes",
+      "My friend Mahmoud has great notes on Windows Event IDs and other topics check them out!"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

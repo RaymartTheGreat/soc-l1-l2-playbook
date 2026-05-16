@@ -1,0 +1,98 @@
+{
+  "id": "hunting lateral movement (mitre ta0008)/remote desktop protocol (rdp) (t1021 001)",
+  "title": "Remote Desktop Protocol (RDP) (T1021 001)",
+  "slug": "remote-desktop-protocol-rdp-t1021-001",
+  "relPath": "Hunting Lateral Movement (MITRE TA0008)/Remote Desktop Protocol (RDP) (T1021 001).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "Windows",
+    "Sysmon",
+    "DFIR",
+    "Detection",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "T1021",
+    "TA0008",
+    "T1021.001"
+  ],
+  "parentId": "hunting lateral movement (mitre ta0008)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "hunting lateral movement (mitre ta0008)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "hunting lateral movement (mitre ta0008)",
+      "title": "Hunting Lateral Movement (MITRE TA0008)",
+      "slug": "hunting-lateral-movement-mitre-ta0008"
+    },
+    {
+      "id": "hunting lateral movement (mitre ta0008)/remote desktop protocol (rdp) (t1021 001)",
+      "title": "Remote Desktop Protocol (RDP) (T1021 001)",
+      "slug": "remote-desktop-protocol-rdp-t1021-001"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Remote Desktop Protocol (RDP) (T1021.001)"
+    },
+    {
+      "level": 2,
+      "text": "How Attackers Use It"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 2,
+      "text": "Threat Hunting"
+    },
+    {
+      "level": 3,
+      "text": "Splunk Query"
+    },
+    {
+      "level": 3,
+      "text": "Additional Notes"
+    }
+  ],
+  "overview": "RDP is a Microsoft protocol built into Windows for remote administration, enabling a user to access and control another system via a graphical interface. It’s widely enabled in enterprise environments, making its traffic generally considered legitimate.",
+  "study": {
+    "overview": "RDP is a Microsoft protocol built into Windows for remote administration, enabling a user to access and control another system via a graphical interface. It’s widely enabled in enterprise environments, making its traffic generally considered legitimate.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Remote Desktop Protocol (RDP) (T1021.001)",
+      "How Attackers Use It",
+      "Detection",
+      "Threat Hunting",
+      "Splunk Query",
+      "Additional Notes"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "python",
+        "code": "index=windows (EventCode=4624 OR EventCode=4688 OR EventCode=4778 OR EventCode=4779)\n| eval RDP_Process=if(match(ProcessName,\"mstsc.exe|rdpclip.exe|tstheme.exe\"),\"RDP Process\",\"Other\")\n| stats values(ProcessName) as Processes by Computer, User, EventCode, LogonType, IPAddress\n| where LogonType=10 OR RDP_Process=\"RDP Process\""
+      }
+    ],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "Sysmon"
+    ],
+    "tips": []
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "id": "edr (endpoint detection and response)",
+  "title": "EDR (Endpoint Detection and Response)",
+  "slug": "edr-endpoint-detection-and-response",
+  "relPath": "EDR (Endpoint Detection and Response).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "EDR",
+    "PowerShell",
+    "Phishing",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Detection",
+    "Persistence",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "edr (endpoint detection and response)",
+      "title": "EDR (Endpoint Detection and Response)",
+      "slug": "edr-endpoint-detection-and-response"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "EDR (Endpoint Detection and Response)"
+    },
+    {
+      "level": 2,
+      "text": "Why EDR matters"
+    },
+    {
+      "level": 2,
+      "text": "Telemetry (what to collect and why)"
+    },
+    {
+      "level": 2,
+      "text": "Core components"
+    },
+    {
+      "level": 2,
+      "text": "Detection approaches"
+    },
+    {
+      "level": 2,
+      "text": "Response capabilities"
+    },
+    {
+      "level": 2,
+      "text": "EDR vs AV"
+    },
+    {
+      "level": 3,
+      "text": "Scenario: phishing Word doc → macro → PowerShell → obfuscated download → payload injected into svchost.exe → attacker gains access."
+    },
+    {
+      "level": 2,
+      "text": "SOC Analyst Workflow with EDR"
+    },
+    {
+      "level": 2,
+      "text": "EDR vs XDR"
+    }
+  ],
+  "overview": "Endpoint Detection & Response (EDR) instruments endpoints (workstations, servers, VMs, cloud workloads, IoT) with a sensor/agent that collects granular telemetry and forwards it to a central console where correlation, ML and rules generate alerts. The EDR also provides response controls (isolate, kill, quarantine, remote shell, artifact collection). EDR evol",
+  "study": {
+    "overview": "Endpoint Detection & Response (EDR) instruments endpoints (workstations, servers, VMs, cloud workloads, IoT) with a sensor/agent that collects granular telemetry and forwards it to a central console where correlation, ML and rules generate alerts. The EDR also provides response controls (isolate, kill, quarantine, remote shell, artifact collection). EDR evol",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "EDR (Endpoint Detection and Response)",
+      "Why EDR matters",
+      "Telemetry (what to collect and why)",
+      "Core components",
+      "Detection approaches",
+      "Response capabilities",
+      "EDR vs AV",
+      "Scenario: phishing Word doc → macro → PowerShell → obfuscated download → payload injected into svchost.exe → attacker gains access.",
+      "SOC Analyst Workflow with EDR",
+      "EDR vs XDR"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Suspicious USB Stick (BTLO) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="forensics-labs.html">Forensics Labs</a><span>/</span><span>Suspicious USB Stick (BTLO)</span></div>
+      <h1>Suspicious USB Stick (BTLO)</h1>
+      <p>One of our clients informed us they recently suffered an employee data breach. As a startup company, they had a constrained budget allocated for security and employee training. I visited them and spoke with the relevant stakeholders. I also collected some suspicious emails and a USB drive an employee found on their premises. While I am analyzing the suspicio</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">DFIR</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Forensics Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="forensics-labs.html"><span>Forensics Labs</span><em>L2</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="countdown-btlo.html"><span>CountDown (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="bft-htb.html"><span>BFT (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="romcom-htb.html"><span>RomCom (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="insider-cyberdefenders.html"><span>Insider (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="disk-analysis-autopsy-thm.html"><span>Disk Analysis &amp; Autopsy (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hireme-cyberdefenders.html"><span>HireMe (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="unanttended-thm.html"><span>Unanttended (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="secret-recipe-thm.html"><span>Secret Recipe (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="disgruntled-thm.html"><span>Disgruntled (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="investigating-windows-thm.html"><span>Investigating Windows (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="browser-forensics-btlo.html"><span>Browser Forensics (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="suspicious-usb-stick-btlo.html"><span>Suspicious USB Stick (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntfs-forensics-letsdefend.html"><span>NTFS Forensics (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="sysinternals-cyberdefenders.html"><span>Sysinternals (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="meteorhit.html"><span>MeteorHit</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>One of our clients informed us they recently suffered an employee data breach. As a startup company, they had a constrained budget allocated for security and employee training. I visited them and spoke with the relevant stakeholders. I also collected some suspicious emails and a USB drive an employee found on their premises. While I am analyzing the suspicio</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Suspicious USB Stick (BTLO)</li><li>Scenario</li><li>Reading Material:</li><li>1- What file is the autorun.inf running?</li><li>README.pdf</li><li>2- Does the pdf file pass virustotal scan? (No malicious results returned)</li><li>false</li><li>3- Does the file have the correct magic number?</li><li>true</li><li>4- What OS type can the file exploit? (Linux, MacOS, Windows, etc)</li><li>windows</li><li>5- A Windows executable is mentioned in the pdf file, what is it?</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><ul><li>autorun.inf is a configuration file used in the root of removable drives. Windows Autoplay reads it to automatically execute a file when the drive is inserted. Attackers often use it to silently launch malicious files without user interaction. In this case, the USB stick was configured to open a PDF automatically.</li><li>/OpenAction is a PDF object that specifies an action to perform when the document is opened, such as launching a program or executing embedded JavaScript. It’s a common vector for malicious PDFs to automatically execute payloads.</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="suspicious-usb-stick-btlo">Suspicious USB Stick (BTLO)</h2>
+<h3 id="scenario"><strong>Scenario</strong></h3>
+<p><strong>One of our clients informed us they recently suffered an employee data breach. As a startup company, they had a constrained budget allocated for security and employee training. I visited them and spoke with the relevant stakeholders. I also collected some suspicious emails and a USB drive an employee found on their premises. While I am analyzing the suspicious emails, can you check the contents on the USB drive?</strong></p>
+<h4 id="reading-material"><strong>Reading Material:</strong></h4>
+<p><a class="note-link" href="https://zeltser.com/analyzing-malicious-documents/">https://zeltser.com/analyzing-malicious-documents/</a></p>
+<p><a class="note-link" href="https://en.wikipedia.org/wiki/List_of_file_signatures">https://en.wikipedia.org/wiki/List_of_file_signatures</a></p>
+<p><a class="note-link" href="https://eternal-todo.com/tools/peepdf-pdf-analysis-tool">https://eternal-todo.com/tools/peepdf-pdf-analysis-tool</a></p>
+<p><a class="note-link" href="https://blueteamlabs.online/home/challenge/suspicious-usb-stick-2f18a6b124">https://blueteamlabs.online/home/challenge/suspicious-usb-stick-2f18a6b124</a></p>
+<hr>
+<h4 id="1-what-file-is-the-autorun.inf-running">1- What file is the autorun.inf running?</h4>
+<h4 id="readme.pdf">README.pdf</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_022839-5defd13a.png" data-alt="Screenshot 2025-09-09 022839.png"><img src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_022839-5defd13a.png" alt="Screenshot 2025-09-09 022839.png" loading="lazy"></button></p>
+<p>I opened the <code>autorun.inf</code> file in Notepad++ and saw it contained instructions to launch <code>README.pdf</code>.</p>
+<blockquote><code>autorun.inf</code> is a configuration file used in the root of removable drives. Windows Autoplay reads it to automatically execute a file when the drive is inserted. Attackers often use it to silently launch malicious files without user interaction. In this case, the USB stick was configured to open a PDF automatically.</blockquote>
+<blockquote></blockquote>
+<h4 id="2-does-the-pdf-file-pass-virustotal-scan-no-malicious-results-returned">2- Does the pdf file pass virustotal scan? (No malicious results returned)</h4>
+<h4 id="false">false</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_023816-de11a7ee.png" data-alt="Screenshot 2025-09-09 023816.png"><img src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_023816-de11a7ee.png" alt="Screenshot 2025-09-09 023816.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_023837-ff30953a.png" data-alt="Screenshot 2025-09-09 023837.png"><img src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_023837-ff30953a.png" alt="Screenshot 2025-09-09 023837.png" loading="lazy"></button></p>
+<p>calculated the PDF’s SHA-256 hash using <code>sha256sum</code> and looked it up on VirusTotal. The scan flagged the file as malicious</p>
+<h4 id="3-does-the-file-have-the-correct-magic-number">3- Does the file have the correct magic number?</h4>
+<h4 id="true">true</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_023944-af1dd164.png" data-alt="Screenshot 2025-09-09 023944.png"><img src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_023944-af1dd164.png" alt="Screenshot 2025-09-09 023944.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_024031-ea090219.png" data-alt="Screenshot 2025-09-09 024031.png"><img src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_024031-ea090219.png" alt="Screenshot 2025-09-09 024031.png" loading="lazy"></button></p>
+<p>I ran the <code>file</code> command on the PDF to check its type and then used <code>xxd</code> with <code>head</code> to inspect the first bytes. All indicators showed that the file has a proper PDF header (<code>%PDF</code>). I also checked VirusTotal’s file properties, which confirmed it is recognized as a valid PDF.</p>
+<h4 id="4-what-os-type-can-the-file-exploit-linux-macos-windows-etc">4- What OS type can the file exploit? (Linux, MacOS, Windows, etc)</h4>
+<h4 id="windows">windows</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_024057-68688cda.png" data-alt="Screenshot 2025-09-09 024057.png"><img src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_024057-68688cda.png" alt="Screenshot 2025-09-09 024057.png" loading="lazy"></button></p>
+<p>I reviewed the file’s behavior on VirusTotal. The embedded scripts and payloads specifically target Windows systems</p>
+<h4 id="5-a-windows-executable-is-mentioned-in-the-pdf-file-what-is-it">5- A Windows executable is mentioned in the pdf file, what is it?</h4>
+<h4 id="cmd.exe">cmd.exe</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_024155-89014e2a.png" data-alt="Screenshot 2025-09-09 024155.png"><img src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_024155-89014e2a.png" alt="Screenshot 2025-09-09 024155.png" loading="lazy"></button></p>
+<p>I used <code>strings</code> on the PDF and <code>grep</code> for <code>.exe</code> references find embedded JavaScript in the PDF file includes a call to launch <code>cmd.exe</code></p>
+<h4 id="6-how-many-suspicious-openaction-elements-does-the-file-have">6- How many suspicious /OpenAction elements does the file have?</h4>
+<h4 id="1">1</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_024439-e73c477f.png" data-alt="Screenshot 2025-09-09 024439.png"><img src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_024439-e73c477f.png" alt="Screenshot 2025-09-09 024439.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_025456-0e18e4fe.png" data-alt="Screenshot 2025-09-09 025456.png"><img src="../assets/images/forensics-labssuspicious-usb-stick-btlo-screenshot_2025-09-09_025456-0e18e4fe.png" alt="Screenshot 2025-09-09 025456.png" loading="lazy"></button></p>
+<p>I installed <a class="note-link" href="https://github.com/jesparza/peepdf">peepdf</a> and ran <code>pdf-parser.py</code> with the options <code>-a -0</code> on the PDF file:</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">pdf-parser.py /path/to/README.pdf -a -0</code></pre></div>
+<ul>
+<li><strong><code>pdf-parser.py</code></strong> is a Python tool used for deep inspection of PDF files. It parses objects, streams, and embedded scripts to identify malicious content.</li>
+<li><strong><code>a</code></strong> shows all objects in the PDF.</li>
+<li><strong><code>0</code></strong> resolves indirect references to display the objects’ actual contents.</li>
+</ul>
+<p>This analysis revealed <strong>one <code>/OpenAction</code></strong> element.</p>
+<blockquote><code>/OpenAction</code> is a PDF object that specifies an action to perform when the document is opened, such as launching a program or executing embedded JavaScript. It’s a common vector for malicious PDFs to automatically execute payloads.</blockquote>
+<blockquote></blockquote></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#suspicious-usb-stick-btlo">Suspicious USB Stick (BTLO)</a><a href="#scenario">Scenario</a><a href="#reading-material">Reading Material:</a><a href="#1-what-file-is-the-autorun.inf-running">1- What file is the autorun.inf running?</a><a href="#readme.pdf">README.pdf</a><a href="#2-does-the-pdf-file-pass-virustotal-scan-no-malicious-results-returned">2- Does the pdf file pass virustotal scan? (No malicious results returned)</a><a href="#false">false</a><a href="#3-does-the-file-have-the-correct-magic-number">3- Does the file have the correct magic number?</a><a href="#true">true</a><a href="#4-what-os-type-can-the-file-exploit-linux-macos-windows-etc">4- What OS type can the file exploit? (Linux, MacOS, Windows, etc)</a><a href="#windows">windows</a><a href="#5-a-windows-executable-is-mentioned-in-the-pdf-file-what-is-it">5- A Windows executable is mentioned in the pdf file, what is it?</a><a href="#cmd.exe">cmd.exe</a><a href="#6-how-many-suspicious-openaction-elements-does-the-file-have">6- How many suspicious /OpenAction elements does the file have?</a><a href="#1">1</a></details>
+    </div>
+    
+    <footer class="pager"><a href="browser-forensics-btlo.html">← Browser Forensics (BTLO)</a><a href="ntfs-forensics-letsdefend.html">NTFS Forensics (LetsDefend) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

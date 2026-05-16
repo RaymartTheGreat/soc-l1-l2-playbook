@@ -1,0 +1,142 @@
+{
+  "id": "hunting persistence (mitre ta0003)/persistence with windows scheduled tasks (t1053 00",
+  "title": "Persistence with Windows Scheduled Tasks (T1053 00",
+  "slug": "persistence-with-windows-scheduled-tasks-t1053-00",
+  "relPath": "Hunting Persistence (MITRE TA0003)/Persistence with Windows Scheduled Tasks (T1053 00.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "Windows",
+    "Sysmon",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1053",
+    "TA0003",
+    "T1053.005"
+  ],
+  "parentId": "hunting persistence (mitre ta0003)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "hunting persistence (mitre ta0003)",
+      "title": "Hunting Persistence (MITRE TA0003)",
+      "slug": "hunting-persistence-mitre-ta0003"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/persistence with windows scheduled tasks (t1053 00",
+      "title": "Persistence with Windows Scheduled Tasks (T1053 00",
+      "slug": "persistence-with-windows-scheduled-tasks-t1053-00"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Persistence with Windows Scheduled Tasks (T1053.005)"
+    },
+    {
+      "level": 2,
+      "text": "Scheduled Tasks as a Persistence Mechanism"
+    },
+    {
+      "level": 3,
+      "text": "How Attackers Use Scheduled Tasks"
+    },
+    {
+      "level": 3,
+      "text": "Creating a Scheduled Task (Example Command)"
+    },
+    {
+      "level": 2,
+      "text": "Scheduled Tasks in the Registry"
+    },
+    {
+      "level": 3,
+      "text": "Key Values:"
+    },
+    {
+      "level": 3,
+      "text": "Hiding Tasks in the Registry"
+    },
+    {
+      "level": 2,
+      "text": "Monitoring and Detection"
+    },
+    {
+      "level": 3,
+      "text": "Example:"
+    },
+    {
+      "level": 3,
+      "text": "Sysmon Logs"
+    },
+    {
+      "level": 3,
+      "text": "Example Detection Queries"
+    },
+    {
+      "level": 2,
+      "text": "Summary:"
+    }
+  ],
+  "overview": "Persistence with Windows Scheduled Tasks (T1053.005)",
+  "study": {
+    "overview": "Persistence with Windows Scheduled Tasks (T1053.005)",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Persistence with Windows Scheduled Tasks (T1053.005)",
+      "Scheduled Tasks as a Persistence Mechanism",
+      "How Attackers Use Scheduled Tasks",
+      "Creating a Scheduled Task (Example Command)",
+      "Scheduled Tasks in the Registry",
+      "Key Values:",
+      "Hiding Tasks in the Registry",
+      "Monitoring and Detection",
+      "Example:",
+      "Sysmon Logs",
+      "Example Detection Queries",
+      "Summary:"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "python",
+        "code": "index=\"index\" sourcetype=\"WinEventLog:Security\" EventCode=4698\n| table _time ComputerName TaskName TaskContent "
+      },
+      {
+        "language": "python",
+        "code": "index=\"index\" user.name=\"omar\" sourcetype=\"windows.sysmon_operational\" winlog.event_id=1 process.name=\"reg.exe\""
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "schtasks /create /tn \"mysc\" /tr C:\\Users\\Public\\test.exe /sc ONLOGON /ru \"System\""
+      },
+      {
+        "language": "bash",
+        "code": "REG DELETE \"HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\TaskCache\\Tree\\[TASK_NAME]\" /f"
+      },
+      {
+        "language": "python",
+        "code": "index=\"index\" user.name=\"omar\" sourcetype=\"windows.sysmon_operational\" winlog.event_id=1 process.name=\"reg.exe\""
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "Sysmon"
+    ],
+    "tips": []
+  }
+}

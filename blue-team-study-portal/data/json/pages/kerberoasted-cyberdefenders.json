@@ -1,0 +1,132 @@
+{
+  "id": "threat hunting labs (siem)/kerberoasted (cyberdefenders)",
+  "title": "Kerberoasted (CyberDefenders)",
+  "slug": "kerberoasted-cyberdefenders",
+  "relPath": "Threat hunting Labs (SIEM)/Kerberoasted (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Kerberos",
+    "DFIR",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1546.003"
+  ],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/kerberoasted (cyberdefenders)",
+      "title": "Kerberoasted (CyberDefenders)",
+      "slug": "kerberoasted-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Kerberoasted (CyberDefenders)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 2,
+      "text": "what is kerberoasting attack:"
+    },
+    {
+      "level": 2,
+      "text": "How to detect it"
+    },
+    {
+      "level": 3,
+      "text": "🔍 Key Event IDs for Detecting Kerberoasting"
+    },
+    {
+      "level": 3,
+      "text": "🛠 Detection Query in Splunk"
+    },
+    {
+      "level": 3,
+      "text": "Important note :"
+    },
+    {
+      "level": 3,
+      "text": "Encryption Analysis and Kerberos Service Ticket Requests"
+    },
+    {
+      "level": 3,
+      "text": "Successful Logon Analysis"
+    },
+    {
+      "level": 3,
+      "text": "New Service Installation"
+    },
+    {
+      "level": 3,
+      "text": "Registry Modification for RDP"
+    },
+    {
+      "level": 3,
+      "text": "Persistence Using WMI"
+    }
+  ],
+  "overview": "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.",
+  "study": {
+    "overview": "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Kerberoasted (CyberDefenders)",
+      "Scenario",
+      "what is kerberoasting attack:",
+      "How to detect it",
+      "🔍 Key Event IDs for Detecting Kerberoasting",
+      "🛠 Detection Query in Splunk",
+      "Important note :",
+      "Encryption Analysis and Kerberos Service Ticket Requests",
+      "Successful Logon Analysis",
+      "New Service Installation",
+      "Registry Modification for RDP",
+      "Persistence Using WMI"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "jsx",
+        "code": "index=security EventCode=4769 Ticket_Encryption_Type=\"0x17\"\n| stats count by Account_Name, Service_Name, Client_Address\n| sort - count"
+      }
+    ],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": [
+      "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future."
+    ]
+  }
+}

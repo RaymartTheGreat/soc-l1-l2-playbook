@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Invite Only (THM) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-intelligence-labs.html">Threat Intelligence Labs</a><span>/</span><span>Invite Only (THM)</span></div>
+      <h1>Invite Only (THM)</h1>
+      <p>You are an SOC analyst on the SOC team at Managed Server Provider TrySecureMe. Today, you are supporting an L3 analyst in investigating flagged IPs, hashes, URLs, or domains as part of IR activities. One of the L1 analysts flagged two suspicious findings early in the morning and escalated them. Your task is to analyse these findings further and distil the in</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">Phishing</span><span class="tag">Threat Intel</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Intelligence Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>L1.5</em></a>
+      <b>18</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="tusk-infostealer-cyberdefenders.html"><span>Tusk Infostealer (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ufo-1-htb.html"><span>UFO-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="intel101-cyberdefenders.html"><span>Intel101 (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="red-stealer-cyberdefenders.html"><span>Red Stealer (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="3cx-supply-chain-cyberdefenders.html"><span>3CX Supply Chain (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="trooper-thm.html"><span>Trooper (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="attck-btlo.html"><span>ATT&amp;CK (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="icedid-cyberdefenders.html"><span>IcedID (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="oski-cyberdefenders.html"><span>Oski (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="yellow-rat-cyberdefenders.html"><span>Yellow RAT (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="friday-overtime-thm.html"><span>Friday Overtime (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="lespion-cyberdefenders.html"><span>Lespion (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="electricbreeze-1-htb.html"><span>ElectricBreeze-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="grabthephisher-cyberdefenders.html"><span>GrabThePhisher (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="dream-job-1-htb.html"><span>Dream Job-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="foxy-btlo.html"><span>Foxy (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="invite-only-thm.html"><span>Invite Only (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="haunted-btlo.html"><span>Haunted (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>You are an SOC analyst on the SOC team at Managed Server Provider TrySecureMe. Today, you are supporting an L3 analyst in investigating flagged IPs, hashes, URLs, or domains as part of IR activities. One of the L1 analysts flagged two suspicious findings early in the morning and escalated them. Your task is to analyse these findings further and distil the in</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Invite Only (THM)</li><li>Scenario</li><li>1- What is the name of the file identified with the flagged SHA256 hash?</li><li>syshelpers.exe</li><li>2- What is the file type associated with the flagged SHA256 hash?</li><li>Win32 EXE</li><li>3- What are the execution parents of the flagged hash? List the names chronologically, using a comma as a separator. Note down the hashes for later use.</li><li>361GJX7J,installer.exe</li><li>4- What is the name of the file being dropped? Note down the hash value for later use.</li><li>Aclient.exe</li><li>5- Research the second hash in question 3 and list the four malicious dropped files in the order they appear (from up to down), separated by commas.</li><li>searchhost.exe,syshelpers.exe,nat.vbs,runsys.vbs</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="invite-only-thm">Invite Only (THM)</h2>
+<h3 id="scenario">Scenario</h3>
+<p><strong>You are an SOC analyst on the SOC team at Managed Server Provider TrySecureMe. Today, you are supporting an L3 analyst in investigating flagged IPs, hashes, URLs, or domains as part of IR activities. One of the L1 analysts flagged two suspicious findings early in the morning and escalated them. Your task is to analyse these findings further and distil the information into usable threat intelligence.</strong></p>
+<p><strong>Flagged IP: 101[.]99[.]76[.]120</strong></p>
+<p><strong>Flagged SHA256 hash: 5d0509f68a9b7c415a726be75a078180e3f02e59866f193b0a99eee8e39c874f</strong></p>
+<p><strong>We recently purchased a new threat intelligence search application called TryDetectThis2.0. You can use this application to gather information on the indicators above.</strong></p>
+<p><a class="note-link" href="https://tryhackme.com/room/invite-only">https://tryhackme.com/room/invite-only</a></p>
+<hr>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_013926-2f279ba9.png" data-alt="Screenshot 2025-10-07 013926.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_013926-2f279ba9.png" alt="Screenshot 2025-10-07 013926.png" loading="lazy"></button></p>
+<h4 id="1-what-is-the-name-of-the-file-identified-with-the-flagged-sha256-hash">1- What is the name of the file identified with the flagged SHA256 hash?</h4>
+<h4 id="syshelpers.exe">syshelpers.exe</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_021956-3bc4ad1a.png" data-alt="Screenshot 2025-10-07 021956.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_021956-3bc4ad1a.png" alt="Screenshot 2025-10-07 021956.png" loading="lazy"></button></p>
+<h4 id="2-what-is-the-file-type-associated-with-the-flagged-sha256-hash">2- What is the file type associated with the flagged SHA256 hash?</h4>
+<h4 id="win32-exe">Win32 EXE</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022207-57779667.png" data-alt="Screenshot 2025-10-07 022207.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022207-57779667.png" alt="Screenshot 2025-10-07 022207.png" loading="lazy"></button></p>
+<h4 id="3-what-are-the-execution-parents-of-the-flagged-hash-list-the-names-chronologically-using-">3- What are the execution parents of the flagged hash? List the names chronologically, using a comma as a separator. Note down the hashes for later use.</h4>
+<h4 id="361gjx7jinstaller.exe">361GJX7J,installer.exe</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022316-97e4bb78.png" data-alt="Screenshot 2025-10-07 022316.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022316-97e4bb78.png" alt="Screenshot 2025-10-07 022316.png" loading="lazy"></button></p>
+<h4 id="4-what-is-the-name-of-the-file-being-dropped-note-down-the-hash-value-for-later-use.">4- What is the name of the file being dropped? Note down the hash value for later use.</h4>
+<h4 id="aclient.exe">Aclient.exe</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022410-7bd4e9d8.png" data-alt="Screenshot 2025-10-07 022410.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022410-7bd4e9d8.png" alt="Screenshot 2025-10-07 022410.png" loading="lazy"></button></p>
+<h4 id="5-research-the-second-hash-in-question-3-and-list-the-four-malicious-dropped-files-in-the-">5- Research the second hash in question 3 and list the four malicious dropped files in the order they appear (from up to down), separated by commas.</h4>
+<h4 id="searchhost.exesyshelpers.exenat.vbsrunsys.vbs">searchhost.exe,syshelpers.exe,nat.vbs,runsys.vbs</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022628-5efcbcbf.png" data-alt="Screenshot 2025-10-07 022628.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022628-5efcbcbf.png" alt="Screenshot 2025-10-07 022628.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022814-e1beebd5.png" data-alt="Screenshot 2025-10-07 022814.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022814-e1beebd5.png" alt="Screenshot 2025-10-07 022814.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022823-196d131f.png" data-alt="Screenshot 2025-10-07 022823.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_022823-196d131f.png" alt="Screenshot 2025-10-07 022823.png" loading="lazy"></button></p>
+<h4 id="6-analyse-the-files-related-to-the-flagged-ip.-what-is-the-malware-family-that-links-these">6- Analyse the files related to the flagged IP. What is the malware family that links these files?</h4>
+<h4 id="asyncrat">asyncrat</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_023540-2a081242.png" data-alt="Screenshot 2025-10-07 023540.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_023540-2a081242.png" alt="Screenshot 2025-10-07 023540.png" loading="lazy"></button></p>
+<h4 id="7-what-is-the-title-of-the-original-report-where-these-flagged-indicators-are-mentioned-us">7- What is the title of the original report where these flagged indicators are mentioned? Use Google to find the report.</h4>
+<h4 id="from-trust-to-threat-hijacked-discord-invites-used-for-multi-stage-malware-delivery">From Trust to Threat: Hijacked Discord Invites Used for Multi-Stage Malware Delivery</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_023630-781f4635.png" data-alt="Screenshot 2025-10-07 023630.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_023630-781f4635.png" alt="Screenshot 2025-10-07 023630.png" loading="lazy"></button></p>
+<h4 id="8-which-tool-did-the-attackers-use-to-steal-cookies-from-the-google-chrome-browser">8- Which tool did the attackers use to steal cookies from the Google Chrome browser?</h4>
+<h4 id="chromekatz">ChromeKatz</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_023846-1983c8fc.png" data-alt="Screenshot 2025-10-07 023846.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_023846-1983c8fc.png" alt="Screenshot 2025-10-07 023846.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_023922-0c98ba63.png" data-alt="Screenshot 2025-10-07 023922.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_023922-0c98ba63.png" alt="Screenshot 2025-10-07 023922.png" loading="lazy"></button></p>
+<h4 id="9-which-phishing-technique-did-the-attackers-use-use-the-report-to-answer-the-question.">9- Which phishing technique did the attackers use? Use the report to answer the question.</h4>
+<h4 id="clickfix">ClickFix</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_024101-dc22eeb4.png" data-alt="Screenshot 2025-10-07 024101.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_024101-dc22eeb4.png" alt="Screenshot 2025-10-07 024101.png" loading="lazy"></button></p>
+<h4 id="10-what-is-the-name-of-the-platform-that-was-used-to-redirect-a-user-to-malicious-servers">10- What is the name of the platform that was used to redirect a user to malicious servers?</h4>
+<h4 id="discord">Discord</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_024200-10eda2ec.png" data-alt="Screenshot 2025-10-07 024200.png"><img src="../assets/images/threat-intelligence-labsinvite-only-thm-screenshot_2025-10-07_024200-10eda2ec.png" alt="Screenshot 2025-10-07 024200.png" loading="lazy"></button></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#invite-only-thm">Invite Only (THM)</a><a href="#scenario">Scenario</a><a href="#1-what-is-the-name-of-the-file-identified-with-the-flagged-sha256-hash">1- What is the name of the file identified with the flagged SHA256 hash?</a><a href="#syshelpers.exe">syshelpers.exe</a><a href="#2-what-is-the-file-type-associated-with-the-flagged-sha256-hash">2- What is the file type associated with the flagged SHA256 hash?</a><a href="#win32-exe">Win32 EXE</a><a href="#3-what-are-the-execution-parents-of-the-flagged-hash-list-the-names-chronologically-using-">3- What are the execution parents of the flagged hash? List the names chronologically, using a comma as a separator. Note down the hashes for later use.</a><a href="#361gjx7jinstaller.exe">361GJX7J,installer.exe</a><a href="#4-what-is-the-name-of-the-file-being-dropped-note-down-the-hash-value-for-later-use.">4- What is the name of the file being dropped? Note down the hash value for later use.</a><a href="#aclient.exe">Aclient.exe</a><a href="#5-research-the-second-hash-in-question-3-and-list-the-four-malicious-dropped-files-in-the-">5- Research the second hash in question 3 and list the four malicious dropped files in the order they appear (from up to down), separated by commas.</a><a href="#searchhost.exesyshelpers.exenat.vbsrunsys.vbs">searchhost.exe,syshelpers.exe,nat.vbs,runsys.vbs</a><a href="#6-analyse-the-files-related-to-the-flagged-ip.-what-is-the-malware-family-that-links-these">6- Analyse the files related to the flagged IP. What is the malware family that links these files?</a><a href="#asyncrat">asyncrat</a><a href="#7-what-is-the-title-of-the-original-report-where-these-flagged-indicators-are-mentioned-us">7- What is the title of the original report where these flagged indicators are mentioned? Use Google to find the report.</a><a href="#from-trust-to-threat-hijacked-discord-invites-used-for-multi-stage-malware-delivery">From Trust to Threat: Hijacked Discord Invites Used for Multi-Stage Malware Delivery</a><a href="#8-which-tool-did-the-attackers-use-to-steal-cookies-from-the-google-chrome-browser">8- Which tool did the attackers use to steal cookies from the Google Chrome browser?</a><a href="#chromekatz">ChromeKatz</a><a href="#9-which-phishing-technique-did-the-attackers-use-use-the-report-to-answer-the-question.">9- Which phishing technique did the attackers use? Use the report to answer the question.</a><a href="#clickfix">ClickFix</a><a href="#10-what-is-the-name-of-the-platform-that-was-used-to-redirect-a-user-to-malicious-servers">10- What is the name of the platform that was used to redirect a user to malicious servers?</a><a href="#discord">Discord</a></details>
+    </div>
+    
+    <footer class="pager"><a href="foxy-btlo.html">← Foxy (BTLO)</a><a href="haunted-btlo.html">Haunted (BTLO) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

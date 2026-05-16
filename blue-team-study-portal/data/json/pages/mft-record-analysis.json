@@ -1,0 +1,95 @@
+{
+  "id": "windows forensics/ntfs analysis/mft record analysis",
+  "title": "MFT Record Analysis",
+  "slug": "mft-record-analysis",
+  "relPath": "Windows Forensics/NTFS Analysis/MFT Record Analysis.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/ntfs analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/ntfs analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/ntfs analysis",
+      "title": "NTFS Analysis",
+      "slug": "ntfs-analysis"
+    },
+    {
+      "id": "windows forensics/ntfs analysis/mft record analysis",
+      "title": "MFT Record Analysis",
+      "slug": "mft-record-analysis"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "MFT Record Analysis"
+    },
+    {
+      "level": 2,
+      "text": "Master File Table"
+    },
+    {
+      "level": 2,
+      "text": "Examining the MFT Record"
+    },
+    {
+      "level": 2,
+      "text": "Important Columns in the MFT Record"
+    },
+    {
+      "level": 2,
+      "text": "MACB Time"
+    },
+    {
+      "level": 2,
+      "text": "Why is the MACB Timestamp Important?"
+    },
+    {
+      "level": 2,
+      "text": "Questions :"
+    }
+  ],
+  "overview": "The Master File Table (MFT) Record is considered the most important file for the forensics investigator because the MFT handles any file created/modified/deleted on the file system. The Windows OS creates an entry for each individual file or folder within the MFT record.",
+  "study": {
+    "overview": "The Master File Table (MFT) Record is considered the most important file for the forensics investigator because the MFT handles any file created/modified/deleted on the file system. The Windows OS creates an entry for each individual file or folder within the MFT record.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "MFT Record Analysis",
+      "Master File Table",
+      "Examining the MFT Record",
+      "Important Columns in the MFT Record",
+      "MACB Time",
+      "Why is the MACB Timestamp Important?",
+      "Questions :"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

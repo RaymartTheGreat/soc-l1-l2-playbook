@@ -1,0 +1,128 @@
+{
+  "id": "log analysis labs/bruteforce (btlo)",
+  "title": "Bruteforce (BTLO)",
+  "slug": "bruteforce-btlo",
+  "relPath": "Log Analysis Labs/Bruteforce (BTLO).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Windows",
+    "Linux"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/bruteforce (btlo)",
+      "title": "Bruteforce (BTLO)",
+      "slug": "bruteforce-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Bruteforce (BTLO)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Question 1) How many Audit Failure events are there? (Format: Count of Events)"
+    },
+    {
+      "level": 3,
+      "text": "3103"
+    },
+    {
+      "level": 3,
+      "text": "Question 2) What is the username of the local account that is being targeted? (Format: Username)"
+    },
+    {
+      "level": 3,
+      "text": "administrator"
+    },
+    {
+      "level": 3,
+      "text": "Question 3) What is the failure reason related to the Audit Failure logs? (Format: String)"
+    },
+    {
+      "level": 3,
+      "text": "unknown username or bad password"
+    },
+    {
+      "level": 3,
+      "text": "Question 4) What is the Windows Event ID associated with these logon failures? (Format: ID)"
+    },
+    {
+      "level": 3,
+      "text": "4625"
+    },
+    {
+      "level": 3,
+      "text": "Question 5) What is the source IP conducting this attack? (Format: X.X.X.X)"
+    },
+    {
+      "level": 3,
+      "text": "113.161.192.227"
+    },
+    {
+      "level": 3,
+      "text": "Question 6) What country is this IP address associated with? (Format: Country)"
+    },
+    {
+      "level": 3,
+      "text": "Viet Nam"
+    },
+    {
+      "level": 3,
+      "text": "Question 7) What is the range of source ports that were used by the attacker to make these login requests? (LowestPort-HighestPort - Ex: 100-541)"
+    },
+    {
+      "level": 3,
+      "text": "49162–65534"
+    }
+  ],
+  "overview": "Can you analyze logs from an attempted RDP bruteforce attack?One of our system administrators identified a large number of Audit Failure events in the Windows Security Event log.There are a number of different ways to approach the analysis of these logs! Consider the suggested tools, but there are many others out there!",
+  "study": {
+    "overview": "Can you analyze logs from an attempted RDP bruteforce attack?One of our system administrators identified a large number of Audit Failure events in the Windows Security Event log.There are a number of different ways to approach the analysis of these logs! Consider the suggested tools, but there are many others out there!",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Bruteforce (BTLO)",
+      "Scenario",
+      "Question 1) How many Audit Failure events are there? (Format: Count of Events)",
+      "3103",
+      "Question 2) What is the username of the local account that is being targeted? (Format: Username)",
+      "administrator",
+      "Question 3) What is the failure reason related to the Audit Failure logs? (Format: String)",
+      "unknown username or bad password",
+      "Question 4) What is the Windows Event ID associated with these logon failures? (Format: ID)",
+      "4625",
+      "Question 5) What is the source IP conducting this attack? (Format: X.X.X.X)",
+      "113.161.192.227"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

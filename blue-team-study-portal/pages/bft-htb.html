@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>BFT (HTB) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="forensics-labs.html">Forensics Labs</a><span>/</span><span>BFT (HTB)</span></div>
+      <h1>BFT (HTB)</h1>
+      <p>In this Sherlock, you will become acquainted with MFT (Master File Table) forensics. You will be introduced to well-known tools and methodologies for analyzing MFT artifacts to identify malicious activity. During our analysis, you will utilize the MFTECmd tool to parse the provided MFT file, TimeLine Explorer to open and analyze the results from the parsed M</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">DFIR</span><span class="tag">Detection</span><span class="tag">C2</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Forensics Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="forensics-labs.html"><span>Forensics Labs</span><em>L2</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="countdown-btlo.html"><span>CountDown (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="bft-htb.html"><span>BFT (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="romcom-htb.html"><span>RomCom (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="insider-cyberdefenders.html"><span>Insider (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="disk-analysis-autopsy-thm.html"><span>Disk Analysis &amp; Autopsy (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hireme-cyberdefenders.html"><span>HireMe (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="unanttended-thm.html"><span>Unanttended (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="secret-recipe-thm.html"><span>Secret Recipe (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="disgruntled-thm.html"><span>Disgruntled (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="investigating-windows-thm.html"><span>Investigating Windows (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="browser-forensics-btlo.html"><span>Browser Forensics (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="suspicious-usb-stick-btlo.html"><span>Suspicious USB Stick (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntfs-forensics-letsdefend.html"><span>NTFS Forensics (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="sysinternals-cyberdefenders.html"><span>Sysinternals (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="meteorhit.html"><span>MeteorHit</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>In this Sherlock, you will become acquainted with MFT (Master File Table) forensics. You will be introduced to well-known tools and methodologies for analyzing MFT artifacts to identify malicious activity. During our analysis, you will utilize the MFTECmd tool to parse the provided MFT file, TimeLine Explorer to open and analyze the results from the parsed M</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>BFT (HTB)</li><li>Scenario</li><li>First what is the MFT?</li><li>Why the MFT is useful for forensics</li><li>1- Simon Stark was targeted by attackers on February 13. He downloaded a ZIP file from a link received in an email. What was the name of the ZIP file he downloaded from the link?</li><li>Stage-20240213T093324Z-001.zip</li><li>2- Examine the Zone Identifier contents for the initially downloaded ZIP file. This field reveals the HostUrl from where the file was downloaded, serving as a valuable Indicator of Compromise (IOC) in our investigation/analysis. What is the full Host URL from where this ZIP file was downloaded?</li><li>https://storage.googleapis.com/drive-bulk-export-anonymous/20240213T093324.039Z/4133399871716478688/a40aecd0-1cf3-4f88-b55a-e188d5c1c04f/1/c277a8b4-afa9-4d34-b8ca-e1eb5e5f983c?authuser</li><li>3- What is the full path and name of the malicious file that executed malicious code and connected to a C2 server?</li><li>C:\Users\simon.stark\Downloads\Stage-20240213T093324Z-001\Stage\invoice\invoices\invoice.bat</li><li>4- Analyze the $Created0x30 timestamp for the previously identified file. When was this file created on disk?</li><li>2024-02-13 16:38:39</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>MFTECmd.exe -f &lt;PATH_TO_$MFT&gt; --de 23436</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="bft-htb">BFT (HTB)</h2>
+<h3 id="scenario"><strong>Scenario</strong></h3>
+<p><strong>In this Sherlock, you will become acquainted with MFT (Master File Table) forensics. You will be introduced to well-known tools and methodologies for analyzing MFT artifacts to identify malicious activity. During our analysis, you will utilize the MFTECmd tool to parse the provided MFT file, TimeLine Explorer to open and analyze the results from the parsed MFT, and a Hex editor to recover file contents from the MFT.</strong></p>
+<p><a class="note-link" href="https://app.hackthebox.com/sherlocks/633">https://app.hackthebox.com/sherlocks/633</a></p>
+<hr>
+<h4 id="first-what-is-the-mft">First what is the MFT?</h4>
+<p>The <strong>Master File Table (MFT)</strong> is the central metadata database for NTFS. Every file and directory on an NTFS volume has an MFT entry (also called an MFT record) and a unique <strong>MFT record number</strong> . Each entry stores attributes such as timestamps, filename(s), security descriptor, and pointers to the file’s data (<code>$DATA</code>). The MFT itself is a special file on the volume (<code>$MFT</code>) and describes all other files—including its own metadata.</p>
+<h4 id="why-the-mft-is-useful-for-forensics">Why the MFT is useful for forensics</h4>
+<ol>
+<li><strong>Comprehensive metadata</strong> — MFT entries store creation/modify/access/change timestamps, file size, parent path, flags, and security info, giving a rich snapshot of file state.</li>
+<li><strong>Deleted-file recovery</strong> — entries often remain after deletion until reused, allowing recovery of filenames, timestamps, and data pointers even when the file was removed.</li>
+<li><strong>Timeline reconstruction</strong> — multiple MFT timestamps (and filename vs standard-information timestamps) help build a precise activity timeline.</li>
+<li><strong>Track file operations</strong> — renames, moves, attribute changes, and evidence of overwrites are reflected in MFT attributes.</li>
+<li><strong>Malware / suspicious activity detection</strong> — unusual MFT activity (e.g., NTDS copies in temporary paths, rapid create/modify patterns) is a strong indicator of malicious behavior.</li>
+<li><strong>Correlation point</strong> — MFT data can be correlated with the USN Journal, <code>$LogFile</code>, and Windows event logs to validate and enrich findings.</li>
+</ol>
+<hr>
+<h4 id="1-simon-stark-was-targeted-by-attackers-on-february-13.-he-downloaded-a-zip-file-from-a-li"><strong>1- Simon Stark was targeted by attackers on February 13. He downloaded a ZIP file from a link received in an email. What was the name of the ZIP file he downloaded from the link?</strong></h4>
+<h4 id="stage-20240213t093324z-001.zip">Stage-20240213T093324Z-001.zip</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_200046-7df4689a.png" data-alt="Screenshot 2025-08-21 200046.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_200046-7df4689a.png" alt="Screenshot 2025-08-21 200046.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_200334-07230136.png" data-alt="Screenshot 2025-08-21 200334.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_200334-07230136.png" alt="Screenshot 2025-08-21 200334.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_202639-2dfca86d.png" data-alt="Screenshot 2025-08-21 202639.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_202639-2dfca86d.png" alt="Screenshot 2025-08-21 202639.png" loading="lazy"></button></p>
+<p><code>MFTECmd.exe -f &lt;PATH_TO_$MFT_Artifact&gt; --csv &lt;PATH_TO_OUTPUT_DIRECTORY&gt; --csvf &lt;NAME_OF_MFT&gt;</code> using MFTECmd to parse the mft and export its content then using timeline explorer a powerful csv viewer</p>
+<p>now we filter for .zip in the extension column we got 3 files  Stage-20240213T093324Z-001.zip /  invoices.zip / KAPE.zip</p>
+<p>kape isn’t malicious in this case so will focus on the other 2 zips</p>
+<p><strong>Stage-20240213T093324Z-001.zip</strong> is identified as the initial download based on its parent path reference found within another ZIP file.</p>
+<h4 id="2-examine-the-zone-identifier-contents-for-the-initially-downloaded-zip-file.-this-field-r"><strong>2- Examine the Zone Identifier contents for the initially downloaded ZIP file. This field reveals the HostUrl from where the file was downloaded, serving as a valuable Indicator of Compromise (IOC) in our investigation/analysis. What is the full Host URL from where this ZIP file was downloaded?</strong></h4>
+<h4 id="httpsstorage.googleapis.comdrive-bulk-export-anonymous20240213t093324.039z4133399871716478">https://storage.googleapis.com/drive-bulk-export-anonymous/20240213T093324.039Z/4133399871716478688/a40aecd0-1cf3-4f88-b55a-e188d5c1c04f/1/c277a8b4-afa9-4d34-b8ca-e1eb5e5f983c?authuser</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203126-78b103e6.png" data-alt="Screenshot 2025-08-21 203126.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203126-78b103e6.png" alt="Screenshot 2025-08-21 203126.png" loading="lazy"></button></p>
+<p>we clear the zip filter and we search with entry number value ‘75191’ from Q1 Scroll to the <strong>Zone ID Contents</strong> column to view the <strong>HostURL</strong> metadata of the downloaded file. In the example below, the entry is expanded by double-clicking to reveal the full cell contents.</p>
+<h4 id="3-what-is-the-full-path-and-name-of-the-malicious-file-that-executed-malicious-code-and-co"><strong>3- What is the full path and name of the malicious file that executed malicious code and connected to a C2 server?</strong></h4>
+<h4 id="cuserssimon.starkdownloadsstage-20240213t093324z-001stageinvoiceinvoicesinvoice.bat">C:\Users\simon.stark\Downloads\Stage-20240213T093324Z-001\Stage\invoice\invoices\invoice.bat</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203602-d76297ab.png" data-alt="Screenshot 2025-08-21 203602.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203602-d76297ab.png" alt="Screenshot 2025-08-21 203602.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203644-8f1bdc5d.png" data-alt="Screenshot 2025-08-21 203644.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203644-8f1bdc5d.png" alt="Screenshot 2025-08-21 203644.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203651-f6cc58eb.png" data-alt="Screenshot 2025-08-21 203651.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203651-f6cc58eb.png" alt="Screenshot 2025-08-21 203651.png" loading="lazy"></button></p>
+<p>clear the entry number filter and search with the filename</p>
+<p>Using this keyword search, we identify a second archive, <strong>invoice.zip</strong>, which contains a suspicious batch file named <strong>invoice.bat</strong>. Batch files are noteworthy since they are commonly used to execute commands on Windows systems.</p>
+<h4 id="4-analyze-the-created0x30-timestamp-for-the-previously-identified-file.-when-was-this-file"><strong>4- Analyze the $Created0x30 timestamp for the previously identified file. When was this file created on disk?</strong></h4>
+<h4 id="2024-02-13-163839">2024-02-13 16:38:39</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203715-3082b5db.png" data-alt="Screenshot 2025-08-21 203715.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203715-3082b5db.png" alt="Screenshot 2025-08-21 203715.png" loading="lazy"></button></p>
+<p>Scroll over to the <em>Created0x30</em> column</p>
+<h4 id="5-finding-the-hex-offset-of-an-mft-record-is-beneficial-in-many-investigative-scenarios.-f"><strong>5- Finding the hex offset of an MFT record is beneficial in many investigative scenarios. Find the hex offset of the stager file from Question 3.</strong></h4>
+<h4 id="16e3000">16E3000</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203830-818e5560.png" data-alt="Screenshot 2025-08-21 203830.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203830-818e5560.png" alt="Screenshot 2025-08-21 203830.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203904-ef4fef39.png" data-alt="Screenshot 2025-08-21 203904.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_203904-ef4fef39.png" alt="Screenshot 2025-08-21 203904.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_204023-edbfe994.png" data-alt="Screenshot 2025-08-21 204023.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_204023-edbfe994.png" alt="Screenshot 2025-08-21 204023.png" loading="lazy"></button></p>
+<p>To find the offset of <strong>invoice.bat</strong>, we use its <strong>MFT entry number (23436)</strong>. Each entry is 1024 bytes, so <code>23436 × 1024 = 23998464</code> (decimal). Converting to hexadecimal gives <strong><code>16E3000</code></strong>, which is the offset used in forensic tools to locate the file’s raw data.</p>
+<h4 id="6-each-mft-record-is-1024-bytes-in-size.-if-a-file-on-disk-has-smaller-size-than-1024-byte"><strong>6- Each MFT record is 1024 bytes in size. If a file on disk has smaller size than 1024 bytes, they can be stored directly on MFT File itself. These are called MFT Resident files. During Windows File system Investigation, its crucial to look for any malicious/suspicious files that may be resident in MFT. This way we can find contents of malicious files/scripts. Find the contents of The malicious stager identified in Question3 and answer with the C2 IP and port.</strong></h4>
+<h4 id="43.204.110.2036666">43.204.110.203:6666</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_204419-4d84cb87.png" data-alt="Screenshot 2025-08-21 204419.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_204419-4d84cb87.png" alt="Screenshot 2025-08-21 204419.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_204450-8e4f9abd.png" data-alt="Screenshot 2025-08-21 204450.png"><img src="../assets/images/forensics-labsbft-htb-screenshot_2025-08-21_204450-8e4f9abd.png" alt="Screenshot 2025-08-21 204450.png" loading="lazy"></button></p>
+<p>When a file is smaller than <strong>1024 bytes</strong> (the size of a single MFT record), it can be stored directly inside the record itself. These are called <strong>resident files</strong>, and their content is kept in the <strong>$DATA attribute</strong> of the MFT entry.</p>
+<p>To extract this information, we can use <strong>MFTECmd</strong> with the <code>--de</code> option, which dumps the details of a specific entry number. Since we already know the entry number of the malicious stager file (<strong>23436</strong>) from earlier, the command looks like this:</p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">MFTECmd.exe -f &lt;PATH_TO_$MFT&gt; --de 23436</code></pre></div>
+<p>Running this displays the full details of the entry, including the <strong>DATA attribute</strong>. In the ASCII section of that output, we can clearly see the contents of the stager script. This reveals the <strong>PowerShell command</strong> inside, which points to the attacker’s <strong>C2 IP address and port</strong> used for the second-stage payload.</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#bft-htb">BFT (HTB)</a><a href="#scenario">Scenario</a><a href="#first-what-is-the-mft">First what is the MFT?</a><a href="#why-the-mft-is-useful-for-forensics">Why the MFT is useful for forensics</a><a href="#1-simon-stark-was-targeted-by-attackers-on-february-13.-he-downloaded-a-zip-file-from-a-li">1- Simon Stark was targeted by attackers on February 13. He downloaded a ZIP file from a link received in an email. What was the name of the ZIP file he downloaded from the link?</a><a href="#stage-20240213t093324z-001.zip">Stage-20240213T093324Z-001.zip</a><a href="#2-examine-the-zone-identifier-contents-for-the-initially-downloaded-zip-file.-this-field-r">2- Examine the Zone Identifier contents for the initially downloaded ZIP file. This field reveals the HostUrl from where the file was downloaded, serving as a valuable Indicator of Compromise (IOC) in our investigation/analysis. What is the full Host URL from where this ZIP file was downloaded?</a><a href="#httpsstorage.googleapis.comdrive-bulk-export-anonymous20240213t093324.039z4133399871716478">https://storage.googleapis.com/drive-bulk-export-anonymous/20240213T093324.039Z/4133399871716478688/a40aecd0-1cf3-4f88-b55a-e188d5c1c04f/1/c277a8b4-afa9-4d34-b8ca-e1eb5e5f983c?authuser</a><a href="#3-what-is-the-full-path-and-name-of-the-malicious-file-that-executed-malicious-code-and-co">3- What is the full path and name of the malicious file that executed malicious code and connected to a C2 server?</a><a href="#cuserssimon.starkdownloadsstage-20240213t093324z-001stageinvoiceinvoicesinvoice.bat">C:\Users\simon.stark\Downloads\Stage-20240213T093324Z-001\Stage\invoice\invoices\invoice.bat</a><a href="#4-analyze-the-created0x30-timestamp-for-the-previously-identified-file.-when-was-this-file">4- Analyze the $Created0x30 timestamp for the previously identified file. When was this file created on disk?</a><a href="#2024-02-13-163839">2024-02-13 16:38:39</a><a href="#5-finding-the-hex-offset-of-an-mft-record-is-beneficial-in-many-investigative-scenarios.-f">5- Finding the hex offset of an MFT record is beneficial in many investigative scenarios. Find the hex offset of the stager file from Question 3.</a><a href="#16e3000">16E3000</a><a href="#6-each-mft-record-is-1024-bytes-in-size.-if-a-file-on-disk-has-smaller-size-than-1024-byte">6- Each MFT record is 1024 bytes in size. If a file on disk has smaller size than 1024 bytes, they can be stored directly on MFT File itself. These are called MFT Resident files. During Windows File system Investigation, its crucial to look for any malicious/suspicious files that may be resident in MFT. This way we can find contents of malicious files/scripts. Find the contents of The malicious stager identified in Question3 and answer with the C2 IP and port.</a><a href="#43.204.110.2036666">43.204.110.203:6666</a></details>
+    </div>
+    
+    <footer class="pager"><a href="countdown-btlo.html">← CountDown (BTLO)</a><a href="romcom-htb.html">RomCom (HTB) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

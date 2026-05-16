@@ -1,0 +1,110 @@
+{
+  "id": "threat hunting labs (siem)/nerisbot (cyberdefenders)",
+  "title": "NerisBot (CyberDefenders)",
+  "slug": "nerisbot-cyberdefenders",
+  "relPath": "Threat hunting Labs (SIEM)/NerisBot (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "Network",
+    "Detection",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/nerisbot (cyberdefenders)",
+      "title": "NerisBot (CyberDefenders)",
+      "slug": "nerisbot-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "NerisBot (CyberDefenders)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 2,
+      "text": "Initial Unauthorized Access"
+    },
+    {
+      "level": 2,
+      "text": "Attacker's Domain Name"
+    },
+    {
+      "level": 2,
+      "text": "Targeted System's IP Address"
+    },
+    {
+      "level": 2,
+      "text": "Downloaded Files on Compromised Host"
+    },
+    {
+      "level": 2,
+      "text": "Malicious File Disguised as a Text File"
+    }
+  ],
+  "overview": "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.",
+  "study": {
+    "overview": "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "NerisBot (CyberDefenders)",
+      "Scenario",
+      "Initial Unauthorized Access",
+      "Attacker's Domain Name",
+      "Targeted System's IP Address",
+      "Downloaded Files on Compromised Host",
+      "Malicious File Disguised as a Text File"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "jsx",
+        "code": "index=* sourcetype=suricata eventtype=suricata_eve_ids_attack\n| stats values(dest_ip) values(http.hostname) by src_ip"
+      },
+      {
+        "language": "jsx",
+        "code": "index=* sourcetype=suricata event_type=dns \"dns.answers{}.rdata\"=\"195.88.191.59\"\n| stats count by dns.rrname"
+      },
+      {
+        "language": "jsx",
+        "code": "index=* sourcetype=suricata dest_ip=195.88.191.59 http.url=*\n| table _time src_ip dest_ip http.url\n| sort + _time"
+      },
+      {
+        "language": "jsx",
+        "code": "index=* sourcetype=suricata src_ip=147.32.84.165 dest_ip=195.88.191.59 url=*\n| stats count by http.url"
+      }
+    ],
+    "importantCommands": [],
+    "tools": [
+      "Zeek"
+    ],
+    "tips": [
+      "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future."
+    ]
+  }
+}

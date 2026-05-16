@@ -1,0 +1,102 @@
+{
+  "id": "volatility/differences between volatility 2 and volatility 3",
+  "title": "Differences Between Volatility 2 and Volatility 3",
+  "slug": "differences-between-volatility-2-and-volatility-3",
+  "relPath": "Volatility/Differences Between Volatility 2 and Volatility 3.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Linux",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "volatility",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "volatility"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "volatility",
+      "title": "Volatility",
+      "slug": "volatility"
+    },
+    {
+      "id": "volatility/differences between volatility 2 and volatility 3",
+      "title": "Differences Between Volatility 2 and Volatility 3",
+      "slug": "differences-between-volatility-2-and-volatility-3"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Differences Between Volatility 2 and Volatility 3"
+    },
+    {
+      "level": 3,
+      "text": "1- Symbol Tables Replace Profiles"
+    },
+    {
+      "level": 3,
+      "text": "2- Plugin Names Are OS-Specific"
+    },
+    {
+      "level": 3,
+      "text": "3- CLI Syntax Overhaul"
+    },
+    {
+      "level": 3,
+      "text": "Command Comparison Table"
+    },
+    {
+      "level": 3,
+      "text": "Summary"
+    }
+  ],
+  "overview": "In Volatility 2, the use of memory profiles was mandatory. Analysts had to first identify the OS profile using:",
+  "study": {
+    "overview": "In Volatility 2, the use of memory profiles was mandatory. Analysts had to first identify the OS profile using:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Differences Between Volatility 2 and Volatility 3",
+      "1- Symbol Tables Replace Profiles",
+      "2- Plugin Names Are OS-Specific",
+      "3- CLI Syntax Overhaul",
+      "Command Comparison Table",
+      "Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "volatility -f memdump.mem imageinfo"
+      },
+      {
+        "language": "bash",
+        "code": "volatility -f memdump.mem --profile=Win7SP1x64 pslist"
+      },
+      {
+        "language": "bash",
+        "code": "python3 vol.py -f memdump.mem windows.pslist"
+      },
+      {
+        "language": "bash",
+        "code": "volatility -f memdump.mem --profile=Win7SP1x64 pslist"
+      }
+    ],
+    "tools": [
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

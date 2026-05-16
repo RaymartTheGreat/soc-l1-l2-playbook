@@ -1,0 +1,125 @@
+{
+  "id": "log analysis labs/smoke & mirrors (htb)",
+  "title": "Smoke & Mirrors (HTB)",
+  "slug": "smoke-mirrors-htb",
+  "relPath": "Log Analysis Labs/Smoke & Mirrors (HTB).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Splunk",
+    "EDR",
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Memory",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/smoke & mirrors (htb)",
+      "title": "Smoke & Mirrors (HTB)",
+      "slug": "smoke-mirrors-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Smoke & Mirrors (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- The attacker disabled LSA protection on the compromised host by modifying a registry key. What is the full path of that registry key?"
+    },
+    {
+      "level": 3,
+      "text": "HKLM\\SYSTEM\\CurrentControlSet\\Control\\LSA"
+    },
+    {
+      "level": 3,
+      "text": "2- Which PowerShell command did the attacker first execute to disable Windows Defender?"
+    },
+    {
+      "level": 3,
+      "text": "Set-MpPreference -DisableIOAVProtection $true -DisableEmailScanning $true -DisableBlockAtFirstSeen $true"
+    },
+    {
+      "level": 3,
+      "text": "3- The attacker loaded an AMSI patch written in PowerShell. Which function in the DLL is being patched by the script to effectively disable AMSI?"
+    },
+    {
+      "level": 3,
+      "text": "AmsiScanBuffer"
+    },
+    {
+      "level": 3,
+      "text": "4- Which command did the attacker use to restart the machine in Safe Mode?"
+    },
+    {
+      "level": 3,
+      "text": "bcdedit.exe /set safeboot network"
+    },
+    {
+      "level": 3,
+      "text": "5- Which PowerShell command did the attacker use to disable PowerShell command history logging?"
+    },
+    {
+      "level": 3,
+      "text": "Set-PSReadlineOption -HistorySaveStyle SaveNothing"
+    }
+  ],
+  "overview": "Byte Doctor Reyes is investigating a stealthy post-breach attack where several expected security logs and Windows Defender alerts appear to be missing. He suspects the attacker employed defense evasion techniques to disable or manipulate security controls, significantly complicating detection efforts. Using the exported event logs, your objective is to uncov",
+  "study": {
+    "overview": "Byte Doctor Reyes is investigating a stealthy post-breach attack where several expected security logs and Windows Defender alerts appear to be missing. He suspects the attacker employed defense evasion techniques to disable or manipulate security controls, significantly complicating detection efforts. Using the exported event logs, your objective is to uncov",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Smoke & Mirrors (HTB)",
+      "Scenario",
+      "1- The attacker disabled LSA protection on the compromised host by modifying a registry key. What is the full path of that registry key?",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Control\\LSA",
+      "2- Which PowerShell command did the attacker first execute to disable Windows Defender?",
+      "Set-MpPreference -DisableIOAVProtection $true -DisableEmailScanning $true -DisableBlockAtFirstSeen $true",
+      "3- The attacker loaded an AMSI patch written in PowerShell. Which function in the DLL is being patched by the script to effectively disable AMSI?",
+      "AmsiScanBuffer",
+      "4- Which command did the attacker use to restart the machine in Safe Mode?",
+      "bcdedit.exe /set safeboot network",
+      "5- Which PowerShell command did the attacker use to disable PowerShell command history logging?",
+      "Set-PSReadlineOption -HistorySaveStyle SaveNothing"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "EDR",
+      "PowerShell"
+    ],
+    "tips": [
+      "LSA (Local Security Authority) Protection, also known as LSA Protection Mode or LSA RunAsPPL (Run as Protected Process Light), is a security feature in Windows operating systems designed to enhance the protection of the Local Security Authority Subsystem Service (LSASS). LSASS is a critical component responsible for enforcing the security policy on the system, handling password changes, creating access tokens, and managing user logins.",
+      "The Antimalware Scan Interface (AMSI) is a Windows security feature that allows applications such as PowerShell, scripting engines, and Office macros to send content to antivirus/EDR solutions for scanning before execution. Its main purpose is to detect and block malicious code at runtime, even if the payload is obfuscated.",
+      "AMSI relies on a DLL named amsi.dll, which provides functions used by Windows processes to perform these scans. The most important function in this DLL is AmsiScanBuffer. This function is responsible for scanning script content in memory and returning whether it is malicious or safe."
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "network/fundamentals/how to observe network traffic",
+  "title": "How to Observe Network Traffic",
+  "slug": "how-to-observe-network-traffic",
+  "relPath": "Network/Fundamentals/How to Observe Network Traffic.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Windows",
+    "Network",
+    "Detection",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/how to observe network traffic",
+      "title": "How to Observe Network Traffic",
+      "slug": "how-to-observe-network-traffic"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "How to Observe Network Traffic"
+    },
+    {
+      "level": 2,
+      "text": "Primary data sources"
+    },
+    {
+      "level": 3,
+      "text": "1- Logs"
+    },
+    {
+      "level": 3,
+      "text": "2- Full packet capture (PCAP)"
+    },
+    {
+      "level": 3,
+      "text": "3- Network statistics and flow telemetry"
+    },
+    {
+      "level": 2,
+      "text": "Tools for analysis"
+    }
+  ],
+  "overview": "- Logs are the fastest way to get a high-level view of activity. Different systems use different formats and fields; there is no single universal log schema. Vendors decide what to record, and most do not store full packets. Typical logged fields include source IP, destination IP, timestamp, and event type. - Example :",
+  "study": {
+    "overview": "- Logs are the fastest way to get a high-level view of activity. Different systems use different formats and fields; there is no single universal log schema. Vendors decide what to record, and most do not store full packets. Typical logged fields include source IP, destination IP, timestamp, and event type. - Example :",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "How to Observe Network Traffic",
+      "Primary data sources",
+      "1- Logs",
+      "2- Full packet capture (PCAP)",
+      "3- Network statistics and flow telemetry",
+      "Tools for analysis"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Wireshark",
+      "Zeek"
+    ],
+    "tips": []
+  }
+}

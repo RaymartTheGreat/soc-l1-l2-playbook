@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Encapsulation and Decapsulation | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="network.html">Network</a><span>/</span><a href="fundamentals.html">Fundamentals</a><span>/</span><span>Encapsulation and Decapsulation</span></div>
+      <h1>Encapsulation and Decapsulation</h1>
+      <p>Encapsulation is the process where each protocol layer “wraps” the data it receives with its own header (and sometimes a trailer) before handing it to the layer below. This modular approach lets each layer focus solely on its responsibility—port addressing, routing, framing, error checks, etc. without worrying about the rest of the stack.</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Detection</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Network</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="network.html"><span>Network</span><em>L1</em></a>
+      <b>4</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="fundamentals.html"><span>Fundamentals</span><em>L1</em></a>
+      <b>22</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="what-is-a-network.html"><span>What Is a Network</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="topologies.html"><span>Topologies</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="router-vs-switch.html"><span>Router VS Switch</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="public-vs-private-ip.html"><span>Public vs Private IP</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="subnetting.html"><span>Subnetting</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="virtual-lan-vlan.html"><span>Virtual LAN (VLAN)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="osi-model.html"><span>OSI Model</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="tcp-ip-model.html"><span>TCP IP Model</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="tcp-the-three-way-handshake.html"><span>TCP (The Three-Way Handshake)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="user-datagram-protocol-udp.html"><span>User Datagram Protocol (UDP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="encapsulation-and-decapsulation.html"><span>Encapsulation and Decapsulation</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="vpn.html"><span>VPN</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="firewall.html"><span>Firewall</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="routing.html"><span>Routing</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="nat.html"><span>NAT</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="segmentation.html"><span>Segmentation</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ipv4-vs-ipv6.html"><span>IPv4 vs IPv6</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="broadcast-vs-unicast-vs-multicast.html"><span>Broadcast vs Unicast vs Multicast</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="proxy.html"><span>Proxy</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="network-devices.html"><span>Network Devices</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="network-toolkit.html"><span>Network Toolkit</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="how-to-observe-network-traffic.html"><span>How to Observe Network Traffic</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="protocols.html"><span>Protocols</span><em>L1</em></a>
+      <b>13</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="server-message-block-smb.html"><span>Server Message Block (SMB)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="address-resolution-protocol-arp.html"><span>Address Resolution Protocol (ARP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="domain-name-system-dns.html"><span>Domain Name System (DNS)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="dynamic-host-configuration-protocol-dhcp.html"><span>Dynamic Host Configuration Protocol (DHCP )</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="internet-control-message-protocol-icmp.html"><span>Internet Control Message Protocol (ICMP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="file-transfer-protocol-ftp.html"><span>File Transfer Protocol (FTP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="telnet.html"><span>Telnet</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ssh-secure-shell-protocol.html"><span>SSH (Secure Shell Protocol)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="http-and-https.html"><span>HTTP and HTTPS</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="email-protocols.html"><span>Email Protocols</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="kerberos-authentication-0276e639.html"><span>Kerberos authentication</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="lightweight-directory-access-protocol-ldap.html"><span>Lightweight Directory Access Protocol (LDAP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="protocols-quick-reminder.html"><span>Protocols Quick Reminder</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="important-ports.html"><span>Important ports</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="packet-structure.html"><span>Packet structure</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Encapsulation is the process where each protocol layer “wraps” the data it receives with its own header (and sometimes a trailer) before handing it to the layer below. This modular approach lets each layer focus solely on its responsibility—port addressing, routing, framing, error checks, etc. without worrying about the rest of the stack.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Encapsulation and Decapsulation</li><li>Encapsulation</li><li>Protocol Data Units (PDUs)</li><li>Step‑by‑Step Encapsulation</li><li>Decapsulation</li><li>Example: Fetching a Web Page</li><li>Why It Matters</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><ul><li>Note: Frames often include both a header (addresses, type) and a trailer (error‑check sequence).</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="encapsulation-and-decapsulation">Encapsulation and Decapsulation</h2>
+<h3 id="encapsulation"><strong>Encapsulation</strong></h3>
+<p><strong>Encapsulation is the process where each protocol layer “wraps” the data it receives with its own header (and sometimes a trailer) before handing it to the layer below. This modular approach lets each layer focus solely on its responsibility—port addressing, routing, framing, error checks, etc. without worrying about the rest of the stack.</strong></p>
+<hr>
+<h4 id="protocol-data-units-pdus"><strong>Protocol Data Units (PDUs)</strong></h4>
+<div class="table-wrap"><table><thead><tr><th><strong>Layer</strong></th><th><strong>PDU Name</strong></th><th><strong>What’s Added</strong></th></tr></thead><tbody><tr><td>Application</td><td>Data</td><td>Application‑specific formatting (e.g., HTTP headers)</td></tr><tr><td>Transport</td><td>Segment (TCP)Datagram (UDP)</td><td>Source/destination ports,sequence numbers, flags</td></tr><tr><td>Network</td><td>Packet</td><td>Source/destination IP addresses,TTL, protocol field</td></tr><tr><td>Data Link</td><td>Frame</td><td>Source/destination MACs,frame check sequence (FCS) trailer</td></tr></tbody></table></div>
+<hr>
+<h4 id="stepbystep-encapsulation"><strong>Step‑by‑Step Encapsulation</strong></h4>
+<p><button class="image-button" data-src="../assets/images/networkfundamentalsencapsulation-and-decapsulation-image-b46a0740.png" data-alt="image.png"><img src="../assets/images/networkfundamentalsencapsulation-and-decapsulation-image-b46a0740.png" alt="image.png" loading="lazy"></button></p>
+<ol>
+<li><strong>Application Layer</strong></li>
+<ul>
+<li>Your application (web browser, chat client, etc.) generates the <strong>raw payload</strong> and passes it down.</li>
+</ul>
+<li><strong>Transport Layer</strong></li>
+<ul>
+<li><strong>TCP</strong> adds a header with ports, sequence/ACK numbers, flags, window size, checksum → <strong>TCP segment</strong>.</li>
+<li><strong>UDP</strong> adds ports, length, checksum → <strong>UDP datagram</strong>.</li>
+</ul>
+<li><strong>Network Layer</strong></li>
+<ul>
+<li>The IP layer prepends source and destination IP addresses, TTL, fragmentation info → <strong>IP packet</strong>.</li>
+</ul>
+<li><strong>Data Link Layer</strong></li>
+<ul>
+<li>Ethernet/Wi‑Fi wraps the packet with source/destination MAC addresses and a trailer with FCS for error detection → <strong>Frame</strong>.</li>
+</ul>
+<li><strong>Physical Layer</strong></li>
+<ul>
+<li>The frame is converted to electrical, optical, or radio signals and transmitted over the medium.</li>
+</ul>
+</ol>
+<blockquote>Note: Frames often include both a header (addresses, type) and a trailer (error‑check sequence).</blockquote>
+<blockquote></blockquote>
+<hr>
+<h3 id="decapsulation"><strong>Decapsulation</strong></h3>
+<p><button class="image-button" data-src="../assets/images/networkfundamentalsencapsulation-and-decapsulation-image-1-005976b6.png" data-alt="image.png"><img src="../assets/images/networkfundamentalsencapsulation-and-decapsulation-image-1-005976b6.png" alt="image.png" loading="lazy"></button></p>
+<p><strong>On the receiving side, each layer strips off its header/trailer and passes the remaining PDU up to the layer above:</strong></p>
+<ul>
+<li><strong>Frame → Packet: Data Link checks FCS, removes header/trailer</strong></li>
+<li><strong>Packet → Segment/Datagram: Network verifies IP checksum, removes IP header</strong></li>
+<li><strong>Segment/Datagram → Data: Transport verifies ports, sequence/ACK, checksum</strong></li>
+<li><strong>Data → Application: Application processes the payload</strong></li>
+</ul>
+<hr>
+<h4 id="example-fetching-a-web-page"><strong>Example: Fetching a Web Page</strong></h4>
+<ol>
+<li><strong>App Layer:</strong> Browser builds an HTTPS GET request.</li>
+<li><strong>Transport:</strong> TCP performs three‑way handshake, then wraps the GET in segments.</li>
+<li><strong>Network:</strong> IP adds your PC’s IP and the server’s IP to each segment.</li>
+<li><strong>Data Link:</strong> Your NIC frames each packet with MACs and FCS and sends it to the router.</li>
+<li><strong>Routers:</strong> Strip/link‑layer header, inspect IP, reframe, forward until the server.</li>
+<li><strong>Reverse Path:</strong> Server’s response travels back, with each node decapsulating and re‑encapsulating until your browser finally receives raw data to render the page.</li>
+</ol>
+<hr>
+<h4 id="why-it-matters"><strong>Why It Matters</strong></h4>
+<ul>
+<li><strong>Isolation of functions</strong>: Easier troubleshooting—e.g., a broken MAC header points to the link layer, not routing.</li>
+<li><strong>Interoperability</strong>: New protocols fit neatly into one layer without rewriting the entire stack.</li>
+<li><strong>Security &amp; QoS</strong>: Middleboxes (firewalls, QoS shapers) act on specific headers without touching application data.</li>
+</ul></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#encapsulation-and-decapsulation">Encapsulation and Decapsulation</a><a href="#encapsulation">Encapsulation</a><a href="#protocol-data-units-pdus">Protocol Data Units (PDUs)</a><a href="#stepbystep-encapsulation">Step‑by‑Step Encapsulation</a><a href="#decapsulation">Decapsulation</a><a href="#example-fetching-a-web-page">Example: Fetching a Web Page</a><a href="#why-it-matters">Why It Matters</a></details>
+    </div>
+    
+    <footer class="pager"><a href="user-datagram-protocol-udp.html">← User Datagram Protocol (UDP)</a><a href="vpn.html">VPN →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+{
+  "id": "windows forensics/user activity analysis",
+  "title": "User Activity Analysis",
+  "slug": "user-activity-analysis",
+  "relPath": "Windows Forensics/User Activity Analysis.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "Web",
+    "DFIR",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/user activity analysis",
+      "title": "User Activity Analysis",
+      "slug": "user-activity-analysis"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "User Activity Analysis"
+    },
+    {
+      "level": 2,
+      "text": "1- ShellBags"
+    },
+    {
+      "level": 2,
+      "text": "2- Typed Paths (Live Location)"
+    },
+    {
+      "level": 2,
+      "text": "3- WordWheel Query (Live Location)"
+    },
+    {
+      "level": 2,
+      "text": "4- RecentDocs"
+    },
+    {
+      "level": 2,
+      "text": "5- Common Dialog (ComDlg32)"
+    },
+    {
+      "level": 3,
+      "text": "5-1 LastVisitedMRU"
+    },
+    {
+      "level": 3,
+      "text": "5-2 LastSavedPidlMRU"
+    },
+    {
+      "level": 2,
+      "text": "6- UserAssist"
+    },
+    {
+      "level": 2,
+      "text": "7- RunMRU"
+    },
+    {
+      "level": 2,
+      "text": "8- Shortcut Files (.LNK)"
+    },
+    {
+      "level": 2,
+      "text": "9- Jump Lists"
+    }
+  ],
+  "overview": "- %USERPROFILE%\\NTUSER.DAT - %USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\UsrClass.dat",
+  "study": {
+    "overview": "- %USERPROFILE%\\NTUSER.DAT - %USERPROFILE%\\AppData\\Local\\Microsoft\\Windows\\UsrClass.dat",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "User Activity Analysis",
+      "1- ShellBags",
+      "2- Typed Paths (Live Location)",
+      "3- WordWheel Query (Live Location)",
+      "4- RecentDocs",
+      "5- Common Dialog (ComDlg32)",
+      "5-1 LastVisitedMRU",
+      "5-2 LastSavedPidlMRU",
+      "6- UserAssist",
+      "7- RunMRU",
+      "8- Shortcut Files (.LNK)",
+      "9- Jump Lists"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

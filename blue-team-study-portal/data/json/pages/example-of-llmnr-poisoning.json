@@ -1,0 +1,62 @@
+{
+  "id": "detecting active directory attacks htb/noxious llmnr poisoning/example of llmnr poisoning",
+  "title": "Example of LLMNR poisoning",
+  "slug": "example-of-llmnr-poisoning",
+  "relPath": "Detecting Active Directory Attacks HTB/Noxious LLMNR poisoning/Example of LLMNR poisoning.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Active Directory"
+  ],
+  "mitre": [],
+  "parentId": "detecting active directory attacks htb/noxious llmnr poisoning",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting active directory attacks htb/noxious llmnr poisoning"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting active directory attacks htb",
+      "title": "Detecting Active Directory Attacks HTB",
+      "slug": "detecting-active-directory-attacks-htb"
+    },
+    {
+      "id": "detecting active directory attacks htb/noxious llmnr poisoning",
+      "title": "Noxious LLMNR poisoning",
+      "slug": "noxious-llmnr-poisoning"
+    },
+    {
+      "id": "detecting active directory attacks htb/noxious llmnr poisoning/example of llmnr poisoning",
+      "title": "Example of LLMNR poisoning",
+      "slug": "example-of-llmnr-poisoning"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Example of LLMNR poisoning"
+    }
+  ],
+  "overview": "1. Victim tries to access a share - A user types in \\\\fileserver\\share or an application references that UNC path. - If DNS can’t resolve fileserver, Windows falls back to LLMNR. 2. Victim broadcasts query",
+  "study": {
+    "overview": "1. Victim tries to access a share - A user types in \\\\fileserver\\share or an application references that UNC path. - If DNS can’t resolve fileserver, Windows falls back to LLMNR. 2. Victim broadcasts query",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Example of LLMNR poisoning"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

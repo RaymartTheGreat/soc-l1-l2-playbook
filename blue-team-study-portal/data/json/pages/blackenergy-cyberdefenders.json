@@ -1,0 +1,139 @@
+{
+  "id": "memory forensics labs/blackenergy (cyberdefenders)",
+  "title": "BlackEnergy (CyberDefenders)",
+  "slug": "blackenergy-cyberdefenders",
+  "relPath": "Memory Forensics Labs/BlackEnergy (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/blackenergy (cyberdefenders)",
+      "title": "BlackEnergy (CyberDefenders)",
+      "slug": "blackenergy-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "BlackEnergy (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Which volatility profile would be best for this machine?"
+    },
+    {
+      "level": 3,
+      "text": "WinXPSP2x86"
+    },
+    {
+      "level": 3,
+      "text": "2- How many processes were running when the image was acquired?"
+    },
+    {
+      "level": 3,
+      "text": "19"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the process ID of cmd.exe?"
+    },
+    {
+      "level": 3,
+      "text": "1960"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the name of the most suspicious process?"
+    },
+    {
+      "level": 3,
+      "text": "rootkit.exe"
+    },
+    {
+      "level": 3,
+      "text": "5- Which process shows the highest likelihood of code injection?"
+    },
+    {
+      "level": 3,
+      "text": "svchost.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- There is an odd file referenced in the recent process. Provide the full path of that file."
+    },
+    {
+      "level": 3,
+      "text": "C:\\WINDOWS\\system32\\drivers\\str.sys"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the name of the injected DLL file loaded from the recent process?"
+    },
+    {
+      "level": 3,
+      "text": "msxml3r.dll"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the base address of the injected DLL?"
+    },
+    {
+      "level": 3,
+      "text": "0x980000"
+    }
+  ],
+  "overview": "A multinational corporation has suffered a cyber attack, resulting in the theft of sensitive data. The attack employed a previously unseen variant of the BlackEnergy v2 malware. The company's security team has obtained a memory dump from the infected machine and is seeking your expertise as a SOC analyst to analyze the dump in order to understand the scope a",
+  "study": {
+    "overview": "A multinational corporation has suffered a cyber attack, resulting in the theft of sensitive data. The attack employed a previously unseen variant of the BlackEnergy v2 malware. The company's security team has obtained a memory dump from the infected machine and is seeking your expertise as a SOC analyst to analyze the dump in order to understand the scope a",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "BlackEnergy (CyberDefenders)",
+      "Scenario",
+      "1- Which volatility profile would be best for this machine?",
+      "WinXPSP2x86",
+      "2- How many processes were running when the image was acquired?",
+      "19",
+      "3- What is the process ID of cmd.exe?",
+      "1960",
+      "4- What is the name of the most suspicious process?",
+      "rootkit.exe",
+      "5- Which process shows the highest likelihood of code injection?",
+      "svchost.exe"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

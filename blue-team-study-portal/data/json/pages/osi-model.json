@@ -1,0 +1,101 @@
+{
+  "id": "network/fundamentals/osi model",
+  "title": "OSI Model",
+  "slug": "osi-model",
+  "relPath": "Network/Fundamentals/OSI Model.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network",
+    "Web",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/osi model",
+      "title": "OSI Model",
+      "slug": "osi-model"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "OSI Model"
+    },
+    {
+      "level": 3,
+      "text": "Physical (Layer 1)"
+    },
+    {
+      "level": 3,
+      "text": "Data Link (Layer 2)"
+    },
+    {
+      "level": 3,
+      "text": "Network (Layer 3)"
+    },
+    {
+      "level": 3,
+      "text": "Transport (Layer 4)"
+    },
+    {
+      "level": 3,
+      "text": "Session (Layer 5)"
+    },
+    {
+      "level": 3,
+      "text": "Presentation (Layer 6)"
+    },
+    {
+      "level": 3,
+      "text": "Application (Layer 7)"
+    }
+  ],
+  "overview": "OSI (Open Systems Interconnection) model is a seven‑layer framework that standardizes how network devices communicate. Learning these layers helps you understand where different protocols and hardware operate, troubleshoot effectively, and grasp terms like “Layer 3 switch” or “Layer 7 firewall.”",
+  "study": {
+    "overview": "OSI (Open Systems Interconnection) model is a seven‑layer framework that standardizes how network devices communicate. Learning these layers helps you understand where different protocols and hardware operate, troubleshoot effectively, and grasp terms like “Layer 3 switch” or “Layer 7 firewall.”",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "OSI Model",
+      "Physical (Layer 1)",
+      "Data Link (Layer 2)",
+      "Network (Layer 3)",
+      "Transport (Layer 4)",
+      "Session (Layer 5)",
+      "Presentation (Layer 6)",
+      "Application (Layer 7)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "Please Do Not Throw Sausage Pizza Away",
+      "(Physical, Data Link, Network, Transport, Session, Presentation, Application)"
+    ]
+  }
+}

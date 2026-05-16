@@ -1,0 +1,92 @@
+{
+  "id": "detecting web attacks/csrf (cross-site request forgery)",
+  "title": "CSRF (Cross-Site Request Forgery)",
+  "slug": "csrf-cross-site-request-forgery",
+  "relPath": "Detecting Web Attacks/CSRF (Cross-Site Request Forgery).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Web",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "detecting web attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting web attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting web attacks",
+      "title": "Detecting Web Attacks",
+      "slug": "detecting-web-attacks"
+    },
+    {
+      "id": "detecting web attacks/csrf (cross-site request forgery)",
+      "title": "CSRF (Cross-Site Request Forgery)",
+      "slug": "csrf-cross-site-request-forgery"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "CSRF (Cross-Site Request Forgery)"
+    },
+    {
+      "level": 3,
+      "text": "How it works"
+    },
+    {
+      "level": 3,
+      "text": "What attackers can gain"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Where to look"
+    },
+    {
+      "level": 3,
+      "text": "Log-level indicators"
+    },
+    {
+      "level": 3,
+      "text": "Example suspicious HTTP request"
+    },
+    {
+      "level": 3,
+      "text": "Prevention / hardening"
+    }
+  ],
+  "overview": "CSRF is when an attacker makes a victim’s browser send an authenticated request (with the victim’s cookies/session) to a target site — causing the victim to perform actions they didn’t intend (change password, transfer funds, etc.). The attacker does not need the victim’s credentials; the browser automatically attaches session cookies.",
+  "study": {
+    "overview": "CSRF is when an attacker makes a victim’s browser send an authenticated request (with the victim’s cookies/session) to a target site — causing the victim to perform actions they didn’t intend (change password, transfer funds, etc.). The attacker does not need the victim’s credentials; the browser automatically attaches session cookies.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "CSRF (Cross-Site Request Forgery)",
+      "How it works",
+      "What attackers can gain",
+      "Detection",
+      "Where to look",
+      "Log-level indicators",
+      "Example suspicious HTTP request",
+      "Prevention / hardening"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

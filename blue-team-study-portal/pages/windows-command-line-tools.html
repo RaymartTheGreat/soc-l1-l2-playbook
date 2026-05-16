@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Windows command-line &amp; tools | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link active" href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Windows command-line &amp; tools</span></div>
+      <h1>Windows command-line &amp; tools</h1>
+      <p>1. whoami /all — show current user, groups and privileges. 2. tasklist / tasklist /v /svc — list running processes, PIDs, services hosted, and verbose info. 3. taskkill /IM &lt;name /PID &lt;pid /F — terminate a process by name or PID. 4. wmic process get ProcessId,ParentProcessId,ExecutablePath,CommandLine — enumerate processes with paths and command lines. 5. Ge</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Memory</span><span class="tag">Persistence</span><span class="tag">C2</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Windows command-line &amp; tools</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>1. whoami /all — show current user, groups and privileges. 2. tasklist / tasklist /v /svc — list running processes, PIDs, services hosted, and verbose info. 3. taskkill /IM &lt;name /PID &lt;pid /F — terminate a process by name or PID. 4. wmic process get ProcessId,ParentProcessId,ExecutablePath,CommandLine — enumerate processes with paths and command lines. 5. Ge</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Windows command-line &amp; tools</li><li>System &amp; Processes</li><li>Users, Groups &amp; Accounts</li><li>Network &amp; Name Resolution</li><li>Services, Scheduling &amp; Persistence</li><li>File System &amp; Disk</li><li>Event Logs &amp; System Info</li><li>PowerShell (core cmdlets &amp; commonly abused)</li><li>Backup, Shadow Copies &amp; Recovery</li><li>Certificates, Downloads &amp; Transfer</li><li>Audit, Policy &amp; Security Configuration</li><li>Misc &amp; Helpers</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="windows-command-line-tools">Windows command-line &amp; tools</h2>
+<h3 id="system-processes">System &amp; Processes</h3>
+<ol>
+<li><code>whoami /all</code> — show current user, groups and privileges.</li>
+<li><code>tasklist</code> / <code>tasklist /v /svc</code> — list running processes, PIDs, services hosted, and verbose info.</li>
+<li><code>taskkill /IM &lt;name&gt; /PID &lt;pid&gt; /F</code> — terminate a process by name or PID.</li>
+<li><code>wmic process get ProcessId,ParentProcessId,ExecutablePath,CommandLine</code> — enumerate processes with paths and command lines.</li>
+<li><code>Get-CimInstance Win32_Process</code> (PowerShell) — fetch process objects with command line and metadata.</li>
+<li><code>procdump -ma &lt;PID&gt; &lt;outfile&gt;</code> (Sysinternals) — create a full memory dump of a process.</li>
+<li><code>handle.exe &lt;process|file&gt;</code> (Sysinternals) — list open handles for processes and files.</li>
+</ol>
+<h3 id="users-groups-accounts">Users, Groups &amp; Accounts</h3>
+<ol>
+<li><code>net user</code> — list local user accounts or show details for a specific user.</li>
+<li><code>net user &lt;username&gt; /add</code> / <code>/delete</code> — create or delete local user accounts.</li>
+<li><code>net localgroup</code> — list local groups.</li>
+<li><code>net localgroup Administrators</code> — list members of the Administrators group.</li>
+<li><code>Get-LocalUser</code> (PowerShell) — list local user accounts.</li>
+<li><code>Get-LocalGroupMember Administrators</code> (PowerShell) — list members of a local group.</li>
+</ol>
+<h3 id="network-name-resolution">Network &amp; Name Resolution</h3>
+<ol>
+<li><code>ipconfig /all</code> — show IP addresses, MACs, DNS and adapter info.</li>
+<li><code>getmac</code> — display MAC addresses for network adapters.</li>
+<li><code>netstat -ano</code> — list active network connections, listening ports and PIDs.</li>
+<li><code>netstat -anob</code> — same as above with owning executable names (requires admin).</li>
+<li><code>nslookup &lt;name&gt;</code> — query DNS records.</li>
+<li><code>tracert &lt;host&gt;</code> — trace network route to a destination.</li>
+<li><code>pathping &lt;host&gt;</code> — combined traceroute and packet-loss analysis.</li>
+<li><code>arp -a</code> — display ARP cache (IP-to-MAC mappings).</li>
+<li><code>route print</code> — show IP routing table.</li>
+<li><code>netsh</code> (subcommands) — configure network interfaces, firewall, and traces (e.g., <code>netsh interface ip show config</code>).</li>
+<li><code>netsh trace start/stop</code> — capture a network trace to an ETL file.</li>
+</ol>
+<h3 id="services-scheduling-persistence">Services, Scheduling &amp; Persistence</h3>
+<ol>
+<li><code>sc query</code> / <code>sc qc &lt;ServiceName&gt;</code> — query service state and configuration.</li>
+<li><code>service control (net start/net stop)</code> — start or stop services.</li>
+<li><code>schtasks /query /fo LIST /v</code> — list scheduled tasks with verbose details.</li>
+<li><code>schtasks /create /tn &quot;&lt;name&gt;&quot; /tr &quot;&lt;command&gt;&quot; /sc &lt;schedule&gt;</code> — create a scheduled task.</li>
+<li><code>at</code> (legacy) — legacy task scheduler utility (mostly superseded by <code>schtasks</code>).</li>
+<li><code>reg query HKLM\...\Run /s</code> — query Run/RunOnce registry persistence locations.</li>
+<li><code>sc create</code> / <code>sc delete</code> — create or delete Windows services.</li>
+</ol>
+<h3 id="file-system-disk">File System &amp; Disk</h3>
+<ol>
+<li><code>dir</code> / <code>dir /a /s /b</code> — list files and directories (with hidden/system and recursion options).</li>
+<li><code>type</code> / <code>more</code> — display file contents.</li>
+<li><code>copy</code> / <code>xcopy</code> / <code>robocopy</code> — file copy utilities (<code>robocopy</code> for robust sync/mirroring).</li>
+<li><code>del</code> / <code>erase</code> — delete files. </li>
+<li><code>move</code> / <code>ren</code> — move or rename files/directories.</li>
+<li><code>attrib</code> — view/change file attributes (hidden, system, read-only).</li>
+<li><code>takeown /f &lt;path&gt;</code> — take ownership of a file or directory.</li>
+<li><code>icacls &lt;path&gt;</code> — view or modify NTFS permissions.</li>
+<li><code>fsutil</code> — advanced filesystem operations (USN journal, ADS, volume info).</li>
+<li><code>cipher</code> — manage EFS and wipe free space.</li>
+<li><code>compact</code> — view/modify NTFS compression.</li>
+<li><code>diskpart</code> — disk and partition management (interactive). </li>
+<li><code>format</code> — format volumes. </li>
+<li><code>chkdsk</code> — check and optionally repair disk errors.</li>
+</ol>
+<h3 id="event-logs-system-info">Event Logs &amp; System Info</h3>
+<ol>
+<li><code>wevtutil</code> — manage and query Windows event logs (export, clear, query).</li>
+<li><code>eventvwr</code> — open Event Viewer GUI.</li>
+<li><code>systeminfo</code> — display OS, hardware and patch (hotfix) info.</li>
+<li><code>wmic qfe list brief</code> — list installed hotfixes/patches.</li>
+<li><code>get-computerinfo</code> (PowerShell) — detailed system information.</li>
+<li><code>sfc /scannow</code> — system file checker to verify/repair Windows protected files.</li>
+</ol>
+<h3 id="powershell-core-cmdlets-commonly-abused">PowerShell (core cmdlets &amp; commonly abused)</h3>
+<ol>
+<li><code>Get-Process</code> — list running processes.</li>
+<li><code>Stop-Process -Id &lt;PID&gt;</code> — terminate a process.</li>
+<li><code>Get-Service</code> — list Windows services.</li>
+<li><code>Start-Service / Stop-Service</code> — start or stop a service.</li>
+<li><code>Get-ScheduledTask</code> — list scheduled tasks.</li>
+<li><code>Register-ScheduledTask / Unregister-ScheduledTask</code> — create or remove scheduled tasks.</li>
+<li><code>Get-NetIPConfiguration</code> / <code>Get-NetIPAddress</code> — show network configuration.</li>
+<li><code>Get-NetTCPConnection</code> — list TCP connections (PowerShell view of netstat).</li>
+<li><code>Get-LocalUser</code> / <code>Get-LocalGroup</code> / <code>Get-LocalGroupMember</code> — enumerate local users/groups and members.</li>
+<li><code>Get-CimInstance -ClassName Win32_Process</code> — WMI/CIM process enumeration (incl. command line).</li>
+<li><code>Get-WmiObject</code> / <code>Get-CimInstance -ClassName &lt;class&gt;</code> — legacy/alternate WMI queries.</li>
+<li><code>Get-WinEvent -LogName Security</code> — query Windows event logs.</li>
+<li><code>Get-FileHash &lt;path&gt; -Algorithm SHA256</code> — compute file hash.</li>
+<li><code>Get-Content &lt;path&gt;</code> — read file contents (like <code>type</code>).</li>
+<li><code>Get-ChildItem -Recurse -Force</code> — list files and folders recursively (like <code>dir /s</code>).</li>
+<li><code>Set-Content</code> / <code>Add-Content</code> — write/append file content.</li>
+<li><code>Remove-Item &lt;path&gt; -Recurse -Force</code> — delete files/folders/registry keys.</li>
+<li><code>Invoke-Command -ComputerName &lt;host&gt; -ScriptBlock {}</code> — execute commands remotely (PowerShell Remoting).</li>
+<li><code>New-PSSession</code> / <code>Enter-PSSession</code> / <code>Get-PSSession</code> — manage interactive/remote sessions.</li>
+<li><code>Invoke-Expression</code> (<code>IEX</code>) — execute a string as code (commonly abused for one-liners).</li>
+<li><code>Invoke-WebRequest -Uri &lt;url&gt; -OutFile &lt;file&gt;</code> — download files/web content.</li>
+<li><code>Invoke-RestMethod -Uri &lt;url&gt;</code> — interact with web APIs (and C2-style callbacks).</li>
+<li><code>(New-Object System.Net.WebClient).DownloadFile('&lt;url&gt;','&lt;path&gt;')</code> — alternate file download method.</li>
+<li><code>Start-Process -FilePath &lt;path&gt; -WindowStyle Hidden -NoNewWindow</code> — launch a process (options for stealth).</li>
+<li><code>Start-Job</code> / <code>Get-Job</code> / <code>Receive-Job</code> — run background jobs.</li>
+<li><code>Get-Content $env:windir\system32\drivers\etc\hosts</code> — read hosts file (local DNS overrides).</li>
+<li><code>Get-ItemProperty -Path HKLM:\Software\...</code> — read registry values.</li>
+<li><code>Set-ItemProperty -Path HKLM:\Software\... -Name &lt;value&gt; -Value &lt;data&gt;</code> — write registry values.</li>
+<li><code>New-PSDrive -Name X -PSProvider FileSystem -Root \\host\share</code> — map a network share as a drive.</li>
+<li><code>Get-Credential</code> — create a credential object (used for authentication in scripts).</li>
+<li><code>ConvertTo-SecureString / ConvertFrom-SecureString</code> — encrypt/decrypt strings for credential handling.</li>
+<li><code>Get-ADUser / Get-ADComputer / Get-ADGroupMember / Search-ADAccount</code> (ActiveDirectory module) — AD enumeration and discovery.</li>
+<li><code>Resolve-DnsName &lt;host&gt;</code> — DNS resolution (PowerShell replacement for nslookup).</li>
+<li><code>Get-ExecutionPolicy</code> / <code>Set-ExecutionPolicy</code> — view/change PowerShell execution policy.</li>
+<li><code>Add-Type -AssemblyName &lt;assembly&gt;</code> — load/compile .NET code into the session.</li>
+<li><code>Get-MpComputerStatus</code> — query Windows Defender status (defender module).</li>
+<li><code>Export-Csv / Import-Csv</code> — export/import tabular data to/from CSV.</li>
+<li><code>Export-Clixml / Import-Clixml</code> — export/import structured objects with metadata.</li>
+<li><code>Out-File / Tee-Object</code> — save or tee command output to files.</li>
+<li><code>Start-Process -Credential &lt;pscredential&gt; -FilePath &lt;exe&gt;</code> — start process as a different user (when supported).</li>
+</ol>
+<h3 id="backup-shadow-copies-recovery">Backup, Shadow Copies &amp; Recovery</h3>
+<ol>
+<li><code>vssadmin list shadows</code> — list Volume Shadow Copies.</li>
+<li><code>vssadmin delete shadows</code> — delete shadow copies (destructive).</li>
+<li><code>wbadmin</code> — backup and recovery management (Windows Backup).</li>
+</ol>
+<h3 id="certificates-downloads-transfer">Certificates, Downloads &amp; Transfer</h3>
+<ol>
+<li><code>certutil -hashfile &lt;file&gt; SHA256</code> — compute file hash; also supports encoding and downloads (<code>urlcache</code>).</li>
+<li><code>certutil -urlcache -split -f &lt;URL&gt; &lt;outfile&gt;</code> — download file using certutil.</li>
+<li><code>bitsadmin /list /allusers</code> — list BITS jobs (legacy); create/query background transfers.</li>
+<li><code>bitsadmin /reset</code> — cancel BITS jobs.</li>
+</ol>
+<h3 id="audit-policy-security-configuration">Audit, Policy &amp; Security Configuration</h3>
+<ol>
+<li><code>auditpol /get /category:*</code> — view audit policies.</li>
+<li><code>gpresult /r</code> — show applied Group Policy settings.</li>
+<li><code>gpupdate /force</code> — refresh Group Policy.</li>
+<li><code>secedit</code> — configure security templates and policies.</li>
+<li><code>whoami /priv</code> — list user privileges.</li>
+</ol>
+<h3 id="misc-helpers">Misc &amp; Helpers</h3>
+<ol>
+<li><code>clip</code> — pipe output to Windows clipboard (e.g., <code>ipconfig /all | clip</code>).</li>
+<li><code>clip &lt; file</code> — copy file contents to clipboard.</li>
+<li><code>shutdown /s /r /a</code> — shutdown, restart, or abort scheduled shutdown.</li>
+<li><code>mmc</code> / <code>mmc.exe</code> — open Microsoft Management Console.</li>
+<li><code>msinfo32</code> — open System Information GUI or save inventory.</li>
+<li><code>resmon</code> / <code>perfmon</code> / <code>taskmgr</code> — Resource Monitor, Performance Monitor, Task Manager GUIs.</li>
+<li><code>winget</code> — Windows package manager (list/install apps).</li>
+</ol>
+<h3 id="sysinternals-recommended-tools">Sysinternals (recommended tools)</h3>
+<ol>
+<li><strong>Process Explorer (<code>procexp.exe</code>)</strong> — advanced process and handle/DLL inspection.</li>
+<li><strong>Process Monitor (<code>procmon.exe</code>)</strong> — realtime file/registry/process/network API monitor.</li>
+<li><strong>Autoruns / autorunsc</strong> — enumerate all autorun/startup locations.</li>
+<li><strong>PsExec (<code>psexec.exe</code>)</strong> — execute processes remotely.</li>
+<li><strong>Sigcheck (<code>sigcheck.exe</code>)</strong> — check file signatures and VirusTotal integration.</li>
+<li><strong>TCPView (<code>tcpview.exe</code>)</strong> — realtime view of network endpoints per process.</li>
+<li><strong>PsList / PsService / PsLoggedOn</strong> — assorted PsTools for processes, services, and logged-on users.</li>
+<li><strong>BgInfo</strong> — display system information on desktop wallpaper (useful for quick host context).</li>
+</ol>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#windows-command-line-tools">Windows command-line &amp; tools</a><a href="#system-processes">System &amp; Processes</a><a href="#users-groups-accounts">Users, Groups &amp; Accounts</a><a href="#network-name-resolution">Network &amp; Name Resolution</a><a href="#services-scheduling-persistence">Services, Scheduling &amp; Persistence</a><a href="#file-system-disk">File System &amp; Disk</a><a href="#event-logs-system-info">Event Logs &amp; System Info</a><a href="#powershell-core-cmdlets-commonly-abused">PowerShell (core cmdlets &amp; commonly abused)</a><a href="#backup-shadow-copies-recovery">Backup, Shadow Copies &amp; Recovery</a><a href="#certificates-downloads-transfer">Certificates, Downloads &amp; Transfer</a><a href="#audit-policy-security-configuration">Audit, Policy &amp; Security Configuration</a><a href="#misc-helpers">Misc &amp; Helpers</a><a href="#sysinternals-recommended-tools">Sysinternals (recommended tools)</a></details>
+    </div>
+    
+    <footer class="pager"><a href="summary-report-9541433d.html">← Summary Report</a><a href="important-windows-directories.html">Important Windows Directories →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

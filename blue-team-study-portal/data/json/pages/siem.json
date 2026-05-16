@@ -1,0 +1,135 @@
+{
+  "id": "siem",
+  "title": "SIEM",
+  "slug": "siem",
+  "relPath": "SIEM.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-tool-familiarity",
+  "curriculumSectionTitle": "Tool Familiarity",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Web",
+    "DFIR",
+    "Detection",
+    "Incident Response"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "siem",
+      "title": "SIEM",
+      "slug": "siem"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "SIEM"
+    },
+    {
+      "level": 2,
+      "text": "Log Sources"
+    },
+    {
+      "level": 2,
+      "text": "SIEM Architecture and Workflow"
+    },
+    {
+      "level": 2,
+      "text": "Core Capabilities"
+    },
+    {
+      "level": 2,
+      "text": "Dashboards and Reporting"
+    },
+    {
+      "level": 2,
+      "text": "Correlation Rules"
+    },
+    {
+      "level": 3,
+      "text": "Rule Creation Steps:"
+    },
+    {
+      "level": 2,
+      "text": "SIEM Rules: Out of the Box vs Custom"
+    },
+    {
+      "level": 3,
+      "text": "What Are SIEM Rules?"
+    },
+    {
+      "level": 3,
+      "text": "Examples of Rule Functionality"
+    },
+    {
+      "level": 3,
+      "text": "False‑Positive Reduction & Tuning"
+    },
+    {
+      "level": 3,
+      "text": "Writing Search Queries & Alerts"
+    },
+    {
+      "level": 2,
+      "text": "Alert Investigation and Triage"
+    },
+    {
+      "level": 2,
+      "text": "SIM vs SEM vs SIEM"
+    },
+    {
+      "level": 2,
+      "text": "Advantages and Disadvantages"
+    },
+    {
+      "level": 2,
+      "text": "Popular SIEM Platforms"
+    }
+  ],
+  "overview": "SIEM (Security Information and Event Management) is a cybersecurity solution that collects, aggregates, normalizes, and analyzes logs and event data from across an organization’s IT infrastructure to detect threats, support incident response, and facilitate forensic investigations.",
+  "study": {
+    "overview": "SIEM (Security Information and Event Management) is a cybersecurity solution that collects, aggregates, normalizes, and analyzes logs and event data from across an organization’s IT infrastructure to detect threats, support incident response, and facilitate forensic investigations.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "SIEM",
+      "Log Sources",
+      "SIEM Architecture and Workflow",
+      "Core Capabilities",
+      "Dashboards and Reporting",
+      "Correlation Rules",
+      "Rule Creation Steps:",
+      "SIEM Rules: Out of the Box vs Custom",
+      "What Are SIEM Rules?",
+      "Examples of Rule Functionality",
+      "False‑Positive Reduction & Tuning",
+      "Writing Search Queries & Alerts"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM",
+      "Sysmon",
+      "PowerShell",
+      "Osquery"
+    ],
+    "tips": []
+  }
+}

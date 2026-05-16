@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>TCP (The Three-Way Handshake) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="network.html">Network</a><span>/</span><a href="fundamentals.html">Fundamentals</a><span>/</span><span>TCP (The Three-Way Handshake)</span></div>
+      <h1>TCP (The Three-Way Handshake)</h1>
+      <p>TCP is a connection‑oriented, reliable transport‑layer protocol. Before any data is exchanged, TCP establishes a session using a three‑way handshake, then guarantees in‑order, error‑free delivery via sequencing, acknowledgments, flow control, and retransmissions. Finally, it cleanly tears down the connection with a four‑step FIN sequence.</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Memory</span><span class="tag">Detection</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Network</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="network.html"><span>Network</span><em>L1</em></a>
+      <b>4</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="fundamentals.html"><span>Fundamentals</span><em>L1</em></a>
+      <b>22</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="what-is-a-network.html"><span>What Is a Network</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="topologies.html"><span>Topologies</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="router-vs-switch.html"><span>Router VS Switch</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="public-vs-private-ip.html"><span>Public vs Private IP</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="subnetting.html"><span>Subnetting</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="virtual-lan-vlan.html"><span>Virtual LAN (VLAN)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="osi-model.html"><span>OSI Model</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="tcp-ip-model.html"><span>TCP IP Model</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="tcp-the-three-way-handshake.html"><span>TCP (The Three-Way Handshake)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="user-datagram-protocol-udp.html"><span>User Datagram Protocol (UDP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="encapsulation-and-decapsulation.html"><span>Encapsulation and Decapsulation</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="vpn.html"><span>VPN</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="firewall.html"><span>Firewall</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="routing.html"><span>Routing</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="nat.html"><span>NAT</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="segmentation.html"><span>Segmentation</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ipv4-vs-ipv6.html"><span>IPv4 vs IPv6</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="broadcast-vs-unicast-vs-multicast.html"><span>Broadcast vs Unicast vs Multicast</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="proxy.html"><span>Proxy</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="network-devices.html"><span>Network Devices</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="network-toolkit.html"><span>Network Toolkit</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="how-to-observe-network-traffic.html"><span>How to Observe Network Traffic</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="protocols.html"><span>Protocols</span><em>L1</em></a>
+      <b>13</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="server-message-block-smb.html"><span>Server Message Block (SMB)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="address-resolution-protocol-arp.html"><span>Address Resolution Protocol (ARP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="domain-name-system-dns.html"><span>Domain Name System (DNS)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="dynamic-host-configuration-protocol-dhcp.html"><span>Dynamic Host Configuration Protocol (DHCP )</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="internet-control-message-protocol-icmp.html"><span>Internet Control Message Protocol (ICMP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="file-transfer-protocol-ftp.html"><span>File Transfer Protocol (FTP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="telnet.html"><span>Telnet</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ssh-secure-shell-protocol.html"><span>SSH (Secure Shell Protocol)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="http-and-https.html"><span>HTTP and HTTPS</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="email-protocols.html"><span>Email Protocols</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="kerberos-authentication-0276e639.html"><span>Kerberos authentication</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="lightweight-directory-access-protocol-ldap.html"><span>Lightweight Directory Access Protocol (LDAP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="protocols-quick-reminder.html"><span>Protocols Quick Reminder</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="important-ports.html"><span>Important ports</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="packet-structure.html"><span>Packet structure</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>TCP is a connection‑oriented, reliable transport‑layer protocol. Before any data is exchanged, TCP establishes a session using a three‑way handshake, then guarantees in‑order, error‑free delivery via sequencing, acknowledgments, flow control, and retransmissions. Finally, it cleanly tears down the connection with a four‑step FIN sequence.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>TCP (The Three-Way Handshake)</li><li>Key Characteristics</li><li>TCP Segment Structure</li><li>Three‑Way Handshake</li><li>Data Transfer &amp; Flow Control</li><li>Connection Teardown</li><li>Advantages &amp; Disadvantages</li><li>Understanding the sequence and acknowledgment numbers</li><li>Example handshake and number progression</li><li>Why these numbers matter for detection and hijacking</li><li>Quick example of an injected packet that would be suspicious</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="tcp-the-three-way-handshake">TCP (The Three-Way Handshake)</h2>
+<p><strong>TCP is a connection‑oriented, reliable transport‑layer protocol. Before any data is exchanged, TCP establishes a session using a three‑way handshake, then guarantees in‑order, error‑free delivery via sequencing, acknowledgments, flow control, and retransmissions. Finally, it cleanly tears down the connection with a four‑step FIN sequence.</strong></p>
+<hr>
+<h4 id="key-characteristics"><strong>Key Characteristics</strong></h4>
+<ul>
+<li><strong>Connection‑oriented:</strong> Requires setup (three‑way handshake) before sending data.</li>
+<li><strong>Reliable delivery:</strong> Uses sequence numbers, ACKs, checksums, and retransmissions.</li>
+<li><strong>Ordered data stream:</strong> Segments arrive in order—or are reordered by the receiver.</li>
+<li><strong>Flow control:</strong> Receiver advertises a window size to throttle sender speed.</li>
+<li><strong>Congestion control:</strong> Algorithms (e.g., Slow Start, Congestion Avoidance) adapt to network conditions.</li>
+</ul>
+<hr>
+<h4 id="tcp-segment-structure">TCP Segment Structure</h4>
+<p><button class="image-button" data-src="../assets/images/networkfundamentalstcp-the-three-way-handshake-image-1fcd5ddc.png" data-alt="image.png"><img src="../assets/images/networkfundamentalstcp-the-three-way-handshake-image-1fcd5ddc.png" alt="image.png" loading="lazy"></button></p>
+<p>Each TCP segment consists of a header (20–60 bytes) and payload.</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Field</strong></th><th><strong>Size</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>Source Port</td><td>16 bits</td><td>Port on the sender’s host (chosen from ephemeral range).</td></tr><tr><td>Destination Port</td><td>16 bits</td><td>Port where the receiving service is listening (e.g., 80 for HTTP).</td></tr><tr><td>Sequence Number</td><td>32 bits</td><td>Byte index of the first data byte in this segment.</td></tr><tr><td>Acknowledgment Number</td><td>32 bits</td><td>Next byte the sender expects to receive (cumulative ACK).</td></tr><tr><td>Data Offset (HLEN)</td><td>4 bits</td><td>Header length in 4‑byte words (min 5 → 20 bytes; max 15 → 60 bytes).</td></tr><tr><td>Reserved</td><td>3 bits</td><td>Reserved for future use; set to zero.</td></tr><tr><td>Control Flags</td><td>9 bits</td><td>URG, ACK, PSH, RST, SYN, FIN, plus ECE, CWR, NS for congestion control.</td></tr><tr><td>Window Size</td><td>16 bits</td><td>Bytes the receiver can accept (flow‑control window).</td></tr><tr><td>Checksum</td><td>16 bits</td><td>Covers header + data for error detection.</td></tr><tr><td>Urgent Pointer</td><td>16 bits</td><td>If URG flag set, points to last urgent data byte.</td></tr><tr><td>Options &amp; Padding</td><td>0–40 bytes</td><td>Extra features (MSS, window scaling, timestamps).</td></tr><tr><td>Payload (Data)</td><td>Variable</td><td>The actual application data (up to MSS).</td></tr></tbody></table></div>
+<hr>
+<h4 id="threeway-handshake">Three‑Way Handshake</h4>
+<p>Establishes a TCP connection and synchronizes initial sequence numbers (ISNs):</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Step</strong></th><th><strong>Packet</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>1</td><td><code>SYN</code></td><td>Client → Server: “SYNchronize. My ISN = A.”</td></tr><tr><td>2</td><td><code>SYN + ACK</code></td><td>Server → Client: “ACK your A. My ISN = B, and I SYNc with you.”</td></tr><tr><td>3</td><td><code>ACK</code></td><td>Client → Server: “ACK your B. Let’s begin data transfer at Seq = A+1, Ack = B+1.”</td></tr></tbody></table></div>
+<p><button class="image-button" data-src="../assets/images/networkfundamentalstcp-the-three-way-handshake-image-1-fa222c91.png" data-alt="image.png"><img src="../assets/images/networkfundamentalstcp-the-three-way-handshake-image-1-fa222c91.png" alt="image.png" loading="lazy"></button></p>
+<p>Once Step 3 completes, the TCP connection is <strong>established</strong>.</p>
+<hr>
+<h4 id="data-transfer-flow-control">Data Transfer &amp; Flow Control</h4>
+<ul>
+<li><strong>Sequencing:</strong> Each byte is numbered; segments carry a starting Seq number.</li>
+<li><strong>Acknowledgments:</strong> Receiver sends ACK for the next expected byte.</li>
+<li><strong>Sliding Window:</strong> Sender may transmit up to <code>Window Size</code> bytes without waiting for ACK.</li>
+<li><strong>Retransmission:</strong> If ACK isn’t received before a timeout, the sender retransmits.</li>
+<li><strong>Congestion Control:</strong></li>
+<ul>
+<li><strong>Slow Start:</strong> Begin with small congestion window (cwnd), double every RTT until threshold.</li>
+<li><strong>Congestion Avoidance:</strong> Increase cwnd linearly after threshold, back off on loss.</li>
+</ul>
+</ul>
+<hr>
+<h4 id="connection-teardown">Connection Teardown</h4>
+<p>A <strong>four‑segment</strong> exchange ensures all data is delivered before closing:</p>
+<ol>
+<li><strong>FIN</strong> →: Host A says “I’m done sending.”</li>
+<li><strong>ACK</strong> ←: Host B acknowledges the FIN.</li>
+<li><strong>FIN</strong> ←: Host B finishes its own data and sends FIN.</li>
+<li><strong>ACK</strong> →: Host A acknowledges B’s FIN.</li>
+</ol>
+<p><button class="image-button" data-src="../assets/images/networkfundamentalstcp-the-three-way-handshake-image-2-5e4578e9.png" data-alt="image.png"><img src="../assets/images/networkfundamentalstcp-the-three-way-handshake-image-2-5e4578e9.png" alt="image.png" loading="lazy"></button></p>
+<p>After the final ACK, both sides enter <strong>TIME_WAIT</strong> to catch delayed segments.</p>
+<hr>
+<h4 id="advantages-disadvantages">Advantages &amp; Disadvantages</h4>
+<div class="table-wrap"><table><thead><tr><th><strong>Advantages</strong></th><th><strong>Disadvantages</strong></th></tr></thead><tbody><tr><td>Guarantees data integrity, delivery, and ordering</td><td>Higher overhead: connection setup/teardown, ACKs, retransmissions, and state tracking</td></tr><tr><td>Flow and congestion control adapt to network conditions</td><td>Increased latency and reduced throughput compared to UDP</td></tr><tr><td>Widely supported and essential for applications requiring reliable transfers (web, email)</td><td>Resource‑intensive on servers (each connection consumes memory and socket state)</td></tr></tbody></table></div>
+<hr>
+<h4 id="understanding-the-sequence-and-acknowledgment-numbers">Understanding the sequence and acknowledgment numbers</h4>
+<h4 id="example-handshake-and-number-progression">Example handshake and number progression</h4>
+<p><strong>1 - Client -&gt; Server: SYN</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">Client:12345 -&gt; Server:80  SYN  seq=1000  ack=0</code></pre></div>
+<ul>
+<li>First packet in the three‑way handshake.</li>
+<li>Client chooses an initial sequence number (ISN) = 1000.</li>
+<li>No ACK yet because nothing received from the other side.</li>
+</ul>
+<hr>
+<p><strong>2 - Server -&gt; Client: SYN,ACK</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">Server:80 -&gt; Client:12345  SYN,ACK  seq=5000  ack=1001</code></pre></div>
+<ul>
+<li>Server replies with its own ISN = 5000.</li>
+<li><code>ack=1001</code> means &quot;I received the client's SYN (seq 1000) and expect next byte at 1001.&quot;</li>
+</ul>
+<hr>
+<p><strong>3 - Client -&gt; Server: ACK</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">Client:12345 -&gt; Server:80  ACK  seq=1001  ack=5001</code></pre></div>
+<ul>
+<li>Client acknowledges server ISN. <code>ack=5001</code> means client expects server bytes starting at 5001.</li>
+<li>Handshake complete. Connection established.</li>
+</ul>
+<hr>
+<p><strong>4 - Client -&gt; Server: PSH,ACK (GET /login)</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">Client:12345 -&gt; Server:80  PSH,ACK  seq=1001  ack=5001  payload=GET /login</code></pre></div>
+<ul>
+<li>Client sends application data. If payload length = 200 bytes, the next sequence the client would use is <code>1001 + 200 = 1201</code>.</li>
+<li>Subsequent packets from the client will show <code>seq=1201</code> to indicate the next byte position.</li>
+</ul>
+<hr>
+<hr>
+<ul>
+<li><strong>Sequence number (seq)</strong>: the byte index of the first byte of data carried by this segment. It is how the sender numbers the stream.</li>
+<li><strong>Acknowledgment number (ack)</strong>: the next byte the receiver expects to get from the other side. It is cumulative acknowledgement of bytes received.</li>
+<li>Both numbers advance forward as data is sent and acknowledged.</li>
+</ul>
+<hr>
+<hr>
+<h4 id="why-these-numbers-matter-for-detection-and-hijacking">Why these numbers matter for detection and hijacking</h4>
+<ul>
+<li>TCP endpoints trust that sequence and acknowledgment numbers represent the current place in the data stream.</li>
+<li>If an attacker can <strong>observe</strong> (sniff) or <strong>predict</strong> the current sequence numbers, they can craft a packet with the correct <code>seq</code> and <code>ack</code> values and <strong>inject</strong> data into the ongoing connection. The receiver will accept that packet as if it came from the legitimate peer.</li>
+<li>If injected packets advance the server's view of the stream, the legitimate client and server become <strong>desynchronized</strong>. That often produces RST packets, retransmissions, or connection failures which are visible in packet captures and logs.</li>
+</ul>
+<hr>
+<hr>
+<h4 id="quick-example-of-an-injected-packet-that-would-be-suspicious">Quick example of an injected packet that would be suspicious</h4>
+<ul>
+<li>Legitimate progression: client last sent up to <code>seq=20301</code>.</li>
+<li>Malicious injected packet: <code>Attacker(spoofed Client) -&gt; Server PSH,ACK seq=900000 payload=...</code></li>
+</ul>
+<p>This <code>seq</code> value is far outside the expected window. Monitoring tools or analysts tracking stream progression will flag packets that fall outside a reasonable window based on previously observed <code>seq/ack</code> values.</p>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#tcp-the-three-way-handshake">TCP (The Three-Way Handshake)</a><a href="#key-characteristics">Key Characteristics</a><a href="#tcp-segment-structure">TCP Segment Structure</a><a href="#threeway-handshake">Three‑Way Handshake</a><a href="#data-transfer-flow-control">Data Transfer &amp; Flow Control</a><a href="#connection-teardown">Connection Teardown</a><a href="#advantages-disadvantages">Advantages &amp; Disadvantages</a><a href="#understanding-the-sequence-and-acknowledgment-numbers">Understanding the sequence and acknowledgment numbers</a><a href="#example-handshake-and-number-progression">Example handshake and number progression</a><a href="#why-these-numbers-matter-for-detection-and-hijacking">Why these numbers matter for detection and hijacking</a><a href="#quick-example-of-an-injected-packet-that-would-be-suspicious">Quick example of an injected packet that would be suspicious</a></details>
+    </div>
+    
+    <footer class="pager"><a href="tcp-ip-model.html">← TCP IP Model</a><a href="user-datagram-protocol-udp.html">User Datagram Protocol (UDP) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

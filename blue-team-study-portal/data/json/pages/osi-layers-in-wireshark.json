@@ -1,0 +1,84 @@
+{
+  "id": "network analysis tools/wireshark/osi layers in wireshark",
+  "title": "OSI Layers in Wireshark",
+  "slug": "osi-layers-in-wireshark",
+  "relPath": "Network Analysis Tools/Wireshark/OSI Layers in Wireshark.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-network-investigation",
+  "curriculumSectionTitle": "Network Investigation",
+  "tags": [
+    "Network",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "network analysis tools/wireshark",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis tools/wireshark"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis tools",
+      "title": "Network Analysis Tools",
+      "slug": "network-analysis-tools"
+    },
+    {
+      "id": "network analysis tools/wireshark",
+      "title": "Wireshark",
+      "slug": "wireshark"
+    },
+    {
+      "id": "network analysis tools/wireshark/osi layers in wireshark",
+      "title": "OSI Layers in Wireshark",
+      "slug": "osi-layers-in-wireshark"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "OSI Layers in Wireshark"
+    },
+    {
+      "level": 3,
+      "text": "Network Access Layer"
+    },
+    {
+      "level": 3,
+      "text": "Internet Layer"
+    },
+    {
+      "level": 3,
+      "text": "Transport Layer"
+    },
+    {
+      "level": 3,
+      "text": "Application Layer"
+    }
+  ],
+  "overview": "- Displays source and destination MAC addresses in network traffic analysis tools like Wireshark. - Popular Link Layer Protocols: - 802.3: Ethernet - 802.11: Wireless (Wi-Fi) - 802.15.1: Bluetooth - Ethernet Header: - Source MAC Address: The MAC address of the sending device. - Destination MAC Address: The MAC address of the receiving device. - EtherType: In",
+  "study": {
+    "overview": "- Displays source and destination MAC addresses in network traffic analysis tools like Wireshark. - Popular Link Layer Protocols: - 802.3: Ethernet - 802.11: Wireless (Wi-Fi) - 802.15.1: Bluetooth - Ethernet Header: - Source MAC Address: The MAC address of the sending device. - Destination MAC Address: The MAC address of the receiving device. - EtherType: In",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "OSI Layers in Wireshark",
+      "Network Access Layer",
+      "Internet Layer",
+      "Transport Layer",
+      "Application Layer"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

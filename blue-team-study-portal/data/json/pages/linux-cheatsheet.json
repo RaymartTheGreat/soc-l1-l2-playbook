@@ -1,0 +1,121 @@
+{
+  "id": "linux cheatsheet",
+  "title": "Linux CheatSheet",
+  "slug": "linux-cheatsheet",
+  "relPath": "Linux CheatSheet.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-os-command-line",
+  "curriculumSectionTitle": "Operating System & Command Line Basics",
+  "tags": [
+    "Linux",
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "linux cheatsheet",
+      "title": "Linux CheatSheet",
+      "slug": "linux-cheatsheet"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Linux CheatSheet"
+    },
+    {
+      "level": 3,
+      "text": "Word and Line Counting"
+    },
+    {
+      "level": 3,
+      "text": "File Head and Tail"
+    },
+    {
+      "level": 3,
+      "text": "Text Filtering and Sorting"
+    },
+    {
+      "level": 3,
+      "text": "Search and Pattern Matching"
+    },
+    {
+      "level": 3,
+      "text": "Cutting and Extracting Data"
+    },
+    {
+      "level": 3,
+      "text": "Scripting and JSON Filtering"
+    },
+    {
+      "level": 3,
+      "text": "File Searching and Processing"
+    },
+    {
+      "level": 3,
+      "text": "Filesystem Navigation"
+    },
+    {
+      "level": 3,
+      "text": "File Permissions"
+    },
+    {
+      "level": 3,
+      "text": "Networking and System Monitoring"
+    },
+    {
+      "level": 3,
+      "text": "Process Management"
+    },
+    {
+      "level": 3,
+      "text": "Package Management"
+    },
+    {
+      "level": 3,
+      "text": "User and Identity Management"
+    },
+    {
+      "level": 3,
+      "text": "Creating and Writing to Files"
+    },
+    {
+      "level": 1,
+      "text": "Linux Modules Extension"
+    }
+  ],
+  "overview": "- wc : Display word, line, and byte counts. - wc -l : Count lines. - wc -w : Count words. - wc -c : Count bytes.",
+  "study": {
+    "overview": "- wc : Display word, line, and byte counts. - wc -l : Count lines. - wc -w : Count words. - wc -c : Count bytes.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Linux CheatSheet",
+      "Word and Line Counting",
+      "File Head and Tail",
+      "Text Filtering and Sorting",
+      "Search and Pattern Matching",
+      "Cutting and Extracting Data",
+      "Scripting and JSON Filtering",
+      "File Searching and Processing",
+      "Filesystem Navigation",
+      "File Permissions",
+      "Networking and System Monitoring",
+      "Process Management"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "id": "forensics labs/disk analysis & autopsy (thm)",
+  "title": "Disk Analysis & Autopsy (THM)",
+  "slug": "disk-analysis-autopsy-thm",
+  "relPath": "Forensics Labs/Disk Analysis & Autopsy (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Web",
+    "DFIR",
+    "YARA"
+  ],
+  "mitre": [],
+  "parentId": "forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "forensics labs",
+      "title": "Forensics Labs",
+      "slug": "forensics-labs"
+    },
+    {
+      "id": "forensics labs/disk analysis & autopsy (thm)",
+      "title": "Disk Analysis & Autopsy (THM)",
+      "slug": "disk-analysis-autopsy-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Disk Analysis & Autopsy (THM)"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the MD5 hash of the E01 image?"
+    },
+    {
+      "level": 3,
+      "text": "3f08c518adb3b5c1359849657a9b2079"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the computer account name?"
+    },
+    {
+      "level": 3,
+      "text": "DESKTOP-0R59DJ3"
+    },
+    {
+      "level": 3,
+      "text": "3- List all the user accounts. (alphabetical order)"
+    },
+    {
+      "level": 3,
+      "text": "H4S4N,joshwa,keshav,sandhya,shreya,sivapriya,srini,suba"
+    },
+    {
+      "level": 3,
+      "text": "4- Who was the last user to log into the computer?"
+    },
+    {
+      "level": 3,
+      "text": "sivapriya"
+    },
+    {
+      "level": 3,
+      "text": "5- What was the IP address of the computer?"
+    },
+    {
+      "level": 3,
+      "text": "192.168.130.216"
+    },
+    {
+      "level": 3,
+      "text": "6- What was the MAC address of the computer? (XX-XX-XX-XX-XX-XX)"
+    },
+    {
+      "level": 3,
+      "text": "08-00-27-2c-c4-b9"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the name of the network card on this computer?"
+    },
+    {
+      "level": 3,
+      "text": "Intel(R) PRO/1000 MT Desktop Adapter"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the name of the network monitoring tool?"
+    },
+    {
+      "level": 3,
+      "text": "Look@LAN"
+    },
+    {
+      "level": 3,
+      "text": "9- A user bookmarked a Google Maps location. What are the coordinates of the location?"
+    },
+    {
+      "level": 3,
+      "text": "12°52'23.0\"N 80°13'25.0\"E"
+    },
+    {
+      "level": 3,
+      "text": "10- A user has his full name printed on his desktop wallpaper. What is the user's full name?"
+    },
+    {
+      "level": 3,
+      "text": "Anto Joshwa"
+    },
+    {
+      "level": 3,
+      "text": "11- A user had a file on her desktop. It had a flag but she changed the flag using PowerShell. What was the first flag?"
+    },
+    {
+      "level": 3,
+      "text": "flag{HarleyQuinnForQueen}"
+    },
+    {
+      "level": 3,
+      "text": "12- The same user found an exploit to escalate privileges on the computer. What was the message to the device owner?"
+    },
+    {
+      "level": 3,
+      "text": "flag{I-hacked-you}"
+    },
+    {
+      "level": 3,
+      "text": "13- 2 hack tools focused on passwords were found in the system. What are the names of these tools? (alphabetical order)"
+    },
+    {
+      "level": 3,
+      "text": "Lazagne,Mimikatz"
+    },
+    {
+      "level": 3,
+      "text": "14- There is a YARA file on the computer. Inspect the file. What is the name of the author?"
+    },
+    {
+      "level": 3,
+      "text": "Benjamin DELPY (gentilkiwi)"
+    },
+    {
+      "level": 3,
+      "text": "15- One of the users wanted to exploit a domain controller with an MS-NRPC based exploit. What is the filename of the archive that you found? (include the spaces in your answer)"
+    },
+    {
+      "level": 3,
+      "text": "2.2.0 20200918 Zerologon encrypted.zip"
+    }
+  ],
+  "overview": "In the attached VM, there is an Autopsy case file and its corresponding disk image. After loading the .aut file, make sure to re-point Autopsy to the disk image file.",
+  "study": {
+    "overview": "In the attached VM, there is an Autopsy case file and its corresponding disk image. After loading the .aut file, make sure to re-point Autopsy to the disk image file.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Disk Analysis & Autopsy (THM)",
+      "1- What is the MD5 hash of the E01 image?",
+      "3f08c518adb3b5c1359849657a9b2079",
+      "2- What is the computer account name?",
+      "DESKTOP-0R59DJ3",
+      "3- List all the user accounts. (alphabetical order)",
+      "H4S4N,joshwa,keshav,sandhya,shreya,sivapriya,srini,suba",
+      "4- Who was the last user to log into the computer?",
+      "sivapriya",
+      "5- What was the IP address of the computer?",
+      "192.168.130.216",
+      "6- What was the MAC address of the computer? (XX-XX-XX-XX-XX-XX)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell",
+      "YARA"
+    ],
+    "tips": []
+  }
+}

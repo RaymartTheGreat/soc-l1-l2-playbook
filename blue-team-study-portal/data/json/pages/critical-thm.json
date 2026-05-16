@@ -1,0 +1,165 @@
+{
+  "id": "memory forensics labs/critical (thm)",
+  "title": "Critical (THM)",
+  "slug": "critical-thm",
+  "relPath": "Memory Forensics Labs/Critical (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/critical (thm)",
+      "title": "Critical (THM)",
+      "slug": "critical-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Critical (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Is the architecture of the machine x64 (64bit) Y/N?"
+    },
+    {
+      "level": 3,
+      "text": "Y"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the Verison of the Windows OS"
+    },
+    {
+      "level": 3,
+      "text": "10"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the base address of the kernel?"
+    },
+    {
+      "level": 3,
+      "text": "0xf8066161b000"
+    },
+    {
+      "level": 3,
+      "text": "4- Using the plugin \"windows.netscan\". Can you identify the destination IP address where a connection is established on port 80?"
+    },
+    {
+      "level": 3,
+      "text": "192.168.182.128"
+    },
+    {
+      "level": 3,
+      "text": "5- Using the plugin \"windows.netscan,\" can you identify the program (owner) used to access through port 80?"
+    },
+    {
+      "level": 3,
+      "text": "msedge.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- Analyzing the processes present on the dump, what is the PID of the child process of criticalupdat?"
+    },
+    {
+      "level": 3,
+      "text": "1612"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the time stamp time for the process with the truncated name criticalupdat?"
+    },
+    {
+      "level": 3,
+      "text": "2024-02-24 22:51:50.000000"
+    },
+    {
+      "level": 3,
+      "text": "8- Analyzing the \"windows.filescan\" output, what is the full path and name for criticalupdat?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\user01\\Documents\\criticalupdate.exe"
+    },
+    {
+      "level": 3,
+      "text": "9- Analyzing the \"windows.mftscan.MFTScan\" what is the Timestamp for the created date of importantdocument.pdf?"
+    },
+    {
+      "level": 3,
+      "text": "2024-02-24 20:39:42.000000"
+    },
+    {
+      "level": 3,
+      "text": "10- Analyzing the updater.exe memory output, can you observe the HTTP request and determine the server used by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "SimpleHTTP/0.6 Python/3.10.4"
+    }
+  ],
+  "overview": "Our user \"Hattori\" has reported strange behavior on his computer and realized that some PDF files have been encrypted, including a critical document to the company named importantdocument.pdf. He decided to report it; since it was suspected that some credentials might have been stolen, the DFIR team has been involved and has captured some evidence. Join the ",
+  "study": {
+    "overview": "Our user \"Hattori\" has reported strange behavior on his computer and realized that some PDF files have been encrypted, including a critical document to the company named importantdocument.pdf. He decided to report it; since it was suspected that some credentials might have been stolen, the DFIR team has been involved and has captured some evidence. Join the ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Critical (THM)",
+      "Scenario",
+      "1- Is the architecture of the machine x64 (64bit) Y/N?",
+      "Y",
+      "2- What is the Verison of the Windows OS",
+      "10",
+      "3- What is the base address of the kernel?",
+      "0xf8066161b000",
+      "4- Using the plugin \"windows.netscan\". Can you identify the destination IP address where a connection is established on port 80?",
+      "192.168.182.128",
+      "5- Using the plugin \"windows.netscan,\" can you identify the program (owner) used to access through port 80?",
+      "msedge.exe"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "HTTP/1.1 200 OK\nDate: Sun, 02 Aug 2025 12:00:00 GMT\nServer: Apache/2.4.41 (Ubuntu)\nContent-Type: text/html; charset=UTF-8\nContent-Length: 137\n\n<html>\n  <head><title>Example Page</title></head>\n  <body>\n    <h1>Hello, Reader</h1>\n    <p>This is a sample HTTP response body.</p>\n  </body>\n</html>"
+      }
+    ],
+    "tools": [],
+    "tips": [
+      "windows.info plugin : gets general information about the Windows operating system, such as version, build number, system root, number of processors, and product type.",
+      "windows.netscan plugin : scans memory for network connection structures and displays active TCP and UDP connections, including local/remote IPs, ports, connection states, and owning process. Useful for identifying suspicious or unexpected network activity.",
+      "windows.pstree plugin : shows the process list in a tree format based on parent-child relationships, including process names, PIDs, and creation times. Helps visualize process hierarchy and spot suspicious or orphaned processes.",
+      "windows.filescan plugin : scans memory for FILEOBJECTs and lists file handles opened by processes, including file paths, offsets, and file names. Useful for discovering hidden or recently accessed files, even if they were deleted or not listed in standard file structures.",
+      "windows.mftscan.MFTScan plugin – scans memory for raw entries from the NTFS Master File Table (MFT), showing file metadata like name, timestamps, and flags. Useful for identifying deleted or hidden files and reconstructing file system activity."
+    ]
+  }
+}

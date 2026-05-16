@@ -1,0 +1,100 @@
+{
+  "id": "network/protocols/telnet",
+  "title": "Telnet",
+  "slug": "telnet",
+  "relPath": "Network/Protocols/Telnet.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Linux",
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": "network/protocols",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/protocols"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/protocols",
+      "title": "Protocols",
+      "slug": "protocols"
+    },
+    {
+      "id": "network/protocols/telnet",
+      "title": "Telnet",
+      "slug": "telnet"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Telnet"
+    },
+    {
+      "level": 2,
+      "text": "How Telnet Works"
+    },
+    {
+      "level": 3,
+      "text": "Telnet Session Flow"
+    },
+    {
+      "level": 2,
+      "text": "Security Limitations"
+    },
+    {
+      "level": 2,
+      "text": "Example: Telnet in Action"
+    },
+    {
+      "level": 2,
+      "text": "Alternatives"
+    }
+  ],
+  "overview": "Telnet is a legacy application-layer protocol that provides command-line access to remote systems. It operates over TCP port 23 and allows users to remotely log into a system to execute commands, manage files, or perform administrative tasks.",
+  "study": {
+    "overview": "Telnet is a legacy application-layer protocol that provides command-line access to remote systems. It operates over TCP port 23 and allows users to remotely log into a system to execute commands, manage files, or perform administrative tasks.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Telnet",
+      "How Telnet Works",
+      "Telnet Session Flow",
+      "Security Limitations",
+      "Example: Telnet in Action",
+      "Alternatives"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "$ telnet 192.168.1.10\nTrying 192.168.1.10...\nConnected to 192.168.1.10.\nEscape character is '^]'.\n\nlogin: Omar\npassword: ********\n\nWelcome to Bento Linux!\nOmar@bento:~$"
+      }
+    ],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": [
+      "Protocol Layer: Application Layer (OSI Layer 7)",
+      "Port: TCP/23",
+      "Transport: TCP",
+      "Encryption: None (plaintext)",
+      "Telnet may still appear in legacy systems or embedded devices, making it important for analysts to understand how it behaves and how vulnerable it is."
+    ]
+  }
+}

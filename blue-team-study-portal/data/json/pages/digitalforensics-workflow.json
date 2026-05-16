@@ -1,0 +1,113 @@
+{
+  "id": "digital forensics/digital‑forensics workflow",
+  "title": "Digital‑Forensics Workflow",
+  "slug": "digitalforensics-workflow",
+  "relPath": "Digital Forensics/Digital‑Forensics Workflow.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "Sysmon",
+    "DFIR",
+    "Memory",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": "digital forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "digital forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "digital forensics",
+      "title": "Digital Forensics",
+      "slug": "digital-forensics"
+    },
+    {
+      "id": "digital forensics/digital‑forensics workflow",
+      "title": "Digital‑Forensics Workflow",
+      "slug": "digitalforensics-workflow"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Digital‑Forensics Workflow"
+    },
+    {
+      "level": 2,
+      "text": "1- Chain‑of‑Custody & Documentation"
+    },
+    {
+      "level": 2,
+      "text": "2- Evidence Acquisition (Imaging)"
+    },
+    {
+      "level": 2,
+      "text": "3- Verification"
+    },
+    {
+      "level": 2,
+      "text": "4- Mounting the Image Read‑Only"
+    },
+    {
+      "level": 2,
+      "text": "5- Triage & Artifact Collection with KAPE"
+    },
+    {
+      "level": 2,
+      "text": "6- “Important Stuff” Extraction & Initial Review"
+    },
+    {
+      "level": 2,
+      "text": "7- Full Analysis & Timeline"
+    },
+    {
+      "level": 2,
+      "text": "8- Reporting & Remediation Recommendations"
+    }
+  ],
+  "overview": "- Label evidence (drive tags, case numbers, date/time, collector). - Photograph device and port configuration. - Log every action (who, what, when, why).",
+  "study": {
+    "overview": "- Label evidence (drive tags, case numbers, date/time, collector). - Photograph device and port configuration. - Log every action (who, what, when, why).",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Digital‑Forensics Workflow",
+      "1- Chain‑of‑Custody & Documentation",
+      "2- Evidence Acquisition (Imaging)",
+      "3- Verification",
+      "4- Mounting the Image Read‑Only",
+      "5- Triage & Artifact Collection with KAPE",
+      "6- “Important Stuff” Extraction & Initial Review",
+      "7- Full Analysis & Timeline",
+      "8- Reporting & Remediation Recommendations"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "mermaid",
+        "code": "flowchart LR\n   A[Seize System] --> B{Choose Acquisition}\n   B -->|Disk| C[FTK Imager → E01 Image]\n   B -->|Memory| D[DumpIt or FTK Memory Dump]\n   C --> E[KAPE collection: registry, logs]\n   E --> F[Registry Analysis & File Carving]\n   F --> G[Timeline / Malware Triage]\n   D --> H[Volatility: pslist, malfind, netscan]\n   H --> I[Extract Credentials & In‑RAM Artifacts]\n   G & I --> J[Correlate Disk & Memory Timelines]\n   J --> K[Report Findings]"
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "Sysmon",
+      "PowerShell",
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

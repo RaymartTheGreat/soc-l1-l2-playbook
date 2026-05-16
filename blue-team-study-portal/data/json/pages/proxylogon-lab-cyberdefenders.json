@@ -1,0 +1,89 @@
+{
+  "id": "threat hunting labs (siem)/proxylogon lab (cyberdefenders)",
+  "title": "ProxyLogon Lab (CyberDefenders)",
+  "slug": "proxylogon-lab-cyberdefenders",
+  "relPath": "Threat hunting Labs (SIEM)/ProxyLogon Lab (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Active Directory",
+    "Web",
+    "Memory",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1136.002",
+    "T1003.004"
+  ],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/proxylogon lab (cyberdefenders)",
+      "title": "ProxyLogon Lab (CyberDefenders)",
+      "slug": "proxylogon-lab-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "ProxyLogon Lab (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 2,
+      "text": "CVE-2021-26855 & SSRF Overview"
+    },
+    {
+      "level": 2,
+      "text": "Lab Environment & Sources"
+    },
+    {
+      "level": 2,
+      "text": "Questions & Answers"
+    }
+  ],
+  "overview": "In late February 2021, a threat actor known as HAFNIUM exploited a new vulnerability in Microsoft Exchange known as ProxyLogon CVE-2021-26855. As a SOC analyst in an enterprise utilizing GrayLog as the SIEM solution, your responsibility is to conduct a thorough investigation within the company's network to ensure the absence of any malicious activities. Your",
+  "study": {
+    "overview": "In late February 2021, a threat actor known as HAFNIUM exploited a new vulnerability in Microsoft Exchange known as ProxyLogon CVE-2021-26855. As a SOC analyst in an enterprise utilizing GrayLog as the SIEM solution, your responsibility is to conduct a thorough investigation within the company's network to ensure the absence of any malicious activities. Your",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "ProxyLogon Lab (CyberDefenders)",
+      "Scenario",
+      "CVE-2021-26855 & SSRF Overview",
+      "Lab Environment & Sources",
+      "Questions & Answers"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

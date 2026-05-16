@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Piggy (BTLO) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="network-analysis-labs.html">Network Analysis Labs</a><span>/</span><span>Piggy (BTLO)</span></div>
+      <h1>Piggy (BTLO)</h1>
+      <p>Investigate some simple network activity in Wireshark! You can launch Wireshark in a terminal with the command 'wireshark'. The questions are mapped to the four PCAPs on the Desktop.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Detection</span><span class="tag">OSINT</span><span class="tag">C2</span><span class="tag mitre">T1496</span><span class="tag mitre">T1071.004</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Network Analysis Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="network-analysis-labs.html"><span>Network Analysis Labs</span><em>L2</em></a>
+      <b>28</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="packet-puzzle-htb.html"><span>Packet Puzzle (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pikaptcha-htb.html"><span>Pikaptcha (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="web-shell-btlo.html"><span>Web Shell (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="noxious-htb.html"><span>Noxious (HTB)</span><em>L2</em></a>
+      <b>2</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="llmnr-poisoning-overview-4469348d.html"><span>LLMNR Poisoning Overview</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="example-of-llmnr-poisoning-9cadbd94.html"><span>Example of LLMNR poisoning</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="reaper-htb.html"><span>Reaper (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="port-scan-activity-letsdefend.html"><span>Port Scan Activity (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="openwire-cyberdefenders.html"><span>OpenWire (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="intro-to-network-analysis-challenge-btlo.html"><span>intro to Network Analysis Challenge (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="network-analysis-ransomware-btlo.html"><span>Network Analysis - Ransomware (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="network-analysis-malware-compromise-btlo.html"><span>Network Analysis – Malware Compromise (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="malware-traffic-analysis-1-cyberdefenders.html"><span>Malware Traffic Analysis 1 (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="malware-traffic-analysis-2-cyberdefenders.html"><span>Malware Traffic Analysis 2 (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="malware-traffic-analysis-3-cyberdefenders.html"><span>Malware Traffic Analysis 3 (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="web-investigation-cyberdefenders.html"><span>Web Investigation (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="tomcat-takeover-cyberdefenders.html"><span>Tomcat Takeover (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="packetmaze-cyberdefenders.html"><span>PacketMaze (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="psexec-hunt-cyberdefenders.html"><span>PsExec Hunt (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="danabot-cyberdefenders.html"><span>DanaBot (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="webstrike-lab-cyberdefenders.html"><span>WebStrike Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="piggy-btlo.html"><span>Piggy (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="packetdetective-lab-cyberdefenders.html"><span>PacketDetective Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="poisonedcredentials-cyberdefenders.html"><span>PoisonedCredentials (Cyberdefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="honeybot-cyberdefenders.html"><span>HoneyBOT (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="warzone-1-thm.html"><span>Warzone 1 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="warzone-2-thm.html"><span>Warzone 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="masterminds-thm.html"><span>Masterminds (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="carnage-thm.html"><span>Carnage (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="boogeyman-1-thm.html"><span>Boogeyman 1 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Investigate some simple network activity in Wireshark! You can launch Wireshark in a terminal with the command 'wireshark'. The questions are mapped to the four PCAPs on the Desktop.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Piggy (BTLO)</li><li>Scenario</li><li>PCAP One) What remote IP address was used to transfer data over SSH? (Format: X.X.X.X)</li><li>35.211.33.16</li><li>PCAP One) How much data was transferred in total? (Format: XXXX M)</li><li>1131M</li><li>PCAP Two) Review the IPs the infected system has communicated with. Perform OSINT searches to identify the malware family tied to this infrastructure (Format: MalwareName)</li><li>trickbot</li><li>PCAP Three) Review the two IPs that are communicating on an unusual port. What are the two ASN numbers these IPs belong to? (Format: ASN, ASN)</li><li>63949, 14061</li><li>PCAP Three) Perform OSINT checks. What malware category have these IPs been attributed to historically? (Format: MalwareType)</li><li>crypto-mining malware</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>Wireshark</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="piggy-btlo">Piggy (BTLO)</h2>
+<h3 id="scenario">Scenario</h3>
+<p><strong>Investigate some simple network activity in Wireshark! You can launch Wireshark in a terminal with the command 'wireshark'. The questions are mapped to the four PCAPs on the Desktop.</strong></p>
+<p><a class="note-link" href="https://blueteamlabs.online/home/investigation/piggy-aij2bd8h2">https://blueteamlabs.online/home/investigation/piggy-aij2bd8h2</a></p>
+<hr>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_182337-539902cd.png" data-alt="Screenshot 2025-08-15 182337.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_182337-539902cd.png" alt="Screenshot 2025-08-15 182337.png" loading="lazy"></button></p>
+<h4 id="pcap-one-what-remote-ip-address-was-used-to-transfer-data-over-ssh-format-x.x.x.x">PCAP One) What remote IP address was used to transfer data over SSH? (Format: X.X.X.X)</h4>
+<h4 id="35.211.33.16">35.211.33.16</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_182623-76f2f215.png" data-alt="Screenshot 2025-08-15 182623.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_182623-76f2f215.png" alt="Screenshot 2025-08-15 182623.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_182657-561e9cd2.png" data-alt="Screenshot 2025-08-15 182657.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_182657-561e9cd2.png" alt="Screenshot 2025-08-15 182657.png" loading="lazy"></button></p>
+<p>Filter with ssh and we see that We only have one external IP communicating with the SSH server</p>
+<h4 id="pcap-one-how-much-data-was-transferred-in-total-format-xxxx-m">PCAP One) How much data was transferred in total? (Format: XXXX M)</h4>
+<h4 id="1131m">1131M</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_182734-2566a135.png" data-alt="Screenshot 2025-08-15 182734.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_182734-2566a135.png" alt="Screenshot 2025-08-15 182734.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_183354-e9dd809e.png" data-alt="Screenshot 2025-08-15 183354.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_183354-e9dd809e.png" alt="Screenshot 2025-08-15 183354.png" loading="lazy"></button></p>
+<p>Statistics → Endpoints</p>
+<h4 id="pcap-two-review-the-ips-the-infected-system-has-communicated-with.-perform-osint-searches-">PCAP Two) Review the IPs the infected system has communicated with. Perform OSINT searches to identify the malware family tied to this infrastructure (Format: MalwareName)</h4>
+<h4 id="trickbot">trickbot</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_185307-384dbdd6.png" data-alt="Screenshot 2025-08-15 185307.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_185307-384dbdd6.png" alt="Screenshot 2025-08-15 185307.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_185356-36bd4765.png" data-alt="Screenshot 2025-08-15 185356.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_185356-36bd4765.png" alt="Screenshot 2025-08-15 185356.png" loading="lazy"></button></p>
+<p>I couldn’t find any malicious IPs on VirusTotal or any other platform, maybe because time has passed and the IPs are gone now or someone else owns them. So I checked the resolved addresses and found alphasoc.com, which is a project by AlphaSOC. AlphaSOC develops network security tools, and one of their public projects is Network Flight Simulator (flightsim)  an open-source tool that generates realistic malicious network traffic for testing detection capabilities. This includes simulations for known malware families such as TrickBot, Cobalt Strike, and others. When I checked their GitHub repository, I found that TrickBot is one of the malware families simulated by this project, which matches the activity in the PCAP.</p>
+<h4 id="pcap-three-review-the-two-ips-that-are-communicating-on-an-unusual-port.-what-are-the-two-">PCAP Three) Review the two IPs that are communicating on an unusual port. What are the two ASN numbers these IPs belong to? (Format: ASN, ASN)</h4>
+<h4 id="63949-14061">63949, <strong>14061</strong></h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_192423-66d91a63.png" data-alt="Screenshot 2025-08-15 192423.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_192423-66d91a63.png" alt="Screenshot 2025-08-15 192423.png" loading="lazy"></button></p>
+<p>we can see ports 8080 and 8000 we copy their ips (194.233.171.171 / 104.236.57.24) to</p>
+<p><a class="note-link" href="https://hackertarget.com/as-ip-lookup/">https://hackertarget.com/as-ip-lookup/</a></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_190637-130b7ccb.png" data-alt="Screenshot 2025-08-15 190637.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_190637-130b7ccb.png" alt="Screenshot 2025-08-15 190637.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_190707-89207d82.png" data-alt="Screenshot 2025-08-15 190707.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_190707-89207d82.png" alt="Screenshot 2025-08-15 190707.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_190729-e44ff0a6.png" data-alt="Screenshot 2025-08-15 190729.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_190729-e44ff0a6.png" alt="Screenshot 2025-08-15 190729.png" loading="lazy"></button></p>
+<h4 id="pcap-three-perform-osint-checks.-what-malware-category-have-these-ips-been-attributed-to-h">PCAP Three) Perform OSINT checks. What malware category have these IPs been attributed to historically? (Format: MalwareType)</h4>
+<h4 id="crypto-mining-malware"><strong>crypto-mining malware</strong></h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_190814-b41b58d7.png" data-alt="Screenshot 2025-08-15 190814.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_190814-b41b58d7.png" alt="Screenshot 2025-08-15 190814.png" loading="lazy"></button></p>
+<p>‘104.236.57.24’ on VirusTotal</p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_200821-4b87c273.png" data-alt="Screenshot 2025-08-15 200821.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_200821-4b87c273.png" alt="Screenshot 2025-08-15 200821.png" loading="lazy"></button></p>
+<p>‘194.233.171.171’</p>
+<p>those IPs are associated with cryptocurrency mining activity, usually linked to mining pools or malware that hijacks system resources to mine coins without the owner’s consent.</p>
+<h4 id="pcap-three-what-attck-technique-is-most-closely-related-to-this-activity-format-txxxx">PCAP Three) What ATT&amp;CK technique is most closely related to this activity? (Format: TXXXX)</h4>
+<h4 id="t1496"><strong>T1496</strong></h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_190846-ae348126.png" data-alt="Screenshot 2025-08-15 190846.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_190846-ae348126.png" alt="Screenshot 2025-08-15 190846.png" loading="lazy"></button></p>
+<h4 id="pcap-four-go-to-view-time-display-format-seconds-since-beginning-of-capture.-how-long-into">PCAP Four) Go to View &gt; Time Display Format &gt; Seconds Since Beginning of Capture. How long into the capture was the first TXT record query made? (Use the default time, which is seconds since the packet capture started) (Format: X.xxxxxx)</h4>
+<h4 id="8.527712"><strong>8.527712</strong></h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_191314-8352a2cc.png" data-alt="Screenshot 2025-08-15 191314.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_191314-8352a2cc.png" alt="Screenshot 2025-08-15 191314.png" loading="lazy"></button></p>
+<p>change time and filter with dns.qry.type == 16 (TXT records)</p>
+<h4 id="pcap-four-go-to-view-time-display-format-utc-date-and-time-of-day.-what-is-the-date-and-ti">PCAP Four) Go to View &gt; Time Display Format &gt; UTC Date and Time of Day. What is the date and timestamp? (Format: YYYY-MM-DD HH:MM:SS)</h4>
+<h4 id="2024-05-24-100850">2024-05-24 10:08:50</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_191341-0fb727f3.png" data-alt="Screenshot 2025-08-15 191341.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_191341-0fb727f3.png" alt="Screenshot 2025-08-15 191341.png" loading="lazy"></button></p>
+<h4 id="pcap-four-what-is-the-attck-subtechnique-relating-to-this-activity-format-txxxx.xxx">PCAP Four) What is the ATT&amp;CK subtechnique relating to this activity? (Format: TXXXX.xxx)</h4>
+<h4 id="t1071.004">T1071.004</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_192124-835b6c9b.png" data-alt="Screenshot 2025-08-15 192124.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_192124-835b6c9b.png" alt="Screenshot 2025-08-15 192124.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_191458-4d8eb88b.png" data-alt="Screenshot 2025-08-15 191458.png"><img src="../assets/images/network-analysis-labspiggy-btlo-screenshot_2025-08-15_191458-4d8eb88b.png" alt="Screenshot 2025-08-15 191458.png" loading="lazy"></button></p>
+<p>When examining the DNS records, we observed random subdomains, which is a sign of a domain shadowing attack. In this attack, threat actors create subdomains under legitimate, high-reputation domains they control, making detection harder. These subdomains can be used for phishing, malware delivery, or command-and-control (C2) communication. Additionally, this technique can be leveraged for data exfiltration if the subdomains are configured to receive encoded data from infected systems, such as through DNS tunneling. This activity maps to MITRE ATT&amp;CK T1071.004  Application Layer Protocol: DNS.</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#piggy-btlo">Piggy (BTLO)</a><a href="#scenario">Scenario</a><a href="#pcap-one-what-remote-ip-address-was-used-to-transfer-data-over-ssh-format-x.x.x.x">PCAP One) What remote IP address was used to transfer data over SSH? (Format: X.X.X.X)</a><a href="#35.211.33.16">35.211.33.16</a><a href="#pcap-one-how-much-data-was-transferred-in-total-format-xxxx-m">PCAP One) How much data was transferred in total? (Format: XXXX M)</a><a href="#1131m">1131M</a><a href="#pcap-two-review-the-ips-the-infected-system-has-communicated-with.-perform-osint-searches-">PCAP Two) Review the IPs the infected system has communicated with. Perform OSINT searches to identify the malware family tied to this infrastructure (Format: MalwareName)</a><a href="#trickbot">trickbot</a><a href="#pcap-three-review-the-two-ips-that-are-communicating-on-an-unusual-port.-what-are-the-two-">PCAP Three) Review the two IPs that are communicating on an unusual port. What are the two ASN numbers these IPs belong to? (Format: ASN, ASN)</a><a href="#63949-14061">63949, 14061</a><a href="#pcap-three-perform-osint-checks.-what-malware-category-have-these-ips-been-attributed-to-h">PCAP Three) Perform OSINT checks. What malware category have these IPs been attributed to historically? (Format: MalwareType)</a><a href="#crypto-mining-malware">crypto-mining malware</a><a href="#pcap-three-what-attck-technique-is-most-closely-related-to-this-activity-format-txxxx">PCAP Three) What ATT&amp;CK technique is most closely related to this activity? (Format: TXXXX)</a><a href="#t1496">T1496</a><a href="#pcap-four-go-to-view-time-display-format-seconds-since-beginning-of-capture.-how-long-into">PCAP Four) Go to View Time Display Format Seconds Since Beginning of Capture. How long into the capture was the first TXT record query made? (Use the default time, which is seconds since the packet capture started) (Format: X.xxxxxx)</a><a href="#8.527712">8.527712</a><a href="#pcap-four-go-to-view-time-display-format-utc-date-and-time-of-day.-what-is-the-date-and-ti">PCAP Four) Go to View Time Display Format UTC Date and Time of Day. What is the date and timestamp? (Format: YYYY-MM-DD HH:MM:SS)</a><a href="#2024-05-24-100850">2024-05-24 10:08:50</a><a href="#pcap-four-what-is-the-attck-subtechnique-relating-to-this-activity-format-txxxx.xxx">PCAP Four) What is the ATT&amp;CK subtechnique relating to this activity? (Format: TXXXX.xxx)</a><a href="#t1071.004">T1071.004</a></details>
+    </div>
+    
+    <footer class="pager"><a href="webstrike-lab-cyberdefenders.html">← WebStrike Lab (CyberDefenders)</a><a href="packetdetective-lab-cyberdefenders.html">PacketDetective Lab (CyberDefenders) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Questions | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="windows-security-monitoring.html">Windows Security Monitoring</a><span>/</span><a href="windows-threat-detection-1.html">Windows Threat Detection 1</a><span>/</span><span>Questions</span></div>
+      <h1>Questions</h1>
+      <p>1 - Which MITRE technique ID describes Initial Access via a vulnerable mail server?</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">Windows</span><span class="tag">Phishing</span><span class="tag">Web</span><span class="tag">Detection</span><span class="tag mitre">T1190</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Windows Security Monitoring</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>L1.5</em></a>
+      <b>4</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-logging-for-soc.html"><span>Windows Logging for SOC</span><em>L1.5</em></a>
+      <b>7</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="what-is-logged.html"><span>What Is Logged</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="security-log-authentication.html"><span>Security Log Authentication</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="security-log-user-management.html"><span>Security Log User Management</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="sysmon-process-monitoring.html"><span>Sysmon Process Monitoring</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="sysmon-file-and-network.html"><span>Sysmon File and Network</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="powershell-logging-commands.html"><span>PowerShell Logging Commands</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="questions.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-threat-detection-1.html"><span>Windows Threat Detection 1</span><em>L1.5</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="intro-to-initial-access.html"><span>Intro to Initial Access</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="initial-access-via-rdp.html"><span>Initial Access via RDP</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="initial-access-via-phishing.html"><span>Initial Access via Phishing</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="continuing-phishing-topic.html"><span>Continuing Phishing Topic</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="initial-access-via-usb.html"><span>Initial Access via USB</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="questions-63e5ebed.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-threat-detection-2.html"><span>Windows Threat Detection 2</span><em>L1.5</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="discovery-overview.html"><span>Discovery Overview</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="detecting-discovery.html"><span>Detecting Discovery</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="collection-overview.html"><span>Collection Overview</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="detecting-collection.html"><span>Detecting Collection</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ingress-tool-transfer.html"><span>Ingress Tool Transfer</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="questions-2ecf0ac6.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-threat-detection-3.html"><span>Windows Threat Detection 3</span><em>L1.5</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="command-and-control.html"><span>Command and Control</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="persistence-overview.html"><span>Persistence Overview</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="persistence-tasks-and-services.html"><span>Persistence Tasks and Services</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="persistence-run-keys-and-startup.html"><span>Persistence Run Keys and Startup</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="impact-and-threat-detection-recap.html"><span>Impact and Threat Detection Recap</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="questions-ac88b105.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>1 - Which MITRE technique ID describes Initial Access via a vulnerable mail server?</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Questions</li><li>1 - Which MITRE technique ID describes Initial Access via a vulnerable mail server?</li><li>T1190</li><li>2 - Which Initial Access method relies on a user opening a malicious email attachment?</li><li>Phishing</li><li>3 - Which user seems to be most actively targeted by botnets?</li><li>Administrator</li><li>4 - Which IP managed to breach the host and enter the RDP session?</li><li>203.205.34.107</li><li>5 - Can you get the real Workstation Name (hostname) of the threat actor?</li><li>DESKTOP-QNBC4UU</li><li>6 - Run the www.zoom.com file from the Phishing Case 1 folder, which flag do you get?</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="questions">Questions</h2>
+<h4 id="1-which-mitre-technique-id-describes-initial-access-via-a-vulnerable-mail-server">1 - Which MITRE technique ID describes Initial Access via a vulnerable mail server?</h4>
+<h4 id="t1190">T1190</h4>
+<h4 id="2-which-initial-access-method-relies-on-a-user-opening-a-malicious-email-attachment">2 - Which Initial Access method relies on a user opening a malicious email attachment?</h4>
+<h4 id="phishing">Phishing</h4>
+<h4 id="3-which-user-seems-to-be-most-actively-targeted-by-botnets">3 - Which user seems to be most actively targeted by botnets?</h4>
+<h4 id="administrator">Administrator</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_170231-12f9a53e.png" data-alt="Screenshot 2025-08-25 170231.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_170231-12f9a53e.png" alt="Screenshot 2025-08-25 170231.png" loading="lazy"></button></p>
+<h4 id="4-which-ip-managed-to-breach-the-host-and-enter-the-rdp-session">4 - Which IP managed to breach the host and enter the RDP session?</h4>
+<h4 id="203.205.34.107">203.205.34.107</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_170600-0f44be53.png" data-alt="Screenshot 2025-08-25 170600.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_170600-0f44be53.png" alt="Screenshot 2025-08-25 170600.png" loading="lazy"></button></p>
+<h4 id="5-can-you-get-the-real-workstation-name-hostname-of-the-threat-actor">5 - Can you get the real Workstation Name (hostname) of the threat actor?</h4>
+<h4 id="desktop-qnbc4uu">DESKTOP-QNBC4UU</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_170521-2f48c56b.png" data-alt="Screenshot 2025-08-25 170521.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_170521-2f48c56b.png" alt="Screenshot 2025-08-25 170521.png" loading="lazy"></button></p>
+<h4 id="6-run-the-www.zoom.com-file-from-the-phishing-case-1-folder-which-flag-do-you-get">6 - Run the www.zoom.com file from the Phishing Case 1 folder, which flag do you get?</h4>
+<h4 id="thmmisleadingextension">THM{misleading_extension}</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_171828-9bf7e257.png" data-alt="Screenshot 2025-08-25 171828.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_171828-9bf7e257.png" alt="Screenshot 2025-08-25 171828.png" loading="lazy"></button></p>
+<h4 id="7-from-which-url-does-the-malicious-lnk-download-the-next-stage-malware">7 - From which URL does the malicious LNK download the next stage malware?</h4>
+<h4 id="httpwp16.hqywlqpa.thm8000cgi-binf">http://wp16.hqywlqpa.thm:8000/cgi-bin/f</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_171942-2d1211fe.png" data-alt="Screenshot 2025-08-25 171942.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_171942-2d1211fe.png" alt="Screenshot 2025-08-25 171942.png" loading="lazy"></button></p>
+<h4 id="8-what-is-the-name-of-the-double-extension-file-you-see-there">8 - What is the name of the double-extension file you see there?</h4>
+<h4 id="best-cat.jpg.exe">best-cat.jpg.exe</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_172024-79b268b8.png" data-alt="Screenshot 2025-08-25 172024.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_172024-79b268b8.png" alt="Screenshot 2025-08-25 172024.png" loading="lazy"></button></p>
+<h4 id="9-which-file-did-the-user-download-via-the-web-browser">9 - Which file did the user download via the web browser?</h4>
+<h4 id="cusersadministratordownloadstop-cats.zip">C:\Users\Administrator\Downloads\top-cats.zip</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181336-d325fab6.png" data-alt="Screenshot 2025-08-25 181336.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181336-d325fab6.png" alt="Screenshot 2025-08-25 181336.png" loading="lazy"></button></p>
+<h4 id="10-in-which-folder-did-the-user-unarchive-the-suspicious-file">10 - In which folder did the user unarchive the suspicious file?</h4>
+<h4 id="cusersadministratorpictures">C:\Users\Administrator\Pictures</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181449-85cccddc.png" data-alt="Screenshot 2025-08-25 181449.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181449-85cccddc.png" alt="Screenshot 2025-08-25 181449.png" loading="lazy"></button></p>
+<h4 id="11-what-is-the-process-id-of-the-launched-phishing-malware">11 - What is the process ID of the launched phishing malware?</h4>
+<h4 id="5484">5484</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181626-fd0528da.png" data-alt="Screenshot 2025-08-25 181626.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181626-fd0528da.png" alt="Screenshot 2025-08-25 181626.png" loading="lazy"></button></p>
+<h4 id="12-which-malicious-domain-did-the-malware-try-to-connect-to">12 - Which malicious domain did the malware try to connect to?</h4>
+<h4 id="rjj.store">rjj.store</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181658-ff49d73c.png" data-alt="Screenshot 2025-08-25 181658.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181658-ff49d73c.png" alt="Screenshot 2025-08-25 181658.png" loading="lazy"></button></p>
+<h4 id="13-which-usb-file-was-launched-by-the-user">13 - Which USB file was launched by the user?</h4>
+<h4 id="eopen-sandisk-4gb-usb.exe">E:\Open Sandisk 4GB USB.exe</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181752-37f01b81.png" data-alt="Screenshot 2025-08-25 181752.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181752-37f01b81.png" alt="Screenshot 2025-08-25 181752.png" loading="lazy"></button></p>
+<h4 id="14-which-suspicious-file-did-the-malware-drop-to-the-disk">14 - Which suspicious file did the malware drop to the disk?</h4>
+<h4 id="cuserspublicdocumentswinupdate.exe">C:\Users\Public\Documents\winupdate.exe</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181816-c204604e.png" data-alt="Screenshot 2025-08-25 181816.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181816-c204604e.png" alt="Screenshot 2025-08-25 181816.png" loading="lazy"></button></p>
+<h4 id="15-to-which-other-usb-did-the-malware-propagate">15 - To which other USB did the malware propagate?</h4>
+<h4 id="f">F:</h4>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181859-73fbdca2.png" data-alt="Screenshot 2025-08-25 181859.png"><img src="../assets/images/windows-security-monitoringwindows-threat-detection-1questions-screenshot_2025-08-25_181859-73fbdca2.png" alt="Screenshot 2025-08-25 181859.png" loading="lazy"></button></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#questions">Questions</a><a href="#1-which-mitre-technique-id-describes-initial-access-via-a-vulnerable-mail-server">1 - Which MITRE technique ID describes Initial Access via a vulnerable mail server?</a><a href="#t1190">T1190</a><a href="#2-which-initial-access-method-relies-on-a-user-opening-a-malicious-email-attachment">2 - Which Initial Access method relies on a user opening a malicious email attachment?</a><a href="#phishing">Phishing</a><a href="#3-which-user-seems-to-be-most-actively-targeted-by-botnets">3 - Which user seems to be most actively targeted by botnets?</a><a href="#administrator">Administrator</a><a href="#4-which-ip-managed-to-breach-the-host-and-enter-the-rdp-session">4 - Which IP managed to breach the host and enter the RDP session?</a><a href="#203.205.34.107">203.205.34.107</a><a href="#5-can-you-get-the-real-workstation-name-hostname-of-the-threat-actor">5 - Can you get the real Workstation Name (hostname) of the threat actor?</a><a href="#desktop-qnbc4uu">DESKTOP-QNBC4UU</a><a href="#6-run-the-www.zoom.com-file-from-the-phishing-case-1-folder-which-flag-do-you-get">6 - Run the www.zoom.com file from the Phishing Case 1 folder, which flag do you get?</a><a href="#thmmisleadingextension">THM{misleadingextension}</a><a href="#7-from-which-url-does-the-malicious-lnk-download-the-next-stage-malware">7 - From which URL does the malicious LNK download the next stage malware?</a><a href="#httpwp16.hqywlqpa.thm8000cgi-binf">http://wp16.hqywlqpa.thm:8000/cgi-bin/f</a><a href="#8-what-is-the-name-of-the-double-extension-file-you-see-there">8 - What is the name of the double-extension file you see there?</a><a href="#best-cat.jpg.exe">best-cat.jpg.exe</a><a href="#9-which-file-did-the-user-download-via-the-web-browser">9 - Which file did the user download via the web browser?</a><a href="#cusersadministratordownloadstop-cats.zip">C:\Users\Administrator\Downloads\top-cats.zip</a><a href="#10-in-which-folder-did-the-user-unarchive-the-suspicious-file">10 - In which folder did the user unarchive the suspicious file?</a><a href="#cusersadministratorpictures">C:\Users\Administrator\Pictures</a><a href="#11-what-is-the-process-id-of-the-launched-phishing-malware">11 - What is the process ID of the launched phishing malware?</a><a href="#5484">5484</a><a href="#12-which-malicious-domain-did-the-malware-try-to-connect-to">12 - Which malicious domain did the malware try to connect to?</a><a href="#rjj.store">rjj.store</a><a href="#13-which-usb-file-was-launched-by-the-user">13 - Which USB file was launched by the user?</a><a href="#eopen-sandisk-4gb-usb.exe">E:\Open Sandisk 4GB USB.exe</a><a href="#14-which-suspicious-file-did-the-malware-drop-to-the-disk">14 - Which suspicious file did the malware drop to the disk?</a><a href="#cuserspublicdocumentswinupdate.exe">C:\Users\Public\Documents\winupdate.exe</a><a href="#15-to-which-other-usb-did-the-malware-propagate">15 - To which other USB did the malware propagate?</a><a href="#f">F:</a></details>
+    </div>
+    
+    <footer class="pager"><a href="initial-access-via-usb.html">← Initial Access via USB</a><a href="windows-threat-detection-2.html">Windows Threat Detection 2 →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

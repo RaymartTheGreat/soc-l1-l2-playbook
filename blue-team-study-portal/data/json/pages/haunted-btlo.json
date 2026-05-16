@@ -1,0 +1,186 @@
+{
+  "id": "threat intelligence labs/haunted (btlo)",
+  "title": "Haunted (BTLO)",
+  "slug": "haunted-btlo",
+  "relPath": "Threat Intelligence Labs/Haunted (BTLO).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-contextual-threats",
+  "curriculumSectionTitle": "Contextualizing Threats",
+  "tags": [
+    "Network",
+    "Web",
+    "Detection",
+    "Threat Intel"
+  ],
+  "mitre": [],
+  "parentId": "threat intelligence labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat intelligence labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat intelligence labs",
+      "title": "Threat Intelligence Labs",
+      "slug": "threat-intelligence-labs"
+    },
+    {
+      "id": "threat intelligence labs/haunted (btlo)",
+      "title": "Haunted (BTLO)",
+      "slug": "haunted-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Haunted (BTLO)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Q1) In 2017, a well-known company was attacked. What is the name of the company, its country of origin, and its business model?"
+    },
+    {
+      "level": 3,
+      "text": "GenX Financial, US, Credit Reporting Agency"
+    },
+    {
+      "level": 3,
+      "text": "Q2) According to the data breach summary, one of their critical assets was compromised, and they later discovered a vulnerability in one of their public-facing applications. What type of weakness was exploited to breach their network?"
+    },
+    {
+      "level": 3,
+      "text": "Application Vulnerability"
+    },
+    {
+      "level": 3,
+      "text": "Q3) How long did this breach go undetected? What was the Mean Time to Detect (MTTD)?"
+    },
+    {
+      "level": 3,
+      "text": "76 days"
+    },
+    {
+      "level": 3,
+      "text": "Q4) What application was targeted by the attacker? What vulnerability was exploited, and where is this application located within the network?"
+    },
+    {
+      "level": 3,
+      "text": "Apache Struts, CVE-2017-5638, ACIS"
+    },
+    {
+      "level": 3,
+      "text": "Q5) The attackers exfiltrated millions of records. How many consumer details were estimated to be exposed? How, and through which channel, was the data exfiltrated from the premises?"
+    },
+    {
+      "level": 3,
+      "text": "148 Million, encrypted"
+    },
+    {
+      "level": 3,
+      "text": "Q6) Later, during the investigation, a flaw was discovered in their ACIS code rendering system. What were these flaws?"
+    },
+    {
+      "level": 3,
+      "text": "SQL Injection, Insecure Direct Object Reference"
+    },
+    {
+      "level": 3,
+      "text": "Q7) What file was inserted during the attack, and which country did the attack originate from?"
+    },
+    {
+      "level": 3,
+      "text": "JSP, China"
+    },
+    {
+      "level": 3,
+      "text": "Q8) It is said that if a specific network security technique had been properly implemented, the attacker likely would have failed to accomplish their mission. What is this technique called?"
+    },
+    {
+      "level": 3,
+      "text": "Network Segmentation"
+    },
+    {
+      "level": 3,
+      "text": "Q9) Adversary Analysis, this one group in particular as being involved in numerous attacks, including an attack on a medical research company during COVID-19. What is the name of this threat group (according to MITRE), what threat vector do they use, what is their country of origin, and what is their motivation?"
+    },
+    {
+      "level": 3,
+      "text": "FIN7, Ransomware, Russia, Financial"
+    },
+    {
+      "level": 3,
+      "text": "Q10) Investigating the other threat group. What is the APT number assigned to this group? What is the name of the specific operation that involved dropping web shells on SharePoint servers? In what year was this group first observed, and what is their possible motivation?"
+    },
+    {
+      "level": 3,
+      "text": "APT27, SharePoint Server Compromise, 2010, Espionage"
+    },
+    {
+      "level": 3,
+      "text": "Q11) Haunted Company Inc. in Tokyo is under cyber attack. Based on the IOCs that were provided (hint: BAT!), what attack vectors did the threat actor use?"
+    },
+    {
+      "level": 3,
+      "text": "Social Engineering, Webshell"
+    },
+    {
+      "level": 3,
+      "text": "Q12) One of the IOCs contains shellcode. Use a tool and review the output to identify the offset of the PEB (Process Environment Block)."
+    },
+    {
+      "level": 3,
+      "text": "0xcc"
+    },
+    {
+      "level": 3,
+      "text": "Q13) Based on the intelligence gathered, which threat group was responsible for the cyberattack on Haunted Company Inc.? What is the name of the malware they used to compromise Tokyo's infrastructure?"
+    },
+    {
+      "level": 3,
+      "text": "Threat Group-3390, ChinaChopper"
+    },
+    {
+      "level": 3,
+      "text": "Q14) Referring to the Asset-Threat Diagram which is an integral part of building intelligence, It appears the attacker exploited a vulnerability in Tokyo's infrastructure. What is the latest CVE for the version the threat actor targeted, and what type of attack was it?"
+    },
+    {
+      "level": 3,
+      "text": "CVE-2023-50164, RCE"
+    }
+  ],
+  "overview": "Haunted Company Inc., a long-established Credit Reporting Agency, has been successfully operating in major financial hubs such as New York, London, and Tokyo. As a privately owned entity without external investors, the company has maintained consistent client satisfaction and steady earnings reports. With plans for expansion, the management has decided to ta",
+  "study": {
+    "overview": "Haunted Company Inc., a long-established Credit Reporting Agency, has been successfully operating in major financial hubs such as New York, London, and Tokyo. As a privately owned entity without external investors, the company has maintained consistent client satisfaction and steady earnings reports. With plans for expansion, the management has decided to ta",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Haunted (BTLO)",
+      "Scenario",
+      "Q1) In 2017, a well-known company was attacked. What is the name of the company, its country of origin, and its business model?",
+      "GenX Financial, US, Credit Reporting Agency",
+      "Q2) According to the data breach summary, one of their critical assets was compromised, and they later discovered a vulnerability in one of their public-facing applications. What type of weakness was exploited to breach their network?",
+      "Application Vulnerability",
+      "Q3) How long did this breach go undetected? What was the Mean Time to Detect (MTTD)?",
+      "76 days",
+      "Q4) What application was targeted by the attacker? What vulnerability was exploited, and where is this application located within the network?",
+      "Apache Struts, CVE-2017-5638, ACIS",
+      "Q5) The attackers exfiltrated millions of records. How many consumer details were estimated to be exposed? How, and through which channel, was the data exfiltrated from the premises?",
+      "148 Million, encrypted"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

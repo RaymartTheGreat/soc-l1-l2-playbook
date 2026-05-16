@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Conti (THM) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-hunting-labs-siem.html">Threat hunting Labs (SIEM)</a><span>/</span><span>Conti (THM)</span></div>
+      <h1>Conti (THM)</h1>
+      <p>Some employees from your company reported that they can’t log into Outlook. The Exchange system admin also reported that he can’t log in to the Exchange Admin Center. After initial triage, they discovered some weird readme files settled on the Exchange server.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Sysmon</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Memory</span><span class="tag">Persistence</span><span class="tag">Lateral Movement</span><span class="tag">C2</span><span class="tag mitre">T1055.001</span><span class="tag mitre">T1003.001</span><span class="tag mitre">T1562.001</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat hunting Labs (SIEM)</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>L2</em></a>
+      <b>27</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="active" href="conti-thm.html"><span>Conti (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="boogeyman3-thm.html"><span>Boogeyman3 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="servidae-thm.html"><span>Servidae (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="middlemayhem-btlo.html"><span>MiddleMayhem (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-i-payment-collectors-thm.html"><span>Hunt Me I Payment Collectors (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-ii-typo-squatters-thm.html"><span>Hunt Me II Typo Squatters (THM)</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="summary-report.html"><span>Summary Report</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-unfolding-thm-soc-simulation.html"><span>Phishing Unfolding THM Soc Simulation</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="splunk-2-thm.html"><span>Splunk 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="slingshot-thm.html"><span>Slingshot (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="new-hire-old-artifacts-thm.html"><span>New Hire Old Artifacts (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="itsybitsy-thm.html"><span>ItsyBitsy (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="benign-thm.html"><span>Benign (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ps-eclipse-thm.html"><span>PS Eclipse (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="investigating-with-splunk-thm.html"><span>Investigating with Splunk (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="proxylogon-lab-cyberdefenders.html"><span>ProxyLogon Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="kerberoasted-cyberdefenders.html"><span>Kerberoasted (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="t1110-003-lab-cyberdefenders.html"><span>T1110-003 Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="xdr-operation-global-dagger-thm.html"><span>XDR Operation Global Dagger (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="xdr-operation-global-dagger-2-thm.html"><span>XDR Operation Global Dagger 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="falconeye-cyberdefenders.html"><span>FalconEye (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="goldenspray-lab-cyberdefenders.html"><span>GoldenSpray Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="shadowroast-cyberdefenders.html"><span>ShadowRoast (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="revil-lab-cyberdefenders.html"><span>REvil Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="t1197-lab-cyberdefenders.html"><span>T1197 Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="paloaltorce-lab-cyberdefenders.html"><span>PaloAltoRCE Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="nerisbot-cyberdefenders.html"><span>NerisBot (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="volt-typhoon.html"><span>Volt Typhoon</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Some employees from your company reported that they can’t log into Outlook. The Exchange system admin also reported that he can’t log in to the Exchange Admin Center. After initial triage, they discovered some weird readme files settled on the Exchange server.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Conti (THM)</li><li>Scenario</li><li>before answering the questions lets start investigating</li><li>Hypothesis</li><li>Code Injection via PowerShell</li><li>Payload Execution</li><li>DNS Resolution Attempt</li><li>Ransomware Drop</li><li>Potential Lateral Movement or Payload Hosting</li><li>Persistence via User Creation</li><li>Shadow Copy Targeting</li><li>Webshell</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>C:\\Users\\Administrator\\Documents\\cmd.exe</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>Sysmon</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="conti-thm">Conti (THM)</h2>
+<h3 id="scenario">Scenario</h3>
+<p><strong>Some employees from your company reported that they can’t log into Outlook. The Exchange system admin also reported that he can’t log in to the Exchange Admin Center. After initial triage, they discovered some weird readme files settled on the Exchange server.</strong></p>
+<p><strong>Below is a copy of the ransomware note.</strong></p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5de58e2bfac4a912bcc7a3e9/room-content/15db974b80239a7eb2c52fb26c458933.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5de58e2bfac4a912bcc7a3e9/room-content/15db974b80239a7eb2c52fb26c458933.png</a></p>
+<p><strong>Warning: Do NOT attempt to visit and/or interact with any URLs displayed in the ransom note.</strong></p>
+<p><strong>Read the latest on the Conti ransomware <a class="note-link" href="https://www.bleepingcomputer.com/news/security/fbi-cisa-and-nsa-warn-of-escalating-conti-ransomware-attacks/">here</a>.</strong></p>
+<p><strong>Below are the error messages that the Exchange admin and employees see when they try to access anything related to Exchange or Outlook.</strong></p>
+<p><strong>Exchange Control Panel:</strong></p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5de58e2bfac4a912bcc7a3e9/room-content/214468bd3cc7466762b2358993bb3069.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5de58e2bfac4a912bcc7a3e9/room-content/214468bd3cc7466762b2358993bb3069.png</a></p>
+<p><strong>Outlook Web Access:</strong></p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5de58e2bfac4a912bcc7a3e9/room-content/c7d87fb962d961d81502f02dd1fdba77.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5de58e2bfac4a912bcc7a3e9/room-content/c7d87fb962d961d81502f02dd1fdba77.png</a></p>
+<p><a class="note-link" href="https://tryhackme.com/room/contiransomwarehgh">https://tryhackme.com/room/contiransomwarehgh</a></p>
+<hr>
+<h3 id="before-answering-the-questions-lets-start-investigating"><code>before answering the questions lets start investigating</code></h3>
+<h4 id="hypothesis">Hypothesis</h4>
+<p>Given the scenario description indicates a ransomware attack, the first step was to examine <strong><code>Sysmon Event ID 11</code></strong> (file creation events), looking for signs of ransom note files such as <code>readme.txt</code>.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_044033-dab5d27d.png" data-alt="Screenshot 2025-08-11 044033.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_044033-dab5d27d.png" alt="Screenshot 2025-08-11 044033.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_044023-2113f0bc.png" data-alt="Screenshot 2025-08-11 044023.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_044023-2113f0bc.png" alt="Screenshot 2025-08-11 044023.png" loading="lazy"></button></p>
+<hr>
+<p>Upon analyzing <code>Event ID 11</code> logs, a suspicious executable was identified:</p>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">C:\\Users\\Administrator\\Documents\\cmd.exe</code></pre></div>
+<p>This path is highly suspicious   <code>cmd.exe</code> is normally located in <code>C:\\Windows\\System32\\</code>, not within a user profile. Its creation is directly tied to the dropping of the <strong>ransom note</strong>, confirming it as a likely malicious binary.</p>
+<hr>
+<p>The attack appears to have begun around <strong>12:54:12 PM</strong>, with the following sequence of events:</p>
+<hr>
+<h4 id="code-injection-via-powershell">Code Injection via PowerShell</h4>
+<ul>
+<li><strong>Process:</strong> <code>powershell.exe</code></li>
+<li><strong>Action:</strong> Injects a remote thread into <code>unsecapp.exe</code> using <code>CreateRemoteThread</code></li>
+<li><strong>Purpose:</strong> Covert execution via a trusted system binary</li>
+<li><strong>Technique:</strong> <code>T1055.001</code> (Process Injection)</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_025818-2ae86eeb.png" data-alt="Screenshot 2025-08-11 025818.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_025818-2ae86eeb.png" alt="Screenshot 2025-08-11 025818.png" loading="lazy"></button></p>
+<hr>
+<h4 id="payload-execution">Payload Execution</h4>
+<ul>
+<li><code>unsecapp.exe</code> spawns <code>cmd.exe</code>, confirming post-injection command execution.</li>
+<li>Shortly after, <code>unsecapp.exe</code> injects into <code>lsass.exe</code>, indicating a <strong>credential dumping</strong> attempt via memory access.</li>
+<li><strong>Technique:</strong> <code>T1003.001</code> (LSASS Credential Dumping)</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_025933-86d3f5c0.png" data-alt="Screenshot 2025-08-11 025933.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_025933-86d3f5c0.png" alt="Screenshot 2025-08-11 025933.png" loading="lazy"></button></p>
+<hr>
+<h4 id="dns-resolution-attempt">DNS Resolution Attempt</h4>
+<ul>
+<li><code>nslookup</code> used with DNS server <code>10.10.10.4</code></li>
+<li>Likely for <strong>command-and-control (C2)</strong> communication, or internal network reconnaissance.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_044323-a13cbed6.png" data-alt="Screenshot 2025-08-11 044323.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_044323-a13cbed6.png" alt="Screenshot 2025-08-11 044323.png" loading="lazy"></button></p>
+<hr>
+<h4 id="ransomware-drop">Ransomware Drop</h4>
+<ul>
+<li><code>unsecapp.exe</code> drops a suspicious binary:</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_024057-565ec7b7.png" data-alt="Screenshot 2025-08-11 024057.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_024057-565ec7b7.png" alt="Screenshot 2025-08-11 024057.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_044853-5d077e7c.png" data-alt="Screenshot 2025-08-11 044853.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_044853-5d077e7c.png" alt="Screenshot 2025-08-11 044853.png" loading="lazy"></button></p>
+<p>``<code> C:\\Users\\Administrator\\Documents\\cmd.exe </code>``</p>
+<ul>
+<li>This fake <code>cmd.exe</code> is responsible for creating the ransom note (<code>readme.txt</code>), confirming its role in the ransomware payload.</li>
+</ul>
+<hr>
+<h4 id="potential-lateral-movement-or-payload-hosting">Potential Lateral Movement or Payload Hosting</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_024636-d9b40c62.png" data-alt="Screenshot 2025-08-11 024636.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_024636-d9b40c62.png" alt="Screenshot 2025-08-11 024636.png" loading="lazy"></button></p>
+<ul>
+<li>The system connects to <code>10.10.10.6</code> over SMB (port 445).</li>
+<li>Possible purposes:</li>
+<ul>
+<li>Spreading the infection laterally</li>
+<li>Accessing shared payloads or staging exfiltration</li>
+<li>Dropping additional components</li>
+</ul>
+</ul>
+<hr>
+<h4 id="persistence-via-user-creation">Persistence via User Creation</h4>
+<ul>
+<li>A new administrative user is created:</li>
+<ul>
+<li><strong>Username:</strong> <code>securityninja</code></li>
+<li><strong>Password:</strong> <code>hardToHack123$</code></li>
+<li><strong>Groups:</strong> <code>Administrators</code>, <code>Remote Desktop Users</code></li>
+</ul>
+<li>Strong indicator of persistence setup for future remote access.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-31492eda-3f1f-4bd5-a57b-c0a02db77e03-4d39a198.png" data-alt="Screenshot 2025-08-11 025206.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-31492eda-3f1f-4bd5-a57b-c0a02db77e03-4d39a198.png" alt="Screenshot 2025-08-11 025206.png" loading="lazy"></button></p>
+<hr>
+<h4 id="shadow-copy-targeting">Shadow Copy Targeting</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-39bab182-d068-4071-a9cd-bc72a0a0e3f3-eb29ff47.png" data-alt="Screenshot 2025-08-11 025206.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-39bab182-d068-4071-a9cd-bc72a0a0e3f3-eb29ff47.png" alt="Screenshot 2025-08-11 025206.png" loading="lazy"></button></p>
+<ul>
+<li><code>vssvc.exe</code> is launched — likely to delete or tamper with Volume Shadow Copies.</li>
+<li><strong>Goal:</strong> Prevent file recovery post-encryption (common in ransomware behavior).</li>
+</ul>
+<hr>
+<h4 id="webshell">Webshell</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_025555-338485eb.png" data-alt="Screenshot 2025-08-11 025555.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_025555-338485eb.png" alt="Screenshot 2025-08-11 025555.png" loading="lazy"></button></p>
+<ul>
+<li>The following command is executed:</li>
+</ul>
+<p>``<code> attrib.exe -r \\\\WIN-AOQKG2AS2Q7.bellybear.local\\C$\\Program Files\\Microsoft\\Exchange Server\\V15\\FrontEnd\\HttpProxy\\owa\\auth\\i3gfPctK1c2x.aspx </code>``</p>
+<ul>
+<li>This indicates a <strong>webshell</strong> has been deployed in the Exchange OWA auth directory.</li>
+<li>Classic technique in <strong>ProxyShell</strong> or post-exploitation of Exchange servers.</li>
+<li>Used for persistent web-based access.</li>
+</ul>
+<hr>
+<h4 id="obfuscated-powershell-fileless-payload">Obfuscated PowerShell + Fileless Payload</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_025434-9a3c6103.png" data-alt="Screenshot 2025-08-11 025434.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_025434-9a3c6103.png" alt="Screenshot 2025-08-11 025434.png" loading="lazy"></button></p>
+<ul>
+<li>A heavily obfuscated PowerShell script disables security logging (ScriptBlockLogging, ModuleLogging).</li>
+<li>Follows with execution of a <strong>base64 + Gzip encoded payload</strong>, consistent with:</li>
+<ul>
+<li><strong>In-memory execution</strong></li>
+<li><strong>Fileless malware</strong></li>
+<li><strong>Defense evasion (T1562.001)</strong></li>
+</ul>
+</ul>
+<hr>
+<h4 id="ransom-note-dropped">Ransom Note Dropped</h4>
+<ul>
+<li><code>readme.txt</code> file is created</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-4a116cb0-3fcd-406c-b8e0-9ca26c35284c-86f77361.png" data-alt="Screenshot 2025-08-11 044023.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-4a116cb0-3fcd-406c-b8e0-9ca26c35284c-86f77361.png" alt="Screenshot 2025-08-11 044023.png" loading="lazy"></button></p>
+<hr>
+<h3 id="from-the-investigation-we-answer-every-question-except-the-last"><code>From the investigation we answer every question except the last</code></h3>
+<hr>
+<h4 id="1-can-you-identify-the-location-of-the-ransomware">1- Can you identify the location of the ransomware?</h4>
+<h4 id="cusersadministratordocumentscmd.exe">C:\Users\Administrator\Documents\cmd.exe</h4>
+<h4 id="2-what-is-the-sysmon-event-id-for-the-related-file-creation-event">2- What is the Sysmon event ID for the related file creation event?</h4>
+<h4 id="11">11</h4>
+<h4 id="3-can-you-find-the-md5-hash-of-the-ransomware">3- Can you find the MD5 hash of the ransomware?</h4>
+<h4 id="290c7dfb01e50cea9e19da81a781af2c">290c7dfb01e50cea9e19da81a781af2c</h4>
+<h4 id="4-what-file-was-saved-to-multiple-folder-locations">4- What file was saved to multiple folder locations?</h4>
+<h4 id="readme.txt">readme.txt</h4>
+<h4 id="5-what-was-the-command-the-attacker-used-to-add-a-new-user-to-the-compromised-system">5- What was the command the attacker used to add a new user to the compromised system?</h4>
+<h4 id="net-user-add-securityninja-hardtohack123">net user /add securityninja hardToHack123$</h4>
+<h4 id="6-the-attacker-migrated-the-process-for-better-persistence.-what-is-the-migrated-process-i">6- The attacker migrated the process for better persistence. What is the migrated process image (executable), and what is the original process image (executable) when the attacker got on the system?</h4>
+<h4 id="cwindowssystem32windowspowershellv1.0powershell.execwindowssystem32wbemunsecapp.exe">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe,C:\Windows\System32\wbem\unsecapp.exe</h4>
+<h4 id="7-the-attacker-also-retrieved-the-system-hashes.-what-is-the-process-image-used-for-gettin">7- The attacker also retrieved the system hashes. What is the process image used for getting the system hashes?</h4>
+<h4 id="cwindowssystem32lsass.exe">C:\Windows\System32\lsass.exe</h4>
+<h4 id="8-what-is-the-web-shell-the-exploit-deployed-to-the-system">8- What is the web shell the exploit deployed to the system?</h4>
+<h4 id="i3gfpctk1c2x.aspx">i3gfPctK1c2x.aspx</h4>
+<h4 id="9-what-is-the-command-line-that-executed-this-web-shell">9- What is the command line that executed this web shell?</h4>
+<h4 id="attrib.exe-r-win-aoqkg2as2q7.bellybear.localcprogram-filesmicrosoftexchange-serverv15front">attrib.exe  -r \\\\win-aoqkg2as2q7.bellybear.local\C$\Program Files\Microsoft\Exchange Server\V15\FrontEnd\HttpProxy\owa\auth\i3gfPctK1c2x.aspx</h4>
+<h4 id="10-what-three-cves-did-this-exploit-leverage-provide-the-answer-in-ascending-order.">10- What three CVEs did this exploit leverage? Provide the answer in ascending order.</h4>
+<h4 id="cve-2018-13374cve-2018-13379cve-2020-0796">CVE-2018-13374,CVE-2018-13379,CVE-2020-0796</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_045018-9904810d.png" data-alt="Screenshot 2025-08-11 045018.png"><img src="../assets/images/threat-hunting-labs-siemconti-thm-screenshot_2025-08-11_045018-9904810d.png" alt="Screenshot 2025-08-11 045018.png" loading="lazy"></button></p>
+<p>you can find the answer in this blog</p>
+<p><a class="note-link" href="https://www.securin.io/articles/is-conti-ransomware-on-a-roll">www.securin.io</a></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#conti-thm">Conti (THM)</a><a href="#scenario">Scenario</a><a href="#before-answering-the-questions-lets-start-investigating">before answering the questions lets start investigating</a><a href="#hypothesis">Hypothesis</a><a href="#code-injection-via-powershell">Code Injection via PowerShell</a><a href="#payload-execution">Payload Execution</a><a href="#dns-resolution-attempt">DNS Resolution Attempt</a><a href="#ransomware-drop">Ransomware Drop</a><a href="#potential-lateral-movement-or-payload-hosting">Potential Lateral Movement or Payload Hosting</a><a href="#persistence-via-user-creation">Persistence via User Creation</a><a href="#shadow-copy-targeting">Shadow Copy Targeting</a><a href="#webshell">Webshell</a><a href="#obfuscated-powershell-fileless-payload">Obfuscated PowerShell + Fileless Payload</a><a href="#ransom-note-dropped">Ransom Note Dropped</a><a href="#from-the-investigation-we-answer-every-question-except-the-last">From the investigation we answer every question except the last</a><a href="#1-can-you-identify-the-location-of-the-ransomware">1- Can you identify the location of the ransomware?</a><a href="#cusersadministratordocumentscmd.exe">C:\Users\Administrator\Documents\cmd.exe</a><a href="#2-what-is-the-sysmon-event-id-for-the-related-file-creation-event">2- What is the Sysmon event ID for the related file creation event?</a><a href="#11">11</a><a href="#3-can-you-find-the-md5-hash-of-the-ransomware">3- Can you find the MD5 hash of the ransomware?</a><a href="#290c7dfb01e50cea9e19da81a781af2c">290c7dfb01e50cea9e19da81a781af2c</a><a href="#4-what-file-was-saved-to-multiple-folder-locations">4- What file was saved to multiple folder locations?</a><a href="#readme.txt">readme.txt</a><a href="#5-what-was-the-command-the-attacker-used-to-add-a-new-user-to-the-compromised-system">5- What was the command the attacker used to add a new user to the compromised system?</a><a href="#net-user-add-securityninja-hardtohack123">net user /add securityninja hardToHack123$</a><a href="#6-the-attacker-migrated-the-process-for-better-persistence.-what-is-the-migrated-process-i">6- The attacker migrated the process for better persistence. What is the migrated process image (executable), and what is the original process image (executable) when the attacker got on the system?</a><a href="#cwindowssystem32windowspowershellv1.0powershell.execwindowssystem32wbemunsecapp.exe">C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe,C:\Windows\System32\wbem\unsecapp.exe</a><a href="#7-the-attacker-also-retrieved-the-system-hashes.-what-is-the-process-image-used-for-gettin">7- The attacker also retrieved the system hashes. What is the process image used for getting the system hashes?</a><a href="#cwindowssystem32lsass.exe">C:\Windows\System32\lsass.exe</a><a href="#8-what-is-the-web-shell-the-exploit-deployed-to-the-system">8- What is the web shell the exploit deployed to the system?</a><a href="#i3gfpctk1c2x.aspx">i3gfPctK1c2x.aspx</a><a href="#9-what-is-the-command-line-that-executed-this-web-shell">9- What is the command line that executed this web shell?</a><a href="#attrib.exe-r-win-aoqkg2as2q7.bellybear.localcprogram-filesmicrosoftexchange-serverv15front">attrib.exe -r \\\\win-aoqkg2as2q7.bellybear.local\C$\Program Files\Microsoft\Exchange Server\V15\FrontEnd\HttpProxy\owa\auth\i3gfPctK1c2x.aspx</a><a href="#10-what-three-cves-did-this-exploit-leverage-provide-the-answer-in-ascending-order.">10- What three CVEs did this exploit leverage? Provide the answer in ascending order.</a><a href="#cve-2018-13374cve-2018-13379cve-2020-0796">CVE-2018-13374,CVE-2018-13379,CVE-2020-0796</a></details>
+    </div>
+    
+    <footer class="pager"><a href="threat-hunting-labs-siem.html">← Threat hunting Labs (SIEM)</a><a href="boogeyman3-thm.html">Boogeyman3 (THM) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

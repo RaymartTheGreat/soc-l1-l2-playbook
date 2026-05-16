@@ -1,0 +1,158 @@
+{
+  "id": "network analysis labs/psexec hunt (cyberdefenders)",
+  "title": "PsExec Hunt (CyberDefenders)",
+  "slug": "psexec-hunt-cyberdefenders",
+  "relPath": "Network Analysis Labs/PsExec Hunt (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Detection",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/psexec hunt (cyberdefenders)",
+      "title": "PsExec Hunt (CyberDefenders)",
+      "slug": "psexec-hunt-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "PsExec Hunt (CyberDefenders)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 1,
+      "text": "SMB"
+    },
+    {
+      "level": 3,
+      "text": "1. Initiation of SMB Session"
+    },
+    {
+      "level": 3,
+      "text": "2. Session Setup and Negotiation"
+    },
+    {
+      "level": 3,
+      "text": "3. Authentication Methods"
+    },
+    {
+      "level": 3,
+      "text": "4. NTLM Authentication Flow (most commonly seen in Wireshark captures)"
+    },
+    {
+      "level": 3,
+      "text": "5. Session Establishment"
+    },
+    {
+      "level": 3,
+      "text": "Q1: To effectively trace the attacker's activities within our network, can you identify the IP address of the machine from which the attacker initially gained access?"
+    },
+    {
+      "level": 3,
+      "text": "10.0.0.130"
+    },
+    {
+      "level": 3,
+      "text": "Q2: To fully understand the extent of the breach, can you determine the machine's hostname to which the attacker first pivoted?"
+    },
+    {
+      "level": 3,
+      "text": "Sales-PC"
+    },
+    {
+      "level": 3,
+      "text": "Q3: Knowing the username of the account the attacker used for authentication will give us insights into the extent of the breach. What is the username utilized by the attacker for authentication?"
+    },
+    {
+      "level": 3,
+      "text": "ssales"
+    },
+    {
+      "level": 3,
+      "text": "Q4: After figuring out how the attacker moved within our network, we need to know what they did on the target machine. What's the name of the service executable the attacker set up on the target?"
+    },
+    {
+      "level": 3,
+      "text": "psexesvc"
+    },
+    {
+      "level": 3,
+      "text": "Q5: We need to know how the attacker installed the service on the compromised machine to understand the attacker's lateral movement tactics. This can help identify other affected systems. Which network share was used by PsExec to install the service on the target machine?"
+    },
+    {
+      "level": 3,
+      "text": "ADMIN$"
+    },
+    {
+      "level": 3,
+      "text": "Q6: We must identify the network share used to communicate between the two machines. Which network share did PsExec use for communication?"
+    },
+    {
+      "level": 3,
+      "text": "IPC$"
+    },
+    {
+      "level": 3,
+      "text": "Q7: Now that we have a clearer picture of the attacker's activities on the compromised machine, it's important to identify any further lateral movement. What is the hostname of the second machine the attacker targeted to pivot within our network?"
+    },
+    {
+      "level": 3,
+      "text": "Marketing-PC"
+    }
+  ],
+  "overview": "An alert from the Intrusion Detection System (IDS) flagged suspicious lateral movement activity involving PsExec. This indicates potential unauthorized access and movement across the network. As a SOC Analyst, your task is to investigate the provided PCAP file to trace the attacker’s activities. Identify their entry point, the machines targeted, the extent o",
+  "study": {
+    "overview": "An alert from the Intrusion Detection System (IDS) flagged suspicious lateral movement activity involving PsExec. This indicates potential unauthorized access and movement across the network. As a SOC Analyst, your task is to investigate the provided PCAP file to trace the attacker’s activities. Identify their entry point, the machines targeted, the extent o",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "PsExec Hunt (CyberDefenders)",
+      "Scenario",
+      "SMB",
+      "1. Initiation of SMB Session",
+      "2. Session Setup and Negotiation",
+      "3. Authentication Methods",
+      "4. NTLM Authentication Flow (most commonly seen in Wireshark captures)",
+      "5. Session Establishment",
+      "Q1: To effectively trace the attacker's activities within our network, can you identify the IP address of the machine from which the attacker initially gained access?",
+      "10.0.0.130",
+      "Q2: To fully understand the extent of the breach, can you determine the machine's hostname to which the attacker first pivoted?",
+      "Sales-PC"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

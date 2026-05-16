@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Threat Intelligence Toolkit (Organized) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-intelligence-toolkit.html">Threat Intelligence Toolkit</a><span>/</span><span>Threat Intelligence Toolkit (Organized)</span></div>
+      <h1>Threat Intelligence Toolkit (Organized)</h1>
+      <p>A structured knowledge base of adversary tactics, techniques, and procedures (TTPs) used in real-world attacks. Commonly referenced for threat modeling, detection engineering, and security assessments.</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">Windows</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">DFIR</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag">Threat Intel</span><span class="tag">OSINT</span><span class="tag">YARA</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Intelligence Toolkit</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>L1.5</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="active" href="threat-intelligence-toolkit-organized.html"><span>Threat Intelligence Toolkit (Organized)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>A structured knowledge base of adversary tactics, techniques, and procedures (TTPs) used in real-world attacks. Commonly referenced for threat modeling, detection engineering, and security assessments.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Threat Intelligence Toolkit (Organized)</li><li>📚 Threat Intelligence Knowledge Bases</li><li>MITRE ATT&amp;CK</li><li>MITRE D3FEND</li><li>Malpedia</li><li>🧠 IOC Aggregation &amp; Threat Sharing Platforms</li><li>Open Threat Exchange (OTX)</li><li>ThreatFox</li><li>IOC Bucket</li><li>APTREPORT</li><li>🧪 Malware Analysis &amp; Sandboxing Platforms</li><li>ANY.RUN</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>YARA</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="threat-intelligence-toolkit-organized">Threat Intelligence Toolkit (Organized)</h2>
+<hr>
+<h3 id="threat-intelligence-knowledge-bases"><strong>📚 Threat Intelligence Knowledge Bases</strong></h3>
+<h4 id="mitre-attck"><a class="note-link" href="https://attack.mitre.org/">MITRE ATT&amp;amp;CK</a></h4>
+<p>A structured knowledge base of adversary tactics, techniques, and procedures (TTPs) used in real-world attacks. Commonly referenced for threat modeling, detection engineering, and security assessments.</p>
+<h4 id="mitre-d3fend"><a class="note-link" href="https://d3fend.mitre.org/">MITRE D3FEND</a></h4>
+<p>A defensive counterpart to ATT&amp;CK that catalogs countermeasures mapped to adversary techniques. Useful for blue teamers planning security control implementation and mitigation strategies.</p>
+<h4 id="malpedia"><a class="note-link" href="https://malpedia.caad.fkie.fraunhofer.de/">Malpedia</a></h4>
+<p>An open repository of malware family information maintained by Fraunhofer Institute. Includes behavioral profiles, YARA rules, threat actor links, and campaign details.</p>
+<hr>
+<h3 id="ioc-aggregation-threat-sharing-platforms"><strong>🧠 IOC Aggregation &amp; Threat Sharing Platforms</strong></h3>
+<h4 id="open-threat-exchange-otx"><a class="note-link" href="https://otx.alienvault.com/">Open Threat Exchange (OTX)</a></h4>
+<p>A collaborative platform by AlienVault for sharing IOCs, attack patterns, and pulse intelligence. Allows subscriptions to community-generated threat feeds.</p>
+<h4 id="threatfox"><a class="note-link" href="https://threatfox.abuse.ch/">ThreatFox</a></h4>
+<p>A platform for submitting and retrieving malware-related IOCs (IPs, URLs, domains). Offers enrichment and tagging to support real-time detection and feed integration.</p>
+<h4 id="ioc-bucket"><a class="note-link" href="https://iocbucket.com/">IOC Bucket</a></h4>
+<p>A free, open-source aggregator of threat intelligence with structured IOCs collected from various community sources. Supports API-based access and download in STIX format.</p>
+<h4 id="aptreport"><a class="note-link" href="https://github.com/blackorbird/APT_REPORT">APT_REPORT</a></h4>
+<p>A curated collection of APT reports and related indicators categorized by threat group and geography. Useful for understanding historical APT behaviors and campaigns.</p>
+<hr>
+<h3 id="malware-analysis-sandboxing-platforms"><strong>🧪 Malware Analysis &amp; Sandboxing Platforms</strong></h3>
+<h4 id="any.run"><a class="note-link" href="https://any.run/">ANY.RUN</a></h4>
+<p>An interactive sandbox that lets analysts detonate and visually interact with malware in real time. Displays process tree, MITRE mapping, network behavior, and file system changes.</p>
+<h4 id="triage"><a class="note-link" href="https://tria.ge/">Triage</a></h4>
+<p>A cloud sandbox from Hatching. Provides automated malware detonation with behavioral logging, memory dumps, MITRE ATT&amp;CK mapping, and IOC extraction.</p>
+<h4 id="capev2"><a class="note-link" href="https://github.com/kevoreilly/CAPEv2">CAPEv2</a></h4>
+<p>An open-source sandbox framework tailored for unpacking and analyzing malware droppers and evasive samples. Built on Cuckoo, with a focus on extracting configs and payloads.</p>
+<h4 id="joe-security"><a class="note-link" href="https://www.joesecurity.org/">Joe Security</a></h4>
+<p>Dynamic malware analysis system offering full behavioral reporting. Supports Windows, Android, and document exploits.</p>
+<h4 id="hybrid-analysis"><a class="note-link" href="https://www.hybrid-analysis.com/">Hybrid Analysis</a></h4>
+<p>Free sandbox for static and dynamic malware analysis. Accepts PE files, scripts, documents, etc. Provides threat scores and YARA rule matching.</p>
+<h4 id="malwarebazaar"><a class="note-link" href="https://bazaar.abuse.ch/">MalwareBazaar</a></h4>
+<p>Community-powered malware sharing platform. Hosts verified malware samples and integrates with VirusTotal, MISP, and sandbox tools for enrichment.</p>
+<hr>
+<h3 id="hash-binary-analysis"><strong>🧩 Hash &amp; Binary Analysis</strong></h3>
+<h4 id="virustotal"><a class="note-link" href="https://www.virustotal.com/">VirusTotal</a></h4>
+<p>Scans files, URLs, and hashes against 70+ antivirus engines and sandbox tools. Offers historical data, behavior reports, and API integrations.</p>
+<h4 id="malpedia"><a class="note-link" href="https://malpedia.caad.fkie.fraunhofer.de/">Malpedia</a></h4>
+<p>Includes YARA rules and binary family mapping — useful for classifying samples and identifying actor toolkits.</p>
+<h4 id="gary-kesslers-file-signatures"><a class="note-link" href="https://www.garykessler.net/library/file_sigs.html">Gary Kessler's File Signatures</a></h4>
+<p>Reference guide for identifying file types based on magic numbers and hex patterns. Helpful in forensic file identification.</p>
+<h4 id="crackstation"><a class="note-link" href="https://crackstation.net/">CrackStation</a></h4>
+<p>Cracks hashed passwords using large precomputed hash tables. Useful during password auditing or credential stuffing investigations.</p>
+<hr>
+<h3 id="infrastructure-reconnaissance"><strong>🛰️ Infrastructure &amp; Reconnaissance</strong></h3>
+<h4 id="shodan"><a class="note-link" href="https://www.shodan.io/">Shodan</a></h4>
+<p>Search engine for internet-connected devices. Exposes exposed services, vulnerable systems, and banners — critical for mapping attack surfaces and identifying rogue assets.</p>
+<h4 id="securitytrails"><a class="note-link" href="https://securitytrails.com/">SecurityTrails</a></h4>
+<p>Comprehensive platform offering DNS, WHOIS, IP, and historical infrastructure insights. Ideal for footprinting, subdomain discovery, and monitoring adversary-owned infrastructure.</p>
+<h4 id="binaryedge"><a class="note-link" href="https://www.binaryedge.io/">BinaryEdge</a></h4>
+<p>Performs global internet scans to track exposed systems, open ports, banners, and vulnerabilities. Used for both red teaming and threat detection.</p>
+<h4 id="robtex"><a class="note-link" href="https://www.robtex.com/">Robtex</a></h4>
+<p>Performs deep DNS and routing lookups. Useful for identifying domain-IP relationships, shared infrastructure, and passive DNS insights.</p>
+<h4 id="ip-geolocation"><a class="note-link" href="https://ipgeolocation.io/">IP Geolocation</a></h4>
+<p>Geolocates IPs and enriches them with ASN, ISP, and physical location. Helps correlate IOCs with regions or threat actors.</p>
+<h4 id="whois"><a class="note-link" href="https://who.is/">WHOIS</a></h4>
+<p>Retrieves domain registration info, including contact details, creation/expiration dates, and registrar history — key for attribution and timeline building.</p>
+<h4 id="crt.sh"><a class="note-link" href="https://crt.sh/">CRT.sh</a></h4>
+<p>Search engine for Certificate Transparency logs. Reveals issued SSL/TLS certificates for domains — often used for discovering subdomains or cloned phishing infrastructure.</p>
+<h4 id="internet-archive-wayback-machine"><a class="note-link" href="http://web.archive.org/">Internet Archive (Wayback Machine)</a></h4>
+<p>View historical snapshots of websites. Useful for analyzing pre-compromise states or identifying defaced/phishing sites long after takedown.</p>
+<h4 id="mxtoolbox"><a class="note-link" href="https://mxtoolbox.com/">MXToolbox</a></h4>
+<p>Comprehensive DNS and email infrastructure checker. Investigate SPF, DMARC, MX, and DNS health for potential abuse or misconfigurations.</p>
+<h4 id="reverse-dns-lookup"><a class="note-link" href="https://hackertarget.com/reverse-dns-lookup/">Reverse DNS Lookup</a></h4>
+<p>Identifies PTR records and maps IPs back to domain names — useful for passive recon and IP context validation.</p>
+<hr>
+<h3 id="phishing-email-osint-enrichment"><strong>✉️ Phishing, Email &amp; OSINT Enrichment</strong></h3>
+<h4 id="phishtank"><a class="note-link" href="https://www.phishtank.com/">PhishTank</a></h4>
+<p>Community-driven phishing URL database. Allows submission and verification of phishing domains to improve detection and blocking.</p>
+<h4 id="urlhaus"><a class="note-link" href="https://urlhaus.abuse.ch/">URLHaus</a></h4>
+<p>Frequent-feed of known malicious URLs, managed by abuse.ch. Excellent source of live IOCs tied to malware campaigns and phishing kits.</p>
+<h4 id="abuse.ch"><a class="note-link" href="https://abuse.ch/">Abuse.ch</a></h4>
+<p>Ecosystem of threat intel projects (ThreatFox, MalwareBazaar, URLHaus). Offers feeds for botnets, malware, and indicators of compromise.</p>
+<h4 id="have-i-been-pwned"><a class="note-link" href="https://haveibeenpwned.com/">Have I Been Pwned</a></h4>
+<p>Checks email addresses against known data breaches. Helps identify credential reuse, leaked usernames, and password exposures.</p>
+<h4 id="dehashed"><a class="note-link" href="https://www.dehashed.com/">Dehashed</a></h4>
+<p>Advanced breach database with API access. Searchable by name, email, password, IP, VINs, and more. Useful for deep exposure analysis.</p>
+<h4 id="snusbase"><a class="note-link" href="https://snusbase.com/">Snusbase</a></h4>
+<p>Dark web breach aggregation platform. Allows credential search across leaks, forums, pastes, and private breaches.</p>
+<h4 id="intelx-intelligence-x"><a class="note-link" href="https://intelx.io/">IntelX (Intelligence X)</a></h4>
+<p>Search engine for darknet content, leaks, public records, and historical snapshots. Commonly used for breach hunting and OSINT investigations.</p>
+<h4 id="ioc-bucket"><a class="note-link" href="https://iocbucket.com/">IOC Bucket</a></h4>
+<p>Community-driven repository of structured threat indicators (IP, hash, domain, URL). Useful for threat hunting and enrichment pipelines.</p>
+<hr>
+<h3 id="breach-credential-intelligence"><strong>🔐 Breach &amp; Credential Intelligence</strong></h3>
+<h4 id="have-i-been-pwned"><a class="note-link" href="https://haveibeenpwned.com/">Have I Been Pwned</a></h4>
+<p>Checks if email addresses or usernames appear in known data breaches. Offers password exposure search and breach alerts.</p>
+<h4 id="dehashed"><a class="note-link" href="https://www.dehashed.com/">DeHashed</a></h4>
+<p>Breach database search engine that supports queries for emails, usernames, passwords, domains, phone numbers, and IPs.</p>
+<h4 id="snusbase"><a class="note-link" href="https://snusbase.com/">Snusbase</a></h4>
+<p>Aggregates leaked data from forums, paste sites, and breaches. Offers bulk lookups, alerts, and structured breach intelligence.</p>
+<h4 id="intelx-intelligence-x"><a class="note-link" href="https://intelx.io/">IntelX (Intelligence X)</a></h4>
+<p>OSINT search engine indexing dark web content, pastebins, breached databases, and government leaks. Supports pivoting across multiple identifiers.</p>
+<h4 id="blacklistmaster"><a class="note-link" href="https://www.blacklistmaster.com/">BlacklistMaster</a></h4>
+<p>Blacklist monitoring and alerting system for IPs and domains. Integrates phishing indicators and threat feeds with detailed scoring and API support.</p>
+<h4 id="crackstation"><a class="note-link" href="https://crackstation.net/">CrackStation</a></h4>
+<p>Password hash cracking utility using massive precomputed tables. Useful for validating leaked credentials or auditing password strength.</p>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#threat-intelligence-toolkit-organized">Threat Intelligence Toolkit (Organized)</a><a href="#threat-intelligence-knowledge-bases">📚 Threat Intelligence Knowledge Bases</a><a href="#mitre-attck">MITRE ATT&amp;CK</a><a href="#mitre-d3fend">MITRE D3FEND</a><a href="#malpedia">Malpedia</a><a href="#ioc-aggregation-threat-sharing-platforms">🧠 IOC Aggregation &amp; Threat Sharing Platforms</a><a href="#open-threat-exchange-otx">Open Threat Exchange (OTX)</a><a href="#threatfox">ThreatFox</a><a href="#ioc-bucket">IOC Bucket</a><a href="#aptreport">APTREPORT</a><a href="#malware-analysis-sandboxing-platforms">🧪 Malware Analysis &amp; Sandboxing Platforms</a><a href="#any.run">ANY.RUN</a><a href="#triage">Triage</a><a href="#capev2">CAPEv2</a><a href="#joe-security">Joe Security</a><a href="#hybrid-analysis">Hybrid Analysis</a><a href="#malwarebazaar">MalwareBazaar</a><a href="#hash-binary-analysis">🧩 Hash &amp; Binary Analysis</a><a href="#virustotal">VirusTotal</a><a href="#malpedia">Malpedia</a><a href="#gary-kesslers-file-signatures">Gary Kessler's File Signatures</a><a href="#crackstation">CrackStation</a><a href="#infrastructure-reconnaissance">🛰️ Infrastructure &amp; Reconnaissance</a><a href="#shodan">Shodan</a><a href="#securitytrails">SecurityTrails</a><a href="#binaryedge">BinaryEdge</a><a href="#robtex">Robtex</a><a href="#ip-geolocation">IP Geolocation</a><a href="#whois">WHOIS</a><a href="#crt.sh">CRT.sh</a><a href="#internet-archive-wayback-machine">Internet Archive (Wayback Machine)</a><a href="#mxtoolbox">MXToolbox</a><a href="#reverse-dns-lookup">Reverse DNS Lookup</a><a href="#phishing-email-osint-enrichment">✉️ Phishing, Email &amp; OSINT Enrichment</a><a href="#phishtank">PhishTank</a><a href="#urlhaus">URLHaus</a><a href="#abuse.ch">Abuse.ch</a><a href="#have-i-been-pwned">Have I Been Pwned</a><a href="#dehashed">Dehashed</a><a href="#snusbase">Snusbase</a></details>
+    </div>
+    
+    <footer class="pager"><a href="threat-intelligence-toolkit.html">← Threat Intelligence Toolkit</a><a href="logging-fundamentals.html">Logging Fundamentals →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

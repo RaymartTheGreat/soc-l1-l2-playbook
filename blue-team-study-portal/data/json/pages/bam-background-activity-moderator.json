@@ -1,0 +1,77 @@
+{
+  "id": "windows forensics/bam (background activity moderator)",
+  "title": "BAM (Background Activity Moderator)",
+  "slug": "bam-background-activity-moderator",
+  "relPath": "Windows Forensics/BAM (Background Activity Moderator).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/bam (background activity moderator)",
+      "title": "BAM (Background Activity Moderator)",
+      "slug": "bam-background-activity-moderator"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "BAM (Background Activity Moderator)"
+    },
+    {
+      "level": 3,
+      "text": "Overview"
+    },
+    {
+      "level": 3,
+      "text": "Why It's Useful in Forensics"
+    },
+    {
+      "level": 3,
+      "text": "Forensic Value"
+    },
+    {
+      "level": 3,
+      "text": "Tools for Analysis"
+    }
+  ],
+  "overview": "Background Activity Moderator (BAM) is a Windows feature introduced in Windows 10. It monitors background application activity, which can be useful during forensic investigations.",
+  "study": {
+    "overview": "Background Activity Moderator (BAM) is a Windows feature introduced in Windows 10. It monitors background application activity, which can be useful during forensic investigations.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "BAM (Background Activity Moderator)",
+      "Overview",
+      "Why It's Useful in Forensics",
+      "Forensic Value",
+      "Tools for Analysis"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

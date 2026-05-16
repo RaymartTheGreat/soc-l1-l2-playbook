@@ -1,0 +1,136 @@
+{
+  "id": "memory forensics labs/amadey (cyberdefenders)",
+  "title": "Amadey (CyberDefenders)",
+  "slug": "amadey-cyberdefenders",
+  "relPath": "Memory Forensics Labs/Amadey (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "EDR",
+    "Windows",
+    "Web",
+    "DFIR",
+    "Memory",
+    "Detection",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/amadey (cyberdefenders)",
+      "title": "Amadey (CyberDefenders)",
+      "slug": "amadey-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Amadey (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- In the memory dump analysis, determining the root of the malicious activity is essential for comprehending the extent of the intrusion. What is the name of the parent process that triggered this malicious behavior?"
+    },
+    {
+      "level": 3,
+      "text": "lssass.exe"
+    },
+    {
+      "level": 3,
+      "text": "2- Once the rogue process is identified, its exact location on the device can reveal more about its nature and source. Where is this process housed on the workstation?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\0XSH3R1\\AppData\\Local\\Temp\\925e7e99c5\\lssass.exe"
+    },
+    {
+      "level": 3,
+      "text": "3- Persistent external communications suggest the malware's attempts to reach out C2C server. Can you identify the Command and Control (C2C) server IP that the process interacts with?"
+    },
+    {
+      "level": 3,
+      "text": "41.75.84.12"
+    },
+    {
+      "level": 3,
+      "text": "4- Following the malware link with the C2C, the malware is likely fetching additional tools or modules. How many distinct files is it trying to bring onto the compromised workstation?"
+    },
+    {
+      "level": 3,
+      "text": "2"
+    },
+    {
+      "level": 3,
+      "text": "5- Identifying the storage points of these additional components is critical for containment and cleanup. What is the full path of the file downloaded and used by the malware in its malicious activity?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\0xSh3rl0ck\\AppData\\Roaming\\116711e5a2ab05\\clip64.dll"
+    },
+    {
+      "level": 3,
+      "text": "6- Once retrieved, the malware aims to activate its additional components. Which child process is initiated by the malware to execute these files?"
+    },
+    {
+      "level": 3,
+      "text": "rundll32.exe"
+    },
+    {
+      "level": 3,
+      "text": "7- Understanding the full range of Amadey's persistence mechanisms can help in an effective mitigation. Apart from the locations already spotlighted, where else might the malware be ensuring its consistent presence?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\Tasks\\lssass.exe"
+    }
+  ],
+  "overview": "An after-hours alert from the Endpoint Detection and Response (EDR) system flags suspicious activity on a Windows workstation. The flagged malware aligns with the Amadey Trojan Stealer. Your job is to analyze the presented memory dump and create a detailed report for actions taken by the malware.",
+  "study": {
+    "overview": "An after-hours alert from the Endpoint Detection and Response (EDR) system flags suspicious activity on a Windows workstation. The flagged malware aligns with the Amadey Trojan Stealer. Your job is to analyze the presented memory dump and create a detailed report for actions taken by the malware.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Amadey (CyberDefenders)",
+      "Scenario",
+      "1- In the memory dump analysis, determining the root of the malicious activity is essential for comprehending the extent of the intrusion. What is the name of the parent process that triggered this malicious behavior?",
+      "lssass.exe",
+      "2- Once the rogue process is identified, its exact location on the device can reveal more about its nature and source. Where is this process housed on the workstation?",
+      "C:\\Users\\0XSH3R1\\AppData\\Local\\Temp\\925e7e99c5\\lssass.exe",
+      "3- Persistent external communications suggest the malware's attempts to reach out C2C server. Can you identify the Command and Control (C2C) server IP that the process interacts with?",
+      "41.75.84.12",
+      "4- Following the malware link with the C2C, the malware is likely fetching additional tools or modules. How many distinct files is it trying to bring onto the compromised workstation?",
+      "2",
+      "5- Identifying the storage points of these additional components is critical for containment and cleanup. What is the full path of the file downloaded and used by the malware in its malicious activity?",
+      "C:\\Users\\0xSh3rl0ck\\AppData\\Roaming\\116711e5a2ab05\\clip64.dll"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR"
+    ],
+    "tips": []
+  }
+}

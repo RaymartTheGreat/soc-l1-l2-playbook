@@ -1,0 +1,121 @@
+{
+  "id": "detecting ad attacks/golden ticket",
+  "title": "Golden Ticket",
+  "slug": "golden-ticket",
+  "relPath": "Detecting AD Attacks/Golden Ticket.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Detection",
+    "C2"
+  ],
+  "mitre": [
+    "T1558.001",
+    "T1558"
+  ],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/golden ticket",
+      "title": "Golden Ticket",
+      "slug": "golden-ticket"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Golden Ticket"
+    },
+    {
+      "level": 2,
+      "text": "1- Understanding the Attack"
+    },
+    {
+      "level": 2,
+      "text": "2- Steps of a Golden Ticket Attack"
+    },
+    {
+      "level": 3,
+      "text": "a. Compromise the KRBTGT Hash"
+    },
+    {
+      "level": 3,
+      "text": "b. Forge a Kerberos Ticket-Granting Ticket (TGT)"
+    },
+    {
+      "level": 3,
+      "text": "c. Use the Forged Ticket"
+    },
+    {
+      "level": 2,
+      "text": "3- Key Tools"
+    },
+    {
+      "level": 2,
+      "text": "4- Detection and Defensive Strategies"
+    },
+    {
+      "level": 3,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Defensive Strategies"
+    },
+    {
+      "level": 2,
+      "text": "5- Summary"
+    }
+  ],
+  "overview": "A Golden Ticket attack abuses the Kerberos authentication protocol by forging Ticket-Granting Tickets (TGTs) using the KRBTGT account’s password hash. In Active Directory, the KRBTGT account is a special account used by the Key Distribution Center (KDC) to encrypt and sign Kerberos tickets. If an attacker compromises the KRBTGT hash, they can mint tickets th",
+  "study": {
+    "overview": "A Golden Ticket attack abuses the Kerberos authentication protocol by forging Ticket-Granting Tickets (TGTs) using the KRBTGT account’s password hash. In Active Directory, the KRBTGT account is a special account used by the Key Distribution Center (KDC) to encrypt and sign Kerberos tickets. If an attacker compromises the KRBTGT hash, they can mint tickets th",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Golden Ticket",
+      "1- Understanding the Attack",
+      "2- Steps of a Golden Ticket Attack",
+      "a. Compromise the KRBTGT Hash",
+      "b. Forge a Kerberos Ticket-Granting Ticket (TGT)",
+      "c. Use the Forged Ticket",
+      "3- Key Tools",
+      "4- Detection and Defensive Strategies",
+      "Detection",
+      "Defensive Strategies",
+      "5- Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "PowerShell"
+    ],
+    "tips": [
+      "Note: The security identifier (SID) of the account that initiated the logon. If it appears as S-1-0-0, it means “no valid SID” (anonymous or forged session), another strong indicator of manipulation.",
+      "Note: If it shows as all zeros ({00000000-0000-0000-0000-000000000000}), it usually means the session was artificially created (like in a Golden Ticket attack), not from a normal Kerberos process"
+    ]
+  }
+}

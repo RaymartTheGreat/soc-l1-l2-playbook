@@ -1,0 +1,54 @@
+{
+  "id": "memory forensics",
+  "title": "Memory forensics",
+  "slug": "memory-forensics-2c39b2e1",
+  "relPath": "Memory forensics.md",
+  "level": "L1.5",
+  "curriculumLevelId": null,
+  "curriculumSectionId": null,
+  "curriculumSectionTitle": null,
+  "tags": [
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "memory forensics/memory forensics",
+    "memory forensics/memory forensics playbook",
+    "memory forensics/pagefile sys & swapfile & hibernation file"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics",
+      "title": "Memory forensics",
+      "slug": "memory-forensics-2c39b2e1"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Memory forensics"
+    }
+  ],
+  "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+  "study": {
+    "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Memory forensics"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

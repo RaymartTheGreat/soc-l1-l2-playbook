@@ -1,0 +1,67 @@
+{
+  "id": "frameworks/cyber kill chain",
+  "title": "Cyber Kill Chain",
+  "slug": "cyber-kill-chain",
+  "relPath": "Frameworks/Cyber Kill Chain.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "frameworks",
+  "children": [
+    "frameworks/cyber kill chain/introduction",
+    "frameworks/cyber kill chain/stage 1 reconnaissance",
+    "frameworks/cyber kill chain/stage 2 weaponization",
+    "frameworks/cyber kill chain/stage 3 delivery",
+    "frameworks/cyber kill chain/stage 4 exploitation",
+    "frameworks/cyber kill chain/stage 5 installation",
+    "frameworks/cyber kill chain/stage 6 command and control (c2)",
+    "frameworks/cyber kill chain/stage 7 actions on objectives",
+    "frameworks/cyber kill chain/summary",
+    "frameworks/cyber kill chain/is the cyber kill chain still relevant"
+  ],
+  "relatedLinks": [],
+  "backlinks": [
+    "frameworks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "frameworks",
+      "title": "Frameworks",
+      "slug": "frameworks"
+    },
+    {
+      "id": "frameworks/cyber kill chain",
+      "title": "Cyber Kill Chain",
+      "slug": "cyber-kill-chain"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Cyber Kill Chain"
+    }
+  ],
+  "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+  "study": {
+    "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Cyber Kill Chain"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

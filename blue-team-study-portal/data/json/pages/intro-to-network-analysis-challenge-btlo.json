@@ -1,0 +1,111 @@
+{
+  "id": "network analysis labs/intro to network analysis challenge (btlo)",
+  "title": "intro to Network Analysis Challenge (BTLO)",
+  "slug": "intro-to-network-analysis-challenge-btlo",
+  "relPath": "Network Analysis Labs/intro to Network Analysis Challenge (BTLO).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/intro to network analysis challenge (btlo)",
+      "title": "intro to Network Analysis Challenge (BTLO)",
+      "slug": "intro-to-network-analysis-challenge-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "intro to Network Analysis Challenge (BTLO)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the MAC address of the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "08:00:27:3d:27:5d"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the type of attack which is taking place that allows the attacker to listen in on conversations between the central server and another host?"
+    },
+    {
+      "level": 3,
+      "text": "Man-in-the-Middle"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the file which was downloaded from the central server?"
+    },
+    {
+      "level": 3,
+      "text": "AlevisEmployeeInformationChart.csv"
+    },
+    {
+      "level": 3,
+      "text": "4- What department does Borden Danilevich work in?"
+    },
+    {
+      "level": 3,
+      "text": "sales"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the SSH password of the Domain Administrator?"
+    },
+    {
+      "level": 3,
+      "text": "gMR<4eXf]e6W"
+    }
+  ],
+  "overview": "Alexis is a fictional cybersecurity company with thousands of employees. An attacker has gained unauthorized entry into its premises and has connected their laptop to an unused port on a switch. The attacker now has access to the company’s internal networks. Within the internal network, there is a central server where critical proprietary data is stored. In ",
+  "study": {
+    "overview": "Alexis is a fictional cybersecurity company with thousands of employees. An attacker has gained unauthorized entry into its premises and has connected their laptop to an unused port on a switch. The attacker now has access to the company’s internal networks. Within the internal network, there is a central server where critical proprietary data is stored. In ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "intro to Network Analysis Challenge (BTLO)",
+      "Scenario",
+      "1- What is the MAC address of the attacker?",
+      "08:00:27:3d:27:5d",
+      "2- What is the type of attack which is taking place that allows the attacker to listen in on conversations between the central server and another host?",
+      "Man-in-the-Middle",
+      "3- What is the file which was downloaded from the central server?",
+      "AlevisEmployeeInformationChart.csv",
+      "4- What department does Borden Danilevich work in?",
+      "sales",
+      "5- What is the SSH password of the Domain Administrator?",
+      "gMR<4eXf]e6W"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

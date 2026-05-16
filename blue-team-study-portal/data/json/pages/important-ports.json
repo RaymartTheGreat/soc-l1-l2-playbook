@@ -1,0 +1,95 @@
+{
+  "id": "network/important ports",
+  "title": "Important ports",
+  "slug": "important-ports",
+  "relPath": "Network/Important ports.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Windows",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/important ports",
+      "title": "Important ports",
+      "slug": "important-ports"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Important ports"
+    },
+    {
+      "level": 1,
+      "text": "1- Common Ports for Protocols and Services"
+    },
+    {
+      "level": 1,
+      "text": "2- Security-Specific Ports"
+    },
+    {
+      "level": 1,
+      "text": "3- Malicious/Attack Ports (Often Monitored)"
+    },
+    {
+      "level": 1,
+      "text": "4- Active Directory-Related Ports"
+    },
+    {
+      "level": 1,
+      "text": "5- Email and Proxy Ports"
+    },
+    {
+      "level": 1,
+      "text": "6- Cloud and Web-Related Ports"
+    },
+    {
+      "level": 1,
+      "text": "Consolidated Ports Table"
+    }
+  ],
+  "overview": "| Port(s) | Protocol/Service | Description | | --- | --- | --- | | 20, 21 | FTP | File Transfer Protocol (20=data, 21=control) | | 22 | SSH | Secure Shell for remote access | | 23 | Telnet | Unencrypted remote access (deprecated) | | 25 | SMTP | Simple Mail Transfer Protocol (email transmission) | | 53 | DNS | Domain Name System for resolving domain names | ",
+  "study": {
+    "overview": "| Port(s) | Protocol/Service | Description | | --- | --- | --- | | 20, 21 | FTP | File Transfer Protocol (20=data, 21=control) | | 22 | SSH | Secure Shell for remote access | | 23 | Telnet | Unencrypted remote access (deprecated) | | 25 | SMTP | Simple Mail Transfer Protocol (email transmission) | | 53 | DNS | Domain Name System for resolving domain names | ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Important ports",
+      "1- Common Ports for Protocols and Services",
+      "2- Security-Specific Ports",
+      "3- Malicious/Attack Ports (Often Monitored)",
+      "4- Active Directory-Related Ports",
+      "5- Email and Proxy Ports",
+      "6- Cloud and Web-Related Ports",
+      "Consolidated Ports Table"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

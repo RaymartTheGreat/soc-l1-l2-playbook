@@ -1,0 +1,184 @@
+{
+  "id": "threat hunting labs (siem)/hunt me i payment collectors (thm)",
+  "title": "Hunt Me I Payment Collectors (THM)",
+  "slug": "hunt-me-i-payment-collectors-thm",
+  "relPath": "Threat hunting Labs (SIEM)/Hunt Me I Payment Collectors (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Network"
+  ],
+  "mitre": [
+    "T1048"
+  ],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/hunt me i payment collectors (thm)",
+      "title": "Hunt Me I Payment Collectors (THM)",
+      "slug": "hunt-me-i-payment-collectors-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Hunt Me I: Payment Collectors (THM)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1-What was the name of the ZIP attachment that Michael downloaded?"
+    },
+    {
+      "level": 3,
+      "text": "InvoiceAT2023-227.zip"
+    },
+    {
+      "level": 3,
+      "text": "2-What was the contained file that Michael extracted from the attachment?"
+    },
+    {
+      "level": 3,
+      "text": "PaymentInvoice.pdf.lnk.lnk"
+    },
+    {
+      "level": 3,
+      "text": "3-What was the name of the command-line process that spawned from the extracted file attachment?"
+    },
+    {
+      "level": 3,
+      "text": "powershell.exe"
+    },
+    {
+      "level": 3,
+      "text": "4-What URL did the attacker use to download a tool to establish a reverse shell connection?"
+    },
+    {
+      "level": 3,
+      "text": "https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1"
+    },
+    {
+      "level": 3,
+      "text": "5-What port did the workstation connect to the attacker on?"
+    },
+    {
+      "level": 3,
+      "text": "19282"
+    },
+    {
+      "level": 3,
+      "text": "6-What was the first native Windows binary the attacker ran for system enumeration after obtaining remote access?"
+    },
+    {
+      "level": 3,
+      "text": "systeminfo.exe"
+    },
+    {
+      "level": 3,
+      "text": "7-What is the URL of the script that the attacker downloads to enumerate the domain?"
+    },
+    {
+      "level": 3,
+      "text": "8-What was the name of the file share that the attacker mapped to Michael's workstation?"
+    },
+    {
+      "level": 3,
+      "text": "SSF-FinancialRecords"
+    },
+    {
+      "level": 3,
+      "text": "9-What directory did the attacker copy the contents of the file share to?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\michael.ascot\\downloads\\exfiltration"
+    },
+    {
+      "level": 3,
+      "text": "10-What was the name of the Excel file the attacker extracted from the file share?"
+    },
+    {
+      "level": 3,
+      "text": "ClientPortfolioSummary.xlsx"
+    },
+    {
+      "level": 3,
+      "text": "11-What was the name of the archive file that the attacker created to prepare for exfiltration?"
+    },
+    {
+      "level": 3,
+      "text": "exfilt8me.zip"
+    },
+    {
+      "level": 3,
+      "text": "12-What is the MITRE ID of the technique that the attacker used to exfiltrate the data?"
+    },
+    {
+      "level": 3,
+      "text": "13-What was the domain of the attacker's server that retrieved the exfiltrated data?"
+    },
+    {
+      "level": 3,
+      "text": "haz4rdw4re.io"
+    },
+    {
+      "level": 3,
+      "text": "14-The attacker exfiltrated an additional file from the victim's workstation. What is the flag you receive after reconstructing the file?"
+    },
+    {
+      "level": 3,
+      "text": "THM{1497321f4f6f059a52dfb124fb16566e}"
+    }
+  ],
+  "overview": "On Friday, September 15, 2023, Michael Ascot, a Senior Finance Director from SwiftSpend, was checking his emails in Outlook and came across an email appearing to be from Abotech Waste Management regarding a monthly invoice for their services. Michael actioned this email and downloaded the attachment to his workstation without thinking.",
+  "study": {
+    "overview": "On Friday, September 15, 2023, Michael Ascot, a Senior Finance Director from SwiftSpend, was checking his emails in Outlook and came across an email appearing to be from Abotech Waste Management regarding a monthly invoice for their services. Michael actioned this email and downloaded the attachment to his workstation without thinking.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Hunt Me I: Payment Collectors (THM)",
+      "Scenario",
+      "1-What was the name of the ZIP attachment that Michael downloaded?",
+      "InvoiceAT2023-227.zip",
+      "2-What was the contained file that Michael extracted from the attachment?",
+      "PaymentInvoice.pdf.lnk.lnk",
+      "3-What was the name of the command-line process that spawned from the extracted file attachment?",
+      "powershell.exe",
+      "4-What URL did the attacker use to download a tool to establish a reverse shell connection?",
+      "https://raw.githubusercontent.com/besimorhino/powercat/master/powercat.ps1",
+      "5-What port did the workstation connect to the attacker on?",
+      "19282"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": [
+      "nslookup.exe is a built-in Windows tool for DNS lookups, but attackers can misuse it for data exfiltration."
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "detecting active directory attacks htb",
+  "title": "Detecting Active Directory Attacks HTB",
+  "slug": "detecting-active-directory-attacks-htb",
+  "relPath": "Detecting Active Directory Attacks HTB.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Active Directory",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "detecting active directory attacks htb/campfire-1 kerberoasting",
+    "detecting active directory attacks htb/campfire-2 as-rep roasting",
+    "detecting active directory attacks htb/noxious llmnr poisoning",
+    "detecting active directory attacks htb/reaper ntlm relay",
+    "detecting active directory attacks htb/crownjewel-1 ntds dumping",
+    "detecting active directory attacks htb/crownjewel-2 ntds dumping"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "detecting active directory attacks htb",
+      "title": "Detecting Active Directory Attacks HTB",
+      "slug": "detecting-active-directory-attacks-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Detecting Active Directory Attacks / HTB"
+    }
+  ],
+  "overview": "https://www.hackthebox.com/blog/kerberoasting-attack-detection",
+  "study": {
+    "overview": "https://www.hackthebox.com/blog/kerberoasting-attack-detection",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Detecting Active Directory Attacks / HTB"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

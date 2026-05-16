@@ -1,0 +1,155 @@
+{
+  "id": "phishing analysis/email security",
+  "title": "Email Security",
+  "slug": "email-security",
+  "relPath": "Phishing analysis/Email Security.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-initial-triage",
+  "curriculumSectionTitle": "Initial Triage & Analysis",
+  "tags": [
+    "EDR",
+    "Phishing",
+    "Web",
+    "Detection",
+    "Threat Intel"
+  ],
+  "mitre": [],
+  "parentId": "phishing analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "phishing analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "phishing analysis",
+      "title": "Phishing analysis",
+      "slug": "phishing-analysis"
+    },
+    {
+      "id": "phishing analysis/email security",
+      "title": "Email Security",
+      "slug": "email-security"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Email Security"
+    },
+    {
+      "level": 2,
+      "text": "Spam Filtering"
+    },
+    {
+      "level": 3,
+      "text": "Why It Matters:"
+    },
+    {
+      "level": 3,
+      "text": "Types of Spam Filters:"
+    },
+    {
+      "level": 3,
+      "text": "Detection Techniques:"
+    },
+    {
+      "level": 2,
+      "text": "Data Loss Prevention (DLP)"
+    },
+    {
+      "level": 3,
+      "text": "Email DLP Features:"
+    },
+    {
+      "level": 2,
+      "text": "Email Scanning"
+    },
+    {
+      "level": 2,
+      "text": "Attachment Filtering"
+    },
+    {
+      "level": 3,
+      "text": "Sandboxing"
+    },
+    {
+      "level": 2,
+      "text": "Security Awareness Training"
+    },
+    {
+      "level": 3,
+      "text": "Core Topics:"
+    },
+    {
+      "level": 3,
+      "text": "Reinforcement Tactics:"
+    },
+    {
+      "level": 2,
+      "text": "Reactive Blocking: Email Artifacts"
+    },
+    {
+      "level": 2,
+      "text": "Reactive Blocking: Web Artifacts"
+    },
+    {
+      "level": 3,
+      "text": "Web Proxy Controls:"
+    },
+    {
+      "level": 3,
+      "text": "DNS Blackholing"
+    },
+    {
+      "level": 2,
+      "text": "Reactive Blocking: File Artifacts"
+    },
+    {
+      "level": 3,
+      "text": "File Hash Blocking"
+    },
+    {
+      "level": 3,
+      "text": "File Name Blocking"
+    }
+  ],
+  "overview": "Phishing remains the most common and effective method for compromising organizations and initiating data breaches. Despite its impact, email security is often overlooked. A strong email security program involves multiple layers of technical controls, user awareness, and reactive defenses.",
+  "study": {
+    "overview": "Phishing remains the most common and effective method for compromising organizations and initiating data breaches. Despite its impact, email security is often overlooked. A strong email security program involves multiple layers of technical controls, user awareness, and reactive defenses.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Email Security",
+      "Spam Filtering",
+      "Why It Matters:",
+      "Types of Spam Filters:",
+      "Detection Techniques:",
+      "Data Loss Prevention (DLP)",
+      "Email DLP Features:",
+      "Email Scanning",
+      "Attachment Filtering",
+      "Sandboxing",
+      "Security Awareness Training",
+      "Core Topics:"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR"
+    ],
+    "tips": [
+      "Filters must be properly tuned—misconfiguration can lead to false positives or missed threats.",
+      "Example: A disgruntled employee attempts to email client data externally. DLP flags the message, blocks delivery, and alerts the security team.",
+      "This is one of the first layers of defense against phishing and malware campaigns.",
+      "Tools: Sophos Phish Threat, GoPhish, Trend Micro Phish Insight, PhishingBox",
+      "SHA256 is the preferred standard; MD5 and SHA1 are vulnerable to collisions."
+    ]
+  }
+}

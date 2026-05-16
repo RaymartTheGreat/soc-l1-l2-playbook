@@ -1,0 +1,210 @@
+{
+  "id": "windows security monitoring/windows threat detection 2/questions",
+  "title": "Questions",
+  "slug": "questions-2ecf0ac6",
+  "relPath": "Windows Security Monitoring/Windows Threat Detection 2/Questions.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "EDR",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Web",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "windows security monitoring/windows threat detection 2",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows security monitoring/windows threat detection 2"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows security monitoring",
+      "title": "Windows Security Monitoring",
+      "slug": "windows-security-monitoring"
+    },
+    {
+      "id": "windows security monitoring/windows threat detection 2",
+      "title": "Windows Threat Detection 2",
+      "slug": "windows-threat-detection-2"
+    },
+    {
+      "id": "windows security monitoring/windows threat detection 2/questions",
+      "title": "Questions",
+      "slug": "questions-2ecf0ac6"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Questions"
+    },
+    {
+      "level": 3,
+      "text": "1 - Open CMD and type “net user Administrator”. Which privileged group does the user belong to?"
+    },
+    {
+      "level": 3,
+      "text": "Administrators"
+    },
+    {
+      "level": 3,
+      "text": "2 - Open Event Viewer and try to find your command in Sysmon logs. What is the “Image” field of the net command you just run?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\net.exe"
+    },
+    {
+      "level": 3,
+      "text": "3 - Looking at Sysmon logs, what is the first command the invoice.pdf.exe executes?"
+    },
+    {
+      "level": 3,
+      "text": "whoami"
+    },
+    {
+      "level": 3,
+      "text": "4 - Which command did the malware use to check the presence of MS Defender EDR?"
+    },
+    {
+      "level": 3,
+      "text": "cmd /c “tasklist /v | findstr MsSense.exe || echo No MS Defender EDR”"
+    },
+    {
+      "level": 3,
+      "text": "5 - To which domain did the malware send the discovered data?"
+    },
+    {
+      "level": 3,
+      "text": "exfil.beecz.cafe"
+    },
+    {
+      "level": 3,
+      "text": "6 - What is the Facebook password that the user saved in Chrome? (Chrome menu Passwords and autofill Password Manager)"
+    },
+    {
+      "level": 3,
+      "text": "nsAghv51BBav90!"
+    },
+    {
+      "level": 3,
+      "text": "7 - Which interesting SSH key does the user store on disk? (Start your search from C:\\Users\\Administrator)"
+    },
+    {
+      "level": 3,
+      "text": "thm-access-database.key"
+    },
+    {
+      "level": 3,
+      "text": "8 - What is the secret PDF file explaining TryHackMe’s internal network?"
+    },
+    {
+      "level": 3,
+      "text": "thm-network-diagram-2025.pdf"
+    },
+    {
+      "level": 3,
+      "text": "9 - Looking at Sysmon logs, what directory does the stealer create?"
+    },
+    {
+      "level": 3,
+      "text": "staging58f1"
+    },
+    {
+      "level": 3,
+      "text": "10 - Which three file extensions does the malware search for?"
+    },
+    {
+      "level": 3,
+      "text": "docx, pdf, xlsx"
+    },
+    {
+      "level": 3,
+      "text": "11 - Which PowerShell cmdlet does the malware use to get clipboard content?"
+    },
+    {
+      "level": 3,
+      "text": "Get-ClipBoard"
+    },
+    {
+      "level": 3,
+      "text": "12 - Which domain does the malware exfiltrate the data to?"
+    },
+    {
+      "level": 3,
+      "text": "collecteddata-storage-2025.s3.amazonaws.com"
+    },
+    {
+      "level": 3,
+      "text": "13 - Open the Chrome browser on the VM and navigate to the URL. What is the flag in the response?"
+    },
+    {
+      "level": 3,
+      "text": "THM{justusewebbrowser}"
+    },
+    {
+      "level": 3,
+      "text": "14 - Next, open CMD and download the file from the same URL using curl.exe. What is the flag in the response?"
+    },
+    {
+      "level": 3,
+      "text": "THM{curliscool}"
+    },
+    {
+      "level": 3,
+      "text": "15 - Continue with the same CMD and URL, but now using certutil.exe. What is the flag in the response?"
+    },
+    {
+      "level": 3,
+      "text": "THM{abusingcertutil}"
+    },
+    {
+      "level": 3,
+      "text": "16 - Finally, download the same file using PowerShell IWR. What is the flag in the response?"
+    },
+    {
+      "level": 3,
+      "text": "THM{powerofpowershell}"
+    }
+  ],
+  "overview": "1 - Open CMD and type “net user Administrator”. Which privileged group does the user belong to?",
+  "study": {
+    "overview": "1 - Open CMD and type “net user Administrator”. Which privileged group does the user belong to?",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Questions",
+      "1 - Open CMD and type “net user Administrator”. Which privileged group does the user belong to?",
+      "Administrators",
+      "2 - Open Event Viewer and try to find your command in Sysmon logs. What is the “Image” field of the net command you just run?",
+      "C:\\Windows\\System32\\net.exe",
+      "3 - Looking at Sysmon logs, what is the first command the invoice.pdf.exe executes?",
+      "whoami",
+      "4 - Which command did the malware use to check the presence of MS Defender EDR?",
+      "cmd /c “tasklist /v | findstr MsSense.exe || echo No MS Defender EDR”",
+      "5 - To which domain did the malware send the discovered data?",
+      "exfil.beecz.cafe",
+      "6 - What is the Facebook password that the user saved in Chrome? (Chrome menu Passwords and autofill Password Manager)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

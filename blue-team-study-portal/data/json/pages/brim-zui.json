@@ -1,0 +1,142 @@
+{
+  "id": "network analysis tools/brim (zui)",
+  "title": "Brim (zui)",
+  "slug": "brim-zui",
+  "relPath": "Network Analysis Tools/Brim (zui).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-network-investigation",
+  "curriculumSectionTitle": "Network Investigation",
+  "tags": [
+    "Network",
+    "Kerberos"
+  ],
+  "mitre": [],
+  "parentId": "network analysis tools",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis tools"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis tools",
+      "title": "Network Analysis Tools",
+      "slug": "network-analysis-tools"
+    },
+    {
+      "id": "network analysis tools/brim (zui)",
+      "title": "Brim (zui)",
+      "slug": "brim-zui"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Brim (zui)"
+    },
+    {
+      "level": 2,
+      "text": "Data Exploration"
+    },
+    {
+      "level": 2,
+      "text": "Cutting & Filtering Fields"
+    },
+    {
+      "level": 2,
+      "text": "Unique Connection & Frequency Queries"
+    },
+    {
+      "level": 2,
+      "text": "Byte & Duration Metrics"
+    },
+    {
+      "level": 2,
+      "text": "Suricata Alert Overview"
+    },
+    {
+      "level": 2,
+      "text": "Protocol-Specific Filters"
+    },
+    {
+      "level": 3,
+      "text": "HTTP"
+    },
+    {
+      "level": 3,
+      "text": "DNS"
+    },
+    {
+      "level": 3,
+      "text": "FTP"
+    },
+    {
+      "level": 3,
+      "text": "SMB / DCE-RPC"
+    },
+    {
+      "level": 3,
+      "text": "Kerberos"
+    },
+    {
+      "level": 3,
+      "text": "LDAP"
+    },
+    {
+      "level": 2,
+      "text": "Time-Based Queries"
+    }
+  ],
+  "overview": "| Purpose | Query | | --- | --- | | Search a value (IP, string) | 10.0.0.1 | | Filter by log type | path == \"conn\" | | Filter by a specific field | id.origh == 192.168.121.40 | | Logical operators | 192 and NTP |",
+  "study": {
+    "overview": "| Purpose | Query | | --- | --- | | Search a value (IP, string) | 10.0.0.1 | | Filter by log type | path == \"conn\" | | Filter by a specific field | id.origh == 192.168.121.40 | | Logical operators | 192 and NTP |",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Brim (zui)",
+      "Data Exploration",
+      "Cutting & Filtering Fields",
+      "Unique Connection & Frequency Queries",
+      "Byte & Duration Metrics",
+      "Suricata Alert Overview",
+      "Protocol-Specific Filters",
+      "HTTP",
+      "DNS",
+      "FTP",
+      "SMB / DCE-RPC",
+      "Kerberos"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "python",
+        "code": "_path == \"http\" and id.resp_p == 80       # HTTP traffic (port 80)\n_path == \"http\" and method == \"POST\"     # POST requests\n| where host contains \"malicious-domain.com\"\n| where uri contains \"../\" or uri contains \"UNION\"\n| where body contains \"password\""
+      },
+      {
+        "language": "python",
+        "code": "_path == \"dns\"\n| where query contains \".onion\" or query contains \"suspiciousdomain\"\n| where query == \"example.com\"\n| where dns.resp.ip == \"<suspected_ip>\""
+      },
+      {
+        "language": "python",
+        "code": "_path == \"ftp\"\n| where command in {\"STOR\", \"RETR\"}     # File uploads/downloads"
+      },
+      {
+        "language": "python",
+        "code": "_path == \"kerberos\"\n| where msg_type in {10, 12}               # TGT/TGS requests\n| where error_code exists                  # Failed auths"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "# Absolute window\ntimestamp >= 2025-07-01T00:00:00Z and timestamp < 2025-07-07T00:00:00Z\n\n# Last hour\ntimestamp >= now() - 1h\n\n# Group into 15m buckets\n| bucket span=15m timestamp\n| count() by _path"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

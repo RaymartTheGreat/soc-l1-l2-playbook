@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Kerberos authentication | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link active" href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Kerberos authentication</span></div>
+      <h1>Kerberos authentication</h1>
+      <p>Kerberos is a secure authentication protocol used in Windows environments. It uses a ticket system and strong encryption to verify identities, even on open networks. In an Active Directory setup, the Domain Controller acts as the Key Distribution Center (KDC) with two main parts: the Authentication Service (AS) and the Ticket Granting Service (TGS), which is</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Kerberos</span><span class="tag">Web</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag">Lateral Movement</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Kerberos authentication</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="kerberos-authentication.html"><span>Kerberos authentication</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Kerberos is a secure authentication protocol used in Windows environments. It uses a ticket system and strong encryption to verify identities, even on open networks. In an Active Directory setup, the Domain Controller acts as the Key Distribution Center (KDC) with two main parts: the Authentication Service (AS) and the Ticket Granting Service (TGS), which is</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Kerberos authentication</li><li>Key Components</li><li>Principal Client</li><li>Principal Service</li><li>Client IP Address</li><li>Timestamp</li><li>Ticket Lifetime</li><li>Session Key (SK Service)</li><li>Why Ticket Lifetime Matters</li><li>KRBTGT Service Account</li><li>Golden Tickets</li><li>Step-by-Step Authentication Process</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="kerberos-authentication">Kerberos authentication</h2>
+<p><strong>Kerberos</strong> is a secure authentication protocol used in Windows environments. It uses a ticket system and strong encryption to verify identities, even on open networks. In an Active Directory setup, the Domain Controller acts as the <strong>Key Distribution Center (KDC)</strong> with two main parts: the <strong>Authentication Service (AS)</strong> and the <strong>Ticket Granting Service (TGS)</strong>, which issue tickets to confirm identities.</p>
+<hr>
+<h2 id="key-components">Key Components</h2>
+<ul>
+<li><strong>Client:</strong> The user or computer trying to authenticate.</li>
+<li><strong>Domain Controller (KDC):</strong> The server hosting the AD database and handling authentication requests. It includes:</li>
+<ul>
+<li><strong>Authentication Service (AS):</strong> Issues the initial Ticket Granting Ticket (TGT).</li>
+<li><strong>Ticket Granting Service (TGS):</strong> Issues service-specific tickets based on the TGT.</li>
+</ul>
+</ul>
+<p><a class="note-link" href="Kerberos authentication/image.avif">image.avif</a></p>
+<p><strong>Key Distribution Center (KDC)</strong></p>
+<p><button class="image-button" data-src="../assets/images/kerberos-authentication-image_1-41012e97.png" data-alt="image (1).png"><img src="../assets/images/kerberos-authentication-image_1-41012e97.png" alt="image (1).png" loading="lazy"></button></p>
+<p><strong>Authentication Server (AS)</strong></p>
+<p><button class="image-button" data-src="../assets/images/kerberos-authentication-image-5d8777d3.png" data-alt="image.png"><img src="../assets/images/kerberos-authentication-image-5d8777d3.png" alt="image.png" loading="lazy"></button></p>
+<p><strong>Ticket Granting Server (TGS)</strong></p>
+<ul>
+<li><strong>Ticket Granting Ticket (TGT):</strong> A temporary credential that allows the client to request service tickets without re-sending its password.</li>
+<li><strong>Service Ticket:</strong> A ticket that allows the client to authenticate to a specific service (e.g., file server, SQL server).</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/kerberos-authentication-kerberos-actors-secrets-1536x760-d1e15191.webp" data-alt="kerberos-actors-secrets-1536x760.webp"><img src="../assets/images/kerberos-authentication-kerberos-actors-secrets-1536x760-d1e15191.webp" alt="kerberos-actors-secrets-1536x760.webp" loading="lazy"></button></p>
+<ul>
+<li><strong>Tickets:</strong> is a credential that a client presents to an application server (whether it's the <strong>KDC</strong> or another service) to prove its authenticity. These tickets are issued by the <strong>KDC</strong>—specifically, the <strong>Authentication Server (AS)</strong> and the <strong>Ticket Granting Server (TGS)</strong>—and are encrypted using a secret key belonging to the intended service.</li>
+</ul>
+<p>Because this shared secret is known only to the <strong>KDC</strong> and the service provider, the client has no access to the ticket’s contents and cannot modify them in any way.</p>
+<p><button class="image-button" data-src="../assets/images/kerberos-authentication-image_1-1-584b9b40.png" data-alt="image (1).png"><img src="../assets/images/kerberos-authentication-image_1-1-584b9b40.png" alt="image (1).png" loading="lazy"></button></p>
+<p><strong>Example on information included in the ticket</strong></p>
+<h4 id="principal-client">Principal Client</h4>
+<p><strong>Principal Client:</strong> Refers to the requesting user's principal identity.</p>
+<h4 id="principal-service">Principal Service</h4>
+<p><strong>Principal Service:</strong> Represents the principal identity of the service for which the request is intended.</p>
+<h4 id="client-ip-address">Client IP Address</h4>
+<p>The IP address of the client machine where the ticket is valid for use, included in the <strong>IP_list</strong>.</p>
+<h4 id="timestamp">Timestamp</h4>
+<p><strong>Timestamp:</strong> The date and time of the request in timestamp format.</p>
+<h4 id="ticket-lifetime">Ticket Lifetime</h4>
+<p><strong>Lifetime:</strong> Specifies the maximum validity duration of the ticket.</p>
+<h4 id="session-key-sk-service">Session Key (SK Service)</h4>
+<p><strong>SK Service:</strong> The session key, which plays a crucial role in authentication (explained further in section 4.4).</p>
+<hr>
+<h4 id="why-ticket-lifetime-matters">Why Ticket Lifetime Matters</h4>
+<p>Each ticket has a default validity of <strong>10 hours (600 minutes)</strong>. This limitation is crucial because, once issued, the authentication server has no direct control over the ticket. While administrators can restrict users from obtaining new tickets, <em><strong>they cannot revoke tickets that have already been issued.</strong></em> Therefore, setting a finite lifetime ensures security by minimizing potential misuse over time.</p>
+<hr>
+<h3 id="krbtgt-service-account"><strong>KRBTGT Service Account</strong></h3>
+<p>KRBTGT is a built-in service account present in every Active Directory domain that functions as the Key Distribution Center (KDC) account for Kerberos authentication. It is used exclusively to encrypt the Ticket Granting Ticket (TGT) with a key derived from its password, ensuring that only authenticated users can access network resources.</p>
+<p>If an attacker gains access to this password, they could forge <strong>“Golden Tickets”</strong> to impersonate legitimate users.</p>
+<h4 id="golden-tickets">Golden Tickets</h4>
+<ul>
+<li>By compromising or resetting the KRBTGT password hash, attackers can generate forged Ticket Granting Tickets (TGTs), effectively allowing them to impersonate any user in the domain.</li>
+<li>A successful Golden Ticket attack using the KRBTGT account can grant near-unlimited access across the network, making it one of the most coveted targets in an AD compromise.</li>
+<li>Once the KRBTGT account is compromised, detection is challenging because the forged tickets are cryptographically valid from the perspective of the domain controllers.</li>
+</ul>
+<p>To enhance security, the KRBTGT account is disabled for direct logins, minimizing its exposure. Its design as a non-interactive account emphasizes the need for a strong, well-protected password, making it a critical component in maintaining the integrity of the entire Kerberos authentication process.</p>
+<hr>
+<h2 id="step-by-step-authentication-process">Step-by-Step Authentication Process</h2>
+<h4 id="1-client-authentication-request-asreq">1- <strong>Client Authentication Request (AS_REQ)</strong></h4>
+<ul>
+<li><strong>Action:</strong> The client initiates the process by sending an <strong>AS_REQ</strong> message to the KDC.</li>
+<li><strong>Content:</strong> The request contains the client’s identity and a request for a TGT.</li>
+<li><strong>Encryption:</strong> The request is sent in plaintext, but sensitive parts of the response will be encrypted.</li>
+</ul>
+<h4 id="2-kdc-verifies-credentials-and-issues-tgt-krbasrep">2- KDC Verifies Credentials and Issues TGT (<strong>KRB_AS_REP</strong>)</h4>
+<ul>
+<li><strong>Action:</strong> The KDC’s Authentication Service verifies the client’s identity by checking the AD database.</li>
+<li><strong>Response:</strong> If the credentials are valid:</li>
+<ul>
+<li>The KDC issues a <strong>Ticket Granting Ticket (TGT)</strong>.</li>
+<li>A <strong>session key</strong> is generated.</li>
+</ul>
+<li><strong>Encryption:</strong> The TGT is encrypted using a key known only to the KDC (specifically for the TGS), and the session key is encrypted with a key derived from the client’s password.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/kerberos-authentication-as_2-e9dd01dd.gif" data-alt="AS2.gif"><img src="../assets/images/kerberos-authentication-as_2-e9dd01dd.gif" alt="AS2.gif" loading="lazy"></button></p>
+<h4 id="3-client-decrypts-the-as-response">3- <strong>Client Decrypts the AS Response</strong></h4>
+<ul>
+<li><strong>Action:</strong> The client uses its password (or a key derived from it) to decrypt the session key from the AS response.</li>
+<li><strong>Outcome:</strong> With the session key, the client can now use the TGT for further requests without sending the password again.</li>
+</ul>
+<h4 id="4-service-ticket-request-tgsreq">4- <strong>Service Ticket Request (TGS_REQ)</strong></h4>
+<ul>
+<li><strong>Action:</strong> When the client wants to access a specific service, it sends a <strong>TGS_REQ</strong> message to the KDC’s Ticket Granting Service.</li>
+<li><strong>Content:</strong> This request includes:</li>
+<ul>
+<li>The previously obtained TGT.</li>
+<li>An authenticator (a timestamped message encrypted with the session key).</li>
+<li>The identity of the target service.</li>
+</ul>
+</ul>
+<h4 id="5-kdc-issues-the-service-ticket-tgsrep">5- <strong>KDC Issues the Service Ticket (TGS_REP)</strong></h4>
+<ul>
+<li><strong>Action:</strong> The TGS validates the TGT and the authenticator.</li>
+<li><strong>Response:</strong> If valid, the TGS issues a <strong>service ticket</strong> for the requested service.</li>
+<li><strong>Encryption:</strong> The service ticket is encrypted with the service’s secret key (known only to the KDC and the service).</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/kerberos-authentication-tgs-30042129.gif" data-alt="TGS.gif"><img src="../assets/images/kerberos-authentication-tgs-30042129.gif" alt="TGS.gif" loading="lazy"></button></p>
+<h4 id="6-client-presents-the-service-ticketapreq">6- <strong>Client Presents the Service Ticket(AP_REQ)</strong></h4>
+<ul>
+<li><strong>Action:</strong> The client sends an <strong>AP_REQ</strong> (Application Request) message to the target service.</li>
+<li><strong>Content:</strong> This message contains the service ticket and a new authenticator proving the client’s identity.</li>
+<li><strong>Outcome:</strong> The service can now verify the authenticity of the ticket.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/kerberos-authentication-ap-d9732f07.gif" data-alt="AP.gif"><img src="../assets/images/kerberos-authentication-ap-d9732f07.gif" alt="AP.gif" loading="lazy"></button></p>
+<h4 id="7-service-validates-the-ticket-and-establishes-a-session">7- <strong>Service Validates the Ticket and Establishes a Session</strong></h4>
+<ul>
+<li><strong>Action:</strong> The target service decrypts the service ticket using its secret key.</li>
+<li><strong>Outcome:</strong> If the ticket is valid, the service grants access to the client and may establish a secure session (using the provided session key) for subsequent communication.</li>
+</ul>
+<hr>
+<h2 id="diagram-of-the-kerberos-authentication-flow">Diagram of the Kerberos Authentication Flow</h2>
+<div class="code-shell"><div class="code-bar"><span>mermaid</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-mermaid">sequenceDiagram
+    participant C as Client
+    participant DC as Domain Controller (KDC)
+    participant S as Service
+
+    C-&gt;&gt;DC: AS_REQ (Request TGT) \n (includes client identity)
+    DC--&gt;&gt;C: AS_REP (TGT + Session Key) \n (encrypted parts)
+    C-&gt;&gt;DC: TGS_REQ (TGT + Authenticator + Service ID)
+    DC--&gt;&gt;C: TGS_REP (Service Ticket) \n (encrypted with service key)
+    C-&gt;&gt;S: AP_REQ (Service Ticket + Authenticator)
+    S--&gt;&gt;C: AP_REP (Optional: confirmation, establish secure session)
+</code></pre></div>
+<p><button class="image-button" data-src="../assets/images/kerberos-authentication-1_bzfaly53sdexvrae0xasiw-1ff7b571.webp" data-alt="1bzFAly53SdEXvrAe0XAsIw.webp"><img src="../assets/images/kerberos-authentication-1_bzfaly53sdexvrae0xasiw-1ff7b571.webp" alt="1bzFAly53SdEXvrAe0XAsIw.webp" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/kerberos-authentication-kerb_auth-6b6f73f2.webp" data-alt="Kerbauth.webp"><img src="../assets/images/kerberos-authentication-kerb_auth-6b6f73f2.webp" alt="Kerbauth.webp" loading="lazy"></button></p>
+<hr>
+<h3 id="summary">Summary</h3>
+<ol>
+<li><strong>AS Request:</strong> The client requests a TGT from the KDC.</li>
+<li><strong>AS Reply:</strong> The KDC verifies the client’s credentials and issues a TGT along with a session key.</li>
+<li><strong>TGS Request:</strong> The client uses the TGT to request a service ticket for a particular service.</li>
+<li><strong>TGS Reply:</strong> The KDC issues a service ticket encrypted for the target service.</li>
+<li><strong>AP Request:</strong> The client presents the service ticket to the target service.</li>
+<li><strong>Service Validation:</strong> The service verifies the ticket and, if valid, grants access to the client.</li>
+</ol>
+<p>This process ensures that passwords are not transmitted over the network after the initial exchange and that all communications can be securely encrypted, making Kerberos a robust authentication mechanism in AD environments.</p>
+<hr>
+<h2 id="how-attackers-can-exploit-kerberos">How Attackers Can Exploit Kerberos</h2>
+<p>Despite its robust design, there are several potential vulnerabilities and attack vectors:</p>
+<h4 id="1-brute-forcepassword-guessing-attacks">1- <strong>Brute Force/Password Guessing Attacks</strong></h4>
+<ul>
+<li><strong>Attack Vector:</strong></li>
+<ul>
+<li>Since the initial key used to encrypt the session key in the AS reply is derived from the client’s password, weak passwords can be exploited.</li>
+</ul>
+<li><strong>Impact:</strong></li>
+<ul>
+<li>An attacker who can guess or crack weak passwords may derive the encryption key and decrypt sensitive messages.</li>
+</ul>
+<li><strong>Mitigation:</strong></li>
+<ul>
+<li>Enforce strong password policies and use multi-factor authentication where possible.</li>
+</ul>
+</ul>
+<h4 id="2-pass-the-ticket-attacks">2- <strong>Pass-the-Ticket Attacks</strong></h4>
+<ul>
+<li><strong>Attack Vector:</strong></li>
+<ul>
+<li>If an attacker gains access to a valid TGT or service ticket (for example, via memory scraping on a compromised machine), they can reuse it to authenticate without needing the user’s password.</li>
+</ul>
+<li><strong>Impact:</strong></li>
+<ul>
+<li>This can lead to lateral movement within a network.</li>
+</ul>
+<li><strong>Mitigation:</strong></li>
+<ul>
+<li>Regularly clear cached tickets, monitor for abnormal ticket usage, and use endpoint protection measures.</li>
+</ul>
+</ul>
+<h4 id="3-kerberoasting">3- <strong>Kerberoasting</strong></h4>
+<ul>
+<li><strong>Attack Vector:</strong></li>
+<ul>
+<li>Attackers request service tickets for services with service accounts, then extract and attempt to crack the service account’s encrypted credentials offline.</li>
+</ul>
+<li><strong>Impact:</strong></li>
+<ul>
+<li>Once a service account password is compromised, attackers can access services and possibly escalate privileges.</li>
+</ul>
+<li><strong>Mitigation:</strong></li>
+<ul>
+<li>Use strong, complex passwords for service accounts, monitor for unusual service ticket requests, and restrict permissions.</li>
+</ul>
+</ul>
+<h4 id="4-golden-ticket-attacks">4- <strong>Golden Ticket Attacks</strong></h4>
+<ul>
+<li><strong>Attack Vector:</strong></li>
+<ul>
+<li>If an attacker compromises the KDC’s secret (often the KRBTGT account in AD), they can forge valid TGTs, granting virtually unlimited access across the domain.</li>
+</ul>
+<li><strong>Impact:</strong></li>
+<ul>
+<li>This is one of the most severe compromises, as it allows attackers to impersonate any user.</li>
+</ul>
+<li><strong>Mitigation:</strong></li>
+<ul>
+<li>Protect the KRBTGT account with stringent security measures, monitor for anomalous ticket creation, and periodically reset the KRBTGT account’s password.</li>
+</ul>
+</ul>
+<h4 id="5-silver-ticket-attacks">5- <strong>Silver Ticket Attacks</strong></h4>
+<ul>
+<li><strong>Attack Vector:</strong></li>
+<ul>
+<li>Instead of compromising the KDC, an attacker may target a specific service’s key to forge a service ticket (silver ticket).</li>
+</ul>
+<li><strong>Impact:</strong></li>
+<ul>
+<li>Allows attackers to gain unauthorized access to a particular service without detection by the KDC.</li>
+</ul>
+<li><strong>Mitigation:</strong></li>
+<ul>
+<li>Secure service account keys, ensure services are updated, and monitor for abnormal service ticket activity.</li>
+</ul>
+</ul>
+<h4 id="6-replay-attacks">6- <strong>Replay Attacks</strong></h4>
+<ul>
+<li><strong>Attack Vector:</strong></li>
+<ul>
+<li>Attackers capture and resend valid authenticators or tickets.</li>
+</ul>
+<li><strong>Impact:</strong></li>
+<ul>
+<li>May allow repeated access if timestamps are not correctly enforced.</li>
+</ul>
+<li><strong>Mitigation:</strong></li>
+<ul>
+<li>Use strict time synchronization (e.g., via NTP) and short ticket lifetimes to limit the effectiveness of replays.</li>
+</ul>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#kerberos-authentication">Kerberos authentication</a><a href="#key-components">Key Components</a><a href="#principal-client">Principal Client</a><a href="#principal-service">Principal Service</a><a href="#client-ip-address">Client IP Address</a><a href="#timestamp">Timestamp</a><a href="#ticket-lifetime">Ticket Lifetime</a><a href="#session-key-sk-service">Session Key (SK Service)</a><a href="#why-ticket-lifetime-matters">Why Ticket Lifetime Matters</a><a href="#krbtgt-service-account">KRBTGT Service Account</a><a href="#golden-tickets">Golden Tickets</a><a href="#step-by-step-authentication-process">Step-by-Step Authentication Process</a><a href="#1-client-authentication-request-asreq">1- Client Authentication Request (ASREQ)</a><a href="#2-kdc-verifies-credentials-and-issues-tgt-krbasrep">2- KDC Verifies Credentials and Issues TGT (KRBASREP)</a><a href="#3-client-decrypts-the-as-response">3- Client Decrypts the AS Response</a><a href="#4-service-ticket-request-tgsreq">4- Service Ticket Request (TGSREQ)</a><a href="#5-kdc-issues-the-service-ticket-tgsrep">5- KDC Issues the Service Ticket (TGSREP)</a><a href="#6-client-presents-the-service-ticketapreq">6- Client Presents the Service Ticket(APREQ)</a><a href="#7-service-validates-the-ticket-and-establishes-a-session">7- Service Validates the Ticket and Establishes a Session</a><a href="#diagram-of-the-kerberos-authentication-flow">Diagram of the Kerberos Authentication Flow</a><a href="#summary">Summary</a><a href="#how-attackers-can-exploit-kerberos">How Attackers Can Exploit Kerberos</a><a href="#1-brute-forcepassword-guessing-attacks">1- Brute Force/Password Guessing Attacks</a><a href="#2-pass-the-ticket-attacks">2- Pass-the-Ticket Attacks</a><a href="#3-kerberoasting">3- Kerberoasting</a><a href="#4-golden-ticket-attacks">4- Golden Ticket Attacks</a><a href="#5-silver-ticket-attacks">5- Silver Ticket Attacks</a><a href="#6-replay-attacks">6- Replay Attacks</a></details>
+    </div>
+    
+    <footer class="pager"><a href="group-policy.html">← Group Policy</a><a href="linux-cheatsheet.html">Linux CheatSheet →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Active Directory | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link active" href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Active Directory</span></div>
+      <h1>Active Directory</h1>
+      <p>Before diving into Active Directory (AD), it’s important to understand the role of Directory Services in modern networks. Directory Services provide a structured way to organize, map, and control access to resources within an organization.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Kerberos</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Active Directory</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="active-directory.html"><span>Active Directory</span><em>L2</em></a>
+      <b>7</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntlm.html"><span>NTLM</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ldap.html"><span>LDAP</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="netbios.html"><span>NetBIOS</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="objects-organizational-units.html"><span>Objects &amp; Organizational Units</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="domain-controllers.html"><span>Domain Controllers</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="security-groups.html"><span>Security Groups</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="group-policy.html"><span>Group Policy</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        <section class="content-cards"><h2>Nested Structure</h2><div><a class="content-card" href="ntlm.html"><strong>NTLM</strong><span>NTLM (NT LAN Manager) is a suite of Microsoft authentication protocols that uses a challenge-response mechanism to verify user identities without transmitting passwords in cleartext.</span><em>0 child notes</em></a><a class="content-card" href="ldap.html"><strong>LDAP</strong><span>Lightweight Directory Access Protocol (LDAP) is an open, cross-platform protocol designed for accessing and managing directory information. In Active Directory (AD), LDAP is the backbone for querying, updating, and managing data about users, groups, and resources. Its standardized communication mechanism makes LDAP essential for centralized identity manageme</span><em>0 child notes</em></a><a class="content-card" href="netbios.html"><strong>NetBIOS</strong><span>NetBIOS (Network Basic Input/Output System) is a legacy networking protocol suite used to facilitate communication between devices on a local area network (LAN). Its main functions are:</span><em>0 child notes</em></a><a class="content-card" href="objects-organizational-units.html"><strong>Objects &amp; Organizational Units</strong><span>In Active Directory (AD), objects represent every manageable resource in your network users, computers, groups, printers, file shares, and more. Organizational Units (OUs) act like folders, grouping these objects for streamlined administration and policy application.</span><em>0 child notes</em></a><a class="content-card" href="domain-controllers.html"><strong>Domain Controllers</strong><span>A Domain Controller (DC) is a server that runs the Active Directory Domain Services (AD DS) role. It manages authentication, authorization, and domain-wide policies.</span><em>0 child notes</em></a><a class="content-card" href="security-groups.html"><strong>Security Groups</strong><span>Security groups (SGs) allow administrators to assign permissions and access control to collections of users or AD objects like computers. This approach simplifies management by grouping users with similar access needs rather than assigning rights individually.</span><em>0 child notes</em></a><a class="content-card" href="group-policy.html"><strong>Group Policy</strong><span>In environments with large numbers of users and machines, enforcing consistent settings manually is inefficient and error-prone. Security risks such as unrestricted USB access, weak passwords, or unauthorized applications can easily go unnoticed if not centrally managed.</span><em>0 child notes</em></a></div></section>
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Before diving into Active Directory (AD), it’s important to understand the role of Directory Services in modern networks. Directory Services provide a structured way to organize, map, and control access to resources within an organization.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Active Directory</li><li>Core Active Directory Components</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="active-directory">Active Directory</h2>
+<p><a class="note-link" href="ntlm.html">NTLM</a></p>
+<p><a class="note-link" href="ldap.html">LDAP</a></p>
+<p><a class="note-link" href="netbios.html">NetBIOS</a></p>
+<hr>
+<p>Before diving into <strong>Active Directory (AD),</strong> it’s important to understand the role of <strong>Directory Services</strong> in modern networks. Directory Services provide a structured way to organize, map, and control access to resources within an organization.</p>
+<p>At the core of most Directory Services is the <strong>Lightweight Directory Access Protocol (LDAP),</strong> which defines how directory data is accessed and managed. LDAP enables efficient searching and retrieval of information about objects such as users, groups, and computers.</p>
+<p><strong>Active Directory</strong> is Microsoft’s implementation of a Directory Service and is the backbone of most enterprise networks. It stores and manages information about network objects, including:</p>
+<ul>
+<li><strong>Users</strong> – Accounts representing people or services</li>
+<li><strong>Groups</strong> – Collections of users or objects with shared permissions</li>
+<li><strong>Computers</strong> – Devices joined to the domain and governed by AD policies</li>
+<li><strong>Resources</strong> – Such as printers, file shares, and other network-accessible services</li>
+</ul>
+<p>AD structure may look this:</p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">OMEGATRANSIT.LOCAL/
+├── MGMT.OMEGATRANSIT.LOCAL
+│   ├── POLICIES
+│   └── DEPARTMENTS
+│       └── STAFF
+│           ├── DEVICES
+│           │   └── NODE01
+│           ├── TEAMS
+│           │   └── Operations Crew
+│           └── MEMBERS
+│               └── Omar.Amir
+├── HQ.OMEGATRANSIT.LOCAL
+└── LABS.OMEGATRANSIT.LOCAL</code></pre></div>
+<p><button class="image-button" data-src="../assets/images/active-directory-image-9133c56f.png" data-alt="image.png"><img src="../assets/images/active-directory-image-9133c56f.png" alt="image.png" loading="lazy"></button></p>
+<hr>
+<p><a class="note-link" href="objects-organizational-units.html">Objects &amp;amp; Organizational Units</a></p>
+<p><a class="note-link" href="domain-controllers.html">Domain Controllers </a></p>
+<p><a class="note-link" href="security-groups.html"><strong>Security Groups</strong></a></p>
+<p><a class="note-link" href="group-policy.html">Group Policy </a></p>
+<hr>
+<p><button class="image-button" data-src="../assets/images/active-directory-screenshot_2024-12-02_182941-09818540.png" data-alt="Screenshot 2024-12-02 182941.png"><img src="../assets/images/active-directory-screenshot_2024-12-02_182941-09818540.png" alt="Screenshot 2024-12-02 182941.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/active-directory-screenshot_2024-12-02_183010-ca2c2449.png" data-alt="Screenshot 2024-12-02 183010.png"><img src="../assets/images/active-directory-screenshot_2024-12-02_183010-ca2c2449.png" alt="Screenshot 2024-12-02 183010.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Domains</strong>: Logical groupings of network resources such as users, computers, and services. They serve as the main boundary for AD administration and can be identified by their <strong>Domain Component and Domain Controller</strong> name. Everything inside a domain is subject to the same security policies and permissions.</li>
+<li><strong>Organisational Units (OUs)</strong>: OUs are containers within a domain that help group objects based on departments, locations or functions for easier management. Administrators can apply Group Policy settings to specific OUs, allowing more granular control of security settings or access permissions.</li>
+<li><strong>Forest</strong>: A collection of one or more domains that share a standard schema, configuration, and global catalogue. The forest is the top-level container in AD.</li>
+<li><strong>Trust Relationships</strong>: Domains within a forest (and across forests) can establish trust relationships that allow users in one domain to access resources in another, subject to permission.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/active-directory-screenshot_2024-12-02_183046-6ccb8fc4.png" data-alt="Screenshot 2024-12-02 183046.png"><img src="../assets/images/active-directory-screenshot_2024-12-02_183046-6ccb8fc4.png" alt="Screenshot 2024-12-02 183046.png" loading="lazy"></button></p>
+<p>AD DS stands for <strong>Active Directory Domain Services</strong>, a Windows Server role responsible for securely managing and storing information about users, computers, groups, and other resources in a domain environment. It provides authentication and authorization services, enforces security policies, and facilitates the management of network resources. The AD DS data store (primarily in the Ntds.dit file) holds sensitive data including user accounts, credentials (hashed passwords), group memberships, and policies. Ntds.dit file is stored in the <strong>%SystemRoot%\NTDS</strong> folder (e.g., <code>C:\Windows\NTDS</code>) on each domain controller.</p>
+<p><button class="image-button" data-src="../assets/images/active-directory-screenshot_2024-12-02_183420-5a2ba07c.png" data-alt="Screenshot 2024-12-02 183420.png"><img src="../assets/images/active-directory-screenshot_2024-12-02_183420-5a2ba07c.png" alt="Screenshot 2024-12-02 183420.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/active-directory-screenshot_2024-12-02_183437-a6c4a088.png" data-alt="Screenshot 2024-12-02 183437.png"><img src="../assets/images/active-directory-screenshot_2024-12-02_183437-a6c4a088.png" alt="Screenshot 2024-12-02 183437.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/active-directory-screenshot_2024-12-02_183543-570eaf95.png" data-alt="Screenshot 2024-12-02 183543.png"><img src="../assets/images/active-directory-screenshot_2024-12-02_183543-570eaf95.png" alt="Screenshot 2024-12-02 183543.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/active-directory-screenshot_2024-12-02_183640-5fa3d9da.png" data-alt="Screenshot 2024-12-02 183640.png"><img src="../assets/images/active-directory-screenshot_2024-12-02_183640-5fa3d9da.png" alt="Screenshot 2024-12-02 183640.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/active-directory-image-1-f67307eb.png" data-alt="image.png"><img src="../assets/images/active-directory-image-1-f67307eb.png" alt="image.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/active-directory-screenshot_2024-12-02_183734-4183129c.png" data-alt="Screenshot 2024-12-02 183734.png"><img src="../assets/images/active-directory-screenshot_2024-12-02_183734-4183129c.png" alt="Screenshot 2024-12-02 183734.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/active-directory-screenshot_2024-12-02_183816-4ced0873.png" data-alt="Screenshot 2024-12-02 183816.png"><img src="../assets/images/active-directory-screenshot_2024-12-02_183816-4ced0873.png" alt="Screenshot 2024-12-02 183816.png" loading="lazy"></button></p>
+<ul>
+<li>Trust relationships are connections established between different domains or forests. They allow users in one domain to access resources in another. Trusts are configured to establish a secure communication channel and to delegate authentication across boundaries.</li>
+<li>While trusts simplify resource sharing, they also expand the “attack surface.” An attacker who compromises one domain can potentially leverage trust relationships to move laterally into other domains or forests.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/active-directory-screenshot_2024-12-02_183908-a644f6de.png" data-alt="Screenshot 2024-12-02 183908.png"><img src="../assets/images/active-directory-screenshot_2024-12-02_183908-a644f6de.png" alt="Screenshot 2024-12-02 183908.png" loading="lazy"></button></p>
+<h3 id="core-active-directory-components"><strong>Core Active Directory Components</strong></h3>
+<p>Active Directory contains several key components that allow it to provide a wide range of services. Understanding these components will give one a clear picture of how AD supports administrative and security operations.</p>
+<ul>
+<li><strong>Domain Controllers (DCs):</strong> Domain Controllers are the servers that host Active Directory services. They store the AD database and handle authentication and authorization requests, such as logging in users or verifying access to resources. Multiple DCs can exist within a domain for redundancy. When changes are made to AD (such as adding users or updating passwords), these changes are replicated across all DCs, ensuring that the directory remains consistent.</li>
+<li><strong>Global Catalog:</strong> The Global Catalog (GC) is a searchable database within AD that contains a subset of information from all objects in the directory. This allows users and services to locate objects in any domain in the forest, even if those objects reside in different domains.</li>
+<li><strong>LDAP (Lightweight Directory Access Protocol):</strong> AD uses this protocol to query and modify the directory. The protocol allows for fast searching and retrieving of information about objects such as users, computers, and groups.</li>
+<li><strong>Kerberos Authentication:</strong> The default authentication protocol used by AD provides secure authentication by using tickets rather than passwords.</li>
+</ul>
+<p><strong>Group Policy</strong></p>
+<p>One of Active Directory's most powerful features is <strong>Group Policy</strong>, which allows administrators to enforce policies across the domain. Group Policies can be applied to users and computers to enforce password policies, software deployment, firewall settings, and more.</p>
+<p><strong>Group Policy Objects (GPOs)</strong> are the containers that hold these policies. A GPO can be linked to the entire domain, an OU, or a site, giving the flexibility in applying policies.</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#active-directory">Active Directory</a><a href="#core-active-directory-components">Core Active Directory Components</a></details>
+    </div>
+    
+    <footer class="pager"><a href="elk-elastic-stack.html">← ELK (Elastic Stack)</a><a href="ntlm.html">NTLM →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+{
+  "id": "log analysis labs/campfire-1 (htb)",
+  "title": "Campfire-1 (HTB)",
+  "slug": "campfire-1-htb",
+  "relPath": "Log Analysis Labs/Campfire-1 (HTB).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "PowerShell",
+    "Network",
+    "Active Directory",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/campfire-1 (htb)",
+      "title": "Campfire-1 (HTB)",
+      "slug": "campfire-1-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Campfire-1 (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Analyzing Domain Controller Security Logs, can you confirm the date & time when the kerberoasting activity occurred?"
+    },
+    {
+      "level": 3,
+      "text": "2024-05-21 03:18:09"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the Service Name that was targeted?"
+    },
+    {
+      "level": 3,
+      "text": "MSSQLService"
+    },
+    {
+      "level": 3,
+      "text": "3- It is really important to identify the Workstation from which this activity occurred. What is the IP Address of the workstation?"
+    },
+    {
+      "level": 3,
+      "text": "172.17.79.129"
+    },
+    {
+      "level": 3,
+      "text": "4- Now that we have identified the workstation, a triage including PowerShell logs and Prefetch files are provided to you for some deeper insights so we can understand how this activity occurred on the endpoint. What is the name of the file used to Enumerate Active directory objects and possibly find Kerberoastable accounts in the network?"
+    },
+    {
+      "level": 3,
+      "text": "powerview.ps1"
+    },
+    {
+      "level": 3,
+      "text": "4- When was this script executed?"
+    },
+    {
+      "level": 3,
+      "text": "2024-05-21 03:16:32"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the full path of the tool used to perform the actual kerberoasting attack?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\Alonzo.spire\\Downloads\\Rubeus.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- When was the tool executed to dump credentials?"
+    },
+    {
+      "level": 3,
+      "text": "2024-05-21 03:18:08"
+    }
+  ],
+  "overview": "Alonzo Spotted Weird files on his computer and informed the newly assembled SOC Team. Assessing the situation it is believed a Kerberoasting attack may have occurred in the network. It is your job to confirm the findings by analyzing the provided evidence. You are provided with: 1- Security Logs from the Domain Controller 2- PowerShell-Operational Logs from ",
+  "study": {
+    "overview": "Alonzo Spotted Weird files on his computer and informed the newly assembled SOC Team. Assessing the situation it is believed a Kerberoasting attack may have occurred in the network. It is your job to confirm the findings by analyzing the provided evidence. You are provided with: 1- Security Logs from the Domain Controller 2- PowerShell-Operational Logs from ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Campfire-1 (HTB)",
+      "Scenario",
+      "1- Analyzing Domain Controller Security Logs, can you confirm the date & time when the kerberoasting activity occurred?",
+      "2024-05-21 03:18:09",
+      "2- What is the Service Name that was targeted?",
+      "MSSQLService",
+      "3- It is really important to identify the Workstation from which this activity occurred. What is the IP Address of the workstation?",
+      "172.17.79.129",
+      "4- Now that we have identified the workstation, a triage including PowerShell logs and Prefetch files are provided to you for some deeper insights so we can understand how this activity occurred on the endpoint. What is the name of the file used to Enumerate Active directory objects and possibly find Kerberoastable accounts in the network?",
+      "powerview.ps1",
+      "4- When was this script executed?",
+      "2024-05-21 03:16:32"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "PECmd.exe -d prefetch --csv . --csvf prefetch.csv"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

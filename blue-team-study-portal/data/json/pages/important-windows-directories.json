@@ -1,0 +1,211 @@
+{
+  "id": "important windows directories",
+  "title": "Important Windows Directories",
+  "slug": "important-windows-directories",
+  "relPath": "Important Windows Directories.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-os-command-line",
+  "curriculumSectionTitle": "Operating System & Command Line Basics",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Phishing",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "important windows directories",
+      "title": "Important Windows Directories",
+      "slug": "important-windows-directories"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Important Windows Directories"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\config\\SAM"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\repair\\SAM"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\config\\SECURITY"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\config\\SYSTEM"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\config\\SOFTWARE"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\config\\DEFAULT"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\winevt\\Logs\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\Prefetch\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\AppCompat\\Programs\\Amcache.hve"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\Tasks\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users{username}\\NTUSER.DAT"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users{username}\\AppData\\Roaming\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users{username}\\AppData\\Local\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users{username}\\AppData\\LocalLow\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users{username}\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
+    },
+    {
+      "level": 3,
+      "text": "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Startup"
+    },
+    {
+      "level": 3,
+      "text": "C:\\ProgramData\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Program Files\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Program Files (x86)\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\drivers\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\drivers\\etc\\hosts"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\Temp\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users{username}\\AppData\\Local\\Temp\\ (%TEMP%)"
+    },
+    {
+      "level": 3,
+      "text": "C:$Recycle.Bin\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\ProgramData\\Microsoft\\Windows\\VMLogs\\ / C:\\Windows\\System32\\LogFiles\\WMI"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users{username}\\Downloads\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users{username}\\Recent\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users{username}\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\winevt\\Logs\\Security.evtx"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\Sysmon\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\System Volume Information"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\LogFiles\\Firewall\\"
+    },
+    {
+      "level": 3,
+      "text": "C:\\pagefile.sys"
+    },
+    {
+      "level": 3,
+      "text": "C:\\hiberfil.sys"
+    }
+  ],
+  "overview": "The Security Accounts Manager (SAM) hive stores local user accounts and password hashes.",
+  "study": {
+    "overview": "The Security Accounts Manager (SAM) hive stores local user accounts and password hashes.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Important Windows Directories",
+      "C:\\Windows\\System32\\config\\SAM",
+      "C:\\Windows\\repair\\SAM",
+      "C:\\Windows\\System32\\config\\SECURITY",
+      "C:\\Windows\\System32\\config\\SYSTEM",
+      "C:\\Windows\\System32\\config\\SOFTWARE",
+      "C:\\Windows\\System32\\config\\DEFAULT",
+      "C:\\Windows\\System32\\winevt\\Logs\\",
+      "C:\\Windows\\Prefetch\\",
+      "C:\\Windows\\AppCompat\\Programs\\Amcache.hve",
+      "C:\\Windows\\System32\\Tasks\\",
+      "C:\\Users{username}\\NTUSER.DAT"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

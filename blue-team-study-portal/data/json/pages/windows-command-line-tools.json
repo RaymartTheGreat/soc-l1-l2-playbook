@@ -1,0 +1,116 @@
+{
+  "id": "windows command-line & tools",
+  "title": "Windows command-line & tools",
+  "slug": "windows-command-line-tools",
+  "relPath": "Windows command-line & tools.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-os-command-line",
+  "curriculumSectionTitle": "Operating System & Command Line Basics",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Web",
+    "Memory",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "windows command-line & tools",
+      "title": "Windows command-line & tools",
+      "slug": "windows-command-line-tools"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows command-line & tools"
+    },
+    {
+      "level": 2,
+      "text": "System & Processes"
+    },
+    {
+      "level": 2,
+      "text": "Users, Groups & Accounts"
+    },
+    {
+      "level": 2,
+      "text": "Network & Name Resolution"
+    },
+    {
+      "level": 2,
+      "text": "Services, Scheduling & Persistence"
+    },
+    {
+      "level": 2,
+      "text": "File System & Disk"
+    },
+    {
+      "level": 2,
+      "text": "Event Logs & System Info"
+    },
+    {
+      "level": 2,
+      "text": "PowerShell (core cmdlets & commonly abused)"
+    },
+    {
+      "level": 2,
+      "text": "Backup, Shadow Copies & Recovery"
+    },
+    {
+      "level": 2,
+      "text": "Certificates, Downloads & Transfer"
+    },
+    {
+      "level": 2,
+      "text": "Audit, Policy & Security Configuration"
+    },
+    {
+      "level": 2,
+      "text": "Misc & Helpers"
+    },
+    {
+      "level": 2,
+      "text": "Sysinternals (recommended tools)"
+    }
+  ],
+  "overview": "1. whoami /all — show current user, groups and privileges. 2. tasklist / tasklist /v /svc — list running processes, PIDs, services hosted, and verbose info. 3. taskkill /IM <name /PID <pid /F — terminate a process by name or PID. 4. wmic process get ProcessId,ParentProcessId,ExecutablePath,CommandLine — enumerate processes with paths and command lines. 5. Ge",
+  "study": {
+    "overview": "1. whoami /all — show current user, groups and privileges. 2. tasklist / tasklist /v /svc — list running processes, PIDs, services hosted, and verbose info. 3. taskkill /IM <name /PID <pid /F — terminate a process by name or PID. 4. wmic process get ProcessId,ParentProcessId,ExecutablePath,CommandLine — enumerate processes with paths and command lines. 5. Ge",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows command-line & tools",
+      "System & Processes",
+      "Users, Groups & Accounts",
+      "Network & Name Resolution",
+      "Services, Scheduling & Persistence",
+      "File System & Disk",
+      "Event Logs & System Info",
+      "PowerShell (core cmdlets & commonly abused)",
+      "Backup, Shadow Copies & Recovery",
+      "Certificates, Downloads & Transfer",
+      "Audit, Policy & Security Configuration",
+      "Misc & Helpers"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

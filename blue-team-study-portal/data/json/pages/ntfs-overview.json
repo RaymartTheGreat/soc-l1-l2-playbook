@@ -1,0 +1,68 @@
+{
+  "id": "windows forensics/ntfs analysis/ntfs overview",
+  "title": "NTFS Overview",
+  "slug": "ntfs-overview",
+  "relPath": "Windows Forensics/NTFS Analysis/NTFS Overview.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Linux",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/ntfs analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/ntfs analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/ntfs analysis",
+      "title": "NTFS Analysis",
+      "slug": "ntfs-analysis"
+    },
+    {
+      "id": "windows forensics/ntfs analysis/ntfs overview",
+      "title": "NTFS Overview",
+      "slug": "ntfs-overview"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "NTFS Overview"
+    },
+    {
+      "level": 2,
+      "text": "NTFS Comparison with Other File Systems"
+    }
+  ],
+  "overview": "As already covered, NTFS, or New Technology File System, is a file system developed by Microsoft. It's been the default file system for Windows operating systems since Windows NT 3.1, way back in 1993. A file system is the way our computer organizes and stores files on a drive.",
+  "study": {
+    "overview": "As already covered, NTFS, or New Technology File System, is a file system developed by Microsoft. It's been the default file system for Windows operating systems since Windows NT 3.1, way back in 1993. A file system is the way our computer organizes and stores files on a drive.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "NTFS Overview",
+      "NTFS Comparison with Other File Systems"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "id": "elk (elastic stack)",
+  "title": "ELK (Elastic Stack)",
+  "slug": "elk-elastic-stack",
+  "relPath": "ELK (Elastic Stack).md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-tool-familiarity",
+  "curriculumSectionTitle": "Tool Familiarity",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Web",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "elk (elastic stack)",
+      "title": "ELK (Elastic Stack)",
+      "slug": "elk-elastic-stack"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "ELK (Elastic Stack)"
+    },
+    {
+      "level": 1,
+      "text": "Architecture"
+    },
+    {
+      "level": 1,
+      "text": "Components"
+    },
+    {
+      "level": 2,
+      "text": "Elasticsearch"
+    },
+    {
+      "level": 2,
+      "text": "Logstash"
+    },
+    {
+      "level": 2,
+      "text": "Beats (Filebeat / Winlogbeat / Packetbeat / Metricbeat)"
+    },
+    {
+      "level": 2,
+      "text": "Kibana"
+    },
+    {
+      "level": 3,
+      "text": "How they work together :"
+    },
+    {
+      "level": 1,
+      "text": "Kibana // Discover Tab"
+    },
+    {
+      "level": 2,
+      "text": "Time Filter"
+    },
+    {
+      "level": 2,
+      "text": "Timeline"
+    },
+    {
+      "level": 2,
+      "text": "Index Pattern"
+    },
+    {
+      "level": 2,
+      "text": "Adding a Filter"
+    },
+    {
+      "level": 2,
+      "text": "Creating a table"
+    },
+    {
+      "level": 1,
+      "text": "Key fields"
+    },
+    {
+      "level": 1,
+      "text": "KQL"
+    },
+    {
+      "level": 1,
+      "text": "Dashboards & Visualizations"
+    },
+    {
+      "level": 2,
+      "text": "Dashboard goals"
+    },
+    {
+      "level": 2,
+      "text": "Example visualizations"
+    },
+    {
+      "level": 2,
+      "text": "Create Visualization"
+    },
+    {
+      "level": 2,
+      "text": "Correlation Option"
+    },
+    {
+      "level": 2,
+      "text": "Failed Connection Attempts"
+    },
+    {
+      "level": 1,
+      "text": "Kibana Alerts (Rules) // examples & playbook snippets"
+    },
+    {
+      "level": 3,
+      "text": "Alert: Encoded PowerShell (High)"
+    },
+    {
+      "level": 3,
+      "text": "Alert: Office spawning a shell"
+    },
+    {
+      "level": 3,
+      "text": "Alert: New Service Creation"
+    },
+    {
+      "level": 3,
+      "text": "Alert: Excessive failed logons"
+    },
+    {
+      "level": 1,
+      "text": "Installation // concise steps"
+    },
+    {
+      "level": 2,
+      "text": "1) Install & configure Elasticsearch (Ubuntu)"
+    },
+    {
+      "level": 2,
+      "text": "2) Install & configure Kibana"
+    },
+    {
+      "level": 2,
+      "text": "3) Install Winlogbeat (Windows host)"
+    }
+  ],
+  "overview": "Elastic Stack (ELK) is a lightweight SIEM foundation Beats collect, Logstash parses, Elasticsearch indexes, Kibana hunts & dashboards.",
+  "study": {
+    "overview": "Elastic Stack (ELK) is a lightweight SIEM foundation Beats collect, Logstash parses, Elasticsearch indexes, Kibana hunts & dashboards.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "ELK (Elastic Stack)",
+      "Architecture",
+      "Components",
+      "Elasticsearch",
+      "Logstash",
+      "Beats (Filebeat / Winlogbeat / Packetbeat / Metricbeat)",
+      "Kibana",
+      "How they work together :",
+      "Kibana // Discover Tab",
+      "Time Filter",
+      "Timeline",
+      "Index Pattern"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "process.name : \"powershell.exe\" and process.command_line : \"*-EncodedCommand*\""
+      },
+      {
+        "language": "text",
+        "code": "process.name : \"powershell.exe\" and (process.command_line : \"*Invoke-WebRequest*\" OR process.command_line : \"*Invoke-RestMethod*\" OR process.command_line : \"*WebClient*\")"
+      },
+      {
+        "language": "text",
+        "code": "process.parent.name : (\"winword.exe\" or \"excel.exe\" or \"outlook.exe\") and process.name : (\"cmd.exe\" or \"powershell.exe\")"
+      },
+      {
+        "language": "text",
+        "code": "event.category : \"registry\" and (registry.path : \"*\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Run*\" OR registry.path : \"*\\\\RunOnce*\")"
+      },
+      {
+        "language": "text",
+        "code": "agent.name : \"Omar-Amir-01\" and @timestamp >= \"2099-05-11T18:45:00\" and @timestamp <= \"2099-05-11T19:01:00\""
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "SIEM",
+      "PowerShell"
+    ],
+    "tips": [
+      "Note: some Splunk fields may have different names depending on ingestion. ."
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "id": "digital forensics/what is digital forensics",
+  "title": "What is Digital Forensics",
+  "slug": "what-is-digital-forensics",
+  "relPath": "Digital Forensics/What is Digital Forensics.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Network",
+    "DFIR",
+    "Memory",
+    "Incident Response"
+  ],
+  "mitre": [],
+  "parentId": "digital forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "digital forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "digital forensics",
+      "title": "Digital Forensics",
+      "slug": "digital-forensics"
+    },
+    {
+      "id": "digital forensics/what is digital forensics",
+      "title": "What is Digital Forensics",
+      "slug": "what-is-digital-forensics"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "What is Digital Forensics"
+    },
+    {
+      "level": 2,
+      "text": "Purpose and Use Cases"
+    },
+    {
+      "level": 2,
+      "text": "The Digital Forensics Process"
+    },
+    {
+      "level": 3,
+      "text": "1. Identification"
+    },
+    {
+      "level": 3,
+      "text": "2. Preservation"
+    },
+    {
+      "level": 3,
+      "text": "3. Collection"
+    },
+    {
+      "level": 3,
+      "text": "4. Analysis"
+    },
+    {
+      "level": 3,
+      "text": "5. Reporting"
+    },
+    {
+      "level": 2,
+      "text": "Categories of Digital Forensics"
+    },
+    {
+      "level": 2,
+      "text": "Evidence Acquisition Best Practices"
+    },
+    {
+      "level": 3,
+      "text": "Proper Authorization"
+    },
+    {
+      "level": 3,
+      "text": "Chain of Custody"
+    },
+    {
+      "level": 3,
+      "text": "Write Blockers"
+    }
+  ],
+  "overview": "Digital forensics is the disciplined process of identifying, preserving, analyzing, and presenting digital evidence in a manner admissible in legal and investigative contexts. It bridges law enforcement and cybersecurity, often forming part of a broader investigative response known as DFIR (Digital Forensics and Incident Response).",
+  "study": {
+    "overview": "Digital forensics is the disciplined process of identifying, preserving, analyzing, and presenting digital evidence in a manner admissible in legal and investigative contexts. It bridges law enforcement and cybersecurity, often forming part of a broader investigative response known as DFIR (Digital Forensics and Incident Response).",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "What is Digital Forensics",
+      "Purpose and Use Cases",
+      "The Digital Forensics Process",
+      "1. Identification",
+      "2. Preservation",
+      "3. Collection",
+      "4. Analysis",
+      "5. Reporting",
+      "Categories of Digital Forensics",
+      "Evidence Acquisition Best Practices",
+      "Proper Authorization",
+      "Chain of Custody"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

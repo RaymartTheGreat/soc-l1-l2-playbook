@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>DREAD Framework | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-modelling.html">Threat Modelling</a><span>/</span><span>DREAD Framework</span></div>
+      <h1>DREAD Framework</h1>
+      <p>The DREAD framework is a risk assessment model developed by Microsoft to evaluate and prioritise security threats and vulnerabilities. It is an acronym that stands for:</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Web</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Modelling</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-modelling.html"><span>Threat Modelling</span><em>L2</em></a>
+      <b>5</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="mitre-attck-navigator.html"><span>MITRE ATT&amp;CK Navigator</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="dread-framework.html"><span>DREAD Framework</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="stride-framework.html"><span>STRIDE Framework</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pasta-framework.html"><span>PASTA Framework</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="conclusion.html"><span>Conclusion</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>The DREAD framework is a risk assessment model developed by Microsoft to evaluate and prioritise security threats and vulnerabilities. It is an acronym that stands for:</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>DREAD Framework</li><li>What is the DREAD Framework?</li><li>DREAD Framework Guidelines</li><li>Qualitative Analysis Using DREAD Framework</li><li>Unauthenticated Remote Code Execution (Score: 8)</li><li>Insecure Direct Object References (IDOR) in User Profiles (Score: 6.5)</li><li>Server Misconfiguration Leading to Information Disclosure (Score: 5)</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="dread-framework">DREAD Framework</h2>
+<h2 id="what-is-the-dread-framework">What is the DREAD Framework?</h2>
+<p>The DREAD framework is a risk assessment model developed by Microsoft to evaluate and prioritise security threats and vulnerabilities. It is an acronym that stands for:</p>
+<div class="table-wrap"><table><thead><tr><th><strong>DREAD</strong></th><th><strong>Definition</strong></th></tr></thead><tbody><tr><td><strong>Damage</strong></td><td>The potential harm that could result from the successful exploitation of a vulnerability. This includes data loss, system downtime, or reputational damage.</td></tr><tr><td><strong>Reproducibility</strong></td><td>The ease with which an attacker can successfully recreate the exploitation of a vulnerability. A higher reproducibility score suggests that the vulnerability is straightforward to abuse, posing a greater risk.</td></tr><tr><td><strong>Exploitability</strong></td><td>The difficulty level involved in exploiting the vulnerability considering factors such as technical skills required, availability of tools or exploits, and the amount of time it would take to exploit the vulnerability successfully.</td></tr><tr><td><strong>Affected Users</strong></td><td>The number or portion of users impacted once the vulnerability has been exploited.</td></tr><tr><td><strong>Discoverability</strong></td><td>The ease with which an attacker can find and identify the vulnerability considering whether it is publicly known or how difficult it is to discover based on the exposure of the assets (publicly reachable or in a regulated environment).</td></tr></tbody></table></div>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/8f27a0b481ec730e325da0f04d2b7715.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/8f27a0b481ec730e325da0f04d2b7715.png</a></p>
+<p>The categories are commonly phrased with the following questions to ingest the definitions provided above quickly:</p>
+<ul>
+<li><strong>Damage</strong> - How bad would an attack be?</li>
+<li><strong>Reproducibility</strong> - How easy is it to reproduce the attack?</li>
+<li><strong>Exploitability</strong> - How much work is it to launch the attack?</li>
+<li><strong>Affected Users</strong> - How many people will be impacted?</li>
+<li><strong>Discoverability</strong> - How easy is it to discover the vulnerability?</li>
+</ul>
+<p>Using the questions above assists in understanding each category and applying it in a risk-assessment context.</p>
+<h2 id="dread-framework-guidelines">DREAD Framework Guidelines</h2>
+<p>As mentioned above, the DREAD framework is an opinion-based model that heavily relies on an analyst's interpretation and assessment. However, the reliability of this framework can still be improved by following some guidelines:</p>
+<ol>
+<li>Establish a standardized set of guidelines and definitions for each DREAD category that provides a consistent understanding of how to rate vulnerabilities. This can be supported by providing examples and scenarios to illustrate how scores should be assigned under various circumstances.</li>
+<li>Encourage collaboration and discussion among multiple teams. Constructive feedback from different members aids in justifying the assigned scores, which can lead to a more accurate assessment.</li>
+<li>Use the DREAD framework with other risk-assessment methodologies and regularly review and update the chosen methods and techniques to ensure they remain relevant and aligned with the organization's needs.</li>
+</ol>
+<p>By ensuring that these guidelines are strictly followed, organizations can reduce the subjective nature of the framework and improve the accuracy and reliability of their risk assessments.</p>
+<h2 id="qualitative-analysis-using-dread-framework">Qualitative Analysis Using DREAD Framework</h2>
+<p>The DREAD Framework is typically used for Qualitative Risk Analysis, rating each category from one to ten based on a subjective assessment and interpretation of the questions above. Moreover, the average score of all criteria will calculate the overall DREAD risk rating.</p>
+<p>To understand how the scoring works, let's put the concepts into practice by using a good scenario.</p>
+<p>A software company has developed a new website and needs to assess the risk associated with various security threats. Your team has created a guideline for scoring each component of the DREAD framework, as shown below:</p>
+<div class="table-wrap"><table><thead><tr><th>DREAD Score</th><th>2.5</th><th>5</th><th>7.5</th><th>10</th></tr></thead><tbody><tr><td>Damage</td><td>Minimal infrastructure information disclosure</td><td>Minimal information disclosure related to client data</td><td>Limited PII leak</td><td>Complete data leak</td></tr><tr><td>Reproducibility</td><td>Multiple attack vectors requiring technical expertise</td><td>Minor customization for public exploits needed</td><td>Little prerequisite technical skills needed to run the exploit</td><td>Users with public exploits can successfully reproduce the exploit</td></tr><tr><td>Exploitability</td><td>Almost no public exploits are available and need customization of scripts</td><td>Complicated exploit scripts available in the wild</td><td>Minimal technical skills are required to execute public exploits</td><td>Reliable Metasploit module exists</td></tr><tr><td>Affected Users</td><td>Almost none to a small subset</td><td>Around 10% of users</td><td>More than half of the user base</td><td>All users</td></tr><tr><td>Discoverability</td><td>The significant effort needed to discover the vulnerability chains for the exploit to work</td><td>Requires a manual way of verifying the vulnerability</td><td>Public scanning scripts not embedded in scanning tools exist</td><td>Almost all known scanning tools can find the vulnerability</td></tr></tbody></table></div>
+<p>Given this guideline, we can assess some known vulnerabilities in the application. Below is an example of scoring provided for each vulnerability.</p>
+<h4 id="unauthenticated-remote-code-execution-score-8"><strong>Unauthenticated Remote Code Execution (Score: 8)</strong></h4>
+<ul>
+<li>Damage (D): <strong>10</strong></li>
+<li>Reproducibility (R): <strong>7.5</strong></li>
+<li>Exploitability (E): <strong>10</strong></li>
+<li>Affected Users (A): <strong>10</strong></li>
+<li>Discoverability (D): <strong>2.5</strong></li>
+</ul>
+<h4 id="insecure-direct-object-references-idor-in-user-profiles-score-6.5"><strong>Insecure Direct Object References (IDOR) in User Profiles (Score: 6.5)</strong></h4>
+<ul>
+<li>Damage (D): <strong>2.5</strong></li>
+<li>Reproducibility (R): <strong>7.5</strong></li>
+<li>Exploitability (E): <strong>7.5</strong></li>
+<li>Affected Users (A): <strong>10</strong></li>
+<li>Discoverability (D): <strong>5</strong></li>
+</ul>
+<h4 id="server-misconfiguration-leading-to-information-disclosure-score-5"><strong>Server Misconfiguration Leading to Information Disclosure (Score: 5)</strong></h4>
+<ul>
+<li>Damage (D): <strong>0</strong></li>
+<li>Reproducibility (R): <strong>10</strong></li>
+<li>Exploitability (E): <strong>10</strong></li>
+<li>Affected Users (A): <strong>0</strong></li>
+<li>Discoverability (D): <strong>5</strong></li>
+</ul></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#dread-framework">DREAD Framework</a><a href="#what-is-the-dread-framework">What is the DREAD Framework?</a><a href="#dread-framework-guidelines">DREAD Framework Guidelines</a><a href="#qualitative-analysis-using-dread-framework">Qualitative Analysis Using DREAD Framework</a><a href="#unauthenticated-remote-code-execution-score-8">Unauthenticated Remote Code Execution (Score: 8)</a><a href="#insecure-direct-object-references-idor-in-user-profiles-score-6.5">Insecure Direct Object References (IDOR) in User Profiles (Score: 6.5)</a><a href="#server-misconfiguration-leading-to-information-disclosure-score-5">Server Misconfiguration Leading to Information Disclosure (Score: 5)</a></details>
+    </div>
+    
+    <footer class="pager"><a href="mitre-attck-navigator.html">← MITRE ATT&amp;CK Navigator</a><a href="stride-framework.html">STRIDE Framework →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

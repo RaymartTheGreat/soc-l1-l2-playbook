@@ -1,0 +1,187 @@
+{
+  "id": "network/protocols/kerberos authentication",
+  "title": "Kerberos authentication",
+  "slug": "kerberos-authentication-0276e639",
+  "relPath": "Network/Protocols/Kerberos authentication.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Windows",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Web",
+    "Memory",
+    "Detection",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "network/protocols",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/protocols"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/protocols",
+      "title": "Protocols",
+      "slug": "protocols"
+    },
+    {
+      "id": "network/protocols/kerberos authentication",
+      "title": "Kerberos authentication",
+      "slug": "kerberos-authentication-0276e639"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Kerberos authentication"
+    },
+    {
+      "level": 1,
+      "text": "Key Components"
+    },
+    {
+      "level": 3,
+      "text": "Principal Client"
+    },
+    {
+      "level": 3,
+      "text": "Principal Service"
+    },
+    {
+      "level": 3,
+      "text": "Client IP Address"
+    },
+    {
+      "level": 3,
+      "text": "Timestamp"
+    },
+    {
+      "level": 3,
+      "text": "Ticket Lifetime"
+    },
+    {
+      "level": 3,
+      "text": "Session Key (SK Service)"
+    },
+    {
+      "level": 3,
+      "text": "Why Ticket Lifetime Matters"
+    },
+    {
+      "level": 2,
+      "text": "KRBTGT Service Account"
+    },
+    {
+      "level": 3,
+      "text": "Golden Tickets"
+    },
+    {
+      "level": 1,
+      "text": "Step-by-Step Authentication Process"
+    },
+    {
+      "level": 3,
+      "text": "1- Client Authentication Request (ASREQ)"
+    },
+    {
+      "level": 3,
+      "text": "2- KDC Verifies Credentials and Issues TGT (KRBASREP)"
+    },
+    {
+      "level": 3,
+      "text": "3- Client Decrypts the AS Response"
+    },
+    {
+      "level": 3,
+      "text": "4- Service Ticket Request (TGSREQ)"
+    },
+    {
+      "level": 3,
+      "text": "5- KDC Issues the Service Ticket (TGSREP)"
+    },
+    {
+      "level": 3,
+      "text": "6- Client Presents the Service Ticket(APREQ)"
+    },
+    {
+      "level": 3,
+      "text": "7- Service Validates the Ticket and Establishes a Session"
+    },
+    {
+      "level": 1,
+      "text": "Diagram of the Kerberos Authentication Flow"
+    },
+    {
+      "level": 2,
+      "text": "Summary"
+    },
+    {
+      "level": 1,
+      "text": "How Attackers Can Exploit Kerberos"
+    },
+    {
+      "level": 3,
+      "text": "1- Brute Force/Password Guessing Attacks"
+    },
+    {
+      "level": 3,
+      "text": "2- Pass-the-Ticket Attacks"
+    },
+    {
+      "level": 3,
+      "text": "3- Kerberoasting"
+    },
+    {
+      "level": 3,
+      "text": "4- Golden Ticket Attacks"
+    },
+    {
+      "level": 3,
+      "text": "5- Silver Ticket Attacks"
+    },
+    {
+      "level": 3,
+      "text": "6- Replay Attacks"
+    }
+  ],
+  "overview": "Kerberos is a secure authentication protocol used in Windows environments. It uses a ticket system and strong encryption to verify identities, even on open networks. In an Active Directory setup, the Domain Controller acts as the Key Distribution Center (KDC) with two main parts: the Authentication Service (AS) and the Ticket Granting Service (TGS), which is",
+  "study": {
+    "overview": "Kerberos is a secure authentication protocol used in Windows environments. It uses a ticket system and strong encryption to verify identities, even on open networks. In an Active Directory setup, the Domain Controller acts as the Key Distribution Center (KDC) with two main parts: the Authentication Service (AS) and the Ticket Granting Service (TGS), which is",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Kerberos authentication",
+      "Key Components",
+      "Principal Client",
+      "Principal Service",
+      "Client IP Address",
+      "Timestamp",
+      "Ticket Lifetime",
+      "Session Key (SK Service)",
+      "Why Ticket Lifetime Matters",
+      "KRBTGT Service Account",
+      "Golden Tickets",
+      "Step-by-Step Authentication Process"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

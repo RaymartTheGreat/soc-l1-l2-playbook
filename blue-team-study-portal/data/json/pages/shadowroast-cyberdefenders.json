@@ -1,0 +1,226 @@
+{
+  "id": "threat hunting labs (siem)/shadowroast (cyberdefenders)",
+  "title": "ShadowRoast (CyberDefenders)",
+  "slug": "shadowroast-cyberdefenders",
+  "relPath": "Threat hunting Labs (SIEM)/ShadowRoast (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Detection",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/shadowroast (cyberdefenders)",
+      "title": "ShadowRoast (CyberDefenders)",
+      "slug": "shadowroast-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "ShadowRoast (CyberDefenders)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 2,
+      "text": "Initial Access"
+    },
+    {
+      "level": 3,
+      "text": "Malicious File Execution"
+    },
+    {
+      "level": 3,
+      "text": "Detection Method"
+    },
+    {
+      "level": 2,
+      "text": "Credential Access"
+    },
+    {
+      "level": 3,
+      "text": "AS-REP Roasting Attack"
+    },
+    {
+      "level": 3,
+      "text": "Detection Method"
+    },
+    {
+      "level": 2,
+      "text": "Persistence"
+    },
+    {
+      "level": 3,
+      "text": "Registry Run Key Modification"
+    },
+    {
+      "level": 3,
+      "text": "Detection Method"
+    },
+    {
+      "level": 2,
+      "text": "Privilege Escalation"
+    },
+    {
+      "level": 3,
+      "text": "Credential Dumping with Mimikatz"
+    },
+    {
+      "level": 3,
+      "text": "Detection Method"
+    },
+    {
+      "level": 2,
+      "text": "Lateral Movement"
+    },
+    {
+      "level": 3,
+      "text": "Enabling Remote Desktop Protocol (RDP)"
+    },
+    {
+      "level": 3,
+      "text": "Detection Method"
+    },
+    {
+      "level": 2,
+      "text": "Active Directory Manipulation"
+    },
+    {
+      "level": 3,
+      "text": "DCShadow Attack"
+    },
+    {
+      "level": 2,
+      "text": "Data Exfiltration"
+    },
+    {
+      "level": 3,
+      "text": "Compressed File Creation (Potential Data Theft)"
+    },
+    {
+      "level": 3,
+      "text": "Detection Method"
+    },
+    {
+      "level": 2,
+      "text": "Summary of Key Detection Mechanisms"
+    },
+    {
+      "level": 1,
+      "text": "Techniques Used"
+    },
+    {
+      "level": 2,
+      "text": "1- AS-REP Roasting"
+    },
+    {
+      "level": 3,
+      "text": "Overview"
+    },
+    {
+      "level": 3,
+      "text": "How It Works"
+    },
+    {
+      "level": 3,
+      "text": "Detection Methods"
+    },
+    {
+      "level": 3,
+      "text": "How the Attacker Used AS-REP Roasting in ShadowRoast Lab"
+    },
+    {
+      "level": 2,
+      "text": "2- DCShadow Attack"
+    },
+    {
+      "level": 3,
+      "text": "Overview"
+    },
+    {
+      "level": 3,
+      "text": "How It Works"
+    },
+    {
+      "level": 3,
+      "text": "Detection Methods"
+    },
+    {
+      "level": 2,
+      "text": "How the Attacker Used DCShadow"
+    }
+  ],
+  "overview": "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.",
+  "study": {
+    "overview": "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "ShadowRoast (CyberDefenders)",
+      "Scenario",
+      "Initial Access",
+      "Malicious File Execution",
+      "Detection Method",
+      "Credential Access",
+      "AS-REP Roasting Attack",
+      "Detection Method",
+      "Persistence",
+      "Registry Run Key Modification",
+      "Detection Method",
+      "Privilege Escalation"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "jsx",
+        "code": "index=\"shadowroast\" AND event.code=1 AND winlog.computer_name=Office-PC.CORPNET.local AND (winlog.event_data.Image=*cmd* OR winlog.event_data.Image=*powershell*)"
+      },
+      {
+        "language": "jsx",
+        "code": " index=\"shadowroast\" AND event.code=1 AND winlog.computer_name=Office-PC.CORPNET.local AND (winlog.event_data.ProcessId=4780 OR winlog.event_data.ParentProcessId=4780)"
+      },
+      {
+        "language": "jsx",
+        "code": "index=\"shadowroast\" AND event.code=4929"
+      }
+    ],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "PowerShell"
+    ],
+    "tips": [
+      "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future."
+    ]
+  }
+}

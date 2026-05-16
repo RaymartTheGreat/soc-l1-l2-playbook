@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>LLMNR NBT-NS Poisoning | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="detecting-ad-attacks.html">Detecting AD Attacks</a><span>/</span><span>LLMNR NBT-NS Poisoning</span></div>
+      <h1>LLMNR NBT-NS Poisoning</h1>
+      <p>LLMNR (Link-Local Multicast Name Resolution) and NBT-NS (NetBIOS Name Service) are fallback name-resolution protocols used by Windows when DNS fails. Poisoning those requests means an attacker answers the broadcasted name lookup, impersonates the requested host, and causes the victim to attempt authentication—leaking NTLM/Negotiate authentication data (chall</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">DFIR</span><span class="tag">Detection</span><span class="tag">Lateral Movement</span><span class="tag mitre">T1557.001</span><span class="tag mitre">T1557</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Detecting AD Attacks</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>L2</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="dcsync.html"><span>DCSync</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="kerberoasting.html"><span>Kerberoasting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pass-the-hash-pth.html"><span>Pass-the-Hash (PtH)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pass-the-ticket-ptt.html"><span>Pass-the-Ticket (PtT)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="overpass-the-hash.html"><span>Overpass-the-Hash</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="golden-ticket.html"><span>Golden Ticket</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="silver-ticket.html"><span>Silver Ticket</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="dcshadow.html"><span>DCSHADOW</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="as-reproasting.html"><span>AS-REPRoasting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="skeleton-key.html"><span>Skeleton Key</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntlm-relay-attacks.html"><span>NTLM Relay Attacks</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="llmnr-nbt-ns-poisoning.html"><span>LLMNR NBT-NS Poisoning</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="credential-dumping-general.html"><span>Credential Dumping (General)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="attacker-targets-in-active-directory-environments.html"><span>Attacker Targets in Active Directory Environments</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="putting-it-all-together-ad-attack-scenario.html"><span>Putting It All Together AD Attack Scenario</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>LLMNR (Link-Local Multicast Name Resolution) and NBT-NS (NetBIOS Name Service) are fallback name-resolution protocols used by Windows when DNS fails. Poisoning those requests means an attacker answers the broadcasted name lookup, impersonates the requested host, and causes the victim to attempt authentication—leaking NTLM/Negotiate authentication data (chall</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>LLMNR / NBT-NS Poisoning</li><li>1- Quick facts</li><li>2- How the attack flows</li><li>3- What you see in network captures (Wireshark / PCAP)</li><li>4- Detection &amp; hunting</li><li>5- Impact</li><li>6- Mitigation &amp; hardening</li><li>7- Summary</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>Wireshark</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="llmnr-nbt-ns-poisoning">LLMNR / NBT-NS Poisoning</h2>
+<p><strong>LLMNR (Link-Local Multicast Name Resolution) and NBT-NS (NetBIOS Name Service)</strong> are fallback name-resolution protocols used by Windows when DNS fails. <strong>Poisoning</strong> those requests means an attacker answers the broadcasted name lookup, impersonates the requested host, and causes the victim to attempt authentication—leaking NTLM/Negotiate authentication data (challenge/response) that can be captured for cracking or relaying.</p>
+<p><button class="image-button" data-src="../assets/images/detecting-ad-attacksllmnr-nbt-ns-poisoning-image-d56f521f.png" data-alt="image.png"><img src="../assets/images/detecting-ad-attacksllmnr-nbt-ns-poisoning-image-d56f521f.png" alt="image.png" loading="lazy"></button></p>
+<p><a class="note-link" href="https://attack.mitre.org/techniques/T1557/001/"><strong>MITRE ATT&amp;amp;CK ID: T1557.001</strong></a></p>
+<hr>
+<h3 id="1-quick-facts">1- Quick facts</h3>
+<ul>
+<li><strong>Protocols / ports:</strong> LLMNR = UDP 5355, NBT-NS = UDP 137.</li>
+<li><strong>IPv4 multicast (LLMNR analogue):</strong> <code>224.0.0.252</code> — <strong>IPv6 LLMNR:</strong> <code>ff02::1:3</code>.</li>
+<li><strong>Common tools (observed in labs):</strong> Responder / Inveigh (listener/catcher), ntlmrelayx (relay), responder-style sniffers.</li>
+<li><strong>Data leaked:</strong> Username, domain, NTLMv2 challenge/response (NTProofStr + NTLMv2 response). No plaintext password is sent.</li>
+</ul>
+<hr>
+<h3 id="2-how-the-attack-flows">2- How the attack flows</h3>
+<ol>
+<li>User tries <code>\\DCC01\share</code> (typo or DNS failure).</li>
+<li>Windows issues LLMNR/NBT-NS query: “Who is <code>DCC01</code>?” (broadcast).</li>
+<li>Attacker replies: “I am <code>DCC01</code> — here’s my IP.”</li>
+<li>Victim connects to attacker and performs Windows authentication (SMB/HTTP/LDAP).</li>
+<li>Attacker captures NTLM challenge/response packets (NTProofStr + blob).</li>
+<li>Attacker either:</li>
+<ul>
+<li>cracks the NTLMv2 hash offline, <strong>or</strong></li>
+<li>relays the auth to another service (SMB relay) to impersonate the user.</li>
+</ul>
+</ol>
+<hr>
+<h3 id="3-what-you-see-in-network-captures-wireshark-pcap">3- What you see in network captures (Wireshark / PCAP)</h3>
+<ul>
+<li><strong>LLMNR queries:</strong> <code>udp.port == 5355</code> or display name <code>llmnr</code>.</li>
+<li><strong>NBT-NS queries:</strong> <code>udp.port == 137</code> or <code>nbns</code>.</li>
+<li><strong>NTLM/SMB handshake:</strong> <code>smb2 &amp;&amp; ntlmssp</code> — three packets: <code>NEGOTIATE</code> → <code>CHALLENGE</code> → <code>AUTH</code>.</li>
+<li><strong>Fields to extract for cracking</strong> (for forensic analysis):</li>
+<ul>
+<li><strong>User</strong> and <strong>Domain</strong>: in <code>NTLMSSP_NEGOTIATE</code> / SMB2 Session Setup (Account / Domain).</li>
+<li><strong>ServerChallenge</strong>: in <code>NTLMSSP_CHALLENGE</code>.</li>
+<li><strong>NTProofStr</strong> (first 16 bytes of NTLMv2 response) and remainder of the <strong>NTLMv2 Response</strong>: in <code>NTLMSSP_AUTH</code>.</li>
+</ul>
+<li><strong>Wireshark filters (quick):</strong></li>
+</ul>
+<p>``<code>python udp.port==5355 || udp.port==137 || smb2 || ntlmssp </code>``</p>
+<p>OR</p>
+<p>``<code>python llmnr || nbns || smb2.session_setup || ntlmssp </code>``</p>
+<hr>
+<h3 id="4-detection-hunting">4- Detection &amp; hunting</h3>
+<ul>
+<li><strong>LLMNR/NBNS traffic bursts</strong> from many hosts (broadcasts).</li>
+<li><strong>Unusual responder host</strong> answering many LLMNR/NBNS queries (not a known DC or file server).</li>
+<li><strong>SMB session setup to unexpected hosts</strong> immediately after LLMNR: client IP → unusual server IP with many <code>NTLMSSP_AUTH</code> messages.</li>
+<li><strong>IPv6 LLMNR:</strong> traffic to <code>ff02::1:3</code>.</li>
+</ul>
+<hr>
+<h3 id="5-impact">5- Impact</h3>
+<ul>
+<li><strong>Credential theft:</strong> NTLMv2 responses can be cracked offline (depends on password strength).</li>
+<li><strong>Credential relay:</strong> If SMB signing is not enforced, captured responses can be relayed to authenticate elsewhere.</li>
+<li><strong>Lateral movement:</strong> Stolen or relayed credentials enable access to other hosts/services.</li>
+</ul>
+<hr>
+<h3 id="6-mitigation-hardening">6- Mitigation &amp; hardening</h3>
+<ul>
+<li><strong>Disable LLMNR and NetBIOS name resolution</strong> where possible via Group Policy.</li>
+<li><strong>Enforce SMB signing</strong> and require channel binding to prevent relay attacks.</li>
+<li><strong>Restrict NTLM:</strong> audit then progressively disable NTLM; use NTLM auditing first.</li>
+<li><strong>Harden passwords &amp; enforce MFA</strong> — reduces risk from cracked hashes.</li>
+<li><strong>Whitelist/segment management traffic:</strong> prevent workstations from accepting inbound SMB except to allowed servers.</li>
+<li><strong>Network detection:</strong> monitor for new/unknown hosts answering LLMNR/NBNS and isolate suspicious responders.</li>
+</ul>
+<hr>
+<h3 id="7-summary">7- Summary</h3>
+<ul>
+<li><strong>Protocol Targeted:</strong> LLMNR / NBT-NS</li>
+<li><strong>Authentication Material:</strong> NTLMv2 challenge/response (NTProofStr + NTLMv2 blob)</li>
+<li><strong>Scope of Attack:</strong> Local network credential harvesting and relay → lateral movement / privilege escalation</li>
+<li><strong>Key Tools:</strong> Responder, Inveigh, ntlmrelayx</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#llmnr-nbt-ns-poisoning">LLMNR / NBT-NS Poisoning</a><a href="#1-quick-facts">1- Quick facts</a><a href="#2-how-the-attack-flows">2- How the attack flows</a><a href="#3-what-you-see-in-network-captures-wireshark-pcap">3- What you see in network captures (Wireshark / PCAP)</a><a href="#4-detection-hunting">4- Detection &amp; hunting</a><a href="#5-impact">5- Impact</a><a href="#6-mitigation-hardening">6- Mitigation &amp; hardening</a><a href="#7-summary">7- Summary</a></details>
+    </div>
+    
+    <footer class="pager"><a href="ntlm-relay-attacks.html">← NTLM Relay Attacks</a><a href="credential-dumping-general.html">Credential Dumping (General) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

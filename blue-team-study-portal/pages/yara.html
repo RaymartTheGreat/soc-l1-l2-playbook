@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Yara | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link active" href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Yara</span></div>
+      <h1>Yara</h1>
+      <p>“The pattern matching swiss knife for malware researchers (and everyone else)” — VirusTotal</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag">C2</span><span class="tag">YARA</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Yara</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="yara.html"><span>Yara</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>“The pattern matching swiss knife for malware researchers (and everyone else)” — VirusTotal</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Yara</li><li>YARA – Pattern Matching for Malware Detection</li><li>What YARA Rules Actually Do</li><li>Anatomy of a YARA Rule</li><li>1. rule Name</li><li>2. meta Section (Optional but Useful)</li><li>3. strings Section</li><li>4. condition Section</li><li>Example of a YARA Rule</li><li>Example: Obfuscated Malware Rule (ROOTSAW)</li><li>Why This Rule Works</li><li>Why Malware Uses Strings</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>condition:
+  $s1 and ($s2 or $s3)</code></pre></div><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>condition:
+  #s1 &gt;= 5</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>PowerShell</li><li>YARA</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="yara">Yara</h2>
+<h2 id="yara-pattern-matching-for-malware-detection">YARA – Pattern Matching for Malware Detection</h2>
+<p><strong>“The pattern matching swiss knife for malware researchers (and everyone else)” — VirusTotal</strong></p>
+<p><strong>YARA is a rule-based engine used for identifying malware by looking for binary and textual patterns in files. It's a staple tool for threat hunters, malware analysts, and incident responders who need to scan files, memory, or entire systems for known artifacts or behaviors.</strong></p>
+<p><strong>Instead of relying solely on hash values or signatures, YARA allows you to write detection logic based on:</strong></p>
+<ul>
+<li><strong>Specific strings (plaintext, hex, regex)</strong></li>
+<li><strong>Structural characteristics (via modules)</strong></li>
+<li><strong>Logical conditions (size, repetition, combinations)</strong></li>
+</ul>
+<hr>
+<h3 id="what-yara-rules-actually-do">What YARA Rules Actually Do</h3>
+<p>YARA rules act like behavioral fingerprints. They detect:</p>
+<ul>
+<li>Known malware families</li>
+<li>Artifacts linked to threat actors or campaigns</li>
+<li>Indicators like command-and-control (C2) strings, file paths, encoders, and memory patterns</li>
+</ul>
+<p>The goal isn't just to say “this is malware,” but to define <strong>how</strong> and <strong>why</strong> a file or sample is suspicious.</p>
+<hr>
+<h3 id="anatomy-of-a-yara-rule"><a class="note-link" href="https://medium.com/malware-buddy/security-infographics-9c4d3bd891ef#18dd">Anatomy of a YARA Rule</a></h3>
+<p><button class="image-button" data-src="../assets/images/yara-image-404ac967.png" data-alt="image.png"><img src="../assets/images/yara-image-404ac967.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="1.-rule-name">1. <code>rule</code> Name</h4>
+<ul>
+<li>Starts with the <code>rule</code> keyword followed by a descriptive identifier.</li>
+<li>Should tell you what the rule is for — threat name, family, behavior, etc.</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">rule M_APT_Dropper_Rootsaw_Obfuscated</code></pre></div>
+<hr>
+<h4 id="2.-meta-section-optional-but-useful">2. <code>meta</code> Section (Optional but Useful)</h4>
+<p>This is where you describe the rule. It doesn’t affect detection but helps analysts understand:</p>
+<ul>
+<li>Who wrote it</li>
+<li>What it’s detecting</li>
+<li>Where it came from</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">meta:
+  author = &quot;Mandiant&quot;
+  description = &quot;Detects obfuscated ROOTSAW payloads&quot;</code></pre></div>
+<hr>
+<h4 id="3.-strings-section">3. <code>strings</code> Section</h4>
+<p>This is where you define the actual indicators. These can be:</p>
+<ul>
+<li>Text strings</li>
+<li>Hex patterns</li>
+<li>Regular expressions</li>
+</ul>
+<p>Each string is assigned a variable (e.g., <code>$s1</code>, <code>$http</code>, <code>$codeblock</code>) for use in the condition logic later.</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">strings:
+  $1 = &quot;function _&quot;
+  $2 = &quot;new XMLHttpRequest();&quot;
+  $3 = { 48 8D 0D ?? ?? 00 00 }
+</code></pre></div>
+<hr>
+<h4 id="4.-condition-section">4. <code>condition</code> Section</h4>
+<p>This is the logic block. It tells YARA when to trigger a match based on the defined strings and file properties.</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">condition:
+  all of them</code></pre></div>
+<p>This line means: match if all the defined strings appear in the file.</p>
+<hr>
+<h3 id="example-of-a-yara-rule"><strong>Example of a YARA Rule</strong></h3>
+<ol>
+<li><strong>Rule name:</strong> M_APT_Dropper_Rootsaw_Obfuscated. The rule’s title is well-chosen and gives the user a good idea of what to use it for. In this case, it is to detect a dropper called Rootsaw that is obfuscated.</li>
+<li><strong>Meta</strong>: It is good practice to include relevant data that provides more information about the rule. This helps the user of the YARA rule know what to use the rule for, who wrote it, and where to apply it.</li>
+<li><strong>Strings</strong>: The strings included in this example help the user find a file containing those strings. How do malware analysts choose those strings? They analyze the malware and determine what uniquely identifies it. The strings used are <em>text strings.</em> The first two lines are straightforward.</li>
+<li><strong>Condition</strong>: This rule requires that all defined strings be present to have a match. This means all the strings defined in part 3 must have a match in the same file being matched against.</li>
+</ol>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5fbe259259ee347220b3944d/room-content/75b5a77557ffb02ad0ad7b191f689a73.png">External image reference: Example of a YARA-rule</a></p>
+<hr>
+<h3 id="example-obfuscated-malware-rule-rootsaw">Example: Obfuscated Malware Rule (<code>ROOTSAW</code>)</h3>
+<p>Below is a complete example of a YARA rule designed to detect obfuscated samples of a malware dropper known as <strong>ROOTSAW</strong>. It contains all four components we just reviewed:</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">rule M_APT_Dropper_Rootsaw_Obfuscated
+{
+  meta:
+    author = &quot;Mandiant&quot;
+    description = &quot;Detects obfuscated ROOTSAW payloads&quot;
+
+  strings:
+    $a1 = &quot;function _&quot;
+    $a2 = &quot;new XMLHttpRequest();&quot;
+    $a3 = &quot;'\\x2e\\x7a\\x69\\x70'&quot;
+    $a4 = &quot;'\\x4f\\x70\\x65\\x6e'&quot;
+    $a5 = &quot;\\x43\\x3a\\x5c\\x57&quot;
+
+  condition:
+    all of them
+}</code></pre></div>
+<h4 id="why-this-rule-works">Why This Rule Works</h4>
+<ul>
+<li><code>$a1</code> and <code>$a2</code> match JavaScript function names often used in droppers.</li>
+<li><code>$a3</code>, <code>$a4</code>, and <code>$a5</code> are hex-encoded string values seen in obfuscated code.</li>
+<li><code>all of them</code> enforces that every indicator must be present, which helps reduce false positives.</li>
+</ul>
+<hr>
+<hr>
+<h3 id="why-malware-uses-strings">Why Malware Uses Strings</h3>
+<p>Malware, like any software, uses strings to define behavior API calls, file paths, network URLs, error messages, and encryption keys. These strings make for <strong>high-confidence indicators</strong> when writing YARA rules.</p>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Example</th><th>Description</th></tr></thead><tbody><tr><td>Ransomware</td><td><code>12t9YDPgwueZ9NyMgw519p7AA8isjr6SMw</code></td><td>Bitcoin wallet for ransom payments</td></tr><tr><td>Botnet</td><td><code>12.34.56.7</code></td><td>C2 server IP address</td></tr><tr><td>Webshell</td><td><code>&lt;?php system($_GET['cmd']); ?&gt;</code></td><td>Common PHP backdoor pattern</td></tr></tbody></table></div>
+<p>These strings help you detect malicious files even if their hash changes  which is <strong>exactly</strong> what YARA is built for.</p>
+<hr>
+<h4 id="matching-by-file-size-and-content">Matching by File Size and Content</h4>
+<p>YARA lets you combine string matches with file attributes like size, type, or number of string occurrences. Here's an example that only matches small files:</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">rule hello_small_files {
+  strings:
+    $s = &quot;Hello World!&quot;
+
+  condition:
+    $s and filesize &lt; 10KB
+}</code></pre></div>
+<h4 id="why-this-matters">Why this matters:</h4>
+<p>You might only want to flag small scripts or droppers that match your string — this avoids scanning huge binaries unnecessarily.</p>
+<hr>
+<h3 id="yara-condition-logic-operators-that-matter">YARA Condition Logic / Operators That Matter</h3>
+<p>You can use <strong>Boolean</strong>, <strong>relational</strong>, and even <strong>bitwise</strong> logic inside your condition block.</p>
+<h4 id="boolean-logic">Boolean Logic</h4>
+<div class="table-wrap"><table><thead><tr><th>Operator</th><th>Description</th></tr></thead><tbody><tr><td><code>and</code></td><td>All specified conditions must be true</td></tr><tr><td><code>or</code></td><td>At least one condition must be true</td></tr><tr><td><code>not</code></td><td>Inverts the logic</td></tr></tbody></table></div>
+<p>Example:</p>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">condition:
+  $s1 and ($s2 or $s3)</code></pre></div>
+<p>This matches if <code>$s1</code> is present <strong>and</strong> either <code>$s2</code> or <code>$s3</code>.</p>
+<hr>
+<h4 id="group-matching-keywords">Group Matching Keywords</h4>
+<p>Instead of listing each string individually, you can reference <strong>all of them</strong> or <strong>a subset</strong>:</p>
+<div class="table-wrap"><table><thead><tr><th>Keyword</th><th>Meaning</th></tr></thead><tbody><tr><td><code>all of them</code></td><td>All strings must match</td></tr><tr><td><code>any of them</code></td><td>At least one must match</td></tr><tr><td><code>none of them</code></td><td>Rule matches only if no strings match</td></tr><tr><td><code>1 of them</code></td><td>Exactly one string must match</td></tr><tr><td><code>2 of ($group*)</code></td><td>2 strings from the group must match</td></tr></tbody></table></div>
+<hr>
+<h4 id="using-string-occurrence-counts">Using String Occurrence Counts</h4>
+<p>You can also check how many times a string appears using <code>#</code>:</p>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">condition:
+  #s1 &gt;= 5</code></pre></div>
+<p>This matches if <code>$s1</code> appears 5 or more times in the scanned file.</p>
+<hr>
+<h4 id="file-attributes">File Attributes</h4>
+<p>You can reference metadata like file size, PE header data, and entry points.</p>
+<p><strong>Examples:</strong></p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">condition:
+  filesize &lt; 500KB
+
+condition:
+  $a1 and pe.entry_point == 0x1000</code></pre></div>
+<p>This is useful when narrowing down detection to specific formats like PE files or memory-resident payloads.</p>
+<hr>
+<h3 id="yara-string-types-and-modifiers">YARA String Types and Modifiers</h3>
+<p>Different malware requires different string types. YARA supports several ways to define them — each with modifiers that improve match reliability.</p>
+<hr>
+<h4 id="1-text-strings-ascii">1- <strong>Text Strings (ASCII)</strong></h4>
+<p>Basic form, case-sensitive by default.</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">$s1 = &quot;malicious.exe&quot;</code></pre></div>
+<p><strong>Make it case-insensitive</strong>:</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">$s1 = &quot;malicious.exe&quot; nocase
+</code></pre></div>
+<hr>
+<h4 id="2-wide-strings-utf-16">2- <strong>Wide Strings (UTF-16)</strong></h4>
+<p>Used in Windows binaries — two-byte encoding.</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">$s1 = &quot;cmd.exe&quot; wide</code></pre></div>
+<hr>
+<h4 id="3-hexadecimal-strings">3- <strong>Hexadecimal Strings</strong></h4>
+<p>For matching binary data, shellcode, or compiled byte patterns.</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">$s1 = { E2 34 B6 C8 A3 FB }</code></pre></div>
+<p>Enhancements:</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">$s1 = { E2 34 ?? C8 A3 FB }       // wildcard byte
+$s2 = { E2 34 [2-4] A3 FB }       // jump: 2–4 bytes gap
+$s3 = { E2 34 (C5|B5) A3 FB }     // alternatives</code></pre></div>
+<hr>
+<h4 id="4-xor-encoded-strings">4- <strong>XOR-Encoded Strings</strong></h4>
+<p>Catches 1-byte XOR obfuscation — common in malware.</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">$s1 = &quot;http://malicious.site&quot; xor</code></pre></div>
+<hr>
+<h4 id="5-base64-strings">5- <strong>Base64 Strings</strong></h4>
+<p>For encoded payloads and configs:</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">$s1 = &quot;api_key=1234&quot; base64</code></pre></div>
+<hr>
+<h4 id="6-regular-expressions">6- <strong>Regular Expressions</strong></h4>
+<p>For flexible matching:</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">$s1 = /user=\w+&amp;pass=\w+/ nocase</code></pre></div>
+<hr>
+<h4 id="mixed-usage-example">Mixed Usage Example:</h4>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">strings:
+  $a1 = &quot;powershell&quot; xor
+  $a2 = { 48 8D ?? ?? ?? ?? }  // hex
+  $a3 = /-enc\s+[A-Za-z0-9+/=]+/ base64
+  $a4 = &quot;cmd.exe&quot; wide
+
+condition:
+  any of ($a*)</code></pre></div>
+<p>This rule handles multiple evasion techniques in a single signature.</p>
+<hr>
+<h3 id="valhalla-online-yara-feed-intel-platform">Valhalla — Online YARA Feed &amp; Intel Platform</h3>
+<p><button class="image-button" data-src="../assets/images/yara-image-1-bc9629a1.png" data-alt="image.png"><img src="../assets/images/yara-image-1-bc9629a1.png" alt="image.png" loading="lazy"></button></p>
+<p><strong>Valhalla</strong> is a curated repository of high-quality, expert-made YARA rules hosted by <strong>Nextron Systems</strong> (Florian Roth).</p>
+<p>🔗 <a class="note-link" href="https://www.nextron-systems.com/valhalla/">https://www.nextron-systems.com/valhalla/</a></p>
+<h4 id="what-you-can-do-with-it">What You Can Do with It:</h4>
+<ul>
+<li>Search rules by <strong>keyword</strong>, <strong>malware name</strong>, <strong>ATT&amp;CK ID</strong>, or <strong>hash</strong></li>
+<li>Download vetted rules for threat hunting</li>
+<li>Integrate the feed into local detection tools</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/yara-image-2-542fdaba.png" data-alt="image.png"><img src="../assets/images/yara-image-2-542fdaba.png" alt="image.png" loading="lazy"></button></p>
+<p>Valhalla bridges the gap between <strong>open-source tooling</strong> and <strong>real-world CTI</strong>. You don’t need to write everything from scratch — learn by using their rules and adapting them.</p>
+<hr>
+<h3 id="real-world-rule-example-emotet">Real-World Rule Example: Emotet</h3>
+<p>Here’s a simplified version of a YARA rule that detects <strong>Emotet</strong>, a prolific banking trojan and loader used in spam campaigns:</p>
+<div class="code-shell"><div class="code-bar"><span>java</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-java">rule MAL_Emotet_Loader
+{
+  meta:
+    author = &quot;Nextron&quot;
+    description = &quot;Detects Emotet loader binary&quot;
+
+  strings:
+    $a1 = &quot;client_hello&quot;
+    $a2 = &quot;get_proc_address&quot;
+    $a3 = { 6A 40 68 00 30 00 00 }
+
+  condition:
+    2 of them and filesize &lt; 300KB
+}</code></pre></div>
+<ul>
+<li><code>$a1</code>, <code>$a2</code>: strings seen in unpacked Emotet binaries</li>
+<li><code>$a3</code>: shellcode pattern</li>
+<li><code>2 of them</code>: balances precision and flexibility</li>
+<li><code>filesize &lt; 300KB</code>: filters out irrelevant files</li>
+</ul>
+<hr>
+<p>https://youtu.be/BM23_H2GGMA?si=Jn7pRgYpxpcFAqQX</p>
+<p>https://yara.readthedocs.io/en/latest/gettingstarted.html</p>
+<p>https://virustotal.github.io/yara/</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#yara">Yara</a><a href="#yara-pattern-matching-for-malware-detection">YARA – Pattern Matching for Malware Detection</a><a href="#what-yara-rules-actually-do">What YARA Rules Actually Do</a><a href="#anatomy-of-a-yara-rule">Anatomy of a YARA Rule</a><a href="#1.-rule-name">1. rule Name</a><a href="#2.-meta-section-optional-but-useful">2. meta Section (Optional but Useful)</a><a href="#3.-strings-section">3. strings Section</a><a href="#4.-condition-section">4. condition Section</a><a href="#example-of-a-yara-rule">Example of a YARA Rule</a><a href="#example-obfuscated-malware-rule-rootsaw">Example: Obfuscated Malware Rule (ROOTSAW)</a><a href="#why-this-rule-works">Why This Rule Works</a><a href="#why-malware-uses-strings">Why Malware Uses Strings</a><a href="#matching-by-file-size-and-content">Matching by File Size and Content</a><a href="#why-this-matters">Why this matters:</a><a href="#yara-condition-logic-operators-that-matter">YARA Condition Logic / Operators That Matter</a><a href="#boolean-logic">Boolean Logic</a><a href="#group-matching-keywords">Group Matching Keywords</a><a href="#using-string-occurrence-counts">Using String Occurrence Counts</a><a href="#file-attributes">File Attributes</a><a href="#yara-string-types-and-modifiers">YARA String Types and Modifiers</a><a href="#1-text-strings-ascii">1- Text Strings (ASCII)</a><a href="#2-wide-strings-utf-16">2- Wide Strings (UTF-16)</a><a href="#3-hexadecimal-strings">3- Hexadecimal Strings</a><a href="#4-xor-encoded-strings">4- XOR-Encoded Strings</a><a href="#5-base64-strings">5- Base64 Strings</a><a href="#6-regular-expressions">6- Regular Expressions</a><a href="#mixed-usage-example">Mixed Usage Example:</a><a href="#valhalla-online-yara-feed-intel-platform">Valhalla — Online YARA Feed &amp; Intel Platform</a><a href="#what-you-can-do-with-it">What You Can Do with It:</a><a href="#real-world-rule-example-emotet">Real-World Rule Example: Emotet</a></details>
+    </div>
+    
+    <footer class="pager"><a href="sighunt.html">← SigHunt</a><a href="lolbins-living-off-the-land-binaries.html">LOLBins (living-off-the-land binaries) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

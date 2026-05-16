@@ -1,0 +1,161 @@
+{
+  "id": "splunk",
+  "title": "Splunk",
+  "slug": "splunk",
+  "relPath": "Splunk.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "Sysmon",
+    "Network",
+    "Web",
+    "Detection",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "splunk",
+      "title": "Splunk",
+      "slug": "splunk"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Splunk"
+    },
+    {
+      "level": 3,
+      "text": "Simple flow:"
+    },
+    {
+      "level": 1,
+      "text": "Core components"
+    },
+    {
+      "level": 3,
+      "text": "Splunk Forwarder"
+    },
+    {
+      "level": 3,
+      "text": "Indexer"
+    },
+    {
+      "level": 3,
+      "text": "Search Head"
+    },
+    {
+      "level": 1,
+      "text": "Home UI"
+    },
+    {
+      "level": 1,
+      "text": "Creating dashboards"
+    },
+    {
+      "level": 3,
+      "text": "workflow"
+    },
+    {
+      "level": 3,
+      "text": "Panel best practices"
+    },
+    {
+      "level": 3,
+      "text": "Suggested SOC dashboard panels"
+    },
+    {
+      "level": 1,
+      "text": "Creating alerts"
+    },
+    {
+      "level": 3,
+      "text": "High-level process"
+    },
+    {
+      "level": 2,
+      "text": "Steps to create an alert"
+    },
+    {
+      "level": 3,
+      "text": "Example alerts"
+    },
+    {
+      "level": 1,
+      "text": "Data onboarding"
+    },
+    {
+      "level": 1,
+      "text": "Injecting data"
+    },
+    {
+      "level": 3,
+      "text": "Universal Forwarder (production / recommended)"
+    },
+    {
+      "level": 3,
+      "text": "Heavy Forwarder (preprocess / filter / route)"
+    },
+    {
+      "level": 3,
+      "text": "Upload via Splunk Web"
+    }
+  ],
+  "overview": "Splunk is one of the leading SIEM solutions in the market that provides the ability to collect, analyze and correlate the network and machine logs",
+  "study": {
+    "overview": "Splunk is one of the leading SIEM solutions in the market that provides the ability to collect, analyze and correlate the network and machine logs",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Splunk",
+      "Simple flow:",
+      "Core components",
+      "Splunk Forwarder",
+      "Indexer",
+      "Search Head",
+      "Home UI",
+      "Creating dashboards",
+      "workflow",
+      "Panel best practices",
+      "Suggested SOC dashboard panels",
+      "Creating alerts"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "python",
+        "code": "index=Omar sourcetype=WinEventLog:Security EventCode=4625 earliest=-5m\n| stats count by Account_Name, src_ip\n| where count > 5"
+      },
+      {
+        "language": "python",
+        "code": "index=firewall OR index=Omar\n| bin _time span=1m\n| stats dc(dest_port) as ports by src_ip, _time\n| where ports > 20"
+      }
+    ],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": [
+      "pick an accurate sourcetype early / it prevents parsing issues later."
+    ]
+  }
+}

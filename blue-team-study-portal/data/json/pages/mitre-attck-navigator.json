@@ -1,0 +1,88 @@
+{
+  "id": "threat modelling/mitre att&ck navigator",
+  "title": "MITRE ATT&CK Navigator",
+  "slug": "mitre-attck-navigator",
+  "relPath": "Threat Modelling/MITRE ATT&CK Navigator.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-detection-engineering",
+  "curriculumSectionTitle": "Detection Engineering & Automation",
+  "tags": [
+    "Network",
+    "Web",
+    "C2"
+  ],
+  "mitre": [
+    "T1190",
+    "T1068",
+    "T1530",
+    "T1498"
+  ],
+  "parentId": "threat modelling",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat modelling"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat modelling",
+      "title": "Threat Modelling",
+      "slug": "threat-modelling"
+    },
+    {
+      "id": "threat modelling/mitre att&ck navigator",
+      "title": "MITRE ATT&CK Navigator",
+      "slug": "mitre-attck-navigator"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "MITRE ATT&CK Navigator"
+    },
+    {
+      "level": 1,
+      "text": "Creating a New Layer"
+    },
+    {
+      "level": 1,
+      "text": "Searching and Selecting Techniques"
+    },
+    {
+      "level": 1,
+      "text": "Viewing, Sorting and Filtering Layers"
+    },
+    {
+      "level": 1,
+      "text": "Annotating Techniques"
+    },
+    {
+      "level": 1,
+      "text": "Utilising ATT&CK Navigator"
+    }
+  ],
+  "overview": "The MITRE ATT&CK Navigator is an open-source, web-based tool that helps visualize and navigate the complex landscape of the MITRE ATT&CK Framework. It allows security teams to create custom matrices by selecting relevant tactics and techniques that apply to their specific environment or threat scenario.",
+  "study": {
+    "overview": "The MITRE ATT&CK Navigator is an open-source, web-based tool that helps visualize and navigate the complex landscape of the MITRE ATT&CK Framework. It allows security teams to create custom matrices by selecting relevant tactics and techniques that apply to their specific environment or threat scenario.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "MITRE ATT&CK Navigator",
+      "Creating a New Layer",
+      "Searching and Selecting Techniques",
+      "Viewing, Sorting and Filtering Layers",
+      "Annotating Techniques",
+      "Utilising ATT&CK Navigator"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

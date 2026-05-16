@@ -1,0 +1,92 @@
+{
+  "id": "windows forensics/master file table (mft)",
+  "title": "Master File Table (MFT)",
+  "slug": "master-file-table-mft",
+  "relPath": "Windows Forensics/Master File Table (MFT).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/master file table (mft)",
+      "title": "Master File Table (MFT)",
+      "slug": "master-file-table-mft"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Master File Table (MFT)"
+    },
+    {
+      "level": 2,
+      "text": "Overview"
+    },
+    {
+      "level": 2,
+      "text": "Structure of an MFT Record"
+    },
+    {
+      "level": 2,
+      "text": "Forensic Benefits"
+    },
+    {
+      "level": 2,
+      "text": "Tools for MFT Analysis"
+    },
+    {
+      "level": 2,
+      "text": "MACB Time"
+    },
+    {
+      "level": 2,
+      "text": "Why is the MACB Timestamp Important?"
+    }
+  ],
+  "overview": "- The MFT is the heart of NTFS—a 1 KB file located in the root of every NTFS volume. - Role: Every time Windows creates, modifies, or deletes a file or folder, it writes or updates a corresponding 1 KB record in the MFT. - Forensics Importance: Even after deletion, MFT records can persist (flagged “not in use”), allowing recovery of metadata and, sometimes, ",
+  "study": {
+    "overview": "- The MFT is the heart of NTFS—a 1 KB file located in the root of every NTFS volume. - Role: Every time Windows creates, modifies, or deletes a file or folder, it writes or updates a corresponding 1 KB record in the MFT. - Forensics Importance: Even after deletion, MFT records can persist (flagged “not in use”), allowing recovery of metadata and, sometimes, ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Master File Table (MFT)",
+      "Overview",
+      "Structure of an MFT Record",
+      "Forensic Benefits",
+      "Tools for MFT Analysis",
+      "MACB Time",
+      "Why is the MACB Timestamp Important?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": " MFTECmd.exe -f \"C:\\Location\\of\\$MFT\" --csv \"C:\\Location\\to\\save\" --csvf name.csv"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

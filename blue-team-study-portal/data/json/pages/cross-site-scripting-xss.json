@@ -1,0 +1,134 @@
+{
+  "id": "detecting web attacks/cross-site scripting (xss)",
+  "title": "Cross-Site Scripting (XSS)",
+  "slug": "cross-site-scripting-xss",
+  "relPath": "Detecting Web Attacks/Cross-Site Scripting (XSS).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Phishing",
+    "Web",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "detecting web attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting web attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting web attacks",
+      "title": "Detecting Web Attacks",
+      "slug": "detecting-web-attacks"
+    },
+    {
+      "id": "detecting web attacks/cross-site scripting (xss)",
+      "title": "Cross-Site Scripting (XSS)",
+      "slug": "cross-site-scripting-xss"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Cross-Site Scripting (XSS)"
+    },
+    {
+      "level": 3,
+      "text": "Tiny HTML/JS primer"
+    },
+    {
+      "level": 3,
+      "text": "How it works"
+    },
+    {
+      "level": 3,
+      "text": "Types"
+    },
+    {
+      "level": 3,
+      "text": "What attackers can gain"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Where to look"
+    },
+    {
+      "level": 3,
+      "text": "What to search for (decoded values)"
+    },
+    {
+      "level": 3,
+      "text": "Common URL encoding"
+    },
+    {
+      "level": 3,
+      "text": "Example access log"
+    },
+    {
+      "level": 3,
+      "text": "DOM-based hints (search in frontend code)"
+    },
+    {
+      "level": 3,
+      "text": "Detecting automated scanners"
+    },
+    {
+      "level": 3,
+      "text": "Quick checks to run after spotting suspicious payloads"
+    },
+    {
+      "level": 3,
+      "text": "Prevention / developer tips"
+    }
+  ],
+  "overview": "XSS is when an attacker injects malicious client-side code (usually JavaScript) into a web page that other users load. The browser executes that code in the context of the site, so the attacker can hijack sessions, steal cookies, redirect users, deface pages, or do other client-side abuse.",
+  "study": {
+    "overview": "XSS is when an attacker injects malicious client-side code (usually JavaScript) into a web page that other users load. The browser executes that code in the context of the site, so the attacker can hijack sessions, steal cookies, redirect users, deface pages, or do other client-side abuse.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Cross-Site Scripting (XSS)",
+      "Tiny HTML/JS primer",
+      "How it works",
+      "Types",
+      "What attackers can gain",
+      "Detection",
+      "Where to look",
+      "What to search for (decoded values)",
+      "Common URL encoding",
+      "Example access log",
+      "DOM-based hints (search in frontend code)",
+      "Detecting automated scanners"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "https://site.example/welcome?user=Omar\n→ page shows: Hello Omar"
+      },
+      {
+        "language": "text",
+        "code": "https://site.example/welcome?user=<script>alert(1)</script>"
+      },
+      {
+        "language": "text",
+        "code": "GET /search?s=%3Cscript%3Edocument.cookie%3C%2Fscript%3E HTTP/1.1\" 200 2048 \"-\" \"python-requests/2.28\""
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "id": "threat hunting labs (siem)/slingshot (thm)",
+  "title": "Slingshot (THM)",
+  "slug": "slingshot-thm",
+  "relPath": "Threat hunting Labs (SIEM)/Slingshot (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/slingshot (thm)",
+      "title": "Slingshot (THM)",
+      "slug": "slingshot-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Slingshot (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What was the attacker's IP?"
+    },
+    {
+      "level": 3,
+      "text": "10.0.2.15"
+    },
+    {
+      "level": 3,
+      "text": "2- What was the first scanner that the attacker ran against the web server?"
+    },
+    {
+      "level": 3,
+      "text": "Nmap Scripting Engine"
+    },
+    {
+      "level": 3,
+      "text": "3- What was the User Agent of the directory enumeration tool that the attacker used on the web server?"
+    },
+    {
+      "level": 3,
+      "text": "Mozilla/5.0 (Gobuster)"
+    },
+    {
+      "level": 3,
+      "text": "4- In total, how many requested resources on the web server did the attacker fail to find?"
+    },
+    {
+      "level": 3,
+      "text": "1867"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the flag under the interesting directory the attacker found?"
+    },
+    {
+      "level": 3,
+      "text": "a76637b62ea99acda12f5859313f539a"
+    },
+    {
+      "level": 3,
+      "text": "6- What login page did the attacker discover using the directory enumeration tool?"
+    },
+    {
+      "level": 3,
+      "text": "/admin-login.php"
+    },
+    {
+      "level": 3,
+      "text": "7- What was the user agent of the brute-force tool that the attacker used on the admin panel?"
+    },
+    {
+      "level": 3,
+      "text": "Mozilla/4.0 (Hydra)"
+    },
+    {
+      "level": 3,
+      "text": "8- What username:password combination did the attacker use to gain access to the admin page?"
+    },
+    {
+      "level": 3,
+      "text": "admin:thx1138"
+    },
+    {
+      "level": 3,
+      "text": "9- What flag was included in the file that the attacker uploaded from the admin directory?"
+    },
+    {
+      "level": 3,
+      "text": "THM{ecb012e53a58818cbd17a924769ec447}"
+    },
+    {
+      "level": 3,
+      "text": "10- What was the first command the attacker ran on the web shell?"
+    },
+    {
+      "level": 3,
+      "text": "whoami"
+    },
+    {
+      "level": 3,
+      "text": "11- What file location on the web server did the attacker extract database credentials from using Local File Inclusion?"
+    },
+    {
+      "level": 3,
+      "text": "/etc/phpmyadmin/config-db.php"
+    },
+    {
+      "level": 3,
+      "text": "12- What directory did the attacker use to access the database manager?"
+    },
+    {
+      "level": 3,
+      "text": "/phpmyadmin"
+    },
+    {
+      "level": 3,
+      "text": "13- What was the name of the database that the attacker exported?"
+    },
+    {
+      "level": 3,
+      "text": "customercreditcards"
+    },
+    {
+      "level": 3,
+      "text": "14- What flag does the attacker insert into the database?"
+    },
+    {
+      "level": 3,
+      "text": "c6aa3215a7d519eeb40a660f3b76e64c"
+    }
+  ],
+  "overview": "Slingway Inc., a leading toy company, has recently noticed suspicious activity on its e-commerce web server and potential modifications to its database. To investigate the suspicious activity, they've hired you as a SOC Analyst to look into the web server logs and uncover any instances of malicious activity.",
+  "study": {
+    "overview": "Slingway Inc., a leading toy company, has recently noticed suspicious activity on its e-commerce web server and potential modifications to its database. To investigate the suspicious activity, they've hired you as a SOC Analyst to look into the web server logs and uncover any instances of malicious activity.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Slingshot (THM)",
+      "Scenario",
+      "1- What was the attacker's IP?",
+      "10.0.2.15",
+      "2- What was the first scanner that the attacker ran against the web server?",
+      "Nmap Scripting Engine",
+      "3- What was the User Agent of the directory enumeration tool that the attacker used on the web server?",
+      "Mozilla/5.0 (Gobuster)",
+      "4- In total, how many requested resources on the web server did the attacker fail to find?",
+      "1867",
+      "5- What is the flag under the interesting directory the attacker found?",
+      "a76637b62ea99acda12f5859313f539a"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "\"body\":[\"is_js_confirmed=0&db=customer_credit_cards&table=credit_cards&token=302e562342217c5d6258344222294172&pos=0&goto=tbl_sql.php\n\n&message_to_show=Your+SQL+query+has+been+executed+successfully.&\n\nprev_sql_query=INSERT+INTO+`credit_cards`+(`card_number`,+`cardholder_name`,+`expiration_date`,+`cvv`)\n+VALUES+\n\n('000',+'c6aa3215a7d519eeb40a660f3b76e64c',+'000',+'000');\n\n&sql_query=INSERT+INTO+`credit_cards`+(`card_number`,+`cardholder_name`,+`expiration_date`,+`cvv`)+VALUES+\n\n('000',+'c6aa3215a7d519eeb40a660f3b76e64c',+'000',+'000');&"
+      }
+    ],
+    "tools": [],
+    "tips": [
+      "insert is an operation that adds new data into a database table typically used in SQL"
+    ]
+  }
+}

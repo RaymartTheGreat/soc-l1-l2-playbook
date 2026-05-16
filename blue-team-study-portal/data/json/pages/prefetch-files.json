@@ -1,0 +1,82 @@
+{
+  "id": "windows forensics/prefetch files",
+  "title": "Prefetch Files",
+  "slug": "prefetch-files",
+  "relPath": "Windows Forensics/Prefetch Files.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/prefetch files",
+      "title": "Prefetch Files",
+      "slug": "prefetch-files"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Prefetch Files"
+    },
+    {
+      "level": 3,
+      "text": "Location"
+    },
+    {
+      "level": 3,
+      "text": "Key Aspects of Prefetch Analysis"
+    },
+    {
+      "level": 3,
+      "text": "Structure Includes"
+    },
+    {
+      "level": 3,
+      "text": "Forensic Value"
+    },
+    {
+      "level": 3,
+      "text": "Tools"
+    }
+  ],
+  "overview": "Prefetch files are Windows system files that store information about how programs run. They’re created automatically to speed up application startup by preloading commonly used data.",
+  "study": {
+    "overview": "Prefetch files are Windows system files that store information about how programs run. They’re created automatically to speed up application startup by preloading commonly used data.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Prefetch Files",
+      "Location",
+      "Key Aspects of Prefetch Analysis",
+      "Structure Includes",
+      "Forensic Value",
+      "Tools"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

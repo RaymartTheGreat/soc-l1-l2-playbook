@@ -1,0 +1,326 @@
+{
+  "id": "threat hunting labs (siem)/splunk 2 (thm)",
+  "title": "Splunk 2 (THM)",
+  "slug": "splunk-2-thm",
+  "relPath": "Threat hunting Labs (SIEM)/Splunk 2 (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Network",
+    "Web",
+    "Detection",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/splunk 2 (thm)",
+      "title": "Splunk 2 (THM)",
+      "slug": "splunk-2-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Splunk 2 (THM)"
+    },
+    {
+      "level": 2,
+      "text": "100 series questions"
+    },
+    {
+      "level": 3,
+      "text": "1- Amber Turing was hoping for Frothly to be acquired by a potential competitor which fell through, but visited their website to find contact information for their executive team. What is the website domain that she visited?"
+    },
+    {
+      "level": 3,
+      "text": "www.berkbeer.com"
+    },
+    {
+      "level": 3,
+      "text": "2- Amber found the executive contact information and sent him an email. What image file displayed the executive's contact information? Answer example: /path/image.ext"
+    },
+    {
+      "level": 3,
+      "text": "/images/ceoberk.png"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the CEO's name? Provide the first and last name."
+    },
+    {
+      "level": 3,
+      "text": "Martin Berk"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the CEO's email address?"
+    },
+    {
+      "level": 3,
+      "text": "mberk@berkbeer.com"
+    },
+    {
+      "level": 3,
+      "text": "5- After the initial contact with the CEO, Amber contacted another employee at this competitor. What is that employee's email address?"
+    },
+    {
+      "level": 3,
+      "text": "hbernhard@berkbeer.com"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the name of the file attachment that Amber sent to a contact at the competitor?"
+    },
+    {
+      "level": 3,
+      "text": "Saccharomycescerevisiaepatent.docx"
+    },
+    {
+      "level": 3,
+      "text": "7- What is Amber's personal email address?"
+    },
+    {
+      "level": 3,
+      "text": "ambersthebest@yeastiebeastie.com"
+    },
+    {
+      "level": 2,
+      "text": "200 series questions"
+    },
+    {
+      "level": 3,
+      "text": "1- What version of TOR Browser did Amber install to obfuscate her web browsing? Answer guidance: Numeric with one or more delimiter."
+    },
+    {
+      "level": 3,
+      "text": "7.0.4"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the public IPv4 address of the server running www.brewertalk.com?"
+    },
+    {
+      "level": 3,
+      "text": "52.42.208.228"
+    },
+    {
+      "level": 3,
+      "text": "3- Provide the IP address of the system used to run a web vulnerability scan against www.brewertalk.com."
+    },
+    {
+      "level": 3,
+      "text": "45.77.65.211"
+    },
+    {
+      "level": 3,
+      "text": "4- The IP address from Q2 is also being used by a likely different piece of software to attack a URI path. What is the URI path? Answer guidance: Include the leading forward slash in your answer. Do not include the query string or other parts of the URI. Answer example: /phpinfo.php"
+    },
+    {
+      "level": 3,
+      "text": "/member.php"
+    },
+    {
+      "level": 3,
+      "text": "5- What SQL function is being abused on the URI path from the previous question?"
+    },
+    {
+      "level": 3,
+      "text": "updatexml"
+    },
+    {
+      "level": 3,
+      "text": "6- What was the value of the cookie that Kevin's browser transmitted to the malicious URL as part of an XSS attack? Answer guidance: All digits. Not the cookie name or symbols like an equal sign."
+    },
+    {
+      "level": 3,
+      "text": "1502408189"
+    },
+    {
+      "level": 3,
+      "text": "7- What brewertalk.com username was maliciously created by a spear phishing attack?"
+    },
+    {
+      "level": 3,
+      "text": "kIagerfield"
+    },
+    {
+      "level": 2,
+      "text": "300 series questions"
+    },
+    {
+      "level": 3,
+      "text": "1- Mallory's critical PowerPoint presentation on her MacBook gets encrypted by ransomware on August 18. What is the name of this file after it was encrypted?"
+    },
+    {
+      "level": 3,
+      "text": "FrothlymarketingcampaignQ317.pptx.crypt"
+    },
+    {
+      "level": 3,
+      "text": "2- There is a Games of Thrones movie file that was encrypted as well. What season and episode is it?"
+    },
+    {
+      "level": 3,
+      "text": "S07E02"
+    },
+    {
+      "level": 3,
+      "text": "3- Kevin Lagerfield used a USB drive to move malware onto kutekitten, Mallory's personal MacBook. She ran the malware, which obfuscates itself during execution. Provide the vendor name of the USB drive Kevin likely used. Answer Guidance: Use time correlation to identify the USB drive."
+    },
+    {
+      "level": 3,
+      "text": "Alcor Micro Corp."
+    },
+    {
+      "level": 3,
+      "text": "4- What programming language is at least part of the malware from the question above written in?"
+    },
+    {
+      "level": 3,
+      "text": "Perl"
+    },
+    {
+      "level": 3,
+      "text": "5- When was this malware first seen in the wild? Answer Guidance: YYYY-MM-DD"
+    },
+    {
+      "level": 3,
+      "text": "2017-01-17"
+    },
+    {
+      "level": 3,
+      "text": "6- The malware infecting kutekitten uses dynamic DNS destinations to communicate with two C&C servers shortly after installation. What is the fully-qualified domain name (FQDN) of the first (alphabetically) of these destinations?"
+    },
+    {
+      "level": 3,
+      "text": "eidk.duckdns.org"
+    },
+    {
+      "level": 3,
+      "text": "7- From the question above, what is the fully-qualified domain name (FQDN) of the second (alphabetically) contacted C&C server?"
+    },
+    {
+      "level": 3,
+      "text": "eidk.hopto.org"
+    },
+    {
+      "level": 2,
+      "text": "400 series questions"
+    },
+    {
+      "level": 3,
+      "text": "1- A Federal law enforcement agency reports that Taedonggang often spear phishes its victims with zip files that have to be opened with a password. What is the name of the attachment sent to Frothly by a malicious Taedonggang actor?"
+    },
+    {
+      "level": 3,
+      "text": "invoice.zip"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the password to open the zip file?"
+    },
+    {
+      "level": 3,
+      "text": "912345678"
+    },
+    {
+      "level": 3,
+      "text": "3- The Taedonggang APT group encrypts most of their traffic with SSL. What is the \"SSL Issuer\" that they use for the majority of their traffic? Answer guidance: Copy the field exactly, including spaces."
+    },
+    {
+      "level": 3,
+      "text": "C = US"
+    },
+    {
+      "level": 3,
+      "text": "4- What unusual file (for an American company) does winsys32.dll cause to be downloaded into the Frothly environment?"
+    },
+    {
+      "level": 3,
+      "text": "나는데이비드를사랑한다.hwp"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the first and last name of the poor innocent sap who was implicated in the metadata of the file that executed PowerShell Empire on the first victim's workstation? Answer example: John Smith"
+    },
+    {
+      "level": 3,
+      "text": "Ryan Kovar"
+    },
+    {
+      "level": 3,
+      "text": "6- Within the document, what kind of points is mentioned if you found the text?"
+    },
+    {
+      "level": 3,
+      "text": "CyberEastEgg"
+    },
+    {
+      "level": 3,
+      "text": "7- To maintain persistence in the Frothly network, Taedonggang APT configured several Scheduled Tasks to beacon back to their C2 server. What single webpage is most contacted by these Scheduled Tasks? Answer example: index.php or images.html"
+    },
+    {
+      "level": 3,
+      "text": "process.php"
+    },
+    {
+      "level": 2,
+      "text": "Conclusion"
+    }
+  ],
+  "overview": "The first objective is to find out what competitor website she visited. What is a good starting point?",
+  "study": {
+    "overview": "The first objective is to find out what competitor website she visited. What is a good starting point?",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Splunk 2 (THM)",
+      "100 series questions",
+      "1- Amber Turing was hoping for Frothly to be acquired by a potential competitor which fell through, but visited their website to find contact information for their executive team. What is the website domain that she visited?",
+      "www.berkbeer.com",
+      "2- Amber found the executive contact information and sent him an email. What image file displayed the executive's contact information? Answer example: /path/image.ext",
+      "/images/ceoberk.png",
+      "3- What is the CEO's name? Provide the first and last name.",
+      "Martin Berk",
+      "4- What is the CEO's email address?",
+      "mberk@berkbeer.com",
+      "5- After the initial contact with the CEO, Amber contacted another employee at this competitor. What is that employee's email address?",
+      "hbernhard@berkbeer.com"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "PowerShell",
+      "Osquery"
+    ],
+    "tips": [
+      "Scheduled Tasks are Windows jobs (can run on a schedule or at startup) — attackers use them for persistence because they re-run malicious commands automatically without user interaction."
+    ]
+  }
+}

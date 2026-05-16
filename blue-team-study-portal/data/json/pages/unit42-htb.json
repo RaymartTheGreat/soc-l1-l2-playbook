@@ -1,0 +1,137 @@
+{
+  "id": "log analysis labs/unit42 (htb)",
+  "title": "Unit42 (HTB)",
+  "slug": "unit42-htb",
+  "relPath": "Log Analysis Labs/Unit42 (HTB).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Windows",
+    "Network",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/unit42 (htb)",
+      "title": "Unit42 (HTB)",
+      "slug": "unit42-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Unit42 (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- How many Event logs are there with Event ID 11?"
+    },
+    {
+      "level": 3,
+      "text": "56"
+    },
+    {
+      "level": 3,
+      "text": "2- Whenever a process is created in memory, an event with Event ID 1 is recorded with details such as command line, hashes, process path, parent process path, etc. This information is very useful for an analyst because it allows us to see all programs executed on a system, which means we can spot any malicious processes being executed. What is the malicious process that infected the victim's system?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\CyberJunkie\\Downloads\\Preventivo24.02.14.exe.exe"
+    },
+    {
+      "level": 3,
+      "text": "3- Which Cloud drive was used to distribute the malware?"
+    },
+    {
+      "level": 3,
+      "text": "dropbox"
+    },
+    {
+      "level": 3,
+      "text": "4- For many of the files it wrote to disk, the initial malicious file used a defense evasion technique called Time Stomping, where the file creation date is changed to make it appear older and blend in with other files. What was the timestamp changed to for the PDF file?"
+    },
+    {
+      "level": 3,
+      "text": "2024-01-14 08:10:06"
+    },
+    {
+      "level": 3,
+      "text": "5- The malicious file dropped a few files on disk. Where was \"once.cmd\" created on disk? Please answer with the full path along with the filename."
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\CyberJunkie\\AppData\\Roaming\\Photo and Fax Vn\\Photo and vn 1.1.2\\install\\F97891C\\WindowsVolume\\Games\\once.cmd"
+    },
+    {
+      "level": 3,
+      "text": "6- The malicious file attempted to reach a dummy domain, most likely to check the internet connection status. What domain name did it try to connect to?"
+    },
+    {
+      "level": 3,
+      "text": "www.example.com"
+    },
+    {
+      "level": 3,
+      "text": "7- Which IP address did the malicious process try to reach out to?"
+    },
+    {
+      "level": 3,
+      "text": "93.184.216.34"
+    },
+    {
+      "level": 3,
+      "text": "8- The malicious process terminated itself after infecting the PC with a backdoored variant of UltraVNC. When did the process terminate itself?"
+    },
+    {
+      "level": 3,
+      "text": "2024-02-14 03:41:58"
+    }
+  ],
+  "overview": "Palo Alto's Unit42 recently conducted research on an UltraVNC campaign, wherein attackers utilized a backdoored version of UltraVNC to maintain access to systems. This lab is inspired by that campaign and guides participants through the initial access stage of the campaign.",
+  "study": {
+    "overview": "Palo Alto's Unit42 recently conducted research on an UltraVNC campaign, wherein attackers utilized a backdoored version of UltraVNC to maintain access to systems. This lab is inspired by that campaign and guides participants through the initial access stage of the campaign.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Unit42 (HTB)",
+      "Scenario",
+      "1- How many Event logs are there with Event ID 11?",
+      "56",
+      "2- Whenever a process is created in memory, an event with Event ID 1 is recorded with details such as command line, hashes, process path, parent process path, etc. This information is very useful for an analyst because it allows us to see all programs executed on a system, which means we can spot any malicious processes being executed. What is the malicious process that infected the victim's system?",
+      "C:\\Users\\CyberJunkie\\Downloads\\Preventivo24.02.14.exe.exe",
+      "3- Which Cloud drive was used to distribute the malware?",
+      "dropbox",
+      "4- For many of the files it wrote to disk, the initial malicious file used a defense evasion technique called Time Stomping, where the file creation date is changed to make it appear older and blend in with other files. What was the timestamp changed to for the PDF file?",
+      "2024-01-14 08:10:06",
+      "5- The malicious file dropped a few files on disk. Where was \"once.cmd\" created on disk? Please answer with the full path along with the filename.",
+      "C:\\Users\\CyberJunkie\\AppData\\Roaming\\Photo and Fax Vn\\Photo and vn 1.1.2\\install\\F97891C\\WindowsVolume\\Games\\once.cmd"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

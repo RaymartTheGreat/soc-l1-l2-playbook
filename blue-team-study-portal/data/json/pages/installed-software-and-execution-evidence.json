@@ -1,0 +1,136 @@
+{
+  "id": "linux artifacts & forensic evidence collection/installed software and execution evidence",
+  "title": "Installed Software and Execution Evidence",
+  "slug": "installed-software-and-execution-evidence",
+  "relPath": "Linux Artifacts & Forensic Evidence Collection/Installed Software and Execution Evidence.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Linux",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "linux artifacts & forensic evidence collection",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "linux artifacts & forensic evidence collection"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "linux artifacts & forensic evidence collection",
+      "title": "Linux Artifacts & Forensic Evidence Collection",
+      "slug": "linux-artifacts-forensic-evidence-collection"
+    },
+    {
+      "id": "linux artifacts & forensic evidence collection/installed software and execution evidence",
+      "title": "Installed Software and Execution Evidence",
+      "slug": "installed-software-and-execution-evidence"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Installed Software and Execution Evidence"
+    },
+    {
+      "level": 2,
+      "text": "Installed Packages"
+    },
+    {
+      "level": 3,
+      "text": "/var/lib/dpkg/status"
+    },
+    {
+      "level": 3,
+      "text": "/var/log/dpkg.log"
+    },
+    {
+      "level": 2,
+      "text": "Bash History"
+    },
+    {
+      "level": 3,
+      "text": "/.bashhistory and history"
+    },
+    {
+      "level": 2,
+      "text": "Vim History"
+    },
+    {
+      "level": 3,
+      "text": "/.viminfo"
+    },
+    {
+      "level": 2,
+      "text": "Sudo Execution History"
+    },
+    {
+      "level": 3,
+      "text": "/var/log/auth.log"
+    },
+    {
+      "level": 2,
+      "text": "Active Processes"
+    },
+    {
+      "level": 3,
+      "text": "ps aux"
+    }
+  ],
+  "overview": "On Debian-based systems, this file lists all installed packages and their metadata. It includes the package name, status, version, and description.",
+  "study": {
+    "overview": "On Debian-based systems, this file lists all installed packages and their metadata. It includes the package name, status, version, and description.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Installed Software and Execution Evidence",
+      "Installed Packages",
+      "/var/lib/dpkg/status",
+      "/var/log/dpkg.log",
+      "Bash History",
+      "/.bashhistory and history",
+      "Vim History",
+      "/.viminfo",
+      "Sudo Execution History",
+      "/var/log/auth.log",
+      "Active Processes",
+      "ps aux"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "cat /var/lib/dpkg/status | grep Package > packages.txt"
+      },
+      {
+        "language": "bash",
+        "code": "cat /var/log/dpkg.log"
+      },
+      {
+        "language": "bash",
+        "code": "cat ~/.bash_history\nhistory"
+      },
+      {
+        "language": "bash",
+        "code": "cat ~/.viminfo"
+      },
+      {
+        "language": "bash",
+        "code": "cat /var/log/auth.log* | grep -i COMMAND"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "id": "sigma/sigma",
+  "title": "Sigma",
+  "slug": "sigma",
+  "relPath": "Sigma/Sigma.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-detection-engineering",
+  "curriculumSectionTitle": "Detection Engineering & Automation",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "EDR",
+    "Windows",
+    "Linux",
+    "Network",
+    "Web",
+    "Detection",
+    "Threat Intel",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1546.003",
+    "T1219"
+  ],
+  "parentId": "sigma",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "sigma"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "sigma",
+      "title": "Sigma",
+      "slug": "sigma-0592b140"
+    },
+    {
+      "id": "sigma/sigma",
+      "title": "Sigma",
+      "slug": "sigma"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Sigma"
+    },
+    {
+      "level": 2,
+      "text": "Key Objectives"
+    },
+    {
+      "level": 1,
+      "text": "Sigma Rule Structure"
+    },
+    {
+      "level": 2,
+      "text": "1- Rule Format"
+    },
+    {
+      "level": 2,
+      "text": "2- Core Components of a Sigma Rule"
+    },
+    {
+      "level": 2,
+      "text": "Official Repository"
+    },
+    {
+      "level": 1,
+      "text": "Detection Syntax and Logic"
+    },
+    {
+      "level": 3,
+      "text": "Search Identifiers"
+    },
+    {
+      "level": 3,
+      "text": "Value Modifiers"
+    },
+    {
+      "level": 3,
+      "text": "Conditional Expressions"
+    },
+    {
+      "level": 1,
+      "text": "Example Rules"
+    },
+    {
+      "level": 2,
+      "text": "WMI Event Subscription Rule"
+    },
+    {
+      "level": 1,
+      "text": "AnyDesk Installation Detection Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Scenario Overview"
+    },
+    {
+      "level": 3,
+      "text": "Steps to Create the Rule:"
+    },
+    {
+      "level": 1,
+      "text": "Sigma Rule Conversion Tools"
+    },
+    {
+      "level": 2,
+      "text": "Sigmac"
+    },
+    {
+      "level": 2,
+      "text": "Uncoder.io"
+    }
+  ],
+  "overview": "Sigma is an open-source, generic signature format for log-based detection. It uses YAML to define structured rules, enabling security analysts to detect threats across various SIEMs. Sigma rules specify log sources, conditions, and metadata, making them adaptable to different query languages. Essentially, Sigma standardizes log analysis, much like Snort does",
+  "study": {
+    "overview": "Sigma is an open-source, generic signature format for log-based detection. It uses YAML to define structured rules, enabling security analysts to detect threats across various SIEMs. Sigma rules specify log sources, conditions, and metadata, making them adaptable to different query languages. Essentially, Sigma standardizes log analysis, much like Snort does",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Sigma",
+      "Key Objectives",
+      "Sigma Rule Structure",
+      "1- Rule Format",
+      "2- Core Components of a Sigma Rule",
+      "Official Repository",
+      "Detection Syntax and Logic",
+      "Search Identifiers",
+      "Value Modifiers",
+      "Conditional Expressions",
+      "Example Rules",
+      "WMI Event Subscription Rule"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM",
+      "EDR",
+      "YARA",
+      "Sigma"
+    ],
+    "tips": []
+  }
+}

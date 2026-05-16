@@ -1,0 +1,66 @@
+{
+  "id": "digital forensics/chain of custody",
+  "title": "Chain of custody",
+  "slug": "chain-of-custody",
+  "relPath": "Digital Forensics/Chain of custody.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "digital forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "digital forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "digital forensics",
+      "title": "Digital Forensics",
+      "slug": "digital-forensics"
+    },
+    {
+      "id": "digital forensics/chain of custody",
+      "title": "Chain of custody",
+      "slug": "chain-of-custody"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Chain of custody"
+    },
+    {
+      "level": 3,
+      "text": "Why it matters:"
+    },
+    {
+      "level": 3,
+      "text": "Chain of Custody Form"
+    }
+  ],
+  "overview": "The Chain of Custody is just a step-by-step record of who’s handled a piece of evidence, when, why, and how it was stored. Think of it as an audit trail that proves the evidence you collected today is the exact same evidence you present in court or hand off to another analyst.",
+  "study": {
+    "overview": "The Chain of Custody is just a step-by-step record of who’s handled a piece of evidence, when, why, and how it was stored. Think of it as an audit trail that proves the evidence you collected today is the exact same evidence you present in court or hand off to another analyst.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Chain of custody",
+      "Why it matters:",
+      "Chain of Custody Form"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

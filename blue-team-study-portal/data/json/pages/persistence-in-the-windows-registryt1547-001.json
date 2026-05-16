@@ -1,0 +1,140 @@
+{
+  "id": "hunting persistence (mitre ta0003)/persistence in the windows registry(t1547 001)",
+  "title": "Persistence in the Windows Registry(T1547 001)",
+  "slug": "persistence-in-the-windows-registryt1547-001",
+  "relPath": "Hunting Persistence (MITRE TA0003)/Persistence in the Windows Registry(T1547 001).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1547",
+    "TA0003",
+    "T1547.001"
+  ],
+  "parentId": "hunting persistence (mitre ta0003)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "hunting persistence (mitre ta0003)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "hunting persistence (mitre ta0003)",
+      "title": "Hunting Persistence (MITRE TA0003)",
+      "slug": "hunting-persistence-mitre-ta0003"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/persistence in the windows registry(t1547 001)",
+      "title": "Persistence in the Windows Registry(T1547 001)",
+      "slug": "persistence-in-the-windows-registryt1547-001"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Persistence in the Windows Registry(T1547.001)"
+    },
+    {
+      "level": 2,
+      "text": "Registry Structure & Terminology"
+    },
+    {
+      "level": 2,
+      "text": "Registry Run Keys & Malware Persistence"
+    },
+    {
+      "level": 3,
+      "text": "Important Registry Hives"
+    },
+    {
+      "level": 3,
+      "text": "Common Run Keys Used for Persistence"
+    },
+    {
+      "level": 3,
+      "text": "Example of Malware Persistence in Registry"
+    },
+    {
+      "level": 2,
+      "text": "Detecting Registry-Based Persistence"
+    },
+    {
+      "level": 3,
+      "text": "Detecting Abnormal Access"
+    },
+    {
+      "level": 2,
+      "text": "Methods of Registry-Based Persistence"
+    },
+    {
+      "level": 3,
+      "text": "1- Overriding an Existing Key"
+    },
+    {
+      "level": 3,
+      "text": "2- Creating a New Key for Persistence"
+    },
+    {
+      "level": 3,
+      "text": "3- Adding an Item to a List"
+    },
+    {
+      "level": 2,
+      "text": "Additional Important Registry-Based Persistence Techniques"
+    },
+    {
+      "level": 3,
+      "text": "Tracking in Windows Event Logs"
+    },
+    {
+      "level": 1,
+      "text": "Conclusion"
+    }
+  ],
+  "overview": "The Windows Registry functions similarly to a file system. Understanding its structure helps in identifying potential persistence mechanisms.",
+  "study": {
+    "overview": "The Windows Registry functions similarly to a file system. Understanding its structure helps in identifying potential persistence mechanisms.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Persistence in the Windows Registry(T1547.001)",
+      "Registry Structure & Terminology",
+      "Registry Run Keys & Malware Persistence",
+      "Important Registry Hives",
+      "Common Run Keys Used for Persistence",
+      "Example of Malware Persistence in Registry",
+      "Detecting Registry-Based Persistence",
+      "Detecting Abnormal Access",
+      "Methods of Registry-Based Persistence",
+      "1- Overriding an Existing Key",
+      "2- Creating a New Key for Persistence",
+      "3- Adding an Item to a List"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\nMalware -> C:\\Windows\\Temp\\Malware.exe"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": [
+      "Since registry modification auditing is not enabled by default, administrators must configure System Access Control Lists (SACLs) to monitor specific registry keys.",
+      "What is a Handle?"
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Phishing Analysis 2 (BTLO) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="phishing-analysis-labs.html">Phishing Analysis Labs</a><span>/</span><span>Phishing Analysis 2 (BTLO)</span></div>
+      <h1>Phishing Analysis 2 (BTLO)</h1>
+      <p>Put your phishing analysis skils to the test by triaging and collecting information about a recent phishing campaign.</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Phishing</span><span class="tag">Web</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Phishing Analysis Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>L1</em></a>
+      <b>13</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-analysis-tools-thm.html"><span>Phishing Analysis Tools (THM)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="the-greenholt-phish-thm.html"><span>The Greenholt Phish (THM)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishtool-thm.html"><span>PhishTool (THM)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="the-planets-prestige-btlo.html"><span>The Planet's Prestige (BTLO)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="brabbit-cyberdefenders.html"><span>BRabbit (CyberDefenders)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishstrike-cyberdefenders.html"><span>PhishStrike (CyberDefenders)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-email-letsdefend.html"><span>Phishing Email (LetsDefend)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-analysis-letsdefend.html"><span>Email Analysis (LetsDefend)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-analysis-btlo.html"><span>Phishing Analysis (BTLO)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="phishing-analysis-2-btlo.html"><span>Phishing Analysis 2 (BTLO)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="snapped-phish-ing-line-thm.html"><span>Snapped Phish-ing Line (THM)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishnet-htb.html"><span>PhishNet (HTB)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="bec-ky-btlo.html"><span>Bec-ky (BTLO)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Put your phishing analysis skils to the test by triaging and collecting information about a recent phishing campaign.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Phishing Analysis 2 (BTLO)</li><li>Scenario</li><li>1- What is the sending email address?</li><li>amazon@zyevantoby.cn</li><li>2- What is the recipient email address?</li><li>saintington73@outlook.com</li><li>3- What is the subject line of the email?</li><li>Your Account has been locked</li><li>4- What company is the attacker trying to imitate?</li><li>Amazon</li><li>5- What is the date and time the email was sent? (As copied from a text editor)</li><li>Wed, 14 Jul 2021 01:40:32 +0900</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="phishing-analysis-2-btlo">Phishing Analysis 2 (BTLO)</h2>
+<h3 id="scenario">Scenario</h3>
+<p>Put your phishing analysis skils to the test by triaging and collecting information about a recent phishing campaign.</p>
+<p><a class="note-link" href="https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8">https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8</a></p>
+<p><a class="note-link" href="https://medium.com/@josephkarug/phishing-analysis-2-blue-team-lab-walkthrough-1ceca3f590d7">https://medium.com/@josephkarug/phishing-analysis-2-blue-team-lab-walkthrough-1ceca3f590d7</a></p>
+<hr>
+<h4 id="1-what-is-the-sending-email-address">1- What is the sending email address?</h4>
+<h4 id="amazonzyevantoby.cn">amazon@zyevantoby.cn</h4>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_125824-0fce7085.png" data-alt="Screenshot 2025-08-11 125824.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_125824-0fce7085.png" alt="Screenshot 2025-08-11 125824.png" loading="lazy"></button></p>
+<p>From</p>
+<h4 id="2-what-is-the-recipient-email-address">2- What is the recipient email address?</h4>
+<h4 id="saintington73outlook.com">saintington73@outlook.com</h4>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_125833-c4a75193.png" data-alt="Screenshot 2025-08-11 125833.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_125833-c4a75193.png" alt="Screenshot 2025-08-11 125833.png" loading="lazy"></button></p>
+<p>To</p>
+<h4 id="3-what-is-the-subject-line-of-the-email">3- What is the subject line of the email?</h4>
+<h4 id="your-account-has-been-locked"><strong>Your Account has been locked</strong></h4>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_125857-39b310d3.png" data-alt="Screenshot 2025-08-11 125857.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_125857-39b310d3.png" alt="Screenshot 2025-08-11 125857.png" loading="lazy"></button></p>
+<p>Subject</p>
+<h4 id="4-what-company-is-the-attacker-trying-to-imitate">4- What company is the attacker trying to imitate?</h4>
+<h4 id="amazon">Amazon</h4>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_125915-1a582532.png" data-alt="Screenshot 2025-08-11 125915.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_125915-1a582532.png" alt="Screenshot 2025-08-11 125915.png" loading="lazy"></button></p>
+<p>from the email and the attacker address we can see the attacker is impersonating Amazon</p>
+<h4 id="5-what-is-the-date-and-time-the-email-was-sent-as-copied-from-a-text-editor">5- What is the date and time the email was sent? (As copied from a text editor)</h4>
+<h4 id="wed-14-jul-2021-014032-0900">Wed, 14 Jul 2021 01:40:32 +0900</h4>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_125947-4bc17c4f.png" data-alt="Screenshot 2025-08-11 125947.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_125947-4bc17c4f.png" alt="Screenshot 2025-08-11 125947.png" loading="lazy"></button></p>
+<p>Date</p>
+<h4 id="6-what-is-the-url-of-the-main-call-to-action-button">6- What is the URL of the main call-to-action button?</h4>
+<h4 id="https3a2f2famaozn.zzyuchengzhika.cn2f3fmailtoken3dsaintington7340outlook.comdata047c017c7c">https%3A%2F%2Famaozn.zzyuchengzhika.cn%2F%3Fmailtoken%3Dsaintington73%40outlook.com&amp;data=04%7C01%7C%7C70072381ba6e49d1d12d08d94632811e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C637618004988892053%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=oPvTW08ASiViZTLfMECsvwDvguT6ODYKPQZNK3203m0%3D&amp;reserved=0</h4>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_130501-5fe55c32.png" data-alt="Screenshot 2025-08-11 130501.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_130501-5fe55c32.png" alt="Screenshot 2025-08-11 130501.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_130359-30c6ceba.png" data-alt="Screenshot 2025-08-11 130359.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-11_130359-30c6ceba.png" alt="Screenshot 2025-08-11 130359.png" loading="lazy"></button></p>
+<p>right click and copy link location / note that this method is risky you should get the url from the text editor or be super careful</p>
+<h4 id="7-look-at-the-url-using-url2png.-what-is-the-first-sentence-heading-displayed-on-this-site">7- Look at the URL using URL2PNG. What is the first sentence (heading) displayed on this site? (regardless of whether you think the site is malicious or not)</h4>
+<h4 id="this-web-page-could-not-be-loaded">This web page could not be loaded</h4>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_021607-b76ab400.png" data-alt="Screenshot 2025-08-12 021607.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_021607-b76ab400.png" alt="Screenshot 2025-08-12 021607.png" loading="lazy"></button></p>
+<p>copy the url and paste it to url2png</p>
+<h4 id="8-when-looking-at-the-main-body-content-in-a-text-editor-what-encoding-scheme-is-being-use"><strong>8- When looking at the main body content in a text editor, what encoding scheme is being used?</strong></h4>
+<h4 id="base64">Base64</h4>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_021220-96444ffc.png" data-alt="Screenshot 2025-08-12 021220.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_021220-96444ffc.png" alt="Screenshot 2025-08-12 021220.png" loading="lazy"></button></p>
+<p>Encoding / Content-Transfer-Encoding</p>
+<h4 id="9-what-is-the-url-used-to-retrieve-the-companys-logo-in-the-email">9- What is the URL used to retrieve the company's logo in the email?</h4>
+<h4 id="httpsimages.squarespace-cdn.comcontent52e2b6d3e4b06446e8bf13ed1500584238342-ox2l298xvskf8a">https://images.squarespace-cdn.com/content/52e2b6d3e4b06446e8bf13ed/1500584238342-OX2L298XVSKF8AO6I3SV/amazon-logo?format=750w&amp;amp;content-type=image%2Fpng</h4>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_021823-5c88d42f.png" data-alt="Screenshot 2025-08-12 021823.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_021823-5c88d42f.png" alt="Screenshot 2025-08-12 021823.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_021916-7d43d052.png" data-alt="Screenshot 2025-08-12 021916.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_021916-7d43d052.png" alt="Screenshot 2025-08-12 021916.png" loading="lazy"></button></p>
+<p>copy the base64 content to cyberchef and search for http</p>
+<h4 id="10-for-some-unknown-reason-one-of-the-urls-contains-a-facebook-profile-url.-what-is-the-us">10- For some unknown reason one of the URLs contains a Facebook profile URL. What is the username (not necessarily the display name) of this account, based on the URL?</h4>
+<h4 id="amir.boyka.7">amir.boyka.7</h4>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_022101-648c9bf7.png" data-alt="Screenshot 2025-08-12 022101.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_022101-648c9bf7.png" alt="Screenshot 2025-08-12 022101.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_022122-fb4d63bd.png" data-alt="Screenshot 2025-08-12 022122.png"><img src="../assets/images/phishing-analysis-labsphishing-analysis-2-btlo-screenshot_2025-08-12_022122-fb4d63bd.png" alt="Screenshot 2025-08-12 022122.png" loading="lazy"></button></p>
+<p>search with facebook and we can see the profile link when opening it we can see the profile of a user named Amir Bigboss, whose cover photo says, 'I use drugs on a regular basis, that's why I'm very happy.’</p>
+<p>nice 🦆</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#phishing-analysis-2-btlo">Phishing Analysis 2 (BTLO)</a><a href="#scenario">Scenario</a><a href="#1-what-is-the-sending-email-address">1- What is the sending email address?</a><a href="#amazonzyevantoby.cn">amazon@zyevantoby.cn</a><a href="#2-what-is-the-recipient-email-address">2- What is the recipient email address?</a><a href="#saintington73outlook.com">saintington73@outlook.com</a><a href="#3-what-is-the-subject-line-of-the-email">3- What is the subject line of the email?</a><a href="#your-account-has-been-locked">Your Account has been locked</a><a href="#4-what-company-is-the-attacker-trying-to-imitate">4- What company is the attacker trying to imitate?</a><a href="#amazon">Amazon</a><a href="#5-what-is-the-date-and-time-the-email-was-sent-as-copied-from-a-text-editor">5- What is the date and time the email was sent? (As copied from a text editor)</a><a href="#wed-14-jul-2021-014032-0900">Wed, 14 Jul 2021 01:40:32 +0900</a><a href="#6-what-is-the-url-of-the-main-call-to-action-button">6- What is the URL of the main call-to-action button?</a><a href="#https3a2f2famaozn.zzyuchengzhika.cn2f3fmailtoken3dsaintington7340outlook.comdata047c017c7c">https%3A%2F%2Famaozn.zzyuchengzhika.cn%2F%3Fmailtoken%3Dsaintington73%40outlook.com&amp;data=04%7C01%7C%7C70072381ba6e49d1d12d08d94632811e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C637618004988892053%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=oPvTW08ASiViZTLfMECsvwDvguT6ODYKPQZNK3203m0%3D&amp;reserved=0</a><a href="#7-look-at-the-url-using-url2png.-what-is-the-first-sentence-heading-displayed-on-this-site">7- Look at the URL using URL2PNG. What is the first sentence (heading) displayed on this site? (regardless of whether you think the site is malicious or not)</a><a href="#this-web-page-could-not-be-loaded">This web page could not be loaded</a><a href="#8-when-looking-at-the-main-body-content-in-a-text-editor-what-encoding-scheme-is-being-use">8- When looking at the main body content in a text editor, what encoding scheme is being used?</a><a href="#base64">Base64</a><a href="#9-what-is-the-url-used-to-retrieve-the-companys-logo-in-the-email">9- What is the URL used to retrieve the company's logo in the email?</a><a href="#httpsimages.squarespace-cdn.comcontent52e2b6d3e4b06446e8bf13ed1500584238342-ox2l298xvskf8a">https://images.squarespace-cdn.com/content/52e2b6d3e4b06446e8bf13ed/1500584238342-OX2L298XVSKF8AO6I3SV/amazon-logo?format=750w&amp;amp;content-type=image%2Fpng</a><a href="#10-for-some-unknown-reason-one-of-the-urls-contains-a-facebook-profile-url.-what-is-the-us">10- For some unknown reason one of the URLs contains a Facebook profile URL. What is the username (not necessarily the display name) of this account, based on the URL?</a><a href="#amir.boyka.7">amir.boyka.7</a></details>
+    </div>
+    
+    <footer class="pager"><a href="phishing-analysis-btlo.html">← Phishing Analysis (BTLO)</a><a href="snapped-phish-ing-line-thm.html">Snapped Phish-ing Line (THM) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

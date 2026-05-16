@@ -1,0 +1,103 @@
+{
+  "id": "ad hardening",
+  "title": "AD Hardening",
+  "slug": "ad-hardening",
+  "relPath": "AD Hardening.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-detection-engineering",
+  "curriculumSectionTitle": "Detection Engineering & Automation",
+  "tags": [
+    "SIEM",
+    "Windows",
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "ad hardening",
+      "title": "AD Hardening",
+      "slug": "ad-hardening"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "AD Hardening"
+    },
+    {
+      "level": 2,
+      "text": "Quick note: how to edit GPOs"
+    },
+    {
+      "level": 2,
+      "text": "1- Disable LAN Manager (LM) hashes"
+    },
+    {
+      "level": 2,
+      "text": "2- SMB signing (prevent SMB MiTM / tampering)"
+    },
+    {
+      "level": 2,
+      "text": "3- LDAP signing & encryption"
+    },
+    {
+      "level": 2,
+      "text": "4- Password management & rotation"
+    },
+    {
+      "level": 2,
+      "text": "5- Password policy (recommended baseline)"
+    },
+    {
+      "level": 2,
+      "text": "6- Least privilege & account design"
+    },
+    {
+      "level": 2,
+      "text": "7- Tiered Access Model (AD TAM)"
+    },
+    {
+      "level": 2,
+      "text": "8- Auditing & monitoring"
+    },
+    {
+      "level": 2,
+      "text": "9- Microsoft Security Compliance Toolkit (MSCT) & Policy Analyzer"
+    }
+  ],
+  "overview": "Open Group Policy Management Editor on a domain-joined management host (or the lab VM) to change domain or local policies:",
+  "study": {
+    "overview": "Open Group Policy Management Editor on a domain-joined management host (or the lab VM) to change domain or local policies:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "AD Hardening",
+      "Quick note: how to edit GPOs",
+      "1- Disable LAN Manager (LM) hashes",
+      "2- SMB signing (prevent SMB MiTM / tampering)",
+      "3- LDAP signing & encryption",
+      "4- Password management & rotation",
+      "5- Password policy (recommended baseline)",
+      "6- Least privilege & account design",
+      "7- Tiered Access Model (AD TAM)",
+      "8- Auditing & monitoring",
+      "9- Microsoft Security Compliance Toolkit (MSCT) & Policy Analyzer"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM"
+    ],
+    "tips": []
+  }
+}

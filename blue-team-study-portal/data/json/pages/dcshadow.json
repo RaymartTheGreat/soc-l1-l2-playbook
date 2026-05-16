@@ -1,0 +1,129 @@
+{
+  "id": "detecting ad attacks/dcshadow",
+  "title": "DCSHADOW",
+  "slug": "dcshadow",
+  "relPath": "Detecting AD Attacks/DCSHADOW.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "EDR",
+    "PowerShell",
+    "Network",
+    "Active Directory",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1207"
+  ],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/dcshadow",
+      "title": "DCSHADOW",
+      "slug": "dcshadow"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "DCSHADOW"
+    },
+    {
+      "level": 2,
+      "text": "1- Understanding the Attack"
+    },
+    {
+      "level": 2,
+      "text": "2- Steps of a DCShadow Attack"
+    },
+    {
+      "level": 3,
+      "text": "a. Compromise an Account with Administrative Permissions"
+    },
+    {
+      "level": 3,
+      "text": "b. Mimic a Domain Controller and Inject Malicious Changes"
+    },
+    {
+      "level": 3,
+      "text": "c. Leverage Injected Changes for Further Objectives"
+    },
+    {
+      "level": 2,
+      "text": "3- Key Tools"
+    },
+    {
+      "level": 2,
+      "text": "4- Detection and Defensive Strategies"
+    },
+    {
+      "level": 3,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Mitigation Measures"
+    },
+    {
+      "level": 2,
+      "text": "5- Summary"
+    }
+  ],
+  "overview": "DCShadow is a post-exploitation technique in which an attacker abuses compromised replication permissions to mimic a domain controller. By doing so, the adversary can push malicious changes into Active Directory (AD) with minimal logging, allowing for stealthy persistence, privilege escalation, or manipulation of AD data.",
+  "study": {
+    "overview": "DCShadow is a post-exploitation technique in which an attacker abuses compromised replication permissions to mimic a domain controller. By doing so, the adversary can push malicious changes into Active Directory (AD) with minimal logging, allowing for stealthy persistence, privilege escalation, or manipulation of AD data.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "DCSHADOW",
+      "1- Understanding the Attack",
+      "2- Steps of a DCShadow Attack",
+      "a. Compromise an Account with Administrative Permissions",
+      "b. Mimic a Domain Controller and Inject Malicious Changes",
+      "c. Leverage Injected Changes for Further Objectives",
+      "3- Key Tools",
+      "4- Detection and Defensive Strategies",
+      "Detection",
+      "Mitigation Measures",
+      "5- Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "jsx",
+        "code": "index=wineventlog EventCode=4662\n(ObjectType=\"replication\" OR ObjectType=\"DRSUAPI\")\nNOT SubjectUserName=\"*$\"\n| table _time, ComputerName, SubjectUserName, ObjectType, AccessMask"
+      },
+      {
+        "language": "jsx",
+        "code": "index=wineventlog EventCode IN (5136,5141)\nObjectClass=\"nTDSDSA\" OR ObjectClass=\"server\"\n| table _time, ComputerName, SubjectUserName, ObjectClass, OperationType"
+      }
+    ],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM",
+      "EDR",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

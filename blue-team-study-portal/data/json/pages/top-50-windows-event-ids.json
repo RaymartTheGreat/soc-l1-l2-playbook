@@ -1,0 +1,82 @@
+{
+  "id": "windows event ids/top 50 windows event ids",
+  "title": "Top 50 Windows Event IDs",
+  "slug": "top-50-windows-event-ids",
+  "relPath": "Windows Event IDs/Top 50 Windows Event IDs.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "EDR",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Active Directory",
+    "Detection",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "windows event ids",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows event ids"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows event ids",
+      "title": "Windows Event IDs",
+      "slug": "windows-event-ids"
+    },
+    {
+      "id": "windows event ids/top 50 windows event ids",
+      "title": "Top 50 Windows Event IDs",
+      "slug": "top-50-windows-event-ids"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Top 50 Windows Event IDs"
+    },
+    {
+      "level": 2,
+      "text": "Authentication & Access Monitoring"
+    },
+    {
+      "level": 2,
+      "text": "File, Process, and Registry Monitoring"
+    },
+    {
+      "level": 2,
+      "text": "Security & Anomaly Detection"
+    }
+  ],
+  "overview": "- Failed Login Attempts ❌ – Event ID: 4625 - Account Lockouts 🔒 – Event ID: 4740 - Successful Login Outside Business Hours 🌙 – Event ID: 4624 - New User Creation 🆕 – Event ID: 4720 - Privileged Account Usage 🔑 – Event ID: 4672 - User Account Changes 🔄 – Event IDs: 4722, 4723, 4724, 4725, 4726 - Logon from Unusual Locations 🌍 – Event ID: 4624 (with geol",
+  "study": {
+    "overview": "- Failed Login Attempts ❌ – Event ID: 4625 - Account Lockouts 🔒 – Event ID: 4740 - Successful Login Outside Business Hours 🌙 – Event ID: 4624 - New User Creation 🆕 – Event ID: 4720 - Privileged Account Usage 🔑 – Event ID: 4672 - User Account Changes 🔄 – Event IDs: 4722, 4723, 4724, 4725, 4726 - Logon from Unusual Locations 🌍 – Event ID: 4624 (with geol",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Top 50 Windows Event IDs",
+      "Authentication & Access Monitoring",
+      "File, Process, and Registry Monitoring",
+      "Security & Anomaly Detection"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

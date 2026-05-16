@@ -1,0 +1,81 @@
+{
+  "id": "network/fundamentals/router vs switch",
+  "title": "Router VS Switch",
+  "slug": "router-vs-switch",
+  "relPath": "Network/Fundamentals/Router VS Switch.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/router vs switch",
+      "title": "Router VS Switch",
+      "slug": "router-vs-switch"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Router VS Switch"
+    },
+    {
+      "level": 2,
+      "text": "Switch"
+    },
+    {
+      "level": 2,
+      "text": "Router"
+    },
+    {
+      "level": 2,
+      "text": "Key Differences"
+    },
+    {
+      "level": 2,
+      "text": "When to Use Which"
+    }
+  ],
+  "overview": "- Connects multiple devices (PCs, printers, cameras) within the same network - Operates at OSI Layer 2 (Data Link), using MAC addresses to forward frames - Maintains a MAC‑address table to send traffic only to the destination port (unlike hubs) - Ports commonly range from 4 up to 48+ in enterprise models - Supports VLANs to segment traffic without extra cabl",
+  "study": {
+    "overview": "- Connects multiple devices (PCs, printers, cameras) within the same network - Operates at OSI Layer 2 (Data Link), using MAC addresses to forward frames - Maintains a MAC‑address table to send traffic only to the destination port (unlike hubs) - Ports commonly range from 4 up to 48+ in enterprise models - Supports VLANs to segment traffic without extra cabl",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Router VS Switch",
+      "Switch",
+      "Router",
+      "Key Differences",
+      "When to Use Which"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

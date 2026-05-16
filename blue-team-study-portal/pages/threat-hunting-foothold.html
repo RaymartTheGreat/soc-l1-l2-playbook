@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Threat Hunting Foothold | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-hunting-module.html">Threat Hunting module</a><span>/</span><span>Threat Hunting Foothold</span></div>
+      <h1>Threat Hunting Foothold</h1>
+      <p>This section focuses on how to detect early intrusion attempts (initial foothold) and the subsequent execution phase once adversaries breach defenses. It outlines the attacker’s mindset, various tactics to gain initial access, and methods to execute malicious commands using built-in tools or scripting.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">EDR</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Sysmon</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Detection</span><span class="tag">Persistence</span><span class="tag">C2</span><span class="tag mitre">TA0001</span><span class="tag mitre">TA0002</span><span class="tag mitre">TA0011</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Hunting module</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-module.html"><span>Threat Hunting module</span><em>L2</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-introduction.html"><span>Threat Hunting Introduction</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="threat-hunting-foothold.html"><span>Threat Hunting Foothold</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-pivoting.html"><span>Threat Hunting Pivoting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-endgame.html"><span>Threat Hunting Endgame</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-i-payment-collectors.html"><span>Hunt Me I Payment Collectors</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-ii-typo-squatters.html"><span>Hunt Me II Typo Squatters</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="summary-report-9541433d.html"><span>Summary Report</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>This section focuses on how to detect early intrusion attempts (initial foothold) and the subsequent execution phase once adversaries breach defenses. It outlines the attacker’s mindset, various tactics to gain initial access, and methods to execute malicious commands using built-in tools or scripting.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Threat Hunting: Foothold</li><li>1- Initial Access (TA0001)</li><li>Definition:</li><li>Examples of Methods:</li><li>Hunting for Initial Access Attempts</li><li>Scenario 1: Brute-Forcing via SSH on Jumphost</li><li>Scenario 2: Remote Code Execution on Web01</li><li>Scenario 3: Phishing Links and Attachments</li><li>2- Execution (TA0002)</li><li>Goal:</li><li>Examples of Methods:</li><li>Hunting for Malicious Execution</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>EDR</li><li>Sysmon</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>Key Point:</li><li>The foothold isn’t limited to workstations—it extends to any entry point (account or machine) that an attacker can leverage.</li><li>Note: The key idea is that while adversaries try to hide, their actions still leave traces in logs and process metadata that can be hunted.</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="threat-hunting-foothold">Threat Hunting: Foothold</h2>
+<p>This section focuses on how to detect <strong>early intrusion attempts (initial foothold)</strong> and the subsequent execution phase once adversaries breach defenses. It outlines the attacker’s mindset, various tactics to gain initial access, and methods to execute malicious commands using built-in tools or scripting.</p>
+<hr>
+<h2 id="1-initial-access-ta0001">1- Initial Access (TA0001)</h2>
+<h4 id="definition"><strong>Definition:</strong></h4>
+<p>Techniques that adversaries use to gain their first entry. This phase is all about delivering a payload to secure a foothold.</p>
+<h4 id="examples-of-methods"><strong>Examples of Methods:</strong></h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-03_015745-8a410274.png" data-alt="Screenshot 2025-03-03 015745.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-03_015745-8a410274.png" alt="Screenshot 2025-03-03 015745.png" loading="lazy"></button></p>
+<blockquote>Key Point:</blockquote>
+<blockquote></blockquote>
+<blockquote></blockquote>
+<blockquote>The foothold isn’t limited to workstations—it extends to any entry point (account or machine) that an attacker can leverage.</blockquote>
+<blockquote></blockquote>
+<h3 id="hunting-for-initial-access-attempts">Hunting for Initial Access Attempts</h3>
+<h3 id="scenario-1-brute-forcing-via-ssh-on-jumphost">Scenario 1: Brute-Forcing via SSH on Jumphost</h3>
+<ul>
+<li><strong>Data Source:filebeat- index in Kibana.</strong></li>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Identify Failed SSH Attempts:</strong></li>
+<ul>
+<li>Use a Lens visualization table filtering by index (filebeat), with rows for <code>source.ip</code> and <code>user.name</code> and metric <code>count</code>.</li>
+<li><strong>KQL Query:</strong><code>host.name: jumphost AND event.category: authentication AND system.auth.ssh.event: Failed</code></li>
+</ul>
+</ol>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-a7729d0aa83bae1e45489b4d8697432e-676e690d.png" data-alt="a7729d0aa83bae1e45489b4d8697432e.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-a7729d0aa83bae1e45489b4d8697432e-676e690d.png" alt="a7729d0aa83bae1e45489b4d8697432e.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Identify Successful SSH Logins:</strong></li>
+<ul>
+<li>Update the query to filter for accepted events from the top suspicious IPs:<code>host.name: jumphost AND event.category: authentication AND system.auth.ssh.event: Accepted AND source.ip: (167.71.198.43 OR 218.92.0.115)</code></li>
+</ul>
+</ol>
+</ol>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-0bc2a6d4be366ddd0bf59c7538e42f86-c47f9208.png" data-alt="0bc2a6d4be366ddd0bf59c7538e42f86.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-0bc2a6d4be366ddd0bf59c7538e42f86-c47f9208.png" alt="0bc2a6d4be366ddd0bf59c7538e42f86.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Follow-Up Investigation:</strong></li>
+<ul>
+<li>Once a successful login is detected (e.g., from IP 167.71.198.43 using the dev account), the next step is to analyze the subsequent commands executed via SSH.</li>
+</ul>
+</ol>
+</ol>
+<hr>
+<h3 id="scenario-2-remote-code-execution-on-web01">Scenario 2: Remote Code Execution on Web01</h3>
+<ul>
+<li><strong>Data Source:packetbeat- index in Kibana.</strong></li>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Detect Directory Enumeration:</strong></li>
+<ul>
+<li>Create a Lens table visualization for HTTP traffic targeting <code>web01</code> on port 80.</li>
+<li><strong>KQL Query:</strong><code>host.name: web01 AND network.protocol: http AND destination.port: 80</code></li>
+<li>Look at <code>http.response.status_code</code>—a high count of 404 responses suggests enumeration (e.g., using Gobuster).</li>
+</ul>
+</ol>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-a8191b2574cc9f57739e3640bf86c8cb-118fc74d.png" data-alt="a8191b2574cc9f57739e3640bf86c8cb.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-a8191b2574cc9f57739e3640bf86c8cb-118fc74d.png" alt="a8191b2574cc9f57739e3640bf86c8cb.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Drill Down on Enumeration:</strong></li>
+<ul>
+<li>Use the Discover tab with a query filtering on status code 404, the attacker’s IP, and additional fields (query, user_agent, url.query) to confirm directory enumeration.</li>
+</ul>
+</ol>
+</ol>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-b3aed47ec50e397bf656a2d7acc79a14-8883080f.png" data-alt="b3aed47ec50e397bf656a2d7acc79a14.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-b3aed47ec50e397bf656a2d7acc79a14-8883080f.png" alt="b3aed47ec50e397bf656a2d7acc79a14.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Identify Successful Exploitation:</strong></li>
+<ul>
+<li>Change the query to filter for successful status codes (200, 301, 302) to determine valid endpoints.</li>
+<li>Sort events by timestamp to observe the attack flow, noting the shift from enumeration to exploitation (e.g., focusing on the <code>/gila</code> directory and the use of suspicious PHP code).</li>
+</ul>
+</ol>
+</ol>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-00714db972dc460ddb8c99cfaff4d045-dc9862ef.png" data-alt="00714db972dc460ddb8c99cfaff4d045.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-00714db972dc460ddb8c99cfaff4d045-dc9862ef.png" alt="00714db972dc460ddb8c99cfaff4d045.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-0_alanub8rpyiaxysj-a1a81df6.webp" data-alt="0AlanuB8rpyIaxYSj.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-0_alanub8rpyiaxysj-a1a81df6.webp" alt="0AlanuB8rpyIaxYSj.webp" loading="lazy"></button></p>
+<hr>
+<h3 id="scenario-3-phishing-links-and-attachments">Scenario 3: Phishing Links and Attachments</h3>
+<ul>
+<li><strong>Data Source:winlogbeat- index in Kibana.</strong></li>
+<li><strong>Methodology:</strong></li>
+<ul>
+<li><strong>For Web Browser Downloads (Chrome):</strong></li>
+<ul>
+<li>Query for file creation events (Sysmon Event ID 11) by <code>chrome.exe</code>:<code>host.name: WKSTN-* AND process.name: chrome.exe AND winlog.event_id: 11</code></li>
+<li>Add columns for computer name, user, and file path.</li>
+<li>Identify unusual downloads (e.g., files like <code>chrome.exe</code> or <code>microsoft.hta</code> in the Downloads folder).</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-297abb4fdb610a0edc133d9b28ee8318-3f9144a4.png" data-alt="297abb4fdb610a0edc133d9b28ee8318.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-297abb4fdb610a0edc133d9b28ee8318-3f9144a4.png" alt="297abb4fdb610a0edc133d9b28ee8318.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<li><strong>For Outlook Attachments:</strong></li>
+<ul>
+<li>Query for file creation events from <code>OUTLOOK.EXE</code>:<code>host.name: WKSTN-* AND process.name: OUTLOOK.EXE AND winlog.event_id: 11</code></li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-7fda4f67be441f5a45766fc66c484725-5d0b6052.png" data-alt="7fda4f67be441f5a45766fc66c484725.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-7fda4f67be441f5a45766fc66c484725-5d0b6052.png" alt="7fda4f67be441f5a45766fc66c484725.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li>Focus on attachments that are temporarily stored (e.g., <code>Update.zip</code> in the Outlook cache).</li>
+<li>Confirm the attachment's contents by querying for related events with the file name.</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-1a26656dcda0a590b7bd0fd1be0f5c6a-38136d01.png" data-alt="1a26656dcda0a590b7bd0fd1be0f5c6a.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-1a26656dcda0a590b7bd0fd1be0f5c6a-38136d01.png" alt="1a26656dcda0a590b7bd0fd1be0f5c6a.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li>Follow-up by tracking subsequent child processes spawned by the suspicious LNK file.</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-218ec87deb70ed7bb0ba985f51a05a9c-2e0c7329.png" data-alt="218ec87deb70ed7bb0ba985f51a05a9c.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-218ec87deb70ed7bb0ba985f51a05a9c-2e0c7329.png" alt="218ec87deb70ed7bb0ba985f51a05a9c.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-f09e1ada7dca3913d1dd067d0304694c-c831024a.png" data-alt="f09e1ada7dca3913d1dd067d0304694c.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-f09e1ada7dca3913d1dd067d0304694c-c831024a.png" alt="f09e1ada7dca3913d1dd067d0304694c.png" loading="lazy"></button></p>
+<hr>
+<hr>
+<h2 id="2-execution-ta0002">2- Execution (TA0002)</h2>
+<h4 id="goal"><strong>Goal:</strong></h4>
+<p>Understand how adversaries execute their malicious payloads after gaining initial access.</p>
+<h4 id="examples-of-methods"><strong>Examples of Methods:</strong></h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-03_021159-f2e9053e.png" data-alt="Screenshot 2025-03-03 021159.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-03_021159-f2e9053e.png" alt="Screenshot 2025-03-03 021159.png" loading="lazy"></button></p>
+<h3 id="hunting-for-malicious-execution">Hunting for Malicious Execution</h3>
+<h3 id="scenario-1-usage-of-command-line-tools">Scenario 1: Usage of Command-Line Tools</h3>
+<ul>
+<li><strong>Data Source:winlogbeat- index.</strong></li>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Detect Process Creations:</strong></li>
+<ul>
+<li>Query for Sysmon Event ID 1 where processes include <code>cmd.exe</code> or <code>powershell.exe</code>:<code>host.name: WKSTN-* AND winlog.event_id: 1 AND process.name: (cmd.exe OR powershell.exe)</code></li>
+<li>Add fields such as computer name, user, parent command line, and process command line.</li>
+</ul>
+</ol>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-631c0880041b3ab9ec0da41d7796b623-cb8b1f3d.png" data-alt="631c0880041b3ab9ec0da41d7796b623.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-631c0880041b3ab9ec0da41d7796b623-cb8b1f3d.png" alt="631c0880041b3ab9ec0da41d7796b623.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Analyze Anomalies:</strong></li>
+<ul>
+<li>Note unusual parent-child relationships, e.g., <code>cmd.exe</code> launched from <code>C:\Windows\Temp\installer.exe</code>, which is suspicious.</li>
+</ul>
+<li><strong>Deep Dive with PowerShell Script Block Logging:</strong></li>
+<ul>
+<li>Use Sysmon Event ID 4104 to capture PowerShell script block execution:<code>host.name: WKSTN-* AND winlog.event_id: 4104</code></li>
+<li>Filter out benign noise (e.g., repeated “Set-StrictMode” events) to focus on anomalies like the usage of <code>Invoke-Empire</code> (an indicator of the Empire C2 agent).</li>
+</ul>
+</ol>
+</ol>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-cef30beb16d98882921b030f944ac497-0aed9e06.png" data-alt="cef30beb16d98882921b030f944ac497.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-cef30beb16d98882921b030f944ac497-0aed9e06.png" alt="cef30beb16d98882921b030f944ac497.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-0ce3b95d0e5cad597a1f6176fd2f1a68-11fe7d3c.png" data-alt="0ce3b95d0e5cad597a1f6176fd2f1a68.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-0ce3b95d0e5cad597a1f6176fd2f1a68-11fe7d3c.png" alt="0ce3b95d0e5cad597a1f6176fd2f1a68.png" loading="lazy"></button></p>
+<p>(filtering noise)</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-0ce3b95d0e5cad597a1f6176fd2f1a68_1-1e3c8024.png" data-alt="0ce3b95d0e5cad597a1f6176fd2f1a68 (1).png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-0ce3b95d0e5cad597a1f6176fd2f1a68_1-1e3c8024.png" alt="0ce3b95d0e5cad597a1f6176fd2f1a68 (1).png" loading="lazy"></button></p>
+<p>(Empire C2 agent)</p>
+<hr>
+<h3 id="scenario-2-abuse-of-built-in-system-tools-lolbas">Scenario 2: Abuse of Built-In System Tools (LOLBAS)</h3>
+<ul>
+<li><strong>Data Source:winlogbeat- index.</strong></li>
+<li><strong>Methodology:</strong></li>
+<ul>
+<li>Query for process creation (Event ID 1) and network connection events (Event ID 3) involving tools such as <code>mshta.exe</code>, <code>certutil.exe</code>, and <code>regsvr32.exe</code>:<code>host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND (process.name: (mshta.exe OR certutil.exe OR regsvr32.exe) OR process.parent.name: (mshta.exe OR certutil.exe OR regsvr32.exe))</code></li>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-3362c4f8f3a5ac6851c1b149daf71934-77e7d7c1.png" data-alt="3362c4f8f3a5ac6851c1b149daf71934.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-3362c4f8f3a5ac6851c1b149daf71934-77e7d7c1.png" alt="3362c4f8f3a5ac6851c1b149daf71934.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<li>Analyze fields including computer name, user, parent command line, process command line, and destination IP.</li>
+<li><strong>Findings:</strong></li>
+<ul>
+<li><strong>Certutil:</strong></li>
+<p>Used to download a binary (e.g., <code>installer.exe</code>) to <code>C:\Windows\Temp</code>.<em>(Remember: This binary was also noted in the command-line tools investigation.)</em></p>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-992169aa-cc07-4576-b88d-f91e17ec2313-339afe36.png" data-alt="1ZoCDkXcL5LezJ2KD0Pa5MA.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-992169aa-cc07-4576-b88d-f91e17ec2313-339afe36.png" alt="1ZoCDkXcL5LezJ2KD0Pa5MA.webp" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li><strong>Regsvr32:</strong></li>
+<p>Accessed a remote file (<code>teams.sct</code>) and spawned an encoded PowerShell command.</p>
+<li><strong>Mshta:</strong></li>
+<p>Spawned an encoded PowerShell command.</p>
+</ul>
+</ul>
+</ul>
+<hr>
+<h3 id="scenario-3-scripting-and-programming-tools">Scenario 3: Scripting and Programming Tools</h3>
+<ul>
+<li><strong>Data Source:</strong><em>winlogbeat-</em> index.</li>
+<li><strong>Methodology:</strong></li>
+<ul>
+<li>Query for process creation and network connection events involving scripting tools (<code>python</code>, <code>php</code>, <code>nodejs</code>):<code>host.name: WKSTN-<em> AND winlog.event_id: (1 OR 3) AND (process.name: (</em>python<em> OR </em>php<em> OR </em>nodejs<em>) OR process.parent.name: (</em>python<em> OR </em>php<em> OR </em>nodejs*))</code></li>
+<li>Include fields for computer name, user, parent command line, process command line, destination IP, and destination port.</li>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-6c02f3410b791abad780a580f9dcb2c4-305387bb.png" data-alt="6c02f3410b791abad780a580f9dcb2c4.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-6c02f3410b791abad780a580f9dcb2c4-305387bb.png" alt="6c02f3410b791abad780a580f9dcb2c4.png" loading="lazy"></button></p>
+<p>(Python Spawn a child cmd.exe process)</p>
+<p>Using this process PID, we can search all processes spawned by this cmd.exe instance by using it as our <code>process.parent.pid</code>:</p>
+<p><code>host.name: WKSTN-* AND winlog.event_id: (1 OR 3) AND process.parent.pid: 1832</code></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-2593b99702322aa3a0a5566fa5d56d87-67862131.png" data-alt="2593b99702322aa3a0a5566fa5d56d87.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-2593b99702322aa3a0a5566fa5d56d87-67862131.png" alt="2593b99702322aa3a0a5566fa5d56d87.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<li><strong>Findings:</strong></li>
+<ul>
+<li>Python was seen spawning a child <code>cmd.exe</code> process and initiating a network connection to an external IP (e.g., <code>167.71.198.43:8080</code>).</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-e41ec5fd-4c66-4399-bdf4-2e35be61689e-755c4752.png" data-alt="1qmBfp0ifb68IFGRMfDFMOA.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-e41ec5fd-4c66-4399-bdf4-2e35be61689e-755c4752.png" alt="1qmBfp0ifb68IFGRMfDFMOA.webp" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li>Further investigation involves obtaining the process ID of the spawned <code>cmd.exe</code> and correlating events using that PID.</li>
+<li>This pattern suggests the possibility of a reverse shell (e.g., via a malicious script like <code>dev.py</code>).</li>
+</ul>
+</ul>
+</ul>
+<hr>
+<hr>
+<h2 id="3-defense-evasion">3- Defense Evasion</h2>
+<h4 id="overview"><strong>Overview:</strong></h4>
+<p>Defense Evasion encompasses techniques adversaries use to bypass detection by security systems. They disguise malicious actions as legitimate operations by disabling security software, deleting logs, spoofing processes, or exploiting known bypasses to avoid triggering alerts. Often, these techniques are coupled with execution tactics to allow continued stealthy activity.</p>
+<h4 id="objective"><strong>Objective:</strong></h4>
+<p>Bypass detection mechanisms, whether these are software solutions (like antivirus) or human analysts monitoring logs.</p>
+<h4 id="common-techniques-include"><strong>Common Techniques Include:</strong></h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-03_022644-b1c06d7d.png" data-alt="Screenshot 2025-03-03 022644.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-03_022644-b1c06d7d.png" alt="Screenshot 2025-03-03 022644.png" loading="lazy"></button></p>
+<blockquote>Note: The key idea is that while adversaries try to hide, their actions still leave traces in logs and process metadata that can be hunted.</blockquote>
+<blockquote></blockquote>
+<hr>
+<h3 id="hunting-for-defense-evasion">Hunting for Defense Evasion</h3>
+<h3 id="scenario-1-disabling-security-software">Scenario 1:  Disabling Security Software</h3>
+<ul>
+<li><strong>Goal:</strong></li>
+</ul>
+<p><strong>Detect attempts to disable critical security controls (e.g., Windows Defender).</strong></p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Data Source:</strong></li>
+<p>Use the <em>winlogbeat-</em> index on Kibana.</p>
+<li><strong>KQL Query Example:</strong></li>
+</ol>
+</ul>
+<p>``<code>jsx host.name: WKSTN-<em> AND (</em>DisableRealtimeMonitoring<em> OR </em>RemoveDefinitions*) </code>``</p>
+<ul>
+<ul>
+<ul>
+<li><strong>Explanation:</strong></li>
+<ul>
+<li>*<em><code></em>DisableRealtimeMonitoring<em></code></em>* is used with PowerShell’s <code>Set-MpPreference</code> to disable real-time scanning.</li>
+<li>*<em><code></em>RemoveDefinitions<em></code></em>*is used with MpCmdRun.exe to remove Windows Defender signatures.</li>
+</ul>
+</ul>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>winlog.computer_name</code></li>
+<li><code>user.name</code></li>
+<li><code>process.parent.command_line</code></li>
+<li><code>process.name</code></li>
+<li><code>process.command_line</code></li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-3b429919f44e0d05a028d2d8f0494b66-8483fa57.png" data-alt="3b429919f44e0d05a028d2d8f0494b66.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-3b429919f44e0d05a028d2d8f0494b66-8483fa57.png" alt="3b429919f44e0d05a028d2d8f0494b66.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-ab2f4b9401128d4514219435413908bb-1ae02636.png" data-alt="ab2f4b9401128d4514219435413908bb.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-ab2f4b9401128d4514219435413908bb-1ae02636.png" alt="ab2f4b9401128d4514219435413908bb.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Findings:</strong></li>
+<ul>
+<li>An example finding from WKSTN-1 shows <code>Set-MpPreference</code> executed by a malicious installer binary.</li>
+<li>Similarly, <code>MpCmdRun.exe -RemoveDefinitions</code> is seen from a cmd.exe instance (correlated with previous investigations).</li>
+</ul>
+</ol>
+</ol>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-fce4e662-d0ce-42a1-95ed-d37807a1dffe-5f0c6772.png" data-alt="1slo4L8uaA-wF-G6nOMhHSQ.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-fce4e662-d0ce-42a1-95ed-d37807a1dffe-5f0c6772.png" alt="1slo4L8uaA-wF-G6nOMhHSQ.webp" loading="lazy"></button></p>
+<hr>
+<h3 id="scenario-2-log-deletion-attempts">Scenario 2: Log Deletion Attempts</h3>
+<ul>
+<li><strong>Goal:</strong></li>
+</ul>
+<p>Identify when a threat actor tries to remove evidence by clearing Windows Event Logs.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Data Source:</strong></li>
+<p>Use th<strong>e winlogbeat- index.</strong></p>
+<li><strong>KQL Query Example:</strong></li>
+</ol>
+</ul>
+<p>``<code> host.name: WKSTN-* AND winlog.event_id: 1102 </code>``</p>
+<ul>
+<ul>
+<ul>
+<li><strong>Explanation:</strong></li>
+<p><strong>Event ID 1102</strong> is generated when Windows Event Logs are cleared.</p>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-26861fe6321548ab27e331bceff2cf22-d2d5c7ba.png" data-alt="26861fe6321548ab27e331bceff2cf22.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-26861fe6321548ab27e331bceff2cf22-d2d5c7ba.png" alt="26861fe6321548ab27e331bceff2cf22.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Investigation Steps:</strong></li>
+<ul>
+<li>Review events to confirm that logs were cleared from a workstation (e.g., WKSTN-1).</li>
+<li>Use the “View surrounding documents” feature to gather context—including command lines used for deletion.</li>
+<li>Add columns such as <code>process.name</code> and <code>process.command_line</code> to help correlate the deletion event.</li>
+</ul>
+</ol>
+</ol>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-7b65a324-c436-4354-b34a-71136cfa1f77-c1390604.png" data-alt="1JSmUC882lZrDJlV91Kl1wA.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-7b65a324-c436-4354-b34a-71136cfa1f77-c1390604.png" alt="1JSmUC882lZrDJlV91Kl1wA.webp" loading="lazy"></button></p>
+<hr>
+<h3 id="scenario-3-execution-through-process-injection">Scenario 3:  Execution through Process Injection</h3>
+<ul>
+<li><strong>Goal:</strong></li>
+</ul>
+<p><strong>Detect process injection—a technique where an attacker injects code (shellcode) into another process to execute commands stealthily.</strong></p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Data Source:</strong></li>
+<p>Use the <em>winlogbeat-</em> index.</p>
+<li><strong>KQL Query Example:</strong></li>
+</ol>
+</ul>
+<p>``<code>jsx host.name: WKSTN-* AND winlog.event_id: 8 </code>``</p>
+<ul>
+<ul>
+<ul>
+<li><strong>Explanation:</strong></li>
+<p><strong>Sysmon’s Event ID 8</strong> (CreateRemoteThread) indicates when one process creates a thread in another, a common sign of process injection.</p>
+</ul>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>winlog.computer_name</code></li>
+<li><code>process.executable</code></li>
+<li><code>winlog.event_data.SourceUser</code></li>
+<li><code>winlog.event_data.TargetImage</code></li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-77c25bbb863bb5d22963735b6ae2ec70-5abb34a4.png" data-alt="77c25bbb863bb5d22963735b6ae2ec70.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-77c25bbb863bb5d22963735b6ae2ec70-5abb34a4.png" alt="77c25bbb863bb5d22963735b6ae2ec70.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Findings:</strong></li>
+<ul>
+<li>Example: A process (chrome.exe) from Clifford Miller’s workstation is observed injecting a thread into explorer.exe.</li>
+</ul>
+</ol>
+</ol>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-c7dd5ee4-facb-4d28-aac5-6c381e73d3cf-40ddef9e.png" data-alt="1IkwlM77jDYlYb4tABihnw.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-c7dd5ee4-facb-4d28-aac5-6c381e73d3cf-40ddef9e.png" alt="1IkwlM77jDYlYb4tABihnw.webp" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li>Note the unusual relationship where a user-level application (chrome.exe) is targeting a system process like explorer.exe.</li>
+</ul>
+</ul>
+</ul>
+<hr>
+<hr>
+<h2 id="4-persistence-ta003">4- Persistence (TA003)</h2>
+<h4 id="overview"><strong>Overview:</strong></h4>
+<p>Persistence refers to the techniques adversaries use to maintain long-term access to a compromised system—even if the system restarts or a user logs out. By implanting persistence mechanisms immediately after gaining execution, attackers ensure continued control over the environment while making their presence harder to detect and remove.</p>
+<h4 id="key-methods-include"><strong>Key Methods Include:</strong></h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-03_024124-05686bda.png" data-alt="Screenshot 2025-03-03 024124.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-03_024124-05686bda.png" alt="Screenshot 2025-03-03 024124.png" loading="lazy"></button></p>
+<hr>
+<h3 id="scenario-1scheduled-task-creation">Scenario 1:Scheduled Task Creation</h3>
+<p><strong>Objective:</strong></p>
+<p><strong>Detect unusual or unauthorized creation of scheduled tasks that may be used to automate malicious activities.</strong></p>
+<p><strong>Methodology:</strong></p>
+<ul>
+<li><strong>Data Source:</strong></li>
+<p><strong>Use the winlogbeat- index within Kibana.</strong></p>
+<li><strong>Query Approach:</strong></li>
+<p>Look for Windows Advanced Audit Policy events (e.g., <strong>Event ID 4698</strong> for scheduled task creation) or use keywords like <code>schtasks</code> and <code>Register-ScheduledTask</code>.</p>
+<li><strong>Example KQL Query:</strong></li>
+</ul>
+<p>``<code>python host.name: WKSTN-<em> AND (winlog.event_id: 4698 OR (</em>schtasks<em> OR </em>Register-ScheduledTask*)) </code>``</p>
+<ul>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>winlog.computer_name</code></li>
+<li><code>user.name</code></li>
+<li><code>process.command_line</code></li>
+<li><code>winlog.event_id</code></li>
+<li><code>winlog.event_data.TaskName</code></li>
+</ul>
+</ul>
+<p><strong>Findings &amp; Analysis:</strong></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-f54feaacae03235fa8b201fd733bce2d-2df43f8a.png" data-alt="f54feaacae03235fa8b201fd733bce2d.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-f54feaacae03235fa8b201fd733bce2d-2df43f8a.png" alt="f54feaacae03235fa8b201fd733bce2d.png" loading="lazy"></button></p>
+<ul>
+<li>Common scheduled tasks (such as OneDrive Reporting) may be benign.</li>
+<li>An unusual task might be identified—for example, a task named &quot;Windows Update&quot; that runs a PowerShell command every minute and is associated with suspicious domains (e.g., www.oneedirve.xyz).</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-d95df679-a5a0-4b57-bbea-4277f18123d3-812e9117.png" data-alt="1eDkoevfylwVXOhqnKl186w.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-d95df679-a5a0-4b57-bbea-4277f18123d3-812e9117.png" alt="1eDkoevfylwVXOhqnKl186w.webp" loading="lazy"></button></p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+<p>Investigate the parent process (e.g., a cmd.exe instance) that executed the task creation to trace earlier activity.</p>
+</ul>
+<hr>
+<h3 id="scenario-2-registry-key-modification">Scenario 2: Registry Key Modification</h3>
+<p><strong>Objective:</strong></p>
+<p><strong>Detect modifications to critical registry keys that may indicate attempts to ensure persistence by auto-launching malicious binaries.</strong></p>
+<p><strong>Methodology:</strong></p>
+<ul>
+<li><strong>Data Source:</strong></li>
+<p>Use the winlogbeat- index and focus on registry modification events <strong>(Sysmon Event ID 13)</strong> within the <code>Microsoft-Windows-Sysmon/Operational</code> channel.</p>
+<li><strong>Initial Query Example:</strong></li>
+</ul>
+<p>``<code>jsx host.name: WKSTN-* AND winlog.event_id: 13 AND winlog.channel: Microsoft-Windows-Sysmon/Operational </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-28eb9be84eae54f82b6782841d7337fa-293ebe8d.png" data-alt="28eb9be84eae54f82b6782841d7337fa.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-28eb9be84eae54f82b6782841d7337fa-293ebe8d.png" alt="28eb9be84eae54f82b6782841d7337fa.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<li><em>Note:</em> This query may return a large number of events since many benign registry changes occur.</li>
+</ul>
+<li><strong>Narrowing Down the Results:</strong></li>
+<p>Focus on commonly abused registry paths such as:</p>
+<ul>
+<li><code>CurrentVersion\Run</code> or <code>RunOnce</code></li>
+<li><code>CurrentVersion\Explorer\User</code> or <code>CurrentVersion\Explorer\Shell</code></li>
+</ul>
+<li><strong>Refined KQL Query Example:</strong></li>
+</ul>
+<p>``<code>jsx host.name: WKSTN-<em> AND winlog.event_id: 13 AND winlog.channel: Microsoft-Windows-Sysmon/Operational AND registry.path: (</em>CurrentVersion\\Run<em> OR </em>CurrentVersion\\Explorer\\User<em> OR </em>CurrentVersion\\Explorer\\Shell*) </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-4ac7d3fa1402bafe019e15c403bdcc34-a4fc89c4.png" data-alt="4ac7d3fa1402bafe019e15c403bdcc34.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-4ac7d3fa1402bafe019e15c403bdcc34-a4fc89c4.png" alt="4ac7d3fa1402bafe019e15c403bdcc34.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>winlog.computer_name</code></li>
+<li><code>user.name</code></li>
+<li><code>process.name</code></li>
+<li><code>registry.path</code></li>
+<li><code>winlog.event_data.Details</code></li>
+</ul>
+</ul>
+<p><strong>Findings &amp; Analysis:</strong></p>
+<ul>
+<li>An example finding could include a registry entry such as: <strong>Registry Path:</strong> <code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnceEx\0001\Depend\1</code><strong>Registry Data:</strong> <code>C:\Windows\Temp\installer.exe</code></li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-36aed58a-2bd1-4f5d-89c1-f4e689ee3b22-913ffeba.png" data-alt="13fKmIiLHDghRwd9Kz-mkkA.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-36aed58a-2bd1-4f5d-89c1-f4e689ee3b22-913ffeba.png" alt="13fKmIiLHDghRwd9Kz-mkkA.webp" loading="lazy"></button></p>
+<ul>
+<li>This entry indicates that the suspicious binary (<code>installer.exe</code>) is configured to execute on startup.</li>
+<li><strong>Alternative Approach:</strong></li>
+<p>Use process filtering (e.g., for <code>reg.exe</code> or <code>powershell.exe</code>) to pinpoint registry modifications driven by these utilities.</p>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-cbb4d15a05e542a228b3cddbfbe0d21a-60a5c007.png" data-alt="cbb4d15a05e542a228b3cddbfbe0d21a.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-cbb4d15a05e542a228b3cddbfbe0d21a-60a5c007.png" alt="cbb4d15a05e542a228b3cddbfbe0d21a.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+<p>Correlate the event with the parent process (e.g., cmd.exe) to backtrack and understand the chain of events leading to this persistence mechanism.</p>
+</ul>
+<hr>
+<hr>
+<h2 id="5-command-and-control-ta0011">5- Command and Control  (TA0011)</h2>
+<h4 id="overview"><strong>Overview:</strong></h4>
+<p>Command and Control (C2) refers to the methods adversaries use to communicate with compromised systems within a target network. At this stage, attackers issue remote commands to fulfill their objectives, such as further internal compromise or data exfiltration. This communication is typically designed to blend in with regular network traffic, making detection challenging.</p>
+<hr>
+<h4 id="purpose"><strong>Purpose:</strong></h4>
+<p>Maintain two-way communication between the attacker and the compromised system to control activities remotely.</p>
+<h4 id="common-communication-channels"><strong>Common Communication Channels:</strong></h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-03_032659-5ac10aa1.png" data-alt="Screenshot 2025-03-03 032659.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-03_032659-5ac10aa1.png" alt="Screenshot 2025-03-03 032659.png" loading="lazy"></button></p>
+<h4 id="key-characteristics-to-monitor"><strong>Key Characteristics to Monitor:</strong></h4>
+<ul>
+<li><strong>Egress Traffic:</strong></li>
+<p>High outbound traffic or unusual file uploads may indicate C2 communication.</p>
+<li><strong>Ingress Traffic:</strong></li>
+<p>Unexpected connections from external sources may suggest command instructions.</p>
+<li><strong>Cleartext Commands:</strong></li>
+<p>Host commands in unencrypted traffic can indicate an established C2 channel.</p>
+<li><strong>Volume &amp; Bandwidth:</strong></li>
+<p>An unusually high count of connections or elevated data volumes can be a red flag.</p>
+</ul>
+<h3 id="hunting-command-and-control">Hunting Command and Control</h3>
+<p>The hunt for C2 activities involves uncovering covert communication channels hidden within normal network traffic. The following scenarios illustrate three common C2 methods:</p>
+<h3 id="scenario-1-command-and-control-over-dns">Scenario 1: Command and Control over DNS</h3>
+<p><strong>Objective:</strong></p>
+<p>Detect adversaries using DNS protocols to establish a C2 channel.</p>
+<p><strong>Methodology:</strong></p>
+<ul>
+<li><strong>Data Source:</strong></li>
+<p>Use the packetbeat-<em> index for DNS query data and correlate with winlogbeat-</em> for process details.</p>
+<li><strong>Visual Analysis:</strong></li>
+<ul>
+<li>Create a visualization table (using Lens) configured to display:</li>
+<ul>
+<li><strong>Rows:</strong> <code>dns.question.registered_domain</code> and <code>host.name</code></li>
+<li><strong>Metric:</strong> Unique Count of <code>dns.question.subdomain</code></li>
+</ul>
+<li><strong>KQL Query Example:</strong></li>
+</ul>
+</ul>
+<p>``<code>jsx network.protocol: dns AND NOT dns.question.name: *arpa </code>``</p>
+<ul>
+<ul>
+<ul>
+<li><em>Explanation:</em> This query excludes reverse DNS lookups to focus on standard queries.</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-865a9751c4a18147548b8cff01ab6a9a-665b6feb.png" data-alt="865a9751c4a18147548b8cff01ab6a9a.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-865a9751c4a18147548b8cff01ab6a9a-665b6feb.png" alt="865a9751c4a18147548b8cff01ab6a9a.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Investigation Steps:</strong></li>
+<ul>
+<li>Identify domains with an unusually high count of unique subdomains (e.g., a domain like <code><em>golge.xyz</em></code> showing many unique subdomain queries).</li>
+<li>Drill down using the Discover tab with a refined query:</li>
+</ul>
+</ul>
+<p>``<code>jsx network.protocol: dns AND NOT dns.question.name: *arpa AND dns.question.registered_domain: golge.xyz AND host.name: WKSTN-1 </code>``</p>
+<ul>
+<ul>
+<ul>
+<li>Add additional fields (such as the query field) to understand the nature of the requests.</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-8e39190bffa7de54fd56bc460a592b4a-5ee8d061.png" data-alt="8e39190bffa7de54fd56bc460a592b4a.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-8e39190bffa7de54fd56bc460a592b4a-5ee8d061.png" alt="8e39190bffa7de54fd56bc460a592b4a.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-f603f27024a4c2851fc5f93fde63826f-94272d5c.png" data-alt="f603f27024a4c2851fc5f93fde63826f.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-f603f27024a4c2851fc5f93fde63826f-94272d5c.png" alt="f603f27024a4c2851fc5f93fde63826f.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<li>Correlate with winlogbeat data to identify the process generating these DNS requests:</li>
+</ul>
+</ul>
+<p>``<code>python host.name: WKSTN-1* AND destination.ip: 167.71.198.43 AND destination.port: 53 </code>``</p>
+<ul>
+<ul>
+<ul>
+<li>Key fields to display include <code>host.name</code>, <code>user.name</code>, <code>process.parent.command_line</code>, <code>process.name</code>, and <code>process.command_line</code>.</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-802fcf147063697602bc7fad5ac2e5ae-b6cebc78.png" data-alt="802fcf147063697602bc7fad5ac2e5ae.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-802fcf147063697602bc7fad5ac2e5ae-b6cebc78.png" alt="802fcf147063697602bc7fad5ac2e5ae.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-85da84331a98a93fc99a29c7fc8f606a-e2570a75.png" data-alt="85da84331a98a93fc99a29c7fc8f606a.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-85da84331a98a93fc99a29c7fc8f606a-e2570a75.png" alt="85da84331a98a93fc99a29c7fc8f606a.png" loading="lazy"></button></p>
+<p>Based on the results, it can be observed that all connections to 167.71.198.43:53 are generated by <code>nslookup.exe</code></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-07202f38-e234-43af-97ae-9465ddf2b9c5-0e013390.png" data-alt="1lJKY-6Tm81SJNUSsRV1MIA.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-07202f38-e234-43af-97ae-9465ddf2b9c5-0e013390.png" alt="1lJKY-6Tm81SJNUSsRV1MIA.webp" loading="lazy"></button></p>
+<hr>
+<h3 id="scenario-2-command-and-control-over-cloud-applications">Scenario 2: Command and Control over Cloud Applications</h3>
+<p><strong>Objective:</strong></p>
+<p><strong>Identify C2 channels that leverage legitimate cloud services to disguise malicious traffic.</strong></p>
+<p><strong>Methodology:</strong></p>
+<ul>
+<li><strong>Data Source:</strong></li>
+<p>*<em>Use packetbeat-</em> to monitor network connections and winlogbeat-<em> to correlate process activity.</em>*</p>
+<li><strong>Visual Analysis:</strong></li>
+<ul>
+<li>Modify the visualization table (from the DNS analysis) by removing the unique subdomain metric and sorting the count in ascending order.</li>
+<li>Look for cloud service domains that are not typically accessed by your workstations (e.g., domains like <code><em>discord.gg</em></code>).</li>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-d36f34dcc5077e39c9ebc2f47408d5fe-166f9e4a.png" data-alt="d36f34dcc5077e39c9ebc2f47408d5fe.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-d36f34dcc5077e39c9ebc2f47408d5fe-166f9e4a.png" alt="d36f34dcc5077e39c9ebc2f47408d5fe.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Investigation Steps:</strong></li>
+<ul>
+<li>Use a winlogbeat query to correlate the cloud connection:</li>
+</ul>
+</ul>
+<p>``<code>jsx host.name: WKSTN-1<em> AND </em>discord.gg* </code>``</p>
+<ul>
+<ul>
+<ul>
+<li>This reveals the process associated with the connection.</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-b645a11f38ee71500d8db738fd313287-3aa8bec5.png" data-alt="b645a11f38ee71500d8db738fd313287.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-b645a11f38ee71500d8db738fd313287-3aa8bec5.png" alt="b645a11f38ee71500d8db738fd313287.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<li>Identify that the connection is initiated by a suspicious binary (e.g., <code>C:\Windows\Temp\installer.exe</code>).</li>
+<li>Query for child processes spawned by this binary:</li>
+</ul>
+</ul>
+<p>``<code>python host.name: WKSTN-1* AND winlog.event_id: 1 AND process.parent.executable: &quot;C:\\Windows\\Temp\\installer.exe&quot; </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-54a2a40ceae8f7e0646bf0233c2ea8b6-3f1ad603.png" data-alt="54a2a40ceae8f7e0646bf0233c2ea8b6.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-54a2a40ceae8f7e0646bf0233c2ea8b6-3f1ad603.png" alt="54a2a40ceae8f7e0646bf0233c2ea8b6.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li>( multiple <code>cmd.exe</code> commands) confirming C2 activity over Discord.</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-9098cf3a-4d87-4229-8aed-530854242b05-b0402857.png" data-alt="1neA7z5N6bLVIWzaPFlfmA.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-9098cf3a-4d87-4229-8aed-530854242b05-b0402857.png" alt="1neA7z5N6bLVIWzaPFlfmA.webp" loading="lazy"></button></p>
+<hr>
+<h3 id="scenario-3-command-and-control-over-encrypted-http-traffic">Scenario 3: Command and Control over Encrypted HTTP Traffic</h3>
+<p><strong>Objective:</strong></p>
+<p><strong>Uncover C2 communications that use custom, encrypted HTTP channels.</strong></p>
+<p><strong>Methodology:</strong></p>
+<ul>
+<li><strong>Data Source:</strong></li>
+<p>*<em>Use the packetbeat-</em> index to monitor HTTP traffic and winlogbeat-<em> for process correlations.</em>*</p>
+<li><strong>Visual Analysis:</strong></li>
+<ul>
+<li>Create a visualization table (using Lens) configured with:</li>
+<ul>
+<li><strong>Rows:</strong> <code>host.name</code>, <code>destination.domain</code>, and <code>http.request.method</code></li>
+<li><strong>Metric:</strong> Count of HTTP requests</li>
+</ul>
+<li><strong>KQL Query Example:</strong></li>
+</ul>
+</ul>
+<p>``<code>jsx network.protocol: http AND network.direction: egress </code>``</p>
+<ul>
+<ul>
+<ul>
+<li>This displays outbound HTTP requests.</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-2e5532368e2226e225401380bb69a597-52ae7bf6.png" data-alt="2e5532368e2226e225401380bb69a597.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-2e5532368e2226e225401380bb69a597-52ae7bf6.png" alt="2e5532368e2226e225401380bb69a597.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Investigation Steps:</strong></li>
+<ul>
+<li>Identify unusual outbound connections to distinct domains (e.g., a domain like <code><em>cdn.golge.xyz</em></code> showing a high volume of GET requests).</li>
+<li>Refine the query to focus on the suspicious domain:</li>
+</ul>
+</ul>
+<p>``<code>jsx host.name: WKSTN-* AND network.protocol: http AND network.direction: egress AND destination.domain: cdn.golge.xyz </code>``</p>
+<ul>
+<ul>
+<ul>
+<li>Adjust the table rows to include only pertinent fields.</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-f1a1675f4d83698f52696047561fa1e9-15d63573.png" data-alt="f1a1675f4d83698f52696047561fa1e9.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-f1a1675f4d83698f52696047561fa1e9-15d63573.png" alt="f1a1675f4d83698f52696047561fa1e9.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<li>Correlate these findings with winlogbeat data using a query such as:</li>
+</ul>
+</ul>
+<p>``<code> host.name: WKSTN-<em> AND </em>cdn.golge.xyz* </code>``</p>
+<ul>
+<ul>
+<ul>
+<li>This correlation can reveal that the C2 connection was established using a malicious PowerShell command.</li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-8fb64e55f142870cc480d204f4a10998-b2f78ec4.png" data-alt="8fb64e55f142870cc480d204f4a10998.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-8fb64e55f142870cc480d204f4a10998-b2f78ec4.png" alt="8fb64e55f142870cc480d204f4a10998.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-bc31ffda-be22-4704-8989-2b8dd63d2a87-a4f74be1.png" data-alt="1MG6umkwGPkndQwvqNtRYMg.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-bc31ffda-be22-4704-8989-2b8dd63d2a87-a4f74be1.png" alt="1MG6umkwGPkndQwvqNtRYMg.webp" loading="lazy"></button></p>
+<ul>
+<ul>
+<li><strong>Next Steps:</strong></li>
+</ul>
+</ul>
+<p>the next step of this investigation is to identify the extent of these malicious activities by correlating the subsequent events generated after the C2 connection to <code>cdn[.]golge[.]xyz</code> was established. Moreover, it is also good to trace back how the attacker gained initial access in the first place before attempting to develop continuous C2 access.</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-06_072321-8130d450.png" data-alt="Screenshot 2025-03-06 072321.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-foothold-screenshot_2025-03-06_072321-8130d450.png" alt="Screenshot 2025-03-06 072321.png" loading="lazy"></button></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#threat-hunting-foothold">Threat Hunting: Foothold</a><a href="#1-initial-access-ta0001">1- Initial Access (TA0001)</a><a href="#definition">Definition:</a><a href="#examples-of-methods">Examples of Methods:</a><a href="#hunting-for-initial-access-attempts">Hunting for Initial Access Attempts</a><a href="#scenario-1-brute-forcing-via-ssh-on-jumphost">Scenario 1: Brute-Forcing via SSH on Jumphost</a><a href="#scenario-2-remote-code-execution-on-web01">Scenario 2: Remote Code Execution on Web01</a><a href="#scenario-3-phishing-links-and-attachments">Scenario 3: Phishing Links and Attachments</a><a href="#2-execution-ta0002">2- Execution (TA0002)</a><a href="#goal">Goal:</a><a href="#examples-of-methods">Examples of Methods:</a><a href="#hunting-for-malicious-execution">Hunting for Malicious Execution</a><a href="#scenario-1-usage-of-command-line-tools">Scenario 1: Usage of Command-Line Tools</a><a href="#scenario-2-abuse-of-built-in-system-tools-lolbas">Scenario 2: Abuse of Built-In System Tools (LOLBAS)</a><a href="#scenario-3-scripting-and-programming-tools">Scenario 3: Scripting and Programming Tools</a><a href="#3-defense-evasion">3- Defense Evasion</a><a href="#overview">Overview:</a><a href="#objective">Objective:</a><a href="#common-techniques-include">Common Techniques Include:</a><a href="#hunting-for-defense-evasion">Hunting for Defense Evasion</a><a href="#scenario-1-disabling-security-software">Scenario 1: Disabling Security Software</a><a href="#scenario-2-log-deletion-attempts">Scenario 2: Log Deletion Attempts</a><a href="#scenario-3-execution-through-process-injection">Scenario 3: Execution through Process Injection</a><a href="#4-persistence-ta003">4- Persistence (TA003)</a><a href="#overview">Overview:</a><a href="#key-methods-include">Key Methods Include:</a><a href="#scenario-1scheduled-task-creation">Scenario 1:Scheduled Task Creation</a><a href="#scenario-2-registry-key-modification">Scenario 2: Registry Key Modification</a><a href="#5-command-and-control-ta0011">5- Command and Control (TA0011)</a><a href="#overview">Overview:</a><a href="#purpose">Purpose:</a><a href="#common-communication-channels">Common Communication Channels:</a><a href="#key-characteristics-to-monitor">Key Characteristics to Monitor:</a><a href="#hunting-command-and-control">Hunting Command and Control</a><a href="#scenario-1-command-and-control-over-dns">Scenario 1: Command and Control over DNS</a><a href="#scenario-2-command-and-control-over-cloud-applications">Scenario 2: Command and Control over Cloud Applications</a><a href="#scenario-3-command-and-control-over-encrypted-http-traffic">Scenario 3: Command and Control over Encrypted HTTP Traffic</a><a href="#conclusion">Conclusion</a></details>
+    </div>
+    
+    <footer class="pager"><a href="threat-hunting-introduction.html">← Threat Hunting Introduction</a><a href="threat-hunting-pivoting.html">Threat Hunting Pivoting →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

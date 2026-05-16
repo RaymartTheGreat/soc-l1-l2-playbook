@@ -1,0 +1,124 @@
+{
+  "id": "log analysis labs/deep blue (btlo)",
+  "title": "Deep Blue (BTLO)",
+  "slug": "deep-blue-btlo",
+  "relPath": "Log Analysis Labs/Deep Blue (BTLO).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "EDR",
+    "Windows",
+    "Linux",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/deep blue (btlo)",
+      "title": "Deep Blue (BTLO)",
+      "slug": "deep-blue-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Deep Blue (BTLO)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Using DeepBlueCLI, investigate the recovered Security log (Security.evtx). Which user account ran GoogleUpdate.exe?"
+    },
+    {
+      "level": 3,
+      "text": "Mike Smith"
+    },
+    {
+      "level": 3,
+      "text": "2- Using DeepBlueCLI investigate the recovered Security.evtx log. At what time is there likely evidence of Meterpreter activity?"
+    },
+    {
+      "level": 3,
+      "text": "4/10/2021 10:48:14"
+    },
+    {
+      "level": 3,
+      "text": "3- Using DeepBlueCLI investigate the recovered System.evtx log. What is the name of the suspicious service created?"
+    },
+    {
+      "level": 3,
+      "text": "rztbzn"
+    },
+    {
+      "level": 3,
+      "text": "4- Investigate the Security.evtx log in Event Viewer. Process creation is being audited (event ID 4688). Identify the malicious executable downloaded that was used to gain a Meterpreter reverse shell, between 10:30 and 10:50 AM on the 10th of April 2021."
+    },
+    {
+      "level": 3,
+      "text": "Mike Smith, serviceupdate.exe"
+    },
+    {
+      "level": 3,
+      "text": "5- It's also believed that an additional account was created to ensure persistence between 11:25 AM and 11:40 AM on the 10th April 2021. What was the command line used to create this account? (Make sure you've found the right account!)"
+    },
+    {
+      "level": 3,
+      "text": "net user ServiceAct /add"
+    },
+    {
+      "level": 3,
+      "text": "6-What two local groups was this new account added to?"
+    },
+    {
+      "level": 3,
+      "text": "administrators, Remote Desktop Users"
+    }
+  ],
+  "overview": "A Windows workstation was recently compromised, and evidence suggests it was an attack against internet-facing RDP, then Meterpreter was deployed to conduct 'Actions on Objectives'. Can you verify these findings?You have been provided with the Security.evtx and System.evtx log exports from the compromised system - you should analyze these, NOT the Windows lo",
+  "study": {
+    "overview": "A Windows workstation was recently compromised, and evidence suggests it was an attack against internet-facing RDP, then Meterpreter was deployed to conduct 'Actions on Objectives'. Can you verify these findings?You have been provided with the Security.evtx and System.evtx log exports from the compromised system - you should analyze these, NOT the Windows lo",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Deep Blue (BTLO)",
+      "Scenario",
+      "1- Using DeepBlueCLI, investigate the recovered Security log (Security.evtx). Which user account ran GoogleUpdate.exe?",
+      "Mike Smith",
+      "2- Using DeepBlueCLI investigate the recovered Security.evtx log. At what time is there likely evidence of Meterpreter activity?",
+      "4/10/2021 10:48:14",
+      "3- Using DeepBlueCLI investigate the recovered System.evtx log. What is the name of the suspicious service created?",
+      "rztbzn",
+      "4- Investigate the Security.evtx log in Event Viewer. Process creation is being audited (event ID 4688). Identify the malicious executable downloaded that was used to gain a Meterpreter reverse shell, between 10:30 and 10:50 AM on the 10th of April 2021.",
+      "Mike Smith, serviceupdate.exe",
+      "5- It's also believed that an additional account was created to ensure persistence between 11:25 AM and 11:40 AM on the 10th April 2021. What was the command line used to create this account? (Make sure you've found the right account!)",
+      "net user ServiceAct /add"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR"
+    ],
+    "tips": []
+  }
+}

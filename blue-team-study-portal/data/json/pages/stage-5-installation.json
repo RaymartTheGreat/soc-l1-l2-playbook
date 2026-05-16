@@ -1,0 +1,96 @@
+{
+  "id": "frameworks/cyber kill chain/stage 5 installation",
+  "title": "Stage 5 Installation",
+  "slug": "stage-5-installation",
+  "relPath": "Frameworks/Cyber Kill Chain/Stage 5 Installation.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "SIEM",
+    "EDR",
+    "Windows",
+    "Linux",
+    "Web",
+    "Detection",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "T1543.003",
+    "T1547.001",
+    "T1070.006",
+    "T1036"
+  ],
+  "parentId": "frameworks/cyber kill chain",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "frameworks/cyber kill chain"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "frameworks",
+      "title": "Frameworks",
+      "slug": "frameworks"
+    },
+    {
+      "id": "frameworks/cyber kill chain",
+      "title": "Cyber Kill Chain",
+      "slug": "cyber-kill-chain"
+    },
+    {
+      "id": "frameworks/cyber kill chain/stage 5 installation",
+      "title": "Stage 5 Installation",
+      "slug": "stage-5-installation"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Stage 5: Installation"
+    },
+    {
+      "level": 3,
+      "text": "Attacker Actions & Perspective"
+    },
+    {
+      "level": 3,
+      "text": "Attacker Evasion Techniques"
+    },
+    {
+      "level": 3,
+      "text": "Defensive Measures"
+    },
+    {
+      "level": 3,
+      "text": "Summary Table"
+    }
+  ],
+  "overview": "After successful exploitation, the attacker installs mechanisms to maintain long-term access. The focus in this phase is on persistence—ensuring access even after reboots, disconnections, or initial remediation attempts. Installation typically involves deploying backdoors, malware, web shells, or modifying system configurations to allow reentry.",
+  "study": {
+    "overview": "After successful exploitation, the attacker installs mechanisms to maintain long-term access. The focus in this phase is on persistence—ensuring access even after reboots, disconnections, or initial remediation attempts. Installation typically involves deploying backdoors, malware, web shells, or modifying system configurations to allow reentry.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Stage 5: Installation",
+      "Attacker Actions & Perspective",
+      "Attacker Evasion Techniques",
+      "Defensive Measures",
+      "Summary Table"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "EDR"
+    ],
+    "tips": []
+  }
+}

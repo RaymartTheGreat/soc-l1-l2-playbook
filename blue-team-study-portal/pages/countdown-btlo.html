@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>CountDown (BTLO) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="forensics-labs.html">Forensics Labs</a><span>/</span><span>CountDown (BTLO)</span></div>
+      <h1>CountDown (BTLO)</h1>
+      <p>NYC Police received information that a gang of attackers has entered the city and are planning to detonate an explosive device. Law enforcement have begun investigating all leads to determine whether this is true or a hoax.Persons of interest were taken into custody, and one additional suspect named ‘Zerry’ was detained while officers raided his house. Durin</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Windows</span><span class="tag">Web</span><span class="tag">DFIR</span><span class="tag">C2</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Forensics Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="forensics-labs.html"><span>Forensics Labs</span><em>L2</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="active" href="countdown-btlo.html"><span>CountDown (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="bft-htb.html"><span>BFT (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="romcom-htb.html"><span>RomCom (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="insider-cyberdefenders.html"><span>Insider (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="disk-analysis-autopsy-thm.html"><span>Disk Analysis &amp; Autopsy (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hireme-cyberdefenders.html"><span>HireMe (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="unanttended-thm.html"><span>Unanttended (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="secret-recipe-thm.html"><span>Secret Recipe (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="disgruntled-thm.html"><span>Disgruntled (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="investigating-windows-thm.html"><span>Investigating Windows (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="browser-forensics-btlo.html"><span>Browser Forensics (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="suspicious-usb-stick-btlo.html"><span>Suspicious USB Stick (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntfs-forensics-letsdefend.html"><span>NTFS Forensics (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="sysinternals-cyberdefenders.html"><span>Sysinternals (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="meteorhit.html"><span>MeteorHit</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>NYC Police received information that a gang of attackers has entered the city and are planning to detonate an explosive device. Law enforcement have begun investigating all leads to determine whether this is true or a hoax.Persons of interest were taken into custody, and one additional suspect named ‘Zerry’ was detained while officers raided his house. Durin</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>CountDown (BTLO)</li><li>Scenario</li><li>1- Verify the Disk Image. Submit SectorCount and MD5</li><li>25165823,5c4e94315039f890e839d6992aeb6c58</li><li>2- What is the decryption key of the online messenger app used by Zerry?</li><li>0xc2a0e8d6f0853449cfcf4b75176c277535b3677de1bb59186b32f0dc6ed69998</li><li>3- What is the registered phone number and profile name of Zerry in the messenger application used?</li><li>+13026482364,ZerryThe🔥</li><li>4- What is the email id found in the chat?</li><li>eekurk@baybabes.com</li><li>5- What is the filename(including extension) that is received as an attachment via email?</li><li>⌛📅.PNG</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="countdown-btlo">CountDown (BTLO)</h2>
+<h3 id="scenario"><strong>Scenario</strong></h3>
+<p><strong>NYC Police received information that a gang of attackers has entered the city and are planning to detonate an explosive device. Law enforcement have begun investigating all leads to determine whether this is true or a hoax.Persons of interest were taken into custody, and one additional suspect named ‘Zerry’ was detained while officers raided his house. During the search they found one laptop, collected the digital evidence, and sent it to NYC digital forensics division.Police believe Zerry is directly associated with the gang and are analyzing his device to uncover any information about the potential attack.</strong></p>
+<p><a class="note-link" href="https://blueteamlabs.online/home/investigation/countdown-2c3cc56daf">https://blueteamlabs.online/home/investigation/countdown-2c3cc56daf</a></p>
+<hr>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_224618-704aa9fc.png" data-alt="Screenshot 2025-07-25 224618.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_224618-704aa9fc.png" alt="Screenshot 2025-07-25 224618.png" loading="lazy"></button></p>
+<p>the lab provides us with hints we can check it if we get stuck in any question</p>
+<h4 id="1-verify-the-disk-image.-submit-sectorcount-and-md5">1- Verify the Disk Image. Submit SectorCount and MD5</h4>
+<h4 id="251658235c4e94315039f890e839d6992aeb6c58">25165823,5c4e94315039f890e839d6992aeb6c58</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_225656-572f0c2e.png" data-alt="Screenshot 2025-07-25 225656.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_225656-572f0c2e.png" alt="Screenshot 2025-07-25 225656.png" loading="lazy"></button></p>
+<p>we can find the answer for this question in FTK Imager report located at <code>C:\Users\BTLOTest\Desktop\Investigation Files\Disk Image\Zerry</code></p>
+<h4 id="2-what-is-the-decryption-key-of-the-online-messenger-app-used-by-zerry">2- What is the decryption key of the online messenger app used by Zerry?</h4>
+<h4 id="0xc2a0e8d6f0853449cfcf4b75176c277535b3677de1bb59186b32f0dc6ed69998">0xc2a0e8d6f0853449cfcf4b75176c277535b3677de1bb59186b32f0dc6ed69998</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230022-eb965c31.png" data-alt="Screenshot 2025-07-25 230022.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230022-eb965c31.png" alt="Screenshot 2025-07-25 230022.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230051-d78df894.png" data-alt="Screenshot 2025-07-25 230051.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230051-d78df894.png" alt="Screenshot 2025-07-25 230051.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230126-30aec260.png" data-alt="Screenshot 2025-07-25 230126.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230126-30aec260.png" alt="Screenshot 2025-07-25 230126.png" loading="lazy"></button></p>
+<p>before finding the decryption key we have to locate the messenger app and found Signal google search if you don’t know the app</p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230221-0e2d1c10.png" data-alt="Screenshot 2025-07-25 230221.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230221-0e2d1c10.png" alt="Screenshot 2025-07-25 230221.png" loading="lazy"></button></p>
+<p>now that we know the app is signal we search with signal decryption key and found this</p>
+<p><a class="note-link" href="https://www.bleepingcomputer.com/news/security/signal-desktop-leaves-message-decryption-key-in-plain-sight/">https://www.bleepingcomputer.com/news/security/signal-desktop-leaves-message-decryption-key-in-plain-sight/</a></p>
+<p>which tells us that the decryption key located at</p>
+<p><code>%AppData%\Signal\config.json</code></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230405-81d462ae.png" data-alt="Screenshot 2025-07-25 230405.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230405-81d462ae.png" alt="Screenshot 2025-07-25 230405.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230413-1e50b9da.png" data-alt="Screenshot 2025-07-25 230413.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230413-1e50b9da.png" alt="Screenshot 2025-07-25 230413.png" loading="lazy"></button></p>
+<p>when we click on it we can see the key or export it for better view</p>
+<h4 id="3-what-is-the-registered-phone-number-and-profile-name-of-zerry-in-the-messenger-applicati">3- What is the registered phone number and profile name of Zerry in the messenger application used?</h4>
+<h4 id="13026482364zerrythe">+13026482364,ZerryThe🔥</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230651-ae424a20.png" data-alt="Screenshot 2025-07-25 230651.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230651-ae424a20.png" alt="Screenshot 2025-07-25 230651.png" loading="lazy"></button></p>
+<p>now that we have the decryption key we can export the database from this location</p>
+<p><code>%AppData%\Roaming\Signal\sql\db.sqlite</code></p>
+<p>and use the tool  SQLite Database Browser</p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230706-d46c1f91.png" data-alt="Screenshot 2025-07-25 230706.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-25_230706-d46c1f91.png" alt="Screenshot 2025-07-25 230706.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_000907-5b9ca4aa.png" data-alt="Screenshot 2025-07-26 000907.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_000907-5b9ca4aa.png" alt="Screenshot 2025-07-26 000907.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001105-5cd15dd3.png" data-alt="Screenshot 2025-07-26 001105.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001105-5cd15dd3.png" alt="Screenshot 2025-07-26 001105.png" loading="lazy"></button></p>
+<p>under conversation table we can find Zerry’s username and phone number</p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001130-7eb8343d.png" data-alt="Screenshot 2025-07-26 001130.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001130-7eb8343d.png" alt="Screenshot 2025-07-26 001130.png" loading="lazy"></button></p>
+<p>note it have emoji fire and you can’t copy paste it to the answer so search</p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001202-d7414c32.png" data-alt="Screenshot 2025-07-26 001202.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001202-d7414c32.png" alt="Screenshot 2025-07-26 001202.png" loading="lazy"></button></p>
+<p><code>https://emojipedia.org/</code></p>
+<p>we will need this website again for question 5</p>
+<h4 id="4-what-is-the-email-id-found-in-the-chat">4- What is the email id found in the chat?</h4>
+<h4 id="eekurkbaybabes.com">eekurk@baybabes.com</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001418-6508c82b.png" data-alt="Screenshot 2025-07-26 001418.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001418-6508c82b.png" alt="Screenshot 2025-07-26 001418.png" loading="lazy"></button></p>
+<p>under messages table we can see this conversation between zerry and tom where they are trying to bomb something and there is a image file contains the data and time</p>
+<p>and we can find the email address</p>
+<h4 id="5-what-is-the-filenameincluding-extension-that-is-received-as-an-attachment-via-email">5- What is the filename(including extension) that is received as an attachment via email?</h4>
+<h4 id=".png">⌛📅.PNG</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001822-4e38183d.png" data-alt="Screenshot 2025-07-26 001822.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001822-4e38183d.png" alt="Screenshot 2025-07-26 001822.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001900-78aaadc2.png" data-alt="Screenshot 2025-07-26 001900.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_001900-78aaadc2.png" alt="Screenshot 2025-07-26 001900.png" loading="lazy"></button></p>
+<p>for this we can check recent files , shellbags , amcache</p>
+<p>we can see the  lnk file but when going to the location we find that it been erased using the tool eraser</p>
+<h4 id="6-what-is-the-date-and-time-of-the-planned-attack">6- What is the Date and Time of the planned attack?</h4>
+<h4 id="01-02-2021-0900-am">01-02-2021 09:00 AM</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_002512-a67a34e8.png" data-alt="Screenshot 2025-07-26 002512.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_002512-a67a34e8.png" alt="Screenshot 2025-07-26 002512.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_002559-2c0cb27c.png" data-alt="Screenshot 2025-07-26 002559.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_002559-2c0cb27c.png" alt="Screenshot 2025-07-26 002559.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_002744-ac0792bf.png" data-alt="Screenshot 2025-07-26 002744.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_002744-ac0792bf.png" alt="Screenshot 2025-07-26 002744.png" loading="lazy"></button></p>
+<p>to answer this we have to open the image from the last question which we know that it been erased</p>
+<p>so will check Thumbnail Caches</p>
+<ul>
+<li><strong>Thumbnail Caches</strong></li>
+</ul>
+<p>store miniature preview images of files (like pictures, videos, or documents) that Windows generates for faster display in Explorer.</p>
+<ul>
+<ul>
+<li>Located in <code>C:\Users\&lt;User&gt;\AppData\Local\Microsoft\Windows\Explorer\thumbcache_*.db</code>.</li>
+<li>Even if the original file is deleted, its thumbnail may still remain in the cache.</li>
+<li>Useful for investigators to identify viewed images or files, confirm file presence, and recover partial evidence.</li>
+</ul>
+</ul>
+<p>Windows Explorer generates thumbnail previews when a user browses image or video files. These previews are stored in .db files within the user’s profile at:</p>
+<p><code>C:\Users\&lt;USERNAME&gt;\AppData\Local\Microsoft\Windows\Explorer\</code></p>
+<p>The file thumbcache_256.db in particular stores <strong>256×256 pixel thumbnails</strong>, which are often retained even after the source file is removed or overwritten.</p>
+<p>open it with Thumbcache Viewer and locate the png click on it and we have the time</p>
+<h4 id="7-what-is-the-gps-location-of-the-blast-the-format-is-the-same-as-found-in-the-evidence-.-">7- What is the GPS location of the blast? The format is the same as found in the evidence . [Hint: Encode(XX Degrees,XX Minutes, XX Seconds)]</h4>
+<h4 id="40-degrees-45-minutes-28.6776-seconds-n-73-degrees-59-minutes-7.944-seconds-w">40 degrees 45 minutes 28.6776 seconds N, 73 degrees 59 minutes 7.944 seconds W</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003226-54dc673c.png" data-alt="Screenshot 2025-07-26 003226.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003226-54dc673c.png" alt="Screenshot 2025-07-26 003226.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003354-081fc9e6.png" data-alt="Screenshot 2025-07-26 003354.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003354-081fc9e6.png" alt="Screenshot 2025-07-26 003354.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003516-d018f74c.png" data-alt="Screenshot 2025-07-26 003516.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003516-d018f74c.png" alt="Screenshot 2025-07-26 003516.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003548-11e28be0.png" data-alt="Screenshot 2025-07-26 003548.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003548-11e28be0.png" alt="Screenshot 2025-07-26 003548.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003601-1ddd1834.png" data-alt="Screenshot 2025-07-26 003601.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003601-1ddd1834.png" alt="Screenshot 2025-07-26 003601.png" loading="lazy"></button></p>
+<p>for this question i had to look at the hints so it says that the gps location is stored in a Sticky Note so we will have have to go and export it from  <code>/Users/Zerry/AppData/Local/Packages</code></p>
+<p>then we will get the answer but its encrypted so to find how it was encrypted and decrypt it so we  have to look at the recent sites visited using Tor we can find it at this location</p>
+<p><code>/Tor Browser/Browser/TorBrowser/Data/Browser/Profile.default/places.sqlite</code></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003735-15da768b.png" data-alt="Screenshot 2025-07-26 003735.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003735-15da768b.png" alt="Screenshot 2025-07-26 003735.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003855-e81401bc.png" data-alt="Screenshot 2025-07-26 003855.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003855-e81401bc.png" alt="Screenshot 2025-07-26 003855.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003906-26f0b613.png" data-alt="Screenshot 2025-07-26 003906.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003906-26f0b613.png" alt="Screenshot 2025-07-26 003906.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003954-f1f3e41d.png" data-alt="Screenshot 2025-07-26 003954.png"><img src="../assets/images/forensics-labscountdown-btlo-screenshot_2025-07-26_003954-f1f3e41d.png" alt="Screenshot 2025-07-26 003954.png" loading="lazy"></button></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#countdown-btlo">CountDown (BTLO)</a><a href="#scenario">Scenario</a><a href="#1-verify-the-disk-image.-submit-sectorcount-and-md5">1- Verify the Disk Image. Submit SectorCount and MD5</a><a href="#251658235c4e94315039f890e839d6992aeb6c58">25165823,5c4e94315039f890e839d6992aeb6c58</a><a href="#2-what-is-the-decryption-key-of-the-online-messenger-app-used-by-zerry">2- What is the decryption key of the online messenger app used by Zerry?</a><a href="#0xc2a0e8d6f0853449cfcf4b75176c277535b3677de1bb59186b32f0dc6ed69998">0xc2a0e8d6f0853449cfcf4b75176c277535b3677de1bb59186b32f0dc6ed69998</a><a href="#3-what-is-the-registered-phone-number-and-profile-name-of-zerry-in-the-messenger-applicati">3- What is the registered phone number and profile name of Zerry in the messenger application used?</a><a href="#13026482364zerrythe">+13026482364,ZerryThe🔥</a><a href="#4-what-is-the-email-id-found-in-the-chat">4- What is the email id found in the chat?</a><a href="#eekurkbaybabes.com">eekurk@baybabes.com</a><a href="#5-what-is-the-filenameincluding-extension-that-is-received-as-an-attachment-via-email">5- What is the filename(including extension) that is received as an attachment via email?</a><a href="#.png">⌛📅.PNG</a><a href="#6-what-is-the-date-and-time-of-the-planned-attack">6- What is the Date and Time of the planned attack?</a><a href="#01-02-2021-0900-am">01-02-2021 09:00 AM</a><a href="#7-what-is-the-gps-location-of-the-blast-the-format-is-the-same-as-found-in-the-evidence-.-">7- What is the GPS location of the blast? The format is the same as found in the evidence . [Hint: Encode(XX Degrees,XX Minutes, XX Seconds)]</a><a href="#40-degrees-45-minutes-28.6776-seconds-n-73-degrees-59-minutes-7.944-seconds-w">40 degrees 45 minutes 28.6776 seconds N, 73 degrees 59 minutes 7.944 seconds W</a></details>
+    </div>
+    
+    <footer class="pager"><a href="forensics-labs.html">← Forensics Labs</a><a href="bft-htb.html">BFT (HTB) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

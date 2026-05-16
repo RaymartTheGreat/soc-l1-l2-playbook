@@ -1,0 +1,166 @@
+{
+  "id": "volatility/volatility3",
+  "title": "Volatility3",
+  "slug": "volatility3",
+  "relPath": "Volatility/Volatility3.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "Web",
+    "DFIR",
+    "Memory",
+    "Detection",
+    "Persistence",
+    "YARA"
+  ],
+  "mitre": [],
+  "parentId": "volatility",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "volatility"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "volatility",
+      "title": "Volatility",
+      "slug": "volatility"
+    },
+    {
+      "id": "volatility/volatility3",
+      "title": "Volatility3",
+      "slug": "volatility3"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Volatility3"
+    },
+    {
+      "level": 3,
+      "text": "OS Information"
+    },
+    {
+      "level": 3,
+      "text": "Process Information"
+    },
+    {
+      "level": 3,
+      "text": "Dumping Memory"
+    },
+    {
+      "level": 3,
+      "text": "Handles"
+    },
+    {
+      "level": 3,
+      "text": "DLLs"
+    },
+    {
+      "level": 3,
+      "text": "Command Line"
+    },
+    {
+      "level": 3,
+      "text": "Network Information"
+    },
+    {
+      "level": 3,
+      "text": "Registry"
+    },
+    {
+      "level": 3,
+      "text": "File Analysis"
+    },
+    {
+      "level": 3,
+      "text": "Miscellaneous"
+    },
+    {
+      "level": 3,
+      "text": "Timeline"
+    },
+    {
+      "level": 3,
+      "text": "Memory Artifacts:"
+    },
+    {
+      "level": 3,
+      "text": "Extracting Event Logs:"
+    },
+    {
+      "level": 3,
+      "text": "DLL Loading Analysis"
+    },
+    {
+      "level": 3,
+      "text": "Internet Explorer History"
+    },
+    {
+      "level": 3,
+      "text": "Process Cross-View"
+    },
+    {
+      "level": 3,
+      "text": "Sessions"
+    }
+  ],
+  "overview": "- Retrieves basic information about the operating system, such as version and build.",
+  "study": {
+    "overview": "- Retrieves basic information about the operating system, such as version and build.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Volatility3",
+      "OS Information",
+      "Process Information",
+      "Dumping Memory",
+      "Handles",
+      "DLLs",
+      "Command Line",
+      "Network Information",
+      "Registry",
+      "File Analysis",
+      "Miscellaneous",
+      "Timeline"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "vol.py -f \"/path/to/file\" windows.moddump --dump-dir /path/to/dump"
+      },
+      {
+        "language": "bash",
+        "code": "vol.py -f \"/path/to/file\" windows.printkey --key <Registry_Key_Path>"
+      },
+      {
+        "language": "bash",
+        "code": "vol.py -f \"/path/to/file\" windows.regscan"
+      },
+      {
+        "language": "bash",
+        "code": "vol.py -f \"/path/to/file\" windows.dumpregistry"
+      },
+      {
+        "language": "bash",
+        "code": "vol.py -f \"/path/to/file\" windows.timeliner --output-file timeline.csv"
+      }
+    ],
+    "tools": [
+      "Volatility",
+      "YARA"
+    ],
+    "tips": []
+  }
+}

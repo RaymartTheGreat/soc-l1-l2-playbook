@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Logging Fundamentals | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link active" href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Logging Fundamentals</span></div>
+      <h1>Logging Fundamentals</h1>
+      <p>Logging records timestamped events across applications, operating systems, network devices, and cloud services.</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Splunk</span><span class="tag">SIEM</span><span class="tag">EDR</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">Sysmon</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">DFIR</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Logging Fundamentals</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="logging-fundamentals.html"><span>Logging Fundamentals</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Logging records timestamped events across applications, operating systems, network devices, and cloud services.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Logging Fundamentals</li><li>Log Types &amp; Locations</li><li>Anatomy of a Log Entry</li><li>Windows Event Logs</li><li>Channels</li><li>Access Methods</li><li>Key Fields</li><li>Top Security Event IDs</li><li>Sysmon</li><li>Key IDs:</li><li>Why Use Sysmon</li><li>Syslog (UNIX)</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>Splunk</li><li>SIEM</li><li>EDR</li><li>Sysmon</li><li>PowerShell</li><li>Osquery</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>I have a full section on Windows Event IDs check it out</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="logging-fundamentals">Logging Fundamentals</h2>
+<p><strong>Logging records timestamped events across applications, operating systems, network devices, and cloud services.</strong></p>
+<p><strong>Why It Matters</strong></p>
+<ul>
+<li><strong>Forensics:</strong> Trace actions by time, user, and system.</li>
+<li><strong>Incident Response:</strong> Reconstruct attacker activity and prioritize alerts.</li>
+<li><strong>Threat Hunting:</strong> Identify anomalies and patterns in large datasets.</li>
+<li><strong>Compliance:</strong> Maintain audit trails for regulations like PCI‑DSS and GDPR.</li>
+</ul>
+<hr>
+<h3 id="log-types-locations">Log Types &amp; Locations</h3>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Contents</th><th>Common Locations</th></tr></thead><tbody><tr><td><strong>Application</strong></td><td>Errors, transactions, user actions</td><td>Windows: <code>C:\ProgramData\&lt;App&gt;\logs</code>                                     Linux:  <code>/var/log/&lt;app&gt;.log</code></td></tr><tr><td><strong>System</strong></td><td>Driver loads, service start/stops, kernel</td><td>Windows Event Viewer → <strong>System</strong>  Linux: <code>/var/log/syslog</code></td></tr><tr><td><strong>Security</strong></td><td>Authentication, authorization, policy changes</td><td>Windows Event Viewer → <strong>Security</strong>  Linux: <code>/var/log/auth.log</code></td></tr><tr><td><strong>Network</strong></td><td>Firewall, router, switch traffic</td><td><code>/var/log/ufw.log</code>, device archives</td></tr><tr><td><strong>Audit</strong></td><td>File/process/registry monitoring</td><td>Linux: <code>/var/log/audit/audit.log</code>  Windows: Sysmon/Operational</td></tr><tr><td><strong>Web</strong></td><td>HTTP/S access, errors, proxy, API logs</td><td>Apache: <code>/var/log/apache2/access.log</code>  Nginx: <code>/var/log/nginx/access.log</code></td></tr></tbody></table></div>
+<hr>
+<h3 id="anatomy-of-a-log-entry">Anatomy of a Log Entry</h3>
+<p>Every structured log entry includes these core fields:</p>
+<ol>
+<li><strong>Timestamp</strong></li>
+<ul>
+<li>Purpose: Correlate events across systems—ensure NTP sync.</li>
+<li>(e.g., <code>2025‑08‑05T10:23:47.128Z</code>)</li>
+</ul>
+<li><strong>Source</strong></li>
+<ul>
+<li>Identifier: Hostname, IP, or service tag (e.g., <code>host=Omar.local</code>)</li>
+<li>Purpose: Locate origin—include region/AZ in cloud setups.</li>
+</ul>
+<li><strong>Level</strong></li>
+<ul>
+<li>Values: <code>DEBUG</code>, <code>INFO</code>, <code>WARN</code>, <code>ERROR</code>, <code>CRITICAL</code></li>
+<li>Purpose: Prioritize issues.</li>
+</ul>
+<li><strong>Component</strong></li>
+<ul>
+<li>Identifier: Application or module name (e.g., <code>component=nginx</code>)</li>
+<li>Purpose: Pinpoints the exact software module.</li>
+</ul>
+<li><strong>Message</strong></li>
+<ul>
+<li>Payload: Free text or structured JSON/KV pairs (e.g., <code>{&quot;user&quot;:&quot;alice&quot;,&quot;action&quot;:&quot;login&quot;,&quot;status&quot;:&quot;failed&quot;}</code>)</li>
+<li>Contains event details.</li>
+</ul>
+</ol>
+<p><strong>Example</strong></p>
+<div class="code-shell"><div class="code-bar"><span>json</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-json">2025-08-05T10:23:47.128Z host=Omar.local level=ERROR component=payment-processor message={&quot;txn_id&quot;:&quot;12345&quot;,&quot;error&quot;:&quot;timeout&quot;}</code></pre></div>
+<hr>
+<h3 id="windows-event-logs">Windows Event Logs</h3>
+<h4 id="channels">Channels</h4>
+<ul>
+<li><strong>Application</strong>: Events from applications or programs (e.g., app errors or warnings).</li>
+<li><strong>Security</strong>: Audit events like logon attempts, resource access, and policy changes.</li>
+<li><strong>Setup</strong>: Events related to application setup and Windows installation.</li>
+<li><strong>System</strong>: Events from Windows system components like drivers and services.</li>
+<li><strong>Forwarded Events</strong>: Events collected from remote computers via event subscriptions.</li>
+</ul>
+<h4 id="access-methods">Access Methods</h4>
+<ol>
+<li><strong>Event Viewer</strong> (GUI)</li>
+<li><strong>Wevtutil.exe</strong> (CLI)</li>
+<li><strong>Get-WinEvent</strong> (PowerShell)</li>
+</ol>
+<h4 id="key-fields">Key Fields</h4>
+<ul>
+<li><strong>Log Name</strong> (e.g., <em>Security</em>)</li>
+<li><strong>Source</strong> (e.g., <code>Microsoft-Windows-Security-Auditing</code>)</li>
+<li><strong>Event ID</strong> (e.g., 4625 = failed logon)</li>
+<li><strong>Level</strong> (Information, Warning, Error, Critical)</li>
+<li><strong>Category/Task</strong></li>
+<li><strong>Record &amp; Correlation IDs</strong></li>
+<li><strong>Date/Time</strong> (UTC &amp; Local)</li>
+<li><strong>User &amp; Computer</strong></li>
+<li><strong>Event Data/Description</strong></li>
+</ul>
+<h4 id="top-security-event-ids">Top Security Event IDs</h4>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Description</th><th>Use Case</th></tr></thead><tbody><tr><td>4624</td><td>Successful logon</td><td>Track valid authentication</td></tr><tr><td>4625</td><td>Failed logon</td><td>Detect brute-force attempts</td></tr><tr><td>4672</td><td>Privileged logon</td><td>Spot high-privilege sessions</td></tr><tr><td>4720</td><td>User account creation</td><td>Catch unauthorized provisioning</td></tr><tr><td>4726</td><td>User account deletion</td><td>Identify cover-up activity</td></tr><tr><td>4688</td><td>Process creation</td><td>Map process lineage</td></tr><tr><td>4697</td><td>Service installation</td><td>Detect persistence mechanisms</td></tr><tr><td>5140</td><td>Network share accessed</td><td>Monitor sensitive file access</td></tr></tbody></table></div>
+<blockquote>I have a full section on Windows Event IDs check it out</blockquote>
+<blockquote></blockquote>
+<hr>
+<h3 id="sysmon">Sysmon</h3>
+<p>A Microsoft Sysinternals tool that extends Windows logging with detailed process, network, and file operation events—crucial for deep-dive investigations and threat hunting.</p>
+<h4 id="key-ids"><strong>Key IDs:</strong></h4>
+<ul>
+<li><strong>Event ID 1:</strong> Process creation (with command line)</li>
+<li><strong>Event ID 3:</strong> Network connection (source/dest IP, port)</li>
+<li><strong>Event ID 7:</strong> Image loaded (DLL loads)</li>
+<li><strong>Event ID 8:</strong> CreateRemoteThread (process injection)</li>
+<li><strong>Event ID 11:</strong> FileCreate (file writes)</li>
+<li><strong>Event ID 12–14:</strong> Registry modifications (key create, delete, value change)</li>
+<li><strong>Event ID 15:</strong> FileCreateStreamHash (alternate data streams)</li>
+<li><strong>Event ID 22:</strong> DNS query</li>
+</ul>
+<h4 id="why-use-sysmon"><strong>Why Use Sysmon</strong></h4>
+<ul>
+<li>Gives visibility into attacker techniques (e.g., process hops, lateral movement).</li>
+<li>Generates structured, rich events that SIEM tools can parse easily.</li>
+</ul>
+<hr>
+<h3 id="syslog-unix">Syslog (UNIX)</h3>
+<p>Protocol for sending log messages to a centralized server, standardized by RFC 5424.</p>
+<p><a class="external-asset" href="https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/f0be9badb2b7bb3ab87f5ef469c14a1bc5c6a5097513b16ce0decf740840dec30c1d72cce29320b64589084e1646.png">External image reference: https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/f0be9badb2b7bb3ab87f5ef469c14a1bc5c6a5097513b16ce0decf740840dec30c1d72cce29320b64589084e1646.png</a></p>
+<p>A Syslog message is made of three components; a Priority Value (PRI), a Header, and a Message.</p>
+<h4 id="priority-value-pri"><strong>Priority Value (PRI)</strong></h4>
+<p>The Priority Value is calculated from the combination of the <strong>Facility Code</strong> and the <strong>Severity Level.</strong> To determine PRI, the following formula is used:</p>
+<p><code>(Facility code * 8) + Severity value = PRI</code></p>
+<p>Below are the Facility Code and Severity Level tables.</p>
+<p><a class="external-asset" href="https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/1ba4083ccb2c9b7e376f5444e1d52cde971b40bc15d1cc72128845f3344e06837c1b53dcadc0f1600d0ffdf24021.png">External image reference: https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/1ba4083ccb2c9b7e376f5444e1d52cde971b40bc15d1cc72128845f3344e06837c1b53dcadc0f1600d0ffdf24021.png</a></p>
+<p><a class="external-asset" href="https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/09cedee50e8e71644fc87895a159eb1d76a92b522fa64d0d3185bffb96331934a48863e76430b6196278120bab3e.png">External image reference: https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/09cedee50e8e71644fc87895a159eb1d76a92b522fa64d0d3185bffb96331934a48863e76430b6196278120bab3e.png</a></p>
+<h4 id="header"><strong>Header</strong></h4>
+<p>The header provides key identifying details, such as the Timestamp, Hostname, Application name, and Message ID. This information helps determine the source of the system message.</p>
+<h4 id="message"><strong>Message</strong></h4>
+<p>The message itself may appear as human-readable text or as machine-readable content. While the protocol defines the format, it does not control the actual content. Each message sent to the Syslog server includes two labels that make it easier to process. The first label indicates the function (facility) of the application that produced the log. For instance, mail servers usually log with the <strong>mail</strong> facility. The second label indicates the severity level. Following these labels, the action is specified—commonly a filename within the <strong>/var/log</strong> directory, where the logs will be stored.</p>
+<h4 id="why-syslog-matters"><strong>Why Syslog Matters</strong></h4>
+<p>Syslog is critical in modern security and operations because it allows <strong>centralized log collection</strong> from servers, network devices, and security tools. By forwarding all events to a Syslog server or SIEM (e.g., Splunk, QRadar, Graylog, ELK), analysts can:</p>
+<ul>
+<li><strong>Aggregate logs</strong> from different sources into one place.</li>
+<li><strong>Correlate and enrich data</strong> (e.g., add threat intel, geo-IP, user context).</li>
+<li><strong>Detect security incidents</strong> such as brute force attempts, lateral movement, or malware activity.</li>
+<li><strong>Meet compliance requirements</strong> by keeping long-term log archives.</li>
+</ul>
+<p>In short, Syslog doesn’t just move log data /  it enables tools like Splunk and other SIEMs to <strong>make sense of events across the environment</strong> and turn raw logs into actionable intelligence.</p>
+<hr>
+<h3 id="cloud-api-based-logs">Cloud &amp; API-Based Logs</h3>
+<p>Modern environments stream logs via APIs or agents into centralized platforms.</p>
+<div class="table-wrap"><table><thead><tr><th>Source</th><th>Content</th><th>Ingestion Pattern</th><th>Use Case</th></tr></thead><tbody><tr><td><strong>AWS CloudTrail</strong></td><td>IAM/API calls (e.g., <code>RunInstances</code>)</td><td>API pull or CloudTrail Agent</td><td>Audit AWS control-plane actions</td></tr><tr><td><strong>Azure Monitor</strong></td><td>Activity Logs, Diagnostic Logs</td><td>Azure Monitor Agent or REST API</td><td>Track resource changes &amp; metrics</td></tr><tr><td><strong>GCP Stackdriver</strong></td><td>Audit Logs, Data Access Logs</td><td>API pull or Agent</td><td>Monitor GCP API and data events</td></tr><tr><td><strong>Kubernetes</strong></td><td>Pod stdout/stderr (JSON lines)</td><td><code>kubectl logs</code> or Fluent Bit</td><td>Diagnose container runtime issues</td></tr><tr><td><strong>Docker</strong></td><td>Daemon logs &amp; container outputs</td><td>JSON log driver → Fluentd/ELK</td><td>Troubleshoot container failures</td></tr></tbody></table></div>
+<p><strong>Example AWS CloudTrail Entry</strong></p>
+<div class="code-shell"><div class="code-bar"><span>json</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-json">{
+  &quot;eventTime&quot;: &quot;2025-08-05T10:32:00Z&quot;,
+  &quot;eventSource&quot;: &quot;ec2.amazonaws.com&quot;,
+  &quot;eventName&quot;: &quot;RunInstances&quot;,
+  &quot;userIdentity&quot;: { &quot;arn&quot;: &quot;arn:aws:iam::123456789012:user/Omar&quot; },
+  &quot;requestParameters&quot;: { … },
+  &quot;responseElements&quot;: { … }
+}</code></pre></div>
+<hr>
+<h3 id="endpoint-network-agents">Endpoint &amp; Network Agents</h3>
+<ul>
+<li><strong>Osquery</strong></li>
+<ul>
+<li>Exposes OS state as SQL tables (e.g., <code>processes</code>, <code>listening_ports</code>).</li>
+<li>Use for inventory, live snapshots, and detecting unauthorized changes.</li>
+</ul>
+<li><strong>Arkime (Moloch)</strong></li>
+<ul>
+<li>PCAP capture + Elasticsearch indexing.</li>
+<li>Session reconstruction, metadata search, API access for integrations.</li>
+</ul>
+<li><strong>EDR Agents</strong></li>
+<ul>
+<li>Examples: CrowdStrike Falcon, Microsoft Defender, Carbon Black.</li>
+<li>Provide file-integrity monitoring, behavioral detections, automated responses.</li>
+</ul>
+</ul>
+<hr>
+<h3 id="log-aggregation">Log Aggregation</h3>
+<p><strong>Log aggregation</strong> is the practice of collecting log data from multiple systems and consolidating it into a central location for analysis, monitoring, and alerting. This enables security teams to search, correlate, and visualize log events across an entire environment, forming the foundation for SIEM (Security Information and Event Management) platforms.</p>
+<h4 id="common-log-aggregation-methods">Common Log Aggregation Methods</h4>
+<ol>
+<li><strong>Syslog Forwarding</strong></li>
+</ol>
+<p>A widely adopted protocol that allows systems and devices to forward logs to a central syslog server. The format is structured and easy to parse, making it ideal for network appliances and UNIX-based systems.</p>
+<ol>
+<li><strong>Event Streaming</strong></li>
+</ol>
+<p>Technologies like SNMP, NetFlow, and IPFIX stream telemetry and operational data from network hardware. Aggregators ingest this data for traffic analysis, anomaly detection, and infrastructure monitoring.</p>
+<ol>
+<li><strong>Log Forwarders / Agents</strong></li>
+</ol>
+<p>Lightweight agents (e.g., Fluentd, Logstash, Beats) run on endpoints or servers, collecting logs, enriching them with metadata, and forwarding them to the aggregator in near real-time.</p>
+<ol>
+<li><strong>Direct API Access</strong></li>
+</ol>
+<p>Some aggregators integrate directly with platforms (e.g., AWS, Azure, GCP) using APIs to pull logs or events. This method requires authentication and platform-specific configurations.</p>
+<hr>
+<h4 id="log-data-types">Log Data Types</h4>
+<p>When logs are ingested into a SIEM, they typically fall into two broad categories:</p>
+<ul>
+<li><strong>Structured Logs</strong></li>
+</ul>
+<p>These logs follow a consistent format with clearly defined fields (e.g., source IP, timestamp, user). Examples include Windows Event Logs, Apache access logs, and firewall logs. Structured logs are easier to parse and normalize.</p>
+<ul>
+<li><strong>Unstructured Logs</strong></li>
+</ul>
+<p>These come from applications that don’t enforce a standard forma log entries might vary in structure or span multiple lines. Parsing and correlating unstructured data requires custom rules, regex patterns, or machine learning techniques.</p>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#logging-fundamentals">Logging Fundamentals</a><a href="#log-types-locations">Log Types &amp; Locations</a><a href="#anatomy-of-a-log-entry">Anatomy of a Log Entry</a><a href="#windows-event-logs">Windows Event Logs</a><a href="#channels">Channels</a><a href="#access-methods">Access Methods</a><a href="#key-fields">Key Fields</a><a href="#top-security-event-ids">Top Security Event IDs</a><a href="#sysmon">Sysmon</a><a href="#key-ids">Key IDs:</a><a href="#why-use-sysmon">Why Use Sysmon</a><a href="#syslog-unix">Syslog (UNIX)</a><a href="#priority-value-pri">Priority Value (PRI)</a><a href="#header">Header</a><a href="#message">Message</a><a href="#why-syslog-matters">Why Syslog Matters</a><a href="#cloud-api-based-logs">Cloud &amp; API-Based Logs</a><a href="#endpoint-network-agents">Endpoint &amp; Network Agents</a><a href="#log-aggregation">Log Aggregation</a><a href="#common-log-aggregation-methods">Common Log Aggregation Methods</a><a href="#log-data-types">Log Data Types</a></details>
+    </div>
+    
+    <footer class="pager"><a href="threat-intelligence-toolkit-organized.html">← Threat Intelligence Toolkit (Organized)</a><a href="log-analysis-labs.html">Log Analysis Labs →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

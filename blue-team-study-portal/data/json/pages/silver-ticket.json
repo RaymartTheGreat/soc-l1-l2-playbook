@@ -1,0 +1,124 @@
+{
+  "id": "detecting ad attacks/silver ticket",
+  "title": "Silver Ticket",
+  "slug": "silver-ticket",
+  "relPath": "Detecting AD Attacks/Silver Ticket.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "SIEM",
+    "EDR",
+    "PowerShell",
+    "Network",
+    "Kerberos",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1558.002",
+    "T1558"
+  ],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/silver ticket",
+      "title": "Silver Ticket",
+      "slug": "silver-ticket"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Silver Ticket"
+    },
+    {
+      "level": 2,
+      "text": "1- Understanding the Attack"
+    },
+    {
+      "level": 2,
+      "text": "2- Steps of a Silver Ticket Attack"
+    },
+    {
+      "level": 3,
+      "text": "a. Compromise a Service Account"
+    },
+    {
+      "level": 3,
+      "text": "b. Forge the Service Ticket"
+    },
+    {
+      "level": 3,
+      "text": "c. Use the Forged Ticket"
+    },
+    {
+      "level": 3,
+      "text": "d. Escalate and Move Laterally"
+    },
+    {
+      "level": 2,
+      "text": "3- Key Tools"
+    },
+    {
+      "level": 2,
+      "text": "4- Detection and Defensive Strategies"
+    },
+    {
+      "level": 3,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Mitigation Measures"
+    },
+    {
+      "level": 2,
+      "text": "5- Summary"
+    }
+  ],
+  "overview": "A Silver Ticket is a forged Service Ticket (TGS) that allows an attacker to authenticate directly to a specific service without interacting with the domain controller. Unlike Golden Ticket attacks which target the KRBTGT account (granting full domain control)—Silver Ticket attacks exploit individual service account password hashes to access targeted services",
+  "study": {
+    "overview": "A Silver Ticket is a forged Service Ticket (TGS) that allows an attacker to authenticate directly to a specific service without interacting with the domain controller. Unlike Golden Ticket attacks which target the KRBTGT account (granting full domain control)—Silver Ticket attacks exploit individual service account password hashes to access targeted services",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Silver Ticket",
+      "1- Understanding the Attack",
+      "2- Steps of a Silver Ticket Attack",
+      "a. Compromise a Service Account",
+      "b. Forge the Service Ticket",
+      "c. Use the Forged Ticket",
+      "d. Escalate and Move Laterally",
+      "3- Key Tools",
+      "4- Detection and Defensive Strategies",
+      "Detection",
+      "Mitigation Measures",
+      "5- Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "EDR",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

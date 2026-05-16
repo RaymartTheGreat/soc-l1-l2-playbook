@@ -1,0 +1,64 @@
+{
+  "id": "phishing analysis",
+  "title": "Phishing analysis",
+  "slug": "phishing-analysis",
+  "relPath": "Phishing analysis.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-initial-triage",
+  "curriculumSectionTitle": "Initial Triage & Analysis",
+  "tags": [
+    "Phishing"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "phishing analysis/email anatomy",
+    "phishing analysis/email protocols",
+    "phishing analysis/email authentication",
+    "phishing analysis/phishing",
+    "phishing analysis/types of phishing emails",
+    "phishing analysis/tracking pixel reconnaissance",
+    "phishing analysis/phishing analysis methodology",
+    "phishing analysis/phishing attack techniques",
+    "phishing analysis/email security",
+    "phishing analysis/email header & artifact analysis",
+    "phishing analysis/url analysis in phishing emails",
+    "phishing analysis/attachment analysis",
+    "phishing analysis/tools",
+    "phishing analysis/writing reports after phishing email analysis"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "phishing analysis",
+      "title": "Phishing analysis",
+      "slug": "phishing-analysis"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Phishing analysis"
+    }
+  ],
+  "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+  "study": {
+    "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Phishing analysis"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

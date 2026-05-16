@@ -1,0 +1,98 @@
+{
+  "id": "linux artifacts & forensic evidence collection/user and privilege artifacts",
+  "title": "User and Privilege Artifacts",
+  "slug": "user-and-privilege-artifacts",
+  "relPath": "Linux Artifacts & Forensic Evidence Collection/User and Privilege Artifacts.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Linux",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "linux artifacts & forensic evidence collection",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "linux artifacts & forensic evidence collection"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "linux artifacts & forensic evidence collection",
+      "title": "Linux Artifacts & Forensic Evidence Collection",
+      "slug": "linux-artifacts-forensic-evidence-collection"
+    },
+    {
+      "id": "linux artifacts & forensic evidence collection/user and privilege artifacts",
+      "title": "User and Privilege Artifacts",
+      "slug": "user-and-privilege-artifacts"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "User and Privilege Artifacts"
+    },
+    {
+      "level": 2,
+      "text": "/etc/passwd — User Account Information"
+    },
+    {
+      "level": 2,
+      "text": "/etc/shadow — Encrypted Password Storage"
+    },
+    {
+      "level": 2,
+      "text": "/etc/group — Group Memberships"
+    },
+    {
+      "level": 2,
+      "text": "/etc/sudoers — Privilege Escalation Rules"
+    }
+  ],
+  "overview": "The /etc/passwd file stores essential information about user accounts on a Linux system. It is a text file where each line represents a user account, with fields separated by colons (:). Despite the name, this file does not contain actual passwords—it contains placeholders and metadata.",
+  "study": {
+    "overview": "The /etc/passwd file stores essential information about user accounts on a Linux system. It is a text file where each line represents a user account, with fields separated by colons (:). Despite the name, this file does not contain actual passwords—it contains placeholders and metadata.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "User and Privilege Artifacts",
+      "/etc/passwd — User Account Information",
+      "/etc/shadow — Encrypted Password Storage",
+      "/etc/group — Group Memberships",
+      "/etc/sudoers — Privilege Escalation Rules"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "username:x:uid:gid:description:home_directory:login_shell"
+      },
+      {
+        "language": "bash",
+        "code": "sudo cat /etc/shadow"
+      },
+      {
+        "language": "bash",
+        "code": "group_name:password_placeholder:gid:user_list"
+      },
+      {
+        "language": "bash",
+        "code": "cat /etc/group"
+      },
+      {
+        "language": "bash",
+        "code": "sudo cat /etc/sudoers"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

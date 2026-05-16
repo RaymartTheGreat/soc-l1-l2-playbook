@@ -1,0 +1,104 @@
+{
+  "id": "frameworks/pyramid of pain",
+  "title": "Pyramid of Pain",
+  "slug": "pyramid-of-pain",
+  "relPath": "Frameworks/Pyramid of Pain.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "PowerShell",
+    "Phishing",
+    "Network",
+    "Detection",
+    "Threat Intel",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "frameworks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "frameworks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "frameworks",
+      "title": "Frameworks",
+      "slug": "frameworks"
+    },
+    {
+      "id": "frameworks/pyramid of pain",
+      "title": "Pyramid of Pain",
+      "slug": "pyramid-of-pain"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Pyramid of Pain"
+    },
+    {
+      "level": 2,
+      "text": "Breakdown of Pyramid Levels"
+    },
+    {
+      "level": 3,
+      "text": "1- Hash Values (Minimal Disruption)"
+    },
+    {
+      "level": 3,
+      "text": "2- IP Addresses"
+    },
+    {
+      "level": 3,
+      "text": "3-Domain Names"
+    },
+    {
+      "level": 3,
+      "text": "4- Network and Host Artifacts"
+    },
+    {
+      "level": 3,
+      "text": "5- Tools"
+    },
+    {
+      "level": 3,
+      "text": "6- TTPs (Tactics, Techniques, and Procedures)"
+    },
+    {
+      "level": 2,
+      "text": "Why It Matters"
+    }
+  ],
+  "overview": "The Pyramid of Pain is a conceptual model that illustrates how impactful different types of threat intelligence indicators can be in disrupting adversary operations. It ranks indicators based on how difficult they are for attackers to modify or adapt once defenders act on them. The idea is simple: the higher up the pyramid, the more operational burden is pla",
+  "study": {
+    "overview": "The Pyramid of Pain is a conceptual model that illustrates how impactful different types of threat intelligence indicators can be in disrupting adversary operations. It ranks indicators based on how difficult they are for attackers to modify or adapt once defenders act on them. The idea is simple: the higher up the pyramid, the more operational burden is pla",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Pyramid of Pain",
+      "Breakdown of Pyramid Levels",
+      "1- Hash Values (Minimal Disruption)",
+      "2- IP Addresses",
+      "3-Domain Names",
+      "4- Network and Host Artifacts",
+      "5- Tools",
+      "6- TTPs (Tactics, Techniques, and Procedures)",
+      "Why It Matters"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

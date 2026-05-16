@@ -1,0 +1,210 @@
+{
+  "id": "threat hunting labs (siem)/boogeyman3 (thm)",
+  "title": "Boogeyman3 (THM)",
+  "slug": "boogeyman3-thm",
+  "relPath": "Threat hunting Labs (SIEM)/Boogeyman3 (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Network",
+    "Kerberos",
+    "Memory",
+    "Persistence",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/boogeyman3 (thm)",
+      "title": "Boogeyman3 (THM)",
+      "slug": "boogeyman3-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Boogeyman3 (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Lurking in the Dark"
+    },
+    {
+      "level": 3,
+      "text": "Initial Investigation"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the PID of the process that executed the initial stage 1 payload?"
+    },
+    {
+      "level": 3,
+      "text": "6392"
+    },
+    {
+      "level": 3,
+      "text": "2- The stage 1 payload attempted to implant a file to another location. What is the full command-line value of this execution?"
+    },
+    {
+      "level": 3,
+      "text": "\"C:\\Windows\\System32\\xcopy.exe\" /s /i /e /h D:\\review.dat C:\\Users\\EVAN1.HUT\\AppData\\Local\\Temp\\review.dat"
+    },
+    {
+      "level": 3,
+      "text": "3- The implanted file was eventually used and executed by the stage 1 payload. What is the full command-line value of this execution?"
+    },
+    {
+      "level": 3,
+      "text": "\"C:\\Windows\\System32\\rundll32.exe\" D:\\review.dat,DllRegisterServer"
+    },
+    {
+      "level": 3,
+      "text": "4- The stage 1 payload established a persistence mechanism. What is the name of the scheduled task created by the malicious script?"
+    },
+    {
+      "level": 3,
+      "text": "Review"
+    },
+    {
+      "level": 3,
+      "text": "5- The execution of the implanted file inside the machine has initiated a potential C2 connection. What is the IP and port used by this connection? (format: IP:port)"
+    },
+    {
+      "level": 3,
+      "text": "165.232.170.151:80"
+    },
+    {
+      "level": 3,
+      "text": "6- The attacker has discovered that the current access is a local administrator. What is the name of the process used by the attacker to execute a UAC bypass?"
+    },
+    {
+      "level": 3,
+      "text": "fodhelper.exe"
+    },
+    {
+      "level": 3,
+      "text": "7- Having a high privilege machine access, the attacker attempted to dump the credentials inside the machine. What is the GitHub link used by the attacker to download a tool for credential dumping?"
+    },
+    {
+      "level": 3,
+      "text": "https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20220919/mimikatztrunk.zip"
+    },
+    {
+      "level": 3,
+      "text": "8- After successfully dumping the credentials inside the machine, the attacker used the credentials to gain access to another machine. What is the username and hash of the new credential pair? (format: username:hash)"
+    },
+    {
+      "level": 3,
+      "text": "itadmin:F84769D250EB95EB2D7D8B4A1C5613F2"
+    },
+    {
+      "level": 3,
+      "text": "9- Using the new credentials, the attacker attempted to enumerate accessible file shares. What is the name of the file accessed by the attacker from a remote share?"
+    },
+    {
+      "level": 3,
+      "text": "ITAutomation.ps1"
+    },
+    {
+      "level": 3,
+      "text": "10- After getting the contents of the remote file, the attacker used the new credentials to move laterally. What is the new set of credentials discovered by the attacker? (format: username:password)"
+    },
+    {
+      "level": 3,
+      "text": "QUICKLOGISTICS\\allan.smith:Tr!ckyP@ssw0rd987"
+    },
+    {
+      "level": 3,
+      "text": "11- What is the hostname of the attacker's target machine for its lateral movement attempt?"
+    },
+    {
+      "level": 3,
+      "text": "WKSTN-1327"
+    },
+    {
+      "level": 3,
+      "text": "12- Using the malicious command executed by the attacker from the first machine to move laterally, what is the parent process name of the malicious command executed on the second compromised machine?"
+    },
+    {
+      "level": 3,
+      "text": "wsmprovhost.exe"
+    },
+    {
+      "level": 3,
+      "text": "13- The attacker then dumped the hashes in this second machine. What is the username and hash of the newly dumped credentials? (format: username:hash)"
+    },
+    {
+      "level": 3,
+      "text": "administrator:00f80f2538dcb54e7adc715c0e7091ec"
+    },
+    {
+      "level": 3,
+      "text": "14- After gaining access to the domain controller, the attacker attempted to dump the hashes via a DCSync attack. Aside from the administrator account, what account did the attacker dump?"
+    },
+    {
+      "level": 3,
+      "text": "backupda"
+    },
+    {
+      "level": 3,
+      "text": "15- After dumping the hashes, the attacker attempted to download another remote file to execute ransomware. What is the link used by the attacker to download the ransomware binary?"
+    },
+    {
+      "level": 3,
+      "text": "http://ff.sillytechninja.io/ransomboogey.exe"
+    }
+  ],
+  "overview": "Without tripping any security defences of Quick Logistics LLC, the Boogeyman was able to compromise one of the employees and stayed in the dark, waiting for the right moment to continue the attack. Using this initial email access, the threat actors attempted to expand the impact by targeting the CEO, Evan Hutchinson.",
+  "study": {
+    "overview": "Without tripping any security defences of Quick Logistics LLC, the Boogeyman was able to compromise one of the employees and stayed in the dark, waiting for the right moment to continue the attack. Using this initial email access, the threat actors attempted to expand the impact by targeting the CEO, Evan Hutchinson.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Boogeyman3 (THM)",
+      "Scenario",
+      "Lurking in the Dark",
+      "Initial Investigation",
+      "1- What is the PID of the process that executed the initial stage 1 payload?",
+      "6392",
+      "2- The stage 1 payload attempted to implant a file to another location. What is the full command-line value of this execution?",
+      "\"C:\\Windows\\System32\\xcopy.exe\" /s /i /e /h D:\\review.dat C:\\Users\\EVAN1.HUT\\AppData\\Local\\Temp\\review.dat",
+      "3- The implanted file was eventually used and executed by the stage 1 payload. What is the full command-line value of this execution?",
+      "\"C:\\Windows\\System32\\rundll32.exe\" D:\\review.dat,DllRegisterServer",
+      "4- The stage 1 payload established a persistence mechanism. What is the name of the scheduled task created by the malicious script?",
+      "Review"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

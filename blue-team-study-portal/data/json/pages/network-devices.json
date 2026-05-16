@@ -1,0 +1,102 @@
+{
+  "id": "network/fundamentals/network devices",
+  "title": "Network Devices",
+  "slug": "network-devices",
+  "relPath": "Network/Fundamentals/Network Devices.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/network devices",
+      "title": "Network Devices",
+      "slug": "network-devices"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Network Devices"
+    },
+    {
+      "level": 2,
+      "text": "1- Hub"
+    },
+    {
+      "level": 2,
+      "text": "2- Switch"
+    },
+    {
+      "level": 2,
+      "text": "3- Bridge"
+    },
+    {
+      "level": 2,
+      "text": "4- Router"
+    },
+    {
+      "level": 2,
+      "text": "5- Modem"
+    },
+    {
+      "level": 2,
+      "text": "6- Wireless Access Point (AP)"
+    },
+    {
+      "level": 2,
+      "text": "7- Load Balancer"
+    },
+    {
+      "level": 2,
+      "text": "8- Proxy"
+    }
+  ],
+  "overview": "- OSI Layer: 1 (Physical) - Function: Receives electrical signals on one port and repeats them to all other ports. - Use‑Case: Largely obsolete—original Ethernet “dumb” repeaters that create one big collision domain.",
+  "study": {
+    "overview": "- OSI Layer: 1 (Physical) - Function: Receives electrical signals on one port and repeats them to all other ports. - Use‑Case: Largely obsolete—original Ethernet “dumb” repeaters that create one big collision domain.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Network Devices",
+      "1- Hub",
+      "2- Switch",
+      "3- Bridge",
+      "4- Router",
+      "5- Modem",
+      "6- Wireless Access Point (AP)",
+      "7- Load Balancer",
+      "8- Proxy"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

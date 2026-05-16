@@ -1,0 +1,65 @@
+{
+  "id": "volatility/what is volatility",
+  "title": "What is Volatility",
+  "slug": "what-is-volatility",
+  "relPath": "Volatility/What is Volatility.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Linux",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Incident Response",
+    "YARA"
+  ],
+  "mitre": [],
+  "parentId": "volatility",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "volatility"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "volatility",
+      "title": "Volatility",
+      "slug": "volatility"
+    },
+    {
+      "id": "volatility/what is volatility",
+      "title": "What is Volatility",
+      "slug": "what-is-volatility"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "What is Volatility"
+    }
+  ],
+  "overview": "Volatility is a powerful open-source framework used for memory forensics, particularly in the fields of incident response and malware analysis. Developed in Python, it supports memory analysis across major operating systems, including Windows, macOS, and Linux.",
+  "study": {
+    "overview": "Volatility is a powerful open-source framework used for memory forensics, particularly in the fields of incident response and malware analysis. Developed in Python, it supports memory analysis across major operating systems, including Windows, macOS, and Linux.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "What is Volatility"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Volatility",
+      "YARA"
+    ],
+    "tips": []
+  }
+}

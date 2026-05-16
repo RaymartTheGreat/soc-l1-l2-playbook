@@ -1,0 +1,224 @@
+{
+  "id": "threat hunting labs (siem)/conti (thm)",
+  "title": "Conti (THM)",
+  "slug": "conti-thm",
+  "relPath": "Threat hunting Labs (SIEM)/Conti (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Web",
+    "Memory",
+    "Persistence",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [
+    "T1055.001",
+    "T1003.001",
+    "T1562.001"
+  ],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/conti (thm)",
+      "title": "Conti (THM)",
+      "slug": "conti-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Conti (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 2,
+      "text": "before answering the questions lets start investigating"
+    },
+    {
+      "level": 3,
+      "text": "Hypothesis"
+    },
+    {
+      "level": 3,
+      "text": "Code Injection via PowerShell"
+    },
+    {
+      "level": 3,
+      "text": "Payload Execution"
+    },
+    {
+      "level": 3,
+      "text": "DNS Resolution Attempt"
+    },
+    {
+      "level": 3,
+      "text": "Ransomware Drop"
+    },
+    {
+      "level": 3,
+      "text": "Potential Lateral Movement or Payload Hosting"
+    },
+    {
+      "level": 3,
+      "text": "Persistence via User Creation"
+    },
+    {
+      "level": 3,
+      "text": "Shadow Copy Targeting"
+    },
+    {
+      "level": 3,
+      "text": "Webshell"
+    },
+    {
+      "level": 3,
+      "text": "Obfuscated PowerShell + Fileless Payload"
+    },
+    {
+      "level": 3,
+      "text": "Ransom Note Dropped"
+    },
+    {
+      "level": 2,
+      "text": "From the investigation we answer every question except the last"
+    },
+    {
+      "level": 3,
+      "text": "1- Can you identify the location of the ransomware?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\Administrator\\Documents\\cmd.exe"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the Sysmon event ID for the related file creation event?"
+    },
+    {
+      "level": 3,
+      "text": "11"
+    },
+    {
+      "level": 3,
+      "text": "3- Can you find the MD5 hash of the ransomware?"
+    },
+    {
+      "level": 3,
+      "text": "290c7dfb01e50cea9e19da81a781af2c"
+    },
+    {
+      "level": 3,
+      "text": "4- What file was saved to multiple folder locations?"
+    },
+    {
+      "level": 3,
+      "text": "readme.txt"
+    },
+    {
+      "level": 3,
+      "text": "5- What was the command the attacker used to add a new user to the compromised system?"
+    },
+    {
+      "level": 3,
+      "text": "net user /add securityninja hardToHack123$"
+    },
+    {
+      "level": 3,
+      "text": "6- The attacker migrated the process for better persistence. What is the migrated process image (executable), and what is the original process image (executable) when the attacker got on the system?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe,C:\\Windows\\System32\\wbem\\unsecapp.exe"
+    },
+    {
+      "level": 3,
+      "text": "7- The attacker also retrieved the system hashes. What is the process image used for getting the system hashes?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\lsass.exe"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the web shell the exploit deployed to the system?"
+    },
+    {
+      "level": 3,
+      "text": "i3gfPctK1c2x.aspx"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the command line that executed this web shell?"
+    },
+    {
+      "level": 3,
+      "text": "attrib.exe -r \\\\\\\\win-aoqkg2as2q7.bellybear.local\\C$\\Program Files\\Microsoft\\Exchange Server\\V15\\FrontEnd\\HttpProxy\\owa\\auth\\i3gfPctK1c2x.aspx"
+    },
+    {
+      "level": 3,
+      "text": "10- What three CVEs did this exploit leverage? Provide the answer in ascending order."
+    },
+    {
+      "level": 3,
+      "text": "CVE-2018-13374,CVE-2018-13379,CVE-2020-0796"
+    }
+  ],
+  "overview": "Some employees from your company reported that they can’t log into Outlook. The Exchange system admin also reported that he can’t log in to the Exchange Admin Center. After initial triage, they discovered some weird readme files settled on the Exchange server.",
+  "study": {
+    "overview": "Some employees from your company reported that they can’t log into Outlook. The Exchange system admin also reported that he can’t log in to the Exchange Admin Center. After initial triage, they discovered some weird readme files settled on the Exchange server.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Conti (THM)",
+      "Scenario",
+      "before answering the questions lets start investigating",
+      "Hypothesis",
+      "Code Injection via PowerShell",
+      "Payload Execution",
+      "DNS Resolution Attempt",
+      "Ransomware Drop",
+      "Potential Lateral Movement or Payload Hosting",
+      "Persistence via User Creation",
+      "Shadow Copy Targeting",
+      "Webshell"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "C:\\\\Users\\\\Administrator\\\\Documents\\\\cmd.exe"
+      }
+    ],
+    "tools": [
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

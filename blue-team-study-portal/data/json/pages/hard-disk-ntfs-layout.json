@@ -1,0 +1,82 @@
+{
+  "id": "windows forensics/hard disk & ntfs layout",
+  "title": "Hard Disk & NTFS Layout",
+  "slug": "hard-disk-ntfs-layout",
+  "relPath": "Windows Forensics/Hard Disk & NTFS Layout.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/hard disk & ntfs layout",
+      "title": "Hard Disk & NTFS Layout",
+      "slug": "hard-disk-ntfs-layout"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Hard Disk & NTFS Layout"
+    },
+    {
+      "level": 2,
+      "text": "1- Hard Disk Logical Structure"
+    },
+    {
+      "level": 2,
+      "text": "2- File Allocation & Deletion Behavior"
+    },
+    {
+      "level": 2,
+      "text": "3- Virtual Disks & Unallocated Space"
+    },
+    {
+      "level": 2,
+      "text": "4- Disk Inspection in Windows"
+    },
+    {
+      "level": 2,
+      "text": "5- Forensic Imaging & Low‑Level Analysis"
+    }
+  ],
+  "overview": "1. Partitions - A disk can be divided into one or more partitions. - Example diagram partitions: 1. MBR (Master Boot Record) 2. First‑Partition Boot Sector 3. Filesystem (metadata) area of 1st partition 4. Data area of 1st partition",
+  "study": {
+    "overview": "1. Partitions - A disk can be divided into one or more partitions. - Example diagram partitions: 1. MBR (Master Boot Record) 2. First‑Partition Boot Sector 3. Filesystem (metadata) area of 1st partition 4. Data area of 1st partition",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Hard Disk & NTFS Layout",
+      "1- Hard Disk Logical Structure",
+      "2- File Allocation & Deletion Behavior",
+      "3- Virtual Disks & Unallocated Space",
+      "4- Disk Inspection in Windows",
+      "5- Forensic Imaging & Low‑Level Analysis"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "windows security monitoring",
+  "title": "Windows Security Monitoring",
+  "slug": "windows-security-monitoring",
+  "relPath": "Windows Security Monitoring.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "Windows",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "windows security monitoring/windows logging for soc",
+    "windows security monitoring/windows threat detection 1",
+    "windows security monitoring/windows threat detection 2",
+    "windows security monitoring/windows threat detection 3"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "windows security monitoring",
+      "title": "Windows Security Monitoring",
+      "slug": "windows-security-monitoring"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows Security Monitoring"
+    }
+  ],
+  "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+  "study": {
+    "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows Security Monitoring"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

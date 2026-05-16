@@ -1,0 +1,164 @@
+{
+  "id": "windows forensics/windows user account forensics",
+  "title": "Windows User Account Forensics",
+  "slug": "windows-user-account-forensics",
+  "relPath": "Windows Forensics/Windows User Account Forensics.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Web",
+    "DFIR",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/windows user account forensics",
+      "title": "Windows User Account Forensics",
+      "slug": "windows-user-account-forensics"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows User Account Forensics"
+    },
+    {
+      "level": 2,
+      "text": "Local User Accounts"
+    },
+    {
+      "level": 2,
+      "text": "Domain Accounts"
+    },
+    {
+      "level": 2,
+      "text": "System and Service Accounts"
+    },
+    {
+      "level": 2,
+      "text": "Managed Service Accounts (MSAs) & Virtual Accounts"
+    },
+    {
+      "level": 2,
+      "text": "Account Lifecycle"
+    },
+    {
+      "level": 2,
+      "text": "User Artefacts in Windows Event Logs"
+    },
+    {
+      "level": 2,
+      "text": "User Artefacts in the Security Account Manager (SAM)"
+    },
+    {
+      "level": 2,
+      "text": "User Artefacts in the NT Directory Services Database (NTDS.dit)"
+    },
+    {
+      "level": 2,
+      "text": "Analyzing the NTDS.dit for User-Related Artefacts"
+    },
+    {
+      "level": 3,
+      "text": "bootKey"
+    },
+    {
+      "level": 2,
+      "text": "User Artefacts in Authentication Protocols"
+    },
+    {
+      "level": 3,
+      "text": "User Artefacts via Network Traffic Analysis"
+    },
+    {
+      "level": 2,
+      "text": "Analyzing Network Traffic for Authentication Artefacts"
+    },
+    {
+      "level": 2,
+      "text": "GPO Attack Scenarios"
+    },
+    {
+      "level": 3,
+      "text": "Group Policy Objects (GPOs)"
+    },
+    {
+      "level": 2,
+      "text": "User Artefacts in Group Policies"
+    },
+    {
+      "level": 3,
+      "text": "SYSVOL folder"
+    },
+    {
+      "level": 2,
+      "text": "Analyzing GPO Policies for Artefacts"
+    }
+  ],
+  "overview": "https://tryhackme.com/room/windowsuseraccountforensics",
+  "study": {
+    "overview": "https://tryhackme.com/room/windowsuseraccountforensics",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows User Account Forensics",
+      "Local User Accounts",
+      "Domain Accounts",
+      "System and Service Accounts",
+      "Managed Service Accounts (MSAs) & Virtual Accounts",
+      "Account Lifecycle",
+      "User Artefacts in Windows Event Logs",
+      "User Artefacts in the Security Account Manager (SAM)",
+      "User Artefacts in the NT Directory Services Database (NTDS.dit)",
+      "Analyzing the NTDS.dit for User-Related Artefacts",
+      "bootKey",
+      "User Artefacts in Authentication Protocols"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "C:\\> ntdsutil.exe \"activate instance ntds\" \"ifm\" \"create full C:\\Exports\" quit quit"
+      },
+      {
+        "language": "powershell",
+        "code": "C:\\> $bootKey = Get-BootKey -SystemHivePath 'C:\\Exports\\registry\\SYSTEM'"
+      },
+      {
+        "language": "powershell",
+        "code": "C:\\> Get-ADDBAccount -All -DBPath 'C:\\Exports\\Active Directory\\NTDS.dit' -BootKey $bootKey"
+      }
+    ],
+    "tools": [
+      "PowerShell",
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

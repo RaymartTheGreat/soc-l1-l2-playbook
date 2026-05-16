@@ -1,0 +1,120 @@
+{
+  "id": "network analysis labs/danabot (cyberdefenders)",
+  "title": "DanaBot (CyberDefenders)",
+  "slug": "danabot-cyberdefenders",
+  "relPath": "Network Analysis Labs/DanaBot (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Network",
+    "Threat Intel"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/danabot (cyberdefenders)",
+      "title": "DanaBot (CyberDefenders)",
+      "slug": "danabot-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "DanaBot (CyberDefenders)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Which IP address was used by the attacker during the initial access?"
+    },
+    {
+      "level": 3,
+      "text": "62.173.142.148"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the name of the malicious file used for initial access?"
+    },
+    {
+      "level": 3,
+      "text": "allegato708.js"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the SHA-256 hash of the malicious file used for initial access?"
+    },
+    {
+      "level": 3,
+      "text": "847b4ad90b1daba2d9117a8e05776f3f902dda593fb1252289538acf476c4268"
+    },
+    {
+      "level": 3,
+      "text": "4- Which process was used to execute the malicious file?"
+    },
+    {
+      "level": 3,
+      "text": "wscript.exe"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the file extension of the second malicious file utilized by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": ".dll"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the MD5 hash of the second malicious file?"
+    },
+    {
+      "level": 3,
+      "text": "e758e07113016aca55d9eda2b0ffeebe"
+    }
+  ],
+  "overview": "The SOC team has detected suspicious activity in the network traffic, revealing that a machine has been compromised. Sensitive company information has been stolen. Your task is to use Network Capture (PCAP) files and Threat Intelligence to investigate the incident and determine how the breach occurred.",
+  "study": {
+    "overview": "The SOC team has detected suspicious activity in the network traffic, revealing that a machine has been compromised. Sensitive company information has been stolen. Your task is to use Network Capture (PCAP) files and Threat Intelligence to investigate the incident and determine how the breach occurred.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "DanaBot (CyberDefenders)",
+      "Scenario",
+      "1- Which IP address was used by the attacker during the initial access?",
+      "62.173.142.148",
+      "2- What is the name of the malicious file used for initial access?",
+      "allegato708.js",
+      "3- What is the SHA-256 hash of the malicious file used for initial access?",
+      "847b4ad90b1daba2d9117a8e05776f3f902dda593fb1252289538acf476c4268",
+      "4- Which process was used to execute the malicious file?",
+      "wscript.exe",
+      "5- What is the file extension of the second malicious file utilized by the attacker?",
+      ".dll"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

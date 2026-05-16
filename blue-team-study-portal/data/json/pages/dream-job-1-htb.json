@@ -1,0 +1,190 @@
+{
+  "id": "threat intelligence labs/dream job-1 (htb)",
+  "title": "Dream Job-1 (HTB)",
+  "slug": "dream-job-1-htb",
+  "relPath": "Threat Intelligence Labs/Dream Job-1 (HTB).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-contextual-threats",
+  "curriculumSectionTitle": "Contextualizing Threats",
+  "tags": [
+    "Phishing",
+    "Detection",
+    "Threat Intel",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "T1534"
+  ],
+  "parentId": "threat intelligence labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat intelligence labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat intelligence labs",
+      "title": "Threat Intelligence Labs",
+      "slug": "threat-intelligence-labs"
+    },
+    {
+      "id": "threat intelligence labs/dream job-1 (htb)",
+      "title": "Dream Job-1 (HTB)",
+      "slug": "dream-job-1-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Dream Job-1 (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Who conducted Operation Dream Job?"
+    },
+    {
+      "level": 3,
+      "text": "Lazarus Group"
+    },
+    {
+      "level": 3,
+      "text": "2- When was this operation first observed?"
+    },
+    {
+      "level": 3,
+      "text": "September 2019"
+    },
+    {
+      "level": 3,
+      "text": "3- There are 2 campaigns associated with Operation Dream Job. One is Operation North Star, what is the other?"
+    },
+    {
+      "level": 3,
+      "text": "Operation Interception"
+    },
+    {
+      "level": 3,
+      "text": "4- During Operation Dream Job, there were the two system binaries used for proxy execution. One was Regsvr32, what was the other?"
+    },
+    {
+      "level": 3,
+      "text": "Rundll32"
+    },
+    {
+      "level": 3,
+      "text": "5- What lateral movement technique did the adversary use?"
+    },
+    {
+      "level": 3,
+      "text": "Internal Spearphishing"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the technique ID for the previous answer?"
+    },
+    {
+      "level": 3,
+      "text": "T1534"
+    },
+    {
+      "level": 3,
+      "text": "7- What Remote Access Trojan did the Lazarus Group use in Operation Dream Job?"
+    },
+    {
+      "level": 3,
+      "text": "DRATzarus"
+    },
+    {
+      "level": 3,
+      "text": "8- What technique did the malware use for execution?"
+    },
+    {
+      "level": 3,
+      "text": "Native API"
+    },
+    {
+      "level": 3,
+      "text": "9- What technique did the malware use to avoid detection in a sandbox?"
+    },
+    {
+      "level": 3,
+      "text": "Time Based Evasion"
+    },
+    {
+      "level": 3,
+      "text": "10- To answer the remaining questions, utilize VirusTotal and refer to the IOCs.txt file. What is the name associated with the first hash provided in the IOC file?"
+    },
+    {
+      "level": 3,
+      "text": "IEXPLORE.exe"
+    },
+    {
+      "level": 3,
+      "text": "11- When was the file associated with the second hash in the IOC first created?"
+    },
+    {
+      "level": 3,
+      "text": "2020-05-12 19:26:17"
+    },
+    {
+      "level": 3,
+      "text": "12- What is the name of the parent execution file associated with the second hash in the IOC?"
+    },
+    {
+      "level": 3,
+      "text": "BAEHPCSE.iso"
+    },
+    {
+      "level": 3,
+      "text": "13- Examine the third hash provided. What is the file name likely used in the campaign that aligns with the adversary's known tactics?"
+    },
+    {
+      "level": 3,
+      "text": "SalaryLockheedMartinjobopportunitiesconfidential.doc"
+    },
+    {
+      "level": 3,
+      "text": "14- Which URL was contacted on 2022-08-03 by the file associated with the third hash in the IOC file?"
+    },
+    {
+      "level": 3,
+      "text": "https://markettrendingcenter.com/lkjoboppor.docx"
+    }
+  ],
+  "overview": "You are a junior threat intelligence analyst at a Cybersecurity firm. You have been tasked with investigating a Cyber espionage campaign known as Operation Dream Job. The goal is to gather crucial information about this operation.",
+  "study": {
+    "overview": "You are a junior threat intelligence analyst at a Cybersecurity firm. You have been tasked with investigating a Cyber espionage campaign known as Operation Dream Job. The goal is to gather crucial information about this operation.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Dream Job-1 (HTB)",
+      "Scenario",
+      "1- Who conducted Operation Dream Job?",
+      "Lazarus Group",
+      "2- When was this operation first observed?",
+      "September 2019",
+      "3- There are 2 campaigns associated with Operation Dream Job. One is Operation North Star, what is the other?",
+      "Operation Interception",
+      "4- During Operation Dream Job, there were the two system binaries used for proxy execution. One was Regsvr32, what was the other?",
+      "Rundll32",
+      "5- What lateral movement technique did the adversary use?",
+      "Internal Spearphishing"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "we are provided with 3 hashes"
+    ]
+  }
+}

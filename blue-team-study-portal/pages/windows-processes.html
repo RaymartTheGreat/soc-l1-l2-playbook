@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Windows processes | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link active" href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Windows processes</span></div>
+      <h1>Windows processes</h1>
+      <p>Windows processes are programs running in the background that carry out system operations and execute programs or applications on a Windows operating system. Each process has its own memory space and allocated resources. In the Windows environment, various activities such as account logins, file access, memory allocation, running DLLs, and application execut</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Sysmon</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag">Incident Response</span><span class="tag">Persistence</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Windows processes</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="windows-processes.html"><span>Windows processes</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Windows processes are programs running in the background that carry out system operations and execute programs or applications on a Windows operating system. Each process has its own memory space and allocated resources. In the Windows environment, various activities such as account logins, file access, memory allocation, running DLLs, and application execut</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Windows processes</li><li>Key Attributes of a Windows Process:</li><li>Windows Process Types</li><li>Common Standard Windows Processes</li><li>Boot-Time Process Hierarchy (Simplified Tree)</li><li>System</li><li>Session Manager Subsystem (smss.exe)</li><li>Client/Server Runtime Subsystem (csrss.exe)</li><li>Windows Initialization (wininit.exe)</li><li>Windows Logon (winlogon.exe)</li><li>Local Security Authority Subsystem (lsass.exe)</li><li>Service Control Manager (services.exe)</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>System
+└── smss.exe
+    ├── csrss.exe
+    ├── wininit.exe
+    │   ├── services.exe
+    │   │   └── svchost.exe
+    │   └── lsass.exe
+    └── winlogon.exe
+        └── explorer.exe</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li><li>Sysmon</li><li>PowerShell</li><li>Sigma</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="windows-processes">Windows processes</h2>
+<p><strong>Windows processes</strong> are programs running in the background that carry out system operations and execute programs or applications on a Windows operating system. Each process has its own memory space and allocated resources. In the Windows environment, various activities such as account logins, file access, memory allocation, running DLLs, and application execution are tied to processes.</p>
+<p>Processes run in memory with their associations, and you can view the running processes on a live system using tools like:</p>
+<p>Command-line: <code>Tasklist</code> tool</p>
+<p>Graphical User Interface (GUI): <code>Task Manager</code> or <code>Process Hacker</code></p>
+<p><button class="image-button" data-src="../assets/images/windows-processes-image-9356a614.png" data-alt="image.png"><img src="../assets/images/windows-processes-image-9356a614.png" alt="image.png" loading="lazy"></button></p>
+<p>brief about each column of  task manager :</p>
+<ul>
+<li><strong>Type</strong> - Each process falls into 1 of 3 categories (Apps, Background process, or Windows process).</li>
+<li><strong>Publisher</strong> - Think of this column as the name of the author of the program/file.</li>
+<li><strong>PID</strong> - This is known as the process identifier number. Windows assigns a unique process identifier each time a program starts. If the same program has multiple running processes, each will have its unique process identifier (PID).</li>
+<li><strong>Process name</strong> - This is the file name of the process. In the above image, the file name for Task Manager is Taskmrg.exe.</li>
+<li><strong>Command line</strong> - The full command used to launch the process.</li>
+<li><strong>CPU</strong> - The amount of CPU (processing power) the process uses.</li>
+<li><strong>Memory</strong> - The amount of physical working memory utilized by the process.</li>
+</ul>
+<p>Task Manager is a utility you should be comfortable using, whether you're troubleshooting or performing analysis on the endpoint.</p>
+<p>Let's move to the <code>Details</code> tab. This view provides some core processes . Sort the PID column so that the PIDs are in ascending order.</p>
+<p><a class="external-asset" href="https://assets.tryhackme.com/additional/windows-processes/taskmanager-6.png">External image reference: Task Manager process details.</a></p>
+<p>Add some additional columns to see more information about these processes. Good columns to add are <code>Image path name</code> and <code>Command line</code>.</p>
+<p>These two columns can quickly alert an analyst of any outliers with a given process. In the below image, PID 384 is paired with a process named svchost.exe, a Windows process, but if the Image path name or Command line is not what it's expected to be, then we can perform a deeper analysis of this process.</p>
+<p><a class="external-asset" href="https://assets.tryhackme.com/additional/windows-processes/taskmanager-7.png">External image reference: Task Manager process details (2).</a></p>
+<p>Of course, you can add as many columns as you wish, but adding the columns that would be pertinent to your current task is recommended.</p>
+<p>Task Manager is a powerful built-in Windows utility but lacks certain important information when analyzing processes, such as <strong>parent process information</strong>. It is another key column when identifying outliers. Back to svchost.exe, if the parent process for PID 384 is not services.exe, this will warrant further analysis.</p>
+<p>To further prove this point, where is services.exe?</p>
+<p><a class="external-asset" href="https://assets.tryhackme.com/additional/windows-processes/taskmanager-8.png">External image reference: Task Manager process details (3).</a></p>
+<p>Based on the above image, the PID for services.exe is 632. But wait, one of the svchost.exe processes has a PID of 384. How did svchost.exe start before services.exe? Well, it didn't. Task Manager doesn't show a Parent-Child process view. That is where other utilities, such as <strong>Process Hacker</strong> and <strong>Process Explorer</strong>, come to the rescue.</p>
+<p><strong>Process Hacker</strong></p>
+<p><a class="external-asset" href="https://assets.tryhackme.com/additional/windows-processes/processhacker.png">External image reference: Process hacker.</a></p>
+<p><strong>Process Explorer</strong></p>
+<p><a class="external-asset" href="https://assets.tryhackme.com/additional/windows-processes/process-explorer.png">External image reference: Process Explorer.</a></p>
+<h4 id="key-attributes-of-a-windows-process">Key Attributes of a Windows Process:</h4>
+<ol>
+<li><strong>Process Name</strong>: Name of the executed program.</li>
+<li><strong>Process ID (PID)</strong>: Unique dynamic identifier for each process.</li>
+<li><strong>Process Path</strong>: File location from which the process is executed.</li>
+<li><strong>Username</strong>: Indicates the user context under which the process is running (affects security privileges).</li>
+<li><strong>Command-Line Arguments</strong>: Specifies options or switches for the process.</li>
+<li><strong>Parent Process</strong>: The process that spawned the current process.</li>
+</ol>
+<h4 id="windows-process-types"><strong>Windows Process Types</strong></h4>
+<p>Windows processes are broadly classified into two categories:</p>
+<ol>
+<li><strong>Standard Windows Processes</strong>: Developed by Microsoft, these processes support core system operations like boot, login, and services.</li>
+<li><strong>Non-Standard Windows Processes</strong>: Custom or third-party processes not included in default Windows installations. These may be legitimate (custom software) or malicious (malware).</li>
+</ol>
+<hr>
+<h2 id="common-standard-windows-processes"><strong>Common Standard Windows Processes</strong></h2>
+<p>Understanding standard Windows processes and their behavior is crucial for Security Operations Center (SOC) analysts, threat hunters, and incident responders. Adversaries often mimic, inject into, or hijack these processes to avoid detection. Recognizing legitimate process behavior helps distinguish normal activity from anomalies that may indicate malware, persistence mechanisms, or lateral movement.</p>
+<p><button class="image-button" data-src="../assets/images/windows-processes-win-processes-3379a71e.png" data-alt="win-processes.png"><img src="../assets/images/windows-processes-win-processes-3379a71e.png" alt="win-processes.png" loading="lazy"></button></p>
+<h4 id="boot-time-process-hierarchy-simplified-tree"><strong>Boot-Time Process Hierarchy (Simplified Tree)</strong></h4>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">System
+└── smss.exe
+    ├── csrss.exe
+    ├── wininit.exe
+    │   ├── services.exe
+    │   │   └── svchost.exe
+    │   └── lsass.exe
+    └── winlogon.exe
+        └── explorer.exe</code></pre></div>
+<h4 id="system"><strong>System</strong></h4>
+<ul>
+<li><strong>Process Name</strong>: <code>System</code></li>
+<li><strong>Path</strong>: N/A (kernel-level)</li>
+<li><strong>Username</strong>: <code>SYSTEM</code></li>
+<li><strong>Instances</strong>: One</li>
+<li><strong>Parent Process</strong>: N/A (spawned by the kernel)</li>
+<li><strong>Normal Behavior</strong>: Handles kernel-level tasks, hardware abstraction, and core system scheduling.</li>
+<li><strong>Red Flags</strong>:</li>
+<ul>
+<li>Should never have a visible GUI or outbound network activity.</li>
+<li>Unexpected termination or modification may indicate a rootkit or driver exploit.</li>
+</ul>
+</ul>
+<hr>
+<h4 id="session-manager-subsystem-smss.exe"><strong>Session Manager Subsystem (smss.exe)</strong></h4>
+<ul>
+<li><strong>Path</strong>: <code>%SystemRoot%\System32\smss.exe</code></li>
+<li><strong>Username</strong>: <code>SYSTEM</code></li>
+<li><strong>Instances</strong>: One primary + one per user session</li>
+<li><strong>Parent Process</strong>: <code>System</code></li>
+<li><strong>Normal Behavior</strong>: Initializes user sessions and environment variables, launches <code>csrss.exe</code>, <code>winlogon.exe</code>, and <code>wininit.exe</code>.</li>
+<li><strong>Red Flags</strong>:</li>
+<ul>
+<li>Running from incorrect path (e.g., <code>C:\Temp\smss.exe</code>)</li>
+<li>Running persistently outside boot phase</li>
+</ul>
+</ul>
+<hr>
+<h4 id="clientserver-runtime-subsystem-csrss.exe"><strong>Client/Server Runtime Subsystem (csrss.exe)</strong></h4>
+<ul>
+<li><strong>Path</strong>: <code>%SystemRoot%\System32\csrss.exe</code></li>
+<li><strong>Username</strong>: <code>SYSTEM</code></li>
+<li><strong>Instances</strong>: One per active session</li>
+<li><strong>Parent Process</strong>: <code>smss.exe</code></li>
+<li><strong>Normal Behavior</strong>: Manages user-mode side of Win32 subsystem (console windows, threads).</li>
+<li><strong>Red Flags</strong>:</li>
+<ul>
+<li>More than one per session</li>
+<li>Running from unusual directory</li>
+<li>Engaging in network communication</li>
+</ul>
+</ul>
+<hr>
+<h4 id="windows-initialization-wininit.exe"><strong>Windows Initialization (wininit.exe)</strong></h4>
+<ul>
+<li><strong>Path</strong>: <code>%SystemRoot%\System32\wininit.exe</code></li>
+<li><strong>Username</strong>: <code>SYSTEM</code></li>
+<li><strong>Instances</strong>: One</li>
+<li><strong>Parent Process</strong>: <code>smss.exe</code></li>
+<li><strong>Normal Behavior</strong>: Initializes essential subsystems during boot: starts <code>services.exe</code> and <code>lsass.exe</code>.</li>
+<li><strong>Red Flags</strong>:</li>
+<ul>
+<li>Missing or altered during boot = system integrity issues</li>
+<li>Rarely abused, but monitor for name spoofing</li>
+</ul>
+</ul>
+<hr>
+<h4 id="windows-logon-winlogon.exe"><strong>Windows Logon (winlogon.exe)</strong></h4>
+<ul>
+<li><strong>Path</strong>: <code>%SystemRoot%\System32\winlogon.exe</code></li>
+<li><strong>Username</strong>: <code>SYSTEM</code></li>
+<li><strong>Instances</strong>: One per interactive user session</li>
+<li><strong>Parent Process</strong>: <code>smss.exe</code></li>
+<li><strong>Normal Behavior</strong>: Handles user logon/logoff, lock screen, and credential input.</li>
+<li><strong>Red Flags</strong>:</li>
+<ul>
+<li>Running under a different user</li>
+<li>Spawned from abnormal parent</li>
+<li>Being injected into by unknown processes</li>
+</ul>
+</ul>
+<hr>
+<h4 id="local-security-authority-subsystem-lsass.exe"><strong>Local Security Authority Subsystem (lsass.exe)</strong></h4>
+<ul>
+<li><strong>Path</strong>: <code>%SystemRoot%\System32\lsass.exe</code></li>
+<li><strong>Username</strong>: <code>SYSTEM</code></li>
+<li><strong>Instances</strong>: One</li>
+<li><strong>Parent Process</strong>: <code>wininit.exe</code></li>
+<li><strong>Normal Behavior</strong>: Manages authentication, access tokens, and Active Directory communication.</li>
+<li><strong>Red Flags</strong>:</li>
+<ul>
+<li>Targeted for credential dumping (e.g., Mimikatz)</li>
+<li>Dump file creation or suspicious memory access</li>
+<li>Unusual outbound connections</li>
+</ul>
+</ul>
+<hr>
+<h4 id="service-control-manager-services.exe"><strong>Service Control Manager (services.exe)</strong></h4>
+<ul>
+<li><strong>Path</strong>: <code>%SystemRoot%\System32\services.exe</code></li>
+<li><strong>Username</strong>: <code>SYSTEM</code></li>
+<li><strong>Instances</strong>: One</li>
+<li><strong>Parent Process</strong>: <code>wininit.exe</code></li>
+<li><strong>Normal Behavior</strong>: Responsible for starting/stopping system services.</li>
+<li><strong>Red Flags</strong>:</li>
+<ul>
+<li>Anomalous child processes (e.g., <code>cmd.exe</code>, <code>powershell.exe</code>)</li>
+<li>Services registered with unusual binaries</li>
+</ul>
+</ul>
+<hr>
+<h4 id="service-host-svchost.exe"><strong>Service Host (svchost.exe)</strong></h4>
+<ul>
+<li><strong>Path</strong>: <code>%SystemRoot%\System32\svchost.exe</code></li>
+<li><strong>Username</strong>: <code>SYSTEM</code>, <code>LOCAL SERVICE</code>, or <code>NETWORK SERVICE</code></li>
+<li><strong>Instances</strong>: Multiple (based on hosted services via <code>k</code> switch)</li>
+<li><strong>Parent Process</strong>: <code>services.exe</code></li>
+<li><strong>Normal Behavior</strong>: Container process for Windows services, grouped by functionality.</li>
+<li><strong>Red Flags</strong>:</li>
+<ul>
+<li>Running from incorrect path</li>
+<li>Hosting unexpected or malicious DLLs</li>
+<li>Engaging in network activity unrelated to hosted services</li>
+</ul>
+</ul>
+<hr>
+<h4 id="runtime-broker-runtimebroker.exe"><strong>Runtime Broker (RuntimeBroker.exe)</strong></h4>
+<ul>
+<li><strong>Path</strong>: <code>%SystemRoot%\System32\RuntimeBroker.exe</code></li>
+<li><strong>Username</strong>: Logged-in user</li>
+<li><strong>Instances</strong>: One or more</li>
+<li><strong>Parent Process</strong>: <code>svchost.exe</code></li>
+<li><strong>Normal Behavior</strong>: Manages permissions for UWP apps (Windows Store apps).</li>
+<li><strong>Red Flags</strong>:</li>
+<ul>
+<li>Running without any UWP apps open</li>
+<li>Consistent high CPU/memory usage (may indicate abuse)</li>
+<li>Spawned by unknown parent</li>
+</ul>
+</ul>
+<hr>
+<h4 id="windows-explorer-explorer.exe"><strong>Windows Explorer (explorer.exe)</strong></h4>
+<ul>
+<li><strong>Path</strong>: <code>%SystemRoot%\explorer.exe</code></li>
+<li><strong>Username</strong>: Logged-in user</li>
+<li><strong>Instances</strong>: One per interactive session</li>
+<li><strong>Parent Process</strong>: <code>winlogon.exe</code> or user-launched</li>
+<li><strong>Normal Behavior</strong>: Handles desktop, taskbar, and file browser UI.</li>
+<li><strong>Red Flags</strong>:</li>
+<ul>
+<li>Running multiple times for a single user</li>
+<li>Executing child processes like <code>powershell.exe</code>, <code>cmd.exe</code>, or <code>rundll32.exe</code></li>
+<li>Running from an unexpected path (e.g., <code>%AppData%</code>)</li>
+</ul>
+</ul>
+<hr>
+<h4 id="note">Note:</h4>
+<p><strong>Baseline is key:</strong> Learn what’s normal for your environment (e.g., number of <code>svchost.exe</code> instances, typical user behavior).</p>
+<p><strong>Paths matter:</strong> Legitimate processes running from the wrong path are often signs of masquerading.</p>
+<hr>
+<p><button class="image-button" data-src="../assets/images/windows-processes-sans_dfps_page1_compressed-d6d9f8cd.jpg" data-alt="SANSDFPSpage1compressed.jpg"><img src="../assets/images/windows-processes-sans_dfps_page1_compressed-d6d9f8cd.jpg" alt="SANSDFPSpage1compressed.jpg" loading="lazy"></button></p>
+<hr>
+<h2 id="windows-process-tracking-events">Windows Process Tracking Events</h2>
+<p>Microsoft Windows allows tracking of process creation and termination activities through <strong>Event IDs</strong>:</p>
+<ul>
+<li><strong>Event ID 4688</strong>: Logs every process creation activity.</li>
+<li><strong>Event ID 4689</strong>: Logs every process exit activity.</li>
+</ul>
+<p>These events are critical for incident response, SOC analysis, and threat hunting, helping detect and investigate anomalies in process behavior.</p>
+<hr>
+<h4 id="event-id-4688-a-new-process-has-been-created">Event ID 4688: <strong>A New Process Has Been Created</strong></h4>
+<p><strong>Details Captured</strong>:</p>
+<p><button class="image-button" data-src="../assets/images/windows-processes-screenshot_2025-01-26_224559-383535b8.png" data-alt="Screenshot 2025-01-26 224559.png"><img src="../assets/images/windows-processes-screenshot_2025-01-26_224559-383535b8.png" alt="Screenshot 2025-01-26 224559.png" loading="lazy"></button></p>
+<ol>
+<li><strong>Creator Subject</strong>: Information about the user and login session that initiated the process, including the parent process owner.</li>
+<li><strong>Target Subject</strong>: If the new process owner matches the creator, fields are empty; otherwise, details of the new process owner are recorded.</li>
+<li><strong>Process Information</strong>:</li>
+<ul>
+<li><strong>New Process ID</strong>: Tracks process activities and correlates events.</li>
+<li><strong>New Process Name</strong>: Full path of the created process.</li>
+<li><strong>Token Elevation Type</strong>: UAC-related token, with three types:</li>
+<ul>
+<li><strong>Type 1</strong>: Full token, no privilege removal.</li>
+<li><strong>Type 2</strong>: Elevated token, administrative privileges retained.</li>
+<li><strong>Type 3</strong>: Limited token, administrative privileges removed.</li>
+</ul>
+<li><strong>Mandatory Label</strong>: Indicates process integrity levels (e.g., low, medium, high, system).</li>
+<li><strong>Creator Process ID/Name</strong>: Tracks parent process activities and relationships.</li>
+<li><strong>Process Command Line</strong>: Captures the arguments used; crucial for identifying misuse of processes (e.g., cmd.exe).</li>
+</ul>
+</ol>
+<p><strong>Note</strong>: Logging command-line arguments requires enabling group policies:</p>
+<ul>
+<li><em>Administrative Templates &gt; System &gt; Audit Process Creation &gt; Include command line in process creation events.</em></li>
+</ul>
+<hr>
+<h4 id="event-id-4689-a-process-has-exited">Event ID 4689: <strong>A Process Has Exited</strong></h4>
+<p><strong>Details Captured</strong>:</p>
+<p><button class="image-button" data-src="../assets/images/windows-processes-screenshot_2025-01-26_224652-08aefa54.png" data-alt="Screenshot 2025-01-26 224652.png"><img src="../assets/images/windows-processes-screenshot_2025-01-26_224652-08aefa54.png" alt="Screenshot 2025-01-26 224652.png" loading="lazy"></button></p>
+<ol>
+<li><strong>Subject</strong>: User and login session under which the process was running.</li>
+<li><strong>Process Information</strong>: Exited process's ID, name, and full path.</li>
+</ol>
+<p>Event ID 4689 enables correlation with Event ID 4688 (via Process ID) to determine process execution duration.</p>
+<hr>
+<h4 id="additional-investigation-techniques">Additional Investigation Techniques</h4>
+<ul>
+<li><strong>Event Log Correlation</strong></li>
+</ul>
+<p>Cross-reference process creation logs (e.g., <strong>Event ID 4688</strong>, <strong>Sysmon Event ID 1</strong>) with:</p>
+<ul>
+<ul>
+<li>File creation/modification (Event ID 11)</li>
+<li>Network connections (Sysmon Event ID 3)</li>
+<li>Registry modifications (Event ID 13)</li>
+</ul>
+<li><strong>Automation &amp; Monitoring Tools</strong></li>
+</ul>
+<p>Use telemetry and behavioral detection platforms to monitor and alert on deviations:</p>
+<ul>
+<ul>
+<li><strong>Sysmon</strong>: Granular visibility into process and system activity.</li>
+<li><strong>HELK / Elastic SIEM</strong>: Enable centralized log aggregation and detection rules.</li>
+<li><strong>Sigma Rules</strong>: Standardized detection signatures that can be translated to SIEM queries.</li>
+</ul>
+</ul>
+<hr>
+<h4 id="common-evasion-and-abuse-techniques">Common Evasion and Abuse Techniques</h4>
+<ol>
+<li><strong>Masquerading (Hiding in Plain Sight)</strong></li>
+</ol>
+<p>Attackers may rename binaries to resemble legitimate system processes.</p>
+<ul>
+<ul>
+<li>Example: <code>svch0st.exe</code>, <code>expl0rer.exe</code>, or <code>lsas.exe</code></li>
+</ul>
+<li><strong>Living Off the Land Binaries (LOLBins)</strong></li>
+</ul>
+<p>Use of trusted native tools to execute malicious tasks without dropping new binaries.</p>
+<ul>
+<ul>
+<li>Common examples: <code>powershell.exe</code>, <code>cmd.exe</code>, <code>rundll32.exe</code>, <code>wscript.exe</code>, <code>regsvr32.exe</code></li>
+</ul>
+<li><strong>Unusual Parent-Child Relationships</strong></li>
+</ul>
+<p>Pay attention to suspicious or unauthorized spawning of processes.</p>
+<ul>
+<ul>
+<li>Example: <code>winword.exe</code> spawning <code>cmd.exe</code> or <code>powershell.exe</code></li>
+<li>Abnormal: <code>svchost.exe</code> starting a user interface binary like <code>explorer.exe</code></li>
+</ul>
+<li><strong>Suspicious Execution Paths</strong></li>
+</ul>
+<p>Even when the binary name is correct, location matters.</p>
+<ul>
+<ul>
+<li>Legitimate: <code>C:\Windows\System32\svchost.exe</code></li>
+<li>Suspicious: <code>C:\Users\Public\svchost.exe</code></li>
+</ul>
+</ul>
+<hr>
+<h4 id="behavioral-red-flags-anomalies">Behavioral Red Flags &amp; Anomalies</h4>
+<div class="table-wrap"><table><thead><tr><th>Indicator</th><th>Description</th></tr></thead><tbody><tr><td>Repeated Short-lived Processes</td><td>Processes that spawn and terminate rapidly, often indicative of automation or evasion.</td></tr><tr><td>Unusual Command-line Arguments</td><td>Base64-encoded blobs, obfuscated parameters, or excessive use of <code>-e</code>, <code>-enc</code>, etc.</td></tr><tr><td>Unexpected Network Activity</td><td>Processes like <code>rundll32.exe</code> or <code>mshta.exe</code> making external HTTP/S connections.</td></tr><tr><td>Elevated Integrity with No User Context</td><td>Processes running as SYSTEM without corresponding user activity.</td></tr><tr><td>Suspicious Child of Office Apps</td><td>Office processes (<code>winword.exe</code>, <code>excel.exe</code>) launching shells or scripts.</td></tr></tbody></table></div>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#windows-processes">Windows processes</a><a href="#key-attributes-of-a-windows-process">Key Attributes of a Windows Process:</a><a href="#windows-process-types">Windows Process Types</a><a href="#common-standard-windows-processes">Common Standard Windows Processes</a><a href="#boot-time-process-hierarchy-simplified-tree">Boot-Time Process Hierarchy (Simplified Tree)</a><a href="#system">System</a><a href="#session-manager-subsystem-smss.exe">Session Manager Subsystem (smss.exe)</a><a href="#clientserver-runtime-subsystem-csrss.exe">Client/Server Runtime Subsystem (csrss.exe)</a><a href="#windows-initialization-wininit.exe">Windows Initialization (wininit.exe)</a><a href="#windows-logon-winlogon.exe">Windows Logon (winlogon.exe)</a><a href="#local-security-authority-subsystem-lsass.exe">Local Security Authority Subsystem (lsass.exe)</a><a href="#service-control-manager-services.exe">Service Control Manager (services.exe)</a><a href="#service-host-svchost.exe">Service Host (svchost.exe)</a><a href="#runtime-broker-runtimebroker.exe">Runtime Broker (RuntimeBroker.exe)</a><a href="#windows-explorer-explorer.exe">Windows Explorer (explorer.exe)</a><a href="#note">Note:</a><a href="#windows-process-tracking-events">Windows Process Tracking Events</a><a href="#event-id-4688-a-new-process-has-been-created">Event ID 4688: A New Process Has Been Created</a><a href="#event-id-4689-a-process-has-exited">Event ID 4689: A Process Has Exited</a><a href="#additional-investigation-techniques">Additional Investigation Techniques</a><a href="#common-evasion-and-abuse-techniques">Common Evasion and Abuse Techniques</a><a href="#behavioral-red-flags-anomalies">Behavioral Red Flags &amp; Anomalies</a></details>
+    </div>
+    
+    <footer class="pager"><a href="volt-typhoon.html">← Volt Typhoon</a><a href="intro-to-powershell.html">Intro to PowerShell →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+{
+  "id": "memory forensics labs/reveal (cyberdefenders)",
+  "title": "Reveal (CyberDefenders)",
+  "slug": "reveal-cyberdefenders",
+  "relPath": "Memory Forensics Labs/Reveal (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [
+    "T1218.011",
+    "T1218"
+  ],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/reveal (cyberdefenders)",
+      "title": "Reveal (CyberDefenders)",
+      "slug": "reveal-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Reveal (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Identifying the name of the malicious process helps in understanding the nature of the attack. What is the name of the malicious process?"
+    },
+    {
+      "level": 3,
+      "text": "powershell.exe"
+    },
+    {
+      "level": 3,
+      "text": "2- Knowing the parent process ID (PPID) of the malicious process aids in tracing the process hierarchy and understanding the attack flow. What is the parent PID of the malicious process?"
+    },
+    {
+      "level": 3,
+      "text": "4120"
+    },
+    {
+      "level": 3,
+      "text": "3- Determining the file name used by the malware for executing the second-stage payload is crucial for identifying subsequent malicious activities. What is the file name that the malware uses to execute the second-stage payload?"
+    },
+    {
+      "level": 3,
+      "text": "3435.dll"
+    },
+    {
+      "level": 3,
+      "text": "4- Identifying the shared directory on the remote server helps trace the resources targeted by the attacker. What is the name of the shared directory being accessed on the remote server?"
+    },
+    {
+      "level": 3,
+      "text": "davwwwroot"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the MITRE ATT&CK sub-technique ID that describes the execution of a second-stage payload using a Windows utility to run the malicious file?"
+    },
+    {
+      "level": 3,
+      "text": "T1218.011"
+    },
+    {
+      "level": 3,
+      "text": "6- Identifying the username under which the malicious process runs helps in assessing the compromised account and its potential impact. What is the username that the malicious process runs under?"
+    },
+    {
+      "level": 3,
+      "text": "Elon"
+    },
+    {
+      "level": 3,
+      "text": "7- Knowing the name of the malware family is essential for correlating the attack with known threats and developing appropriate defenses. What is the name of the malware family?"
+    },
+    {
+      "level": 3,
+      "text": "StrelaStealer"
+    }
+  ],
+  "overview": "You are a forensic investigator at a financial institution, and your SIEM flagged unusual activity on a workstation with access to sensitive financial data. Suspecting a breach, you received a memory dump from the compromised machine. Your task is to analyze the memory for signs of compromise, trace the anomaly's origin, and assess its scope to contain the i",
+  "study": {
+    "overview": "You are a forensic investigator at a financial institution, and your SIEM flagged unusual activity on a workstation with access to sensitive financial data. Suspecting a breach, you received a memory dump from the compromised machine. Your task is to analyze the memory for signs of compromise, trace the anomaly's origin, and assess its scope to contain the i",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Reveal (CyberDefenders)",
+      "Scenario",
+      "1- Identifying the name of the malicious process helps in understanding the nature of the attack. What is the name of the malicious process?",
+      "powershell.exe",
+      "2- Knowing the parent process ID (PPID) of the malicious process aids in tracing the process hierarchy and understanding the attack flow. What is the parent PID of the malicious process?",
+      "4120",
+      "3- Determining the file name used by the malware for executing the second-stage payload is crucial for identifying subsequent malicious activities. What is the file name that the malware uses to execute the second-stage payload?",
+      "3435.dll",
+      "4- Identifying the shared directory on the remote server helps trace the resources targeted by the attacker. What is the name of the shared directory being accessed on the remote server?",
+      "davwwwroot",
+      "5- What is the MITRE ATT&CK sub-technique ID that describes the execution of a second-stage payload using a Windows utility to run the malicious file?",
+      "T1218.011"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

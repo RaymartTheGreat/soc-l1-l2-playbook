@@ -1,0 +1,115 @@
+{
+  "id": "network/protocols/file transfer protocol (ftp)",
+  "title": "File Transfer Protocol (FTP)",
+  "slug": "file-transfer-protocol-ftp",
+  "relPath": "Network/Protocols/File Transfer Protocol (FTP).md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": "network/protocols",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/protocols"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/protocols",
+      "title": "Protocols",
+      "slug": "protocols"
+    },
+    {
+      "id": "network/protocols/file transfer protocol (ftp)",
+      "title": "File Transfer Protocol (FTP)",
+      "slug": "file-transfer-protocol-ftp"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "File Transfer Protocol (FTP)"
+    },
+    {
+      "level": 2,
+      "text": "Basic FTP Workflow"
+    },
+    {
+      "level": 2,
+      "text": "FTP Modes"
+    },
+    {
+      "level": 3,
+      "text": "Active Mode"
+    },
+    {
+      "level": 3,
+      "text": "Passive Mode (PASV)"
+    },
+    {
+      "level": 2,
+      "text": "Common FTP Commands"
+    },
+    {
+      "level": 2,
+      "text": "FTP Session Example (Console)"
+    },
+    {
+      "level": 2,
+      "text": "FTP Security Concerns"
+    },
+    {
+      "level": 2,
+      "text": "Summary"
+    }
+  ],
+  "overview": "File Transfer Protocol (FTP) is a standard application-layer protocol used for transferring files between hosts on a TCP/IP network. It was designed for reliability and efficiency, especially across systems with differing file systems. FTP operates over TCP port 21 for control and establishes a separate data connection for file transfers.",
+  "study": {
+    "overview": "File Transfer Protocol (FTP) is a standard application-layer protocol used for transferring files between hosts on a TCP/IP network. It was designed for reliability and efficiency, especially across systems with differing file systems. FTP operates over TCP port 21 for control and establishes a separate data connection for file transfers.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "File Transfer Protocol (FTP)",
+      "Basic FTP Workflow",
+      "FTP Modes",
+      "Active Mode",
+      "Passive Mode (PASV)",
+      "Common FTP Commands",
+      "FTP Session Example (Console)",
+      "FTP Security Concerns",
+      "Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "$ ftp 10.0.0.10\nConnected to 10.0.0.10.\n220 (vsFTPd 3.0.5)\nName: anonymous\n331 Please specify the password.\nPassword:\n230 Login successful.\nftp> ls\n227 Entering Passive Mode (10,0,0,10,215,90).\n150 Here comes the directory listing.\n-rw-r--r-- 1 0 0 1024 Jan 01 12:00 report.txt\n226 Directory send OK.\nftp> type ascii\n200 Switching to ASCII mode.\nftp> get report.txt\n150 Opening ASCII mode data connection.\n226 Transfer complete.\nftp> quit\n221 Goodbye."
+      }
+    ],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": [
+      "OSI Layer: Application (Layer 7)",
+      "Default Ports:",
+      "- Control Channel: TCP/21",
+      "- Data Channel: TCP/20 (Active Mode) or random high port (Passive Mode)",
+      "Encryption: None (plaintext)",
+      "FTP is deprecated for secure environments. Modern alternatives include:"
+    ]
+  }
+}

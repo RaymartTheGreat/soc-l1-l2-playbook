@@ -1,0 +1,123 @@
+{
+  "id": "network analysis tools/tshark",
+  "title": "TShark",
+  "slug": "tshark",
+  "relPath": "Network Analysis Tools/TShark.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-network-investigation",
+  "curriculumSectionTitle": "Network Investigation",
+  "tags": [
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network analysis tools",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis tools"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis tools",
+      "title": "Network Analysis Tools",
+      "slug": "network-analysis-tools"
+    },
+    {
+      "id": "network analysis tools/tshark",
+      "title": "TShark",
+      "slug": "tshark"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "TShark"
+    },
+    {
+      "level": 2,
+      "text": "Essential Utilities"
+    },
+    {
+      "level": 2,
+      "text": "Core Options"
+    },
+    {
+      "level": 2,
+      "text": "Capture Autostop & Ring Buffers"
+    },
+    {
+      "level": 2,
+      "text": "Capture vs. Display Filters"
+    },
+    {
+      "level": 2,
+      "text": "BPF Qualifiers"
+    },
+    {
+      "level": 2,
+      "text": "Display Filter Examples"
+    },
+    {
+      "level": 2,
+      "text": "Statistics & Analysis (z)"
+    },
+    {
+      "level": 2,
+      "text": "Exporting Objects"
+    },
+    {
+      "level": 2,
+      "text": "Field Extraction (T fields)"
+    }
+  ],
+  "overview": "| Utility | Purpose | | --- | --- | | capinfos | Summarize capture file metadata before deep dives | | grep | Search packet text dumps or CSV exports | | awk | Field-based filtering, counting, and reporting | | cut | Extract specific columns or fields from text output | | uniq | Deduplicate sorted output; often paired with sort | | nl | Number lines of outpu",
+  "study": {
+    "overview": "| Utility | Purpose | | --- | --- | | capinfos | Summarize capture file metadata before deep dives | | grep | Search packet text dumps or CSV exports | | awk | Field-based filtering, counting, and reporting | | cut | Extract specific columns or fields from text output | | uniq | Deduplicate sorted output; often paired with sort | | nl | Number lines of outpu",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "TShark",
+      "Essential Utilities",
+      "Core Options",
+      "Capture Autostop & Ring Buffers",
+      "Capture vs. Display Filters",
+      "BPF Qualifiers",
+      "Display Filter Examples",
+      "Statistics & Analysis (z)",
+      "Exporting Objects",
+      "Field Extraction (T fields)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "# Live capture on interface 2 (press Ctrl+C to stop)\ntshark -i 2\n\n# Read from a saved file and display packet summary\ntshark -r capture.pcapng\n\n# Save live capture to file\ntshark -i eth0 -w output.pcap"
+      },
+      {
+        "language": "bash",
+        "code": "# Stop after 30s\ntshark -i eth0 -w file.pcap -a duration:30\n# Stop at 10 MB\ntshark -i eth0 -w file.pcap -a filesize:10240\n# Rotate into 3 files of ≤10 MB each\ntshark -i eth0 -w file.pcap -a filesize:10240 -a files:3\n"
+      },
+      {
+        "language": "bash",
+        "code": "# New file every 60s, keep last 5\ntshark -i eth0 -w rotating.pcap -b duration:60 -b files:5\n# Rotate by filesize\ntshark -i eth0 -w rotating.pcap -b filesize:5120 -b files:4\n"
+      },
+      {
+        "language": "bash",
+        "code": "# IP filtering\ntshark -Y 'ip.src == 10.10.10.10'\n\n# TCP ports\ntshark -Y 'tcp.dstport == 22'\n\n# HTTP traffic & status\ntshark -Y \"http && http.response.code == 200\"\n\n# DNS queries\ntshark -Y 'dns.qry.type == 1'\n\n# Combine filters\ntshark -Y 'ip.addr == 192.168.1.5 && tcp.port == 443'"
+      },
+      {
+        "language": "bash",
+        "code": "# Quick protocol hierarchy\ntshark -z io,phs\n\n# HTTP request statistics\ntshark -z http,tree -q\n\n# Top talkers by IP\ntshark -z endpoints,ip\n\n# DNS query tree\ntshark -z dns,tree -q\n\n# Follow streams\n# TCP flow\ntshark -z follow,tcp,ascii,0\n"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

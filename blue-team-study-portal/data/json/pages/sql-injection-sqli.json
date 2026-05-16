@@ -1,0 +1,112 @@
+{
+  "id": "detecting web attacks/sql injection (sqli)",
+  "title": "SQL Injection (SQLi)",
+  "slug": "sql-injection-sqli",
+  "relPath": "Detecting Web Attacks/SQL Injection (SQLi).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Web",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "detecting web attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting web attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting web attacks",
+      "title": "Detecting Web Attacks",
+      "slug": "detecting-web-attacks"
+    },
+    {
+      "id": "detecting web attacks/sql injection (sqli)",
+      "title": "SQL Injection (SQLi)",
+      "slug": "sql-injection-sqli"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "SQL Injection (SQLi)"
+    },
+    {
+      "level": 3,
+      "text": "For people who don’t know SQL"
+    },
+    {
+      "level": 3,
+      "text": "How it works"
+    },
+    {
+      "level": 3,
+      "text": "Types"
+    },
+    {
+      "level": 3,
+      "text": "What attackers can gain"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Where to look"
+    },
+    {
+      "level": 3,
+      "text": "What to search for"
+    },
+    {
+      "level": 3,
+      "text": "Common URL encoding"
+    },
+    {
+      "level": 3,
+      "text": "Example access log"
+    },
+    {
+      "level": 3,
+      "text": "Quick checks to run after spotting suspicious payloads"
+    }
+  ],
+  "overview": "SQL Injection happens when an attacker puts SQL code into input fields (or headers, or URLs) and the application builds and runs a database query using that untrusted data. The result: the attacker can read or change data, bypass login logic, or sometimes run system commands via the database.",
+  "study": {
+    "overview": "SQL Injection happens when an attacker puts SQL code into input fields (or headers, or URLs) and the application builds and runs a database query using that untrusted data. The result: the attacker can read or change data, bypass login logic, or sometimes run system commands via the database.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "SQL Injection (SQLi)",
+      "For people who don’t know SQL",
+      "How it works",
+      "Types",
+      "What attackers can gain",
+      "Detection",
+      "Where to look",
+      "What to search for",
+      "Common URL encoding",
+      "Example access log",
+      "Quick checks to run after spotting suspicious payloads"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "GET /product?id=%27 OR 1%3D1 --  HTTP/1.1\" 200 512 \"-\" \"Mozilla/5.0\"\n"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

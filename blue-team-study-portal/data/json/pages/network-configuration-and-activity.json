@@ -1,0 +1,125 @@
+{
+  "id": "linux artifacts & forensic evidence collection/network configuration and activity",
+  "title": "Network Configuration and Activity",
+  "slug": "network-configuration-and-activity",
+  "relPath": "Linux Artifacts & Forensic Evidence Collection/Network Configuration and Activity.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Linux",
+    "Network",
+    "DFIR",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "linux artifacts & forensic evidence collection",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "linux artifacts & forensic evidence collection"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "linux artifacts & forensic evidence collection",
+      "title": "Linux Artifacts & Forensic Evidence Collection",
+      "slug": "linux-artifacts-forensic-evidence-collection"
+    },
+    {
+      "id": "linux artifacts & forensic evidence collection/network configuration and activity",
+      "title": "Network Configuration and Activity",
+      "slug": "network-configuration-and-activity"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Network Configuration and Activity"
+    },
+    {
+      "level": 2,
+      "text": "Network Interface Configuration"
+    },
+    {
+      "level": 3,
+      "text": "/etc/network/interfaces"
+    },
+    {
+      "level": 2,
+      "text": "IP and MAC Address Information"
+    },
+    {
+      "level": 3,
+      "text": "ip address show"
+    },
+    {
+      "level": 2,
+      "text": "DNS Configuration"
+    },
+    {
+      "level": 3,
+      "text": "/etc/hosts"
+    },
+    {
+      "level": 3,
+      "text": "/etc/resolv.conf"
+    },
+    {
+      "level": 2,
+      "text": "Active Network Connections"
+    },
+    {
+      "level": 3,
+      "text": "netstat -natp"
+    }
+  ],
+  "overview": "This file defines how the system's network interfaces are configured — either via DHCP or with static settings.",
+  "study": {
+    "overview": "This file defines how the system's network interfaces are configured — either via DHCP or with static settings.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Network Configuration and Activity",
+      "Network Interface Configuration",
+      "/etc/network/interfaces",
+      "IP and MAC Address Information",
+      "ip address show",
+      "DNS Configuration",
+      "/etc/hosts",
+      "/etc/resolv.conf",
+      "Active Network Connections",
+      "netstat -natp"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "cat /etc/network/interfaces"
+      },
+      {
+        "language": "bash",
+        "code": "ip address show"
+      },
+      {
+        "language": "bash",
+        "code": "127.0.0.1 localhost\n::1 ip6-localhost ip6-loopback"
+      },
+      {
+        "language": "bash",
+        "code": "cat /etc/hosts"
+      },
+      {
+        "language": "bash",
+        "code": "cat /etc/resolv.conf"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

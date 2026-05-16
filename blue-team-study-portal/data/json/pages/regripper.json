@@ -1,0 +1,152 @@
+{
+  "id": "windows forensics/regripper",
+  "title": "RegRipper",
+  "slug": "regripper",
+  "relPath": "Windows Forensics/RegRipper.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Kerberos",
+    "DFIR",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/regripper",
+      "title": "RegRipper",
+      "slug": "regripper"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "RegRipper"
+    },
+    {
+      "level": 3,
+      "text": "Full Analysis"
+    },
+    {
+      "level": 3,
+      "text": "Automate RegRipper in a loop (Windows CMD)"
+    },
+    {
+      "level": 3,
+      "text": "Common Commands"
+    },
+    {
+      "level": 3,
+      "text": "Switches"
+    },
+    {
+      "level": 3,
+      "text": "Common Plugins by Hive"
+    },
+    {
+      "level": 2,
+      "text": "Example Workflows"
+    },
+    {
+      "level": 3,
+      "text": "User Activity Timeline"
+    },
+    {
+      "level": 3,
+      "text": "USB Device History"
+    },
+    {
+      "level": 3,
+      "text": "Installed Software & Patches"
+    },
+    {
+      "level": 3,
+      "text": "Core Plugins (by Hive)"
+    },
+    {
+      "level": 3,
+      "text": "Advanced Forensics Plugins"
+    },
+    {
+      "level": 3,
+      "text": "Network & Malware-Specific Plugins"
+    },
+    {
+      "level": 3,
+      "text": "Specialized Artifacts"
+    },
+    {
+      "level": 2,
+      "text": "Search for Specific Keys with RECmd"
+    }
+  ],
+  "overview": "- r <hivefile: Registry hive file to analyze - p <plugin: Run specific plugin(s) - a: Run all plugins applicable to the hive - l: List available plugins - g: Guess hive type - f <profile: Use plugin profile (e.g., win10)",
+  "study": {
+    "overview": "- r <hivefile: Registry hive file to analyze - p <plugin: Run specific plugin(s) - a: Run all plugins applicable to the hive - l: List available plugins - g: Guess hive type - f <profile: Use plugin profile (e.g., win10)",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "RegRipper",
+      "Full Analysis",
+      "Automate RegRipper in a loop (Windows CMD)",
+      "Common Commands",
+      "Switches",
+      "Common Plugins by Hive",
+      "Example Workflows",
+      "User Activity Timeline",
+      "USB Device History",
+      "Installed Software & Patches",
+      "Core Plugins (by Hive)",
+      "Advanced Forensics Plugins"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "rip.exe -r NTUSER.DAT -f ntuser > user.txt\nrip.exe -r SYSTEM -f system > system.txt\nrip.exe -r SOFTWARE -f software > software.txt\nrip.exe -r SECURITY -f security > security.txt"
+      },
+      {
+        "language": "bash",
+        "code": "rip.exe -r <hivefile> -p <plugin> [options]"
+      },
+      {
+        "language": "text",
+        "code": "for /r %i in (*) do (C:\\Tools\\RegRipper\\rip.exe -r %i -a > %i.txt)"
+      },
+      {
+        "language": "bash",
+        "code": "rip.exe -r SYSTEM -p userassist\nrip.exe -r NTUSER.DAT -p \"shellbags,usrclass\"\nrip.exe -r SOFTWARE -p user*\nrip.exe -r SOFTWARE -a\nrip.exe -r SOFTWARE -a > software_report.txt"
+      },
+      {
+        "language": "bash",
+        "code": "rip.exe -r NTUSER.DAT -p userassist > ua.txt\nrip.exe -r NTUSER.DAT -p shellbags  > sb.txt\nrip.exe -r NTUSER.DAT -p amcache    > am.txt\nrip.exe -r NTUSER.DAT -p recentdocs > rd.txt"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

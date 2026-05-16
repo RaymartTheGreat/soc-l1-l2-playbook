@@ -1,0 +1,180 @@
+{
+  "id": "windows internals",
+  "title": "Windows Internals",
+  "slug": "windows-internals",
+  "relPath": "Windows Internals.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network",
+    "Memory",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1055",
+    "T1055.012",
+    "T1055.013",
+    "T1574.001",
+    "T1574.002",
+    "T1055.001"
+  ],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "windows internals",
+      "title": "Windows Internals",
+      "slug": "windows-internals"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows Internals"
+    },
+    {
+      "level": 2,
+      "text": "Understanding Windows Processes"
+    },
+    {
+      "level": 3,
+      "text": "Processes in Action"
+    },
+    {
+      "level": 3,
+      "text": "Process Manipulation and Attacks"
+    },
+    {
+      "level": 3,
+      "text": "Key Process Components"
+    },
+    {
+      "level": 3,
+      "text": "Processes in Memory"
+    },
+    {
+      "level": 3,
+      "text": "Observing Processes"
+    },
+    {
+      "level": 3,
+      "text": "Task Manager Process Details"
+    },
+    {
+      "level": 2,
+      "text": "Threads in Windows"
+    },
+    {
+      "level": 3,
+      "text": "Thread Characteristics"
+    },
+    {
+      "level": 2,
+      "text": "Virtual Memory in Windows"
+    },
+    {
+      "level": 3,
+      "text": "Address Space Breakdown"
+    },
+    {
+      "level": 3,
+      "text": "Virtual Memory Mechanisms"
+    },
+    {
+      "level": 2,
+      "text": "Dynamic-Link Libraries (DLLs)"
+    },
+    {
+      "level": 3,
+      "text": "Benefits of DLLs"
+    },
+    {
+      "level": 3,
+      "text": "DLL Exploitation Techniques"
+    },
+    {
+      "level": 3,
+      "text": "Creating a DLL"
+    },
+    {
+      "level": 3,
+      "text": "DLL Loading Techniques"
+    },
+    {
+      "level": 2,
+      "text": "Portable Executable (PE) Format"
+    },
+    {
+      "level": 3,
+      "text": "PE Format Components"
+    },
+    {
+      "level": 3,
+      "text": "PE Sections"
+    },
+    {
+      "level": 3,
+      "text": "PE Format in a Hex Dump"
+    },
+    {
+      "level": 3,
+      "text": "Kernel vs. User Mode Execution"
+    },
+    {
+      "level": 3,
+      "text": "Process States and Scheduling"
+    },
+    {
+      "level": 3,
+      "text": "Page Tables and Memory Protection"
+    },
+    {
+      "level": 3,
+      "text": "Handles and Object Manager"
+    },
+    {
+      "level": 3,
+      "text": "Windows API and System Calls"
+    }
+  ],
+  "overview": "A process represents the execution of a program in Windows. It consists of multiple components that define how the process interacts with system resources. Each process contains:",
+  "study": {
+    "overview": "A process represents the execution of a program in Windows. It consists of multiple components that define how the process interacts with system resources. Each process contains:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows Internals",
+      "Understanding Windows Processes",
+      "Processes in Action",
+      "Process Manipulation and Attacks",
+      "Key Process Components",
+      "Processes in Memory",
+      "Observing Processes",
+      "Task Manager Process Details",
+      "Threads in Windows",
+      "Thread Characteristics",
+      "Virtual Memory in Windows",
+      "Address Space Breakdown"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "4D 5A 90 00 03 00 00 00 04 00 00 00 FF FF 00 00  MZ......\n50 45 00 00 64 86 06 00 10 C4 40 03 00 00 00 00  PE..d..."
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

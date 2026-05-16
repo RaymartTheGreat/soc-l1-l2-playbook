@@ -1,0 +1,103 @@
+{
+  "id": "detecting web attacks/insecure direct object reference (idor)",
+  "title": "Insecure Direct Object Reference (IDOR)",
+  "slug": "insecure-direct-object-reference-idor",
+  "relPath": "Detecting Web Attacks/Insecure Direct Object Reference (IDOR).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Web",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "detecting web attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting web attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting web attacks",
+      "title": "Detecting Web Attacks",
+      "slug": "detecting-web-attacks"
+    },
+    {
+      "id": "detecting web attacks/insecure direct object reference (idor)",
+      "title": "Insecure Direct Object Reference (IDOR)",
+      "slug": "insecure-direct-object-reference-idor"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Insecure Direct Object Reference (IDOR)"
+    },
+    {
+      "level": 3,
+      "text": "How IDOR Works"
+    },
+    {
+      "level": 3,
+      "text": "Attacker Goals"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Where to look:"
+    },
+    {
+      "level": 3,
+      "text": "What to look for:"
+    },
+    {
+      "level": 3,
+      "text": "Example"
+    },
+    {
+      "level": 3,
+      "text": "Prevention"
+    }
+  ],
+  "overview": "IDOR is a type of Broken Access Control vulnerability. It happens when an application exposes a reference (like id=123) to an internal object without properly checking if the requester is authorized to access it.",
+  "study": {
+    "overview": "IDOR is a type of Broken Access Control vulnerability. It happens when an application exposes a reference (like id=123) to an internal object without properly checking if the requester is authorized to access it.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Insecure Direct Object Reference (IDOR)",
+      "How IDOR Works",
+      "Attacker Goals",
+      "Detection",
+      "Where to look:",
+      "What to look for:",
+      "Example",
+      "Prevention"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "https://example.com/get_user_information?id=1"
+      },
+      {
+        "language": "text",
+        "code": "/wp-admin/user-edit.php?user_id=1\n/wp-admin/user-edit.php?user_id=2\n/wp-admin/user-edit.php?user_id=3\n..."
+      }
+    ],
+    "tools": [],
+    "tips": [
+      "OWASP 2021 lists Broken Access Control (including IDOR) as the 1 web vulnerability."
+    ]
+  }
+}

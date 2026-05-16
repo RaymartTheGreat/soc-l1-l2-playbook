@@ -1,0 +1,129 @@
+{
+  "id": "memory forensics/pagefile sys & swapfile & hibernation file",
+  "title": "Pagefile sys & Swapfile & Hibernation file",
+  "slug": "pagefile-sys-swapfile-hibernation-file",
+  "relPath": "Memory forensics/Pagefile sys & Swapfile & Hibernation file.md",
+  "level": "L1.5",
+  "curriculumLevelId": null,
+  "curriculumSectionId": null,
+  "curriculumSectionTitle": null,
+  "tags": [
+    "Windows",
+    "Linux",
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics",
+      "title": "Memory forensics",
+      "slug": "memory-forensics-2c39b2e1"
+    },
+    {
+      "id": "memory forensics/pagefile sys & swapfile & hibernation file",
+      "title": "Pagefile sys & Swapfile & Hibernation file",
+      "slug": "pagefile-sys-swapfile-hibernation-file"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Pagefile.sys & Swapfile & Hibernation file"
+    },
+    {
+      "level": 2,
+      "text": "Pagefile.sys (Windows)"
+    },
+    {
+      "level": 3,
+      "text": "Functionality"
+    },
+    {
+      "level": 3,
+      "text": "For DFIR/SOC:"
+    },
+    {
+      "level": 3,
+      "text": "Extracting using FTK Imager"
+    },
+    {
+      "level": 2,
+      "text": "Swap Space (Linux)"
+    },
+    {
+      "level": 3,
+      "text": "Commands:"
+    },
+    {
+      "level": 3,
+      "text": "Tuning Swap Usage:"
+    },
+    {
+      "level": 3,
+      "text": "For DFIR/SOC:"
+    },
+    {
+      "level": 2,
+      "text": "Hibernation File (hiberfil.sys)"
+    },
+    {
+      "level": 3,
+      "text": "For DFIR/SOC:"
+    },
+    {
+      "level": 3,
+      "text": "Extracting the hibernation File"
+    },
+    {
+      "level": 3,
+      "text": "Examining hibernation File"
+    }
+  ],
+  "overview": "Pagefile.sys is a hidden system file in Windows used to support virtual memory. When the system’s physical RAM becomes full, less frequently accessed memory pages are moved (paged out) to this file, freeing up RAM for active tasks.",
+  "study": {
+    "overview": "Pagefile.sys is a hidden system file in Windows used to support virtual memory. When the system’s physical RAM becomes full, less frequently accessed memory pages are moved (paged out) to this file, freeing up RAM for active tasks.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Pagefile.sys & Swapfile & Hibernation file",
+      "Pagefile.sys (Windows)",
+      "Functionality",
+      "For DFIR/SOC:",
+      "Extracting using FTK Imager",
+      "Swap Space (Linux)",
+      "Commands:",
+      "Tuning Swap Usage:",
+      "For DFIR/SOC:",
+      "Hibernation File (hiberfil.sys)",
+      "For DFIR/SOC:",
+      "Extracting the hibernation File"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "free -h           # View total, used, and available swap\nswapon --show     # Show current swap devices/files"
+      },
+      {
+        "language": "bash",
+        "code": "cat /proc/sys/vm/swappiness   # Check current value"
+      }
+    ],
+    "tools": [
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

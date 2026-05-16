@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Boogeyman3 (THM) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-hunting-labs-siem.html">Threat hunting Labs (SIEM)</a><span>/</span><span>Boogeyman3 (THM)</span></div>
+      <h1>Boogeyman3 (THM)</h1>
+      <p>Without tripping any security defences of Quick Logistics LLC, the Boogeyman was able to compromise one of the employees and stayed in the dark, waiting for the right moment to continue the attack. Using this initial email access, the threat actors attempted to expand the impact by targeting the CEO, Evan Hutchinson.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Kerberos</span><span class="tag">Memory</span><span class="tag">Persistence</span><span class="tag">Lateral Movement</span><span class="tag">C2</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat hunting Labs (SIEM)</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>L2</em></a>
+      <b>27</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="conti-thm.html"><span>Conti (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="boogeyman3-thm.html"><span>Boogeyman3 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="servidae-thm.html"><span>Servidae (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="middlemayhem-btlo.html"><span>MiddleMayhem (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-i-payment-collectors-thm.html"><span>Hunt Me I Payment Collectors (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-ii-typo-squatters-thm.html"><span>Hunt Me II Typo Squatters (THM)</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="summary-report.html"><span>Summary Report</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-unfolding-thm-soc-simulation.html"><span>Phishing Unfolding THM Soc Simulation</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="splunk-2-thm.html"><span>Splunk 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="slingshot-thm.html"><span>Slingshot (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="new-hire-old-artifacts-thm.html"><span>New Hire Old Artifacts (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="itsybitsy-thm.html"><span>ItsyBitsy (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="benign-thm.html"><span>Benign (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ps-eclipse-thm.html"><span>PS Eclipse (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="investigating-with-splunk-thm.html"><span>Investigating with Splunk (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="proxylogon-lab-cyberdefenders.html"><span>ProxyLogon Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="kerberoasted-cyberdefenders.html"><span>Kerberoasted (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="t1110-003-lab-cyberdefenders.html"><span>T1110-003 Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="xdr-operation-global-dagger-thm.html"><span>XDR Operation Global Dagger (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="xdr-operation-global-dagger-2-thm.html"><span>XDR Operation Global Dagger 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="falconeye-cyberdefenders.html"><span>FalconEye (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="goldenspray-lab-cyberdefenders.html"><span>GoldenSpray Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="shadowroast-cyberdefenders.html"><span>ShadowRoast (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="revil-lab-cyberdefenders.html"><span>REvil Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="t1197-lab-cyberdefenders.html"><span>T1197 Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="paloaltorce-lab-cyberdefenders.html"><span>PaloAltoRCE Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="nerisbot-cyberdefenders.html"><span>NerisBot (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="volt-typhoon.html"><span>Volt Typhoon</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Without tripping any security defences of Quick Logistics LLC, the Boogeyman was able to compromise one of the employees and stayed in the dark, waiting for the right moment to continue the attack. Using this initial email access, the threat actors attempted to expand the impact by targeting the CEO, Evan Hutchinson.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Boogeyman3 (THM)</li><li>Scenario</li><li>Lurking in the Dark</li><li>Initial Investigation</li><li>1- What is the PID of the process that executed the initial stage 1 payload?</li><li>6392</li><li>2- The stage 1 payload attempted to implant a file to another location. What is the full command-line value of this execution?</li><li>&quot;C:\Windows\System32\xcopy.exe&quot; /s /i /e /h D:\review.dat C:\Users\EVAN1.HUT\AppData\Local\Temp\review.dat</li><li>3- The implanted file was eventually used and executed by the stage 1 payload. What is the full command-line value of this execution?</li><li>&quot;C:\Windows\System32\rundll32.exe&quot; D:\review.dat,DllRegisterServer</li><li>4- The stage 1 payload established a persistence mechanism. What is the name of the scheduled task created by the malicious script?</li><li>Review</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="boogeyman3-thm">Boogeyman3 (THM)</h2>
+<h3 id="scenario">Scenario</h3>
+<h4 id="lurking-in-the-dark">Lurking in the Dark</h4>
+<p>Without tripping any security defences of Quick Logistics LLC, the Boogeyman was able to compromise one of the employees and stayed in the dark, waiting for the right moment to continue the attack. Using this initial email access, the threat actors attempted to expand the impact by targeting the CEO, Evan Hutchinson.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/15a4b939f2af60c700f3d44d54fb9d0d.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/15a4b939f2af60c700f3d44d54fb9d0d.png</a></p>
+<p>The email appeared questionable, but Evan still opened the attachment despite the scepticism. After opening the attached document and seeing that nothing happened, Evan reported the phishing email to the security team.</p>
+<h4 id="initial-investigation">Initial Investigation</h4>
+<p>Upon receiving the phishing email report, the security team investigated the workstation of the CEO. During this activity, the team discovered the email attachment in the downloads folder of the victim.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/00e31463f222fa36eeb979454f6305f0.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/00e31463f222fa36eeb979454f6305f0.png</a></p>
+<p>In addition, the security team also observed a file inside the ISO payload, as shown in the image below.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/c5728f90243957944050c74703fadf6d.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/c5728f90243957944050c74703fadf6d.png</a></p>
+<p>Lastly, it was presumed by the security team that the incident occurred between <strong>August 29 and August 30, 2023</strong>.</p>
+<p>Given the initial findings, you are tasked to analyse and assess the impact of the compromise.</p>
+<p><a class="note-link" href="https://tryhackme.com/room/boogeyman3">https://tryhackme.com/room/boogeyman3</a></p>
+<hr>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_020012-82684b4d.png" data-alt="Screenshot 2025-08-10 020012.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_020012-82684b4d.png" alt="Screenshot 2025-08-10 020012.png" loading="lazy"></button></p>
+<h4 id="1-what-is-the-pid-of-the-process-that-executed-the-initial-stage-1-payload">1- What is the PID of the process that executed the initial stage 1 payload?</h4>
+<h4 id="6392">6392</h4>
+<p>from the scenario i see the malicious file name and that it was a html file so i searched with</p>
+<p>“.hta” <strong>OR &quot;ProjectFinancialSumary_Q3.pdf&quot;</strong></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_020741-d25c1d8f.png" data-alt="Screenshot 2025-08-10 020741.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_020741-d25c1d8f.png" alt="Screenshot 2025-08-10 020741.png" loading="lazy"></button></p>
+<p>from this output that the user downloads and execute a malicious <code>.hta</code> file disguised as a pdf then <code>xcopy.exe</code> copies a malicious dll to temp directory which is easier for malware to run from and often writable without admin rights then we see <code>rundll32.exe</code> executes the file “review.dat” to register a DLL then <code>powershell.exe</code> creates a daily schedule task at 6  (persistence) to run <code>rundll32.exe</code> with the malicious dll it just created</p>
+<p>and of course the pid is 6392 (mshta.exe)</p>
+<p>instead of going to other questions and solve it i will start investigating this machine (<strong>WKSTN-0051</strong>) see the logs that happen after the time of compromise Aug 29, 2023 @ 23:51:15</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_021554-21d7e9b7.png" data-alt="Screenshot 2025-08-10 021554.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_021554-21d7e9b7.png" alt="Screenshot 2025-08-10 021554.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_021417-92feb7e7.png" data-alt="Screenshot 2025-08-10 021417.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_021417-92feb7e7.png" alt="Screenshot 2025-08-10 021417.png" loading="lazy"></button></p>
+<p>we can see rundll32 make connection to the c2 <code>165.232.170.151:80</code></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_021753-06ce181d.png" data-alt="Screenshot 2025-08-10 021753.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_021753-06ce181d.png" alt="Screenshot 2025-08-10 021753.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_021801-79aedbb5.png" data-alt="Screenshot 2025-08-10 021801.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_021801-79aedbb5.png" alt="Screenshot 2025-08-10 021801.png" loading="lazy"></button></p>
+<p>the attacker use <code>whoami /all</code> which displays comprehensive information about the current user and group memberships</p>
+<p>then rundll32 execute the malicious dll (review.dat)</p>
+<p>we see attacker lists user accounts on the host using <code>net.exe user / net1 users</code></p>
+<p>and lists members of local administrators group using <code>net.exe localgroup administrators</code> / <code>net1 localgroup administrators</code></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_021809-b4eebb35.png" data-alt="Screenshot 2025-08-10 021809.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_021809-b4eebb35.png" alt="Screenshot 2025-08-10 021809.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_014755-a582d32d.png" data-alt="Screenshot 2025-08-10 014755.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_014755-a582d32d.png" alt="Screenshot 2025-08-10 014755.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_022728-7bc3813d.png" data-alt="Screenshot 2025-08-10 022728.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_022728-7bc3813d.png" alt="Screenshot 2025-08-10 022728.png" loading="lazy"></button></p>
+<p>we see <code>fodhelper.exe</code> which is used to UAC bypass the attacker sets a HKCU <code>ms-settings\shell\open\command</code> value to run their payload; when <code>fodhelper.exe</code> runs it launches that command elevated without prompting.</p>
+<p>then we see the attacker used <code>powershell.exe</code> to perform a fileless execution then it downloads <code>powerview</code> script and enumerates domain joined computers and domain users</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_022737-f77cf036.png" data-alt="Screenshot 2025-08-10 022737.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_022737-f77cf036.png" alt="Screenshot 2025-08-10 022737.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_023000-add48bc1.png" data-alt="Screenshot 2025-08-10 023000.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_023000-add48bc1.png" alt="Screenshot 2025-08-10 023000.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_023011-85efa28c.png" data-alt="Screenshot 2025-08-10 023011.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_023011-85efa28c.png" alt="Screenshot 2025-08-10 023011.png" loading="lazy"></button></p>
+<p>then downloads <code>mimikatz</code> tool from github to mimi.zip then extracts it and run <code>privilege::debug</code> to enable debug privileges and <code>sekurlsa::logonpasswords</code> to dump plaintext passwords, hashes, and Kerberos tickets from memory. then Lists files and folders in the network share <code>\\WKSTN-1327.quicklogistics.org\ITFiles</code></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_030757-c90b2948.png" data-alt="Screenshot 2025-08-10 030757.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_030757-c90b2948.png" alt="Screenshot 2025-08-10 030757.png" loading="lazy"></button></p>
+<p>then reads and outputs the contents of the PowerShell script file <code>IT_Automation.ps1</code> from a network share. then use hardcoded credentials (<code>allan.smith</code> + <code>Tr!ckyP@ssw0rd987</code>) to run remote commands on a domain-joined host (<code>WKSTN-1327</code>) using PowerShell remoting (<code>Invoke-Command</code>).</p>
+<hr>
+<p><code>WKSTN-1327</code></p>
+<p>from <code>Powerview.ps1 Invoke-ShareFinder</code> the attack got credentials for <code>allan.smith</code> in a automation sctipt I<code>T_Automation.ps1</code> and executed commands remotely via <code>Invoke-Command</code></p>
+<p>we see <code>wsmprovhost.exe</code> which means <code>Invoke-Command</code> execution was successful then the attacker dumps credentials via <code>mimikatz.exe</code> and got NTLM hash of the Domain Administrator  ( <code>Administrator</code>  ) we can also see persistence via schedule tasks</p>
+<hr>
+<p><code>DC01</code></p>
+<p>the attacker performed a DCSync by mimikatz on anohter domain administrator ( <code>backupda</code> )</p>
+<p>then by using the same encoded powershell from before he connects to the C2</p>
+<p>now that the attacker have full control a ransomware was downloaded on <code>WKSTN-0051</code></p>
+<hr>
+<p>now lets continue with the questions</p>
+<h4 id="2-the-stage-1-payload-attempted-to-implant-a-file-to-another-location.-what-is-the-full-co">2- The stage 1 payload attempted to implant a file to another location. What is the full command-line value of this execution?</h4>
+<h4 id="cwindowssystem32xcopy.exe-s-i-e-h-dreview.dat-cusersevan1.hutappdatalocaltempreview.dat">&quot;C:\Windows\System32\xcopy.exe&quot; /s /i /e /h D:\review.dat C:\Users\EVAN~1.HUT\AppData\Local\Temp\review.dat</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_032705-5957f88c.png" data-alt="Screenshot 2025-08-10 032705.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_032705-5957f88c.png" alt="Screenshot 2025-08-10 032705.png" loading="lazy"></button></p>
+<p>we can see xcopy.exe copies review.dat from D: drive to the Temp directory</p>
+<h4 id="3-the-implanted-file-was-eventually-used-and-executed-by-the-stage-1-payload.-what-is-the-">3- The implanted file was eventually used and executed by the stage 1 payload. What is the full command-line value of this execution?</h4>
+<h4 id="cwindowssystem32rundll32.exe-dreview.datdllregisterserver">&quot;C:\Windows\System32\rundll32.exe&quot; D:\review.dat,DllRegisterServer</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033536-e2091eb0.png" data-alt="Screenshot 2025-08-10 033536.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033536-e2091eb0.png" alt="Screenshot 2025-08-10 033536.png" loading="lazy"></button></p>
+<p>following the events we see rundll32.exe is used to execute the file “review.dat” to register a DLL</p>
+<h4 id="4-the-stage-1-payload-established-a-persistence-mechanism.-what-is-the-name-of-the-schedul">4- The stage 1 payload established a persistence mechanism. What is the name of the scheduled task created by the malicious script?</h4>
+<h4 id="review">Review</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_032755-469d0669.png" data-alt="Screenshot 2025-08-10 032755.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_032755-469d0669.png" alt="Screenshot 2025-08-10 032755.png" loading="lazy"></button></p>
+<p>the powershell created a scheduled task to execute the dll that was created by the previous process and registered as Review</p>
+<h4 id="5-the-execution-of-the-implanted-file-inside-the-machine-has-initiated-a-potential-c2-conn">5- The execution of the implanted file inside the machine has initiated a potential C2 connection. What is the IP and port used by this connection? (format: IP:port)</h4>
+<h4 id="165.232.170.15180">165.232.170.151:80</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_032839-1e9ea840.png" data-alt="Screenshot 2025-08-10 032839.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_032839-1e9ea840.png" alt="Screenshot 2025-08-10 032839.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_032858-db75c0f2.png" data-alt="Screenshot 2025-08-10 032858.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_032858-db75c0f2.png" alt="Screenshot 2025-08-10 032858.png" loading="lazy"></button></p>
+<p>using event code 3 we can see the C2 connection</p>
+<h4 id="6-the-attacker-has-discovered-that-the-current-access-is-a-local-administrator.-what-is-th">6- The attacker has discovered that the current access is a local administrator. What is the name of the process used by the attacker to execute a UAC bypass?</h4>
+<h4 id="fodhelper.exe">fodhelper.exe</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_032928-0f34caac.png" data-alt="Screenshot 2025-08-10 032928.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_032928-0f34caac.png" alt="Screenshot 2025-08-10 032928.png" loading="lazy"></button></p>
+<p>we can see the attacker after executed and created the dll it enumerate users and groups in the machine then it run <code>fodhelper.exe</code>which is A legitimate Windows binary used for <strong>Features on Demand</strong> management in Windows. It launches with <strong>auto-elevated privileges</strong> (bypassing UAC prompts) when certain configuration settings are accessed. so attackers use it for UAC bypass attacks  because it is auto elevated and does not prompt for consent When <code>fodhelper.exe</code> is launched, it executes the attacker’s payload with elevated privileges</p>
+<p>and if you don’t know <code>UAC</code>is a security feature in Windows designed to prevent unauthorized changes to the operating system by requiring administrator approval before executing actions that could affect the system's security or functionality.</p>
+<h4 id="7-having-a-high-privilege-machine-access-the-attacker-attempted-to-dump-the-credentials-in">7- Having a high privilege machine access, the attacker attempted to dump the credentials inside the machine. What is the GitHub link used by the attacker to download a tool for credential dumping?</h4>
+<h4 id="httpsgithub.comgentilkiwimimikatzreleasesdownload2.2.0-20220919mimikatztrunk.zip">https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20220919/mimikatz_trunk.zip</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033058-151f7a35.png" data-alt="Screenshot 2025-08-10 033058.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033058-151f7a35.png" alt="Screenshot 2025-08-10 033058.png" loading="lazy"></button></p>
+<p>you can search with <em>github</em> with event code 1 you can see the download of infamous tool <code>mimikatz</code></p>
+<h4 id="8-after-successfully-dumping-the-credentials-inside-the-machine-the-attacker-used-the-cred">8- After successfully dumping the credentials inside the machine, the attacker used the credentials to gain access to another machine. What is the username and hash of the new credential pair? (format: username:hash)</h4>
+<h4 id="itadminf84769d250eb95eb2d7d8b4a1c5613f2">itadmin:F84769D250EB95EB2D7D8B4A1C5613F2</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033350-87341462.png" data-alt="Screenshot 2025-08-10 033350.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033350-87341462.png" alt="Screenshot 2025-08-10 033350.png" loading="lazy"></button></p>
+<p>search with <code>mimikatz.exe</code> with event code 1  we can see that <code>mimikatz</code> dumps the credentials then get their hashes and perform <code>pass the hash</code> with the ntlm hash of one of the administrative users  <code>itadmin</code></p>
+<h4 id="9-using-the-new-credentials-the-attacker-attempted-to-enumerate-accessible-file-shares.-wh">9- Using the new credentials, the attacker attempted to enumerate accessible file shares. What is the name of the file accessed by the attacker from a remote share?</h4>
+<h4 id="itautomation.ps1">IT_Automation.ps1</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033804-d474d0a0.png" data-alt="Screenshot 2025-08-10 033804.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033804-d474d0a0.png" alt="Screenshot 2025-08-10 033804.png" loading="lazy"></button></p>
+<p>we see download of <code>Powerview.ps1</code> which is a network recon tool then runs <code>Invoke-ShareFinder</code> cmdlet to discover accessible file shares with the domain then the attacker discovered a file share on <code>WKSTN-1327</code> hosting an automation script then using cat to prints the output of this script</p>
+<p>maybe this script have credentials</p>
+<h4 id="10-after-getting-the-contents-of-the-remote-file-the-attacker-used-the-new-credentials-to-">10- After getting the contents of the remote file, the attacker used the new credentials to move laterally. What is the new set of credentials discovered by the attacker? (format: username:password)</h4>
+<h4 id="quicklogisticsallan.smithtrckypssw0rd987">QUICKLOGISTICS\allan.smith:Tr!ckyP@ssw0rd987</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033907-b63ed4a3.png" data-alt="Screenshot 2025-08-10 033907.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033907-b63ed4a3.png" alt="Screenshot 2025-08-10 033907.png" loading="lazy"></button></p>
+<p>we see the attacker remotely used the newly discovered credentials for <code>allan.smith</code> to move laterally and execute code on a second workstation</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033939-e8f26786.png" data-alt="Screenshot 2025-08-10 033939.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_033939-e8f26786.png" alt="Screenshot 2025-08-10 033939.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034010-9a23bc95.png" data-alt="Screenshot 2025-08-10 034010.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034010-9a23bc95.png" alt="Screenshot 2025-08-10 034010.png" loading="lazy"></button></p>
+<p>when we decode the payload in cyberchef we see  calls back to <code>cdn.bananapeelparty.net:80</code> or <code>165.232.170.151:80</code></p>
+<h4 id="11-what-is-the-hostname-of-the-attackers-target-machine-for-its-lateral-movement-attempt">11- What is the hostname of the attacker's target machine for its lateral movement attempt?</h4>
+<h4 id="wkstn-1327">WKSTN-1327</h4>
+<p>from the previous question we determined the hostname and user account targeted for lateral movement</p>
+<h4 id="12-using-the-malicious-command-executed-by-the-attacker-from-the-first-machine-to-move-lat">12- Using the malicious command executed by the attacker from the first machine to move laterally, what is the parent process name of the malicious command executed on the second compromised machine?</h4>
+<h4 id="wsmprovhost.exe">wsmprovhost.exe</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034211-164debea.png" data-alt="Screenshot 2025-08-10 034211.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034211-164debea.png" alt="Screenshot 2025-08-10 034211.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034246-3bd45a19.png" data-alt="Screenshot 2025-08-10 034246.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034246-3bd45a19.png" alt="Screenshot 2025-08-10 034246.png" loading="lazy"></button></p>
+<p>now we switch to <code>WKSTN-1327</code> we can see the command used to move laterally was a child process of wsmprovhost.exe</p>
+<p><code>wsmprovhost.exe</code> is a legitimate Windows process associated with Windows Remote Management (WinRM). It hosts Windows PowerShell remoting sessions and handles remote commands executed through WinRM</p>
+<h4 id="13-the-attacker-then-dumped-the-hashes-in-this-second-machine.-what-is-the-username-and-ha">13- The attacker then dumped the hashes in this second machine. What is the username and hash of the newly dumped credentials? (format: username:hash)</h4>
+<h4 id="administrator00f80f2538dcb54e7adc715c0e7091ec">administrator:00f80f2538dcb54e7adc715c0e7091ec</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034328-274ada8a.png" data-alt="Screenshot 2025-08-10 034328.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034328-274ada8a.png" alt="Screenshot 2025-08-10 034328.png" loading="lazy"></button></p>
+<p>scrolling through the events we see the attacker enumerated the machine , downloaded <code>mimikatz</code> and then <code>pass the hash</code> of the user administrator</p>
+<h4 id="14-after-gaining-access-to-the-domain-controller-the-attacker-attempted-to-dump-the-hashes">14- After gaining access to the domain controller, the attacker attempted to dump the hashes via a DCSync attack. Aside from the administrator account, what account did the attacker dump?</h4>
+<h4 id="backupda">backupda</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034720-3562a435.png" data-alt="Screenshot 2025-08-10 034720.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034720-3562a435.png" alt="Screenshot 2025-08-10 034720.png" loading="lazy"></button></p>
+<p>so after passing the hash the attacker performed few commands then make DCSync attack against the user Administrator</p>
+<p>if you don’t know DCSync is an attack that allows an attacker to simulate a domain controller by abusing the Directory Replication Service Remote Protocol (MS-DRSR). By doing so, the attacker can request and retrieve sensitive password data including NTLM hashes and the KRBTGT account hash from other domain controllers.</p>
+<p>i know that the command of DCSync attack look like this <code>.\mimikatz.exe &quot;lsadump::dcsync /user:DOMAIN\krbtgt&quot;</code></p>
+<p>so i just filtered with <em>dcsync</em> with the hostname DC01</p>
+<h4 id="15-after-dumping-the-hashes-the-attacker-attempted-to-download-another-remote-file-to-exec">15- After dumping the hashes, the attacker attempted to download another remote file to execute ransomware. What is the link used by the attacker to download the ransomware binary?</h4>
+<h4 id="httpff.sillytechninja.ioransomboogey.exe">http://ff.sillytechninja.io/ransomboogey.exe</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034906-c6d60afb.png" data-alt="Screenshot 2025-08-10 034906.png"><img src="../assets/images/threat-hunting-labs-siemboogeyman3-thm-screenshot_2025-08-10_034906-c6d60afb.png" alt="Screenshot 2025-08-10 034906.png" loading="lazy"></button></p>
+<p>now that the attacker achieved everything in the world the attacker downloads a ransomware binary</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#boogeyman3-thm">Boogeyman3 (THM)</a><a href="#scenario">Scenario</a><a href="#lurking-in-the-dark">Lurking in the Dark</a><a href="#initial-investigation">Initial Investigation</a><a href="#1-what-is-the-pid-of-the-process-that-executed-the-initial-stage-1-payload">1- What is the PID of the process that executed the initial stage 1 payload?</a><a href="#6392">6392</a><a href="#2-the-stage-1-payload-attempted-to-implant-a-file-to-another-location.-what-is-the-full-co">2- The stage 1 payload attempted to implant a file to another location. What is the full command-line value of this execution?</a><a href="#cwindowssystem32xcopy.exe-s-i-e-h-dreview.dat-cusersevan1.hutappdatalocaltempreview.dat">&quot;C:\Windows\System32\xcopy.exe&quot; /s /i /e /h D:\review.dat C:\Users\EVAN1.HUT\AppData\Local\Temp\review.dat</a><a href="#3-the-implanted-file-was-eventually-used-and-executed-by-the-stage-1-payload.-what-is-the-">3- The implanted file was eventually used and executed by the stage 1 payload. What is the full command-line value of this execution?</a><a href="#cwindowssystem32rundll32.exe-dreview.datdllregisterserver">&quot;C:\Windows\System32\rundll32.exe&quot; D:\review.dat,DllRegisterServer</a><a href="#4-the-stage-1-payload-established-a-persistence-mechanism.-what-is-the-name-of-the-schedul">4- The stage 1 payload established a persistence mechanism. What is the name of the scheduled task created by the malicious script?</a><a href="#review">Review</a><a href="#5-the-execution-of-the-implanted-file-inside-the-machine-has-initiated-a-potential-c2-conn">5- The execution of the implanted file inside the machine has initiated a potential C2 connection. What is the IP and port used by this connection? (format: IP:port)</a><a href="#165.232.170.15180">165.232.170.151:80</a><a href="#6-the-attacker-has-discovered-that-the-current-access-is-a-local-administrator.-what-is-th">6- The attacker has discovered that the current access is a local administrator. What is the name of the process used by the attacker to execute a UAC bypass?</a><a href="#fodhelper.exe">fodhelper.exe</a><a href="#7-having-a-high-privilege-machine-access-the-attacker-attempted-to-dump-the-credentials-in">7- Having a high privilege machine access, the attacker attempted to dump the credentials inside the machine. What is the GitHub link used by the attacker to download a tool for credential dumping?</a><a href="#httpsgithub.comgentilkiwimimikatzreleasesdownload2.2.0-20220919mimikatztrunk.zip">https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20220919/mimikatztrunk.zip</a><a href="#8-after-successfully-dumping-the-credentials-inside-the-machine-the-attacker-used-the-cred">8- After successfully dumping the credentials inside the machine, the attacker used the credentials to gain access to another machine. What is the username and hash of the new credential pair? (format: username:hash)</a><a href="#itadminf84769d250eb95eb2d7d8b4a1c5613f2">itadmin:F84769D250EB95EB2D7D8B4A1C5613F2</a><a href="#9-using-the-new-credentials-the-attacker-attempted-to-enumerate-accessible-file-shares.-wh">9- Using the new credentials, the attacker attempted to enumerate accessible file shares. What is the name of the file accessed by the attacker from a remote share?</a><a href="#itautomation.ps1">ITAutomation.ps1</a><a href="#10-after-getting-the-contents-of-the-remote-file-the-attacker-used-the-new-credentials-to-">10- After getting the contents of the remote file, the attacker used the new credentials to move laterally. What is the new set of credentials discovered by the attacker? (format: username:password)</a><a href="#quicklogisticsallan.smithtrckypssw0rd987">QUICKLOGISTICS\allan.smith:Tr!ckyP@ssw0rd987</a><a href="#11-what-is-the-hostname-of-the-attackers-target-machine-for-its-lateral-movement-attempt">11- What is the hostname of the attacker's target machine for its lateral movement attempt?</a><a href="#wkstn-1327">WKSTN-1327</a><a href="#12-using-the-malicious-command-executed-by-the-attacker-from-the-first-machine-to-move-lat">12- Using the malicious command executed by the attacker from the first machine to move laterally, what is the parent process name of the malicious command executed on the second compromised machine?</a><a href="#wsmprovhost.exe">wsmprovhost.exe</a><a href="#13-the-attacker-then-dumped-the-hashes-in-this-second-machine.-what-is-the-username-and-ha">13- The attacker then dumped the hashes in this second machine. What is the username and hash of the newly dumped credentials? (format: username:hash)</a><a href="#administrator00f80f2538dcb54e7adc715c0e7091ec">administrator:00f80f2538dcb54e7adc715c0e7091ec</a><a href="#14-after-gaining-access-to-the-domain-controller-the-attacker-attempted-to-dump-the-hashes">14- After gaining access to the domain controller, the attacker attempted to dump the hashes via a DCSync attack. Aside from the administrator account, what account did the attacker dump?</a><a href="#backupda">backupda</a><a href="#15-after-dumping-the-hashes-the-attacker-attempted-to-download-another-remote-file-to-exec">15- After dumping the hashes, the attacker attempted to download another remote file to execute ransomware. What is the link used by the attacker to download the ransomware binary?</a><a href="#httpff.sillytechninja.ioransomboogey.exe">http://ff.sillytechninja.io/ransomboogey.exe</a></details>
+    </div>
+    
+    <footer class="pager"><a href="conti-thm.html">← Conti (THM)</a><a href="servidae-thm.html">Servidae (THM) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

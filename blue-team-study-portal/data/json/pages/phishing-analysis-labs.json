@@ -1,0 +1,68 @@
+{
+  "id": "phishing analysis labs",
+  "title": "Phishing Analysis Labs",
+  "slug": "phishing-analysis-labs",
+  "relPath": "Phishing Analysis Labs.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-initial-triage",
+  "curriculumSectionTitle": "Initial Triage & Analysis",
+  "tags": [
+    "Phishing"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "phishing analysis labs/phishing analysis tools (thm)",
+    "phishing analysis labs/the greenholt phish (thm)",
+    "phishing analysis labs/phishtool (thm)",
+    "phishing analysis labs/the planet's prestige (btlo)",
+    "phishing analysis labs/brabbit (cyberdefenders)",
+    "phishing analysis labs/phishstrike (cyberdefenders)",
+    "phishing analysis labs/phishing email (letsdefend)",
+    "phishing analysis labs/email analysis (letsdefend)",
+    "phishing analysis labs/phishing analysis (btlo)",
+    "phishing analysis labs/phishing analysis 2 (btlo)",
+    "phishing analysis labs/snapped phish-ing line (thm)",
+    "phishing analysis labs/phishnet (htb)",
+    "phishing analysis labs/bec-ky (btlo)"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "phishing analysis labs",
+      "title": "Phishing Analysis Labs",
+      "slug": "phishing-analysis-labs"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Phishing Analysis Labs"
+    },
+    {
+      "level": 3,
+      "text": "Planning to write"
+    }
+  ],
+  "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+  "study": {
+    "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Phishing Analysis Labs",
+      "Planning to write"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

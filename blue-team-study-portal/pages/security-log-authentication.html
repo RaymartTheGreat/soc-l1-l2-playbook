@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Security Log Authentication | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="windows-security-monitoring.html">Windows Security Monitoring</a><span>/</span><a href="windows-logging-for-soc.html">Windows Logging for SOC</a><span>/</span><span>Security Log Authentication</span></div>
+      <h1>Security Log Authentication</h1>
+      <p>As a SOC analyst, you can't know in advance which attack you will be handling tomorrow and which logs you will need to triage. However, out of all Windows logs enabled by default, the Security event log is the one that brings you the most value. Let's start our journey from the two most important Security logs: Successful Logon (4624) and Failed Logon (4625)</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">Windows</span><span class="tag">Network</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Windows Security Monitoring</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>L1.5</em></a>
+      <b>4</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-logging-for-soc.html"><span>Windows Logging for SOC</span><em>L1.5</em></a>
+      <b>7</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="what-is-logged.html"><span>What Is Logged</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="security-log-authentication.html"><span>Security Log Authentication</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="security-log-user-management.html"><span>Security Log User Management</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="sysmon-process-monitoring.html"><span>Sysmon Process Monitoring</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="sysmon-file-and-network.html"><span>Sysmon File and Network</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="powershell-logging-commands.html"><span>PowerShell Logging Commands</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="questions.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-threat-detection-1.html"><span>Windows Threat Detection 1</span><em>L1.5</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="intro-to-initial-access.html"><span>Intro to Initial Access</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="initial-access-via-rdp.html"><span>Initial Access via RDP</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="initial-access-via-phishing.html"><span>Initial Access via Phishing</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="continuing-phishing-topic.html"><span>Continuing Phishing Topic</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="initial-access-via-usb.html"><span>Initial Access via USB</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="questions-63e5ebed.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-threat-detection-2.html"><span>Windows Threat Detection 2</span><em>L1.5</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="discovery-overview.html"><span>Discovery Overview</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="detecting-discovery.html"><span>Detecting Discovery</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="collection-overview.html"><span>Collection Overview</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="detecting-collection.html"><span>Detecting Collection</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ingress-tool-transfer.html"><span>Ingress Tool Transfer</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="questions-2ecf0ac6.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-threat-detection-3.html"><span>Windows Threat Detection 3</span><em>L1.5</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="command-and-control.html"><span>Command and Control</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="persistence-overview.html"><span>Persistence Overview</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="persistence-tasks-and-services.html"><span>Persistence Tasks and Services</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="persistence-run-keys-and-startup.html"><span>Persistence Run Keys and Startup</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="impact-and-threat-detection-recap.html"><span>Impact and Threat Detection Recap</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="questions-ac88b105.html"><span>Questions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>As a SOC analyst, you can't know in advance which attack you will be handling tomorrow and which logs you will need to triage. However, out of all Windows logs enabled by default, the Security event log is the one that brings you the most value. Let's start our journey from the two most important Security logs: Successful Logon (4624) and Failed Logon (4625)</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Security Log: Authentication</li><li>Overview</li><li>Structure of 4624</li><li>Usage of 4624/4625</li><li>Detect RDP Brute Force</li><li>Step 1: Check Failed Logins</li><li>Analyse RDP Logons</li><li>Step 2: Check Successful Logins</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="security-log-authentication">Security Log: Authentication</h2>
+<h3 id="overview"><strong>Overview</strong></h3>
+<p>As a SOC analyst, you can't know in advance which attack you will be handling tomorrow and which logs you will need to triage. However, out of all Windows logs enabled by default, the Security event log is the one that brings you the most value. Let's start our journey from the two most important Security logs: Successful Logon (<strong><code>4624</code></strong>) and Failed Logon (<strong><code>4625</code></strong>).</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Event ID</strong></th><th><strong>Purpose</strong></th><th><strong>Logging</strong></th><th><strong>Limitations</strong></th></tr></thead><tbody><tr><td><strong>4624</strong>(Successful Logon)</td><td>Detect suspicious RDP/network logins and identify the attack starting point</td><td>Logged on the target machine, the one you are trying to access</td><td><strong>Noisy</strong>. You will see hundreds of logon events per minute on loaded servers</td></tr><tr><td><strong>4625</strong>(Failed Logon)</td><td>Detect brute force, password spraying, or vulnerability scanning</td><td>Logged on the target machine, the one you are trying to access</td><td><strong>Inconsistent</strong>. The logs have lots of caveats that may trick you into the wrong understanding of the event</td></tr></tbody></table></div>
+<h3 id="structure-of-4624"><strong>Structure of 4624</strong></h3>
+<p>A typical Windows server can generate tens of login events per minute, and every login event is often comprised of many different fields. Still, you can cover most L1/L2 cases just by checking a few core event fields in the image below. You can also read more about other fields and logon types in the <a class="note-link" href="https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4624">Event ID Encyclopedia</a>.</p>
+<p><button class="image-button" data-src="../assets/images/windows-security-monitoringwindows-logging-for-socsecurity-log-authentication-image-603a402d.png" data-alt="image.png"><img src="../assets/images/windows-security-monitoringwindows-logging-for-socsecurity-log-authentication-image-603a402d.png" alt="image.png" loading="lazy"></button></p>
+<h3 id="usage-of-46244625"><strong>Usage of 4624/4625</strong></h3>
+<p>Even experienced IT admins often rely on security experts to distinguish bad from good events, so don't worry if the workbooks below seem complex at first. Take your time and treat this task as fundamental knowledge that you will use in practice for many upcoming rooms!</p>
+<hr>
+<h3 id="detect-rdp-brute-force">Detect RDP Brute Force</h3>
+<h4 id="step-1-check-failed-logins">Step 1: Check Failed Logins</h4>
+<ol>
+<li>Open <strong>Security logs</strong> and filter for <strong><code>4625</code></strong>event ID (Failed login attempts).</li>
+<li>Look for events with Logon <code>Type <strong>3</strong> and <strong>10</strong></code> (Network and RDP logins).</li>
+<ul>
+<li>On most modern systems, the logon type will be <strong>3</strong> (because <a class="note-link" href="https://superops.com/rmm/what-is-network-level-authentication">NLA</a> is enabled by default).</li>
+<li>On older or misconfigured systems, the logon type will be <strong><code>10</code></strong>(since NLA is not used).</li>
+</ul>
+<li>Red flags to look for:</li>
+<ul>
+<li>Many attempted users like <strong>admin</strong>, <strong>helpdesk</strong>, or <strong>cctv</strong> → <em>Indicates password spraying</em>.</li>
+<li>Many login failures on a single account, usually <strong>Administrator</strong> → <em>Indicates brute force</em>.</li>
+<li>Workstation Name does not match a corporate naming convention (e.g. <strong>kali</strong> instead of <strong>THM-PC-06</strong>).</li>
+<li>Source IP address is suspicious or unexpected (e.g. your printer trying to connect to a Windows server).</li>
+</ul>
+</ol>
+<hr>
+<h3 id="analyse-rdp-logons">Analyse RDP Logons</h3>
+<h4 id="step-2-check-successful-logins">Step 2: Check Successful Logins</h4>
+<ol>
+<li>Open <strong>Security logs</strong> and filter for <strong><code>4624</code></strong> event ID (Successful logins).</li>
+<li>Look for events with Logon Type <strong><code>10</code></strong> (RDP logins).</li>
+<ul>
+<li>If NLA is enabled, every RDP logon event is preceded by another <strong><code>4624</code></strong> with Logon Type <strong><code>3</code></strong>.</li>
+<li>To get the real Workstation Name, check the preceding Logon Type <strong><code>3</code></strong> event.</li>
+</ul>
+<li>Red flags here:</li>
+<ul>
+<li>A preceding brute force attempt.</li>
+<li>A suspicious source IP or hostname.</li>
+</ul>
+<li>If the login looks malicious, investigate what happened next:</li>
+<ul>
+<li>Windows assigns a <strong>Logon ID</strong> to every successful login (e.g. <code>0x5D6AC</code>).</li>
+<li>Logon ID is a unique session identifier—save it for future analysis.</li>
+</ul>
+</ol>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#security-log-authentication">Security Log: Authentication</a><a href="#overview">Overview</a><a href="#structure-of-4624">Structure of 4624</a><a href="#usage-of-46244625">Usage of 4624/4625</a><a href="#detect-rdp-brute-force">Detect RDP Brute Force</a><a href="#step-1-check-failed-logins">Step 1: Check Failed Logins</a><a href="#analyse-rdp-logons">Analyse RDP Logons</a><a href="#step-2-check-successful-logins">Step 2: Check Successful Logins</a></details>
+    </div>
+    
+    <footer class="pager"><a href="what-is-logged.html">← What Is Logged</a><a href="security-log-user-management.html">Security Log User Management →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

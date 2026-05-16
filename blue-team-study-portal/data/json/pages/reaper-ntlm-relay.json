@@ -1,0 +1,157 @@
+{
+  "id": "detecting active directory attacks htb/reaper ntlm relay",
+  "title": "Reaper NTLM relay",
+  "slug": "reaper-ntlm-relay",
+  "relPath": "Detecting Active Directory Attacks HTB/Reaper NTLM relay.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "SIEM",
+    "Windows",
+    "Network",
+    "Active Directory",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "detecting active directory attacks htb",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting active directory attacks htb"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting active directory attacks htb",
+      "title": "Detecting Active Directory Attacks HTB",
+      "slug": "detecting-active-directory-attacks-htb"
+    },
+    {
+      "id": "detecting active directory attacks htb/reaper ntlm relay",
+      "title": "Reaper NTLM relay",
+      "slug": "reaper-ntlm-relay"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Reaper / NTLM relay"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the IP Address for Forela-Wkstn001?"
+    },
+    {
+      "level": 3,
+      "text": "172.17.79.129"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the IP Address for Forela-Wkstn002?"
+    },
+    {
+      "level": 3,
+      "text": "172.17.79.136"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the username of the account whose hash was stolen by attacker?"
+    },
+    {
+      "level": 3,
+      "text": "arthur.kyle"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the IP Address of Unknown Device used by the attacker to intercept credentials?"
+    },
+    {
+      "level": 3,
+      "text": "172.17.79.135"
+    },
+    {
+      "level": 3,
+      "text": "5- What was the fileshare navigated by the victim user account?"
+    },
+    {
+      "level": 3,
+      "text": "\\\\DC01\\Trip"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the source port used to logon to target workstation using the compromised account?"
+    },
+    {
+      "level": 3,
+      "text": "40252"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the Logon ID for the malicious session?"
+    },
+    {
+      "level": 3,
+      "text": "0x64A799"
+    },
+    {
+      "level": 3,
+      "text": "8- The detection was based on the mismatch of hostname and the assigned IP Address.What is the workstation name and the source IP Address from which the malicious logon occur?"
+    },
+    {
+      "level": 3,
+      "text": "FORELA-WKSTN002, 172.17.79.135"
+    },
+    {
+      "level": 3,
+      "text": "9- At what UTC time did the the malicious logon happen?"
+    },
+    {
+      "level": 3,
+      "text": "2024-07-31 04:55:16"
+    },
+    {
+      "level": 3,
+      "text": "10- What is the share Name accessed as part of the authentication process by the malicious tool used by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "\\\\\\IPC$"
+    }
+  ],
+  "overview": "Our SIEM alerted us to a suspicious logon event which needs to be looked at immediately . The alert details were that the IP Address and the Source Workstation name were a mismatch .You are provided a network capture and event logs from the surrounding time around the incident timeframe. Corelate the given evidence and report back to your SOC Manager.",
+  "study": {
+    "overview": "Our SIEM alerted us to a suspicious logon event which needs to be looked at immediately . The alert details were that the IP Address and the Source Workstation name were a mismatch .You are provided a network capture and event logs from the surrounding time around the incident timeframe. Corelate the given evidence and report back to your SOC Manager.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Reaper / NTLM relay",
+      "Scenario",
+      "1- What is the IP Address for Forela-Wkstn001?",
+      "172.17.79.129",
+      "2- What is the IP Address for Forela-Wkstn002?",
+      "172.17.79.136",
+      "3- What is the username of the account whose hash was stolen by attacker?",
+      "arthur.kyle",
+      "4- What is the IP Address of Unknown Device used by the attacker to intercept credentials?",
+      "172.17.79.135",
+      "5- What was the fileshare navigated by the victim user account?",
+      "\\\\DC01\\Trip"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM"
+    ],
+    "tips": []
+  }
+}

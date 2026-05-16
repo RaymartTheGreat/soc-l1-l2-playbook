@@ -1,0 +1,150 @@
+{
+  "id": "forensics labs/ntfs forensics (letsdefend)",
+  "title": "NTFS Forensics (LetsDefend)",
+  "slug": "ntfs-forensics-letsdefend",
+  "relPath": "Forensics Labs/NTFS Forensics (LetsDefend).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Web",
+    "DFIR"
+  ],
+  "mitre": [
+    "T1056.001"
+  ],
+  "parentId": "forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "forensics labs",
+      "title": "Forensics Labs",
+      "slug": "forensics-labs"
+    },
+    {
+      "id": "forensics labs/ntfs forensics (letsdefend)",
+      "title": "NTFS Forensics (LetsDefend)",
+      "slug": "ntfs-forensics-letsdefend"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "NTFS Forensics (LetsDefend)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Identify the malicious downloaded file. What is the file name?"
+    },
+    {
+      "level": 3,
+      "text": "scanner98.zip"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the source URL of the downloaded file?"
+    },
+    {
+      "level": 3,
+      "text": "https://drive.usercontent.google.com/download?id=1hqL4dh5i7bzvfY-vNmsMhCkJbZDEonO&export=download"
+    },
+    {
+      "level": 3,
+      "text": "3- What was the time of download of the malicious file?"
+    },
+    {
+      "level": 3,
+      "text": "2024-04-22 04:00:43"
+    },
+    {
+      "level": 3,
+      "text": "4- A powershell script was created on disk by the malicious file. What is the full path of this script on the system?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\LetsDefend\\Downloads\\x.ps1"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the file size of the script in bytes?"
+    },
+    {
+      "level": 3,
+      "text": "152"
+    },
+    {
+      "level": 3,
+      "text": "6- Recover the file contents of this script. What is the URL it reaches out to?"
+    },
+    {
+      "level": 3,
+      "text": "https://raw.githubusercontent.com/samratashok/nishang/master/Gather/Keylogger.ps1"
+    },
+    {
+      "level": 3,
+      "text": "7- Based on the content you recovered, what MITRE Technique is observed?"
+    },
+    {
+      "level": 3,
+      "text": "T1056.001"
+    },
+    {
+      "level": 3,
+      "text": "8- Which powershell cmdlet was used to execute the code in the script?"
+    },
+    {
+      "level": 3,
+      "text": "IEX"
+    }
+  ],
+  "overview": "As a digital forensics analyst with over a decade of experience, you are the go-to person in your organization for Windows disk forensics. Recently, an alert was triggered on a critical server used by administrators as a jump server. This server is frequently accessed for credential management and other sensitive operations, making it a high-value target. It",
+  "study": {
+    "overview": "As a digital forensics analyst with over a decade of experience, you are the go-to person in your organization for Windows disk forensics. Recently, an alert was triggered on a critical server used by administrators as a jump server. This server is frequently accessed for credential management and other sensitive operations, making it a high-value target. It",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "NTFS Forensics (LetsDefend)",
+      "Scenario",
+      "1- Identify the malicious downloaded file. What is the file name?",
+      "scanner98.zip",
+      "2- What is the source URL of the downloaded file?",
+      "https://drive.usercontent.google.com/download?id=1hqL4dh5i7bzvfY-vNmsMhCkJbZDEonO&export=download",
+      "3- What was the time of download of the malicious file?",
+      "2024-04-22 04:00:43",
+      "4- A powershell script was created on disk by the malicious file. What is the full path of this script on the system?",
+      "C:\\Users\\LetsDefend\\Downloads\\x.ps1",
+      "5- What is the file size of the script in bytes?",
+      "152"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "MFTECmd.exe -f <PATH_TO_$MFT> --de 97933"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": [
+      "Zone.Identifier is an ADS that marks files downloaded from the web; it commonly contains the originating URL and is extremely useful for tracking download sources.",
+      "-de <entry with MFTECmd is the quickest way to extract the exact in-MFT data for a specific entry number when you already have it from the CSV/timeline."
+    ]
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "id": "memory forensics labs/supplemental memory (thm)",
+  "title": "Supplemental Memory (THM)",
+  "slug": "supplemental-memory-thm",
+  "relPath": "Memory Forensics Labs/Supplemental Memory (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Detection",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [
+    "T1021.006",
+    "T1036"
+  ],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/supplemental memory (thm)",
+      "title": "Supplemental Memory (THM)",
+      "slug": "supplemental-memory-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Supplemental Memory (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 2,
+      "text": "Answer the questions below"
+    },
+    {
+      "level": 3,
+      "text": "1- The IR team suspects that the threat actor may have performed lateral movement to this host. Which executed process provides evidence of this activity?"
+    },
+    {
+      "level": 3,
+      "text": "wmiprvse.exe"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the MITRE technique ID associated with the lateral movement method used by the threat actor?"
+    },
+    {
+      "level": 3,
+      "text": "T1021.006"
+    },
+    {
+      "level": 3,
+      "text": "3- Which other process was executed as part of the lateral movement activity to this host?"
+    },
+    {
+      "level": 3,
+      "text": "TeamsView.exe"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the Security Identifier (SID) of the user account under which the process was executed on this host?"
+    },
+    {
+      "level": 3,
+      "text": "S-1-5-21-3147497877-3647478928-1701467185-1008"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the name of the domain-related security group the user account was a member of?"
+    },
+    {
+      "level": 3,
+      "text": "Domain Users"
+    },
+    {
+      "level": 3,
+      "text": "6- Which processes related to discovery activity were executed by the threat actor on this host? Format: In alphabetical order"
+    },
+    {
+      "level": 3,
+      "text": "ipconfig.exe, systeminfo.exe, whoami.exe"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the Command and Control IP address that the threat actor connected to from this host as a result of the previously executed actions? Format: IP Address:Port"
+    },
+    {
+      "level": 3,
+      "text": "34.244.169.133:1995"
+    },
+    {
+      "level": 2,
+      "text": "Answer the questions below"
+    },
+    {
+      "level": 3,
+      "text": "8- Conduct a deeper investigation and identify another suspicious process on the host. Provide a full path to the process in your answer."
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\Temp\\pan.exe"
+    },
+    {
+      "level": 3,
+      "text": "9- Which account was used to execute this malicious process?"
+    },
+    {
+      "level": 3,
+      "text": "Local System"
+    },
+    {
+      "level": 3,
+      "text": "10- What was the malicious command line executed by the process?"
+    },
+    {
+      "level": 3,
+      "text": "privilege::debug sekurlsa::logonpasswords"
+    },
+    {
+      "level": 3,
+      "text": "11- Given the command line from the previous question, which well-known hacker tool is most likely the malicious process?"
+    },
+    {
+      "level": 3,
+      "text": "Mimikatz"
+    },
+    {
+      "level": 3,
+      "text": "12- Which MITRE ATT&CK technique ID corresponds to the method the attacker employed to evade detection, as identified in the previous steps?"
+    },
+    {
+      "level": 3,
+      "text": "T1036"
+    }
+  ],
+  "overview": "During the initial stages of the investigation, it was confirmed that the TryHatMe CEO's host WIN-001 was compromised. The attacker successfully obtained credentials belonging to Cain Omoore, a Domain IT Administrators group member who remotely helped the CEO with the endpoint configuration and cached his credentials on the host.Given the privileges associat",
+  "study": {
+    "overview": "During the initial stages of the investigation, it was confirmed that the TryHatMe CEO's host WIN-001 was compromised. The attacker successfully obtained credentials belonging to Cain Omoore, a Domain IT Administrators group member who remotely helped the CEO with the endpoint configuration and cached his credentials on the host.Given the privileges associat",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Supplemental Memory (THM)",
+      "Scenario",
+      "Answer the questions below",
+      "1- The IR team suspects that the threat actor may have performed lateral movement to this host. Which executed process provides evidence of this activity?",
+      "wmiprvse.exe",
+      "2- What is the MITRE technique ID associated with the lateral movement method used by the threat actor?",
+      "T1021.006",
+      "3- Which other process was executed as part of the lateral movement activity to this host?",
+      "TeamsView.exe",
+      "4- What is the Security Identifier (SID) of the user account under which the process was executed on this host?",
+      "S-1-5-21-3147497877-3647478928-1701467185-1008",
+      "5- What is the name of the domain-related security group the user account was a member of?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "analyst@tryhackme$ vol -f ransomhub.dmp windows.pstree                                   PID   PPID    ImageFileName\n4       0       System\n* 272   4       smss.exe\n* 384     376     csrss.exe\n* 460     376       wininit.exe\n* 600     460         services.exe\n** 3772   600           psexesvc.exe\n*** 3916  3772            512370d.exe"
+      },
+      {
+        "language": "bash",
+        "code": "analyst@tryhackme$ vol -f conti.dmp windows.pstree                                       PID     PPID    ImageFileName\n4       0       System\n* 272   4       smss.exe\n* 384     376     csrss.exe\n* 460     376       wininit.exe\n* 600     460         services.exe\n** 1244   600           svchost.exe\n*** 2416  1244            wmiprvse.exe\n**** 5156 2416             cobaltrs.exe"
+      },
+      {
+        "language": "bash",
+        "code": "analyst@tryhackme$ vol -f FIN12.dmp windows.pstree                                       PID     PPID    ImageFileName\n4       0       System\n* 272   4       smss.exe\n* 384     376     csrss.exe\n* 460     376       wininit.exe\n* 600     460         services.exe\n** 1280   600           svchost.exe\n*** 2532  1280            wsmprovhost.exe\n**** 4896 2532              cmd.exe\n***** 5012 4896               conhost.exe\n***** 5144 4896               trickbot.exe"
+      },
+      {
+        "language": "bash",
+        "code": "analyst@tryhackme$ vol -f apt41.dmp windows.pstree                                       PID     PPID    ImageFileName\n4       0       System\n* 272     4       smss.exe\n* 384     376     csrss.exe\n**  460     376     wininit.exe\n*** 600     460       services.exe\n****  1420    600       svchost.exe\n***** 1588    1420        taskhostw.exe\n***** 1612    1420        543mal.exe\n"
+      },
+      {
+        "language": "bash",
+        "code": "analyst@tryhackme$ vol -f apt41.dmp windows.getsids --pid 1612                           PID\tProcess\tSID\tName\n1612\t543mal.exe\tS-1-5-21-3147497877-...-1010 michael.brown\n1612\t543mal.exe\tS-1-5-21-3147497877-...-513\tDomain Users\n..."
+      }
+    ],
+    "tools": [
+      "PowerShell",
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

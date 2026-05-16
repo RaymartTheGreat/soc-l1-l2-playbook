@@ -1,0 +1,112 @@
+{
+  "id": "hunting persistence (mitre ta0003)/persistence via lnk (shortcut) file abuse (t1547 0/lnk files (shortcut files)",
+  "title": "LNK Files (Shortcut Files)",
+  "slug": "lnk-files-shortcut-files",
+  "relPath": "Hunting Persistence (MITRE TA0003)/Persistence via LNK (Shortcut) File Abuse (T1547 0/LNK Files (Shortcut Files).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Network",
+    "Web",
+    "DFIR",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "TA0003",
+    "T1547"
+  ],
+  "parentId": "hunting persistence (mitre ta0003)/persistence via lnk (shortcut) file abuse (t1547 0",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "hunting persistence (mitre ta0003)/persistence via lnk (shortcut) file abuse (t1547 0"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "hunting persistence (mitre ta0003)",
+      "title": "Hunting Persistence (MITRE TA0003)",
+      "slug": "hunting-persistence-mitre-ta0003"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/persistence via lnk (shortcut) file abuse (t1547 0",
+      "title": "Persistence via LNK (Shortcut) File Abuse (T1547 0",
+      "slug": "persistence-via-lnk-shortcut-file-abuse-t1547-0"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/persistence via lnk (shortcut) file abuse (t1547 0/lnk files (shortcut files)",
+      "title": "LNK Files (Shortcut Files)",
+      "slug": "lnk-files-shortcut-files"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "LNK Files (Shortcut Files)"
+    },
+    {
+      "level": 3,
+      "text": "Four Key Fields in the Shortcut Tab"
+    },
+    {
+      "level": 3,
+      "text": "Quick Attacker Example"
+    },
+    {
+      "level": 3,
+      "text": "Forensic Value of LNK Files"
+    },
+    {
+      "level": 3,
+      "text": "Common Attack Flow"
+    },
+    {
+      "level": 3,
+      "text": "Detection (Splunk)"
+    },
+    {
+      "level": 2,
+      "text": "Real-World Example:APT29"
+    }
+  ],
+  "overview": "LNK files are Windows shortcuts that point to files, folders, or executables. They’re created automatically (like for recent documents) or manually by users—and are often abused by attackers for Initial Access or Persistence.",
+  "study": {
+    "overview": "LNK files are Windows shortcuts that point to files, folders, or executables. They’re created automatically (like for recent documents) or manually by users—and are often abused by attackers for Initial Access or Persistence.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "LNK Files (Shortcut Files)",
+      "Four Key Fields in the Shortcut Tab",
+      "Quick Attacker Example",
+      "Forensic Value of LNK Files",
+      "Common Attack Flow",
+      "Detection (Splunk)",
+      "Real-World Example:APT29"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "jsx",
+        "code": "index=wineventlog sourcetype=WinEventLog:Security EventCode=4688\n| where ParentProcessName=\"C:\\\\Windows\\\\Explorer.EXE\"\n  AND (\n    Process_Name IN (\"cmd.exe\",\"powershell.exe\",\"mshta.exe\")\n    OR CommandLine LIKE \"%.lnk%\"\n  )\n| table _time, User, ParentProcessName, Process_Name, CommandLine"
+      }
+    ],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "PowerShell"
+    ],
+    "tips": [
+      "A single .lnk embedding all four tricks:"
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "id": "lolbins (living-off-the-land binaries)",
+  "title": "LOLBins (living-off-the-land binaries)",
+  "slug": "lolbins-living-off-the-land-binaries",
+  "relPath": "LOLBins (living-off-the-land binaries).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-scripting-tooling",
+  "curriculumSectionTitle": "Advanced Scripting & Analysis Tooling",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "Network",
+    "Web",
+    "Memory",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "lolbins (living-off-the-land binaries)",
+      "title": "LOLBins (living-off-the-land binaries)",
+      "slug": "lolbins-living-off-the-land-binaries"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "LOLBins (living-off-the-land binaries)"
+    },
+    {
+      "level": 1,
+      "text": "What Are LOLBins?"
+    },
+    {
+      "level": 2,
+      "text": "Examples:"
+    },
+    {
+      "level": 1,
+      "text": "The LOLBAS Project"
+    },
+    {
+      "level": 3,
+      "text": "GTFOBins"
+    },
+    {
+      "level": 3,
+      "text": "EchoTrail"
+    },
+    {
+      "level": 1,
+      "text": "How Attackers Abuse LOLBins"
+    },
+    {
+      "level": 3,
+      "text": "Code Execution and Payload Delivery"
+    },
+    {
+      "level": 3,
+      "text": "Bypassing Application Whitelisting"
+    },
+    {
+      "level": 3,
+      "text": "Stealth and Indirect Command Execution"
+    },
+    {
+      "level": 3,
+      "text": "Fileless Attacks"
+    },
+    {
+      "level": 3,
+      "text": "Lateral Movement and Persistence"
+    },
+    {
+      "level": 3,
+      "text": "Exploitation in Mixed Environments"
+    },
+    {
+      "level": 1,
+      "text": "Technical Examples of LOLBins Abuse"
+    },
+    {
+      "level": 3,
+      "text": "CertUtil Abuse"
+    },
+    {
+      "level": 3,
+      "text": "PowerShell Fileless Execution"
+    },
+    {
+      "level": 3,
+      "text": "WMIC Remote Execution"
+    },
+    {
+      "level": 3,
+      "text": "Rundll32 Abuse for Indirect Command Execution"
+    },
+    {
+      "level": 3,
+      "text": "MSBuild Abuse"
+    },
+    {
+      "level": 3,
+      "text": "Msiexec Abuse"
+    },
+    {
+      "level": 3,
+      "text": "Mshta Abuse"
+    }
+  ],
+  "overview": "LOLBins (Living Off the Land Binaries) are legitimate, pre-installed executables and scripts—integral parts of the operating system or common software packages—that have normal administrative functions. Their inherent trust (often due to digital signing by the vendor) makes them ideal for attackers who wish to avoid introducing external malicious code. Key c",
+  "study": {
+    "overview": "LOLBins (Living Off the Land Binaries) are legitimate, pre-installed executables and scripts—integral parts of the operating system or common software packages—that have normal administrative functions. Their inherent trust (often due to digital signing by the vendor) makes them ideal for attackers who wish to avoid introducing external malicious code. Key c",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "LOLBins (living-off-the-land binaries)",
+      "What Are LOLBins?",
+      "Examples:",
+      "The LOLBAS Project",
+      "GTFOBins",
+      "EchoTrail",
+      "How Attackers Abuse LOLBins",
+      "Code Execution and Payload Delivery",
+      "Bypassing Application Whitelisting",
+      "Stealth and Indirect Command Execution",
+      "Fileless Attacks",
+      "Lateral Movement and Persistence"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

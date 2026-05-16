@@ -1,0 +1,83 @@
+{
+  "id": "linux artifacts & forensic evidence collection/system and application logs",
+  "title": "System and Application Logs",
+  "slug": "system-and-application-logs",
+  "relPath": "Linux Artifacts & Forensic Evidence Collection/System and Application Logs.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Linux",
+    "Web",
+    "DFIR",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": "linux artifacts & forensic evidence collection",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "linux artifacts & forensic evidence collection"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "linux artifacts & forensic evidence collection",
+      "title": "Linux Artifacts & Forensic Evidence Collection",
+      "slug": "linux-artifacts-forensic-evidence-collection"
+    },
+    {
+      "id": "linux artifacts & forensic evidence collection/system and application logs",
+      "title": "System and Application Logs",
+      "slug": "system-and-application-logs"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "System and Application Logs"
+    },
+    {
+      "level": 2,
+      "text": "System Logs — /var/log/syslog"
+    },
+    {
+      "level": 2,
+      "text": "Web Server Logs — Apache"
+    },
+    {
+      "level": 2,
+      "text": "Third-Party Logs"
+    }
+  ],
+  "overview": "The syslog captures general system messages, including:",
+  "study": {
+    "overview": "The syslog captures general system messages, including:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "System and Application Logs",
+      "System Logs — /var/log/syslog",
+      "Web Server Logs — Apache",
+      "Third-Party Logs"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "cat /var/log/syslog | head"
+      },
+      {
+        "language": "bash",
+        "code": "52.50.100.106 - SBTUser [27/Jul/2020:15:30:00 -0600] \"GET /logo.png HTTP/1.1\" 200 379"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

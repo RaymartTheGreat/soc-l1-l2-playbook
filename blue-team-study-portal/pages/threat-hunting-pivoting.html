@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Threat Hunting Pivoting | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-hunting-module.html">Threat Hunting module</a><span>/</span><span>Threat Hunting Pivoting</span></div>
+      <h1>Threat Hunting Pivoting</h1>
+      <p>This section focuses on hunting malicious activity that indicates potential internal network pivoting after an initial foothold has been achieved. It covers the attacker's mindset when moving laterally within a network, correlating subsequent actions, and distinguishing benign from suspicious internal reconnaissance activities.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Sysmon</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Lateral Movement</span><span class="tag">C2</span><span class="tag mitre">TA0007</span><span class="tag mitre">TA0004</span><span class="tag mitre">TA0006</span><span class="tag mitre">TA0008</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Hunting module</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-module.html"><span>Threat Hunting module</span><em>L2</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-introduction.html"><span>Threat Hunting Introduction</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-foothold.html"><span>Threat Hunting Foothold</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="threat-hunting-pivoting.html"><span>Threat Hunting Pivoting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-endgame.html"><span>Threat Hunting Endgame</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-i-payment-collectors.html"><span>Hunt Me I Payment Collectors</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-ii-typo-squatters.html"><span>Hunt Me II Typo Squatters</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="summary-report-9541433d.html"><span>Summary Report</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>This section focuses on hunting malicious activity that indicates potential internal network pivoting after an initial foothold has been achieved. It covers the attacker's mindset when moving laterally within a network, correlating subsequent actions, and distinguishing benign from suspicious internal reconnaissance activities.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Threat Hunting: Pivoting</li><li>1- Discovery (TA0007)</li><li>Definition:</li><li>Examples of Methods:</li><li>Hunting Discovery</li><li>Scenario 1: Host Reconnaissance Activity</li><li>Scenario 2: Internal Network Scanning</li><li>Scenario 3: Active Directory Enumeration</li><li>2- Privilege Escalation (TA0004)</li><li>Definition:</li><li>Examples of Methods:</li><li>Hunting Privilege Escalation</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>Sysmon</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="threat-hunting-pivoting">Threat Hunting: Pivoting</h2>
+<p>This section focuses on <strong>hunting malicious activity that indicates potential internal network pivoting after an initial foothold has been achieved.</strong> It covers the attacker's mindset when moving laterally within a network, correlating subsequent actions, and distinguishing benign from suspicious internal reconnaissance activities.</p>
+<hr>
+<h2 id="1-discovery-ta0007">1- Discovery (TA0007)</h2>
+<h4 id="definition"><strong>Definition:</strong></h4>
+<p>Techniques adversaries use to understand the compromised internal network, identify sensitive systems, and gather information to facilitate further lateral movement.</p>
+<h4 id="examples-of-methods"><strong>Examples of Methods:</strong></h4>
+<ul>
+<li><strong>User Reconnaissance:</strong></li>
+<p>Using built-in commands like <code>whoami</code>, <code>net user</code>, <code>net localgroup</code>, or <code>qwinsta</code> for account and privilege enumeration; and <code>dir</code> or <code>ls</code> for file and folder listing.</p>
+<li><strong>Host Reconnaissance:</strong></li>
+<p>Commands such as <code>hostname</code>, <code>wmic</code>, <code>ipconfig</code>, or <code>systeminfo</code> to gather host information; using <code>net start</code> or <code>sc.exe query</code> for service enumeration; or GUI-based tools (e.g., Windows Security) to check running security controls.</p>
+<li><strong>Internal Scanning:</strong></li>
+<p>Executing commands like <code>arp</code> to display the ARP table, performing ping sweeps for asset discovery, or scanning open ports with tools such as Nmap or PowerShell’s built-in capabilities.</p>
+<li><strong>Internal Domain Reconnaissance:</strong></li>
+<p>Utilizing commands such as <code>net * /domain</code>, <code>nltest /dclist</code>, or PowerShell scripts (e.g., <code>PowerView</code>, <code>BloodHound</code>) to enumerate domain users, groups, and access control lists.</p>
+</ul>
+<hr>
+<h3 id="hunting-discovery">Hunting Discovery</h3>
+<p>The hunt for the Discovery tactic involves detecting unusual information-gathering activities that blend in with legitimate administrative commands. Below are key scenarios for hunting discovery activities:</p>
+<hr>
+<h3 id="scenario-1-host-reconnaissance-activity">Scenario 1: Host Reconnaissance Activity</h3>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>winlogbeat-</em> index in Kibana.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li>**Identify Use of Enumeration Tools:</li>
+<p>Monitor process creation events (Sysmon Event ID 1) for tools used in host reconnaissance:**</p>
+<ul>
+<li><strong>Command-line Tools:</strong> <code>whoami.exe</code>, <code>hostname.exe</code>, <code>net.exe</code>, <code>systeminfo.exe</code>, <code>ipconfig.exe</code>, <code>netstat.exe</code>, <code>tasklist.exe</code>.</li>
+<li><strong>KQL Query:</strong></li>
+</ul>
+</ol>
+</ul>
+<p>``<code>jsx winlog.event_id: 1 AND process.name: (whoami.exe OR hostname.exe OR net.exe OR systeminfo.exe OR ipconfig.exe OR netstat.exe OR tasklist.exe) </code>``</p>
+<ol>
+<ol>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>host.name</code></li>
+<li><code>user.name</code></li>
+<li><code>process.parent.command_line</code></li>
+<li><code>process.command_line</code></li>
+</ul>
+<li><strong>Sequence Analysis:</strong></li>
+<p>Sort the results in ascending order by timestamp to view the sequence of enumeration commands.</p>
+</ol>
+</ol>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_081950-506833f0.png" data-alt="Screenshot 2025-04-13 081950.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_081950-506833f0.png" alt="Screenshot 2025-04-13 081950.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Findings:</strong></li>
+</ul>
+<p>For instance, user <code>bill.hawkins</code> executed multiple enumeration tools on <code>WKSTN-2</code>, all spawned by <code>cmd.exe</code>. Further investigation into the parent process ID of the first <code>whoami /priv</code> command revealed that the <code>cmd.exe</code> instance was initiated by <code>PowerShell.exe</code> with suspicious indicators (e.g., usage of <code>IEX</code>, <code>DownloadString</code>, <code>-WindowStyle hidden</code>, and <code>-ep bypass</code>).</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-90ad6555.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-90ad6555.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+</ul>
+<p>Use the parent process ID (e.g., 6324) to query for additional events associated with the suspicious <code>cmd.exe</code> process:</p>
+<p>``<code>jsx host.name: WKSTN-2* AND winlog.event_id: 1 AND process.pid: 6324 </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_082210-a5f8594a.png" data-alt="Screenshot 2025-04-13 082210.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_082210-a5f8594a.png" alt="Screenshot 2025-04-13 082210.png" loading="lazy"></button></p>
+<hr>
+<h3 id="scenario-2-internal-network-scanning">Scenario 2: Internal Network Scanning</h3>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>packetbeat-</em> index for network connections and <em>winlogbeat-</em> index for process correlation.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Visualize Internal Network Connections:</strong></li>
+<p>Create a Lens visualization table with:</p>
+<ul>
+<li><strong>Rows:</strong> <code>host.name</code>, <code>source.ip</code>, <code>destination.ip</code></li>
+<li><strong>Metric:</strong> Unique count of <code>destination.port</code></li>
+<li><strong>KQL Query:</strong></li>
+</ul>
+</ol>
+</ul>
+<p>``<code>jsx source.ip: 10.0.0.0/8 AND destination.ip: 10.0.0.0/8 AND destination.port &lt; 1024 </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-1-c1ff4ad6.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-1-c1ff4ad6.png" alt="image.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Correlate Network Activity with Processes:</strong></li>
+<p>In the Discover tab on <em>winlogbeat-</em>, identify the process that initiated the network connections:</p>
+</ol>
+</ol>
+<p>``<code>jsx winlog.event_id: 3 AND source.ip: 10.10.184.105 AND destination.ip: 10.10.122.219 AND destination.port &lt; 1024 </code>``</p>
+<ul>
+<ul>
+<ul>
+<li><strong>Key Fields:</strong></li>
+</ul>
+</ul>
+</ul>
+<p><code>host.name</code>, <code>user.name</code>, <code>process.name</code>, <code>destination.port</code></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-2-4d8b65e5.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-2-4d8b65e5.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Findings:</strong></li>
+</ul>
+<p>The investigation reveals that the process <code>n.exe</code> initiated port scanning from <code>WKSTN-2</code>, targeting <code>INTSRV01</code>. This is suspicious since the connections were established by a user account rather than a system or service account.</p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+</ul>
+<p>Further analyze events associated with <code>n.exe</code> and its parent process to backtrack the origin of the scanning activity and assess potential pivot points.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_082517-359a1680.png" data-alt="Screenshot 2025-04-13 082517.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_082517-359a1680.png" alt="Screenshot 2025-04-13 082517.png" loading="lazy"></button></p>
+<hr>
+<h3 id="scenario-3-active-directory-enumeration">Scenario 3: Active Directory Enumeration</h3>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>winlogbeat-</em> index in Kibana.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Monitor LDAP Connections:</strong></li>
+<p><strong>Hunt for LDAP queries using Sysmon Event ID 3 (Network Connection) for connections on port 389 (LDAP) and 636 (LDAP over SSL). Exclude benign processes like <code>mmc.exe</code>:</strong></p>
+</ol>
+</ul>
+<p>``<code>jsx winlog.event_id: 3 AND source.ip: 10.0.0.0/8 AND destination.ip: 10.0.0.0/8 AND destination.port: (389 OR 636) AND NOT process.name: mmc.exe </code>``</p>
+<ul>
+<ul>
+<ul>
+<li><strong>Key Fields:</strong></li>
+</ul>
+</ul>
+</ul>
+<p><code>host.name</code>, <code>user.name</code>, <code>process.name</code>, <code>destination.port</code></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-3-49c62a02.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-3-49c62a02.png" alt="image.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Identify Suspicious Processes:</strong></li>
+<p>This query may reveal processes such as <code>SharpHound.exe</code>, a known tool for Active Directory reconnaissance.</p>
+</ol>
+<li><strong>Findings:</strong></li>
+</ol>
+<p>The presence of <code>SharpHound.exe</code> strongly indicates domain enumeration activity. Its usage suggests that the attacker is gathering detailed AD information for lateral movement.</p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+</ul>
+<p>Investigate subsequent actions by <code>SharpHound.exe</code> and its parent process to understand the scope of enumeration and potential pivoting into other systems.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_082724-041a5061.png" data-alt="Screenshot 2025-04-13 082724.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_082724-041a5061.png" alt="Screenshot 2025-04-13 082724.png" loading="lazy"></button></p>
+<hr>
+<hr>
+<h2 id="2-privilege-escalation-ta0004">2- Privilege Escalation (TA0004)</h2>
+<h4 id="definition"><strong>Definition:</strong></h4>
+<p>Techniques that allow an attacker to elevate their privileges on a system or network—from a low-privileged user to an account with extensive permissions (e.g., SYSTEM). This escalation paves the way for executing further attack phases such as lateral movement and data exfiltration.</p>
+<h4 id="examples-of-methods"><strong>Examples of Methods:</strong></h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_082755-7d5e147a.png" data-alt="Screenshot 2025-04-13 082755.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_082755-7d5e147a.png" alt="Screenshot 2025-04-13 082755.png" loading="lazy"></button></p>
+<hr>
+<h3 id="hunting-privilege-escalation">Hunting Privilege Escalation</h3>
+<p>Hunting for privilege escalation involves detecting unusual events where low-privileged processes lead to actions executed under highly privileged contexts. Below are key scenarios to uncover such activities.</p>
+<hr>
+<h3 id="scenario-1-abusing-seimpersonateprivilege">Scenario 1: Abusing SeImpersonatePrivilege</h3>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>winlogbeat-</em> index in Kibana.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Hunt for SYSTEM Account Processes with Unusual Parent Users:</strong></li>
+</ol>
+</ul>
+<p>Identify process creation events (Sysmon Event ID 1) where a process is running as the SYSTEM account but is spawned by a non-privileged parent.</p>
+<ul>
+<ul>
+<ul>
+<li><strong>KQL Query:</strong></li>
+</ul>
+</ul>
+</ul>
+<p>``<code>jsx winlog.event_id: 1 AND user.name: SYSTEM AND NOT winlog.event_data.ParentUser: &quot;NT AUTHORITY\SYSTEM&quot; </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_082941-d4d4841f.png" data-alt="Screenshot 2025-04-13 082941.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_082941-d4d4841f.png" alt="Screenshot 2025-04-13 082941.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>host.name</code></li>
+<li><code>user.name</code></li>
+<li><code>process.parent.command_line</code></li>
+<li><code>process.command_line</code></li>
+<li><code>winlog.event_data.ParentUser</code></li>
+</ul>
+<li><strong>Findings:</strong></li>
+</ol>
+</ol>
+<p>One notable entry shows a process spawned by the <code>IIS APPPOOL\DefaultAppPool</code> user executing a binary named <strong>spoofer.exe</strong>, which subsequently leads to a process running as SYSTEM.</p>
+<ol>
+<ol>
+<li><strong>Deep Dive into the Suspicious Binary:</strong></li>
+<ul>
+<li>Query for events related to <strong>spoofer.exe</strong>:</li>
+</ul>
+</ol>
+</ol>
+<p>``<code>jsx winlog.event_id: 1 AND process.name: spoofer.exe </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-4-0231ebdc.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-4-0231ebdc.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li><strong>Investigation:</strong></li>
+</ul>
+</ul>
+</ul>
+<p>Using the binary’s hash in VirusTotal reveals that <strong>spoofer.exe</strong> is attributed to <strong>PrintSpoofer</strong>, a known tool that abuses the SeImpersonatePrivilege to escalate privileges.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-5-41827eea.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-5-41827eea.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li><strong>Conclusion:</strong></li>
+</ul>
+</ul>
+</ul>
+<p>The DefaultAppPool account, which by default has SeImpersonatePrivilege, was exploited to launch <strong>spoofer.exe</strong>, leading to a successful privilege escalation.</p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+<ul>
+<li>Correlate subsequent SYSTEM-level events to determine further malicious actions.</li>
+<li>Trace preceding events on the compromised host to understand the sequence leading up to the escalation.</li>
+</ul>
+</ul>
+<hr>
+<h3 id="scenario-2-excessive-service-permission-abuse">Scenario 2: Excessive Service Permission Abuse</h3>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>winlogbeat-</em> index in Kibana.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Hunt for Service Registry Modifications:</strong></li>
+</ol>
+</ul>
+<p>Identify changes to service configurations—specifically, modifications to the ImagePath registry key that determines which binary a service executes.</p>
+<ul>
+<ul>
+<ul>
+<li><strong>KQL Query:</strong></li>
+</ul>
+</ul>
+</ul>
+<p>``<code>jsx winlog.event_id: 13 AND registry.path: <em>HKLM\\System\\CurrentControlSet\\Services\\</em>\\ImagePath* </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_090200-c3152e37.png" data-alt="Screenshot 2025-04-13 090200.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_090200-c3152e37.png" alt="Screenshot 2025-04-13 090200.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>host.name</code></li>
+<li><code>process.name</code></li>
+<li><code>registry.path</code></li>
+<li><code>winlog.event_data.Details</code></li>
+</ul>
+<li><strong>Findings:</strong></li>
+</ol>
+</ol>
+<p>The query reveals two events where the ImagePath was modified to point to <code>C:\Users\bill.hawkins\Documents\update.exe</code>. These events are notable after excluding standard modifications (e.g., those involving svchost.exe).</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-6-f6555e8d.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-6-f6555e8d.png" alt="image.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Deep Dive into the Modification Event:</strong></li>
+<ul>
+<li>Use the &quot;View surrounding documents&quot; feature to inspect events before and after the modification of the SNMPTRAP service’s ImagePath.</li>
+</ul>
+</ol>
+</ol>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-7-56ccd388.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-7-56ccd388.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li><strong>Observation:</strong></li>
+</ul>
+</ul>
+</ul>
+<p>Prior to the modification, the sc.exe process executed a command:</p>
+<p>``<code>jsx sc.exe config SNMPTRAP binPath= C:\Users\bill.hawkins\Documents\update.exe </code>``</p>
+<p>initiated by the user <code>bill.hawkins</code> (a non-privileged account).</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-8-ff28220b.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-8-ff28220b.png" alt="image.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-9-dc807365.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-9-dc807365.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li><strong>Further Analysis:</strong></li>
+</ul>
+</ul>
+</ul>
+<p>A subsequent cmd.exe process started the modified SNMPTRAP service. Confirm this with:</p>
+<p>``<code>jsx winlog.event_id: 1 AND process.parent.name: services.exe AND process.name: update.exe </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-10-09f931cb.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-10-09f931cb.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<ul>
+<li><strong>Conclusion:</strong></li>
+</ul>
+</ul>
+</ul>
+<p>The SYSTEM account spawned <strong>update.exe</strong> after the registry modification, confirming that excessive service permission abuse was leveraged for privilege escalation.</p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+<ul>
+<li>Trace subsequent actions by the SYSTEM account for further malicious activity.</li>
+<li>Investigate the chain of events before the service modification to fully understand the attacker's methodology.</li>
+</ul>
+</ul>
+<hr>
+<hr>
+<h2 id="3-credential-access-ta0006">3- Credential Access (TA0006)</h2>
+<h4 id="definition"><strong>Definition:</strong></h4>
+<p>Techniques used by attackers to steal or discover valid usernames, passwords, or password hashes. This tactic enables adversaries to gain further access, escalate privileges, and move laterally by leveraging the compromised credentials.</p>
+<h4 id="examples-of-methods"><strong>Examples of Methods:</strong></h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_090522-017af87d.png" data-alt="Screenshot 2025-04-13 090522.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_090522-017af87d.png" alt="Screenshot 2025-04-13 090522.png" loading="lazy"></button></p>
+<hr>
+<h3 id="hunting-credential-access">Hunting Credential Access</h3>
+<p>Hunting for credential access involves actively searching for indicators of adversaries attempting to dump, harvest, or misuse credentials within a system or network. Below are key scenarios and methodologies used to detect these activities.</p>
+<hr>
+<h3 id="scenario-1-lsass-credential-dumping">Scenario 1: LSASS Credential Dumping</h3>
+<h4 id="hunting-mimikatz-execution">Hunting Mimikatz Execution</h4>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>winlogbeat-</em> index in Kibana.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Identify Mimikatz-Related Commands:</strong></li>
+</ol>
+</ul>
+<p>Use the Discover tab with a query for command-line strings associated with Mimikatz:</p>
+<p>``<code>jsx winlog.event_id: 1 AND process.command_line: (<em>mimikatz</em> OR <em>DumpCreds</em> OR <em>privilege\:\:debug</em> OR <em>sekurlsa\:\:</em>) </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_090704-17cda669.png" data-alt="Screenshot 2025-04-13 090704.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_090704-17cda669.png" alt="Screenshot 2025-04-13 090704.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>host.name</code></li>
+<li><code>user.name</code></li>
+<li><code>process.parent.command_line</code></li>
+<li><code>process.name</code></li>
+<li><code>process.command_line</code></li>
+</ul>
+</ol>
+<li><strong>Findings:</strong></li>
+</ol>
+<p>The results indicate an attempt to dump LSASS credentials on a host (e.g., WKSTN-1) using the PowerShell version of Mimikatz (Invoke-Mimikatz.ps1) downloaded from GitHub.</p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+</ul>
+<p>Investigate further to see if subsequent authentication events originate from credentials obtained by this method.</p>
+<hr>
+<h3 id="scenario-2-lsass-process-dumping">Scenario 2: LSASS Process Dumping</h3>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>winlogbeat-</em> index in Kibana.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Hunt for LSASS Dump Files:</strong></li>
+</ol>
+</ul>
+<p>Look for file creation events related to LSASS dump files:</p>
+<p>``<code>jsx winlog.event_id: 11 AND file.path: *lsass.DMP </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_090925-7955c6c1.png" data-alt="Screenshot 2025-04-13 090925.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_090925-7955c6c1.png" alt="Screenshot 2025-04-13 090925.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>host.name</code></li>
+<li><code>winlog.event_data.User</code></li>
+<li><code>process.name</code></li>
+<li><code>file.path</code></li>
+</ul>
+</ol>
+<li><strong>Findings:</strong></li>
+</ol>
+<p>The query shows that the account (e.g., bill.hawkins) dumped the LSASS process by creating an <code>lsass.DMP</code> file in the user's AppData\Local\Temp directory.</p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+</ul>
+<p>Track subsequent events for authentication or lateral movement using the dumped credentials.</p>
+<hr>
+<h3 id="scenario-3-credential-harvesting-via-dcsync">Scenario 3: Credential Harvesting via DCSync</h3>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>winlogbeat-</em> index in Kibana.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+</ul>
+<p><strong>DCSync</strong> abuses how domain controllers in an Active Directory network communicate and replicate data. Normally, domain controllers synchronise directory information, including password hashes, via the Directory Replication Service Remote protocol (MS-DRSR). The replication request to a domain controller requires the following privileges:</p>
+<ul>
+<li><strong>DS-Replication-Get-Changes (1131f6aa-9c07-11d1-f79f-00c04fc2dcd2)</strong></li>
+<li><strong>DS-Replication-Get-Changes-All (1131f6ad-9c07-11d1-f79f-00c04fc2dcd2)</strong></li>
+<li><strong>Replicating Directory Changes All (9923a32a-3607-11d2-b9be-0000f87a36b2)</strong></li>
+<li><strong>Replicating Directory Changes In Filtered Set (89e95b76-444d-4c62-991a-0facbeda640c)</strong></li>
+</ul>
+<ol>
+<li><strong>Detect DC Sync Activity:</strong></li>
+</ol>
+<p>Use the following KQL query to identify events where domain credentials may have been replicated:</p>
+<p>``<code>jsx winlog.event_id: 4662 AND winlog.event_data.AccessMask: 0x100 AND winlog.event_data.Properties: (<em>1131f6aa-9c07-11d1-f79f-00c04fc2dcd2</em> OR <em>1131f6ad-9c07-11d1-f79f-00c04fc2dcd2</em> OR <em>9923a32a-3607-11d2-b9be-0000f87a36b2</em> OR <em>89e95b76-444d-4c62-991a-0facbeda640c</em>) </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_091226-77d66b0d.png" data-alt="Screenshot 2025-04-13 091226.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_091226-77d66b0d.png" alt="Screenshot 2025-04-13 091226.png" loading="lazy"></button></p>
+<ol>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>host.name</code></li>
+<li><code>winlog.event_data.SubjectUserName</code></li>
+<li><code>winlog.event_data.AccessMask</code></li>
+<li><code>winlog.event_data.Properties</code></li>
+</ul>
+<li><strong>Findings:</strong></li>
+</ol>
+<p>The results indicate that the account <code>backupadm</code> attempted a DCSync attack against the domain controller (e.g., DC01), suggesting that this account might be a Domain or Enterprise Admin.</p>
+<ul>
+<li><strong>Follow-Up Investigation:</strong></li>
+<ul>
+<li>Query for process creation events by the suspicious account:</li>
+</ul>
+</ul>
+<p>``<code>jsx winlog.event_id: 1 AND user.name: backupadm </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_091344-c2708867.png" data-alt="Screenshot 2025-04-13 091344.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_091344-c2708867.png" alt="Screenshot 2025-04-13 091344.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<li>Analyze unusual commands issued by <code>backupadm</code> via cmd.exe, confirming malicious behavior.</li>
+</ul>
+<li><strong>Next Steps:</strong></li>
+</ul>
+<p>Trace the compromise chain to determine how <code>backupadm</code> was obtained—possibly through LSASS dumping—and assess further impact.</p>
+<hr>
+<h3 id="scenario-4-brute-forcing-accounts">Scenario 4: Brute-Forcing Accounts</h3>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>winlogbeat-</em> index in Kibana.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Identify Failed Logon Attempts:</strong></li>
+</ol>
+</ul>
+<p>Create a visualization using Lens to view failed logon attempts with Event ID 4625:</p>
+<p>``<code>jsx winlog.event_id: 4625 </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-11-eb64b805.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-11-eb64b805.png" alt="image.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>host.name</code></li>
+<li><code>user.name</code></li>
+<li><code>source.ip</code></li>
+<li><code>winlog.event_data.LogonType</code></li>
+</ul>
+<li><strong>Detailed Investigation for a Specific Account:</strong></li>
+</ol>
+</ol>
+<p>Focus on an account (e.g., <code>jade.burke</code>) with numerous failed attempts:</p>
+<p>``<code>jsx winlog.event_id: 4625 AND user.name: jade.burke </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-12-b9b1d417.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-12-b9b1d417.png" alt="image.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Verify Successful Authentication:</strong></li>
+</ol>
+</ol>
+<p>Check if the account later successfully logged in using Event ID 4624:</p>
+<p>``<code>jsx winlog.event_id: 4624 AND user.name: jade.burke AND source.ip: 10.10.184.105 </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-13-d29d37de.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-13-d29d37de.png" alt="image.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Correlate Process Activity Post-Authentication:</strong></li>
+</ol>
+</ol>
+<p>Investigate processes spawned by <code>jade.burke</code> on the target host:</p>
+<p>``<code>jsx host.name: WKSTN-1* AND winlog.event_id: 1 AND user.name: jade.burke </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_091506-2cfa1003.png" data-alt="Screenshot 2025-04-13 091506.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_091506-2cfa1003.png" alt="Screenshot 2025-04-13 091506.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Findings:</strong></li>
+</ul>
+<p>The results reveal that <code>jade.burke</code> generated numerous failed logon attempts from a specific source IP and then successfully authenticated to WKSTN-1, where unusual commands were executed.</p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+</ul>
+<p>Determine the impact of the executed commands and trace how the brute-forcing activity was initiated—potentially linking it to prior credential dumping activities.</p>
+<hr>
+<hr>
+<h2 id="4-lateral-movement-ta0008">4- Lateral Movement (TA0008)</h2>
+<h4 id="definition"><strong>Definition:</strong></h4>
+<p>Techniques that adversaries use to gain remote access to additional systems within a network. This tactic involves exploiting internal remote services, using legitimate administrative tools, and authenticating with valid credentials to pivot from a compromised host to new targets.</p>
+<h4 id="examples-of-methods"><strong>Examples of Methods:</strong></h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_091601-bcc869d4.png" data-alt="Screenshot 2025-04-13 091601.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-04-13_091601-bcc869d4.png" alt="Screenshot 2025-04-13 091601.png" loading="lazy"></button></p>
+<hr>
+<h3 id="hunting-lateral-movement">Hunting Lateral Movement</h3>
+<p>Hunting for lateral movement involves correlating remote authentication events and abnormal process activities across internal hosts. Below are key scenarios and methodologies for detecting lateral movement activities.</p>
+<hr>
+<h3 id="scenario-1-lateral-movement-via-wmi">Scenario 1: Lateral Movement via WMI</h3>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>winlogbeat-</em> index in Kibana.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Monitor WMI-Related Process Activity:</strong></li>
+</ol>
+</ul>
+<p>Detect remote command executions by searching for events where the parent process is <strong>WmiPrvSE.exe</strong>:</p>
+<p>``<code>jsx winlog.event_id: 1 AND process.parent.name: WmiPrvSE.exe </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-14-67a3f1ca.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-14-67a3f1ca.png" alt="image.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>host.name</code></li>
+<li><code>user.name</code></li>
+<li><code>process.parent.command_line</code></li>
+<li><code>process.command_line</code></li>
+</ul>
+<li><strong>Analysis:</strong></li>
+</ol>
+</ol>
+<p>The results show that <strong>WmiPrvSE.exe</strong> has spawned multiple instances of <strong>cmd.exe</strong> on a host (e.g., WKSTN-1) using the account <strong>clifford.miller</strong>. The executed command pattern—such as:</p>
+<p>``<code>jsx cmd.exe /Q /c <em> 1&gt; \\127.0.0.1\ADMIN$\</em> 2&gt;&amp;1 </code>``</p>
+<p>—is indicative of Impacket's wmiexec.py, a known lateral movement tool.</p>
+<ul>
+<li><strong>Investigation:</strong></li>
+</ul>
+<p>Use the &quot;View surrounding documents&quot; feature on the first WmiPrvSE.exe event to identify the closest authentication event for <strong>clifford.miller</strong>:</p>
+<ul>
+<ul>
+<li><strong>Filters to apply:</strong></li>
+<ul>
+<li><code>host.name: WKSTN-1.threathunting.thm</code></li>
+<li><code>user.name: clifford.miller</code></li>
+<li><code>winlog.event_id: 4624</code></li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-15-eeff2ca7.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-15-eeff2ca7.png" alt="image.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-16-27741288.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-16-27741288.png" alt="image.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-17-8b4e06a4.png" data-alt="image.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-image-17-8b4e06a4.png" alt="image.png" loading="lazy"></button></p>
+<p><strong>Findings:</strong> The authentication event reveals that <strong><code>clifford.miller</code></strong> performed a Network Logon (Logon Type 3) from IP <strong><code>10.10.184.105</code></strong>. This suggests that the source host (10.10.184.105) might be compromised, providing the pivot point for the lateral movement.</p>
+<ul>
+<li><strong>Next Steps:</strong></li>
+</ul>
+<p>Investigate the child processes spawned by <strong>WmiPrvSE.exe</strong> and trace back events on the source IP to determine how the initial compromise occurred.</p>
+<hr>
+<h3 id="scenario-2-authentication-via-pass-the-hash">Scenario 2: Authentication via Pass-the-Hash</h3>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+<p><em>winlogbeat-</em> index in Kibana.</p>
+<ul>
+<li><strong>Methodology:</strong></li>
+<ol>
+<li><strong>Identify Potential Pass-the-Hash (PtH) Events:</strong></li>
+</ol>
+</ul>
+<p>Look for network logon events that indicate the usage of password hashes. Use the following indicators:</p>
+<ul>
+<ul>
+<ul>
+<li><strong>Event ID:</strong> 4624</li>
+<li><strong>Logon Type:</strong> 3 (Network)</li>
+<li><strong>LogonProcessName:</strong> containing <code>NtLmSsp</code></li>
+<li><strong>KeyLength:</strong> 0 (indicating hash usage)</li>
+</ul>
+</ul>
+</ul>
+<p><strong>KQL Query Example:</strong></p>
+<p>``<code>jsx winlog.event_id: 4624 AND winlog.event_data.LogonType: 3 AND winlog.event_data.LogonProcessName: <em>NtLmSsp</em> AND winlog.event_data.KeyLength: 0 </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-423386aa86588837c18f62a2e6d86601-06c12e35.png" data-alt="423386aa86588837c18f62a2e6d86601.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-423386aa86588837c18f62a2e6d86601-06c12e35.png" alt="423386aa86588837c18f62a2e6d86601.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-e9f379e927bec5c26779687e7cc5764b-fb4acf38.png" data-alt="e9f379e927bec5c26779687e7cc5764b.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-e9f379e927bec5c26779687e7cc5764b-fb4acf38.png" alt="e9f379e927bec5c26779687e7cc5764b.png" loading="lazy"></button></p>
+<ol>
+<ol>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>host.name</code></li>
+<li><code>user.name</code></li>
+</ul>
+<li><strong>Analysis:</strong></li>
+</ol>
+</ol>
+<p>The query results show that two users (excluding known false positives such as ANONYMOUS LOGON) have authenticated via this method. Notably, <strong>clifford.miller</strong> appears again, with authentication events originating from the compromised host <strong>10.10.184.105</strong>.</p>
+<ul>
+<li><strong>Investigation:</strong></li>
+</ul>
+<p>Use the &quot;View surrounding documents&quot; feature for <strong>clifford.miller</strong>'s first Pass-the-Hash event to examine subsequent process creation events:</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-3528dcea544a58043ecc61ace70f0554-643f3cc8.png" data-alt="3528dcea544a58043ecc61ace70f0554.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-3528dcea544a58043ecc61ace70f0554-643f3cc8.png" alt="3528dcea544a58043ecc61ace70f0554.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-57ec0bbe109db550ba6230a84dfa6b27-00eb21b0.png" data-alt="57ec0bbe109db550ba6230a84dfa6b27.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-57ec0bbe109db550ba6230a84dfa6b27-00eb21b0.png" alt="57ec0bbe109db550ba6230a84dfa6b27.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-642e82d9bcc09a3584fae1684cf7565d-151d9bbb.png" data-alt="642e82d9bcc09a3584fae1684cf7565d.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-642e82d9bcc09a3584fae1684cf7565d-151d9bbb.png" alt="642e82d9bcc09a3584fae1684cf7565d.png" loading="lazy"></button></p>
+<ul>
+<ul>
+<li><strong>Filters to apply:</strong></li>
+<ul>
+<li><code>host.name: WKSTN-1.threathunting.thm</code></li>
+<li><code>user.name: clifford.miller</code></li>
+<li><code>winlog.event_id: 1</code></li>
+</ul>
+</ul>
+</ul>
+<p><strong>Findings:</strong> Multiple <strong>cmd.exe</strong> executions following the PtH event correlate with previous WMIExec activities. This reinforces the suspicion that <strong><code>clifford.miller</code></strong> leveraged Pass-the-Hash to remotely execute commands, furthering lateral movement.</p>
+<p><strong>Next Steps:</strong></p>
+<p>Determine the impact of the executed commands and investigate how the source host (<code>10.10.184.105</code>) was initially compromised to enable this activity.</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-03-06_072459-87a4d3aa.png" data-alt="Screenshot 2025-03-06 072459.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-pivoting-screenshot_2025-03-06_072459-87a4d3aa.png" alt="Screenshot 2025-03-06 072459.png" loading="lazy"></button></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#threat-hunting-pivoting">Threat Hunting: Pivoting</a><a href="#1-discovery-ta0007">1- Discovery (TA0007)</a><a href="#definition">Definition:</a><a href="#examples-of-methods">Examples of Methods:</a><a href="#hunting-discovery">Hunting Discovery</a><a href="#scenario-1-host-reconnaissance-activity">Scenario 1: Host Reconnaissance Activity</a><a href="#scenario-2-internal-network-scanning">Scenario 2: Internal Network Scanning</a><a href="#scenario-3-active-directory-enumeration">Scenario 3: Active Directory Enumeration</a><a href="#2-privilege-escalation-ta0004">2- Privilege Escalation (TA0004)</a><a href="#definition">Definition:</a><a href="#examples-of-methods">Examples of Methods:</a><a href="#hunting-privilege-escalation">Hunting Privilege Escalation</a><a href="#scenario-1-abusing-seimpersonateprivilege">Scenario 1: Abusing SeImpersonatePrivilege</a><a href="#scenario-2-excessive-service-permission-abuse">Scenario 2: Excessive Service Permission Abuse</a><a href="#3-credential-access-ta0006">3- Credential Access (TA0006)</a><a href="#definition">Definition:</a><a href="#examples-of-methods">Examples of Methods:</a><a href="#hunting-credential-access">Hunting Credential Access</a><a href="#scenario-1-lsass-credential-dumping">Scenario 1: LSASS Credential Dumping</a><a href="#hunting-mimikatz-execution">Hunting Mimikatz Execution</a><a href="#scenario-2-lsass-process-dumping">Scenario 2: LSASS Process Dumping</a><a href="#scenario-3-credential-harvesting-via-dcsync">Scenario 3: Credential Harvesting via DCSync</a><a href="#scenario-4-brute-forcing-accounts">Scenario 4: Brute-Forcing Accounts</a><a href="#4-lateral-movement-ta0008">4- Lateral Movement (TA0008)</a><a href="#definition">Definition:</a><a href="#examples-of-methods">Examples of Methods:</a><a href="#hunting-lateral-movement">Hunting Lateral Movement</a><a href="#scenario-1-lateral-movement-via-wmi">Scenario 1: Lateral Movement via WMI</a><a href="#scenario-2-authentication-via-pass-the-hash">Scenario 2: Authentication via Pass-the-Hash</a><a href="#conclusion">Conclusion</a></details>
+    </div>
+    
+    <footer class="pager"><a href="threat-hunting-foothold.html">← Threat Hunting Foothold</a><a href="threat-hunting-endgame.html">Threat Hunting Endgame →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

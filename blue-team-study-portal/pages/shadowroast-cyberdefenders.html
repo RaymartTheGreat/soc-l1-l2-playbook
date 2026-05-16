@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ShadowRoast (CyberDefenders) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-hunting-labs-siem.html">Threat hunting Labs (SIEM)</a><span>/</span><span>ShadowRoast (CyberDefenders)</span></div>
+      <h1>ShadowRoast (CyberDefenders)</h1>
+      <p>Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Splunk</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Kerberos</span><span class="tag">Detection</span><span class="tag">Persistence</span><span class="tag">Lateral Movement</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat hunting Labs (SIEM)</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>L2</em></a>
+      <b>27</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="conti-thm.html"><span>Conti (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="boogeyman3-thm.html"><span>Boogeyman3 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="servidae-thm.html"><span>Servidae (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="middlemayhem-btlo.html"><span>MiddleMayhem (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-i-payment-collectors-thm.html"><span>Hunt Me I Payment Collectors (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-ii-typo-squatters-thm.html"><span>Hunt Me II Typo Squatters (THM)</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="summary-report.html"><span>Summary Report</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-unfolding-thm-soc-simulation.html"><span>Phishing Unfolding THM Soc Simulation</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="splunk-2-thm.html"><span>Splunk 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="slingshot-thm.html"><span>Slingshot (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="new-hire-old-artifacts-thm.html"><span>New Hire Old Artifacts (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="itsybitsy-thm.html"><span>ItsyBitsy (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="benign-thm.html"><span>Benign (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ps-eclipse-thm.html"><span>PS Eclipse (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="investigating-with-splunk-thm.html"><span>Investigating with Splunk (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="proxylogon-lab-cyberdefenders.html"><span>ProxyLogon Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="kerberoasted-cyberdefenders.html"><span>Kerberoasted (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="t1110-003-lab-cyberdefenders.html"><span>T1110-003 Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="xdr-operation-global-dagger-thm.html"><span>XDR Operation Global Dagger (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="xdr-operation-global-dagger-2-thm.html"><span>XDR Operation Global Dagger 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="falconeye-cyberdefenders.html"><span>FalconEye (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="goldenspray-lab-cyberdefenders.html"><span>GoldenSpray Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="shadowroast-cyberdefenders.html"><span>ShadowRoast (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="revil-lab-cyberdefenders.html"><span>REvil Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="t1197-lab-cyberdefenders.html"><span>T1197 Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="paloaltorce-lab-cyberdefenders.html"><span>PaloAltoRCE Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="nerisbot-cyberdefenders.html"><span>NerisBot (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="volt-typhoon.html"><span>Volt Typhoon</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>ShadowRoast (CyberDefenders)</li><li>Scenario</li><li>Initial Access</li><li>Malicious File Execution</li><li>Detection Method</li><li>Credential Access</li><li>AS-REP Roasting Attack</li><li>Detection Method</li><li>Persistence</li><li>Registry Run Key Modification</li><li>Detection Method</li><li>Privilege Escalation</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=&quot;shadowroast&quot; AND event.code=1 AND winlog.computer_name=Office-PC.CORPNET.local AND (winlog.event_data.Image=*cmd* OR winlog.event_data.Image=*powershell*)</code></pre></div><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code> index=&quot;shadowroast&quot; AND event.code=1 AND winlog.computer_name=Office-PC.CORPNET.local AND (winlog.event_data.ProcessId=4780 OR winlog.event_data.ParentProcessId=4780)</code></pre></div><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=&quot;shadowroast&quot; AND event.code=4929</code></pre></div></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>Splunk</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="shadowroast-cyberdefenders">ShadowRoast (CyberDefenders)</h2>
+<blockquote>Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.</blockquote>
+<blockquote></blockquote>
+<h2 id="scenario"><strong>Scenario</strong></h2>
+<p>As a cybersecurity analyst at <strong>SecureTech Industries</strong>, you've been alerted to unusual activities within the company's <strong>Active Directory environment</strong>. Your mission is to analyze log data, <strong>trace the attack's progression</strong>, determine the breach's scope, and <strong>identify the attacker's tactics, techniques, and procedures (TTPs).</strong></p>
+<p><a class="note-link" href="https://cyberdefenders.org/blueteam-ctf-challenges/shadowroast/">https://cyberdefenders.org/blueteam-ctf-challenges/shadowroast/</a></p>
+<hr>
+<h3 id="initial-access"><strong>Initial Access</strong></h3>
+<h4 id="malicious-file-execution"><strong>Malicious File Execution</strong></h4>
+<ul>
+<li><strong>File Name:</strong> <code>AdobeUpdater.exe</code></li>
+<li><strong>Execution Path:</strong> <code>C:\Users\Public\Downloads\AdobeUpdater.exe</code></li>
+<li><strong>Execution Method:</strong> Launched via Windows GUI (<code>explorer.exe</code>) with <strong>high integrity</strong>, suggesting <strong>elevated privileges.</strong></li>
+<li><strong>Behavior:</strong> Exhibited characteristics of <strong>ApacheBench (<code>ab.exe</code>)</strong>, indicating <strong>renaming as a deceptive technique.</strong></li>
+</ul>
+<h4 id="detection-method"><strong>Detection Method</strong></h4>
+<ul>
+<li><strong>Event ID 1 (Process Creation)</strong> → Monitored process executions to detect unauthorized executables.</li>
+<li><strong>Splunk Query:</strong></li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=&quot;shadowroast&quot; AND event.code=1 AND winlog.computer_name=Office-PC.CORPNET.local AND (winlog.event_data.Image=*cmd* OR winlog.event_data.Image=*powershell*)</code></pre></div>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx"> index=&quot;shadowroast&quot; AND event.code=1 AND winlog.computer_name=Office-PC.CORPNET.local AND (winlog.event_data.ProcessId=4780 OR winlog.event_data.ParentProcessId=4780)</code></pre></div>
+<ul>
+<li><strong>Conclusion:</strong></li>
+<ul>
+<li>The attacker likely used <strong>social engineering</strong> to deliver and execute <code>AdobeUpdater.exe</code>, gaining <strong>initial access with elevated privileges.</strong></li>
+</ul>
+</ul>
+<hr>
+<h3 id="credential-access"><strong>Credential Access</strong></h3>
+<h4 id="as-rep-roasting-attack"><strong>AS-REP Roasting Attack</strong></h4>
+<p><strong>(Rubeus was used to perform an AS-REP Roasting attack, a technique targeting accounts with Kerberos pre-authentication disabled to extract hashes that can be cracked offline.)</strong></p>
+<ul>
+<li><strong>Tool Used:</strong> <code>BackupUtility.exe</code> (Identified as <code><strong>Rubeus.exe</strong></code>)</li>
+<li><strong>SHA256 Hash:</strong> <code>1bfbefa4ff4d0df3ee0090b5079cf84ed2e8d5377ba5b7a30afd88367d57b9ff</code></li>
+<li><strong>Attack Technique:</strong> <strong>Extracted Kerberos AS-REP hashes</strong> for accounts with <strong>preauthentication disabled</strong> to crack them offline.</li>
+</ul>
+<h4 id="detection-method"><strong>Detection Method</strong></h4>
+<ul>
+<li><strong>Event ID 1 (Process Creation)</strong> → Detected the execution of <code>BackupUtility.exe</code>.</li>
+<li><strong>Splunk Query:</strong></li>
+</ul>
+<p>``<code>jsx index=&quot;shadowroast&quot; event.code=1 winlog.event_data.Image=&quot;<em>BackupUtility.exe</em>&quot; | table _time winlog.event_data.CommandLine winlog.event_data.ParentCommandLine </code>``</p>
+<ul>
+<li><strong>Conclusion:</strong></li>
+<ul>
+<li>The attacker <strong>extracted Kerberos hashes</strong>, targeting vulnerable accounts to obtain plaintext credentials.</li>
+</ul>
+</ul>
+<hr>
+<h3 id="persistence"><strong>Persistence</strong></h3>
+<h4 id="registry-run-key-modification"><strong>Registry Run Key Modification</strong></h4>
+<ul>
+<li><strong>Registry Path:</strong> <code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run\AdobeUpdater</code></li>
+<li><strong>Associated File:</strong> <code>AdobeUpdater.exe</code></li>
+</ul>
+<h4 id="detection-method"><strong>Detection Method</strong></h4>
+<ul>
+<li><strong>Event ID 13 (Registry Value Set)</strong> → Identified modifications in the Windows Registry.</li>
+<li><strong>Splunk Query:</strong></li>
+</ul>
+<p>``<code>jsx index=&quot;shadowroast&quot; event.code=13 winlog.event_data.TargetObject=*                   |table _time winlog.event_data.TargetObject winlog.event_data.Image </code>``</p>
+<ul>
+<li><strong>Conclusion:</strong></li>
+<ul>
+<li>The attacker added a <strong>Run key</strong> to ensure the execution of <code>AdobeUpdater.exe</code> upon system startup, achieving persistence.</li>
+</ul>
+</ul>
+<hr>
+<h3 id="privilege-escalation"><strong>Privilege Escalation</strong></h3>
+<h4 id="credential-dumping-with-mimikatz"><strong>Credential Dumping with Mimikatz</strong></h4>
+<p><strong>(After executing Rubeus, the attacker was seen executing <code>Mimikatz</code> (Under the name of “<code>DefragTool.exe</code>”) revealing a different parent user, confirming a second compromised user, <code>CORPNET\tcooper</code>)</strong></p>
+<ul>
+<li><strong>Tool Used:</strong> <code>DefragTool.exe</code> (Identified as <strong><code>Mimikatz</code></strong>)</li>
+<li><strong>SHA256 Hash:</strong> <code>92804faaab2175dc501d73e814663058c78c0a042675a8937266357bcfb96c50</code></li>
+<li><strong>Purpose:</strong> Extracted <strong>NTLM hashes</strong> to gain <strong>SYSTEM privileges.</strong></li>
+</ul>
+<h4 id="detection-method"><strong>Detection Method</strong></h4>
+<ul>
+<li><strong>Event ID 1 (Process Creation)</strong> → Monitored <code>DefragTool.exe</code> execution.</li>
+<li><strong>Splunk Query:</strong></li>
+</ul>
+<p>``<code>jsx index=&quot;shadowroast&quot; event.code=1 winlog.event_data.Image=&quot;<em>DefragTool.exe</em>&quot; | table _time winlog.event_data.CommandLine winlog.event_data.ParentCommandLine </code>``</p>
+<ul>
+<li><strong>Conclusion:</strong></li>
+<ul>
+<li>The attacker successfully dumped <strong>credentials</strong>, enabling further <strong>privilege escalation and lateral movement.</strong></li>
+</ul>
+</ul>
+<hr>
+<h3 id="lateral-movement"><strong>Lateral Movement</strong></h3>
+<h4 id="enabling-remote-desktop-protocol-rdp"><strong>Enabling Remote Desktop Protocol (RDP)</strong></h4>
+<ul>
+<li><strong>Registry Key Modified:</strong> <code>HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\fDenyTSConnections</code></li>
+<li><strong>Modification:</strong> Set to <code>0</code> (Enabled RDP for lateral movement).</li>
+<li><strong>Executed Using:</strong> <code>reg.exe</code></li>
+</ul>
+<h4 id="detection-method"><strong>Detection Method</strong></h4>
+<ul>
+<li><strong>Event ID 13 (Registry Value Set)</strong> → Identified RDP-related registry modifications.</li>
+<li><strong>Splunk Query:</strong></li>
+</ul>
+<p>``<code>jsx index=&quot;shadowroast&quot; AND event.code=1 AND winlog.event_data.CommandLine=<em>fDenyTSConnections</em> | table _time winlog.event_data.TargetObject winlog.event_data.Image winlog.event_data.CommandLine winlog.event_data.ParentCommandLine </code>``</p>
+<ul>
+<li><strong>Conclusion:</strong></li>
+<ul>
+<li>The attacker modified <strong>RDP settings</strong> to enable lateral movement across the network.</li>
+</ul>
+</ul>
+<hr>
+<h3 id="active-directory-manipulation"><strong>Active Directory Manipulation</strong></h3>
+<h4 id="dcshadow-attack"><strong>DCShadow Attack</strong></h4>
+<ul>
+<li><strong>Compromised Account Used:</strong> <code>tcooper</code></li>
+<li><strong>Purpose:</strong> Registered a <strong>rogue Domain Controller</strong> to manipulate <strong>Active Directory (AD) attributes.</strong></li>
+<li><strong>Tool Used:</strong> <code>Mimikatz (DCShadow feature)</code></li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=&quot;shadowroast&quot; AND event.code=4929</code></pre></div>
+<p>Event ID <strong>4929</strong> logs when an <strong>Active Directory (AD) replica source naming context is removed</strong></p>
+<p>a key indicator of DCShadow activity</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-labs-siemshadowroast-cyberdefenders-screenshot_2025-03-10_015359-3ba5267d.png" data-alt="Screenshot 2025-03-10 015359.png"><img src="../assets/images/threat-hunting-labs-siemshadowroast-cyberdefenders-screenshot_2025-03-10_015359-3ba5267d.png" alt="Screenshot 2025-03-10 015359.png" loading="lazy"></button></p>
+<p><strong>The logs confirm the use of <code>Mimikatz</code> for this attack, specifically leveraging the DCShadow technique.</strong></p>
+<ul>
+<li><strong>Conclusion:</strong></li>
+<ul>
+<li>The attacker <strong>modified Active Directory</strong>, potentially <strong>creating backdoor access</strong> for future attacks.</li>
+</ul>
+</ul>
+<hr>
+<h3 id="data-exfiltration"><strong>Data Exfiltration</strong></h3>
+<h4 id="compressed-file-creation-potential-data-theft"><strong>Compressed File Creation (Potential Data Theft)</strong></h4>
+<ul>
+<li><strong>File Name:</strong> <code>ConfidentialData.zip</code></li>
+<li><strong>File Path:</strong> <code>C:\Users\Public\Documents\ConfidentialData.zip</code></li>
+</ul>
+<h4 id="detection-method"><strong>Detection Method</strong></h4>
+<ul>
+<li><strong>Event ID 11 (File Creation)</strong> → Monitored for suspicious archive file creation.</li>
+<li><strong>Splunk Query:</strong></li>
+</ul>
+<p>``<code>jsx index=&quot;shadowroast&quot; event.code=11 (winlog.event_data.TargetFilename=<em>.zip OR winlog.event_data.TargetFilename=</em>.7z OR winlog.event_data.TargetFilename=*.rar) | table _time winlog.event_data.TargetFilename winlog.event_data.Image </code>``</p>
+<ul>
+<li><strong>Conclusion:</strong></li>
+<ul>
+<li>The attacker likely <strong>exfiltrated sensitive data</strong> by <strong>compressing it into an archive for later extraction.</strong></li>
+</ul>
+</ul>
+<hr>
+<h3 id="summary-of-key-detection-mechanisms"><strong>Summary of Key Detection Mechanisms</strong></h3>
+<div class="table-wrap"><table><thead><tr><th><strong>Attack Stage</strong></th><th><strong>Event ID</strong></th><th><strong>Detection Method</strong></th></tr></thead><tbody><tr><td><strong>Initial Access</strong></td><td><code>1</code></td><td>Process execution of <code>AdobeUpdater.exe</code></td></tr><tr><td><strong>Credential Access</strong></td><td><code>1</code></td><td><code>BackupUtility.exe</code> execution (AS-REP Roasting)</td></tr><tr><td><strong>Persistence</strong></td><td><code>13</code></td><td>Registry modification (<code>Run Key</code>)</td></tr><tr><td><strong>Privilege Escalation</strong></td><td><code>1</code></td><td><code>DefragTool.exe</code> execution (Mimikatz)</td></tr><tr><td><strong>Lateral Movement</strong></td><td><code>13</code></td><td><code>fDenyTSConnections</code> registry modification</td></tr><tr><td><strong>Active Directory Manipulation</strong></td><td><code>1</code></td><td><code>DCShadow</code> attack via <code>Mimikatz</code></td></tr><tr><td><strong>Data Exfiltration</strong></td><td><code>11</code></td><td><code>ConfidentialData.zip</code> file creation</td></tr></tbody></table></div>
+<hr>
+<hr>
+<h2 id="techniques-used"><strong>Techniques Used</strong></h2>
+<h3 id="1-as-rep-roasting"><strong>1- AS-REP Roasting</strong></h3>
+<h4 id="overview"><strong>Overview</strong></h4>
+<p><strong>AS-REP Roasting</strong> is an attack technique targeting <strong>Active Directory (AD) user accounts</strong> that have <strong>Kerberos preauthentication disabled</strong>. It allows attackers to obtain a user’s <strong>encrypted Ticket Granting Ticket (TGT) preauthentication data</strong>, which can be <strong>brute-forced offline</strong> to recover plaintext passwords.</p>
+<h4 id="how-it-works"><strong>How It Works</strong></h4>
+<ol>
+<li><strong>User Authentication in Kerberos:</strong></li>
+<ul>
+<li>When a user wants to log in, they request an <strong>Authentication Service (AS) Ticket</strong> from the <strong>Key Distribution Center (KDC)</strong> (which is usually the Domain Controller).</li>
+<li>By default, the user must first <strong>prove their identity</strong> by encrypting a timestamp with their password hash (<strong>preauthentication</strong>).</li>
+<li>If preauthentication is <strong>enabled</strong>, an attacker cannot request an AS ticket without knowing the user’s password.</li>
+</ul>
+<li><strong>What Happens When Preauthentication Is Disabled?</strong></li>
+<ul>
+<li>If a user’s account has <strong>preauthentication disabled</strong>, the KDC <strong>immediately</strong> sends back an <strong>AS-REP (Authentication Service Response)</strong>, which contains an encrypted TGT.</li>
+<li>Since this TGT is <strong>encrypted using the user’s NTLM hash</strong>, an attacker can capture it and use <strong>offline brute-force attacks</strong> to crack the password.</li>
+</ul>
+</ol>
+<h4 id="detection-methods"><strong>Detection Methods</strong></h4>
+<ul>
+<li><strong>Event ID 4768 (Kerberos Authentication Ticket Request)</strong> → Check for accounts requesting AS tickets without <strong>preauthentication</strong>.</li>
+<li><strong>Event ID 4771 (Kerberos Pre-authentication Failed)</strong> → Look for failures due to preauthentication attempts.</li>
+<li><strong>Unusual AS-REP requests for multiple users</strong> in a short timeframe may indicate an attack.</li>
+</ul>
+<h4 id="how-the-attacker-used-as-rep-roasting-in-shadowroast-lab"><strong>How the Attacker Used AS-REP Roasting in ShadowRoast Lab</strong></h4>
+<ul>
+<li>The attacker executed <strong><code>BackupUtility.exe</code> (Rubeus.exe)</strong> to <strong>enumerate</strong> accounts with preauthentication disabled.</li>
+<li>They <strong>requested AS-REP responses</strong> for these accounts, capturing <strong>TGTs encrypted with user password hashes</strong>.</li>
+<li>The attacker then <strong>brute-forced</strong> these hashes offline to retrieve plaintext credentials, allowing them to move further into the network.</li>
+</ul>
+<hr>
+<h3 id="2-dcshadow-attack"><strong>2- DCShadow Attack</strong></h3>
+<h4 id="overview"><strong>Overview</strong></h4>
+<p><strong>DCShadow</strong> is an advanced <strong>Active Directory attack</strong> that allows an attacker to <strong>replicate unauthorized changes</strong> to the AD database. It is part of the <strong>Mimikatz</strong> toolset and enables an attacker to <strong>register a rogue Domain Controller (DC)</strong> and push malicious modifications to the <strong>NTDS.dit database</strong> (which stores AD user data and passwords).</p>
+<h4 id="how-it-works"><strong>How It Works</strong></h4>
+<ol>
+<li><strong>Understanding Active Directory Replication:</strong></li>
+<ul>
+<li>In a normal AD environment, <strong>Domain Controllers synchronize changes</strong> to ensure consistency across the network.</li>
+<li>When an admin modifies an object (e.g., changes a user’s group membership), the <strong>change is replicated</strong> to all DCs using <strong>Directory Replication Service (DRS)</strong>.</li>
+</ul>
+<li><strong>DCShadow Attack Steps:</strong></li>
+<ul>
+<li>The attacker <strong>compromises a high-privilege account</strong> (such as <strong>Domain Admin or Enterprise Admin</strong>).</li>
+<li>They use <strong><code>Mimikatz</code> (DCShadow feature)</strong> to <strong>register a fake DC</strong> within the AD infrastructure.</li>
+<li>Once registered, the rogue DC <strong>injects malicious changes</strong> into the directory and forces legitimate DCs to replicate these changes.</li>
+<li>The attacker can then <strong>modify user permissions, create hidden admin accounts, or even disable security logs</strong> to maintain persistence.</li>
+</ul>
+</ol>
+<h4 id="detection-methods"><strong>Detection Methods</strong></h4>
+<ul>
+<li><strong>Event ID 5137 (Directory Service Object Creation)</strong> → Look for <strong>unauthorized additions of new DCs</strong>.</li>
+<li><strong>Event ID 4662 (Directory Service Access)</strong> → Check for suspicious modifications to <strong>high-value AD objects</strong>.</li>
+<li><strong>Event ID 4742 (Changes to privileged accounts)</strong> → Monitor for changes in sensitive <strong>admin accounts</strong>.</li>
+<li><strong>Event ID 4929</strong> logs when an <strong>Active Directory (AD) replica source naming context is removed</strong></li>
+</ul>
+<p>a key indicator of <strong>DCShadow</strong> activity</p>
+<ul>
+<li><strong>Look for unusual Kerberos Ticket requests (Event ID 4769)</strong> from unknown sources.</li>
+</ul>
+<hr>
+<h3 id="how-the-attacker-used-dcshadow"><strong>How the Attacker Used DCShadow</strong></h3>
+<ul>
+<li>The attacker used <strong>Mimikatz (DCShadow feature)</strong> with the compromised <code>tcooper</code> account.</li>
+<li>They <strong>registered a rogue Domain Controller</strong> and pushed unauthorized <strong>Active Directory modifications</strong>.</li>
+<li>This allowed them to <strong>manipulate security policies, escalate privileges, and create backdoors</strong> for future access.</li>
+</ul>
+<hr>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#shadowroast-cyberdefenders">ShadowRoast (CyberDefenders)</a><a href="#scenario">Scenario</a><a href="#initial-access">Initial Access</a><a href="#malicious-file-execution">Malicious File Execution</a><a href="#detection-method">Detection Method</a><a href="#credential-access">Credential Access</a><a href="#as-rep-roasting-attack">AS-REP Roasting Attack</a><a href="#detection-method">Detection Method</a><a href="#persistence">Persistence</a><a href="#registry-run-key-modification">Registry Run Key Modification</a><a href="#detection-method">Detection Method</a><a href="#privilege-escalation">Privilege Escalation</a><a href="#credential-dumping-with-mimikatz">Credential Dumping with Mimikatz</a><a href="#detection-method">Detection Method</a><a href="#lateral-movement">Lateral Movement</a><a href="#enabling-remote-desktop-protocol-rdp">Enabling Remote Desktop Protocol (RDP)</a><a href="#detection-method">Detection Method</a><a href="#active-directory-manipulation">Active Directory Manipulation</a><a href="#dcshadow-attack">DCShadow Attack</a><a href="#data-exfiltration">Data Exfiltration</a><a href="#compressed-file-creation-potential-data-theft">Compressed File Creation (Potential Data Theft)</a><a href="#detection-method">Detection Method</a><a href="#summary-of-key-detection-mechanisms">Summary of Key Detection Mechanisms</a><a href="#techniques-used">Techniques Used</a><a href="#1-as-rep-roasting">1- AS-REP Roasting</a><a href="#overview">Overview</a><a href="#how-it-works">How It Works</a><a href="#detection-methods">Detection Methods</a><a href="#how-the-attacker-used-as-rep-roasting-in-shadowroast-lab">How the Attacker Used AS-REP Roasting in ShadowRoast Lab</a><a href="#2-dcshadow-attack">2- DCShadow Attack</a><a href="#overview">Overview</a><a href="#how-it-works">How It Works</a><a href="#detection-methods">Detection Methods</a><a href="#how-the-attacker-used-dcshadow">How the Attacker Used DCShadow</a></details>
+    </div>
+    
+    <footer class="pager"><a href="goldenspray-lab-cyberdefenders.html">← GoldenSpray Lab (CyberDefenders)</a><a href="revil-lab-cyberdefenders.html">REvil Lab (CyberDefenders) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+{
+  "id": "frameworks/unified kill chain",
+  "title": "Unified Kill Chain",
+  "slug": "unified-kill-chain",
+  "relPath": "Frameworks/Unified Kill Chain.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "EDR",
+    "Phishing",
+    "Network",
+    "Detection",
+    "OSINT",
+    "Incident Response",
+    "Persistence",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [
+    "TA0043",
+    "T1592",
+    "T1589",
+    "TA0001",
+    "T1587",
+    "T1588",
+    "T1566",
+    "T1195",
+    "TA0002",
+    "T1190",
+    "T1211",
+    "TA0003",
+    "T1136",
+    "T1542",
+    "TA0005",
+    "T1562",
+    "T1027",
+    "TA0011",
+    "T1071",
+    "T1095",
+    "TA0008",
+    "TA0007",
+    "T1018",
+    "T1083"
+  ],
+  "parentId": "frameworks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "frameworks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "frameworks",
+      "title": "Frameworks",
+      "slug": "frameworks"
+    },
+    {
+      "id": "frameworks/unified kill chain",
+      "title": "Unified Kill Chain",
+      "slug": "unified-kill-chain"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Unified Kill Chain"
+    },
+    {
+      "level": 2,
+      "text": "Overview"
+    },
+    {
+      "level": 2,
+      "text": "Purpose & Benefits"
+    },
+    {
+      "level": 2,
+      "text": "Unified Kill Chain Phases"
+    },
+    {
+      "level": 3,
+      "text": "1- Initial Foothold"
+    },
+    {
+      "level": 3,
+      "text": "2- Post-Exploitation Expansion"
+    },
+    {
+      "level": 3,
+      "text": "3- Attack Objectives"
+    },
+    {
+      "level": 2,
+      "text": "Key Technical Features"
+    }
+  ],
+  "overview": "The Unified Kill Chain (UKC) is a robust cybersecurity framework that models the full lifecycle of modern cyberattacks — from reconnaissance to exfiltration and impact — and even attacker intent. Developed in 2017 and updated in 2022, UKC merges the Lockheed Martin Kill Chain with the MITRE ATT&CK matrix, offering granular visibility across 18 attack phases.",
+  "study": {
+    "overview": "The Unified Kill Chain (UKC) is a robust cybersecurity framework that models the full lifecycle of modern cyberattacks — from reconnaissance to exfiltration and impact — and even attacker intent. Developed in 2017 and updated in 2022, UKC merges the Lockheed Martin Kill Chain with the MITRE ATT&CK matrix, offering granular visibility across 18 attack phases.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Unified Kill Chain",
+      "Overview",
+      "Purpose & Benefits",
+      "Unified Kill Chain Phases",
+      "1- Initial Foothold",
+      "2- Post-Exploitation Expansion",
+      "3- Attack Objectives",
+      "Key Technical Features"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR"
+    ],
+    "tips": []
+  }
+}

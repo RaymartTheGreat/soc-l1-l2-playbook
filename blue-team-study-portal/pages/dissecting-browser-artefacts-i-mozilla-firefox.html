@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Dissecting Browser Artefacts I Mozilla Firefox | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="windows-forensics.html">Windows Forensics</a><span>/</span><a href="windows-applications-forensics.html">Windows Applications Forensics</a><span>/</span><span>Dissecting Browser Artefacts I Mozilla Firefox</span></div>
+      <h1>Dissecting Browser Artefacts I Mozilla Firefox</h1>
+      <p>Aside from the applications that are prone to threat actors' activities, browser applications are also a treasure trove of information when it comes to digital forensics. This is because most user-targeted attacks nowadays are being delivered through the web.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Phishing</span><span class="tag">Web</span><span class="tag">DFIR</span><span class="tag">Incident Response</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Windows Forensics</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-forensics.html"><span>Windows Forensics</span><em>L2</em></a>
+      <b>22</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-registry.html"><span>Windows Registry</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="lnk-files-shortcut-files-f0f1ba89.html"><span>LNK Files (Shortcut Files)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="user-activity-analysis.html"><span>User Activity Analysis</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="data-acquisition-using-kape.html"><span>Data Acquisition Using KAPE</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="regripper.html"><span>RegRipper</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="eric-zimmerman-tools.html"><span>Eric Zimmerman Tools</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="recycle-bin-forensics.html"><span>Recycle Bin Forensics</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hard-disk-ntfs-layout.html"><span>Hard Disk &amp; NTFS Layout</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntfs-analysis.html"><span>NTFS Analysis</span><em>L2</em></a>
+      <b>8</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="ntfs-overview.html"><span>NTFS Overview</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ntfs-components.html"><span>NTFS Components</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="mft-record-analysis.html"><span>MFT Record Analysis</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ntfs-journaling.html"><span>NTFS Journaling</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="index-allocation-attribute-i30-overview.html"><span>Index Allocation Attribute ($I30) Overview</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="logfile.html"><span>$LogFile</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="usnjrnl.html"><span>$UsnJrnl</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ads.html"><span>ADS</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="master-file-table-mft.html"><span>Master File Table (MFT)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="usb-forensics.html"><span>USB forensics</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="jump-list.html"><span>Jump list</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="prefetch-files.html"><span>Prefetch Files</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="bam-background-activity-moderator.html"><span>BAM (Background Activity Moderator)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="shimcache-appcompatcache.html"><span>ShimCache (AppCompatCache)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="amcache.html"><span>AmCache</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-browser-artifacts.html"><span>Windows Browser Artifacts</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="srum-system-resource-usage-monitor.html"><span>SRUM (System Resource Usage Monitor)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-disk-forensics-artifacts.html"><span>Windows Disk Forensics Artifacts</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="data-acquisition-considerations-ftk-imager.html"><span>Data Acquisition Considerations (FTK Imager)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-applications-forensics.html"><span>Windows Applications Forensics</span><em>L2</em></a>
+      <b>10</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="log-insights-scheduled-tasks-and-services.html"><span>Log Insights Scheduled Tasks and Services</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="manual-inspection-scheduled-tasks.html"><span>Manual Inspection Scheduled Tasks</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="manual-inspection-ii-services.html"><span>Manual Inspection II Services</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="dissecting-browser-artefacts-i-mozilla-firefox.html"><span>Dissecting Browser Artefacts I Mozilla Firefox</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="dissecting-browser-artefacts-ii-google-chrome.html"><span>Dissecting Browser Artefacts II Google Chrome</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="dissecting-browser-artefacts-iii-microsoft-edge.html"><span>Dissecting Browser Artefacts III Microsoft Edge</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="deep-diving-on-office-applications-i-microsoft-out.html"><span>Deep-diving on Office Applications I Microsoft Out</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="deep-diving-on-office-applications-ii-microsoft-te.html"><span>Deep-diving on Office Applications II Microsoft Te</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="deep-diving-on-office-applications-iii-microsoft-o.html"><span>Deep-diving on Office Applications III Microsoft O</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="conclusion-37026a40.html"><span>Conclusion</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-user-account-forensics.html"><span>Windows User Account Forensics</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Aside from the applications that are prone to threat actors' activities, browser applications are also a treasure trove of information when it comes to digital forensics. This is because most user-targeted attacks nowadays are being delivered through the web.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Dissecting Browser Artefacts I: Mozilla Firefox</li><li>Browser Forensics 101</li><li>Mozilla Firefox</li><li>Scenario: Phishing Link Access</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code>PS C:\Users\Administrator&gt; ls C:\Users\ | foreach {ls &quot;C:\Users\$_\AppData\Roaming\Mozilla\Firefox\Profiles&quot; 2&gt;$null}</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="dissecting-browser-artefacts-i-mozilla-firefox">Dissecting Browser Artefacts I: Mozilla Firefox</h2>
+<p>Aside from the applications that are prone to threat actors' activities, browser applications are also a treasure trove of information when it comes to digital forensics. This is because most user-targeted attacks nowadays are being delivered through the web.</p>
+<p>This task will delve into browser forensics and how browser artefacts can be correlated to other malicious activities.</p>
+<h2 id="browser-forensics-101">Browser Forensics 101</h2>
+<p>As mentioned, browser forensics is crucial in digital forensics and incident response. It provides valuable insights into a user's online activity, including websites visited, login credentials, download history, bookmarks and extensions or plugins.</p>
+<p>First, let's run down a few common artefacts and elaborate on some use cases that would give us quick wins in determining notable actions worthy of investigation.</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Artefact</strong></th><th><strong>Scenarios</strong></th></tr></thead><tbody><tr><td><strong>Browsing History</strong></td><td>Since this artefact provides the exact site's URL and the time and date of the visit, the user's online activities can be easily plotted, whether related to access to a malicious link or unauthorised internal documents.</td></tr><tr><td><strong>Downloads</strong></td><td>Malicious files downloaded through the browser can be easily determined through this artefact, as well as where they are stored in the workstation and what link was used to download the file. The file name can also be used and correlated with evidence of execution to determine the extent of the potential compromise.</td></tr><tr><td><strong>Login Credentials</strong></td><td>If the user has saved their login data, this artefact allows you to correlate the pair of credentials and where they were submitted. Leveraging the contents of this artefact enables you to determine whether the user has a bad practice of saving credentials, has submitted credentials to a phishing website, or the pair of credentials is being reused.</td></tr><tr><td><strong>Cookies</strong></td><td>Cookies might be a minimal piece of data. Yet, they can still be used to determine the user's activity on a specific website, like confirming if the user has successfully authenticated and accessed a resource.</td></tr><tr><td><strong>Sessions</strong></td><td>Leveraging this artefact allows you to combine all the user's activity in a specific timeframe or a single browsing session. By knowing this, it is easy to correlate the sites accessed by the user and determine the pattern of the activity.</td></tr><tr><td><strong>Extensions</strong></td><td>Certain threat actors now leverage fake browser extensions and await for users to deploy and compromise users. Examples such as extensions harvesting login data or recording screen activity are prominent nowadays.</td></tr></tbody></table></div>
+<p>In the subsequent tasks, these artefacts will be discussed through forensic analysis on three different browsers: Firefox, Google Chrome and Microsoft Edge.</p>
+<p>The artefacts mentioned above can be checked by navigating through the GUI of these browsers. However, we will focus on analysing the metadata files generated by these applications.</p>
+<h2 id="mozilla-firefox">Mozilla Firefox</h2>
+<p>Firefox's browsing data are stored in the user's <code>AppData\Roaming\Mozilla\Firefox\Profiles</code> directory. This contains the Firefox profiles' directories in the following regex format - <code>[a-z0-9]{8}\.default.*</code>. Given this, use the command below to enumerate each user directory and see if any Firefox artefacts are available.</p>
+<div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-powershell">PS C:\Users\Administrator&gt; ls C:\Users\ | foreach {ls &quot;C:\Users\$_\AppData\Roaming\Mozilla\Firefox\Profiles&quot; 2&gt;$null}</code></pre></div>
+<p>From here, we can start analysing the contents of the discovered Firefox metadata directory. Below is the summary of artefacts worthy of checking for Firefox.</p>
+<div class="table-wrap"><table><thead><tr><th>File / Directory Name</th><th>Artefact Contents</th><th>File Type</th></tr></thead><tbody><tr><td><strong>places.sqlite</strong></td><td>Contains the browsing history and bookmark metadata.</td><td>SQLite</td></tr><tr><td><strong>logins.json / key4.db</strong></td><td>Contains credentials saved through the browser.</td><td>JSON / SQLite</td></tr><tr><td><strong>cookies.sqlite</strong></td><td>Contains cookies from sites accessed.</td><td>SQLITE</td></tr><tr><td><strong>extensions.json / extensions directory</strong></td><td>Contains all artefacts related to Firefox extensions.</td><td>JSON / Folder</td></tr><tr><td><strong>favicons.sqlite</strong></td><td>Favicon metadata indicating sites accessed.</td><td>SQLite</td></tr><tr><td><strong>sessionstore-backups</strong></td><td>Handles sessions and tabs metadata.</td><td>Folder (jsonlz4 files)</td></tr><tr><td><strong>formhistory.sqlite</strong></td><td>Contains input data submitted by the user in web forms.</td><td>SQLite</td></tr></tbody></table></div>
+<hr>
+<h2 id="scenario-phishing-link-access">Scenario: Phishing Link Access</h2>
+<p>Since we are talking about browser artefacts, let's use the scenario of a user accessing a potential phishing website. To start with, let's run the SQLite browser and open the <code>places.sqlite</code> file.</p>
+<p>Once opened, the initial view rendered is the list of database tables where the metadata is stored. You may click on the <strong>Browse Data</strong> section and select the <strong>moz_places</strong> table.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/5309dc33d55de12ebb61071ad860648e.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/5309dc33d55de12ebb61071ad860648e.png</a></p>
+<p>From this view, you can start gathering the following information:</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Artefact</strong></th><th><strong>Description</strong></th></tr></thead><tbody></tbody></table></div>
+<p>| URL and Title | A bit of self-explanatory information. However, the combination of URL and title can be used to determine some unusual mismatches that may lead to the discovery of a phishing website. e.g. <strong>evil[.]com</strong> uses a title named <strong>Login | Microsoft 365</strong> | | Visit Count | Defines how many times the user has accessed the website. | | Last Visit Date | Contains the last time the user accessed the site in epoch format. This means the data in this column needs to be converted to recover the readable timestamp. | | Typed | Defines whether the user accessed the website by typing via the browser's search bar or the site is accessed via a click or redirection. |</p>
+<p>To gather more information about the sites visited by the user, we can use the IDs of each <strong>moz_places</strong> data and correlate it to the other tables. One possible use case is determining all the timestamps (not just the last visit date) when the user accessed the site. This can be done by correlating the places ID in the <strong>moz_historyvisits</strong> table.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/55c9cc06a43db03829c98ad5e52702a9.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/55c9cc06a43db03829c98ad5e52702a9.png</a></p>
+<p>You may have observed that the table also has a <strong>visit_type</strong> column. This column defines how the user accessed the site, which is essential to obtain the complete context of the access attempt. As a reference, you may use the table below to determine the visit type:</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Visit Type</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td><strong>1 - TRANSITION_LINK</strong></td><td>The user followed a link and got a new top-level window.</td></tr><tr><td><strong>2 - TRANSITION_TYPED</strong></td><td>The user typed the page's URL in the URL bar, selected it from the URL bar autocomplete results, and clicked on it from a history query (from the History sidebar, History menu, or history query in the personal toolbar or Places organiser).</td></tr><tr><td><strong>3 - TRANSITION_BOOKMARK</strong></td><td>The user followed a bookmark to get to the page.</td></tr><tr><td><strong>4 - TRANSITION_EMBED</strong></td><td>Set when some inner content is loaded. This is true of all images on a page and the iframe's contents. It is also true of any content in a frame, regardless of whether or not the user clicked something to get there.</td></tr><tr><td><strong>5 - TRANSITION_REDIRECT_PERMANENT</strong></td><td>The transition was a permanent redirect.</td></tr><tr><td><strong>6 - TRANSITION_REDIRECT_TEMPORARY</strong></td><td>The transition was a temporary redirect.</td></tr><tr><td><strong>7 - TRANSITION_DOWNLOAD</strong></td><td>The transition is a download.</td></tr><tr><td><strong>8 - TRANSITION_FRAMED_LINK</strong></td><td>The user followed a link and got a visit in a frame.</td></tr><tr><td><strong>9 - TRANSITION_RELOAD</strong></td><td>The page has been reloaded.</td></tr></tbody></table></div>
+<p>The next interesting table in this file is the <strong>moz_annos</strong> (Annotations) table, which contains the download metadata. This again requires the correlation of the place_id (from the moz_places table) to determine the source of the download attempt. Moreover, this table also contains the location where the downloaded file is being stored.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/58874497c31a15e256b6e6ff16321d44.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/58874497c31a15e256b6e6ff16321d44.png</a></p>
+<p>Moving on to the following Firefox metadata, let's open the <code>cookies.sqlite</code> file. This SQLite file contains all the cookies and the associated site stored in the <strong>moz_cookies</strong> table.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/1bb1f94508daa3944c4673a14ce2b048.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/1bb1f94508daa3944c4673a14ce2b048.png</a></p>
+<p>The good thing about checking the cookies is that it can determine if the user has logged in to a specific website. This can be done by checking the known cookies on commonly used websites and finding a cookie issued after successful authentication. Moreover, the cookies can also be used to determine any mismatches between the cookie name/value and the accessed website. This approach applies to checking potential cases of man-in-the-middle attacks like websites hosted using evilginx2.</p>
+<p>For a quick example, let's refer to Microsoft's <a class="note-link" href="https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-web-browser-cookies">documentation</a> of web browser cookies used in Microsoft Entra authentication (which also applies to O365). According to the documentation, these cookies handle the user's session information:</p>
+<ul>
+<li><strong>ESTSAUTH</strong> - Contains user's session information to facilitate SSO. Transient.</li>
+<li><strong>ESTSAUTHPERSISTENT</strong> - Contains user's session information to facilitate SSO. Persistent.</li>
+</ul>
+<p>Given these, we can use them as a reference to see if there are any O365 cookies seen in the entries of another website, which may indicate a potential phishing website leveraging a MITM attack.</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#dissecting-browser-artefacts-i-mozilla-firefox">Dissecting Browser Artefacts I: Mozilla Firefox</a><a href="#browser-forensics-101">Browser Forensics 101</a><a href="#mozilla-firefox">Mozilla Firefox</a><a href="#scenario-phishing-link-access">Scenario: Phishing Link Access</a></details>
+    </div>
+    
+    <footer class="pager"><a href="manual-inspection-ii-services.html">← Manual Inspection II Services</a><a href="dissecting-browser-artefacts-ii-google-chrome.html">Dissecting Browser Artefacts II Google Chrome →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

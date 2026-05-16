@@ -1,0 +1,180 @@
+{
+  "id": "digital forensics/file carving",
+  "title": "File Carving",
+  "slug": "file-carving",
+  "relPath": "Digital Forensics/File Carving.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Linux",
+    "DFIR",
+    "Memory",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "digital forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "digital forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "digital forensics",
+      "title": "Digital Forensics",
+      "slug": "digital-forensics"
+    },
+    {
+      "id": "digital forensics/file carving",
+      "title": "File Carving",
+      "slug": "file-carving"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "File Carving"
+    },
+    {
+      "level": 2,
+      "text": "Foundations of File Carving"
+    },
+    {
+      "level": 3,
+      "text": "File Systems"
+    },
+    {
+      "level": 2,
+      "text": "File Signatures (Magic Bytes)"
+    },
+    {
+      "level": 2,
+      "text": "Metadata in Forensics"
+    },
+    {
+      "level": 2,
+      "text": "File Carving Workflow"
+    },
+    {
+      "level": 2,
+      "text": "File Carving vs. Data Recovery"
+    },
+    {
+      "level": 2,
+      "text": "File Carving Tools"
+    },
+    {
+      "level": 3,
+      "text": "Hex Editors"
+    },
+    {
+      "level": 3,
+      "text": "Binwalk"
+    },
+    {
+      "level": 3,
+      "text": "Scalpel"
+    },
+    {
+      "level": 3,
+      "text": "Foremost"
+    },
+    {
+      "level": 3,
+      "text": "PhotoRec"
+    },
+    {
+      "level": 3,
+      "text": "EnCase"
+    },
+    {
+      "level": 2,
+      "text": "Manual Carving"
+    },
+    {
+      "level": 2,
+      "text": "Challenges of Manual File Carving"
+    },
+    {
+      "level": 3,
+      "text": "Fragmentation"
+    },
+    {
+      "level": 3,
+      "text": "Time-Consuming"
+    },
+    {
+      "level": 3,
+      "text": "Technical Barriers"
+    },
+    {
+      "level": 2,
+      "text": "Automated File Carving"
+    },
+    {
+      "level": 3,
+      "text": "Benefits"
+    },
+    {
+      "level": 2,
+      "text": "Automated Carving Tools in Action"
+    },
+    {
+      "level": 3,
+      "text": "Foremost"
+    },
+    {
+      "level": 3,
+      "text": "Scalpel"
+    },
+    {
+      "level": 2,
+      "text": "Conclusion"
+    }
+  ],
+  "overview": "File carving is a digital forensics technique used to extract files from raw storage data without relying on file system metadata. It allows recovery of deleted, corrupted, or hidden files by scanning for identifiable file signatures.",
+  "study": {
+    "overview": "File carving is a digital forensics technique used to extract files from raw storage data without relying on file system metadata. It allows recovery of deleted, corrupted, or hidden files by scanning for identifiable file signatures.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "File Carving",
+      "Foundations of File Carving",
+      "File Systems",
+      "File Signatures (Magic Bytes)",
+      "Metadata in Forensics",
+      "File Carving Workflow",
+      "File Carving vs. Data Recovery",
+      "File Carving Tools",
+      "Hex Editors",
+      "Binwalk",
+      "Scalpel",
+      "Foremost"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "# Recover 463 bytes from a file starting at offset 134483968\n$ dd if=Challenge1_Manual_Carve_usb.img of=Image.png bs=1 skip=134483968 count=463"
+      },
+      {
+        "language": "bash",
+        "code": "# Recover all types defined in config\n$ foremost -i disk.img -o output_dir -c /etc/foremost.conf\n\n# Target specific formats only\n$ foremost -t jpg,png -i disk.img -o output_dir"
+      },
+      {
+        "language": "bash",
+        "code": "# Recover using scalpel rules\n$ scalpel disk.img -o ScalpelOutput -c /etc/scalpel/scalpel.conf"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

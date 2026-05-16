@@ -1,0 +1,92 @@
+{
+  "id": "windows forensics/windows applications forensics/deep-diving on office applications ii microsoft te",
+  "title": "Deep-diving on Office Applications II Microsoft Te",
+  "slug": "deep-diving-on-office-applications-ii-microsoft-te",
+  "relPath": "Windows Forensics/Windows Applications Forensics/Deep-diving on Office Applications II Microsoft Te.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/windows applications forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/windows applications forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics",
+      "title": "Windows Applications Forensics",
+      "slug": "windows-applications-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics/deep-diving on office applications ii microsoft te",
+      "title": "Deep-diving on Office Applications II Microsoft Te",
+      "slug": "deep-diving-on-office-applications-ii-microsoft-te"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Deep-diving on Office Applications II: Microsoft Teams"
+    },
+    {
+      "level": 1,
+      "text": "Scenario: Phishing via Microsoft Teams"
+    }
+  ],
+  "overview": "Deep-diving on Office Applications II: Microsoft Teams",
+  "study": {
+    "overview": "Deep-diving on Office Applications II: Microsoft Teams",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Deep-diving on Office Applications II: Microsoft Teams",
+      "Scenario: Phishing via Microsoft Teams"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> ls C:\\Users\\ | foreach {ls \"C:\\Users\\$_\\AppData\\Roaming\\Microsoft\\Teams\" 2>$null | findstr Directory}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> ls C:\\Users\\mike.myers\\AppData\\Roaming\\Microsoft\\Teams\\IndexedDB\\"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> C:\\Tools\\ms_teams_parser.exe -f C:\\Users\\mike.myers\\AppData\\Roaming\\Microsoft\\Teams\\IndexedDB\\https_teams.microsoft.com_0.indexeddb.leveldb\\ -o output.json"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> $teams_metadata = cat .\\output.json | ConvertFrom-Json$users = @{}\n\n# Initialise user hashtable for correlation\nforeach ($data in $teams_metadata) {\n   if ($data.record_type -eq \"contact\") {\n     $users.add($data.mri, $data.userPrincipalName)\n   }\n}\n$users | fl"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> $teams_metadata = cat .\\output.json | ConvertFrom-Json$messages = @{}\n# Combine all conversations/messages with the same ID\nforeach ($data in $teams_metadata) {\n  if ($data.record_type -eq \"message\") {\n    if ($messages.keys -notcontains $data.conversationId) {\n      $messages[$data.conversationId] = [System.Collections.ArrayList]@()\n    }\n    $messages[$data.conversationId].add($data) > $null\n  }\n}\n$messages | fl"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

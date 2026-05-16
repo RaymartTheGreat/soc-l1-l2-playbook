@@ -1,0 +1,195 @@
+{
+  "id": "yara",
+  "title": "Yara",
+  "slug": "yara",
+  "relPath": "Yara.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-detection-engineering",
+  "curriculumSectionTitle": "Detection Engineering & Automation",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Web",
+    "Memory",
+    "Detection",
+    "C2",
+    "YARA"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "yara",
+      "title": "Yara",
+      "slug": "yara"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Yara"
+    },
+    {
+      "level": 1,
+      "text": "YARA – Pattern Matching for Malware Detection"
+    },
+    {
+      "level": 2,
+      "text": "What YARA Rules Actually Do"
+    },
+    {
+      "level": 2,
+      "text": "Anatomy of a YARA Rule"
+    },
+    {
+      "level": 3,
+      "text": "1. rule Name"
+    },
+    {
+      "level": 3,
+      "text": "2. meta Section (Optional but Useful)"
+    },
+    {
+      "level": 3,
+      "text": "3. strings Section"
+    },
+    {
+      "level": 3,
+      "text": "4. condition Section"
+    },
+    {
+      "level": 2,
+      "text": "Example of a YARA Rule"
+    },
+    {
+      "level": 2,
+      "text": "Example: Obfuscated Malware Rule (ROOTSAW)"
+    },
+    {
+      "level": 3,
+      "text": "Why This Rule Works"
+    },
+    {
+      "level": 2,
+      "text": "Why Malware Uses Strings"
+    },
+    {
+      "level": 3,
+      "text": "Matching by File Size and Content"
+    },
+    {
+      "level": 3,
+      "text": "Why this matters:"
+    },
+    {
+      "level": 2,
+      "text": "YARA Condition Logic / Operators That Matter"
+    },
+    {
+      "level": 3,
+      "text": "Boolean Logic"
+    },
+    {
+      "level": 3,
+      "text": "Group Matching Keywords"
+    },
+    {
+      "level": 3,
+      "text": "Using String Occurrence Counts"
+    },
+    {
+      "level": 3,
+      "text": "File Attributes"
+    },
+    {
+      "level": 2,
+      "text": "YARA String Types and Modifiers"
+    },
+    {
+      "level": 3,
+      "text": "1- Text Strings (ASCII)"
+    },
+    {
+      "level": 3,
+      "text": "2- Wide Strings (UTF-16)"
+    },
+    {
+      "level": 3,
+      "text": "3- Hexadecimal Strings"
+    },
+    {
+      "level": 3,
+      "text": "4- XOR-Encoded Strings"
+    },
+    {
+      "level": 3,
+      "text": "5- Base64 Strings"
+    },
+    {
+      "level": 3,
+      "text": "6- Regular Expressions"
+    },
+    {
+      "level": 3,
+      "text": "Mixed Usage Example:"
+    },
+    {
+      "level": 2,
+      "text": "Valhalla — Online YARA Feed & Intel Platform"
+    },
+    {
+      "level": 3,
+      "text": "What You Can Do with It:"
+    },
+    {
+      "level": 2,
+      "text": "Real-World Rule Example: Emotet"
+    }
+  ],
+  "overview": "“The pattern matching swiss knife for malware researchers (and everyone else)” — VirusTotal",
+  "study": {
+    "overview": "“The pattern matching swiss knife for malware researchers (and everyone else)” — VirusTotal",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Yara",
+      "YARA – Pattern Matching for Malware Detection",
+      "What YARA Rules Actually Do",
+      "Anatomy of a YARA Rule",
+      "1. rule Name",
+      "2. meta Section (Optional but Useful)",
+      "3. strings Section",
+      "4. condition Section",
+      "Example of a YARA Rule",
+      "Example: Obfuscated Malware Rule (ROOTSAW)",
+      "Why This Rule Works",
+      "Why Malware Uses Strings"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "condition:\n  $s1 and ($s2 or $s3)"
+      },
+      {
+        "language": "text",
+        "code": "condition:\n  #s1 >= 5"
+      }
+    ],
+    "tools": [
+      "PowerShell",
+      "YARA"
+    ],
+    "tips": []
+  }
+}

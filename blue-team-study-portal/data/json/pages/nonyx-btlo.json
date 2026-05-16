@@ -1,0 +1,128 @@
+{
+  "id": "memory forensics labs/nonyx (btlo)",
+  "title": "Nonyx (BTLO)",
+  "slug": "nonyx-btlo",
+  "relPath": "Memory Forensics Labs/Nonyx (BTLO).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "DFIR",
+    "Memory",
+    "C2"
+  ],
+  "mitre": [
+    "S0089"
+  ],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/nonyx (btlo)",
+      "title": "Nonyx (BTLO)",
+      "slug": "nonyx-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Nonyx (BTLO)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Q1) Which process most likely contains injected code, providing its name, PID, and memory address? (Format: Name, PID, Address)"
+    },
+    {
+      "level": 3,
+      "text": "svchost.exe, 856, 0xc30000"
+    },
+    {
+      "level": 3,
+      "text": "Q2) What dump file in the malfind output directory corresponds to the memory address identified for code injection? (Format: Output File Name)"
+    },
+    {
+      "level": 3,
+      "text": "process.0x80ff88d8.0xc30000.dmp"
+    },
+    {
+      "level": 3,
+      "text": "Q3) Which full filename path is referenced in the strings output of the memory section identified by malfind as containing a portable executable (PE32/MZ header)? (Format: Filename Path)"
+    },
+    {
+      "level": 3,
+      "text": "C:\\WINDOWS\\system32\\drivers\\str.sys"
+    },
+    {
+      "level": 3,
+      "text": "Q4) How many functions were hooked and by which module after running the ssdt plugin and filtering out legitimate SSDT entries using egrep -v '(ntoskrnl|win32k)'? (Format: XX, Module)"
+    },
+    {
+      "level": 3,
+      "text": "14, 00004A2A"
+    },
+    {
+      "level": 3,
+      "text": "Q5) Using the modules (or modscan) plugin to identify the hooking driver from the ssdt output, what is the base address for the module found in Q4? (Format: Base Address)"
+    },
+    {
+      "level": 3,
+      "text": "0xff0d1000"
+    },
+    {
+      "level": 3,
+      "text": "Q6) What is the hash for the malicious driver from the virtual memory image? (Format: SHA256)"
+    },
+    {
+      "level": 3,
+      "text": "12b0407d9298e1a7154f5196db4a716052ca3acc70becf2d5489efd35f6c6ec8"
+    }
+  ],
+  "overview": "Exorcise Black Energy 2 from Shadowbrook’s digital infrastructure by reverse-engineering the malware’s code. You must dismantle its hooks, identify its payload, and stop its command-and-control mechanisms to restore peace to the town’s network before the Haunted Festival reaches its darkest hour.",
+  "study": {
+    "overview": "Exorcise Black Energy 2 from Shadowbrook’s digital infrastructure by reverse-engineering the malware’s code. You must dismantle its hooks, identify its payload, and stop its command-and-control mechanisms to restore peace to the town’s network before the Haunted Festival reaches its darkest hour.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Nonyx (BTLO)",
+      "Scenario",
+      "Q1) Which process most likely contains injected code, providing its name, PID, and memory address? (Format: Name, PID, Address)",
+      "svchost.exe, 856, 0xc30000",
+      "Q2) What dump file in the malfind output directory corresponds to the memory address identified for code injection? (Format: Output File Name)",
+      "process.0x80ff88d8.0xc30000.dmp",
+      "Q3) Which full filename path is referenced in the strings output of the memory section identified by malfind as containing a portable executable (PE32/MZ header)? (Format: Filename Path)",
+      "C:\\WINDOWS\\system32\\drivers\\str.sys",
+      "Q4) How many functions were hooked and by which module after running the ssdt plugin and filtering out legitimate SSDT entries using egrep -v '(ntoskrnl|win32k)'? (Format: XX, Module)",
+      "14, 00004A2A",
+      "Q5) Using the modules (or modscan) plugin to identify the hooking driver from the ssdt output, what is the base address for the module found in Q4? (Format: Base Address)",
+      "0xff0d1000"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "SSDT (System Service Descriptor Table) is a data structure in the Windows operating system that manages system calls. It holds pointers to functions responsible for handling core system services such as file operations, memory management, and process control. Through the SSDT, user-mode applications can request kernel-mode services via system calls.",
+      "The modscan plugin identifies LDRDATATABLEENTRY structures by scanning physical memory for pool tags. This allows it to detect previously unloaded drivers as well as drivers that have been hidden or unlinked by rootkits."
+    ]
+  }
+}

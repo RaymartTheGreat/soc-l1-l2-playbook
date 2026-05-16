@@ -1,0 +1,131 @@
+{
+  "id": "memory forensics labs/ransomware (btlo)",
+  "title": "Ransomware (BTLO)",
+  "slug": "ransomware-btlo",
+  "relPath": "Memory Forensics Labs/Ransomware (BTLO).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Network",
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/ransomware (btlo)",
+      "title": "Ransomware (BTLO)",
+      "slug": "ransomware-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Ransomware (BTLO)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Run “vol.py -f infected.vmem --profile=Win7SP1x86 psscan” that will list all processes. What is the name of the suspicious process?"
+    },
+    {
+      "level": 3,
+      "text": "@WanaDecryptor"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the parent process ID for the suspicious process?"
+    },
+    {
+      "level": 3,
+      "text": "2732"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the initial malicious executable that created this process?"
+    },
+    {
+      "level": 3,
+      "text": "or4qtckT.exe"
+    },
+    {
+      "level": 3,
+      "text": "4- If you drill down on the suspicious PID (vol.py -f infected.vmem --profile=Win7SP1x86 psscan | grep (PIDhere)), find the process used to delete files"
+    },
+    {
+      "level": 3,
+      "text": "taskdl.exe"
+    },
+    {
+      "level": 3,
+      "text": "5- Find the path where the malicious file was first executed"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\hacker\\Desktop\\or4qtckT.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- Can you identify what ransomware it is?"
+    },
+    {
+      "level": 3,
+      "text": "wannacry"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the filename for the file with the ransomware public key that was used to encrypt the private key?"
+    },
+    {
+      "level": 3,
+      "text": "00000000.eky"
+    }
+  ],
+  "overview": "The Account Executive called the SOC earlier and sounds very frustrated and angry. He stated he can’t access any files on his computer and keeps receiving a pop-up stating that his files have been encrypted. You disconnected the computer from the network and extracted the memory dump of his machine and started analyzing it with Volatility. Continue your inve",
+  "study": {
+    "overview": "The Account Executive called the SOC earlier and sounds very frustrated and angry. He stated he can’t access any files on his computer and keeps receiving a pop-up stating that his files have been encrypted. You disconnected the computer from the network and extracted the memory dump of his machine and started analyzing it with Volatility. Continue your inve",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Ransomware (BTLO)",
+      "Scenario",
+      "1- Run “vol.py -f infected.vmem --profile=Win7SP1x86 psscan” that will list all processes. What is the name of the suspicious process?",
+      "@WanaDecryptor",
+      "2- What is the parent process ID for the suspicious process?",
+      "2732",
+      "3- What is the initial malicious executable that created this process?",
+      "or4qtckT.exe",
+      "4- If you drill down on the suspicious PID (vol.py -f infected.vmem --profile=Win7SP1x86 psscan | grep (PIDhere)), find the process used to delete files",
+      "taskdl.exe",
+      "5- Find the path where the malicious file was first executed",
+      "C:\\Users\\hacker\\Desktop\\or4qtckT.exe"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

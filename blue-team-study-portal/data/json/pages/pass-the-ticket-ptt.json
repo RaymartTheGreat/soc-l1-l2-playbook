@@ -1,0 +1,136 @@
+{
+  "id": "detecting ad attacks/pass-the-ticket (ptt)",
+  "title": "Pass-the-Ticket (PtT)",
+  "slug": "pass-the-ticket-ptt",
+  "relPath": "Detecting AD Attacks/Pass-the-Ticket (PtT).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "SIEM",
+    "Windows",
+    "Phishing",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Memory",
+    "Detection",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "T1550.003",
+    "T1550"
+  ],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/pass-the-ticket (ptt)",
+      "title": "Pass-the-Ticket (PtT)",
+      "slug": "pass-the-ticket-ptt"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Pass-the-Ticket (PtT)"
+    },
+    {
+      "level": 2,
+      "text": "1- Kerberos Authentication Overview"
+    },
+    {
+      "level": 2,
+      "text": "2- Steps of a PtT Attack"
+    },
+    {
+      "level": 3,
+      "text": "a. Initial Access"
+    },
+    {
+      "level": 3,
+      "text": "b. Ticket Extraction"
+    },
+    {
+      "level": 3,
+      "text": "c. Ticket Reuse"
+    },
+    {
+      "level": 3,
+      "text": "d. Lateral Movement and Privilege Escalation"
+    },
+    {
+      "level": 2,
+      "text": "3- Key Tools for PtT Attacks"
+    },
+    {
+      "level": 2,
+      "text": "4- Example Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Target Network"
+    },
+    {
+      "level": 3,
+      "text": "Attack Flow"
+    },
+    {
+      "level": 2,
+      "text": "5- Detection and Mitigation"
+    },
+    {
+      "level": 3,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Mitigation Strategies"
+    },
+    {
+      "level": 2,
+      "text": "6- Summary"
+    }
+  ],
+  "overview": "Pass-the-Ticket attack involves stealing and reusing Kerberos authentication tickets instead of passwords or hashes. This attack exploits weaknesses in the Kerberos protocol, which is widely used in Windows Active Directory environments, allowing attackers to impersonate legitimate users.",
+  "study": {
+    "overview": "Pass-the-Ticket attack involves stealing and reusing Kerberos authentication tickets instead of passwords or hashes. This attack exploits weaknesses in the Kerberos protocol, which is widely used in Windows Active Directory environments, allowing attackers to impersonate legitimate users.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Pass-the-Ticket (PtT)",
+      "1- Kerberos Authentication Overview",
+      "2- Steps of a PtT Attack",
+      "a. Initial Access",
+      "b. Ticket Extraction",
+      "c. Ticket Reuse",
+      "d. Lateral Movement and Privilege Escalation",
+      "3- Key Tools for PtT Attacks",
+      "4- Example Scenario",
+      "Target Network",
+      "Attack Flow",
+      "5- Detection and Mitigation"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM"
+    ],
+    "tips": []
+  }
+}

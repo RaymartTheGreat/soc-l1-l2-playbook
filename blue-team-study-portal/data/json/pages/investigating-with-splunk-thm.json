@@ -1,0 +1,150 @@
+{
+  "id": "threat hunting labs (siem)/investigating with splunk (thm)",
+  "title": "Investigating with Splunk (THM)",
+  "slug": "investigating-with-splunk-thm",
+  "relPath": "Threat hunting Labs (SIEM)/Investigating with Splunk (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/investigating with splunk (thm)",
+      "title": "Investigating with Splunk (THM)",
+      "slug": "investigating-with-splunk-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Investigating with Splunk (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- How many events were collected and Ingested in the index main?"
+    },
+    {
+      "level": 3,
+      "text": "12256"
+    },
+    {
+      "level": 3,
+      "text": "2- On one of the infected hosts, the adversary was successful in creating a backdoor user. What is the new username?"
+    },
+    {
+      "level": 3,
+      "text": "A1berto"
+    },
+    {
+      "level": 3,
+      "text": "3- On the same host, a registry key was also updated regarding the new backdoor user. What is the full path of that registry key?"
+    },
+    {
+      "level": 3,
+      "text": "HKLM\\SAM\\SAM\\Domains\\Account\\Users\\Names\\A1berto"
+    },
+    {
+      "level": 3,
+      "text": "4- Examine the logs and identify the user that the adversary was trying to impersonate."
+    },
+    {
+      "level": 3,
+      "text": "Alberto"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the command used to add a backdoor user from a remote computer?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\windows\\System32\\Wbem\\WMIC.exe\" /node:WORKSTATION6 process call create \"net user /add A1berto paw0rd1"
+    },
+    {
+      "level": 3,
+      "text": "6- How many times was the login attempt from the backdoor user observed during the investigation?"
+    },
+    {
+      "level": 3,
+      "text": "0"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the name of the infected host on which suspicious Powershell commands were executed?"
+    },
+    {
+      "level": 3,
+      "text": "James.browne"
+    },
+    {
+      "level": 3,
+      "text": "8- PowerShell logging is enabled on this device. How many events were logged for the malicious PowerShell execution?"
+    },
+    {
+      "level": 3,
+      "text": "79"
+    },
+    {
+      "level": 3,
+      "text": "9- An encoded Powershell script from the infected host initiated a web request. What is the full URL?"
+    },
+    {
+      "level": 3,
+      "text": "hxxp[://]10[.]10[.]10[.]5/news[.]php"
+    }
+  ],
+  "overview": "SOC Analyst Johny has observed some anomalous behaviours in the logs of a few windows machines. It looks like the adversary has access to some of these machines and successfully created some backdoor. His manager has asked him to pull those logs from suspected hosts and ingest them into Splunk for quick investigation. Our task as SOC Analyst is to examine th",
+  "study": {
+    "overview": "SOC Analyst Johny has observed some anomalous behaviours in the logs of a few windows machines. It looks like the adversary has access to some of these machines and successfully created some backdoor. His manager has asked him to pull those logs from suspected hosts and ingest them into Splunk for quick investigation. Our task as SOC Analyst is to examine th",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Investigating with Splunk (THM)",
+      "Scenario",
+      "1- How many events were collected and Ingested in the index main?",
+      "12256",
+      "2- On one of the infected hosts, the adversary was successful in creating a backdoor user. What is the new username?",
+      "A1berto",
+      "3- On the same host, a registry key was also updated regarding the new backdoor user. What is the full path of that registry key?",
+      "HKLM\\SAM\\SAM\\Domains\\Account\\Users\\Names\\A1berto",
+      "4- Examine the logs and identify the user that the adversary was trying to impersonate.",
+      "Alberto",
+      "5- What is the command used to add a backdoor user from a remote computer?",
+      "C:\\windows\\System32\\Wbem\\WMIC.exe\" /node:WORKSTATION6 process call create \"net user /add A1berto paw0rd1"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

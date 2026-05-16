@@ -1,0 +1,131 @@
+{
+  "id": "powershell for incident response",
+  "title": "PowerShell for Incident Response",
+  "slug": "powershell-for-incident-response",
+  "relPath": "PowerShell for Incident Response.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-scripting-tooling",
+  "curriculumSectionTitle": "Advanced Scripting & Analysis Tooling",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "DFIR",
+    "Detection",
+    "Incident Response",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "powershell for incident response",
+      "title": "PowerShell for Incident Response",
+      "slug": "powershell-for-incident-response"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "PowerShell for Incident Response"
+    },
+    {
+      "level": 2,
+      "text": "Process Analysis"
+    },
+    {
+      "level": 2,
+      "text": "PowerShell-Specific Investigation"
+    },
+    {
+      "level": 2,
+      "text": "Persistence and Scheduled Tasks"
+    },
+    {
+      "level": 2,
+      "text": "File and Execution History"
+    },
+    {
+      "level": 2,
+      "text": "Network & Connections"
+    },
+    {
+      "level": 2,
+      "text": "Event Logs & Windows Artifacts"
+    },
+    {
+      "level": 2,
+      "text": "Forensics Checks"
+    }
+  ],
+  "overview": "Purpose: Identify suspicious processes, malware, or abnormal execution paths.",
+  "study": {
+    "overview": "Purpose: Identify suspicious processes, malware, or abnormal execution paths.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "PowerShell for Incident Response",
+      "Process Analysis",
+      "PowerShell-Specific Investigation",
+      "Persistence and Scheduled Tasks",
+      "File and Execution History",
+      "Network & Connections",
+      "Event Logs & Windows Artifacts",
+      "Forensics Checks"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "powershell",
+        "code": "Get-Process | Where-Object {$_.Path -like \"*temp*\" -or $_.Path -like \"*appdata*\"} | Select-Object Name,Id,Path"
+      },
+      {
+        "language": "powershell",
+        "code": "Get-CimInstance Win32_Process |\n  Where-Object { $_.Name -match 'powershell|pwsh' -and $_.CommandLine -ne $null } |\n  Select-Object ProcessId,CommandLine | Format-Table -Wrap"
+      },
+      {
+        "language": "powershell",
+        "code": "Get-WinEvent -LogName \"Microsoft-Windows-PowerShell/Operational\" -MaxEvents 20 |\n  Where-Object { $_.Id -eq 4104 } |\n  Select-Object TimeCreated,@{N='Command';E={$_.Properties[0].Value}} | Format-Table -Wrap"
+      },
+      {
+        "language": "powershell",
+        "code": "Get-NetTCPConnection -State Established |\n  Where-Object { (Get-Process -Id $_.OwningProcess -ErrorAction SilentlyContinue).Name -match 'powershell|pwsh' } |\n  Select-Object LocalAddress,RemoteAddress,RemotePort,@{N='Process';E={(Get-Process -Id $_.OwningProcess).Name}}"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "Get-Process | Select-Object Name, Id, CPU, Path | Sort-Object CPU -Descending"
+      },
+      {
+        "language": "powershell",
+        "code": "Get-Process | Where-Object {$_.Path -like \"*temp*\" -or $_.Path -like \"*appdata*\"} | Select-Object Name,Id,Path"
+      },
+      {
+        "language": "powershell",
+        "code": "Get-CimInstance Win32_Process | Select-Object ProcessId,ParentProcessId,CommandLine | Sort-Object ParentProcessId"
+      },
+      {
+        "language": "powershell",
+        "code": "Get-CimInstance Win32_Process |\n  Where-Object { $_.Name -match 'powershell|pwsh' -and $_.CommandLine -ne $null } |\n  Select-Object ProcessId,CommandLine | Format-Table -Wrap"
+      },
+      {
+        "language": "powershell",
+        "code": "Get-Process -Name powershell*, pwsh* | ForEach-Object {\n    [PSCustomObject]@{\n        Name = $_.Name\n        Path = $_.Path\n        SHA256 = (Get-FileHash -Path $_.Path -Algorithm SHA256).Hash\n    }\n} | Format-Table -AutoSize"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

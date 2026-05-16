@@ -1,0 +1,106 @@
+{
+  "id": "active directory/objects & organizational units",
+  "title": "Objects & Organizational Units",
+  "slug": "objects-organizational-units",
+  "relPath": "Active Directory/Objects & Organizational Units.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Active Directory"
+  ],
+  "mitre": [],
+  "parentId": "active directory",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "active directory"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "active directory",
+      "title": "Active Directory",
+      "slug": "active-directory"
+    },
+    {
+      "id": "active directory/objects & organizational units",
+      "title": "Objects & Organizational Units",
+      "slug": "objects-organizational-units"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Objects & Organizational Units"
+    },
+    {
+      "level": 3,
+      "text": "What Makes Up an AD Object"
+    },
+    {
+      "level": 3,
+      "text": "Common Object Types"
+    },
+    {
+      "level": 3,
+      "text": "Organizational Units (OUs)"
+    },
+    {
+      "level": 2,
+      "text": "Searching Active Directory Objects"
+    },
+    {
+      "level": 3,
+      "text": "Using PowerShell"
+    },
+    {
+      "level": 3,
+      "text": "Using LDAP (GUI)"
+    }
+  ],
+  "overview": "In Active Directory (AD), objects represent every manageable resource in your network users, computers, groups, printers, file shares, and more. Organizational Units (OUs) act like folders, grouping these objects for streamlined administration and policy application.",
+  "study": {
+    "overview": "In Active Directory (AD), objects represent every manageable resource in your network users, computers, groups, printers, file shares, and more. Organizational Units (OUs) act like folders, grouping these objects for streamlined administration and policy application.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Objects & Organizational Units",
+      "What Makes Up an AD Object",
+      "Common Object Types",
+      "Organizational Units (OUs)",
+      "Searching Active Directory Objects",
+      "Using PowerShell",
+      "Using LDAP (GUI)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "Get-ADUser -Identity \"Username\" -Properties *"
+      },
+      {
+        "language": "powershell",
+        "code": "Get-ADUser -Identity \"Username\" -Properties LastLogonDate, LockedOut, Modified, PasswordExpired, PasswordLastSet"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": [
+      "Example:",
+      "In DC=NotARealCompany,DC=com you might have:",
+      "- OU=Finance (containing finance users & computers)",
+      "- OU=IT (IT staff and servers)",
+      "- OU=Contractors (external accounts with restricted policies)"
+    ]
+  }
+}

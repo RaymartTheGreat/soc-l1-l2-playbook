@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Phantom Check (HTB) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="log-analysis-labs.html">Log Analysis Labs</a><span>/</span><span>Phantom Check (HTB)</span></div>
+      <h1>Phantom Check (HTB)</h1>
+      <p>Talion suspects that the threat actor carried out anti-virtualization checks to avoid detection in sandboxed environments. Your task is to analyze the event logs and identify the specific techniques used for virtualization detection. Byte Doctor requires evidence of the registry checks or processes the attacker executed to perform these checks.</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">PowerShell</span><span class="tag">Detection</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Log Analysis Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="log-analysis-labs.html"><span>Log Analysis Labs</span><em>L1.5</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="neurosync-d-htb.html"><span>NeuroSync-D (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="smartypants-htb.html"><span>SmartyPants (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="campfire-1-htb.html"><span>Campfire-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="juicy-details-thm.html"><span>Juicy Details (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="smoke-mirrors-htb.html"><span>Smoke &amp; Mirrors (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="bruteforce-btlo.html"><span>Bruteforce (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="brutus-htb.html"><span>Brutus (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="log-analysis-sysmon-btlo.html"><span>Log Analysis - Sysmon (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="unit42-htb.html"><span>Unit42 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="crownjewel-1-htb.html"><span>CrownJewel-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="campfire-2-htb.html"><span>Campfire-2 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="logjammer-htb.html"><span>LogJammer (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="deep-blue-btlo.html"><span>Deep Blue (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="crownjewel-2-htb.html"><span>CrownJewel-2 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="phantom-check-htb.html"><span>Phantom Check (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Talion suspects that the threat actor carried out anti-virtualization checks to avoid detection in sandboxed environments. Your task is to analyze the event logs and identify the specific techniques used for virtualization detection. Byte Doctor requires evidence of the registry checks or processes the attacker executed to perform these checks.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Phantom Check (HTB)</li><li>Scenario</li><li>1- Which WMI class did the attacker use to retrieve model and manufacturer information for virtualization detection?</li><li>Win32ComputerSystem</li><li>2- Which WMI query did the attacker execute to retrieve the current temperature value of the machine?</li><li>SELECT FROM MSAcpiThermalZoneTemperature</li><li>3- The attacker loaded a PowerShell script to detect virtualization. What is the function name of the script?</li><li>Check-VM</li><li>4- Which registry key did the above script query to retrieve service details for virtualization detection?</li><li>HKLM:\SYSTEM\ControlSet001\Services</li><li>5- The VM detection script can also identify VirtualBox. Which processes is it comparing to determine if the system is running VirtualBox?</li><li>vboxservice.exe, vboxtray.exe</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="phantom-check-htb">Phantom Check (HTB)</h2>
+<h3 id="scenario"><strong>Scenario</strong></h3>
+<p><strong>Talion suspects that the threat actor carried out anti-virtualization checks to avoid detection in sandboxed environments. Your task is to analyze the event logs and identify the specific techniques used for virtualization detection. Byte Doctor requires evidence of the registry checks or processes the attacker executed to perform these checks.</strong></p>
+<p><a class="note-link" href="https://app.hackthebox.com/sherlocks/Operation Blackout 2025: Phantom Check">https://app.hackthebox.com/sherlocks/Operation Blackout 2025: Phantom Check</a></p>
+<hr>
+<h4 id="1-which-wmi-class-did-the-attacker-use-to-retrieve-model-and-manufacturer-information-for-"><strong>1- Which WMI class did the attacker use to retrieve model and manufacturer information for virtualization detection?</strong></h4>
+<h4 id="win32computersystem">Win32_ComputerSystem</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_032834-56a762eb.png" data-alt="Screenshot 2025-08-07 032834.png"><img src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_032834-56a762eb.png" alt="Screenshot 2025-08-07 032834.png" loading="lazy"></button></p>
+<p>I searched the logs for <code>Get-WmiObject</code> calls and found the attacker querying the <code>Win32_ComputerSystem</code> WMI class. The script retrieved properties like <code>Model</code> and <code>Manufacturer</code> to check for virtualization. Virtual machines often have recognizable values in these fields, such as strings mentioning VMware or Hyper-V, which makes this a common method for VM detection. By examining the script, I confirmed that it executed a <code>Get-WmiObject -Class Win32_ComputerSystem</code> command to automatically collect this information.</p>
+<h4 id="2-which-wmi-query-did-the-attacker-execute-to-retrieve-the-current-temperature-value-of-th"><strong>2- Which WMI query did the attacker execute to retrieve the current temperature value of the machine?</strong></h4>
+<h4 id="select-from-msacpithermalzonetemperature">SELECT * FROM MSAcpi_ThermalZoneTemperature</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_032911-6ba27a1c.png" data-alt="Screenshot 2025-08-07 032911.png"><img src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_032911-6ba27a1c.png" alt="Screenshot 2025-08-07 032911.png" loading="lazy"></button></p>
+<p>Looking further with the same search , I found found the attacker using <code>SELECT * FROM MSAcpi_ThermalZoneTemperature</code>. This query retrieves data from the system’s thermal zones. Malware often checks temperature readings because virtual machines may report unrealistic or static values. These readings help the attacker determine whether the code is running in a sandbox or real hardware environment.</p>
+<h4 id="3-the-attacker-loaded-a-powershell-script-to-detect-virtualization.-what-is-the-function-n"><strong>3- The attacker loaded a PowerShell script to detect virtualization. What is the function name of the script?</strong></h4>
+<h4 id="check-vm">Check-VM</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_033340-914938b9.png" data-alt="Screenshot 2025-08-07 033340.png"><img src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_033340-914938b9.png" alt="Screenshot 2025-08-07 033340.png" loading="lazy"></button></p>
+<p>I searched the loaded PowerShell script for <code>function</code> definitions and found <code>Check-VM</code>. This function wraps all the logic for virtualization detection: WMI queries, registry checks, and process inspections. By packaging the checks into a single function, the attacker can quickly verify if the host is a VM before continuing execution.</p>
+<h4 id="4-which-registry-key-did-the-above-script-query-to-retrieve-service-details-for-virtualiza"><strong>4- Which registry key did the above script query to retrieve service details for virtualization detection?</strong></h4>
+<h4 id="hklmsystemcontrolset001services">HKLM:\SYSTEM\ControlSet001\Services</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_033450-4a0b71cf.png" data-alt="Screenshot 2025-08-07 033450.png"><img src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_033450-4a0b71cf.png" alt="Screenshot 2025-08-07 033450.png" loading="lazy"></button></p>
+<p>The script also checked registry entries to identify virtualization-specific services. By querying <code>HKLM:\SYSTEM\ControlSet001\Services</code>, the script enumerates installed services. Many virtualization platforms install recognizable services here; for example, Hyper-V or VMware services can be detected through this registry path. This check supplements WMI and process-based detection, making the script more reliable.</p>
+<h4 id="5-the-vm-detection-script-can-also-identify-virtualbox.-which-processes-is-it-comparing-to"><strong>5- The VM detection script can also identify VirtualBox. Which processes is it comparing to determine if the system is running VirtualBox?</strong></h4>
+<h4 id="vboxservice.exe-vboxtray.exe">vboxservice.exe, vboxtray.exe</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_033541-ce63e0fa.png" data-alt="Screenshot 2025-08-07 033541.png"><img src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_033541-ce63e0fa.png" alt="Screenshot 2025-08-07 033541.png" loading="lazy"></button></p>
+<p>The script enumerates running processes and compares them to known VirtualBox executables. When it finds <code>vboxservice.exe</code> or <code>vboxtray.exe</code>, it confirms that the system is running in a VirtualBox environment.</p>
+<h4 id="6-the-vm-detection-script-prints-any-detection-with-the-prefix-this-is-a.-which-two-virtua"><strong>6- The VM detection script prints any detection with the prefix 'This is a'. Which two virtualization platforms did the script detect?</strong></h4>
+<h4 id="hyper-v-vmware">Hyper-V, Vmware</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_033705-1aa157b2.png" data-alt="Screenshot 2025-08-07 033705.png"><img src="../assets/images/log-analysis-labsphantom-check-htb-screenshot_2025-08-07_033705-1aa157b2.png" alt="Screenshot 2025-08-07 033705.png" loading="lazy"></button></p>
+<p>I reviewed the script output and searched for any lines beginning with <code>“This is a.”</code> The script combines results from WMI queries, registry checks, and process inspections to detect virtualization. In this run, it correctly identified Hyper-V and VMware as present.</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#phantom-check-htb">Phantom Check (HTB)</a><a href="#scenario">Scenario</a><a href="#1-which-wmi-class-did-the-attacker-use-to-retrieve-model-and-manufacturer-information-for-">1- Which WMI class did the attacker use to retrieve model and manufacturer information for virtualization detection?</a><a href="#win32computersystem">Win32ComputerSystem</a><a href="#2-which-wmi-query-did-the-attacker-execute-to-retrieve-the-current-temperature-value-of-th">2- Which WMI query did the attacker execute to retrieve the current temperature value of the machine?</a><a href="#select-from-msacpithermalzonetemperature">SELECT FROM MSAcpiThermalZoneTemperature</a><a href="#3-the-attacker-loaded-a-powershell-script-to-detect-virtualization.-what-is-the-function-n">3- The attacker loaded a PowerShell script to detect virtualization. What is the function name of the script?</a><a href="#check-vm">Check-VM</a><a href="#4-which-registry-key-did-the-above-script-query-to-retrieve-service-details-for-virtualiza">4- Which registry key did the above script query to retrieve service details for virtualization detection?</a><a href="#hklmsystemcontrolset001services">HKLM:\SYSTEM\ControlSet001\Services</a><a href="#5-the-vm-detection-script-can-also-identify-virtualbox.-which-processes-is-it-comparing-to">5- The VM detection script can also identify VirtualBox. Which processes is it comparing to determine if the system is running VirtualBox?</a><a href="#vboxservice.exe-vboxtray.exe">vboxservice.exe, vboxtray.exe</a><a href="#6-the-vm-detection-script-prints-any-detection-with-the-prefix-this-is-a.-which-two-virtua">6- The VM detection script prints any detection with the prefix 'This is a'. Which two virtualization platforms did the script detect?</a><a href="#hyper-v-vmware">Hyper-V, Vmware</a></details>
+    </div>
+    
+    <footer class="pager"><a href="crownjewel-2-htb.html">← CrownJewel-2 (HTB)</a><a href="siem.html">SIEM →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+{
+  "id": "forensics labs/browser forensics (btlo)",
+  "title": "Browser Forensics (BTLO)",
+  "slug": "browser-forensics-btlo",
+  "relPath": "Forensics Labs/Browser Forensics (BTLO).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Network",
+    "Web",
+    "DFIR",
+    "Incident Response"
+  ],
+  "mitre": [],
+  "parentId": "forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "forensics labs",
+      "title": "Forensics Labs",
+      "slug": "forensics-labs"
+    },
+    {
+      "id": "forensics labs/browser forensics (btlo)",
+      "title": "Browser Forensics (BTLO)",
+      "slug": "browser-forensics-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Browser Forensics (BTLO)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- How many browser-profiles are present in Google Chrome?"
+    },
+    {
+      "level": 3,
+      "text": "2"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the name of the browser theme installed on Google Chrome?"
+    },
+    {
+      "level": 3,
+      "text": "Earth in Space"
+    },
+    {
+      "level": 3,
+      "text": "3- Identify the Extension ID and Extension Name of the cryptominer"
+    },
+    {
+      "level": 3,
+      "text": "egnfmleidkolminhjlkaomjefheafbbb, DFP Cryptocurrency Miner"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the description text of this extension?"
+    },
+    {
+      "level": 3,
+      "text": "Allows staff members to mine cryptocurrency in the background of their web browser"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the name of the specific javascript web miner used in the browser extension?"
+    },
+    {
+      "level": 3,
+      "text": "cryptoloot"
+    },
+    {
+      "level": 3,
+      "text": "6- How many hashes is the crypto miner calculating per second?"
+    },
+    {
+      "level": 3,
+      "text": "20"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the public key associated with this mining activity?"
+    },
+    {
+      "level": 3,
+      "text": "b23efb4650150d5bc5b2de6f05267272cada06d985a0"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the URL of the official Twitter page of the javascript web miner?"
+    },
+    {
+      "level": 3,
+      "text": "twitter.com/CryptoLootMiner"
+    }
+  ],
+  "overview": "Our SOC alerted that there is some traffic related to crypto mining from a PC that was just joined to the network. The incident response team acted immediately, observed that the traffic is originating from browser applications. After collecting all key browser data using FTK Imager, it is your job to use the ad1 file to investigate the crypto mining activit",
+  "study": {
+    "overview": "Our SOC alerted that there is some traffic related to crypto mining from a PC that was just joined to the network. The incident response team acted immediately, observed that the traffic is originating from browser applications. After collecting all key browser data using FTK Imager, it is your job to use the ad1 file to investigate the crypto mining activit",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Browser Forensics (BTLO)",
+      "Scenario",
+      "1- How many browser-profiles are present in Google Chrome?",
+      "2",
+      "2- What is the name of the browser theme installed on Google Chrome?",
+      "Earth in Space",
+      "3- Identify the Extension ID and Extension Name of the cryptominer",
+      "egnfmleidkolminhjlkaomjefheafbbb, DFP Cryptocurrency Miner",
+      "4- What is the description text of this extension?",
+      "Allows staff members to mine cryptocurrency in the background of their web browser",
+      "5- What is the name of the specific javascript web miner used in the browser extension?",
+      "cryptoloot"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "Theme path :",
+      "C:\\Users\\<USERNAME\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Preferences"
+    ]
+  }
+}

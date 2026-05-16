@@ -1,0 +1,134 @@
+{
+  "id": "network/protocols/lightweight directory access protocol (ldap)",
+  "title": "Lightweight Directory Access Protocol (LDAP)",
+  "slug": "lightweight-directory-access-protocol-ldap",
+  "relPath": "Network/Protocols/Lightweight Directory Access Protocol (LDAP).md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Windows",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Web",
+    "Detection",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "network/protocols",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/protocols"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/protocols",
+      "title": "Protocols",
+      "slug": "protocols"
+    },
+    {
+      "id": "network/protocols/lightweight directory access protocol (ldap)",
+      "title": "Lightweight Directory Access Protocol (LDAP)",
+      "slug": "lightweight-directory-access-protocol-ldap"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Lightweight Directory Access Protocol (LDAP)"
+    },
+    {
+      "level": 2,
+      "text": "Directory Structure"
+    },
+    {
+      "level": 3,
+      "text": "Communication Ports:"
+    },
+    {
+      "level": 2,
+      "text": "How LDAP Works"
+    },
+    {
+      "level": 3,
+      "text": "The process involves the following steps:"
+    },
+    {
+      "level": 2,
+      "text": "LDAP Authentication Methods"
+    },
+    {
+      "level": 3,
+      "text": "Security Concerns with LDAP:"
+    },
+    {
+      "level": 2,
+      "text": "LDAP Injection"
+    },
+    {
+      "level": 3,
+      "text": "Common Attack Vectors"
+    },
+    {
+      "level": 3,
+      "text": "Injection Process"
+    },
+    {
+      "level": 2,
+      "text": "How Attackers Use LDAP in Active Directory Attacks"
+    },
+    {
+      "level": 1,
+      "text": "Brief"
+    },
+    {
+      "level": 3,
+      "text": "What It Is & Its Purpose:"
+    },
+    {
+      "level": 3,
+      "text": "Attackers target LDAP to:"
+    }
+  ],
+  "overview": "Lightweight Directory Access Protocol (LDAP) is an open, cross-platform protocol designed for accessing and managing directory information. In Active Directory (AD), LDAP is the backbone for querying, updating, and managing data about users, groups, and resources. Its standardized communication mechanism makes LDAP essential for centralized identity manageme",
+  "study": {
+    "overview": "Lightweight Directory Access Protocol (LDAP) is an open, cross-platform protocol designed for accessing and managing directory information. In Active Directory (AD), LDAP is the backbone for querying, updating, and managing data about users, groups, and resources. Its standardized communication mechanism makes LDAP essential for centralized identity manageme",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Lightweight Directory Access Protocol (LDAP)",
+      "Directory Structure",
+      "Communication Ports:",
+      "How LDAP Works",
+      "The process involves the following steps:",
+      "LDAP Authentication Methods",
+      "Security Concerns with LDAP:",
+      "LDAP Injection",
+      "Common Attack Vectors",
+      "Injection Process",
+      "How Attackers Use LDAP in Active Directory Attacks",
+      "Brief"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "Security Note:",
+      "By default, LDAP transmits data in plaintext. It is critical to use TLS/SSL (LDAPS) to encrypt communications and safeguard credentials and other sensitive information."
+    ]
+  }
+}

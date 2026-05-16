@@ -1,0 +1,149 @@
+{
+  "id": "forensics labs/sysinternals (cyberdefenders)",
+  "title": "Sysinternals (CyberDefenders)",
+  "slug": "sysinternals-cyberdefenders",
+  "relPath": "Forensics Labs/Sysinternals (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "DFIR",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "forensics labs",
+      "title": "Forensics Labs",
+      "slug": "forensics-labs"
+    },
+    {
+      "id": "forensics labs/sysinternals (cyberdefenders)",
+      "title": "Sysinternals (CyberDefenders)",
+      "slug": "sysinternals-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Sysinternals (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What was the malicious executable file name that the user downloaded?"
+    },
+    {
+      "level": 3,
+      "text": "SysInternals.exe"
+    },
+    {
+      "level": 3,
+      "text": "2- When was the last time the malicious executable file was modified?"
+    },
+    {
+      "level": 3,
+      "text": "2022-11-15 21:18"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the SHA1 hash value of the malware?"
+    },
+    {
+      "level": 3,
+      "text": "fa1002b02fc5551e075ec44bb4ff9cc13d563dcf"
+    },
+    {
+      "level": 3,
+      "text": "4- Based on the Alibaba vendor, what is the malware's family?"
+    },
+    {
+      "level": 3,
+      "text": "Rozena"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the first mapped domain's Fully Qualified Domain Name (FQDN)?"
+    },
+    {
+      "level": 3,
+      "text": "www.malware430.com"
+    },
+    {
+      "level": 3,
+      "text": "6- The mapped domain is linked to an IP address. What is that IP address?"
+    },
+    {
+      "level": 3,
+      "text": "192.168.15.10"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the name of the executable dropped by the first-stage executable?"
+    },
+    {
+      "level": 3,
+      "text": "vmtoolsIO.exe"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the name of the service installed by 2nd-stage executable?"
+    },
+    {
+      "level": 3,
+      "text": "VMwareIOHelperService"
+    }
+  ],
+  "overview": "A user thought they were downloading the SysInternals tool suite and attempted to open it, but the tools did not launch and became inaccessible. Since then, the user has observed that their system has gradually slowed down and become less responsive.",
+  "study": {
+    "overview": "A user thought they were downloading the SysInternals tool suite and attempted to open it, but the tools did not launch and became inaccessible. Since then, the user has observed that their system has gradually slowed down and become less responsive.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Sysinternals (CyberDefenders)",
+      "Scenario",
+      "1- What was the malicious executable file name that the user downloaded?",
+      "SysInternals.exe",
+      "2- When was the last time the malicious executable file was modified?",
+      "2022-11-15 21:18",
+      "3- What is the SHA1 hash value of the malware?",
+      "fa1002b02fc5551e075ec44bb4ff9cc13d563dcf",
+      "4- Based on the Alibaba vendor, what is the malware's family?",
+      "Rozena",
+      "5- What is the first mapped domain's Fully Qualified Domain Name (FQDN)?",
+      "www.malware430.com"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "python",
+        "code": "\"C:\\Windows\\System32\\cmd.exe\" /C c:\\Windows\\vmtoolsIO.exe -install && net start VMwareIOHelperService && sc config VMwareIOHelperService start= auto"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": [
+      "If the actual file on disk is changed after execution, AmCache is often the best place to find the original execution metadata (path, hashes, timestamps) recorded by the OS.",
+      "Rozena is a fileless malware/dropper family observed distributing secondary payloads and establishing persistence via service installation. It commonly performs file copying into Temp, spawns cmd.exe chains to install follow-on components, and contacts remote URLs for additional payloads."
+    ]
+  }
+}

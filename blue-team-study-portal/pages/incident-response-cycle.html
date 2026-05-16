@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Incident Response Cycle | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link active" href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Incident Response Cycle</span></div>
+      <h1>Incident Response Cycle</h1>
+      <p>Incident Response (IR) refers to the processes and technologies an organization employs to detect and react to cyber threats, security breaches, or cyber attacks. Implementing a formal incident response plan empowers cyber security teams to mitigate or prevent damage effectively.</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">SIEM</span><span class="tag">EDR</span><span class="tag">Windows</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">DFIR</span><span class="tag">Detection</span><span class="tag">Threat Intel</span><span class="tag">OSINT</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Incident Response Cycle</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="incident-response-cycle.html"><span>Incident Response Cycle</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Incident Response (IR) refers to the processes and technologies an organization employs to detect and react to cyber threats, security breaches, or cyber attacks. Implementing a formal incident response plan empowers cyber security teams to mitigate or prevent damage effectively.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Incident Response Cycle</li><li>1- Preparation &amp; Prevention Phase</li><li>Core program elements</li><li>Preventive controls</li><li>People, training &amp; culture</li><li>Automation, intelligence &amp; metrics</li><li>2- Identification &amp; Scoping Phase</li><li>Identification</li><li>Scoping Tools for Effective Response</li><li>Iterative Feedback Loop in Identification &amp; Scoping</li><li>3- Threat Intel &amp; Containment</li><li>Threat Intelligence Gathering</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li><li>EDR</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="incident-response-cycle">Incident Response Cycle</h2>
+<p><a class="note-link" href="../assets/attachments/incident-response-cycle-ir_playbook-078b063c.pdf">IR_Playbook.pdf</a></p>
+<p><strong>Incident Response (IR)</strong> refers to the processes and technologies an organization employs to detect and react to cyber threats, security breaches, or cyber attacks. Implementing a formal incident response plan empowers cyber security teams to mitigate or prevent damage effectively.</p>
+<hr>
+<p><strong>The NIST Incident Response Framework</strong> involves 4 steps:</p>
+<ol>
+<li><strong>Preparation</strong>: Establishing and maintaining an incident response capability.</li>
+<li><strong>Detection and Analysis</strong>: Identifying and understanding the scope and impact of an incident.</li>
+<li><strong>Containment, Eradication, and Recovery</strong>: Limiting the incident's impact, eliminating the threat, and restoring normal operations.</li>
+<li><strong>Post-Incident Activity</strong>: Reviewing and improving the incident response process and documentation.</li>
+</ol>
+<p>incident responders, are usually called to action in the middle of the second phase of the NIST Incident Response Framework: right after detection tools or policies have fired an alert, prompting a deep analysis of the anomalies.</p>
+<hr>
+<p><strong>SANS Incident Response 101</strong>, on the other hand, splits out the containment, eradication, and recovery into different steps, making the whole process comprised of 6 steps:</p>
+<ol>
+<li><strong>Preparation</strong>: Establishing tools, resources, and procedures to effectively handle incidents.</li>
+<li><strong>Identification</strong>: Detecting and determining the scope and impact of an incident.</li>
+<li><strong>Containment</strong>: Implementing measures to limit the incident's spread and impact.</li>
+<li><strong>Eradication</strong>: Removing the root cause of the incident, including malware or compromised accounts.</li>
+<li><strong>Recovery</strong>: Restoring systems and operations to normal while ensuring the threat is eliminated.</li>
+<li><strong>Lessons Learned</strong>: Analyzing the incident response process and improving future readiness.</li>
+</ol>
+<p><button class="image-button" data-src="../assets/images/incident-response-cycle-fasfsdf-08cfcd33.png" data-alt="fasfsdf.png"><img src="../assets/images/incident-response-cycle-fasfsdf-08cfcd33.png" alt="fasfsdf.png" loading="lazy"></button></p>
+<hr>
+<p>#I will be taking notes for the SANS framework, but it doesn’t really matter much.</p>
+<hr>
+<h2 id="1-preparation-prevention-phase"><strong>1- Preparation &amp; Prevention Phase</strong></h2>
+<h4 id="core-program-elements">Core program elements</h4>
+<ul>
+<li><strong>IR Plan &amp; runbooks</strong> — short, versioned playbooks per incident type (ransomware, data exfil, stolen device). Include decision gates (isolate vs preserve evidence vs rebuild).</li>
+<li><strong>Forensics readiness</strong> — standardized logging, volatile capture playbooks, pre-staged imaging kits, chain-of-custody templates.</li>
+<li><strong>Asset inventory &amp; risk assessment</strong> — authoritative CMDB with owner, OS, role, data sensitivity. Prioritise protections by business impact (use BIA/BCP to guide decisions).</li>
+<li><strong>Team &amp; roles</strong> — Incident Commander, Security Analysts, Forensic (DFIR) Analysts, Threat Intel, Legal, HR, PR, and executive sponsor. Have a contact registry and escalation matrix.</li>
+<li><strong>Supply &amp; authority</strong> — ensure IR staff have approved hardware, software, access, and the ability to be pulled from routine duties during incidents.</li>
+</ul>
+<h4 id="preventive-controls">Preventive controls</h4>
+<p><strong>Identity &amp; access</strong></p>
+<ul>
+<li>Enforce MFA, least privilege, periodic access reviews, and credential hygiene.</li>
+<li>Use RBAC, privileged access workstations, and strict admin separation (no local admin by default).</li>
+</ul>
+<p><strong>Network controls</strong></p>
+<ul>
+<li>Network segmentation / micro-segmentation and DMZs for internet-facing services.</li>
+<li>Perimeter + NGFW (application inspection) and WAFs for web apps.</li>
+<li>NAC to prevent/limit rogue devices (pre- and post-admission enforcement).</li>
+</ul>
+<p><strong>Endpoint &amp; detection</strong></p>
+<ul>
+<li>EDR with behavioral telemetry, application allowlisting, HIDS/HIPS for host-level detection and prevention.</li>
+<li>Up-to-date AV (signature + behavior) and local firewall policies managed centrally (GPOs for Windows).</li>
+</ul>
+<p><strong>Email &amp; web</strong></p>
+<ul>
+<li>SPF/DKIM/DMARC + spam gateway and attachment sandboxing.</li>
+<li>Mark external mail (e.g., “[EXTERNAL]”) and apply URL/attachment scanning.</li>
+<li>Attachment restrictions based on business need (block high-risk types unless required).</li>
+</ul>
+<p><strong>Data protection &amp; backups</strong></p>
+<ul>
+<li>DLP policies, data classification, encryption (rest/in-transit), least-access controls.</li>
+<li>Regular, tested backups (immutable or air-gapped where possible) and verified restore procedures.</li>
+</ul>
+<p><strong>Monitoring &amp; logging</strong></p>
+<ul>
+<li>Centralized logging (SIEM) + retention aligned to legal needs; tune detections to reduce false positives.</li>
+<li>Instrument telemetry for process creation, auth anomalies, data movements, privileged actions, and egress.</li>
+</ul>
+<p><strong>Cloud &amp; third-parties</strong></p>
+<ul>
+<li>Include cloud logging/IAM in IR plans; audit vendor access and add vendor incident scenarios to playbooks.</li>
+</ul>
+<p><strong>Physical security</strong></p>
+<ul>
+<li>Basic deterrents and access controls (CCTV, mantraps, secure doors); treat physical access as high risk.</li>
+</ul>
+<h4 id="people-training-culture">People, training &amp; culture</h4>
+<ul>
+<li>Regular tabletop &amp; live exercises that include technical teams, legal, PR and execs.</li>
+<li>Continuous security awareness: mandatory onboarding training, yearly refreshers, and quarterly phishing simulations with metrics and follow-up training for repeat offenders.</li>
+<li>Encourage security champions and offer small incentives/recognition.</li>
+<li>Provide anonymous whistleblowing channel for insider reporting.</li>
+</ul>
+<h3 id="automation-intelligence-metrics">Automation, intelligence &amp; metrics</h3>
+<ul>
+<li>Use SOAR to automate safe, repeatable containment steps; keep manual approval gates for high-risk actions.</li>
+<li>Ingest threat intel and map IOCs to detections/blocks.</li>
+<li>Track metrics: MTTD, MTTR, incidents by type, time to containment, lessons-implemented rate.</li>
+</ul>
+<hr>
+<h2 id="2-identification-scoping-phase">2- Identification &amp; Scoping Phase</h2>
+<h4 id="identification"><strong>Identification</strong></h4>
+<ol>
+<li><strong>Understanding the Role of People, Processes, and Technology</strong></li>
+<ul>
+<li>Technology detects incidents through alerts.</li>
+<li>People interpret these alerts and report anomalies to relevant parties using established procedures.</li>
+<li>Success depends on effective coordination among employees, security teams, and tools.</li>
+</ul>
+<li><strong>Security Alerts and Event Notifications</strong></li>
+<ul>
+<li>Event notifications act as triggers for initiating incident response.</li>
+<li>Proper analysis and handling require technical expertise, tools, and adherence to defined procedures.</li>
+</ul>
+<li><strong>Transitioning to Scoping</strong></li>
+<ul>
+<li>Scoping determines the incident's extent: affected systems, impacted data, and organisational effects.</li>
+<li>Effective scoping relies on evidence from identification and clear collaboration.</li>
+</ul>
+</ol>
+<hr>
+<h4 id="scoping-tools-for-effective-response"><strong>Scoping Tools for Effective Response</strong></h4>
+<p><strong>Asset Inventory Example:</strong></p>
+<p>A comprehensive inventory ensures efficient identification of affected systems.</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Asset Type</strong></th><th><strong>Asset Name</strong></th><th><strong>IP Address</strong></th><th><strong>Operating System</strong></th><th><strong>Owner</strong></th></tr></thead><tbody><tr><td>Domain Controller</td><td>DC-SERVER01</td><td>192.168.0.10</td><td>Windows Server 2022</td><td>Omar Amir</td></tr><tr><td>Web Server</td><td>WEBAPP-001</td><td>192.168.0.20</td><td>Ubuntu Server 22.04</td><td>Mahmoud Shaker</td></tr><tr><td>Workstation</td><td>WKS-005</td><td>192.168.0.101</td><td>Windows 11</td><td>Mohamed Abdullah</td></tr><tr><td>Proxy Server</td><td>PROXY-SERVER</td><td>192.168.0.50</td><td>CentOS 8</td><td>Ahmed Amr</td></tr><tr><td>Laptop</td><td>LAPTOP-019</td><td>192.168.0.110</td><td>macOS Monterey</td><td>Ahmed zedan</td></tr></tbody></table></div>
+<hr>
+<p><strong>Spreadsheet of Doom (SoD): Threat Identification</strong></p>
+<p>Consolidates Indicators of Compromise (IoCs) to streamline investigations.</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Indicator Type</strong></th><th><strong>Indicator</strong></th><th><strong>Threat Type</strong></th><th><strong>Source</strong></th></tr></thead><tbody><tr><td>IP Address</td><td>185.23.45.67</td><td>Malware Hosting</td><td>VirusTotal</td></tr><tr><td>Domain</td><td>secure-check-login.xyz</td><td>Phishing Domain</td><td>SIEM Alert</td></tr><tr><td>Email Address</td><td>meaw@fakecorp.support</td><td>Spoofed Email</td><td>Incident Ticket #1023</td></tr><tr><td>File Hash (SHA1)</td><td>b25f7a8b1940bc9deff2b7188</td><td>Ransomware Executable</td><td>AlienVault OTX</td></tr><tr><td>URL</td><td>http://im-malicious-site.com</td><td>Drive-By Attack Site</td><td>OSINT Report</td></tr></tbody></table></div>
+<hr>
+<h4 id="iterative-feedback-loop-in-identification-scoping"><strong>Iterative Feedback Loop in Identification &amp; Scoping</strong></h4>
+<ol>
+<li><strong>Event Notification:</strong> Incident response begins when an anomaly is reported.</li>
+<li><strong>Documentation:</strong> All findings are logged, including affected assets and vulnerabilities.</li>
+<li><strong>Evidence Collection:</strong> Logs, traffic data, and digital artefacts are analysed to understand the incident.</li>
+<li><strong>Artefact Identification:</strong> Artefacts like IoCs are extracted, guiding further actions.</li>
+<li><strong>Pivot Point Discovery:</strong> New insights or leads refine the investigation and aid in understanding the full impact of the threat.</li>
+</ol>
+<p><button class="image-button" data-src="../assets/images/incident-response-cycle-screenshot_2025-02-28_021442-93091279.png" data-alt="Screenshot 2025-02-28 021442.png"><img src="../assets/images/incident-response-cycle-screenshot_2025-02-28_021442-93091279.png" alt="Screenshot 2025-02-28 021442.png" loading="lazy"></button></p>
+<hr>
+<hr>
+<h2 id="3-threat-intel-containment"><strong>3- Threat Intel &amp; Containment</strong></h2>
+<p>This stage of the incident response process focuses on preventing an incident from causing further damage. It involves gathering intelligence about the adversary and implementing containment measures to mitigate risks.</p>
+<p><button class="image-button" data-src="../assets/images/incident-response-cycle-screenshot_2025-02-28_021615-3124c4c3.png" data-alt="Screenshot 2025-02-28 021615.png"><img src="../assets/images/incident-response-cycle-screenshot_2025-02-28_021615-3124c4c3.png" alt="Screenshot 2025-02-28 021615.png" loading="lazy"></button></p>
+<hr>
+<h3 id="threat-intelligence-gathering"><strong>Threat Intelligence Gathering</strong></h3>
+<p>Threat intelligence helps in identifying and understanding the adversary. Key sources include:</p>
+<ul>
+<li><strong>Intrusion Detection Systems (IDS)</strong></li>
+<li><strong>Security Information &amp; Event Management (SIEM)</strong></li>
+<li><strong>Threat Intelligence Feeds (OSINT, DigitalSide, AlienVault, etc.)</strong></li>
+</ul>
+<p>This evidence forms <strong>Indicators of Compromise (IoCs)</strong> such as:</p>
+<div class="table-wrap"><table><thead><tr><th><strong>IoC Type</strong></th><th><strong>Example</strong></th></tr></thead><tbody><tr><td><strong>IP Address</strong></td><td>192.168.45.67</td></tr><tr><td><strong>Domain</strong></td><td>malicious-login.com</td></tr><tr><td><strong>File Hash</strong></td><td>d41d8omarcd98f00b204e9800998ec</td></tr><tr><td><strong>Email</strong></td><td>phishing@omarbank.com</td></tr></tbody></table></div>
+<h4 id="ttps-understanding-the-adversary"><strong>TTPs: Understanding the Adversary</strong></h4>
+<p>Threat actors follow certain <strong>Tactics, Techniques, and Procedures (TTPs)</strong>:</p>
+<ul>
+<li><strong>Tactics:</strong> High-level objectives (e.g., data theft, espionage, ransomware).</li>
+<li><strong>Techniques:</strong> Specific tools and methods used (e.g., phishing, lateral movement).</li>
+<li><strong>Procedures:</strong> The step-by-step process of an attack.</li>
+</ul>
+<hr>
+<h3 id="containment-strategies"><strong>Containment Strategies</strong></h3>
+<p>Containment serves as a bridge between identification, eradication, and recovery. Different strategies depend on risk factors and adversary behavior.</p>
+<h4 id="1.-isolation-aggressive-approach"><strong>1. Isolation (Aggressive Approach)</strong></h4>
+<p><strong>Method:</strong> Completely disconnect infected devices from the network.</p>
+<p><strong>Pros:</strong> Immediately stops adversary actions.</p>
+<p><strong>Cons:</strong> Alerts the attacker, possibly triggering destructive actions.</p>
+<p><strong>Use Case:</strong> If an adversary is likely to exfiltrate data or escalate access quickly.</p>
+<h4 id="2.-controlled-isolation-stealth-approach"><strong>2. Controlled Isolation (Stealth Approach)</strong></h4>
+<p><strong>Method:</strong> Allows adversaries to operate in a controlled environment while being monitored.</p>
+<p><strong>Pros:</strong> Enables intelligence gathering without alerting the attacker.</p>
+<p><strong>Cons:</strong> Requires constant monitoring and quick intervention capability.</p>
+<p><strong>Use Case:</strong> If understanding the adversary’s behavior is a priority.</p>
+<hr>
+<h3 id="threat-intelligence-platforms"><strong>Threat Intelligence Platforms</strong></h3>
+<p>Threat intelligence should be <strong>shared and consumed</strong> to predict adversary movements. Platforms include:</p>
+<ul>
+<li><strong>OpenCTI</strong> (collaborative intelligence sharing)</li>
+<li><strong>ThreatFeeds.io</strong> (OSINT threat data)</li>
+<li><strong>AlienVault OTX</strong> (community threat indicators)</li>
+</ul>
+<p>By <strong>tracking known adversaries</strong>, defenders can anticipate future attacks and proactively implement countermeasures.</p>
+<hr>
+<h4 id="the-end-goal-of-containment"><strong>The End Goal of Containment</strong></h4>
+<p>The primary objective is to <strong>delay or disrupt the adversary’s progress</strong> while gathering intelligence. Striking a balance between intelligence collection and containment effectiveness is crucial.</p>
+<p>A well-executed containment phase ensures that:</p>
+<p>✅ The adversary is hindered in achieving their goals.</p>
+<p>✅ Future attacks are mitigated through intelligence-sharing.</p>
+<p>✅ Incident response teams have sufficient time to plan eradication and recovery.</p>
+<hr>
+<hr>
+<h2 id="45-eradication-remediation-and-recovery"><strong>4,5- Eradication, Remediation, and Recovery</strong></h2>
+<h4 id="1.-eradication">1. Eradication</h4>
+<p><strong>Key Considerations:</strong></p>
+<ul>
+<li><strong>Avoid Premature Eradication:</strong> Moving too quickly can alert the attacker, causing them to escalate their actions. Proper scoping is critical.</li>
+<li><strong>Prevent the &quot;Whack-a-Mole&quot; Cycle:</strong> Incomplete eradication can lead to reoccurring issues, making it seem like progress when the problem just shifts.</li>
+</ul>
+<p><strong>Methods of Eradication:</strong></p>
+<ul>
+<li><strong>Automated Eradication:</strong> Useful for common threats, but ineffective against advanced, targeted attacks.</li>
+<li><strong>Complete System Rebuild:</strong> Guarantees a clean system but requires downtime and extensive restoration efforts.</li>
+<li><strong>Targeted System Cleanup:</strong> Used when downtime is not an option; requires intelligence-driven, precise execution.</li>
+</ul>
+<hr>
+<h4 id="2.-remediation"><strong>2. Remediation</strong></h4>
+<p><button class="image-button" data-src="../assets/images/incident-response-cycle-screenshot_2025-02-28_021703-77fdb96e.png" data-alt="Screenshot 2025-02-28 021703.png"><img src="../assets/images/incident-response-cycle-screenshot_2025-02-28_021703-77fdb96e.png" alt="Screenshot 2025-02-28 021703.png" loading="lazy"></button></p>
+<p><strong>Key Focus Areas:</strong></p>
+<ul>
+<li><strong>Network Segmentation:</strong> Limit unnecessary communication to reduce the attack surface.</li>
+<li><strong>Identity &amp; Access Management (IAM):</strong></li>
+<ul>
+<li>Restrict or disable compromised accounts.</li>
+<li>Enforce the principle of least privilege.</li>
+<li>Control access to highly privileged accounts (e.g., domain administrators).</li>
+</ul>
+<li><strong>Patch Management:</strong></li>
+<ul>
+<li>Address vulnerabilities that enabled the compromise.</li>
+<li>Implement a structured patching strategy across the organization.</li>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/incident-response-cycle-screenshot_2025-02-28_023904-5ede38b9.png" data-alt="Screenshot 2025-02-28 023904.png"><img src="../assets/images/incident-response-cycle-screenshot_2025-02-28_023904-5ede38b9.png" alt="Screenshot 2025-02-28 023904.png" loading="lazy"></button></p>
+<hr>
+<h4 id="3.-recovery"><strong>3. Recovery</strong></h4>
+<p><strong>Goals:</strong></p>
+<ul>
+<li>Safely restore systems to normal operations while ensuring security improvements hold.</li>
+</ul>
+<p><strong>Key Steps:</strong></p>
+<ul>
+<li><strong>Continuous Testing &amp; Monitoring:</strong></li>
+<ul>
+<li>Perform penetration tests and attack simulations to validate security measures.</li>
+</ul>
+<li><strong>Backups &amp; Restoration:</strong></li>
+<ul>
+<li>Maintain system backups and documentation for rapid recovery.</li>
+<li>Use automated setup scripts or cloud-based baseline images for efficiency.</li>
+</ul>
+<li><strong>Action Plan for Recovery:</strong></li>
+<ul>
+<li><strong>Near-Term:</strong> Address immediate, critical vulnerabilities.</li>
+<li><strong>Mid-Term:</strong> Implement structural security improvements.</li>
+<li><strong>Long-Term:</strong> Develop a continuous improvement strategy with regular testing and updates.</li>
+</ul>
+</ul>
+<hr>
+<hr>
+<h2 id="6-lessons-learned-post-incident-analysis"><strong>6- Lessons Learned: Post-Incident Analysis</strong></h2>
+<p>This phase of the Incident Response (IR) process is dedicated to <strong>analyzing findings</strong>, understanding what worked and what didn’t, and using that knowledge to strengthen future defenses. While it might not be the most action-driven part of IR, skipping it would mean missing valuable insights that could prevent similar incidents from happening again.</p>
+<p>Simply experiencing an incident isn't enough—<strong>growth comes from reflection and action</strong>. This stage ensures that every lesson is carefully examined and used to refine security strategies moving forward.</p>
+<hr>
+<h3 id="technical-overview"><strong>Technical Overview</strong></h3>
+<p>The <strong>Technical Overview</strong> compiles all key details about the incident, summarizing how the attack unfolded, how it was detected, and how it was neutralized. This document serves as a <strong>quick reference</strong> for security teams and helps improve future response efforts.</p>
+<h4 id="key-elements"><strong>Key Elements:</strong></h4>
+<ul>
+<li><strong>Incident Timeline:</strong> A structured breakdown of the attack from start to finish.</li>
+<li><strong>Exploited Vulnerabilities:</strong> The weaknesses or misconfigurations that allowed the breach.</li>
+<li><strong>Indicators of Compromise (IoCs):</strong> Any forensic evidence linked to the attack, such as malware signatures, suspicious IPs, or unusual system activity.</li>
+<li><strong>Containment and Eradication Actions:</strong> The steps taken to remove the threat and prevent reinfection.</li>
+<li><strong>Root Cause Identification:</strong> A detailed look at how the attacker gained access and what can be done to stop it from happening again.</li>
+<li><strong>Security Enhancements:</strong> Adjustments to policies, tools, or protocols that need to be implemented for better protection.</li>
+</ul>
+<p>This summary ensures that security teams have a <strong>clear, actionable roadmap</strong> to strengthen defenses against similar attacks in the future.</p>
+<hr>
+<h3 id="executive-summary"><strong>Executive Summary</strong></h3>
+<p>The <strong>Executive Summary</strong> is designed for leadership and business stakeholders, providing a <strong>non-technical overview</strong> of the incident’s impact and the steps taken to resolve it. It highlights the most critical aspects without delving into deep technical details.</p>
+<h4 id="key-sections"><strong>Key Sections:</strong></h4>
+<h4 id="1.-incident-impact"><strong>1. Incident Impact</strong></h4>
+<ul>
+<li><strong>Financial Losses:</strong></li>
+<ul>
+<li>Was there any monetary theft or fraud?</li>
+<li>Were operations disrupted, leading to lost revenue?</li>
+</ul>
+<li><strong>Data Breach:</strong></li>
+<ul>
+<li>Were sensitive customer or employee details exposed?</li>
+<li>Was confidential corporate information accessed or stolen?</li>
+</ul>
+<li><strong>Reputational and Compliance Risks:</strong></li>
+<ul>
+<li>Did the breach attract public or regulatory attention?</li>
+<li>Are there potential legal consequences or penalties?</li>
+<li>How does this impact trust with clients and stakeholders?</li>
+</ul>
+</ul>
+<h4 id="2.-root-cause-analysis"><strong>2. Root Cause Analysis</strong></h4>
+<ul>
+<li><strong>How did the attack occur?</strong> (Phishing, malware, misconfigurations, insider threats, etc.)</li>
+<li><strong>What security gaps contributed to it?</strong> (Lack of monitoring, outdated software, poor access controls, etc.)</li>
+<li><strong>Were there warning signs that could have been caught earlier?</strong></li>
+</ul>
+<h4 id="3.-response-actions-future-prevention"><strong>3. Response Actions &amp; Future Prevention</strong></h4>
+<ul>
+<li><strong>Immediate Fixes:</strong> What has already been done to mitigate the damage.</li>
+<li><strong>Mid-term Adjustments:</strong> Security patches, system updates, and policy changes.</li>
+<li><strong>Long-term Strategies:</strong></li>
+<ul>
+<li>Strengthening <strong>network security</strong> and implementing stricter access controls.</li>
+<li>Investing in <strong>advanced monitoring tools</strong> and automated threat detection.</li>
+<li>Enhancing <strong>incident response training</strong> and team readiness.</li>
+</ul>
+</ul>
+<hr>
+<h3 id="next-steps-for-long-term-security-improvement"><strong>Next Steps for Long-Term Security Improvement</strong></h3>
+<h4 id="1.-continuous-security-testing"><strong>1. Continuous Security Testing</strong></h4>
+<ul>
+<li>Regularly conduct <strong>penetration testing and red team exercises</strong> to identify vulnerabilities before attackers do.</li>
+<li>Organize <strong>tabletop simulations</strong> to refine incident response playbooks and ensure teams are prepared.</li>
+</ul>
+<h4 id="2.-employee-awareness-cyber-hygiene"><strong>2. Employee Awareness &amp; Cyber Hygiene</strong></h4>
+<ul>
+<li>Train employees on <strong>social engineering tactics</strong>, password security, and suspicious email recognition.</li>
+<li>Encourage a culture of <strong>early threat reporting</strong> to catch issues before they escalate.</li>
+</ul>
+<h4 id="3.-strengthening-security-policies"><strong>3. Strengthening Security Policies</strong></h4>
+<ul>
+<li>Apply <strong>Zero Trust principles</strong> to limit unauthorized access.</li>
+<li>Improve <strong>privileged access management</strong> to minimize insider threats.</li>
+<li>Enhance <strong>logging and real-time monitoring</strong> to detect suspicious activity faster.</li>
+</ul></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#incident-response-cycle">Incident Response Cycle</a><a href="#1-preparation-prevention-phase">1- Preparation &amp; Prevention Phase</a><a href="#core-program-elements">Core program elements</a><a href="#preventive-controls">Preventive controls</a><a href="#people-training-culture">People, training &amp; culture</a><a href="#automation-intelligence-metrics">Automation, intelligence &amp; metrics</a><a href="#2-identification-scoping-phase">2- Identification &amp; Scoping Phase</a><a href="#identification">Identification</a><a href="#scoping-tools-for-effective-response">Scoping Tools for Effective Response</a><a href="#iterative-feedback-loop-in-identification-scoping">Iterative Feedback Loop in Identification &amp; Scoping</a><a href="#3-threat-intel-containment">3- Threat Intel &amp; Containment</a><a href="#threat-intelligence-gathering">Threat Intelligence Gathering</a><a href="#ttps-understanding-the-adversary">TTPs: Understanding the Adversary</a><a href="#containment-strategies">Containment Strategies</a><a href="#1.-isolation-aggressive-approach">1. Isolation (Aggressive Approach)</a><a href="#2.-controlled-isolation-stealth-approach">2. Controlled Isolation (Stealth Approach)</a><a href="#threat-intelligence-platforms">Threat Intelligence Platforms</a><a href="#the-end-goal-of-containment">The End Goal of Containment</a><a href="#45-eradication-remediation-and-recovery">4,5- Eradication, Remediation, and Recovery</a><a href="#1.-eradication">1. Eradication</a><a href="#2.-remediation">2. Remediation</a><a href="#3.-recovery">3. Recovery</a><a href="#6-lessons-learned-post-incident-analysis">6- Lessons Learned: Post-Incident Analysis</a><a href="#technical-overview">Technical Overview</a><a href="#key-elements">Key Elements:</a><a href="#executive-summary">Executive Summary</a><a href="#key-sections">Key Sections:</a><a href="#1.-incident-impact">1. Incident Impact</a><a href="#2.-root-cause-analysis">2. Root Cause Analysis</a><a href="#3.-response-actions-future-prevention">3. Response Actions &amp; Future Prevention</a><a href="#next-steps-for-long-term-security-improvement">Next Steps for Long-Term Security Improvement</a><a href="#1.-continuous-security-testing">1. Continuous Security Testing</a><a href="#2.-employee-awareness-cyber-hygiene">2. Employee Awareness &amp; Cyber Hygiene</a><a href="#3.-strengthening-security-policies">3. Strengthening Security Policies</a></details>
+    </div>
+    
+    <footer class="pager"><a href="what-is-incident-response.html">← What is Incident Response</a><a href="threat-hunting-module.html">Threat Hunting module →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

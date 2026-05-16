@@ -1,0 +1,102 @@
+{
+  "id": "hunting persistence (mitre ta0003)/persistence via boot or logon autostart (t1547 009",
+  "title": "Persistence via Boot or Logon Autostart (T1547 009",
+  "slug": "persistence-via-boot-or-logon-autostart-t1547-009",
+  "relPath": "Hunting Persistence (MITRE TA0003)/Persistence via Boot or Logon Autostart (T1547 009.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1547",
+    "TA0003",
+    "T1547.009"
+  ],
+  "parentId": "hunting persistence (mitre ta0003)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "hunting persistence (mitre ta0003)",
+      "title": "Hunting Persistence (MITRE TA0003)",
+      "slug": "hunting-persistence-mitre-ta0003"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/persistence via boot or logon autostart (t1547 009",
+      "title": "Persistence via Boot or Logon Autostart (T1547 009",
+      "slug": "persistence-via-boot-or-logon-autostart-t1547-009"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Persistence via Boot or Logon Autostart (T1547.009)"
+    },
+    {
+      "level": 2,
+      "text": "How Attackers Use It"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 2,
+      "text": "Threat Hunting"
+    },
+    {
+      "level": 3,
+      "text": "Splunk Query"
+    },
+    {
+      "level": 3,
+      "text": "Additional Notes"
+    }
+  ],
+  "overview": "Persistence via Boot or Logon Autostart (T1547.009)",
+  "study": {
+    "overview": "Persistence via Boot or Logon Autostart (T1547.009)",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Persistence via Boot or Logon Autostart (T1547.009)",
+      "How Attackers Use It",
+      "Detection",
+      "Threat Hunting",
+      "Splunk Query",
+      "Additional Notes"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "powershell",
+        "code": "(index=windows (EventCode=12 OR EventCode=13) Registry_path=\"*\\\\Run\" OR Registry_path=\"*\\\\RunOnce\")\nOR (index=windows EventCode=4688 CommandLine=\"*\\\\Startup\\\\*\")\n| stats count by Computer, User, Registry_path, TargetObject, CommandLine"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "(index=windows (EventCode=12 OR EventCode=13) Registry_path=\"*\\\\Run\" OR Registry_path=\"*\\\\RunOnce\")\nOR (index=windows EventCode=4688 CommandLine=\"*\\\\Startup\\\\*\")\n| stats count by Computer, User, Registry_path, TargetObject, CommandLine"
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

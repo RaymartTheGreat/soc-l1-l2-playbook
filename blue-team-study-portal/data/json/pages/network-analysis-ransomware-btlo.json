@@ -1,0 +1,136 @@
+{
+  "id": "network analysis labs/network analysis - ransomware (btlo)",
+  "title": "Network Analysis - Ransomware (BTLO)",
+  "slug": "network-analysis-ransomware-btlo",
+  "relPath": "Network Analysis Labs/Network Analysis - Ransomware (BTLO).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/network analysis - ransomware (btlo)",
+      "title": "Network Analysis - Ransomware (BTLO)",
+      "slug": "network-analysis-ransomware-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Network Analysis - Ransomware (BTLO)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the operating system of the host from which the network traffic was captured?"
+    },
+    {
+      "level": 3,
+      "text": "32-bit Windows 7 Service Pack 1, build 7601"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the full URL from which the ransomware executable was downloaded?"
+    },
+    {
+      "level": 3,
+      "text": "http://10.0.2.15:8000/safecrypt.exe"
+    },
+    {
+      "level": 3,
+      "text": "3- Name the ransomware executable file?"
+    },
+    {
+      "level": 3,
+      "text": "safecrypt.exe"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the MD5 hash of the ransomware?"
+    },
+    {
+      "level": 3,
+      "text": "4a1d88603b1007825a9c6b36d1e5de44"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the name of the ransomware?"
+    },
+    {
+      "level": 3,
+      "text": "Teslacrypt"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the encryption algorithm used by the ransomware, according to the ransom note?"
+    },
+    {
+      "level": 3,
+      "text": "RSA-4096"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the domain beginning with ‘d’ that is related to ransomware traffic?"
+    },
+    {
+      "level": 3,
+      "text": "dunyamuzelerimuzesi.com"
+    },
+    {
+      "level": 3,
+      "text": "8- Decrypt the Tender document and submit the flag"
+    },
+    {
+      "level": 3,
+      "text": "BTLO-T3nd3r-Fl@g"
+    }
+  ],
+  "overview": "ABC Industries worked day and night for a month to prepare a tender document for a prestigious project that would secure the company’s financial future. The company was hit by ransomware, believed to be conducted by a competitor, and the final version of the tender document was encrypted. Right now they are in need of an expert who can decrypt this critical ",
+  "study": {
+    "overview": "ABC Industries worked day and night for a month to prepare a tender document for a prestigious project that would secure the company’s financial future. The company was hit by ransomware, believed to be conducted by a competitor, and the final version of the tender document was encrypted. Right now they are in need of an expert who can decrypt this critical ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Network Analysis - Ransomware (BTLO)",
+      "Scenario",
+      "1- What is the operating system of the host from which the network traffic was captured?",
+      "32-bit Windows 7 Service Pack 1, build 7601",
+      "2- What is the full URL from which the ransomware executable was downloaded?",
+      "http://10.0.2.15:8000/safecrypt.exe",
+      "3- Name the ransomware executable file?",
+      "safecrypt.exe",
+      "4- What is the MD5 hash of the ransomware?",
+      "4a1d88603b1007825a9c6b36d1e5de44",
+      "5- What is the name of the ransomware?",
+      "Teslacrypt"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

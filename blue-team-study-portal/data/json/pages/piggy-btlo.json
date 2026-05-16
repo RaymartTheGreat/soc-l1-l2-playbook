@@ -1,0 +1,152 @@
+{
+  "id": "network analysis labs/piggy (btlo)",
+  "title": "Piggy (BTLO)",
+  "slug": "piggy-btlo",
+  "relPath": "Network Analysis Labs/Piggy (BTLO).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Phishing",
+    "Network",
+    "Detection",
+    "OSINT",
+    "C2"
+  ],
+  "mitre": [
+    "T1496",
+    "T1071.004"
+  ],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/piggy (btlo)",
+      "title": "Piggy (BTLO)",
+      "slug": "piggy-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Piggy (BTLO)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "PCAP One) What remote IP address was used to transfer data over SSH? (Format: X.X.X.X)"
+    },
+    {
+      "level": 3,
+      "text": "35.211.33.16"
+    },
+    {
+      "level": 3,
+      "text": "PCAP One) How much data was transferred in total? (Format: XXXX M)"
+    },
+    {
+      "level": 3,
+      "text": "1131M"
+    },
+    {
+      "level": 3,
+      "text": "PCAP Two) Review the IPs the infected system has communicated with. Perform OSINT searches to identify the malware family tied to this infrastructure (Format: MalwareName)"
+    },
+    {
+      "level": 3,
+      "text": "trickbot"
+    },
+    {
+      "level": 3,
+      "text": "PCAP Three) Review the two IPs that are communicating on an unusual port. What are the two ASN numbers these IPs belong to? (Format: ASN, ASN)"
+    },
+    {
+      "level": 3,
+      "text": "63949, 14061"
+    },
+    {
+      "level": 3,
+      "text": "PCAP Three) Perform OSINT checks. What malware category have these IPs been attributed to historically? (Format: MalwareType)"
+    },
+    {
+      "level": 3,
+      "text": "crypto-mining malware"
+    },
+    {
+      "level": 3,
+      "text": "PCAP Three) What ATT&CK technique is most closely related to this activity? (Format: TXXXX)"
+    },
+    {
+      "level": 3,
+      "text": "T1496"
+    },
+    {
+      "level": 3,
+      "text": "PCAP Four) Go to View Time Display Format Seconds Since Beginning of Capture. How long into the capture was the first TXT record query made? (Use the default time, which is seconds since the packet capture started) (Format: X.xxxxxx)"
+    },
+    {
+      "level": 3,
+      "text": "8.527712"
+    },
+    {
+      "level": 3,
+      "text": "PCAP Four) Go to View Time Display Format UTC Date and Time of Day. What is the date and timestamp? (Format: YYYY-MM-DD HH:MM:SS)"
+    },
+    {
+      "level": 3,
+      "text": "2024-05-24 10:08:50"
+    },
+    {
+      "level": 3,
+      "text": "PCAP Four) What is the ATT&CK subtechnique relating to this activity? (Format: TXXXX.xxx)"
+    },
+    {
+      "level": 3,
+      "text": "T1071.004"
+    }
+  ],
+  "overview": "Investigate some simple network activity in Wireshark! You can launch Wireshark in a terminal with the command 'wireshark'. The questions are mapped to the four PCAPs on the Desktop.",
+  "study": {
+    "overview": "Investigate some simple network activity in Wireshark! You can launch Wireshark in a terminal with the command 'wireshark'. The questions are mapped to the four PCAPs on the Desktop.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Piggy (BTLO)",
+      "Scenario",
+      "PCAP One) What remote IP address was used to transfer data over SSH? (Format: X.X.X.X)",
+      "35.211.33.16",
+      "PCAP One) How much data was transferred in total? (Format: XXXX M)",
+      "1131M",
+      "PCAP Two) Review the IPs the infected system has communicated with. Perform OSINT searches to identify the malware family tied to this infrastructure (Format: MalwareName)",
+      "trickbot",
+      "PCAP Three) Review the two IPs that are communicating on an unusual port. What are the two ASN numbers these IPs belong to? (Format: ASN, ASN)",
+      "63949, 14061",
+      "PCAP Three) Perform OSINT checks. What malware category have these IPs been attributed to historically? (Format: MalwareType)",
+      "crypto-mining malware"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

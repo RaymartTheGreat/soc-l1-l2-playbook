@@ -1,0 +1,91 @@
+{
+  "id": "frameworks/cyber kill chain/stage 7 actions on objectives",
+  "title": "Stage 7 Actions on Objectives",
+  "slug": "stage-7-actions-on-objectives",
+  "relPath": "Frameworks/Cyber Kill Chain/Stage 7 Actions on Objectives.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "EDR",
+    "PowerShell",
+    "Network",
+    "Web",
+    "Memory",
+    "Detection",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "frameworks/cyber kill chain",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "frameworks/cyber kill chain"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "frameworks",
+      "title": "Frameworks",
+      "slug": "frameworks"
+    },
+    {
+      "id": "frameworks/cyber kill chain",
+      "title": "Cyber Kill Chain",
+      "slug": "cyber-kill-chain"
+    },
+    {
+      "id": "frameworks/cyber kill chain/stage 7 actions on objectives",
+      "title": "Stage 7 Actions on Objectives",
+      "slug": "stage-7-actions-on-objectives"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Stage 7: Actions on Objectives"
+    },
+    {
+      "level": 3,
+      "text": "Attacker Actions & Perspective"
+    },
+    {
+      "level": 3,
+      "text": "Attacker Evasion Techniques"
+    },
+    {
+      "level": 3,
+      "text": "Defensive Measures"
+    },
+    {
+      "level": 3,
+      "text": "Summary Table"
+    }
+  ],
+  "overview": "With C2 access established, the attacker begins executing their original intent—whether it’s data theft, operational disruption, sabotage, or espionage. This stage reflects the endgame of the attack, where the breach becomes consequential.",
+  "study": {
+    "overview": "With C2 access established, the attacker begins executing their original intent—whether it’s data theft, operational disruption, sabotage, or espionage. This stage reflects the endgame of the attack, where the breach becomes consequential.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Stage 7: Actions on Objectives",
+      "Attacker Actions & Perspective",
+      "Attacker Evasion Techniques",
+      "Defensive Measures",
+      "Summary Table"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

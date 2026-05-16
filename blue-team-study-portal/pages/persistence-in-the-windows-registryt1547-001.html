@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Persistence in the Windows Registry(T1547 001) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="hunting-persistence-mitre-ta0003.html">Hunting Persistence (MITRE TA0003)</a><span>/</span><span>Persistence in the Windows Registry(T1547 001)</span></div>
+      <h1>Persistence in the Windows Registry(T1547 001)</h1>
+      <p>The Windows Registry functions similarly to a file system. Understanding its structure helps in identifying potential persistence mechanisms.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Detection</span><span class="tag">Persistence</span><span class="tag mitre">T1547</span><span class="tag mitre">TA0003</span><span class="tag mitre">T1547.001</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Hunting Persistence (MITRE TA0003)</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>L2</em></a>
+      <b>11</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="active" href="persistence-in-the-windows-registryt1547-001.html"><span>Persistence in the Windows Registry(T1547 001)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="persistence-with-windows-services-t1543-003.html"><span>Persistence with Windows Services (T1543 003)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="bits-jobs-persistence-t1197.html"><span>BITS Jobs Persistence (T1197)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="persistence-via-account-manipulation-t1098.html"><span>Persistence via Account Manipulation (T1098)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="rid-hijacking-t1574.html"><span>RID Hijacking (T1574)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="persistence-using-vba-macros-and-com-t1566-001-t.html"><span>Persistence Using VBA Macros and COM (T1566 001, T</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="persistence-via-com-hijacking.html"><span>Persistence via COM Hijacking</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="persistence-via-boot-or-logon-autostart-t1547-009.html"><span>Persistence via Boot or Logon Autostart (T1547 009</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="persistence-via-dll-hijacking-search-order-hijack.html"><span>Persistence via DLL Hijacking (Search Order Hijack</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="persistence-via-lnk-shortcut-file-abuse-t1547-0.html"><span>Persistence via LNK (Shortcut) File Abuse (T1547 0</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="lnk-files-shortcut-files.html"><span>LNK Files (Shortcut Files)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="persistence-with-windows-scheduled-tasks-t1053-00.html"><span>Persistence with Windows Scheduled Tasks (T1053 00</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="persistence-with-wmi-event-subscription-t1546-003.html"><span>Persistence with WMI Event Subscription (T1546 003</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>The Windows Registry functions similarly to a file system. Understanding its structure helps in identifying potential persistence mechanisms.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Persistence in the Windows Registry(T1547.001)</li><li>Registry Structure &amp; Terminology</li><li>Registry Run Keys &amp; Malware Persistence</li><li>Important Registry Hives</li><li>Common Run Keys Used for Persistence</li><li>Example of Malware Persistence in Registry</li><li>Detecting Registry-Based Persistence</li><li>Detecting Abnormal Access</li><li>Methods of Registry-Based Persistence</li><li>1- Overriding an Existing Key</li><li>2- Creating a New Key for Persistence</li><li>3- Adding an Item to a List</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+Malware -&gt; C:\Windows\Temp\Malware.exe</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>Since registry modification auditing is not enabled by default, administrators must configure System Access Control Lists (SACLs) to monitor specific registry keys.</li><li>What is a Handle?</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="persistence-in-the-windows-registryt1547.001">Persistence in the Windows Registry(T1547.001)</h2>
+<p><a class="note-link" href="https://attack.mitre.org/techniques/T1547/001/"><strong>MITRE ATT&amp;amp;CK</strong></a></p>
+<h3 id="registry-structure-terminology"><strong>Registry Structure &amp; Terminology</strong></h3>
+<p>The Windows Registry functions similarly to a file system. Understanding its structure helps in identifying potential persistence mechanisms.</p>
+<ul>
+<li><strong>Keys &amp; Sub-Keys</strong> → These act like folders and subfolders.</li>
+<li><strong>Values</strong> → These are like files inside a folder, containing configuration data.</li>
+<li><strong>Setting a Value</strong> → This is equivalent to adding content to a file.</li>
+</ul>
+<p>Lists in the registry appear in three forms:</p>
+<ol>
+<li><strong>Lists of Sub-Keys</strong> – Similar to a directory containing multiple subdirectories (e.g., a list of port monitors).</li>
+<li><strong>A Key with Multiple Values</strong> – Functions like a folder containing multiple files (e.g., Run Keys).</li>
+<li><strong>A Multi-Line Value</strong> – Each line represents an item (e.g., authentication packages for LSA).</li>
+</ol>
+<p><button class="image-button" data-src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-screenshot_2025-02-11_164326-e4a4ddaf.png" data-alt="Screenshot 2025-02-11 164326.png"><img src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-screenshot_2025-02-11_164326-e4a4ddaf.png" alt="Screenshot 2025-02-11 164326.png" loading="lazy"></button></p>
+<p><strong>  Registry terminology example</strong></p>
+<p><button class="image-button" data-src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-screenshot_2025-02-11_164410-abc84353.png" data-alt="Screenshot 2025-02-11 164410.png"><img src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-screenshot_2025-02-11_164410-abc84353.png" alt="Screenshot 2025-02-11 164410.png" loading="lazy"></button></p>
+<p><strong>List of values in the Run Key</strong></p>
+<hr>
+<h3 id="registry-run-keys-malware-persistence"><strong>Registry Run Keys &amp; Malware Persistence</strong></h3>
+<p><button class="image-button" data-src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-image-e33e4d7f.png" data-alt="image.png"><img src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-image-e33e4d7f.png" alt="image.png" loading="lazy"></button></p>
+<p>Windows Run Keys allow programs to start automatically when a user logs in. Attackers leverage these keys to execute malware upon system startup.</p>
+<h4 id="important-registry-hives"><strong>Important Registry Hives</strong></h4>
+<p>The registry consists of several &quot;hives&quot; major sections storing system and user data. The two most important for persistence are:</p>
+<ul>
+<li><strong>HKEY_CURRENT_USER (HKCU)</strong> → Stores user-specific settings.</li>
+<li><strong>HKEY_LOCAL_MACHINE (HKLM)</strong> → Contains system-wide settings affecting all users.</li>
+</ul>
+<h4 id="common-run-keys-used-for-persistence"><strong>Common Run Keys Used for Persistence</strong></h4>
+<p>Attackers modify or create values in these registry keys to maintain persistence:</p>
+<ul>
+<li><code>HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run</code></li>
+<li><code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run</code></li>
+</ul>
+<p>By adding a new value under these keys, malware ensures that it executes whenever a user logs in. This can be done using:</p>
+<ul>
+<li>The Windows Registry Editor (GUI)</li>
+<li>Command-line tools like <code>reg.exe</code></li>
+</ul>
+<h4 id="example-of-malware-persistence-in-registry"><strong>Example of Malware Persistence in Registry</strong></h4>
+<p>An attacker might add a registry entry like this:</p>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+Malware -&gt; C:\Windows\Temp\Malware.exe</code></pre></div>
+<p>This ensures that <strong>Malware.exe</strong> executes every time the user logs in.</p>
+<hr>
+<h3 id="detecting-registry-based-persistence"><strong>Detecting Registry-Based Persistence</strong></h3>
+<p>Windows provides auditing features to track registry modifications. The <strong>Security Event Log</strong> records certain event IDs that indicate registry access or changes.</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Event ID</strong></th><th><strong>Event Name</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>4656</td><td>Handle to an object requested</td><td>Indicates access to a registry key</td></tr><tr><td>4657</td><td>A registry value was modified</td><td>Tracks modifications to registry values</td></tr><tr><td>4658</td><td>Handle to an object was closed</td><td>Logs when a registry key is closed</td></tr><tr><td>4660</td><td>An object was deleted</td><td>Detects registry deletions</td></tr><tr><td>4663</td><td>An attempt was made to access an object</td><td>Monitors access attempts</td></tr></tbody></table></div>
+<p>Among these, <strong>Event ID 4657</strong> is particularly useful in tracking persistence mechanisms because it directly logs registry modifications.</p>
+<h4 id="detecting-abnormal-access"><strong>Detecting Abnormal Access</strong></h4>
+<p>look for unusual access patterns, such as:</p>
+<ul>
+<li><strong>PowerShell or CMD modifying registry run keys</strong></li>
+<li><strong>Registry modifications outside of normal working hours</strong></li>
+<li><strong>Unauthorized accounts making registry changes</strong></li>
+<li>Correlation with process creation (Event ID 4688) or registry success/failure (Event ID 4663)</li>
+</ul>
+<blockquote>Since <strong>registry modification auditing is not enabled by default</strong>, administrators must configure <strong>System Access Control Lists (SACLs)</strong> to monitor specific registry keys.</blockquote>
+<blockquote></blockquote>
+<hr>
+<h3 id="methods-of-registry-based-persistence"><strong>Methods of Registry-Based Persistence</strong></h3>
+<p>Attackers often abuse the Windows Registry to maintain persistence. They can override existing keys, create new keys, or append entries to existing lists. Monitoring these changes is critical for threat hunting.</p>
+<h4 id="1-overriding-an-existing-key">1- <strong>Overriding an Existing Key</strong></h4>
+<p>Attackers can hijack a registry key that Windows relies on to launch system processes.</p>
+<p>🔹 <strong>Example: UserInit Key Manipulation</strong></p>
+<ul>
+<li><strong>Path:</strong> <code>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\UserInit</code></li>
+<li><strong>Default Value:</strong> <code>C:\Windows\system32\userinit.exe</code></li>
+<li>Malware can modify this key to launch itself instead of or in addition to <code>userinit.exe</code> at login.</li>
+</ul>
+<p>🔹 <strong>Detection:</strong></p>
+<ul>
+<li>Use <strong>Procmon (Process Monitor)</strong> to track registry modifications targeting keys ending in <code>.exe</code>.</li>
+<li>Correlate registry changes with unexpected process launches at login.</li>
+</ul>
+<p>🔹 <strong>Attacker Trade-Offs:</strong></p>
+<ul>
+<li>Simple to implement, but abnormal behavior may trigger alerts or be noticed by users.</li>
+</ul>
+<hr>
+<h4 id="2-creating-a-new-key-for-persistence">2- <strong>Creating a New Key for Persistence</strong></h4>
+<p>Instead of modifying existing keys, attackers can create new keys that legitimate applications load.</p>
+<p>🔹 <strong>Example: Hidden Microsoft Office Key</strong></p>
+<ul>
+<li><strong>Path:</strong> <code>HKLM\Software\Microsoft\Office\Test\Special\Perf</code></li>
+<li>Setting the default value to a malicious <strong>DLL path</strong> ensures Office loads the malware whenever it starts.</li>
+</ul>
+<p>🔹 <strong>Detection:</strong></p>
+<ul>
+<li>Use <strong>Procmon</strong> to identify registry keys checked by applications but not present by default.</li>
+<li>Monitor for newly created keys under application paths with unusual executable or DLL references.</li>
+</ul>
+<p>🔹 <strong>Attacker Trade-Offs:</strong></p>
+<ul>
+<li>Malware executes within a legitimate process, increasing stealth.</li>
+<li>Detection is harder but possible if baseline key inventory or application whitelists are monitored.</li>
+</ul>
+<hr>
+<h4 id="3-adding-an-item-to-a-list">3- <strong>Adding an Item to a List</strong></h4>
+<p>Some registry keys store lists rather than single values. Attackers can append malicious entries instead of replacing existing values.</p>
+<p>🔹 <strong>Example: LSA Authentication Packages</strong></p>
+<ul>
+<li><strong>Path:</strong> <code>HKLM\SYSTEM\CurrentControlSet\Control\Lsa\Authentication Packages</code></li>
+<li>Contains a list of DLLs loaded during authentication.</li>
+<li>Adding a malicious DLL ensures it loads with system authentication processes.</li>
+</ul>
+<p>🔹 <strong>Detection:</strong></p>
+<ul>
+<li>Monitor for unusual additions to registry lists.</li>
+<li>Use <strong>Procmon</strong> to track registry enumeration events and compare against baseline list entries.</li>
+<li>Correlate list modifications with process creation events of loaded DLLs.</li>
+</ul>
+<p>🔹 <strong>Attacker Trade-Offs:</strong></p>
+<ul>
+<li>More stealthy than overwriting keys.</li>
+<li>Malicious DLLs may still be detected by integrity monitoring or security baselines.</li>
+</ul>
+<hr>
+<h3 id="additional-important-registry-based-persistence-techniques"><strong>Additional Important Registry-Based Persistence Techniques</strong></h3>
+<p>🔹 <strong>Image File Execution Options (IFEO) Hijacking</strong></p>
+<ul>
+<li>The <strong>IFEO registry keys</strong> allow debugging of applications.</li>
+<li>Malware can modify these to launch a malicious debugger instead of the intended application.</li>
+</ul>
+<p>🔹 <strong>AppInit DLLs</strong></p>
+<ul>
+<li>Windows can load <strong>DLLs from the registry</strong> into all user-mode processes.</li>
+<li>Malware can exploit this by inserting a DLL path into the <strong>AppInit_DLLs</strong> key.</li>
+</ul>
+<p>🔹 <strong>Winlogon Registry Keys</strong></p>
+<ul>
+<li>The <strong>Winlogon registry keys</strong> control login behavior.</li>
+<li>Modifying the <strong>Shell</strong> or <strong>Userinit</strong> values can make malware persist through reboots.</li>
+</ul>
+<p>🔹 <strong>COM Hijacking</strong></p>
+<ul>
+<li>Malware can modify <strong>Component Object Model (COM)</strong> registry keys to hijack legitimate processes.</li>
+<li><strong>Example:</strong> Changing the CLSID/ProgID of a system component to point to malicious code.</li>
+</ul>
+<hr>
+<h4 id="tracking-in-windows-event-logs"><strong>Tracking in Windows Event Logs</strong></h4>
+<p><button class="image-button" data-src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-screenshot_2025-02-11_180454-f8d2d0f1.png" data-alt="Screenshot 2025-02-11 180454.png"><img src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-screenshot_2025-02-11_180454-f8d2d0f1.png" alt="Screenshot 2025-02-11 180454.png" loading="lazy"></button></p>
+<p>Event ID 4656 logs when a process requests access to an object, such as a <strong>registry key</strong>, file, or SAM. It contains four key sections:</p>
+<ol>
+<li><strong>Subject:</strong> Identifies the user performing the action.</li>
+<li><strong>Object:</strong> Specifies the accessed resource.</li>
+<ul>
+<li><strong>Object Server:</strong> Always &quot;Security.&quot;</li>
+<li><strong>Object Type:</strong> Indicates if the object is a <strong>file, registry key, or SAM</strong> (registry keys are important for persistence).</li>
+<li><strong>Object Name:</strong> Displays the full path of the accessed registry key.</li>
+</ul>
+<li><strong>Process Information:</strong> Shows the process that requested access (e.g., <code>reg.exe</code>, <code>powershell.exe</code>).</li>
+<li><strong>Access Request Information:</strong> Lists the permissions requested (less relevant for investigations).</li>
+</ol>
+<blockquote><strong>What is a Handle?</strong></blockquote>
+<p>A <strong>handle</strong> is a reference (or pointer) to a system resource, such as a file, registry key, process, or thread. In Windows, when a program or user wants to interact with a resource, it must first <strong>request a handle</strong> from the operating system.</p>
+<blockquote></blockquote>
+<hr>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>The Windows Registry is a critical vector for malware persistence, providing attackers with multiple avenues to maintain control over a system. By modifying existing keys, creating new keys, or appending entries to lists, adversaries can ensure their code executes automatically, often blending with legitimate system processes.</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#persistence-in-the-windows-registryt1547.001">Persistence in the Windows Registry(T1547.001)</a><a href="#registry-structure-terminology">Registry Structure &amp; Terminology</a><a href="#registry-run-keys-malware-persistence">Registry Run Keys &amp; Malware Persistence</a><a href="#important-registry-hives">Important Registry Hives</a><a href="#common-run-keys-used-for-persistence">Common Run Keys Used for Persistence</a><a href="#example-of-malware-persistence-in-registry">Example of Malware Persistence in Registry</a><a href="#detecting-registry-based-persistence">Detecting Registry-Based Persistence</a><a href="#detecting-abnormal-access">Detecting Abnormal Access</a><a href="#methods-of-registry-based-persistence">Methods of Registry-Based Persistence</a><a href="#1-overriding-an-existing-key">1- Overriding an Existing Key</a><a href="#2-creating-a-new-key-for-persistence">2- Creating a New Key for Persistence</a><a href="#3-adding-an-item-to-a-list">3- Adding an Item to a List</a><a href="#additional-important-registry-based-persistence-techniques">Additional Important Registry-Based Persistence Techniques</a><a href="#tracking-in-windows-event-logs">Tracking in Windows Event Logs</a><a href="#conclusion">Conclusion</a></details>
+    </div>
+    
+    <footer class="pager"><a href="hunting-persistence-mitre-ta0003.html">← Hunting Persistence (MITRE TA0003)</a><a href="persistence-with-windows-services-t1543-003.html">Persistence with Windows Services (T1543 003) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

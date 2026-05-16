@@ -1,0 +1,115 @@
+{
+  "id": "windows forensics/windows applications forensics/manual inspection ii services",
+  "title": "Manual Inspection II Services",
+  "slug": "manual-inspection-ii-services",
+  "relPath": "Windows Forensics/Windows Applications Forensics/Manual Inspection II Services.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "DFIR",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/windows applications forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/windows applications forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics",
+      "title": "Windows Applications Forensics",
+      "slug": "windows-applications-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics/manual inspection ii services",
+      "title": "Manual Inspection II Services",
+      "slug": "manual-inspection-ii-services"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Manual Inspection II: Services"
+    },
+    {
+      "level": 1,
+      "text": "Breaking Down the Services"
+    },
+    {
+      "level": 1,
+      "text": "Utilising Command Line Utilities"
+    }
+  ],
+  "overview": "Again, Windows Event Log analysis only applies when the machine is configured to log all service creation events. Given this prerequisite, we will proceed with the discussion of analysing services without relying on Windows Event Logs. First, let's leverage the GUI version of Windows Services by using CTRL+R (or access the Run dialogue box from the taskbar) ",
+  "study": {
+    "overview": "Again, Windows Event Log analysis only applies when the machine is configured to log all service creation events. Given this prerequisite, we will proceed with the discussion of analysing services without relying on Windows Event Logs. First, let's leverage the GUI version of Windows Services by using CTRL+R (or access the Run dialogue box from the taskbar) ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Manual Inspection II: Services",
+      "Breaking Down the Services",
+      "Utilising Command Line Utilities"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> Get-Service | Where-Object {$_.Status -eq \"Running\" -and $_.StartType -eq \"Automatic\"}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator>\n$services = Get-Service | Where-Object {$_.Status -eq \"Running\" -and $_.StartType -eq \"Automatic\"}\n\nforeach ($service in $services) {\n    $serviceName = $service.Name\n    $serviceDisplayName = $service.DisplayName\n    $serviceStatus = $service.Status\n    $serviceWMI = (Get-WmiObject Win32_Service | Where-Object { $_.Name -eq $serviceName })\n    $servicePath = $serviceWMI.PathName\n    $serviceUser = $serviceWMI.StartName\n\n    Write-Host \"Service Name: $serviceName\"\n    Write-Host \"Display Name: $serviceDisplayName\"\n    Write-Host \"Service Status: $serviceStatus\"\n    Write-Host \"Executable Path: $servicePath\"\n    Write-Host \"User Context: $serviceUser\"\n    Write-Host \"\"\n}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> Import-Module C:\\Tools\\Get-RegWriteTime.ps1;\n$services = Get-Service | Where-Object {$_.Status -eq \"Running\" -and $_.StartType -eq \"Automatic\"}\n\nforeach ($service in $services) {\n    $serviceName = $service.Name\n    $serviceWMI = (Get-WmiObject Win32_Service | Where-Object { $_.Name -eq $serviceName })\n    $serviceDisplayName = $service.DisplayName\n    $serviceStatus = $service.Status\n    $servicePath = $serviceWMI.PathName\n    $serviceUser = $serviceWMI.StartName\n    $serviceLastWriteTime = Get-Item HKLM:\\SYSTEM\\CurrentControlSet\\Services\\$serviceName | Get-RegWriteTime | Select LastWriteTime\n\n    Write-Host \"Service Name: $serviceName\"\n    Write-Host \"Display Name: $serviceDisplayName\"\n    Write-Host \"Service Status: $serviceStatus\"\n    Write-Host \"Executable Path: $servicePath\"\n    Write-Host \"User Context: $serviceUser\"\n    Write-Host \"Last Write Time: $serviceLastWriteTime\"\n    Write-Host \"\"\n}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> Import-Module C:\\Tools\\Get-RegWriteTime.ps1;\n$services = Get-Service | Where-Object {$_.Status -eq \"Stopped\" -and $_.StartType -eq \"Automatic\"}\n\nforeach ($service in $services) {\n    $serviceName = $service.Name\n    $serviceWMI = (Get-WmiObject Win32_Service | Where-Object { $_.Name -eq $serviceName })\n    $serviceDisplayName = $service.DisplayName\n    $serviceStatus = $service.Status\n    $servicePath = $serviceWMI.PathName\n    $serviceUser = $serviceWMI.StartName\n    $serviceLastWriteTime = Get-Item HKLM:\\SYSTEM\\CurrentControlSet\\Services\\$serviceName | Get-RegWriteTime | Select LastWriteTime\n\n    Write-Host \"Service Name: $serviceName\"\n    Write-Host \"Display Name: $serviceDisplayName\"\n    Write-Host \"Service Status: $serviceStatus\"\n    Write-Host \"Executable Path: $servicePath\"\n    Write-Host \"User Context: $serviceUser\"\n    Write-Host \"Last Write Time: $serviceLastWriteTime\"\n    Write-Host \"\"\n}"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> Get-Service | Where-Object {$_.Status -eq \"Running\" -and $_.StartType -eq \"Automatic\"}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator>\n$services = Get-Service | Where-Object {$_.Status -eq \"Running\" -and $_.StartType -eq \"Automatic\"}\n\nforeach ($service in $services) {\n    $serviceName = $service.Name\n    $serviceDisplayName = $service.DisplayName\n    $serviceStatus = $service.Status\n    $serviceWMI = (Get-WmiObject Win32_Service | Where-Object { $_.Name -eq $serviceName })\n    $servicePath = $serviceWMI.PathName\n    $serviceUser = $serviceWMI.StartName\n\n    Write-Host \"Service Name: $serviceName\"\n    Write-Host \"Display Name: $serviceDisplayName\"\n    Write-Host \"Service Status: $serviceStatus\"\n    Write-Host \"Executable Path: $servicePath\"\n    Write-Host \"User Context: $serviceUser\"\n    Write-Host \"\"\n}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> powershell.exe -ep bypass"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> Import-Module C:\\Tools\\Get-RegWriteTime.ps1;\n$services = Get-Service | Where-Object {$_.Status -eq \"Running\" -and $_.StartType -eq \"Automatic\"}\n\nforeach ($service in $services) {\n    $serviceName = $service.Name\n    $serviceWMI = (Get-WmiObject Win32_Service | Where-Object { $_.Name -eq $serviceName })\n    $serviceDisplayName = $service.DisplayName\n    $serviceStatus = $service.Status\n    $servicePath = $serviceWMI.PathName\n    $serviceUser = $serviceWMI.StartName\n    $serviceLastWriteTime = Get-Item HKLM:\\SYSTEM\\CurrentControlSet\\Services\\$serviceName | Get-RegWriteTime | Select LastWriteTime\n\n    Write-Host \"Service Name: $serviceName\"\n    Write-Host \"Display Name: $serviceDisplayName\"\n    Write-Host \"Service Status: $serviceStatus\"\n    Write-Host \"Executable Path: $servicePath\"\n    Write-Host \"User Context: $serviceUser\"\n    Write-Host \"Last Write Time: $serviceLastWriteTime\"\n    Write-Host \"\"\n}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> Import-Module C:\\Tools\\Get-RegWriteTime.ps1;\n$services = Get-Service | Where-Object {$_.Status -eq \"Stopped\" -and $_.StartType -eq \"Automatic\"}\n\nforeach ($service in $services) {\n    $serviceName = $service.Name\n    $serviceWMI = (Get-WmiObject Win32_Service | Where-Object { $_.Name -eq $serviceName })\n    $serviceDisplayName = $service.DisplayName\n    $serviceStatus = $service.Status\n    $servicePath = $serviceWMI.PathName\n    $serviceUser = $serviceWMI.StartName\n    $serviceLastWriteTime = Get-Item HKLM:\\SYSTEM\\CurrentControlSet\\Services\\$serviceName | Get-RegWriteTime | Select LastWriteTime\n\n    Write-Host \"Service Name: $serviceName\"\n    Write-Host \"Display Name: $serviceDisplayName\"\n    Write-Host \"Service Status: $serviceStatus\"\n    Write-Host \"Executable Path: $servicePath\"\n    Write-Host \"User Context: $serviceUser\"\n    Write-Host \"Last Write Time: $serviceLastWriteTime\"\n    Write-Host \"\"\n}"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

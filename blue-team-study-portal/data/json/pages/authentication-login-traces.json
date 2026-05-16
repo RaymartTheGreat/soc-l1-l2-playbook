@@ -1,0 +1,114 @@
+{
+  "id": "linux artifacts & forensic evidence collection/authentication & login traces",
+  "title": "Authentication & Login Traces",
+  "slug": "authentication-login-traces",
+  "relPath": "Linux Artifacts & Forensic Evidence Collection/Authentication & Login Traces.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Linux",
+    "DFIR",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "linux artifacts & forensic evidence collection",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "linux artifacts & forensic evidence collection"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "linux artifacts & forensic evidence collection",
+      "title": "Linux Artifacts & Forensic Evidence Collection",
+      "slug": "linux-artifacts-forensic-evidence-collection"
+    },
+    {
+      "id": "linux artifacts & forensic evidence collection/authentication & login traces",
+      "title": "Authentication & Login Traces",
+      "slug": "authentication-login-traces"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Authentication & Login Traces"
+    },
+    {
+      "level": 2,
+      "text": "Authentication Logs"
+    },
+    {
+      "level": 3,
+      "text": "/var/log/auth.log"
+    },
+    {
+      "level": 2,
+      "text": "Failed Login Attempts"
+    },
+    {
+      "level": 3,
+      "text": "/var/log/btmp"
+    },
+    {
+      "level": 2,
+      "text": "Login Session History"
+    },
+    {
+      "level": 3,
+      "text": "/var/log/wtmp"
+    },
+    {
+      "level": 2,
+      "text": "Binary Log Parsing with last"
+    }
+  ],
+  "overview": "This log records system authentication events, including:",
+  "study": {
+    "overview": "This log records system authentication events, including:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Authentication & Login Traces",
+      "Authentication Logs",
+      "/var/log/auth.log",
+      "Failed Login Attempts",
+      "/var/log/btmp",
+      "Login Session History",
+      "/var/log/wtmp",
+      "Binary Log Parsing with last"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "cat /var/log/auth.log | tail"
+      },
+      {
+        "language": "bash",
+        "code": "grep -i COMMAND /var/log/auth.log"
+      },
+      {
+        "language": "bash",
+        "code": "lastb"
+      },
+      {
+        "language": "bash",
+        "code": "last -f /var/log/btmp"
+      },
+      {
+        "language": "bash",
+        "code": "last -f /var/log/wtmp"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

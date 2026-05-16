@@ -1,0 +1,98 @@
+{
+  "id": "threat hunting labs (siem)/paloaltorce lab (cyberdefenders)",
+  "title": "PaloAltoRCE Lab (CyberDefenders)",
+  "slug": "paloaltorce-lab-cyberdefenders",
+  "relPath": "Threat hunting Labs (SIEM)/PaloAltoRCE Lab (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "Linux",
+    "Network",
+    "Web",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/paloaltorce lab (cyberdefenders)",
+      "title": "PaloAltoRCE Lab (CyberDefenders)",
+      "slug": "paloaltorce-lab-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "PaloAltoRCE Lab (CyberDefenders)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 2,
+      "text": "Log Analysis & Initial Search"
+    },
+    {
+      "level": 2,
+      "text": "Decoding the Base64 Commands"
+    },
+    {
+      "level": 2,
+      "text": "Attacker Identification"
+    },
+    {
+      "level": 2,
+      "text": "Persistence Mechanism"
+    },
+    {
+      "level": 2,
+      "text": "Exfiltration of Sensitive Data"
+    },
+    {
+      "level": 2,
+      "text": "Accessing the Exfiltrated Content"
+    }
+  ],
+  "overview": "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.",
+  "study": {
+    "overview": "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "PaloAltoRCE Lab (CyberDefenders)",
+      "Scenario",
+      "Log Analysis & Initial Search",
+      "Decoding the Base64 Commands",
+      "Attacker Identification",
+      "Persistence Mechanism",
+      "Exfiltration of Sensitive Data",
+      "Accessing the Exfiltrated Content"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "Hello these are my notes taken while solving the lab, not a polished writeup. I was practicing for the ECIR exam at the time and plan to revisit the lab to add screenshots and turn this into a full write-up in the future."
+    ]
+  }
+}

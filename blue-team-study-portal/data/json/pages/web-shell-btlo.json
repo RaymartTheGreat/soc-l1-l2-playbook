@@ -1,0 +1,155 @@
+{
+  "id": "network analysis labs/web shell (btlo)",
+  "title": "Web Shell (BTLO)",
+  "slug": "web-shell-btlo",
+  "relPath": "Network Analysis Labs/Web Shell (BTLO).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "SIEM",
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/web shell (btlo)",
+      "title": "Web Shell (BTLO)",
+      "slug": "web-shell-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Web Shell (BTLO)"
+    },
+    {
+      "level": 3,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Q1: What is the IP responsible for conducting the port scan activity?"
+    },
+    {
+      "level": 3,
+      "text": "10.251.96.4"
+    },
+    {
+      "level": 3,
+      "text": "Q2: What is the port range scanned by the suspicious host?"
+    },
+    {
+      "level": 3,
+      "text": "1-1024"
+    },
+    {
+      "level": 3,
+      "text": "Q3: What is the type of port scan conducted?"
+    },
+    {
+      "level": 3,
+      "text": "TCP SYN"
+    },
+    {
+      "level": 3,
+      "text": "Q4: Two more tools were used to perform reconnaissance against open ports, what were they?"
+    },
+    {
+      "level": 3,
+      "text": "Gobuster 3.0.1, sqlmap 1.4.7"
+    },
+    {
+      "level": 3,
+      "text": "Q5: What is the name of the php file through which the attacker uploaded a web shell?"
+    },
+    {
+      "level": 3,
+      "text": "Editprofile.php"
+    },
+    {
+      "level": 3,
+      "text": "Q6: What is the name of the web shell that the attacker uploaded?"
+    },
+    {
+      "level": 3,
+      "text": "Dbfunctions.php"
+    },
+    {
+      "level": 3,
+      "text": "Q7: What is the parameter used in the web shell for executing commands?"
+    },
+    {
+      "level": 3,
+      "text": "cmd"
+    },
+    {
+      "level": 3,
+      "text": "Q8: What is the first command executed by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "id"
+    },
+    {
+      "level": 3,
+      "text": "Q9: What is the type of shell connection the attacker obtains through command execution?"
+    },
+    {
+      "level": 3,
+      "text": "reverse"
+    },
+    {
+      "level": 3,
+      "text": "Q10: What is the port he uses for the shell connection?"
+    },
+    {
+      "level": 3,
+      "text": "4422"
+    }
+  ],
+  "overview": "The SOC received an alert in their SIEM for ‘Local to Local Port Scanning’ where an internal private IP began scanning another internal system. Can you investigate and determine if this activity is malicious or not? You have been provided a PCAP, investigate using any tools you wish.",
+  "study": {
+    "overview": "The SOC received an alert in their SIEM for ‘Local to Local Port Scanning’ where an internal private IP began scanning another internal system. Can you investigate and determine if this activity is malicious or not? You have been provided a PCAP, investigate using any tools you wish.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Web Shell (BTLO)",
+      "Scenario",
+      "Q1: What is the IP responsible for conducting the port scan activity?",
+      "10.251.96.4",
+      "Q2: What is the port range scanned by the suspicious host?",
+      "1-1024",
+      "Q3: What is the type of port scan conducted?",
+      "TCP SYN",
+      "Q4: Two more tools were used to perform reconnaissance against open ports, what were they?",
+      "Gobuster 3.0.1, sqlmap 1.4.7",
+      "Q5: What is the name of the php file through which the attacker uploaded a web shell?",
+      "Editprofile.php"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM"
+    ],
+    "tips": []
+  }
+}

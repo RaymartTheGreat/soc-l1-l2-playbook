@@ -1,0 +1,92 @@
+{
+  "id": "network/fundamentals/what is a network",
+  "title": "What Is a Network",
+  "slug": "what-is-a-network",
+  "relPath": "Network/Fundamentals/What Is a Network.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/what is a network",
+      "title": "What Is a Network",
+      "slug": "what-is-a-network"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "What Is a Network?"
+    },
+    {
+      "level": 2,
+      "text": "1- What Is a Network?"
+    },
+    {
+      "level": 2,
+      "text": "2- From Local Nets to the Internet"
+    },
+    {
+      "level": 2,
+      "text": "3- Identifying Devices on a Network"
+    },
+    {
+      "level": 3,
+      "text": "IP Addresses"
+    },
+    {
+      "level": 3,
+      "text": "MAC Addresses"
+    },
+    {
+      "level": 2,
+      "text": "4- Why This Matters in Cybersecurity"
+    }
+  ],
+  "overview": "At its core, a network is simply “things linked together.” Think of your circle of friends all connected by shared interests, hobbies or skills. In everyday life you see networks everywhere:",
+  "study": {
+    "overview": "At its core, a network is simply “things linked together.” Think of your circle of friends all connected by shared interests, hobbies or skills. In everyday life you see networks everywhere:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "What Is a Network?",
+      "1- What Is a Network?",
+      "2- From Local Nets to the Internet",
+      "3- Identifying Devices on a Network",
+      "IP Addresses",
+      "MAC Addresses",
+      "4- Why This Matters in Cybersecurity"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

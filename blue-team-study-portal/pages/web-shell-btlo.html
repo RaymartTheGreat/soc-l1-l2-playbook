@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Web Shell (BTLO) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="network-analysis-labs.html">Network Analysis Labs</a><span>/</span><span>Web Shell (BTLO)</span></div>
+      <h1>Web Shell (BTLO)</h1>
+      <p>The SOC received an alert in their SIEM for ‘Local to Local Port Scanning’ where an internal private IP began scanning another internal system. Can you investigate and determine if this activity is malicious or not? You have been provided a PCAP, investigate using any tools you wish.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">SIEM</span><span class="tag">Network</span><span class="tag">Web</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Network Analysis Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="network-analysis-labs.html"><span>Network Analysis Labs</span><em>L2</em></a>
+      <b>28</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="packet-puzzle-htb.html"><span>Packet Puzzle (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pikaptcha-htb.html"><span>Pikaptcha (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="web-shell-btlo.html"><span>Web Shell (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="noxious-htb.html"><span>Noxious (HTB)</span><em>L2</em></a>
+      <b>2</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="llmnr-poisoning-overview-4469348d.html"><span>LLMNR Poisoning Overview</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="example-of-llmnr-poisoning-9cadbd94.html"><span>Example of LLMNR poisoning</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="reaper-htb.html"><span>Reaper (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="port-scan-activity-letsdefend.html"><span>Port Scan Activity (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="openwire-cyberdefenders.html"><span>OpenWire (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="intro-to-network-analysis-challenge-btlo.html"><span>intro to Network Analysis Challenge (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="network-analysis-ransomware-btlo.html"><span>Network Analysis - Ransomware (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="network-analysis-malware-compromise-btlo.html"><span>Network Analysis – Malware Compromise (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="malware-traffic-analysis-1-cyberdefenders.html"><span>Malware Traffic Analysis 1 (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="malware-traffic-analysis-2-cyberdefenders.html"><span>Malware Traffic Analysis 2 (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="malware-traffic-analysis-3-cyberdefenders.html"><span>Malware Traffic Analysis 3 (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="web-investigation-cyberdefenders.html"><span>Web Investigation (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="tomcat-takeover-cyberdefenders.html"><span>Tomcat Takeover (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="packetmaze-cyberdefenders.html"><span>PacketMaze (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="psexec-hunt-cyberdefenders.html"><span>PsExec Hunt (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="danabot-cyberdefenders.html"><span>DanaBot (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="webstrike-lab-cyberdefenders.html"><span>WebStrike Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="piggy-btlo.html"><span>Piggy (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="packetdetective-lab-cyberdefenders.html"><span>PacketDetective Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="poisonedcredentials-cyberdefenders.html"><span>PoisonedCredentials (Cyberdefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="honeybot-cyberdefenders.html"><span>HoneyBOT (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="warzone-1-thm.html"><span>Warzone 1 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="warzone-2-thm.html"><span>Warzone 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="masterminds-thm.html"><span>Masterminds (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="carnage-thm.html"><span>Carnage (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="boogeyman-1-thm.html"><span>Boogeyman 1 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>The SOC received an alert in their SIEM for ‘Local to Local Port Scanning’ where an internal private IP began scanning another internal system. Can you investigate and determine if this activity is malicious or not? You have been provided a PCAP, investigate using any tools you wish.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Web Shell (BTLO)</li><li>Scenario</li><li>Q1: What is the IP responsible for conducting the port scan activity?</li><li>10.251.96.4</li><li>Q2: What is the port range scanned by the suspicious host?</li><li>1-1024</li><li>Q3: What is the type of port scan conducted?</li><li>TCP SYN</li><li>Q4: Two more tools were used to perform reconnaissance against open ports, what were they?</li><li>Gobuster 3.0.1, sqlmap 1.4.7</li><li>Q5: What is the name of the php file through which the attacker uploaded a web shell?</li><li>Editprofile.php</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="web-shell-btlo">Web Shell  (BTLO)</h2>
+<h4 id="scenario"><strong>Scenario</strong></h4>
+<p><strong>The SOC received an alert in their SIEM for ‘Local to Local Port Scanning’ where an internal private IP began scanning another internal system. Can you investigate and determine if this activity is malicious or not? You have been provided a PCAP, investigate using any tools you wish.</strong></p>
+<p><a class="note-link" href="https://blueteamlabs.online/home/challenge/network-analysis-web-shell-d4d3a2821b"><strong>https://blueteamlabs.online/home/challenge/network-analysis-web-shell-d4d3a2821b</strong></a></p>
+<hr>
+<h4 id="q1-what-is-the-ip-responsible-for-conducting-the-port-scan-activity">Q1: What is the IP responsible for conducting the port scan activity?</h4>
+<h4 id="10.251.96.4">10.251.96.4</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q1-59f8d8ac.png" data-alt="Q1.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q1-59f8d8ac.png" alt="Q1.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q11-358a98b9.png" data-alt="Q11.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q11-358a98b9.png" alt="Q11.png" loading="lazy"></button></p>
+<p>A good place to start in network analysis is to understand what hosts are communicating within the packet capture. Navigating to <em>Statistics-&gt;Conversation-&gt;TCP</em></p>
+<p>It can be seen in the image that the IP address ‘10.251.96.4’ has been sending two TCP packets to every port of the IP address ‘10.251.96.5’. This is a characteristic of a port scan technique.</p>
+<h4 id="q2-what-is-the-port-range-scanned-by-the-suspicious-host">Q2: What is the port range scanned by the suspicious host?</h4>
+<h4 id="1-1024">1-1024</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q2-0b98f4d5.png" data-alt="Q2.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q2-0b98f4d5.png" alt="Q2.png" loading="lazy"></button></p>
+<p>sort on <strong>Port B</strong> both ways to see the first and last ports scanned</p>
+<h4 id="q3-what-is-the-type-of-port-scan-conducted">Q3: What is the type of port scan conducted?</h4>
+<h4 id="tcp-syn">TCP SYN</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q3-76c7a11a.png" data-alt="Q3.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q3-76c7a11a.png" alt="Q3.png" loading="lazy"></button></p>
+<p>we can see a ton of SYN packets sent to each port</p>
+<h4 id="q4-two-more-tools-were-used-to-perform-reconnaissance-against-open-ports-what-were-they">Q4: Two more tools were used to perform reconnaissance against open ports, what were they?</h4>
+<h4 id="gobuster-3.0.1-sqlmap-1.4.7">Gobuster 3.0.1, sqlmap 1.4.7</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q4-d7734624.png" data-alt="Q4.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q4-d7734624.png" alt="Q4.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q44-13471874.png" data-alt="Q44.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q44-13471874.png" alt="Q44.png" loading="lazy"></button></p>
+<p><strong>User Agent Strings</strong> which often leave a signature of the tool it is originating from</p>
+<p><strong>ip.addr== 10.251.96.5 &amp;&amp; http.user_agent</strong></p>
+<h4 id="q5-what-is-the-name-of-the-php-file-through-which-the-attacker-uploaded-a-web-shell">Q5: What is the name of the php file through which the attacker uploaded a web shell?</h4>
+<h4 id="editprofile.php">Editprofile.php</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q5-7619a27d.png" data-alt="Q5.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q5-7619a27d.png" alt="Q5.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q55-d547baf0.png" data-alt="Q55.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q55-d547baf0.png" alt="Q55.png" loading="lazy"></button></p>
+<p>i looked at http traffic that doesn’t have the recon tools to find it</p>
+<p>also can find the answer by looking at POST requests when anyone send info to a web it is through post</p>
+<h4 id="q6-what-is-the-name-of-the-web-shell-that-the-attacker-uploaded">Q6: What is the name of the web shell that the attacker uploaded?</h4>
+<h4 id="dbfunctions.php">Dbfunctions.php</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q6-4ae7f3cc.png" data-alt="Q6.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q6-4ae7f3cc.png" alt="Q6.png" loading="lazy"></button></p>
+<p>by following the TCP Stream of the POST method of the previous question</p>
+<h4 id="q7-what-is-the-parameter-used-in-the-web-shell-for-executing-commands">Q7: What is the parameter used in the web shell for executing commands?</h4>
+<h4 id="cmd">cmd</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q7-982ed4d4.png" data-alt="Q7.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q7-982ed4d4.png" alt="Q7.png" loading="lazy"></button></p>
+<p>looking at the code of the webshell we can see multiple “cmd”</p>
+<h4 id="q8-what-is-the-first-command-executed-by-the-attacker">Q8: What is the first command executed by the attacker?</h4>
+<h4 id="id">id</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q8-14660676.png" data-alt="Q8.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q8-14660676.png" alt="Q8.png" loading="lazy"></button></p>
+<p>attacker uploaded web shell , it follows that every GET request targeting that file carries command instructions.</p>
+<p>ip.src == 10.251.96.4 &amp;&amp; http.request.method == &quot;GET&quot;</p>
+<h4 id="q9-what-is-the-type-of-shell-connection-the-attacker-obtains-through-command-execution">Q9: What is the type of shell connection the attacker obtains through command execution?</h4>
+<h4 id="reverse">reverse</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q9-0c916fee.png" data-alt="Q9.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q9-0c916fee.png" alt="Q9.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q99-8296b105.png" data-alt="Q99.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q99-8296b105.png" alt="Q99.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q999-bdfb466a.png" data-alt="Q999.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q999-bdfb466a.png" alt="Q999.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-screenshot_2025-04-19_155715-b661a15d.png" data-alt="Screenshot 2025-04-19 155715.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-screenshot_2025-04-19_155715-b661a15d.png" alt="Screenshot 2025-04-19 155715.png" loading="lazy"></button></p>
+<p>the third get command is clearly some python script. Follow the TCP Stream to view it fully.</p>
+<h4 id="q10-what-is-the-port-he-uses-for-the-shell-connection">Q10: What is the port he uses for the shell connection?</h4>
+<h4 id="4422">4422</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q10-08f55062.png" data-alt="Q10.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q10-08f55062.png" alt="Q10.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labsweb-shell-btlo-q1010-52192324.png" data-alt="Q10,10.png"><img src="../assets/images/network-analysis-labsweb-shell-btlo-q1010-52192324.png" alt="Q10,10.png" loading="lazy"></button></p>
+<p>looking at the python script you can find the port</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#web-shell-btlo">Web Shell (BTLO)</a><a href="#scenario">Scenario</a><a href="#q1-what-is-the-ip-responsible-for-conducting-the-port-scan-activity">Q1: What is the IP responsible for conducting the port scan activity?</a><a href="#10.251.96.4">10.251.96.4</a><a href="#q2-what-is-the-port-range-scanned-by-the-suspicious-host">Q2: What is the port range scanned by the suspicious host?</a><a href="#1-1024">1-1024</a><a href="#q3-what-is-the-type-of-port-scan-conducted">Q3: What is the type of port scan conducted?</a><a href="#tcp-syn">TCP SYN</a><a href="#q4-two-more-tools-were-used-to-perform-reconnaissance-against-open-ports-what-were-they">Q4: Two more tools were used to perform reconnaissance against open ports, what were they?</a><a href="#gobuster-3.0.1-sqlmap-1.4.7">Gobuster 3.0.1, sqlmap 1.4.7</a><a href="#q5-what-is-the-name-of-the-php-file-through-which-the-attacker-uploaded-a-web-shell">Q5: What is the name of the php file through which the attacker uploaded a web shell?</a><a href="#editprofile.php">Editprofile.php</a><a href="#q6-what-is-the-name-of-the-web-shell-that-the-attacker-uploaded">Q6: What is the name of the web shell that the attacker uploaded?</a><a href="#dbfunctions.php">Dbfunctions.php</a><a href="#q7-what-is-the-parameter-used-in-the-web-shell-for-executing-commands">Q7: What is the parameter used in the web shell for executing commands?</a><a href="#cmd">cmd</a><a href="#q8-what-is-the-first-command-executed-by-the-attacker">Q8: What is the first command executed by the attacker?</a><a href="#id">id</a><a href="#q9-what-is-the-type-of-shell-connection-the-attacker-obtains-through-command-execution">Q9: What is the type of shell connection the attacker obtains through command execution?</a><a href="#reverse">reverse</a><a href="#q10-what-is-the-port-he-uses-for-the-shell-connection">Q10: What is the port he uses for the shell connection?</a><a href="#4422">4422</a></details>
+    </div>
+    
+    <footer class="pager"><a href="pikaptcha-htb.html">← Pikaptcha (HTB)</a><a href="noxious-htb.html">Noxious (HTB) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

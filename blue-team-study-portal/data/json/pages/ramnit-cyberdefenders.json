@@ -1,0 +1,133 @@
+{
+  "id": "memory forensics labs/ramnit (cyberdefenders)",
+  "title": "Ramnit (CyberDefenders)",
+  "slug": "ramnit-cyberdefenders",
+  "relPath": "Memory Forensics Labs/Ramnit (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/ramnit (cyberdefenders)",
+      "title": "Ramnit (CyberDefenders)",
+      "slug": "ramnit-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Ramnit (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the name of the process responsible for the suspicious activity?"
+    },
+    {
+      "level": 3,
+      "text": "ChromeSetup.exe"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the exact path of the executable for the malicious process?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\alex\\Downloads\\ChromeSetup.exe"
+    },
+    {
+      "level": 3,
+      "text": "3- Identifying network connections is crucial for understanding the malware's communication strategy. What IP address did the malware attempt to connect to?"
+    },
+    {
+      "level": 3,
+      "text": "58.64.204.181"
+    },
+    {
+      "level": 3,
+      "text": "4- To determine the specific geographical origin of the attack, Which city is associated with the IP address the malware communicated with?"
+    },
+    {
+      "level": 3,
+      "text": "Hong Kong"
+    },
+    {
+      "level": 3,
+      "text": "5- Hashes serve as unique identifiers for files, assisting in the detection of similar threats across different machines. What is the SHA1 hash of the malware executable?"
+    },
+    {
+      "level": 3,
+      "text": "280c9d36039f9432433893dee6126d72b9112ad2"
+    },
+    {
+      "level": 3,
+      "text": "6- Examining the malware's development timeline can provide insights into its deployment. What is the compilation timestamp for the malware?"
+    },
+    {
+      "level": 3,
+      "text": "2019-12-01 08:36"
+    },
+    {
+      "level": 3,
+      "text": "7- Identifying the domains associated with this malware is crucial for blocking future malicious communications and detecting any ongoing interactions with those domains within our network. Can you provide the domain connected to the malware?"
+    },
+    {
+      "level": 3,
+      "text": "dnsnb8.net"
+    }
+  ],
+  "overview": "Our intrusion detection system has alerted us to suspicious behavior on a workstation, pointing to a likely malware intrusion. A memory dump of this system has been taken for analysis. Your task is to analyze this dump, trace the malware’s actions, and report key findings.",
+  "study": {
+    "overview": "Our intrusion detection system has alerted us to suspicious behavior on a workstation, pointing to a likely malware intrusion. A memory dump of this system has been taken for analysis. Your task is to analyze this dump, trace the malware’s actions, and report key findings.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Ramnit (CyberDefenders)",
+      "Scenario",
+      "1- What is the name of the process responsible for the suspicious activity?",
+      "ChromeSetup.exe",
+      "2- What is the exact path of the executable for the malicious process?",
+      "C:\\Users\\alex\\Downloads\\ChromeSetup.exe",
+      "3- Identifying network connections is crucial for understanding the malware's communication strategy. What IP address did the malware attempt to connect to?",
+      "58.64.204.181",
+      "4- To determine the specific geographical origin of the attack, Which city is associated with the IP address the malware communicated with?",
+      "Hong Kong",
+      "5- Hashes serve as unique identifiers for files, assisting in the detection of similar threats across different machines. What is the SHA1 hash of the malware executable?",
+      "280c9d36039f9432433893dee6126d72b9112ad2"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

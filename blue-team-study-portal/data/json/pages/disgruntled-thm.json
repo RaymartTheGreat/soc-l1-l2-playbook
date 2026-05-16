@@ -1,0 +1,124 @@
+{
+  "id": "forensics labs/disgruntled (thm)",
+  "title": "Disgruntled (THM)",
+  "slug": "disgruntled-thm",
+  "relPath": "Forensics Labs/Disgruntled (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Phishing",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "forensics labs",
+      "title": "Forensics Labs",
+      "slug": "forensics-labs"
+    },
+    {
+      "id": "forensics labs/disgruntled (thm)",
+      "title": "Disgruntled (THM)",
+      "slug": "disgruntled-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Disgruntled (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- The user installed a package on the machine using elevated privileges. According to the logs, what is the full COMMAND?"
+    },
+    {
+      "level": 3,
+      "text": "/usr/bin/apt install dokuwiki"
+    },
+    {
+      "level": 3,
+      "text": "2- What was the present working directory (PWD) when the previous command was run?"
+    },
+    {
+      "level": 3,
+      "text": "/home/cybert"
+    },
+    {
+      "level": 3,
+      "text": "3-Which user was created after the package from the previous task was installed?"
+    },
+    {
+      "level": 3,
+      "text": "it-admin"
+    },
+    {
+      "level": 3,
+      "text": "4- A user was then later given sudo priveleges. When was the sudoers file updated? (Format: Month Day HH:MM:SS)"
+    },
+    {
+      "level": 3,
+      "text": "5- A script file was opened using the \"vi\" text editor. What is the name of this file?"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the command used that created the file bomb.sh?"
+    },
+    {
+      "level": 3,
+      "text": "7- The file was renamed and moved to a different directory. What is the full path of this file now?"
+    },
+    {
+      "level": 3,
+      "text": "8- When was the file from the previous question last modified? (Format: Month Day HH:MM)"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the name of the file that will get created when the file from the first question executes?"
+    },
+    {
+      "level": 3,
+      "text": "10- At what time will the malicious file trigger? (Format: HH:MM AM/PM)"
+    }
+  ],
+  "overview": "Not sure if you’ve seen the news, but an employee from the IT department of one of our clients (CyberT) got arrested by the police. The guy was running a successful phishing operation as a side gig.",
+  "study": {
+    "overview": "Not sure if you’ve seen the news, but an employee from the IT department of one of our clients (CyberT) got arrested by the police. The guy was running a successful phishing operation as a side gig.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Disgruntled (THM)",
+      "Scenario",
+      "1- The user installed a package on the machine using elevated privileges. According to the logs, what is the full COMMAND?",
+      "/usr/bin/apt install dokuwiki",
+      "2- What was the present working directory (PWD) when the previous command was run?",
+      "/home/cybert",
+      "3-Which user was created after the package from the previous task was installed?",
+      "it-admin",
+      "4- A user was then later given sudo priveleges. When was the sudoers file updated? (Format: Month Day HH:MM:SS)",
+      "5- A script file was opened using the \"vi\" text editor. What is the name of this file?",
+      "6- What is the command used that created the file bomb.sh?",
+      "7- The file was renamed and moved to a different directory. What is the full path of this file now?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

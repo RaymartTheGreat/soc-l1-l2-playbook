@@ -1,0 +1,175 @@
+{
+  "id": "windows forensics/windows registry",
+  "title": "Windows Registry",
+  "slug": "windows-registry",
+  "relPath": "Windows Forensics/Windows Registry.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Network",
+    "DFIR",
+    "Persistence"
+  ],
+  "mitre": [
+    "TA0003",
+    "T1547"
+  ],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/windows registry",
+      "title": "Windows Registry",
+      "slug": "windows-registry"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows Registry"
+    },
+    {
+      "level": 2,
+      "text": "1- What Is the Windows Registry?"
+    },
+    {
+      "level": 2,
+      "text": "2- Registry Structure and Terminology"
+    },
+    {
+      "level": 3,
+      "text": "2-1 Root Keys (Predefined Hives)"
+    },
+    {
+      "level": 3,
+      "text": "2-2 Hive Mounting and Transaction Logs"
+    },
+    {
+      "level": 3,
+      "text": "Dirty Hives and Transaction Logs"
+    },
+    {
+      "level": 2,
+      "text": "3- Expanded Forensically Valuable Artifacts"
+    },
+    {
+      "level": 3,
+      "text": "3-1 System & Configuration"
+    },
+    {
+      "level": 3,
+      "text": "3-2 Software & Install"
+    },
+    {
+      "level": 3,
+      "text": "3-3 User Activity"
+    },
+    {
+      "level": 3,
+      "text": "3-4 Devices & Connectivity"
+    },
+    {
+      "level": 3,
+      "text": "3-5 Execution Artifacts"
+    },
+    {
+      "level": 2,
+      "text": "4- Acquisition Methods with KAPE and Traditional Approaches"
+    },
+    {
+      "level": 3,
+      "text": "4-1 Cold (Offline) Acquisition"
+    },
+    {
+      "level": 3,
+      "text": "4-2 Live Acquisition via KAPE (Triaging & Parsing)"
+    },
+    {
+      "level": 3,
+      "text": "4-3 Live Acquisition via reg save / FTK Imager"
+    },
+    {
+      "level": 2,
+      "text": "5- In‑Depth Tool Walkthroughs"
+    },
+    {
+      "level": 3,
+      "text": "5-1 Registry Explorer"
+    },
+    {
+      "level": 3,
+      "text": "5-2 RECmd (CLI)"
+    },
+    {
+      "level": 3,
+      "text": "5-3 RegRipper"
+    },
+    {
+      "level": 3,
+      "text": "5-4 KAPE + !EZParser"
+    }
+  ],
+  "overview": "The Windows Registry is a hierarchical database critical to Windows operation, storing OS, hardware, and application configurations in a tree of keys and values. The registry functions similarly to a file system:",
+  "study": {
+    "overview": "The Windows Registry is a hierarchical database critical to Windows operation, storing OS, hardware, and application configurations in a tree of keys and values. The registry functions similarly to a file system:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows Registry",
+      "1- What Is the Windows Registry?",
+      "2- Registry Structure and Terminology",
+      "2-1 Root Keys (Predefined Hives)",
+      "2-2 Hive Mounting and Transaction Logs",
+      "Dirty Hives and Transaction Logs",
+      "3- Expanded Forensically Valuable Artifacts",
+      "3-1 System & Configuration",
+      "3-2 Software & Install",
+      "3-3 User Activity",
+      "3-4 Devices & Connectivity",
+      "3-5 Execution Artifacts"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "C:\\Users\\Administrator\\Desktop\\EZTools\\RECmd>RECmd.exe -f c:\\Users\\Administrator\\Desktop\\collection\\c\\windows\\System32\\config\\SAM --sk administrator \nRECmd version 2.0.0.0\n\nAuthor: Eric Zimmerman (saericzimmerman@gmail.com)\nhttps://github.com/EricZimmerman/RECmd\n\nNote: Enclose all strings containing spaces (and all RegEx) with double quotes\n\nCommand line: -f c:\\Users\\Administrator\\Desktop\\collection\\c\\windows\\System32\\config\\SAM --sk administrator \nProcessing hive c:\\Users\\Administrator\\Desktop\\collection\\c\\windows\\System32\\config\\SAM\n\n        Found 4 search hits in c:\\Users\\Administrator\\Desktop\\collection\\c\\windows\\System32\\config\\SAM\n        Key: SAM\\Domains\\Account\\Users\\Names\\Administrator\n        Key: SAM\\Domains\\Builtin\\Aliases\\Names\\Administrators\n        Key: SAM\\Domains\\Builtin\\Aliases\\Names\\Hyper-V Administrators\n        Key: SAM\\Domains\\Builtin\\Aliases\\Names\\Storage Replica Administrators\n\nC:\\Users\\Administrator\\Desktop\\EZTools\\RECmd>  "
+      },
+      {
+        "language": "bash",
+        "code": "C:\\Users\\Administrator\\Desktop\\EZTools\\RECmd>RECmd.exe -f c:\\Users\\Administrator\\Desktop\\collection\\c\\windows\\System32\\config\\SAM --kn SAM\\Domains\\Account\\Users\\Names\\Administrator"
+      },
+      {
+        "language": "bash",
+        "code": "rr.exe -H C:\\hives\\NTUSER.DAT -o ntuser_report.txt\nrip.exe -r C:\\hives\\NTUSER.DAT -p userassist > userassist.txt"
+      },
+      {
+        "language": "powershell",
+        "code": "kape.exe --tsource C:\\ --tdest D:\\out --target RegistryHives --module !EZParser"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": [
+      "Understanding these building blocks is essential for spotting how attackers abuse registry components for persistence (e.g., Run keys, Scheduled Tasks, ShellBags)."
+    ]
+  }
+}

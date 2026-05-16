@@ -1,0 +1,117 @@
+{
+  "id": "detecting ad attacks/ntlm relay attacks",
+  "title": "NTLM Relay Attacks",
+  "slug": "ntlm-relay-attacks",
+  "relPath": "Detecting AD Attacks/NTLM Relay Attacks.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Network",
+    "Kerberos",
+    "Detection",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "T1557.001",
+    "T1557"
+  ],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/ntlm relay attacks",
+      "title": "NTLM Relay Attacks",
+      "slug": "ntlm-relay-attacks"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "NTLM Relay Attacks"
+    },
+    {
+      "level": 2,
+      "text": "1- Understanding NTLM Authentication"
+    },
+    {
+      "level": 2,
+      "text": "2- Steps of an NTLM Relay Attack"
+    },
+    {
+      "level": 3,
+      "text": "a. Interception"
+    },
+    {
+      "level": 3,
+      "text": "b. Relaying"
+    },
+    {
+      "level": 3,
+      "text": "c. Access"
+    },
+    {
+      "level": 2,
+      "text": "3- Key Tools for NTLM Relay"
+    },
+    {
+      "level": 2,
+      "text": "4- Example Scenario"
+    },
+    {
+      "level": 2,
+      "text": "5- Detection and Mitigation"
+    },
+    {
+      "level": 3,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Mitigation"
+    },
+    {
+      "level": 2,
+      "text": "6- Summary"
+    }
+  ],
+  "overview": "- Challenge–Response Mechanism: 1. Client sends a negotiate message to server. 2. Server replies with a challenge (random nonce). 3. Client responds with an NTLM response: HMAC‑MD5 of the nonce using the user’s NTLM hash as key. 4. Server verifies by comparing against its own HMAC calculation. - Why It’s Relayed:",
+  "study": {
+    "overview": "- Challenge–Response Mechanism: 1. Client sends a negotiate message to server. 2. Server replies with a challenge (random nonce). 3. Client responds with an NTLM response: HMAC‑MD5 of the nonce using the user’s NTLM hash as key. 4. Server verifies by comparing against its own HMAC calculation. - Why It’s Relayed:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "NTLM Relay Attacks",
+      "1- Understanding NTLM Authentication",
+      "2- Steps of an NTLM Relay Attack",
+      "a. Interception",
+      "b. Relaying",
+      "c. Access",
+      "3- Key Tools for NTLM Relay",
+      "4- Example Scenario",
+      "5- Detection and Mitigation",
+      "Detection",
+      "Mitigation",
+      "6- Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

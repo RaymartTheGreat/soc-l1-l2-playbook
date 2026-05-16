@@ -1,0 +1,65 @@
+{
+  "id": "active directory",
+  "title": "Active Directory",
+  "slug": "active-directory",
+  "relPath": "Active Directory.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network",
+    "Active Directory",
+    "Kerberos"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "active directory/ntlm",
+    "active directory/ldap",
+    "active directory/netbios",
+    "active directory/objects & organizational units",
+    "active directory/domain controllers",
+    "active directory/security groups",
+    "active directory/group policy"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "active directory",
+      "title": "Active Directory",
+      "slug": "active-directory"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Active Directory"
+    },
+    {
+      "level": 2,
+      "text": "Core Active Directory Components"
+    }
+  ],
+  "overview": "Before diving into Active Directory (AD), it’s important to understand the role of Directory Services in modern networks. Directory Services provide a structured way to organize, map, and control access to resources within an organization.",
+  "study": {
+    "overview": "Before diving into Active Directory (AD), it’s important to understand the role of Directory Services in modern networks. Directory Services provide a structured way to organize, map, and control access to resources within an organization.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Active Directory",
+      "Core Active Directory Components"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Anti forensics | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="digital-forensics.html">Digital Forensics</a><span>/</span><span>Anti forensics</span></div>
+      <h1>Anti forensics</h1>
+      <p>Anti-forensics refers to a malicious actor's techniques and strategies to undermine forensic investigations. While digital forensics and IR involve collecting, analyzing, and preserving electronic evidence during investigations, anti-forensics techniques erase, hide, or manipulate this evidence, making it difficult for investigators to work with.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Splunk</span><span class="tag">SIEM</span><span class="tag">EDR</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Sysmon</span><span class="tag">Network</span><span class="tag">DFIR</span><span class="tag">Memory</span><span class="tag">Detection</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Digital Forensics</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="digital-forensics.html"><span>Digital Forensics</span><em>L2</em></a>
+      <b>9</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="what-is-digital-forensics.html"><span>What is Digital Forensics</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="order-of-volatility.html"><span>Order of Volatility</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="digitalforensics-workflow.html"><span>Digital‑Forensics Workflow</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="chain-of-custody.html"><span>Chain of custody</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="live-forensics.html"><span>Live Forensics</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="anti-forensics.html"><span>Anti forensics</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="file-carving.html"><span>File Carving</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="evidence-destruction.html"><span>Evidence Destruction</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="acpo-principles.html"><span>ACPO Principles</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Anti-forensics refers to a malicious actor's techniques and strategies to undermine forensic investigations. While digital forensics and IR involve collecting, analyzing, and preserving electronic evidence during investigations, anti-forensics techniques erase, hide, or manipulate this evidence, making it difficult for investigators to work with.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Anti forensics</li><li>Common anti‑forensic methods include:</li><li>Network Anonymisation</li><li>Timestomping</li><li>Secure Delete &amp; Disk Wiping</li><li>Encryption</li><li>Event‑Log Manipulation</li><li>Clearing Logs</li><li>Log Tampering (Unix)</li><li>Alternate Data Streams (ADS)</li><li>Steganography</li><li>Memory‑Forensics Evasion</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>Splunk</li><li>SIEM</li><li>EDR</li><li>Sysmon</li><li>PowerShell</li><li>Volatility</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="anti-forensics">Anti forensics</h2>
+<p><strong>Anti-forensics refers to a malicious actor's techniques and strategies to undermine forensic investigations. While digital forensics and IR involve collecting, analyzing, and preserving electronic evidence during investigations, anti-forensics techniques erase, hide, or manipulate this evidence, making it difficult for investigators to work with.</strong></p>
+<hr>
+<h2 id="common-antiforensic-methods-include">Common anti‑forensic methods include:</h2>
+<h3 id="network-anonymisation">Network Anonymisation</h3>
+<p>By routing traffic through VPNs or proxies, attackers conceal their true IP and make attribution—and thus prosecution—much harder. This simple façade also helps them bypass geo‑based blocks and evade early detection.</p>
+<ul>
+<li><strong>Common methods</strong></li>
+<ul>
+<li>Commercial VPN services</li>
+<li>Public or self‑hosted proxy chains</li>
+</ul>
+<li><strong>Detection pointers</strong></li>
+<ul>
+<li>Unusual egress to known VPN IP ranges</li>
+<li>Correlate user logins with sudden shifts in geolocation</li>
+</ul>
+<li><strong>Splunk query</strong></li>
+</ul>
+<p>``<code>jsx index=network_traffic sourcetype=proxy OR sourcetype=firewall dest_ip IN (&lt;VPN_CIDRs&gt;) | stats count by src_user, dest_ip </code>``</p>
+<hr>
+<h3 id="timestomping">Timestomping</h3>
+<p>Altering NTFS timestamps in one or more MFT attributes lets attackers obfuscate when files were created, modified, or accessed—scrambling forensic timelines and misleading investigators.</p>
+<ul>
+<li><strong>How it works</strong></li>
+<ul>
+<li>Modifies <code>$STANDARD_INFORMATION</code> timestamps without touching <code>$FILE_NAME</code></li>
+<li>Tools: <code>Timestomper</code>, <code>touch</code> with raw MFT access</li>
+</ul>
+<li><strong>Detection pointers</strong></li>
+<ul>
+<li>Compare <code>$SI</code> vs. <code>$FN</code> timestamps in MFT records</li>
+<li>Look for impossible date shifts or mismatches via tools like <code>MFTECmd</code></li>
+</ul>
+<li><strong>Splunk query</strong></li>
+</ul>
+<p>``<code>jsx index=wineventlog EventCode=4663 ObjectType=&quot;File&quot; | eval si_ts=strftime(_time, &quot;%Y-%m-%d %H:%M:%S&quot;), fn_ts=... | where si_ts != fn_ts </code>``</p>
+<hr>
+<h3 id="secure-delete-disk-wiping">Secure Delete &amp; Disk Wiping</h3>
+<p>By repeatedly overwriting file contents (and sometimes entire volumes), attackers ensure that even advanced file‑carving tools can’t reconstruct evidence of their presence.</p>
+<ul>
+<li><strong>Common methods</strong></li>
+<ul>
+<li><code>sdelete.exe /p 5</code> or <code>KillDisk</code> for full‑disk destruction</li>
+<li>Overwriting with random or dummy data</li>
+</ul>
+<li><strong>Detection pointers</strong></li>
+<ul>
+<li>Gaps or anomalies in the USN Journal around deletion times</li>
+<li>Presence of known wipe‑tool binaries or commands in process logs</li>
+</ul>
+<li><strong>Splunk query</strong></li>
+</ul>
+<p>``<code>jsx index=wineventlog (EventCode=4663 OR EventCode=4688) (Image=&quot;<em>\\sdelete.exe&quot; OR Image=&quot;</em>\\KillDisk.exe&quot;) </code>``</p>
+<hr>
+<h3 id="encryption">Encryption</h3>
+<p>When attackers encrypt files or whole disks (BitLocker, VeraCrypt, custom), they lock out forensic tools and halt any meaningful analysis until decryption keys are obtained.</p>
+<ul>
+<li><strong>Common methods</strong></li>
+<ul>
+<li>Volume‑level encryption (BitLocker, LUKS)</li>
+<li>File‑level encryption (7‑Zip AES, OpenSSL)</li>
+</ul>
+<li><strong>Detection &amp; mitigation</strong></li>
+<ul>
+<li>Alert on new encrypted volumes or sudden <code>manage-bde</code> invocations</li>
+<li>Maintain escrowed keys, enforce least‑privilege, and keep offline backups</li>
+</ul>
+<li><strong>Splunk query</strong></li>
+</ul>
+<p>``<code>jsx index=wineventlog EventCode=4672 Image=&quot;*\\manage-bde.exe&quot; | table _time, host, user, CommandLine </code>``</p>
+<hr>
+<h3 id="eventlog-manipulation">Event‑Log Manipulation</h3>
+<h4 id="clearing-logs">Clearing Logs</h4>
+<p>Even when they erase Security or System logs, Windows records that action—so deleting entries becomes a noisy giveaway of malicious intent.</p>
+<ul>
+<li><strong>Triggers &amp; IDs</strong></li>
+<ul>
+<li><code>wevtutil cl Security</code> → Event ID 1102</li>
+<li><code>wevtutil cl System/Application/...</code> → System log ID 104</li>
+</ul>
+<li><strong>Detection</strong></li>
+<ul>
+<li>Monitor for Event 1102/104 and treat them as high‑priority alerts</li>
+<li>Correlate with surrounding activity (process creates, registry changes)</li>
+</ul>
+<li><strong>Splunk query</strong></li>
+</ul>
+<p>``<code>jsx index=wineventlog (EventCode=1102 OR EventCode=104) | stats count by EventCode, user, host </code>``</p>
+<h4 id="log-tampering-unix">Log Tampering (Unix)</h4>
+<p>By carving out undesired entries from wtmp/utmp and overwriting the log, attackers make it look like they were never there—yet the file’s own timestamps will betray them.</p>
+<ul>
+<li><strong>Detection pointers</strong></li>
+<ul>
+<li>Compare the latest login record timestamp vs. <code>/var/log/wtmp</code>’s <code>mtime</code>/<code>atime</code></li>
+<li>Alert if file’s timestamp trails the last entry by more than a few minutes</li>
+</ul>
+<li><strong>Splunk approach</strong></li>
+<ol>
+<li>Ingest parsed wtmp records (e.g. via a scripted CSV).</li>
+<li>Join against file metadata to spot discrepancies.</li>
+</ol>
+</ul>
+<hr>
+<h3 id="alternate-data-streams-ads">Alternate Data Streams (ADS)</h3>
+<p>NTFS allows hidden streams attached to files (e.g. <code>innocent.txt:payload.exe</code>), so malicious binaries or data can lurk under a benign filename.</p>
+<ul>
+<li><strong>Detection pointers</strong></li>
+<ul>
+<li>PowerShell: <code>Get-Item -Path &lt;file&gt; -Stream *</code></li>
+<li>Parse MFT for non‑default stream entries</li>
+</ul>
+<li><strong>Splunk query</strong></li>
+</ul>
+<p>``<code>jsx index=wineventlog EventCode=4104 CommandLine=&quot;<em>Get-Item</em> -Stream *&quot; </code>``</p>
+<hr>
+<h3 id="steganography">Steganography</h3>
+<p>Embedding payloads in the LSBs of images/audio or tweaking text spacing hides data in plain sight—ideal for covert exfiltration or command‑and‑control instructions.</p>
+<ul>
+<li><strong>Common methods</strong></li>
+<ul>
+<li>LSB steganography in JPEG/PNG</li>
+<li>Word/character‑spacing in documents</li>
+<li>Frequency‑domain embedding in audio</li>
+</ul>
+<li><strong>Detection pointers</strong></li>
+<ul>
+<li>Run steganalysis tools (OutGuess, Stegdetect)</li>
+<li>Look for statistical anomalies in file entropy or histograms</li>
+</ul>
+<li><strong>Splunk query</strong></li>
+</ul>
+<p>``<code>jsx index=network_traffic sourcetype=http | where file_ext IN (&quot;jpg&quot;,&quot;png&quot;,&quot;wav&quot;,&quot;mp3&quot;) | stats avg(entropy) by src_ip, file_hash | where avg(entropy) &gt; baseline + 0.1 </code>``</p>
+<hr>
+<h3 id="memoryforensics-evasion">Memory‑Forensics Evasion</h3>
+<p>Injecting code into trusted processes (DLL injection, direct syscall hooking) hides malicious payloads in RAM, thwarting both signature‑ and memory‑dump‑based analysis.</p>
+<ul>
+<li><strong>Common methods</strong></li>
+<ul>
+<li>Process injection into <code>lsass.exe</code> or other high‑privilege services</li>
+<li>Kernel structure manipulation (DKOM)</li>
+</ul>
+<li><strong>Detection pointers</strong></li>
+<ul>
+<li>Sysmon Event 8 (CreateRemoteThread), Event 10 (ProcessAccess)</li>
+<li>Anomalies in live memory dumps using Rekall, Volatility</li>
+</ul>
+<li><strong>Splunk query</strong></li>
+</ul>
+<p>``<code>jsx index=sysmon EventCode=8 | stats count by SourceImage, TargetImage, process_id </code>``</p>
+<hr>
+<h3 id="physical-hardware-manipulation">Physical Hardware Manipulation</h3>
+<p>When all else fails, attackers tamper with or destroy hardware (rogue USB implants, network‑tap NIC swaps, physical destruction) to erase traces at the source.</p>
+<ul>
+<li><strong>Mitigation</strong></li>
+<ul>
+<li>Enforce strict access controls and CCTV in server rooms</li>
+<li>Use tamper‑evident seals and maintain a detailed hardware inventory</li>
+<li>Audit any device changes against procurement/inventory logs</li>
+</ul>
+</ul>
+<hr>
+<h4 id="overall-defense-strategy">Overall Defense Strategy</h4>
+<ol>
+<li><strong>Preventive</strong>: harden endpoints (EDR, AppLocker), patch systems, enforce least‑privilege.</li>
+<li><strong>Detective</strong>: centralize logs in SIEM, deploy FIM, write rules for IDs 1102/104/Sysmon 8, perform steganalysis.</li>
+<li><strong>Responsive</strong>: maintain an IR plan, engage qualified forensic experts, rehearse war‑games.</li>
+</ol></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#anti-forensics">Anti forensics</a><a href="#common-antiforensic-methods-include">Common anti‑forensic methods include:</a><a href="#network-anonymisation">Network Anonymisation</a><a href="#timestomping">Timestomping</a><a href="#secure-delete-disk-wiping">Secure Delete &amp; Disk Wiping</a><a href="#encryption">Encryption</a><a href="#eventlog-manipulation">Event‑Log Manipulation</a><a href="#clearing-logs">Clearing Logs</a><a href="#log-tampering-unix">Log Tampering (Unix)</a><a href="#alternate-data-streams-ads">Alternate Data Streams (ADS)</a><a href="#steganography">Steganography</a><a href="#memoryforensics-evasion">Memory‑Forensics Evasion</a><a href="#physical-hardware-manipulation">Physical Hardware Manipulation</a><a href="#overall-defense-strategy">Overall Defense Strategy</a></details>
+    </div>
+    
+    <footer class="pager"><a href="live-forensics.html">← Live Forensics</a><a href="file-carving.html">File Carving →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

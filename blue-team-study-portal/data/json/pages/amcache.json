@@ -1,0 +1,85 @@
+{
+  "id": "windows forensics/amcache",
+  "title": "AmCache",
+  "slug": "amcache",
+  "relPath": "Windows Forensics/AmCache.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/amcache",
+      "title": "AmCache",
+      "slug": "amcache"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "AmCache"
+    },
+    {
+      "level": 3,
+      "text": "Location"
+    },
+    {
+      "level": 3,
+      "text": "Key Aspects"
+    },
+    {
+      "level": 3,
+      "text": "Forensic Value"
+    },
+    {
+      "level": 3,
+      "text": "Tools"
+    },
+    {
+      "level": 3,
+      "text": "Notes"
+    }
+  ],
+  "overview": "AmCache is a valuable Windows artifact that records metadata about program execution and installations. It helps forensic investigators track program usage across different Windows versions starting from Windows 7.",
+  "study": {
+    "overview": "AmCache is a valuable Windows artifact that records metadata about program execution and installations. It helps forensic investigators track program usage across different Windows versions starting from Windows 7.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "AmCache",
+      "Location",
+      "Key Aspects",
+      "Forensic Value",
+      "Tools",
+      "Notes"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

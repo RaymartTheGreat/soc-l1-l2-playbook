@@ -1,0 +1,141 @@
+{
+  "id": "network analysis labs/openwire (cyberdefenders)",
+  "title": "OpenWire (CyberDefenders)",
+  "slug": "openwire-cyberdefenders",
+  "relPath": "Network Analysis Labs/OpenWire (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Linux",
+    "Network",
+    "Incident Response",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/openwire (cyberdefenders)",
+      "title": "OpenWire (CyberDefenders)",
+      "slug": "openwire-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "OpenWire (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- By identifying the C2 IP, we can block traffic to and from this IP, helping to contain the breach and prevent further data exfiltration or command execution. Can you provide the IP of the C2 server that communicated with our server?"
+    },
+    {
+      "level": 3,
+      "text": "146.190.21.92"
+    },
+    {
+      "level": 3,
+      "text": "2- Initial entry points are critical to trace the attack vector back. What is the port number of the service the adversary exploited?"
+    },
+    {
+      "level": 3,
+      "text": "61616"
+    },
+    {
+      "level": 3,
+      "text": "3- Following up on the previous question, what is the name of the service found to be vulnerable?"
+    },
+    {
+      "level": 3,
+      "text": "Apache ActiveMQ"
+    },
+    {
+      "level": 3,
+      "text": "4- The attacker's infrastructure often involves multiple components. What is the IP of the second C2 server?"
+    },
+    {
+      "level": 3,
+      "text": "128.199.52.72"
+    },
+    {
+      "level": 3,
+      "text": "5- Attackers usually leave traces on the disk. What is the name of the reverse shell executable dropped on the server?"
+    },
+    {
+      "level": 3,
+      "text": "docker"
+    },
+    {
+      "level": 3,
+      "text": "6- What Java class was invoked by the XML file to run the exploit?"
+    },
+    {
+      "level": 3,
+      "text": "java.lang.ProcessBuilder"
+    },
+    {
+      "level": 3,
+      "text": "7- To better understand the specific security flaw exploited, can you identify the CVE identifier associated with this vulnerability?"
+    },
+    {
+      "level": 3,
+      "text": "CVE-2023-46604"
+    },
+    {
+      "level": 3,
+      "text": "8- The vendor addressed the vulnerability by adding a validation step to ensure that only valid Throwable classes can be instantiated, preventing exploitation. In which Java class and method was this validation step added?"
+    },
+    {
+      "level": 3,
+      "text": "BaseDataStreamMarshaller.createThrowable"
+    }
+  ],
+  "overview": "During your shift as a tier-2 SOC analyst, you receive an escalation from a tier-1 analyst regarding a public-facing server. This server has been flagged for making outbound connections to multiple suspicious IPs. In response, you initiate the standard incident response protocol, which includes isolating the server from the network to prevent potential later",
+  "study": {
+    "overview": "During your shift as a tier-2 SOC analyst, you receive an escalation from a tier-1 analyst regarding a public-facing server. This server has been flagged for making outbound connections to multiple suspicious IPs. In response, you initiate the standard incident response protocol, which includes isolating the server from the network to prevent potential later",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "OpenWire (CyberDefenders)",
+      "Scenario",
+      "1- By identifying the C2 IP, we can block traffic to and from this IP, helping to contain the breach and prevent further data exfiltration or command execution. Can you provide the IP of the C2 server that communicated with our server?",
+      "146.190.21.92",
+      "2- Initial entry points are critical to trace the attack vector back. What is the port number of the service the adversary exploited?",
+      "61616",
+      "3- Following up on the previous question, what is the name of the service found to be vulnerable?",
+      "Apache ActiveMQ",
+      "4- The attacker's infrastructure often involves multiple components. What is the IP of the second C2 server?",
+      "128.199.52.72",
+      "5- Attackers usually leave traces on the disk. What is the name of the reverse shell executable dropped on the server?",
+      "docker"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

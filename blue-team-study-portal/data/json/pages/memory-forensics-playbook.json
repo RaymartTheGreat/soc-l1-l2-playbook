@@ -1,0 +1,135 @@
+{
+  "id": "memory forensics/memory forensics playbook",
+  "title": "Memory Forensics Playbook",
+  "slug": "memory-forensics-playbook",
+  "relPath": "Memory forensics/Memory Forensics Playbook.md",
+  "level": "L1.5",
+  "curriculumLevelId": null,
+  "curriculumSectionId": null,
+  "curriculumSectionTitle": null,
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Persistence",
+    "YARA"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics",
+      "title": "Memory forensics",
+      "slug": "memory-forensics-2c39b2e1"
+    },
+    {
+      "id": "memory forensics/memory forensics playbook",
+      "title": "Memory Forensics Playbook",
+      "slug": "memory-forensics-playbook"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Memory Forensics Playbook"
+    },
+    {
+      "level": 2,
+      "text": "Acquisition"
+    },
+    {
+      "level": 2,
+      "text": "Preparing the image: profile & basic checks"
+    },
+    {
+      "level": 2,
+      "text": "Short, repeatable workflow"
+    },
+    {
+      "level": 2,
+      "text": "Processes: what to collect and why"
+    },
+    {
+      "level": 2,
+      "text": "Code injection & hiding techniques"
+    },
+    {
+      "level": 2,
+      "text": "Networking"
+    },
+    {
+      "level": 2,
+      "text": "Persistence locations to check"
+    },
+    {
+      "level": 2,
+      "text": "File and filesystem traces in RAM"
+    },
+    {
+      "level": 2,
+      "text": "Common in-memory artifacts"
+    },
+    {
+      "level": 2,
+      "text": "Timeline reconstruction"
+    },
+    {
+      "level": 2,
+      "text": "Reporting & evidence preservation"
+    },
+    {
+      "level": 2,
+      "text": "Small cheat sheet: commands & quick examples"
+    },
+    {
+      "level": 2,
+      "text": "Note"
+    }
+  ],
+  "overview": "Memory forensics is the process of analyzing a RAM image to reconstruct the system's runtime state at the time of capture. It surfaces ephemeral evidence — running processes, loaded modules, network sockets, decrypted content, and in-memory malware — that often does not persist to disk.",
+  "study": {
+    "overview": "Memory forensics is the process of analyzing a RAM image to reconstruct the system's runtime state at the time of capture. It surfaces ephemeral evidence — running processes, loaded modules, network sockets, decrypted content, and in-memory malware — that often does not persist to disk.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Memory Forensics Playbook",
+      "Acquisition",
+      "Preparing the image: profile & basic checks",
+      "Short, repeatable workflow",
+      "Processes: what to collect and why",
+      "Code injection & hiding techniques",
+      "Networking",
+      "Persistence locations to check",
+      "File and filesystem traces in RAM",
+      "Common in-memory artifacts",
+      "Timeline reconstruction",
+      "Reporting & evidence preservation"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "# image identification\nvol.py -f memory.img imageinfo\n\n# profile-finding\nvol.py -f memory.img kdbgscan --output=kdbg.txt\n\n# process listing\nvol.py -f memory.img --profile=Win10x64_#### pslist\n\n# network scan\nvol.py -f memory.img --profile=Win10x64_#### netscan\n\n# find suspicious executable pages\nvol.py -f memory.img --profile=Win10x64_#### malfind\n\n# print registry key from memory\nvol.py -f memory.img --profile=Win10x64_#### printkey -K \"\\Microsoft\\Windows\\CurrentVersion\\Run\""
+      }
+    ],
+    "tools": [
+      "PowerShell",
+      "Volatility",
+      "YARA"
+    ],
+    "tips": []
+  }
+}

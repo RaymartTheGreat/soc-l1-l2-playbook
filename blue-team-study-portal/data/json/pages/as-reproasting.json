@@ -1,0 +1,119 @@
+{
+  "id": "detecting ad attacks/as-reproasting",
+  "title": "AS-REPRoasting",
+  "slug": "as-reproasting",
+  "relPath": "Detecting AD Attacks/AS-REPRoasting.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Linux",
+    "Active Directory",
+    "Kerberos",
+    "Detection"
+  ],
+  "mitre": [
+    "T1558.004",
+    "T1558"
+  ],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/as-reproasting",
+      "title": "AS-REPRoasting",
+      "slug": "as-reproasting"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "AS-REPRoasting"
+    },
+    {
+      "level": 2,
+      "text": "1- Understanding the Attack"
+    },
+    {
+      "level": 2,
+      "text": "2- Steps of an AS-REP Roasting Attack"
+    },
+    {
+      "level": 3,
+      "text": "a. Identify Vulnerable Accounts"
+    },
+    {
+      "level": 3,
+      "text": "b. Extract AS-REP Hashes"
+    },
+    {
+      "level": 3,
+      "text": "c. Offline Password Cracking"
+    },
+    {
+      "level": 2,
+      "text": "3- Key Tools"
+    },
+    {
+      "level": 2,
+      "text": "4- Detection and Defensive Strategies"
+    },
+    {
+      "level": 3,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "5- Mitigation Measures"
+    },
+    {
+      "level": 2,
+      "text": "6- Summary"
+    }
+  ],
+  "overview": "AS-REP Roasting targets Active Directory accounts with the \"Do not require Kerberos preauthentication\" flag enabled. When preauthentication is disabled, the domain controller returns an AS-REP message encrypted with the user's password hash. Attackers capture this message and then perform offline brute-force or dictionary attacks to recover the plaintext pas",
+  "study": {
+    "overview": "AS-REP Roasting targets Active Directory accounts with the \"Do not require Kerberos preauthentication\" flag enabled. When preauthentication is disabled, the domain controller returns an AS-REP message encrypted with the user's password hash. Attackers capture this message and then perform offline brute-force or dictionary attacks to recover the plaintext pas",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "AS-REPRoasting",
+      "1- Understanding the Attack",
+      "2- Steps of an AS-REP Roasting Attack",
+      "a. Identify Vulnerable Accounts",
+      "b. Extract AS-REP Hashes",
+      "c. Offline Password Cracking",
+      "3- Key Tools",
+      "4- Detection and Defensive Strategies",
+      "Detection",
+      "5- Mitigation Measures",
+      "6- Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

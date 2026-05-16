@@ -1,0 +1,114 @@
+{
+  "id": "hunting persistence (mitre ta0003)/persistence via dll hijacking (search order hijack",
+  "title": "Persistence via DLL Hijacking (Search Order Hijack",
+  "slug": "persistence-via-dll-hijacking-search-order-hijack",
+  "relPath": "Hunting Persistence (MITRE TA0003)/Persistence via DLL Hijacking (Search Order Hijack.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Memory",
+    "Detection",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "TA0003",
+    "T1574.001",
+    "T1574.002",
+    "T1574"
+  ],
+  "parentId": "hunting persistence (mitre ta0003)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "hunting persistence (mitre ta0003)",
+      "title": "Hunting Persistence (MITRE TA0003)",
+      "slug": "hunting-persistence-mitre-ta0003"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/persistence via dll hijacking (search order hijack",
+      "title": "Persistence via DLL Hijacking (Search Order Hijack",
+      "slug": "persistence-via-dll-hijacking-search-order-hijack"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Persistence via DLL Hijacking (Search Order Hijacking & Side-Loading) (T1574.001, T1574.002)"
+    },
+    {
+      "level": 2,
+      "text": "First What is a DLL (Dynamic-Link Library)?"
+    },
+    {
+      "level": 2,
+      "text": "DLL (Dynamic-Link Library) hijacking"
+    },
+    {
+      "level": 2,
+      "text": "Examples"
+    },
+    {
+      "level": 2,
+      "text": "How Attackers Use DLL Hijacking for Persistence"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 2,
+      "text": "Threat Hunting"
+    },
+    {
+      "level": 2,
+      "text": "Splunk Query Example"
+    },
+    {
+      "level": 3,
+      "text": "Additional Notes"
+    }
+  ],
+  "overview": "Persistence via DLL Hijacking (Search Order Hijacking & Side-Loading) (T1574.001, T1574.002)",
+  "study": {
+    "overview": "Persistence via DLL Hijacking (Search Order Hijacking & Side-Loading) (T1574.001, T1574.002)",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Persistence via DLL Hijacking (Search Order Hijacking & Side-Loading) (T1574.001, T1574.002)",
+      "First What is a DLL (Dynamic-Link Library)?",
+      "DLL (Dynamic-Link Library) hijacking",
+      "Examples",
+      "How Attackers Use DLL Hijacking for Persistence",
+      "Detection",
+      "Threat Hunting",
+      "Splunk Query Example",
+      "Additional Notes"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "python",
+        "code": "index=windows EventCode=7 Image=\"*.exe\"\n(DestinationImage=\"*\\\\Users\\\\Public\\\\*\" OR DestinationImage=\"*\\\\Temp\\\\*\" OR DestinationImage=\"*\\\\System32\\\\*\")\n| stats count by ProcessName, DestinationImage, User, Computer"
+      }
+    ],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "Sysmon"
+    ],
+    "tips": []
+  }
+}

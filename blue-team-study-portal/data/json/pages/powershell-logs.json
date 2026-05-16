@@ -1,0 +1,86 @@
+{
+  "id": "powershell logs",
+  "title": "PowerShell Logs",
+  "slug": "powershell-logs",
+  "relPath": "PowerShell Logs.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-scripting-tooling",
+  "curriculumSectionTitle": "Advanced Scripting & Analysis Tooling",
+  "tags": [
+    "EDR",
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "powershell logs",
+      "title": "PowerShell Logs",
+      "slug": "powershell-logs"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "PowerShell Logs"
+    },
+    {
+      "level": 2,
+      "text": "PowerShell Logs"
+    },
+    {
+      "level": 3,
+      "text": "Console History File"
+    },
+    {
+      "level": 3,
+      "text": "Windows PowerShell Event Channel"
+    },
+    {
+      "level": 3,
+      "text": "PowerShell ScriptBlock Logging"
+    },
+    {
+      "level": 2,
+      "text": "Logging Examples"
+    }
+  ],
+  "overview": "PowerShell logs are often underrated, although they can provide vital insights into threat actors' activity. EDR solutions tend to block common malware, and simple CMD is not powerful enough for exploitation needs. PowerShell is becoming increasingly popular, mainly because of the popularity of so-called fileless attacks. There are three core PowerShell logg",
+  "study": {
+    "overview": "PowerShell logs are often underrated, although they can provide vital insights into threat actors' activity. EDR solutions tend to block common malware, and simple CMD is not powerful enough for exploitation needs. PowerShell is becoming increasingly popular, mainly because of the popularity of so-called fileless attacks. There are three core PowerShell logg",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "PowerShell Logs",
+      "PowerShell Logs",
+      "Console History File",
+      "Windows PowerShell Event Channel",
+      "PowerShell ScriptBlock Logging",
+      "Logging Examples"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "# Logged only by 4104 and ConsoleHost_history\nPS C:\\> Write-Output 'TEST1'\nTEST1\n\n# Logged only by 4104 and 600 IDs\nCMD C:\\> powershell -c \"Write-Output 'TEST2'\"\nTEST2\n\n# Script content logged only by 4104\nCMD C:\\> echo \"Write-Output 'TEST3'\" >> loglesshunt.ps1\nCMD C:\\> powershell ./loglesshunt.ps1\nTEST3"
+      }
+    ],
+    "tools": [
+      "EDR",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

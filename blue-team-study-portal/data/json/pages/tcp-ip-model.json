@@ -1,0 +1,92 @@
+{
+  "id": "network/fundamentals/tcp ip model",
+  "title": "TCP IP Model",
+  "slug": "tcp-ip-model",
+  "relPath": "Network/Fundamentals/TCP IP Model.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/tcp ip model",
+      "title": "TCP IP Model",
+      "slug": "tcp-ip-model"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "TCP/IP Model"
+    },
+    {
+      "level": 2,
+      "text": "TCP/IP Layers (Top ↓ Bottom)"
+    },
+    {
+      "level": 3,
+      "text": "Application Layer"
+    },
+    {
+      "level": 3,
+      "text": "Transport Layer"
+    },
+    {
+      "level": 3,
+      "text": "Internet Layer"
+    },
+    {
+      "level": 3,
+      "text": "Link Layer"
+    },
+    {
+      "level": 2,
+      "text": "Layer Mapping & Protocols"
+    }
+  ],
+  "overview": "While the OSI model is a theoretical guide, the TCP/IP model is the practical suite of protocols underpinning today’s Internet. Originally developed in the 1970s by the U.S. Department of Defense, its design emphasizes resilience / networks stay up even when parts fail or are attacked.",
+  "study": {
+    "overview": "While the OSI model is a theoretical guide, the TCP/IP model is the practical suite of protocols underpinning today’s Internet. Originally developed in the 1970s by the U.S. Department of Defense, its design emphasizes resilience / networks stay up even when parts fail or are attacked.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "TCP/IP Model",
+      "TCP/IP Layers (Top ↓ Bottom)",
+      "Application Layer",
+      "Transport Layer",
+      "Internet Layer",
+      "Link Layer",
+      "Layer Mapping & Protocols"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

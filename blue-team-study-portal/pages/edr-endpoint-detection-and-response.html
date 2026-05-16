@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>EDR (Endpoint Detection and Response) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link active" href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>EDR (Endpoint Detection and Response)</span></div>
+      <h1>EDR (Endpoint Detection and Response)</h1>
+      <p>Endpoint Detection &amp; Response (EDR) instruments endpoints (workstations, servers, VMs, cloud workloads, IoT) with a sensor/agent that collects granular telemetry and forwards it to a central console where correlation, ML and rules generate alerts. The EDR also provides response controls (isolate, kill, quarantine, remote shell, artifact collection). EDR evol</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">EDR</span><span class="tag">PowerShell</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">DFIR</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag">Persistence</span><span class="tag">Lateral Movement</span><span class="tag">C2</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>EDR (Endpoint Detection and Response)</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Endpoint Detection &amp; Response (EDR) instruments endpoints (workstations, servers, VMs, cloud workloads, IoT) with a sensor/agent that collects granular telemetry and forwards it to a central console where correlation, ML and rules generate alerts. The EDR also provides response controls (isolate, kill, quarantine, remote shell, artifact collection). EDR evol</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>EDR (Endpoint Detection and Response)</li><li>Why EDR matters</li><li>Telemetry (what to collect and why)</li><li>Core components</li><li>Detection approaches</li><li>Response capabilities</li><li>EDR vs AV</li><li>Scenario: phishing Word doc → macro → PowerShell → obfuscated download → payload injected into svchost.exe → attacker gains access.</li><li>SOC Analyst Workflow with EDR</li><li>EDR vs XDR</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>EDR</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="edr-endpoint-detection-and-response">EDR (Endpoint Detection and Response)</h2>
+<p><strong>Endpoint Detection &amp; Response (EDR</strong>) instruments endpoints (workstations, servers, VMs, cloud workloads, IoT) with a sensor/agent that collects granular telemetry and forwards it to a central console where correlation, ML and rules generate alerts. The EDR also provides response controls (isolate, kill, quarantine, remote shell, artifact collection). EDR evolved to close gaps left by prevention-only tools (AV/EPP) — especially for fileless attacks, living-off-the-land techniques, and remote work scenarios.</p>
+<p><button class="image-button" data-src="../assets/images/edr-endpoint-detection-and-response-image-e38b5acb.png" data-alt="image.png"><img src="../assets/images/edr-endpoint-detection-and-response-image-e38b5acb.png" alt="image.png" loading="lazy"></button></p>
+<hr>
+<h3 id="why-edr-matters">Why EDR matters</h3>
+<ul>
+<li>Devices work off-network more often; perimeter controls alone don’t see everything.</li>
+<li>EDR gives persistent, device-level visibility and allows containment where network controls can’t reach.</li>
+<li>It detects stealthy techniques (in-memory payloads, living-off-the-land) that signature-only tools commonly miss.</li>
+</ul>
+<hr>
+<h3 id="telemetry-what-to-collect-and-why">Telemetry (what to collect and why)</h3>
+<p>EDR telemetry is the evidence chain for detection and investigation. Keep these fields available and searchable:</p>
+<ul>
+<li>Time metadata: <code>_time</code>, <code>hostname</code>, <code>host_id</code>, <code>user</code></li>
+<li>Process context: <code>process_name</code>, <code>parent_process_name</code>, <code>pid</code>, <code>ppid</code>, <code>cmdline</code>, <code>process_hash</code></li>
+<li>File activity: <code>file_path</code>, <code>file_hash</code> (sha256 preferred), <code>file_action</code> (create/write/delete)</li>
+<li>Registry &amp; persistence: <code>registry_key</code>, <code>registry_value</code>, <code>service_name</code></li>
+<li>Network: <code>src_ip</code>, <code>dst_ip</code>, <code>dst_port</code>, <code>dns_query</code>, <code>upstream_domain</code></li>
+<li>Memory/behavior: <code>mem_event</code> (injection, suspicious allocation), <code>module_load</code></li>
+<li>Event type labels: <code>process_start</code>, <code>file_drop</code>, <code>reg_write</code>, <code>net_conn</code>, <code>mem_inject</code></li>
+</ul>
+<p>Rationale: process + cmdline + network + file/registry form the minimal chain to attribute an activity and build detections.</p>
+<hr>
+<h3 id="core-components">Core components</h3>
+<ul>
+<li><strong>Sensor (agent):</strong> captures process events, command lines, file/registry changes, network connections, and memory indicators; also executes remote commands from the console.</li>
+<li><strong>Control plane (console):</strong> centralizes telemetry, runs detection logic, applies threat intel and ML, and pushes actions to sensors.</li>
+<li><strong>Storage &amp; search:</strong> historical telemetry archive for hunting and reconstruction.</li>
+<li><strong>Integrations:</strong> threat feeds and other tooling for enrichment (optional but common).</li>
+</ul>
+<hr>
+<h3 id="detection-approaches">Detection approaches</h3>
+<p><button class="image-button" data-src="../assets/images/edr-endpoint-detection-and-response-image-1-9236ef91.png" data-alt="image.png"><img src="../assets/images/edr-endpoint-detection-and-response-image-1-9236ef91.png" alt="image.png" loading="lazy"></button></p>
+<p>EDR systems typically combine multiple detection methods. Use them together for higher confidence.</p>
+<ol>
+<li><strong>IOC matching (known bad)</strong></li>
+<ul>
+<li>Match file hashes, IPs, and domains against threat feeds. Fast, high-confidence for known threats.</li>
+</ul>
+<li><strong>Behavioral logic (pattern-based)</strong></li>
+<ul>
+<li>Rules that capture suspicious sequences or unusual parent→child relationships. Example pattern: a user-facing app spawning a system installer and then a shell back-connection.</li>
+</ul>
+<li><strong>Anomaly detection (baseline deviations)</strong></li>
+<ul>
+<li>Model typical endpoint behavior (typical processes, hours of activity, common cmdlines). Flag deviations (e.g., file writes to atypical system paths at midnight).</li>
+</ul>
+<li><strong>Memory / fileless indicators</strong></li>
+<ul>
+<li>Detect in-memory payloads, suspicious remote thread creation, or reflective DLL loads that leave little/no disk trace.</li>
+</ul>
+<li><strong>Correlation-driven alerts</strong></li>
+<ul>
+<li>Combine low-signal events (e.g., odd cmdline + rare outbound domain + new autorun) into a single higher-severity detection.</li>
+</ul>
+<li><strong>Mapping to frameworks</strong></li>
+<ul>
+<li>Tag detections with tactic/technique labels (e.g., persistence, execution) to speed understanding — not a detection method itself but useful metadata.</li>
+</ul>
+</ol>
+<hr>
+<h3 id="response-capabilities">Response capabilities</h3>
+<p>From the console the operator can instruct sensors to:</p>
+<ul>
+<li><strong>Network isolate</strong> the endpoint (restrict outbound/inbound connectivity).</li>
+<li><strong>Stop/terminate processes</strong> selectively.</li>
+<li><strong>Quarantine files</strong> so they cannot be executed.</li>
+<li><strong>Open a remote shell</strong> to run commands or scripts and gather live artifacts.</li>
+<li><strong>Collect artifacts</strong> centrally: memory snapshots, event logs, copies of suspicious files, registry hives.</li>
+</ul>
+<p>These actions are executed by the sensor and recorded as part of telemetry for auditability.</p>
+<hr>
+<h3 id="edr-vs-av">EDR vs AV</h3>
+<p><button class="image-button" data-src="../assets/images/edr-endpoint-detection-and-response-image-2-ac54114f.png" data-alt="image.png"><img src="../assets/images/edr-endpoint-detection-and-response-image-2-ac54114f.png" alt="image.png" loading="lazy"></button></p>
+<div class="table-wrap"><table><thead><tr><th>Capability</th><th>AV / EPP</th><th>Endpoint detection (detection-focused)</th></tr></thead><tbody><tr><td>Primary goal</td><td>Prevent known malware (signatures)</td><td>Detect suspicious behavior &amp; unknown threats</td></tr><tr><td>Telemetry</td><td>Limited (file scans)</td><td>Rich process, cmdline, registry, network, memory telemetry</td></tr><tr><td>Detection methods</td><td>Signature-based</td><td>Behavior, anomaly, IOC, memory analysis</td></tr><tr><td>Use by SOC</td><td>Mostly prevention; limited forensic value</td><td>Main feed for hunting, triage, and investigation</td></tr></tbody></table></div>
+<h4 id="scenario-phishing-word-doc-macro-powershell-obfuscated-download-payload-injected-into-svch"><strong>Scenario:</strong> phishing Word doc → macro → PowerShell → obfuscated download → payload injected into <code>svchost.exe</code> → attacker gains access.</h4>
+<div class="table-wrap"><table><thead><tr><th>Attack Step</th><th>AV's Typical Response</th><th>EDR's Response</th></tr></thead><tbody><tr><td>#1: User receives phishing Word doc</td><td>Does nothing if file has no known signature</td><td>Logs file download activity and monitors it</td></tr><tr><td>#2: User opens document</td><td>Might do nothing (legitimate winword.exe)</td><td>Records execution of <code>winword.exe</code> and continues monitoring</td></tr><tr><td>#3: Macro spawns PowerShell</td><td>Does nothing if macro signature unknown</td><td>Detects unusual parent→child (<code>winword.exe</code> → <code>powershell.exe</code>) and flags</td></tr><tr><td>#4: Obfuscated PowerShell downloads second-stage</td><td>Often missed by AV</td><td>Flags obfuscated script execution</td></tr><tr><td>#5: Payload injected into <code>svchost.exe</code> (memory injection)</td><td>Typically not detected</td><td>Detects process injection into <code>svchost.exe</code></td></tr><tr><td>#6: Remote access / outbound C2</td><td>Lacks network-level visibility</td><td>Flags unexpected outbound behavior and surfaces full attack chain</td></tr><tr><td><strong>Final</strong></td><td>May mark endpoint clean</td><td>Generates an alert with full attack chain and allows in-console actions</td></tr></tbody></table></div>
+<hr>
+<h3 id="soc-analyst-workflow-with-edr">SOC Analyst Workflow with EDR</h3>
+<p>A SOC analyst typically works through EDR alerts in a structured way. The workflow looks like this:</p>
+<ol>
+<li><strong>Alert intake &amp; triage</strong></li>
+<ul>
+<li>Review new alerts in the EDR console.</li>
+<li>Prioritize based on severity, MITRE technique, and affected asset criticality.</li>
+<li>Suppress/close false positives (known admin tools, testing, patching activity).</li>
+</ul>
+<li><strong>Initial context gathering</strong></li>
+<ul>
+<li>Pull endpoint details: hostname, user, IP, logged-in sessions.</li>
+<li>Review related process tree (parent/child relationships).</li>
+<li>Check command line arguments, hashes, and network destinations.</li>
+</ul>
+<li><strong>Threat validation</strong></li>
+<ul>
+<li>Compare process, file, or domain against threat intel feeds.</li>
+<li>Correlate across multiple alerts/events (was this a single event or part of a chain?).</li>
+<li>Look for persistence mechanisms (registry keys, scheduled tasks, services).</li>
+</ul>
+<li><strong>Scoping the impact</strong></li>
+<ul>
+<li>Search across all endpoints for the same hash, domain, or command line.</li>
+<li>Identify lateral movement attempts or multiple compromised systems.</li>
+<li>Pivot on user account activity / is the same user active elsewhere?</li>
+</ul>
+<li><strong>Response actions</strong></li>
+<ul>
+<li>Isolate the endpoint if confirmed malicious activity is ongoing.</li>
+<li>Kill the malicious process or quarantine the file.</li>
+<li>Collect memory dump, logs, or suspicious executables for deeper analysis.</li>
+</ul>
+<li><strong>Recovery &amp; remediation</strong></li>
+<ul>
+<li>Work with IT to reimage or patch affected hosts.</li>
+<li>Reset compromised accounts, rotate credentials if needed.</li>
+<li>Remove persistence artifacts (scheduled tasks, services, autoruns).</li>
+</ul>
+<li><strong>Reporting &amp; lessons learned</strong></li>
+<ul>
+<li>Document the incident timeline, IOCs, and attacker behavior.</li>
+<li>Feed new detection rules back into the EDR (custom rules, watchlists).</li>
+<li>Share findings with the wider SOC to prevent recurrence.</li>
+</ul>
+</ol>
+<hr>
+<h3 id="edr-vs-xdr">EDR vs XDR</h3>
+<div class="table-wrap"><table><thead><tr><th><strong>Feature</strong></th><th><strong>EDR (Endpoint Detection and Response)</strong></th><th><strong>XDR (Extended Detection and Response)</strong></th></tr></thead><tbody><tr><td><strong>Scope</strong></td><td>Primarily focuses on protecting endpoint devices like desktops, laptops, and servers.</td><td>Expands coverage to include email, identities, network traffic, cloud workloads, and other parts of the environment.</td></tr><tr><td><strong>Data Source</strong></td><td>Gathers telemetry and logs only from endpoints.</td><td>Collects and correlates data from multiple layers and platforms across the organization.</td></tr><tr><td><strong>Visibility</strong></td><td>Offers visibility limited to endpoint-level activities.</td><td>Delivers unified visibility across the entire IT ecosystem, from endpoints to the cloud.</td></tr><tr><td><strong>Detection</strong></td><td>Detects threats based mainly on endpoint indicators and behavioral analysis.</td><td>Identifies threats through advanced analytics and correlation across multiple domains.</td></tr><tr><td><strong>Response</strong></td><td>Responds only to endpoint incidents (for example, isolating a device or stopping a process).</td><td>Enables automated and coordinated responses across several layers, such as blocking malicious emails or disabling user access.</td></tr><tr><td><strong>Use Cases</strong></td><td>Useful for detecting malware, ransomware, and insider activity on endpoints.</td><td>Designed for more advanced scenarios like phishing detection, cloud threat correlation, and identity-based or supply chain attacks.</td></tr><tr><td><strong>Management</strong></td><td>Usually managed through endpoint-specific security consoles.</td><td>Offers a single, integrated console for threat detection, investigation, and response across multiple environments.</td></tr></tbody></table></div>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#edr-endpoint-detection-and-response">EDR (Endpoint Detection and Response)</a><a href="#why-edr-matters">Why EDR matters</a><a href="#telemetry-what-to-collect-and-why">Telemetry (what to collect and why)</a><a href="#core-components">Core components</a><a href="#detection-approaches">Detection approaches</a><a href="#response-capabilities">Response capabilities</a><a href="#edr-vs-av">EDR vs AV</a><a href="#scenario-phishing-word-doc-macro-powershell-obfuscated-download-payload-injected-into-svch">Scenario: phishing Word doc → macro → PowerShell → obfuscated download → payload injected into svchost.exe → attacker gains access.</a><a href="#soc-analyst-workflow-with-edr">SOC Analyst Workflow with EDR</a><a href="#edr-vs-xdr">EDR vs XDR</a></details>
+    </div>
+    
+    <footer class="pager"><a href="osint.html">← OSINT</a><a href="atomic-red-team-a3606025.html">Atomic Red Team →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

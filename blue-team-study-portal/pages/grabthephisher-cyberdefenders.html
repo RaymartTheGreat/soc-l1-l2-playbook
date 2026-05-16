@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>GrabThePhisher (CyberDefenders) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-intelligence-labs.html">Threat Intelligence Labs</a><span>/</span><span>GrabThePhisher (CyberDefenders)</span></div>
+      <h1>GrabThePhisher (CyberDefenders)</h1>
+      <p>A decentralized finance (DeFi) platform recently reported multiple user complaints about unauthorized fund withdrawals. A forensic review uncovered a phishing site impersonating the legitimate PancakeSwap exchange, luring victims into entering their wallet seed phrases. The phishing kit was hosted on a compromised server and exfiltrated credentials via a Tel</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">Phishing</span><span class="tag">DFIR</span><span class="tag">Threat Intel</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Intelligence Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>L1.5</em></a>
+      <b>18</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="tusk-infostealer-cyberdefenders.html"><span>Tusk Infostealer (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ufo-1-htb.html"><span>UFO-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="intel101-cyberdefenders.html"><span>Intel101 (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="red-stealer-cyberdefenders.html"><span>Red Stealer (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="3cx-supply-chain-cyberdefenders.html"><span>3CX Supply Chain (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="trooper-thm.html"><span>Trooper (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="attck-btlo.html"><span>ATT&amp;CK (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="icedid-cyberdefenders.html"><span>IcedID (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="oski-cyberdefenders.html"><span>Oski (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="yellow-rat-cyberdefenders.html"><span>Yellow RAT (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="friday-overtime-thm.html"><span>Friday Overtime (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="lespion-cyberdefenders.html"><span>Lespion (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="electricbreeze-1-htb.html"><span>ElectricBreeze-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="grabthephisher-cyberdefenders.html"><span>GrabThePhisher (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="dream-job-1-htb.html"><span>Dream Job-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="foxy-btlo.html"><span>Foxy (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="invite-only-thm.html"><span>Invite Only (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="haunted-btlo.html"><span>Haunted (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>A decentralized finance (DeFi) platform recently reported multiple user complaints about unauthorized fund withdrawals. A forensic review uncovered a phishing site impersonating the legitimate PancakeSwap exchange, luring victims into entering their wallet seed phrases. The phishing kit was hosted on a compromised server and exfiltrated credentials via a Tel</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>GrabThePhisher (CyberDefenders)</li><li>Scenario</li><li>1- Which wallet is used for asking the seed phrase?</li><li>2- What is the file name that has the code for the phishing kit?</li><li>3- In which language was the kit written?</li><li>5- How many seed phrases were already collected?</li><li>6- Could you please provide the seed phrase associated with the most recent phishing incident?</li><li>7- Which medium was used for credential dumping?</li><li>8- What is the token for accessing the channel?</li><li>9- What is the Chat ID for the phisher's channel?</li><li>10- What are the allies of the phish kit developer?</li><li>11- What is the full name of the Phish Actor?</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="grabthephisher-cyberdefenders">GrabThePhisher (CyberDefenders)</h2>
+<h3 id="scenario"><strong>Scenario</strong></h3>
+<p><strong>A decentralized finance (DeFi) platform recently reported multiple user complaints about unauthorized fund withdrawals. A forensic review uncovered a phishing site impersonating the legitimate PancakeSwap exchange, luring victims into entering their wallet seed phrases. The phishing kit was hosted on a compromised server and exfiltrated credentials via a Telegram bot.</strong></p>
+<p><strong>Your task is to conduct threat intelligence analysis on the phishing infrastructure, identify indicators of compromise (IoCs), and track the attacker’s online presence, including aliases and Telegram identifiers, to understand their tactics, techniques, and procedures (TTPs).</strong></p>
+<p><a class="note-link" href="https://cyberdefenders.org/blueteam-ctf-challenges/grabthephisher/">https://cyberdefenders.org/blueteam-ctf-challenges/grabthephisher/</a></p>
+<hr>
+<h4 id="1-which-wallet-is-used-for-asking-the-seed-phrase">1- Which wallet is used for asking the seed phrase?</h4>
+<p>Metamask</p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_080637-5cf20dd4.png" data-alt="Screenshot 2025-07-09 080637.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_080637-5cf20dd4.png" alt="Screenshot 2025-07-09 080637.png" loading="lazy"></button></p>
+<p>we opened the file and that what  we see .  we know we are investigating a phishing kit used to build a phishing site impersonating a crypto site to steal crypto wallets then exfiltrating the credentials via telegram bot</p>
+<p>as for the question we see Metamask</p>
+<p>i didn’t know at first but after some search about crypto wallets and i found that Metamask is a complimentary cryptocurrency wallet application</p>
+<h4 id="2-what-is-the-file-name-that-has-the-code-for-the-phishing-kit">2- What is the file name that has the code for the phishing kit?</h4>
+<p>metamask.php</p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_081714-57e88fbc.png" data-alt="Screenshot 2025-07-09 081714.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_081714-57e88fbc.png" alt="Screenshot 2025-07-09 081714.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_081835-5f79b382.png" data-alt="Screenshot 2025-07-09 081835.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_081835-5f79b382.png" alt="Screenshot 2025-07-09 081835.png" loading="lazy"></button></p>
+<p>in the metamask folder we found a php file</p>
+<h4 id="3-in-which-language-was-the-kit-written">3- In which language was the kit written?</h4>
+<p>PHP</p>
+<p>4- What service does the kit use to retrieve the victim's machine information? Sypex Geo</p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082015-2326cce9.png" data-alt="Screenshot 2025-07-09 082015.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082015-2326cce9.png" alt="Screenshot 2025-07-09 082015.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082337-3e13b502.png" data-alt="Screenshot 2025-07-09 082337.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082337-3e13b502.png" alt="Screenshot 2025-07-09 082337.png" loading="lazy"></button></p>
+<p>looking at the code we see it initiates a request to <strong>http://api.sypexgeo.net/json/</strong> to get location and date</p>
+<p>sypex geo is a russion site for ip geolocation based on the ip address</p>
+<h4 id="5-how-many-seed-phrases-were-already-collected">5- How many seed phrases were already collected?</h4>
+<p>3</p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082553-e0804748.png" data-alt="Screenshot 2025-07-09 082553.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082553-e0804748.png" alt="Screenshot 2025-07-09 082553.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082619-6d5d1808.png" data-alt="Screenshot 2025-07-09 082619.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082619-6d5d1808.png" alt="Screenshot 2025-07-09 082619.png" loading="lazy"></button></p>
+<p>analysing the phishing kit code we see a sendTel function that stores collected seed phrases in log.txt file</p>
+<p>in the log folder will find log.txt file inside it will see 3 phrases are recorded</p>
+<h4 id="6-could-you-please-provide-the-seed-phrase-associated-with-the-most-recent-phishing-incide">6- Could you please provide the seed phrase associated with the most recent phishing incident?</h4>
+<p>father also recycle embody balance concert mechanic believe owner pair muffin hockey</p>
+<h4 id="7-which-medium-was-used-for-credential-dumping">7- Which medium was used for credential dumping?</h4>
+<p>Telegram</p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082833-ff1c86d6.png" data-alt="Screenshot 2025-07-09 082833.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082833-ff1c86d6.png" alt="Screenshot 2025-07-09 082833.png" loading="lazy"></button></p>
+<p>from the scenario we know its telegram but we can see the answer in the phis kit code</p>
+<h4 id="8-what-is-the-token-for-accessing-the-channel">8- What is the token for accessing the channel?</h4>
+<p>5457463144:AAG8t4k7e2ew3tTi0IBShcWbSia0Irvxm10</p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082846-af156d88.png" data-alt="Screenshot 2025-07-09 082846.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082846-af156d88.png" alt="Screenshot 2025-07-09 082846.png" loading="lazy"></button></p>
+<h4 id="9-what-is-the-chat-id-for-the-phishers-channel">9- What is the Chat ID for the phisher's channel?</h4>
+<p>5442785564</p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082902-e22bb564.png" data-alt="Screenshot 2025-07-09 082902.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_082902-e22bb564.png" alt="Screenshot 2025-07-09 082902.png" loading="lazy"></button></p>
+<h4 id="10-what-are-the-allies-of-the-phish-kit-developer">10- What are the allies of the phish kit developer?</h4>
+<p>j1j1b1s@m3r0</p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_083135-e80590f0.png" data-alt="Screenshot 2025-07-09 083135.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_083135-e80590f0.png" alt="Screenshot 2025-07-09 083135.png" loading="lazy"></button></p>
+<h4 id="11-what-is-the-full-name-of-the-phish-actor">11- What is the full name of the Phish Actor?</h4>
+<p>Marcus Aurelius</p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-image-1e23234b.png" data-alt="image.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-image-1e23234b.png" alt="image.png" loading="lazy"></button></p>
+<p>using the url we found with the provided token and chat id</p>
+<p><a class="note-link" href="https://api.telegram.org/bot5457463144:AAG8t4k7e2ew3tTi0IBShcWbSia0Irvxm10/getChat?chat_id=5442785564">https://api.telegram.org/bot5457463144:AAG8t4k7e2ew3tTi0IBShcWbSia0Irvxm10/getChat?chat_id=5442785564</a></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_083602-a5f915ed.png" data-alt="Screenshot 2025-07-09 083602.png"><img src="../assets/images/threat-intelligence-labsgrabthephisher-cyberdefenders-screenshot_2025-07-09_083602-a5f915ed.png" alt="Screenshot 2025-07-09 083602.png" loading="lazy"></button></p>
+<p>we can see the phish actor full name and username</p>
+<h4 id="12-what-is-the-username-of-the-phish-actor">12- What is the username of the Phish Actor?</h4>
+<p>pumpkinboii</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#grabthephisher-cyberdefenders">GrabThePhisher (CyberDefenders)</a><a href="#scenario">Scenario</a><a href="#1-which-wallet-is-used-for-asking-the-seed-phrase">1- Which wallet is used for asking the seed phrase?</a><a href="#2-what-is-the-file-name-that-has-the-code-for-the-phishing-kit">2- What is the file name that has the code for the phishing kit?</a><a href="#3-in-which-language-was-the-kit-written">3- In which language was the kit written?</a><a href="#5-how-many-seed-phrases-were-already-collected">5- How many seed phrases were already collected?</a><a href="#6-could-you-please-provide-the-seed-phrase-associated-with-the-most-recent-phishing-incide">6- Could you please provide the seed phrase associated with the most recent phishing incident?</a><a href="#7-which-medium-was-used-for-credential-dumping">7- Which medium was used for credential dumping?</a><a href="#8-what-is-the-token-for-accessing-the-channel">8- What is the token for accessing the channel?</a><a href="#9-what-is-the-chat-id-for-the-phishers-channel">9- What is the Chat ID for the phisher's channel?</a><a href="#10-what-are-the-allies-of-the-phish-kit-developer">10- What are the allies of the phish kit developer?</a><a href="#11-what-is-the-full-name-of-the-phish-actor">11- What is the full name of the Phish Actor?</a><a href="#12-what-is-the-username-of-the-phish-actor">12- What is the username of the Phish Actor?</a></details>
+    </div>
+    
+    <footer class="pager"><a href="electricbreeze-1-htb.html">← ElectricBreeze-1 (HTB)</a><a href="dream-job-1-htb.html">Dream Job-1 (HTB) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

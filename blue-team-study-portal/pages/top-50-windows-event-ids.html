@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Top 50 Windows Event IDs | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="windows-event-ids.html">Windows Event IDs</a><span>/</span><span>Top 50 Windows Event IDs</span></div>
+      <h1>Top 50 Windows Event IDs</h1>
+      <p>- Failed Login Attempts ❌ – Event ID: 4625 - Account Lockouts 🔒 – Event ID: 4740 - Successful Login Outside Business Hours 🌙 – Event ID: 4624 - New User Creation 🆕 – Event ID: 4720 - Privileged Account Usage 🔑 – Event ID: 4672 - User Account Changes 🔄 – Event IDs: 4722, 4723, 4724, 4725, 4726 - Logon from Unusual Locations 🌍 – Event ID: 4624 (with geol</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">EDR</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Sysmon</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Detection</span><span class="tag">Lateral Movement</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Windows Event IDs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-event-ids.html"><span>Windows Event IDs</span><em>L1.5</em></a>
+      <b>9</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="sysmon-event-ids.html"><span>Sysmon Event IDs</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="logon-types.html"><span>Logon Types</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-logon-failure-status-and-sub-status-codes.html"><span>Windows Logon Failure Status and Sub-Status Codes</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="failure-codes.html"><span>Failure Codes</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="account-management-events.html"><span>Account Management Events</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="security-group-creation-and-removal-events.html"><span>Security Group Creation and Removal Events</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="addition-or-removal-of-a-member-events.html"><span>Addition or Removal of a Member Events</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="mahmoud-shaker-event-ids-notes.html"><span>Mahmoud Shaker Event IDs notes</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="top-50-windows-event-ids.html"><span>Top 50 Windows Event IDs</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>- Failed Login Attempts ❌ – Event ID: 4625 - Account Lockouts 🔒 – Event ID: 4740 - Successful Login Outside Business Hours 🌙 – Event ID: 4624 - New User Creation 🆕 – Event ID: 4720 - Privileged Account Usage 🔑 – Event ID: 4672 - User Account Changes 🔄 – Event IDs: 4722, 4723, 4724, 4725, 4726 - Logon from Unusual Locations 🌍 – Event ID: 4624 (with geol</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Top 50 Windows Event IDs</li><li>Authentication &amp; Access Monitoring</li><li>File, Process, and Registry Monitoring</li><li>Security &amp; Anomaly Detection</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>EDR</li><li>Sysmon</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="top-50-windows-event-ids">Top 50 Windows Event IDs</h2>
+<h3 id="authentication-access-monitoring"><strong>Authentication &amp; Access Monitoring</strong></h3>
+<ul>
+<li><strong>Failed Login Attempts ❌</strong> – Event ID: <code>4625</code></li>
+<li><strong>Account Lockouts 🔒</strong> – Event ID: <code>4740</code></li>
+<li><strong>Successful Login Outside Business Hours 🌙</strong> – Event ID: <code>4624</code></li>
+<li><strong>New User Creation 🆕</strong> – Event ID: <code>4720</code></li>
+<li><strong>Privileged Account Usage 🔑</strong> – Event ID: <code>4672</code></li>
+<li><strong>User Account Changes 🔄</strong> – Event IDs: <code>4722, 4723, 4724, 4725, 4726</code></li>
+<li><strong>Logon from Unusual Locations 🌍</strong> – Event ID: <code>4624</code> (with geolocation analysis)</li>
+<li><strong>Password Changes 🔑🔄</strong> – Event IDs: <code>4723, 4724</code></li>
+<li><strong>Group Membership Changes 👥</strong> – Event IDs: <code>4727, 4731, 4735, 4737</code></li>
+<li><strong>Suspicious Logon Patterns ⚠️</strong> – Event ID: <code>4624</code></li>
+<li><strong>Excessive Logon Failures 🚫</strong> – Event ID: <code>4625</code></li>
+<li><strong>Disabled Account Activity ⛔</strong> – Event ID: <code>4725</code></li>
+<li><strong>Dormant Account Usage 💤</strong> – Event ID: <code>4624</code></li>
+<li><strong>Service Account Activity ⚙️</strong> – Event IDs: <code>4624, 4672</code></li>
+<li><strong>RDP Access Monitoring 💻</strong> – Event ID: <code>4624</code> (with RDP-specific filtering)</li>
+<li><strong>Lateral Movement Detection 🔄🌐</strong> – Event ID: <code>4648</code></li>
+</ul>
+<hr>
+<hr>
+<h3 id="file-process-and-registry-monitoring"><strong>File, Process, and Registry Monitoring</strong></h3>
+<ul>
+<li><strong>File and Folder Access 📂</strong> – Event ID: <code>4663</code></li>
+<li><strong>Unauthorised File Sharing 📤</strong> – Event IDs: <code>5140, 5145</code></li>
+<li><strong>Registry Changes 📝</strong> – Event ID: <code>4657</code></li>
+<li><strong>Application Installation and Removal 📦</strong> – Event IDs: <code>11707, 1033</code></li>
+<li><strong>USB Device Usage 💾</strong> – Event IDs: <code>20001, 20003</code></li>
+<li><strong>Windows Firewall Changes 🔥</strong> – Event IDs: <code>4946, 4947, 4950, 4951</code></li>
+<li><strong>Scheduled Task Creation 🗓️</strong> – Event ID: <code>4698</code></li>
+<li><strong>Process Execution Monitoring 🖥️</strong> – Event ID: <code>4688</code></li>
+<li><strong>System Restart or Shutdown 🔄</strong> – Event IDs: <code>6005, 6006, 1074</code></li>
+<li><strong>Event Log Clearing 🧹</strong> – Event ID: <code>1102</code></li>
+<li><strong>Malware Execution or Indicators 🦠</strong> – Event IDs: <code>4688, 1116</code></li>
+<li><strong>Active Directory Changes 🔑</strong> – Event IDs: <code>5136, 5141</code></li>
+<li><strong>Shadow Copy Deletion 🗑️</strong> – Event ID: <code>524</code></li>
+<li><strong>Network Configuration Changes 🌐</strong> – Event IDs: <code>4254, 4255, 10400</code></li>
+<li><strong>Execution of Suspicious Scripts 📝⚠️</strong> – Event ID: <code>4688</code> (process creation with script interpreter)</li>
+<li><strong>Service Installation or Modification 🔧</strong> – Event ID: <code>4697</code></li>
+<li><strong>Clearing of Audit Logs 🧹📝</strong> – Event ID: <code>1102</code></li>
+<li><strong>Software Restriction Policy Violation 🚫</strong> – Event ID: <code>865</code></li>
+<li><strong>Excessive Account Enumeration 🔢</strong> – Event IDs: <code>4625, 4776</code></li>
+</ul>
+<hr>
+<hr>
+<h3 id="security-anomaly-detection"><strong>Security &amp; Anomaly Detection</strong></h3>
+<ul>
+<li><strong>Attempt to Access Sensitive Files 🔒</strong> – Event ID: <code>4663</code></li>
+<li><strong>Unusual Process Injection 💉</strong> – Event ID: <code>4688</code> (with EDR or Sysmon data)</li>
+<li><strong>Driver Installation 🚗</strong> – Event ID: <code>7045</code></li>
+<li><strong>Modification of Scheduled Tasks 🛠️</strong> – Event ID: <code>4699</code></li>
+<li><strong>Unauthorised GPO Changes 🔧</strong> – Event ID: <code>5136</code></li>
+<li><strong>Suspicious PowerShell Activity 🖥️💣</strong> – Event ID: <code>4104</code></li>
+<li><strong>Unusual Network Connections 🌐⚡</strong> – Event ID: <code>5156</code></li>
+<li><strong>Unauthorised Access to Shared Files 🚫📁</strong> – Event ID: <code>5145</code></li>
+<li><strong>DNS Query for Malicious Domains 🌐🔍</strong> – Event ID: <code>5158</code></li>
+<li><strong>LDAP Search Abuse 🔍</strong> – Event ID: <code>4662</code></li>
+<li><strong>Process Termination Monitoring 🛑</strong> – Event ID: <code>4689</code></li>
+<li><strong>Failed Attempts to Start a Service 🚫🛠️</strong> – Event ID: <code>7041</code></li>
+<li><strong>Audit Policy Changes 🛡️</strong> – Event IDs: <code>4719, 1102</code></li>
+<li><strong>Time Change Monitoring ⏰</strong> – Event IDs: <code>4616, 520</code></li>
+<li><strong>BitLocker Encryption Key Changes 🔑🔐</strong> – Event ID: <code>5379</code></li>
+</ul></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#top-50-windows-event-ids">Top 50 Windows Event IDs</a><a href="#authentication-access-monitoring">Authentication &amp; Access Monitoring</a><a href="#file-process-and-registry-monitoring">File, Process, and Registry Monitoring</a><a href="#security-anomaly-detection">Security &amp; Anomaly Detection</a></details>
+    </div>
+    
+    <footer class="pager"><a href="mahmoud-shaker-event-ids-notes.html">← Mahmoud Shaker Event IDs notes</a><span></span></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

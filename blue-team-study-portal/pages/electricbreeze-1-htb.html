@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ElectricBreeze-1 (HTB) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-intelligence-labs.html">Threat Intelligence Labs</a><span>/</span><span>ElectricBreeze-1 (HTB)</span></div>
+      <h1>ElectricBreeze-1 (HTB)</h1>
+      <p>Your security team must always be up-to-date and aware of the threats targeting organizations in your industry. As you begin your journey as a Threat Intelligence Intern, equipped with some SOC experience, your manager has assigned you a task to test your research skills and how effectively you can leverage the MITRE ATT&amp;CK framework. Conduct thorough resear</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">Active Directory</span><span class="tag">Web</span><span class="tag">Memory</span><span class="tag">Threat Intel</span><span class="tag">C2</span><span class="tag mitre">T1003.001</span><span class="tag mitre">T1003.003</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Intelligence Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>L1.5</em></a>
+      <b>18</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="tusk-infostealer-cyberdefenders.html"><span>Tusk Infostealer (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ufo-1-htb.html"><span>UFO-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="intel101-cyberdefenders.html"><span>Intel101 (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="red-stealer-cyberdefenders.html"><span>Red Stealer (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="3cx-supply-chain-cyberdefenders.html"><span>3CX Supply Chain (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="trooper-thm.html"><span>Trooper (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="attck-btlo.html"><span>ATT&amp;CK (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="icedid-cyberdefenders.html"><span>IcedID (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="oski-cyberdefenders.html"><span>Oski (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="yellow-rat-cyberdefenders.html"><span>Yellow RAT (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="friday-overtime-thm.html"><span>Friday Overtime (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="lespion-cyberdefenders.html"><span>Lespion (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="electricbreeze-1-htb.html"><span>ElectricBreeze-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="grabthephisher-cyberdefenders.html"><span>GrabThePhisher (CyberDefenders)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="dream-job-1-htb.html"><span>Dream Job-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="foxy-btlo.html"><span>Foxy (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="invite-only-thm.html"><span>Invite Only (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="haunted-btlo.html"><span>Haunted (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Your security team must always be up-to-date and aware of the threats targeting organizations in your industry. As you begin your journey as a Threat Intelligence Intern, equipped with some SOC experience, your manager has assigned you a task to test your research skills and how effectively you can leverage the MITRE ATT&amp;CK framework. Conduct thorough resear</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>ElectricBreeze-1 (HTB)</li><li>Scenario</li><li>1- Based on MITRE's sources, since when has Volt Typhoon been active?</li><li>2021</li><li>2- MITRE identifies two OS credential dumping techniques used by Volt Typhoon. One is LSASS Memory access (T1003.001). What is the Attack ID for the other technique?</li><li>T1003.003</li><li>3- Which database is targeted by the credential dumping technique mentioned earlier?</li><li>Active Directory</li><li>4- Which registry hive is required by the threat actor to decrypt the targeted database?</li><li>SYSTEM</li><li>5- During the June 2024 campaign, an adversary was observed using a Zero-Day Exploitation targeting Versa Director. What is the name of the Software/Malware that was used?</li><li>VersaMem</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="electricbreeze-1-htb">ElectricBreeze-1 (HTB)</h2>
+<h3 id="scenario"><strong>Scenario</strong></h3>
+<p>*<em>Your security team must always be up-to-date and aware of the threats targeting organizations in your industry. As you begin your journey as a Threat Intelligence Intern, equipped with some SOC experience, your manager has assigned you a task to test your research skills and how effectively you can leverage the MITRE ATT&amp;CK framework. </em> Conduct thorough research on Volt Typhoon. <em> Use the MITRE ATT&amp;CK framework to map adversary behavior and tactics into actionable insights. Impress your manager with your assessment, showcasing your passion for threat intelligence.</em>*</p>
+<p><a class="note-link" href="https://app.hackthebox.com/sherlocks/ElectricBreeze-1">https://app.hackthebox.com/sherlocks/ElectricBreeze-1</a></p>
+<hr>
+<h4 id="1-based-on-mitres-sources-since-when-has-volt-typhoon-been-active"><strong>1- Based on MITRE's sources, since when has Volt Typhoon been active?</strong></h4>
+<h4 id="2021">2021</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_202700-5bb48fbe.png" data-alt="Screenshot 2025-08-20 202700.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_202700-5bb48fbe.png" alt="Screenshot 2025-08-20 202700.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_202736-3dfd1d0b.png" data-alt="Screenshot 2025-08-20 202736.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_202736-3dfd1d0b.png" alt="Screenshot 2025-08-20 202736.png" loading="lazy"></button></p>
+<p>we can find the answer in mitre introduction</p>
+<h4 id="2-mitre-identifies-two-os-credential-dumping-techniques-used-by-volt-typhoon.-one-is-lsass"><strong>2- MITRE identifies two OS credential dumping techniques used by Volt Typhoon. One is LSASS Memory access (T1003.001). What is the Attack ID for the other technique?</strong></h4>
+<h4 id="t1003.003">T1003.003</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_202805-2e532c85.png" data-alt="Screenshot 2025-08-20 202805.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_202805-2e532c85.png" alt="Screenshot 2025-08-20 202805.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_202851-32184ff8.png" data-alt="Screenshot 2025-08-20 202851.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_202851-32184ff8.png" alt="Screenshot 2025-08-20 202851.png" loading="lazy"></button></p>
+<p>we go to ttps section and use mitre navigator</p>
+<h4 id="3-which-database-is-targeted-by-the-credential-dumping-technique-mentioned-earlier"><strong>3- Which database is targeted by the credential dumping technique mentioned earlier?</strong></h4>
+<h4 id="active-directory">Active Directory</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_202948-d8ffe557.png" data-alt="Screenshot 2025-08-20 202948.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_202948-d8ffe557.png" alt="Screenshot 2025-08-20 202948.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_203548-5a1dcd38.png" data-alt="Screenshot 2025-08-20 203548.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_203548-5a1dcd38.png" alt="Screenshot 2025-08-20 203548.png" loading="lazy"></button></p>
+<p>open the technique or use google</p>
+<h4 id="4-which-registry-hive-is-required-by-the-threat-actor-to-decrypt-the-targeted-database"><strong>4- Which registry hive is required by the threat actor to decrypt the targeted database?</strong></h4>
+<h4 id="system">SYSTEM</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_145044-909115ec.png" data-alt="Screenshot 2025-08-21 145044.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_145044-909115ec.png" alt="Screenshot 2025-08-21 145044.png" loading="lazy"></button></p>
+<h4 id="5-during-the-june-2024-campaign-an-adversary-was-observed-using-a-zero-day-exploitation-ta"><strong>5- During the June 2024 campaign, an adversary was observed using a Zero-Day Exploitation targeting Versa Director. What is the name of the Software/Malware that was used?</strong></h4>
+<h4 id="versamem">VersaMem</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_203627-4d31226b.png" data-alt="Screenshot 2025-08-20 203627.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_203627-4d31226b.png" alt="Screenshot 2025-08-20 203627.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_203709-8f4ad1de.png" data-alt="Screenshot 2025-08-20 203709.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-20_203709-8f4ad1de.png" alt="Screenshot 2025-08-20 203709.png" loading="lazy"></button></p>
+<p>go to campaigns section and open versa director campaign we can find the answer in the introduction</p>
+<h4 id="6-according-to-the-server-software-component-what-type-of-malware-was-observed"><strong>6- According to the Server Software Component, what type of malware was observed?</strong></h4>
+<h4 id="web-shell">Web Shell</h4>
+<p>from the previous question  “VersaMem web shell”</p>
+<h4 id="7-where-did-the-malware-store-captured-credentials"><strong>7- Where did the malware store captured credentials?</strong></h4>
+<h4 id="tmp.temp.data">/tmp/.temp.data</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_192810-8d20faf0.png" data-alt="Screenshot 2025-08-21 192810.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_192810-8d20faf0.png" alt="Screenshot 2025-08-21 192810.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_192800-f9468fba.png" data-alt="Screenshot 2025-08-21 192800.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_192800-f9468fba.png" alt="Screenshot 2025-08-21 192800.png" loading="lazy"></button></p>
+<h4 id="8-according-to-mitres-reference-a-lumenblack-lotus-labs-articletaking-the-crossroads-the-v"><strong>8- According to MITRE’s reference, a Lumen/Black Lotus Labs article(Taking The Crossroads: The Versa Director Zero-Day Exploitaiton.), what was the filename of the first malware version scanned on VirusTotal?</strong></h4>
+<h4 id="versatest.png">VersaTest.png</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_192944-ed75b4cf.png" data-alt="Screenshot 2025-08-21 192944.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_192944-ed75b4cf.png" alt="Screenshot 2025-08-21 192944.png" loading="lazy"></button></p>
+<p><a class="note-link" href="https://blog.lumen.com/uncovering-the-versa-director-zero-day-exploitation/">https://blog.lumen.com/uncovering-the-versa-director-zero-day-exploitation/</a></p>
+<p>go down to reference section and open lumen blog</p>
+<h4 id="9-what-is-the-sha256-hash-of-the-file"><strong>9- What is the SHA256 hash of the file?</strong></h4>
+<h4 id="4bcedac20a75e8f8833f4725adfc87577c32990c3783bf6c743f14599a176c37">4bcedac20a75e8f8833f4725adfc87577c32990c3783bf6c743f14599a176c37</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193019-e5115c90.png" data-alt="Screenshot 2025-08-21 193019.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193019-e5115c90.png" alt="Screenshot 2025-08-21 193019.png" loading="lazy"></button></p>
+<p>in the same blog</p>
+<h4 id="10-according-to-virustotal-what-is-the-file-type-of-the-malware"><strong>10- According to VirusTotal, what is the file type of the malware?</strong></h4>
+<h4 id="jar">JAR</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193050-0d5c6267.png" data-alt="Screenshot 2025-08-21 193050.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193050-0d5c6267.png" alt="Screenshot 2025-08-21 193050.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193057-0d323229.png" data-alt="Screenshot 2025-08-21 193057.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193057-0d323229.png" alt="Screenshot 2025-08-21 193057.png" loading="lazy"></button></p>
+<h4 id="11-what-is-the-created-by-value-in-the-files-manifest-according-to-virustotal"><strong>11- What is the 'Created by' value in the file's Manifest according to VirusTotal?</strong></h4>
+<h4 id="apache-maven-3.6.0">Apache Maven 3.6.0</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193125-9f8add9a.png" data-alt="Screenshot 2025-08-21 193125.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193125-9f8add9a.png" alt="Screenshot 2025-08-21 193125.png" loading="lazy"></button></p>
+<h4 id="12-what-is-the-cve-identifier-associated-with-this-malware-and-vulnerability"><strong>12- What is the CVE identifier associated with this malware and vulnerability?</strong></h4>
+<h4 id="cve-2024-39717">CVE-2024-39717</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193148-ccff6c86.png" data-alt="Screenshot 2025-08-21 193148.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193148-ccff6c86.png" alt="Screenshot 2025-08-21 193148.png" loading="lazy"></button></p>
+<h4 id="13-according-to-the-cisa-documenthttpswww.cisa.govsitesdefaultfiles2024-03aa24-038acsaprcs"><strong>13- According to the CISA document(<code>https://www.cisa.gov/sites/default/files/2024-03/aa24-038a_csa_prc_state_sponsored_actors_compromise_us_critical_infrastructure_3.pdf</code>) referenced by MITRE, what is the primary strategy Volt Typhoon uses for defense evasion?</strong></h4>
+<h4 id="lotl">LOTL</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193409-326b8e89.png" data-alt="Screenshot 2025-08-21 193409.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193409-326b8e89.png" alt="Screenshot 2025-08-21 193409.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193350-1fff8db5.png" data-alt="Screenshot 2025-08-21 193350.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193350-1fff8db5.png" alt="Screenshot 2025-08-21 193350.png" loading="lazy"></button></p>
+<h4 id="14-in-the-cisa-document-which-file-name-is-associated-with-the-command-potentially-used-to"><strong>14- In the CISA document, which file name is associated with the command potentially used to analyze logon patterns by Volt Typhoon?</strong></h4>
+<h4 id="cuserspublicdocumentsuser.dat">C:\users\public\documents\user.dat</h4>
+<p><button class="image-button" data-src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193514-25d83486.png" data-alt="Screenshot 2025-08-21 193514.png"><img src="../assets/images/threat-intelligence-labselectricbreeze-1-htb-screenshot_2025-08-21_193514-25d83486.png" alt="Screenshot 2025-08-21 193514.png" loading="lazy"></button></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#electricbreeze-1-htb">ElectricBreeze-1 (HTB)</a><a href="#scenario">Scenario</a><a href="#1-based-on-mitres-sources-since-when-has-volt-typhoon-been-active">1- Based on MITRE's sources, since when has Volt Typhoon been active?</a><a href="#2021">2021</a><a href="#2-mitre-identifies-two-os-credential-dumping-techniques-used-by-volt-typhoon.-one-is-lsass">2- MITRE identifies two OS credential dumping techniques used by Volt Typhoon. One is LSASS Memory access (T1003.001). What is the Attack ID for the other technique?</a><a href="#t1003.003">T1003.003</a><a href="#3-which-database-is-targeted-by-the-credential-dumping-technique-mentioned-earlier">3- Which database is targeted by the credential dumping technique mentioned earlier?</a><a href="#active-directory">Active Directory</a><a href="#4-which-registry-hive-is-required-by-the-threat-actor-to-decrypt-the-targeted-database">4- Which registry hive is required by the threat actor to decrypt the targeted database?</a><a href="#system">SYSTEM</a><a href="#5-during-the-june-2024-campaign-an-adversary-was-observed-using-a-zero-day-exploitation-ta">5- During the June 2024 campaign, an adversary was observed using a Zero-Day Exploitation targeting Versa Director. What is the name of the Software/Malware that was used?</a><a href="#versamem">VersaMem</a><a href="#6-according-to-the-server-software-component-what-type-of-malware-was-observed">6- According to the Server Software Component, what type of malware was observed?</a><a href="#web-shell">Web Shell</a><a href="#7-where-did-the-malware-store-captured-credentials">7- Where did the malware store captured credentials?</a><a href="#tmp.temp.data">/tmp/.temp.data</a><a href="#8-according-to-mitres-reference-a-lumenblack-lotus-labs-articletaking-the-crossroads-the-v">8- According to MITRE’s reference, a Lumen/Black Lotus Labs article(Taking The Crossroads: The Versa Director Zero-Day Exploitaiton.), what was the filename of the first malware version scanned on VirusTotal?</a><a href="#versatest.png">VersaTest.png</a><a href="#9-what-is-the-sha256-hash-of-the-file">9- What is the SHA256 hash of the file?</a><a href="#4bcedac20a75e8f8833f4725adfc87577c32990c3783bf6c743f14599a176c37">4bcedac20a75e8f8833f4725adfc87577c32990c3783bf6c743f14599a176c37</a><a href="#10-according-to-virustotal-what-is-the-file-type-of-the-malware">10- According to VirusTotal, what is the file type of the malware?</a><a href="#jar">JAR</a><a href="#11-what-is-the-created-by-value-in-the-files-manifest-according-to-virustotal">11- What is the 'Created by' value in the file's Manifest according to VirusTotal?</a><a href="#apache-maven-3.6.0">Apache Maven 3.6.0</a><a href="#12-what-is-the-cve-identifier-associated-with-this-malware-and-vulnerability">12- What is the CVE identifier associated with this malware and vulnerability?</a><a href="#cve-2024-39717">CVE-2024-39717</a><a href="#13-according-to-the-cisa-documenthttpswww.cisa.govsitesdefaultfiles2024-03aa24-038acsaprcs">13- According to the CISA document(https://www.cisa.gov/sites/default/files/2024-03/aa24-038acsaprcstatesponsoredactorscompromiseuscriticalinfrastructure3.pdf) referenced by MITRE, what is the primary strategy Volt Typhoon uses for defense evasion?</a><a href="#lotl">LOTL</a><a href="#14-in-the-cisa-document-which-file-name-is-associated-with-the-command-potentially-used-to">14- In the CISA document, which file name is associated with the command potentially used to analyze logon patterns by Volt Typhoon?</a><a href="#cuserspublicdocumentsuser.dat">C:\users\public\documents\user.dat</a></details>
+    </div>
+    
+    <footer class="pager"><a href="lespion-cyberdefenders.html">← Lespion (CyberDefenders)</a><a href="grabthephisher-cyberdefenders.html">GrabThePhisher (CyberDefenders) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

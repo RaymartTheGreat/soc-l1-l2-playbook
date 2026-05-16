@@ -1,0 +1,142 @@
+{
+  "id": "phishing analysis/email authentication",
+  "title": "Email Authentication",
+  "slug": "email-authentication",
+  "relPath": "Phishing analysis/Email Authentication.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-initial-triage",
+  "curriculumSectionTitle": "Initial Triage & Analysis",
+  "tags": [
+    "Phishing"
+  ],
+  "mitre": [],
+  "parentId": "phishing analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "phishing analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "phishing analysis",
+      "title": "Phishing analysis",
+      "slug": "phishing-analysis"
+    },
+    {
+      "id": "phishing analysis/email authentication",
+      "title": "Email Authentication",
+      "slug": "email-authentication"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Email Authentication"
+    },
+    {
+      "level": 2,
+      "text": "SPF (Sender Policy Framework)"
+    },
+    {
+      "level": 3,
+      "text": "Example:"
+    },
+    {
+      "level": 3,
+      "text": "SPF Record Breakdown:"
+    },
+    {
+      "level": 3,
+      "text": "What all Means:"
+    },
+    {
+      "level": 3,
+      "text": "Important Note:"
+    },
+    {
+      "level": 2,
+      "text": "DKIM (DomainKeys Identified Mail)"
+    },
+    {
+      "level": 3,
+      "text": "How It Works:"
+    },
+    {
+      "level": 3,
+      "text": "Record Example:"
+    },
+    {
+      "level": 2,
+      "text": "DMARC (Domain-based Message Authentication, Reporting and Conformance)"
+    },
+    {
+      "level": 3,
+      "text": "Example:"
+    },
+    {
+      "level": 3,
+      "text": "Policy Options:"
+    },
+    {
+      "level": 3,
+      "text": "DMARC Record Example:"
+    },
+    {
+      "level": 2,
+      "text": "Authentication-Results Header"
+    },
+    {
+      "level": 2,
+      "text": "Conclusion"
+    }
+  ],
+  "overview": "Attackers often spoof trusted domains to trick users into opening malicious emails. To help detect and prevent this, domain owners can configure SPF, DKIM, and DMARC records in DNS. These work together to verify that messages are actually coming from the domains they claim to represent.",
+  "study": {
+    "overview": "Attackers often spoof trusted domains to trick users into opening malicious emails. To help detect and prevent this, domain owners can configure SPF, DKIM, and DMARC records in DNS. These work together to verify that messages are actually coming from the domains they claim to represent.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Email Authentication",
+      "SPF (Sender Policy Framework)",
+      "Example:",
+      "SPF Record Breakdown:",
+      "What all Means:",
+      "Important Note:",
+      "DKIM (DomainKeys Identified Mail)",
+      "How It Works:",
+      "Record Example:",
+      "DMARC (Domain-based Message Authentication, Reporting and Conformance)",
+      "Example:",
+      "Policy Options:"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "nslookup -type=txt google.com | grep -i spf\ndig TXT google.com | grep -i spf"
+      },
+      {
+        "language": "text",
+        "code": "v=spf1 include:mailgun.org include:protection.outlook.com -all"
+      },
+      {
+        "language": "bash",
+        "code": "v=DKIM1; k=rsa; p=<public_key>"
+      },
+      {
+        "language": "bash",
+        "code": "v=DMARC1; p=quarantine; rua=mailto:contact@yourdomain.com"
+      }
+    ],
+    "tools": [],
+    "tips": [
+      "Even if DKIM is set up correctly, an attacker could still use a lookalike domain or compromise a real mailbox to send signed messages."
+    ]
+  }
+}

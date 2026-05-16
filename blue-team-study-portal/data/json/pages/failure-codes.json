@@ -1,0 +1,56 @@
+{
+  "id": "windows event ids/failure codes",
+  "title": "Failure Codes",
+  "slug": "failure-codes",
+  "relPath": "Windows Event IDs/Failure Codes.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "Windows"
+  ],
+  "mitre": [],
+  "parentId": "windows event ids",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows event ids"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows event ids",
+      "title": "Windows Event IDs",
+      "slug": "windows-event-ids"
+    },
+    {
+      "id": "windows event ids/failure codes",
+      "title": "Failure Codes",
+      "slug": "failure-codes"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Failure Codes"
+    }
+  ],
+  "overview": "| Failure Code | Description | | --- | --- | | 0x6 | The user doesn't exist. | | 0x9 | Password must be reset. | | 0x12 | Account disabled, account expired, account locked out, or out of logon hours. | | 0x17 | Password expired. | | 0x18 | Wrong password. | | 0x20 | Ticket expired. | | 0x25 | The workstation's clock is out of sync with the DC's. |",
+  "study": {
+    "overview": "| Failure Code | Description | | --- | --- | | 0x6 | The user doesn't exist. | | 0x9 | Password must be reset. | | 0x12 | Account disabled, account expired, account locked out, or out of logon hours. | | 0x17 | Password expired. | | 0x18 | Wrong password. | | 0x20 | Ticket expired. | | 0x25 | The workstation's clock is out of sync with the DC's. |",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Failure Codes"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

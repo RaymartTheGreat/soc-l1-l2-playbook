@@ -1,0 +1,128 @@
+{
+  "id": "detecting ad attacks/putting it all together ad attack scenario",
+  "title": "Putting It All Together AD Attack Scenario",
+  "slug": "putting-it-all-together-ad-attack-scenario",
+  "relPath": "Detecting AD Attacks/Putting It All Together AD Attack Scenario.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Active Directory",
+    "Kerberos",
+    "Memory",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/putting it all together ad attack scenario",
+      "title": "Putting It All Together AD Attack Scenario",
+      "slug": "putting-it-all-together-ad-attack-scenario"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Putting It All Together: AD Attack Scenario"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 1: Multi‑Stage AD Takeover / Full Chain Analysis"
+    },
+    {
+      "level": 3,
+      "text": "1- Initial Foothold (Phishing → Payload → User Access)"
+    },
+    {
+      "level": 3,
+      "text": "2- Credential Harvesting & Pass‑the-Hash (PtH)"
+    },
+    {
+      "level": 3,
+      "text": "3- Lateral Movement via PsExec"
+    },
+    {
+      "level": 3,
+      "text": "4- Kerberoasting (Offline Service Account Password Recovery)"
+    },
+    {
+      "level": 3,
+      "text": "5- AS‑REP Roasting (Non-Preauthentication Accounts)"
+    },
+    {
+      "level": 3,
+      "text": "6- Overpass-the-Hash (Pass the TGT via NTLM Hash)"
+    },
+    {
+      "level": 3,
+      "text": "7- Pass‑the‑Ticket & Silver Ticket"
+    },
+    {
+      "level": 3,
+      "text": "8- DCSync (Domain Replication Attack)"
+    },
+    {
+      "level": 3,
+      "text": "9- Golden Ticket (Persistent Domain-Wide TGT)"
+    },
+    {
+      "level": 3,
+      "text": "10- DCShadow (Active Directory Object Injection)"
+    },
+    {
+      "level": 3,
+      "text": "11- Skeleton Key Implant"
+    },
+    {
+      "level": 3,
+      "text": "End Result"
+    }
+  ],
+  "overview": "Scenario 1: Multi‑Stage AD Takeover / Full Chain Analysis",
+  "study": {
+    "overview": "Scenario 1: Multi‑Stage AD Takeover / Full Chain Analysis",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Putting It All Together: AD Attack Scenario",
+      "Scenario 1: Multi‑Stage AD Takeover / Full Chain Analysis",
+      "1- Initial Foothold (Phishing → Payload → User Access)",
+      "2- Credential Harvesting & Pass‑the-Hash (PtH)",
+      "3- Lateral Movement via PsExec",
+      "4- Kerberoasting (Offline Service Account Password Recovery)",
+      "5- AS‑REP Roasting (Non-Preauthentication Accounts)",
+      "6- Overpass-the-Hash (Pass the TGT via NTLM Hash)",
+      "7- Pass‑the‑Ticket & Silver Ticket",
+      "8- DCSync (Domain Replication Attack)",
+      "9- Golden Ticket (Persistent Domain-Wide TGT)",
+      "10- DCShadow (Active Directory Object Injection)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

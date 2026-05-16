@@ -1,0 +1,77 @@
+{
+  "id": "memory forensics labs/windows memory & user activity (thm)",
+  "title": "Windows Memory & User Activity (THM)",
+  "slug": "windows-memory-user-activity-thm",
+  "relPath": "Memory Forensics Labs/Windows Memory & User Activity (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Incident Response"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/windows memory & user activity (thm)",
+      "title": "Windows Memory & User Activity (THM)",
+      "slug": "windows-memory-user-activity-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows Memory & User Activity (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Information Incident THM-0001"
+    },
+    {
+      "level": 3,
+      "text": "Company Information TryHatMe"
+    }
+  ],
+  "overview": "You are part of the incident response team handling an incident at TryHatMe - a company that exclusively sells hats online. You are tasked with analyzing a full memory dump of a potentially compromised Windows host. Before you, another analyst had already taken a full memory dump and gathered all the necessary information from the TryHatMe IT support team. Y",
+  "study": {
+    "overview": "You are part of the incident response team handling an incident at TryHatMe - a company that exclusively sells hats online. You are tasked with analyzing a full memory dump of a potentially compromised Windows host. Before you, another analyst had already taken a full memory dump and gathered all the necessary information from the TryHatMe IT support team. Y",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows Memory & User Activity (THM)",
+      "Scenario",
+      "Information Incident THM-0001",
+      "Company Information TryHatMe"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

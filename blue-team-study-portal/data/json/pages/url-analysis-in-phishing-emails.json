@@ -1,0 +1,108 @@
+{
+  "id": "phishing analysis/url analysis in phishing emails",
+  "title": "URL Analysis in Phishing Emails",
+  "slug": "url-analysis-in-phishing-emails",
+  "relPath": "Phishing analysis/URL Analysis in Phishing Emails.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-initial-triage",
+  "curriculumSectionTitle": "Initial Triage & Analysis",
+  "tags": [
+    "Phishing",
+    "Web",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "phishing analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "phishing analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "phishing analysis",
+      "title": "Phishing analysis",
+      "slug": "phishing-analysis"
+    },
+    {
+      "id": "phishing analysis/url analysis in phishing emails",
+      "title": "URL Analysis in Phishing Emails",
+      "slug": "url-analysis-in-phishing-emails"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "URL Analysis in Phishing Emails"
+    },
+    {
+      "level": 2,
+      "text": "1- Understanding URL Structure"
+    },
+    {
+      "level": 2,
+      "text": "2- Common Techniques"
+    },
+    {
+      "level": 3,
+      "text": "Subdomain Spoofing"
+    },
+    {
+      "level": 3,
+      "text": "Typosquatting"
+    },
+    {
+      "level": 3,
+      "text": "Abuse of Trusted Services"
+    },
+    {
+      "level": 2,
+      "text": "3- Safe URL Extraction from Emails"
+    },
+    {
+      "level": 2,
+      "text": "4- URL Analysis Tools"
+    },
+    {
+      "level": 2,
+      "text": "5- Shortened URLs in Phishing"
+    },
+    {
+      "level": 3,
+      "text": "Safe Inspection Methods"
+    },
+    {
+      "level": 2,
+      "text": "Summary: Steps for URL Analysis"
+    }
+  ],
+  "overview": "Phishing URLs often mimic legitimate domains. Dissect the full URL to uncover manipulation:",
+  "study": {
+    "overview": "Phishing URLs often mimic legitimate domains. Dissect the full URL to uncover manipulation:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "URL Analysis in Phishing Emails",
+      "1- Understanding URL Structure",
+      "2- Common Techniques",
+      "Subdomain Spoofing",
+      "Typosquatting",
+      "Abuse of Trusted Services",
+      "3- Safe URL Extraction from Emails",
+      "4- URL Analysis Tools",
+      "5- Shortened URLs in Phishing",
+      "Safe Inspection Methods",
+      "Summary: Steps for URL Analysis"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

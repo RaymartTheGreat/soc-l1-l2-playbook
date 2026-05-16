@@ -1,0 +1,128 @@
+{
+  "id": "forensics labs/suspicious usb stick (btlo)",
+  "title": "Suspicious USB Stick (BTLO)",
+  "slug": "suspicious-usb-stick-btlo",
+  "relPath": "Forensics Labs/Suspicious USB Stick (BTLO).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Linux",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "forensics labs",
+      "title": "Forensics Labs",
+      "slug": "forensics-labs"
+    },
+    {
+      "id": "forensics labs/suspicious usb stick (btlo)",
+      "title": "Suspicious USB Stick (BTLO)",
+      "slug": "suspicious-usb-stick-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Suspicious USB Stick (BTLO)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Reading Material:"
+    },
+    {
+      "level": 3,
+      "text": "1- What file is the autorun.inf running?"
+    },
+    {
+      "level": 3,
+      "text": "README.pdf"
+    },
+    {
+      "level": 3,
+      "text": "2- Does the pdf file pass virustotal scan? (No malicious results returned)"
+    },
+    {
+      "level": 3,
+      "text": "false"
+    },
+    {
+      "level": 3,
+      "text": "3- Does the file have the correct magic number?"
+    },
+    {
+      "level": 3,
+      "text": "true"
+    },
+    {
+      "level": 3,
+      "text": "4- What OS type can the file exploit? (Linux, MacOS, Windows, etc)"
+    },
+    {
+      "level": 3,
+      "text": "windows"
+    },
+    {
+      "level": 3,
+      "text": "5- A Windows executable is mentioned in the pdf file, what is it?"
+    },
+    {
+      "level": 3,
+      "text": "cmd.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- How many suspicious /OpenAction elements does the file have?"
+    },
+    {
+      "level": 3,
+      "text": "1"
+    }
+  ],
+  "overview": "One of our clients informed us they recently suffered an employee data breach. As a startup company, they had a constrained budget allocated for security and employee training. I visited them and spoke with the relevant stakeholders. I also collected some suspicious emails and a USB drive an employee found on their premises. While I am analyzing the suspicio",
+  "study": {
+    "overview": "One of our clients informed us they recently suffered an employee data breach. As a startup company, they had a constrained budget allocated for security and employee training. I visited them and spoke with the relevant stakeholders. I also collected some suspicious emails and a USB drive an employee found on their premises. While I am analyzing the suspicio",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Suspicious USB Stick (BTLO)",
+      "Scenario",
+      "Reading Material:",
+      "1- What file is the autorun.inf running?",
+      "README.pdf",
+      "2- Does the pdf file pass virustotal scan? (No malicious results returned)",
+      "false",
+      "3- Does the file have the correct magic number?",
+      "true",
+      "4- What OS type can the file exploit? (Linux, MacOS, Windows, etc)",
+      "windows",
+      "5- A Windows executable is mentioned in the pdf file, what is it?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "autorun.inf is a configuration file used in the root of removable drives. Windows Autoplay reads it to automatically execute a file when the drive is inserted. Attackers often use it to silently launch malicious files without user interaction. In this case, the USB stick was configured to open a PDF automatically.",
+      "/OpenAction is a PDF object that specifies an action to perform when the document is opened, such as launching a program or executing embedded JavaScript. It’s a common vector for malicious PDFs to automatically execute payloads."
+    ]
+  }
+}

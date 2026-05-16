@@ -1,0 +1,122 @@
+{
+  "id": "log analysis labs/phantom check (htb)",
+  "title": "Phantom Check (HTB)",
+  "slug": "phantom-check-htb",
+  "relPath": "Log Analysis Labs/Phantom Check (HTB).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "PowerShell",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/phantom check (htb)",
+      "title": "Phantom Check (HTB)",
+      "slug": "phantom-check-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Phantom Check (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Which WMI class did the attacker use to retrieve model and manufacturer information for virtualization detection?"
+    },
+    {
+      "level": 3,
+      "text": "Win32ComputerSystem"
+    },
+    {
+      "level": 3,
+      "text": "2- Which WMI query did the attacker execute to retrieve the current temperature value of the machine?"
+    },
+    {
+      "level": 3,
+      "text": "SELECT FROM MSAcpiThermalZoneTemperature"
+    },
+    {
+      "level": 3,
+      "text": "3- The attacker loaded a PowerShell script to detect virtualization. What is the function name of the script?"
+    },
+    {
+      "level": 3,
+      "text": "Check-VM"
+    },
+    {
+      "level": 3,
+      "text": "4- Which registry key did the above script query to retrieve service details for virtualization detection?"
+    },
+    {
+      "level": 3,
+      "text": "HKLM:\\SYSTEM\\ControlSet001\\Services"
+    },
+    {
+      "level": 3,
+      "text": "5- The VM detection script can also identify VirtualBox. Which processes is it comparing to determine if the system is running VirtualBox?"
+    },
+    {
+      "level": 3,
+      "text": "vboxservice.exe, vboxtray.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- The VM detection script prints any detection with the prefix 'This is a'. Which two virtualization platforms did the script detect?"
+    },
+    {
+      "level": 3,
+      "text": "Hyper-V, Vmware"
+    }
+  ],
+  "overview": "Talion suspects that the threat actor carried out anti-virtualization checks to avoid detection in sandboxed environments. Your task is to analyze the event logs and identify the specific techniques used for virtualization detection. Byte Doctor requires evidence of the registry checks or processes the attacker executed to perform these checks.",
+  "study": {
+    "overview": "Talion suspects that the threat actor carried out anti-virtualization checks to avoid detection in sandboxed environments. Your task is to analyze the event logs and identify the specific techniques used for virtualization detection. Byte Doctor requires evidence of the registry checks or processes the attacker executed to perform these checks.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Phantom Check (HTB)",
+      "Scenario",
+      "1- Which WMI class did the attacker use to retrieve model and manufacturer information for virtualization detection?",
+      "Win32ComputerSystem",
+      "2- Which WMI query did the attacker execute to retrieve the current temperature value of the machine?",
+      "SELECT FROM MSAcpiThermalZoneTemperature",
+      "3- The attacker loaded a PowerShell script to detect virtualization. What is the function name of the script?",
+      "Check-VM",
+      "4- Which registry key did the above script query to retrieve service details for virtualization detection?",
+      "HKLM:\\SYSTEM\\ControlSet001\\Services",
+      "5- The VM detection script can also identify VirtualBox. Which processes is it comparing to determine if the system is running VirtualBox?",
+      "vboxservice.exe, vboxtray.exe"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "windows forensics",
+  "title": "Windows Forensics",
+  "slug": "windows-forensics",
+  "relPath": "Windows Forensics.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "windows forensics/windows registry",
+    "windows forensics/lnk files (shortcut files)",
+    "windows forensics/user activity analysis",
+    "windows forensics/data acquisition using kape",
+    "windows forensics/regripper",
+    "windows forensics/eric zimmerman tools",
+    "windows forensics/recycle bin forensics",
+    "windows forensics/hard disk & ntfs layout",
+    "windows forensics/ntfs analysis",
+    "windows forensics/master file table (mft)",
+    "windows forensics/usb forensics",
+    "windows forensics/jump list",
+    "windows forensics/prefetch files",
+    "windows forensics/bam (background activity moderator)",
+    "windows forensics/shimcache (appcompatcache)",
+    "windows forensics/amcache",
+    "windows forensics/windows browser artifacts",
+    "windows forensics/srum (system resource usage monitor)",
+    "windows forensics/windows disk forensics artifacts",
+    "windows forensics/data acquisition considerations (ftk imager)",
+    "windows forensics/windows applications forensics",
+    "windows forensics/windows user account forensics"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows Forensics"
+    }
+  ],
+  "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+  "study": {
+    "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows Forensics"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

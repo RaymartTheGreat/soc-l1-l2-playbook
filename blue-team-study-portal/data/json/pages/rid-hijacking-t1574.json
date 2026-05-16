@@ -1,0 +1,118 @@
+{
+  "id": "hunting persistence (mitre ta0003)/rid hijacking (t1574)",
+  "title": "RID Hijacking (T1574)",
+  "slug": "rid-hijacking-t1574",
+  "relPath": "Hunting Persistence (MITRE TA0003)/RID Hijacking (T1574).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1574",
+    "TA0003",
+    "T1546"
+  ],
+  "parentId": "hunting persistence (mitre ta0003)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "hunting persistence (mitre ta0003)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "hunting persistence (mitre ta0003)",
+      "title": "Hunting Persistence (MITRE TA0003)",
+      "slug": "hunting-persistence-mitre-ta0003"
+    },
+    {
+      "id": "hunting persistence (mitre ta0003)/rid hijacking (t1574)",
+      "title": "RID Hijacking (T1574)",
+      "slug": "rid-hijacking-t1574"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "RID Hijacking (T1574)"
+    },
+    {
+      "level": 1,
+      "text": "RID Hijacking"
+    },
+    {
+      "level": 3,
+      "text": "How Attackers Use RID Hijacking"
+    },
+    {
+      "level": 3,
+      "text": "Modifying RID Value (Example Commands)"
+    },
+    {
+      "level": 2,
+      "text": "Windows Registry Entry for RID Hijacking"
+    },
+    {
+      "level": 2,
+      "text": "Monitoring and Detection"
+    },
+    {
+      "level": 3,
+      "text": "Windows Event Logs and Sysmon"
+    },
+    {
+      "level": 3,
+      "text": "Example Detection Query (Splunk)"
+    }
+  ],
+  "overview": "RID (Relative Identifier) is the last component of a Windows Security Identifier (SID) that uniquely identifies a user or group. By default, the built-in Administrator account has RID 500, Guest is 501, and new local users typically start at 1000. In a RID Hijacking attack, adversaries modify the RID of a low-privilege account so that the system mistakenly g",
+  "study": {
+    "overview": "RID (Relative Identifier) is the last component of a Windows Security Identifier (SID) that uniquely identifies a user or group. By default, the built-in Administrator account has RID 500, Guest is 501, and new local users typically start at 1000. In a RID Hijacking attack, adversaries modify the RID of a low-privilege account so that the system mistakenly g",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "RID Hijacking (T1574)",
+      "RID Hijacking",
+      "How Attackers Use RID Hijacking",
+      "Modifying RID Value (Example Commands)",
+      "Windows Registry Entry for RID Hijacking",
+      "Monitoring and Detection",
+      "Windows Event Logs and Sysmon",
+      "Example Detection Query (Splunk)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "jsx",
+        "code": "index=* EventCode=4656\n Object_Name=\"REGISTRY\\\\MACHINE\\\\SAM\\\\SAM\\\\Domains\\\\Account\\\\Users\\\\*\"\n Process_Name IN (\n   \"C:\\\\Windows\\\\System32\\\\reg.exe\",\n   \"C:\\\\Windows\\\\System32\\\\regini.exe\",\n   \"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\"\n )\n| table _time, host, user, Object_Name, Accesses, Process_Name"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "# Mount the SAM hive\nreg load HKLM\\TempSAM C:\\Windows\\System32\\config\\SAM\n\n# Read and patch the binary F value at offset 0x30\n$key = 'HKLM:\\TempSAM\\SAM\\Domains\\Account\\Users\\000001F5'\n$binary = (Get-ItemProperty -Path $key -Name 'F').'F'\n$binary[48..51] = [byte[]](244,0,0,0)    # Little-endian 0x000000F4 → RID 500\nSet-ItemProperty -Path $key -Name 'F' -Value $binary\n\n# Unmount the SAM hive\nreg unload HKLM\\TempSAM"
+      },
+      {
+        "language": "jsx",
+        "code": "index=* EventCode=4656\n Object_Name=\"REGISTRY\\\\MACHINE\\\\SAM\\\\SAM\\\\Domains\\\\Account\\\\Users\\\\*\"\n Process_Name IN (\n   \"C:\\\\Windows\\\\System32\\\\reg.exe\",\n   \"C:\\\\Windows\\\\System32\\\\regini.exe\",\n   \"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\"\n )\n| table _time, host, user, Object_Name, Accesses, Process_Name"
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

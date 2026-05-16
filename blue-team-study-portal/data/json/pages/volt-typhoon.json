@@ -1,0 +1,175 @@
+{
+  "id": "threat hunting labs (siem)/volt typhoon",
+  "title": "Volt Typhoon",
+  "slug": "volt-typhoon",
+  "relPath": "Threat hunting Labs (SIEM)/Volt Typhoon.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Network",
+    "Web",
+    "Memory",
+    "Detection",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/volt typhoon",
+      "title": "Volt Typhoon",
+      "slug": "volt-typhoon"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Volt Typhoon"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 2,
+      "text": "Initial Access"
+    },
+    {
+      "level": 3,
+      "text": "1- Comb through the ADSelfService Plus logs to begin retracing the attacker’s steps. At what time (ISO 8601 format) was Dean's password changed and their account taken over by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "2- Shortly after Dean's account was compromised, the attacker created a new administrator account. What is the name of the new account that was created?"
+    },
+    {
+      "level": 2,
+      "text": "Execution"
+    },
+    {
+      "level": 3,
+      "text": "3- In an information gathering attempt, what command does the attacker run to find information about local drives on server01 & server02?"
+    },
+    {
+      "level": 3,
+      "text": "4- The attacker uses ntdsutil to create a copy of the AD database. After moving the file to a web server, the attacker compresses the database. What password does the attacker set on the archive?"
+    },
+    {
+      "level": 2,
+      "text": "Persistence"
+    },
+    {
+      "level": 3,
+      "text": "5- To establish persistence on the compromised server, the attacker created a web shell using base64 encoded text. In which directory was the web shell placed?"
+    },
+    {
+      "level": 2,
+      "text": "Defense Evasion"
+    },
+    {
+      "level": 3,
+      "text": "6- In an attempt to begin covering their tracks, the attackers remove evidence of the compromise. They first start by wiping RDP records. What PowerShell cmdlet does the attacker use to remove the “Most Recently Used” record?"
+    },
+    {
+      "level": 3,
+      "text": "7- The APT continues to cover their tracks by renaming and changing the extension of the previously created archive. What is the file name (with extension) created by the attackers?"
+    },
+    {
+      "level": 3,
+      "text": "8- Under what regedit path does the attacker check for evidence of a virtualized environment?"
+    },
+    {
+      "level": 2,
+      "text": "Credential Access"
+    },
+    {
+      "level": 3,
+      "text": "9- Using reg query, Volt Typhoon hunts for opportunities to find useful credentials. What three pieces of software do they investigate?"
+    },
+    {
+      "level": 3,
+      "text": "10- What is the full decoded command the attacker uses to download and run mimikatz?"
+    },
+    {
+      "level": 2,
+      "text": "Discovery & Lateral Movement"
+    },
+    {
+      "level": 3,
+      "text": "11- The attacker uses wevtutil, a log retrieval tool, to enumerate Windows logs. What event IDs does the attacker search for?"
+    },
+    {
+      "level": 3,
+      "text": "12- Moving laterally to server-02, the attacker copies over the original web shell. What is the name of the new web shell that was created?"
+    },
+    {
+      "level": 2,
+      "text": "Collection"
+    },
+    {
+      "level": 3,
+      "text": "13- The attacker is able to locate some valuable financial information during the collection phase. What three files does Volt Typhoon make copies of using PowerShell?"
+    },
+    {
+      "level": 2,
+      "text": "C2 & Cleanup"
+    },
+    {
+      "level": 3,
+      "text": "14- The attacker uses netsh to create a proxy for C2 communications. What connect address and port does the attacker use when setting up the proxy?"
+    },
+    {
+      "level": 3,
+      "text": "15- To conceal their activities, what are the four types of event logs the attacker clears on the compromised system?"
+    }
+  ],
+  "overview": "The SOC has detected suspicious activity indicative of an advanced persistent threat (APT) group known as Volt Typhoon, notorious for targeting high-value organizations. Assume the role of a security analyst and investigate the intrusion by retracing the attacker's steps.",
+  "study": {
+    "overview": "The SOC has detected suspicious activity indicative of an advanced persistent threat (APT) group known as Volt Typhoon, notorious for targeting high-value organizations. Assume the role of a security analyst and investigate the intrusion by retracing the attacker's steps.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Volt Typhoon",
+      "Scenario",
+      "Initial Access",
+      "1- Comb through the ADSelfService Plus logs to begin retracing the attacker’s steps. At what time (ISO 8601 format) was Dean's password changed and their account taken over by the attacker?",
+      "2- Shortly after Dean's account was compromised, the attacker created a new administrator account. What is the name of the new account that was created?",
+      "Execution",
+      "3- In an information gathering attempt, what command does the attacker run to find information about local drives on server01 & server02?",
+      "4- The attacker uses ntdsutil to create a copy of the AD database. After moving the file to a web server, the attacker compresses the database. What password does the attacker set on the archive?",
+      "Persistence",
+      "5- To establish persistence on the compromised server, the attacker created a web shell using base64 encoded text. In which directory was the web shell placed?",
+      "Defense Evasion",
+      "6- In an attempt to begin covering their tracks, the attackers remove evidence of the compromise. They first start by wiping RDP records. What PowerShell cmdlet does the attacker use to remove the “Most Recently Used” record?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

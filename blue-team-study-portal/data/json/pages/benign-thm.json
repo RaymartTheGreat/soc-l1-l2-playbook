@@ -1,0 +1,162 @@
+{
+  "id": "threat hunting labs (siem)/benign (thm)",
+  "title": "Benign (THM)",
+  "slug": "benign-thm",
+  "relPath": "Threat hunting Labs (SIEM)/Benign (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "Windows",
+    "Network",
+    "Detection",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/benign (thm)",
+      "title": "Benign (THM)",
+      "slug": "benign-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Benign (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "About the Network Information"
+    },
+    {
+      "level": 3,
+      "text": "1- How many logs are ingested from the month of March, 2022?"
+    },
+    {
+      "level": 3,
+      "text": "13959"
+    },
+    {
+      "level": 3,
+      "text": "2- Imposter Alert: There seems to be an imposter account observed in the logs, what is the name of that user?"
+    },
+    {
+      "level": 3,
+      "text": "Amel1a"
+    },
+    {
+      "level": 3,
+      "text": "3- Which user from the HR department was observed to be running scheduled tasks?"
+    },
+    {
+      "level": 3,
+      "text": "Chris.fort"
+    },
+    {
+      "level": 3,
+      "text": "4- Which user from the HR department executed a system process (LOLBIN) to download a payload from a file-sharing host."
+    },
+    {
+      "level": 3,
+      "text": "haroon"
+    },
+    {
+      "level": 3,
+      "text": "5- To bypass the security controls, which system process (lolbin) was used to download a payload from the internet?"
+    },
+    {
+      "level": 3,
+      "text": "certutil.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- What was the date that this binary was executed by the infected host? format (YYYY-MM-DD)"
+    },
+    {
+      "level": 3,
+      "text": "2022-03-04"
+    },
+    {
+      "level": 3,
+      "text": "7- Which third-party site was accessed to download the malicious payload?"
+    },
+    {
+      "level": 3,
+      "text": "controlc.com"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the name of the file that was saved on the host machine from the C2 server during the post-exploitation phase?"
+    },
+    {
+      "level": 3,
+      "text": "benign.exe"
+    },
+    {
+      "level": 3,
+      "text": "9- The suspicious file downloaded from the C2 server contained malicious content with the pattern THM{..........}; what is that pattern?"
+    },
+    {
+      "level": 3,
+      "text": "THM{KJ&H^B0}"
+    },
+    {
+      "level": 3,
+      "text": "10- What is the URL that the infected host connected to?"
+    },
+    {
+      "level": 3,
+      "text": "https://controlc.com/e4d11035"
+    }
+  ],
+  "overview": "One of the client’s IDS indicated a potentially suspicious process execution indicating one of the hosts from the HR department was compromised. Some tools related to network information gathering / scheduled tasks were executed which confirmed the suspicion. Due to limited resources, we could only pull the process execution logs with Event ID: 4688 and inge",
+  "study": {
+    "overview": "One of the client’s IDS indicated a potentially suspicious process execution indicating one of the hosts from the HR department was compromised. Some tools related to network information gathering / scheduled tasks were executed which confirmed the suspicion. Due to limited resources, we could only pull the process execution logs with Event ID: 4688 and inge",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Benign (THM)",
+      "Scenario",
+      "About the Network Information",
+      "1- How many logs are ingested from the month of March, 2022?",
+      "13959",
+      "2- Imposter Alert: There seems to be an imposter account observed in the logs, what is the name of that user?",
+      "Amel1a",
+      "3- Which user from the HR department was observed to be running scheduled tasks?",
+      "Chris.fort",
+      "4- Which user from the HR department executed a system process (LOLBIN) to download a payload from a file-sharing host.",
+      "haroon",
+      "5- To bypass the security controls, which system process (lolbin) was used to download a payload from the internet?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk"
+    ],
+    "tips": []
+  }
+}

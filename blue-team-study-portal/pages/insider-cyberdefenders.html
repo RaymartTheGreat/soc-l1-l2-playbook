@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Insider (CyberDefenders) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="forensics-labs.html">Forensics Labs</a><span>/</span><span>Insider (CyberDefenders)</span></div>
+      <h1>Insider (CyberDefenders)</h1>
+      <p>After Karen started working for 'TAAUSAI,' she began doing illegal activities inside the company. 'TAAUSAI' hired you as a soc analyst to kick off an investigation on this case.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">Network</span><span class="tag">Kerberos</span><span class="tag">DFIR</span><span class="tag">Memory</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Forensics Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="forensics-labs.html"><span>Forensics Labs</span><em>L2</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="countdown-btlo.html"><span>CountDown (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="bft-htb.html"><span>BFT (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="romcom-htb.html"><span>RomCom (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="insider-cyberdefenders.html"><span>Insider (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="disk-analysis-autopsy-thm.html"><span>Disk Analysis &amp; Autopsy (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hireme-cyberdefenders.html"><span>HireMe (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="unanttended-thm.html"><span>Unanttended (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="secret-recipe-thm.html"><span>Secret Recipe (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="disgruntled-thm.html"><span>Disgruntled (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="investigating-windows-thm.html"><span>Investigating Windows (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="browser-forensics-btlo.html"><span>Browser Forensics (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="suspicious-usb-stick-btlo.html"><span>Suspicious USB Stick (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntfs-forensics-letsdefend.html"><span>NTFS Forensics (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="sysinternals-cyberdefenders.html"><span>Sysinternals (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="meteorhit.html"><span>MeteorHit</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>After Karen started working for 'TAAUSAI,' she began doing illegal activities inside the company. 'TAAUSAI' hired you as a soc analyst to kick off an investigation on this case.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Insider (CyberDefenders)</li><li>Scenario</li><li>Q1 : Which Linux distribution is being used on this machine?</li><li>kali</li><li>Q2 : What is the MD5 hash of the Apache access.log file?</li><li>d41d8cd98f00b204e9800998ecf8427e</li><li>Q3 : It is suspected that a credential dumping tool was downloaded. What is the name of the downloaded file?</li><li>mimikatztrunk.zip</li><li>Q4: A super-secret file was created. What is the absolute path to this file?</li><li>/root/Desktop/SuperSecretFile.txt</li><li>Q5 : What program used the file didyouthinkwedmakeiteasy.jpg during its execution?</li><li>binwalk</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><ul><li>The access.log file records all HTTP requests made to the Apache server, including client IPs, timestamps, requested URLs, HTTP methods, response codes, and user-agent information. This log is crucial for monitoring server activity and detecting potential security incidents.</li><li>Mimikatzis a post-exploitation tool that can extract plaintext passwords, hashes, PINs, and Kerberos tickets from memory, perform pass-the-hash attacks, manipulate authentication tokens, and export certificates. While used by penetration testers for security assessments, it is also commonly exploited by attackers for credential theft.</li><li>The .bashhistory file, located in a user’s home directory, logs all commands executed in the terminal. It is especially valuable in forensic investigations, as it provides a chronological record of user activity, including file creation, system modifications, and potential attempts to cover tracks.</li><li>Binwalkis a forensic tool for inspecting binary files and firmware images, commonly used to extract embedded files, hidden data, or compressed archives within a file.</li><li>FlightSim is a tool for generating malicious network traffic, including port scans, brute-force attacks, and DNS tunneling. Its execution in the terminal, along with the presence of irZLAohL.jpeg, indicates that this machine was used to simulate or perform attacks on other systems.</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="insider-cyberdefenders">Insider (CyberDefenders)</h2>
+<h3 id="scenario"><strong>Scenario</strong></h3>
+<p><strong>After Karen started working for 'TAAUSAI,' she began doing illegal activities inside the company. 'TAAUSAI' hired you as a soc analyst to kick off an investigation on this case.</strong></p>
+<p><strong>You acquired a disk image and found that Karen uses Linux OS on her machine. Analyze the disk image of Karen's computer and answer the provided questions.</strong></p>
+<p><a class="note-link" href="https://cyberdefenders.org/blueteam-ctf-challenges/insider/">https://cyberdefenders.org/blueteam-ctf-challenges/insider/</a></p>
+<hr>
+<h4 id="q1-which-linux-distribution-is-being-used-on-this-machine">Q1  : Which Linux distribution is being used on this machine?</h4>
+<h4 id="kali">kali</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_011604-9e8aa6c7.png" data-alt="Screenshot 2025-07-29 011604.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_011604-9e8aa6c7.png" alt="Screenshot 2025-07-29 011604.png" loading="lazy"></button></p>
+<p>The <strong><code>syslog</code></strong>file in <strong>/<code>var/log/installer/</code></strong> contains detailed installation logs, including kernel initialization messages and boot parameters. Examining the file reveals a line indicating the kernel version: <strong><code>Linux version 4.13.0-kali1-amd64</code></strong>, confirming that the system is running <code>Kali Linux</code></p>
+<h4 id="q2-what-is-the-md5-hash-of-the-apache-access.log-file">Q2 : What is the MD5 hash of the Apache <strong>access.log</strong> file?</h4>
+<h4 id="d41d8cd98f00b204e9800998ecf8427e">d41d8cd98f00b204e9800998ecf8427e</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_011758-8d9eeec2.png" data-alt="Screenshot 2025-07-29 011758.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_011758-8d9eeec2.png" alt="Screenshot 2025-07-29 011758.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_011805-ac327c6f.png" data-alt="Screenshot 2025-07-29 011805.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_011805-ac327c6f.png" alt="Screenshot 2025-07-29 011805.png" loading="lazy"></button></p>
+<p>Using FTK Imager, the MD5 hash of the file can be calculated, with the hash report highlighting the MD5 value.</p>
+<blockquote>The <strong><code>access.log</code></strong> file records all HTTP requests made to the Apache server, including client IPs, timestamps, requested URLs, HTTP methods, response codes, and user-agent information. This log is crucial for monitoring server activity and detecting potential security incidents.</blockquote>
+<blockquote></blockquote>
+<h4 id="q3-it-is-suspected-that-a-credential-dumping-tool-was-downloaded.-what-is-the-name-of-the-">Q3 : It is suspected that a credential dumping tool was downloaded. What is the name of the downloaded file?</h4>
+<h4 id="mimikatztrunk.zip">mimikatz_trunk.zip</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_011920-8a8f65f7.png" data-alt="Screenshot 2025-07-29 011920.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_011920-8a8f65f7.png" alt="Screenshot 2025-07-29 011920.png" loading="lazy"></button></p>
+<p>By examining the disk image in FTK Imager, the <strong><code>/root/Downloads/</code></strong> directory was inspected, revealing a file named <strong><code>mimikatz_trunk.zip</code></strong>.</p>
+<blockquote><code>Mimikatz</code>is a post-exploitation tool that can extract plaintext passwords, hashes, PINs, and Kerberos tickets from memory, perform pass-the-hash attacks, manipulate authentication tokens, and export certificates. While used by penetration testers for security assessments, it is also commonly exploited by attackers for credential theft.</blockquote>
+<blockquote></blockquote>
+<h4 id="q4-a-super-secret-file-was-created.-what-is-the-absolute-path-to-this-file">Q4: A super-secret file was created. What is the absolute path to this file?</h4>
+<h4 id="rootdesktopsupersecretfile.txt">/root/Desktop/SuperSecretFile.txt</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012037-d42f819f.png" data-alt="Screenshot 2025-07-29 012037.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012037-d42f819f.png" alt="Screenshot 2025-07-29 012037.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012134-6a94ce55.png" data-alt="Screenshot 2025-07-29 012134.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012134-6a94ce55.png" alt="Screenshot 2025-07-29 012134.png" loading="lazy"></button></p>
+<p>By examining the <strong><code>.bash_history</code></strong> file in the <strong><code>/root/</code></strong> directory, we can track commands executed by the root user. Among these, a command was found that created a file named <strong><code>SuperSecretFile.txt</code></strong> on the <strong><code>/root/Desktop/</code></strong> directory. The command uses <strong>touch</strong> to create the file, with output redirection (&gt;) writing data into <strong>SuperSecretFile.txt</strong>, making <code><strong>/root/Desktop/SuperSecretFile.txt</strong></code> the absolute path to the super-secret file.</p>
+<blockquote>The <strong><code>.bash_history</code></strong> file, located in a user’s home directory, logs all commands executed in the terminal. It is especially valuable in forensic investigations, as it provides a chronological record of user activity, including file creation, system modifications, and potential attempts to cover tracks.</blockquote>
+<blockquote></blockquote>
+<h4 id="q5-what-program-used-the-file-didyouthinkwedmakeiteasy.jpg-during-its-execution">Q5 : What program used the file <strong>didyouthinkwedmakeiteasy.jpg</strong> during its execution?</h4>
+<h4 id="binwalk">binwalk</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012237-25eb2626.png" data-alt="Screenshot 2025-07-29 012237.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012237-25eb2626.png" alt="Screenshot 2025-07-29 012237.png" loading="lazy"></button></p>
+<p>By reviewing the <strong><code>.bash_history</code></strong> file, we found the command <strong><code>binwalk didyouthinkwedmakeiteasy.jpg</code></strong>, indicating that the program <strong>binwalk</strong> was used to analyze the file.</p>
+<blockquote><strong><code>Binwalk</code></strong>is a forensic tool for inspecting binary files and firmware images, commonly used to extract embedded files, hidden data, or compressed archives within a file.</blockquote>
+<blockquote></blockquote>
+<h4 id="q6-what-is-the-third-goal-from-the-checklist-karen-created">Q6 : What is the third goal from the checklist Karen created?</h4>
+<h4 id="profit">profit</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012320-cbe774df.png" data-alt="Screenshot 2025-07-29 012320.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012320-cbe774df.png" alt="Screenshot 2025-07-29 012320.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012512-f38d3524.png" data-alt="Screenshot 2025-07-29 012512.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012512-f38d3524.png" alt="Screenshot 2025-07-29 012512.png" loading="lazy"></button></p>
+<p>By inspecting the <strong><code>Checklist</code></strong>file in <strong><code>/root/Desktop/</code></strong>, we see that it contains a series of goals set by Karen. The third goal listed in the file is <strong>Profit</strong>.</p>
+<h4 id="q7-how-many-times-was-apache-run">Q7 : How many times was Apache run?</h4>
+<h4 id="0">0</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012550-8a3d8e96.png" data-alt="Screenshot 2025-07-29 012550.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012550-8a3d8e96.png" alt="Screenshot 2025-07-29 012550.png" loading="lazy"></button></p>
+<p>To determine how many times Apache was run, the <strong><code>/var/log/apache2/</code></strong> directory was examined. All log files <strong><code>access.log</code></strong>, <strong><code>error.log</code></strong>, and <strong><code>other_vhosts_access.log</code></strong> are 0 KB in size, indicating that Apache was never run.</p>
+<h4 id="q8-this-machine-was-used-to-launch-an-attack-on-another.-which-file-contains-the-evidence-">Q8 : This machine was used to launch an attack on another. Which file contains the evidence for this?</h4>
+<p>irZLAohL.jpeg</p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012723-72c20745.png" data-alt="Screenshot 2025-07-29 012723.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012723-72c20745.png" alt="Screenshot 2025-07-29 012723.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012738-84cf18f1.png" data-alt="Screenshot 2025-07-29 012738.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_012738-84cf18f1.png" alt="Screenshot 2025-07-29 012738.png" loading="lazy"></button></p>
+<p>Under the <strong><code>/root/</code></strong> directory, the image <strong><code>irZLAohL.jpeg</code></strong> was found, providing evidence that this machine was used to launch an attack. The image shows a Windows-based victim and a terminal window running <strong><code>flightSim</code></strong> from <strong><code>C:\Users\Bob\AppData\Local\Temp</code></strong>.</p>
+<blockquote><strong><code>FlightSim</code></strong> is a tool for generating malicious network traffic, including port scans, brute-force attacks, and DNS tunneling. Its execution in the terminal, along with the presence of <strong>irZLAohL.jpeg</strong>, indicates that this machine was used to simulate or perform attacks on other systems.</blockquote>
+<blockquote></blockquote>
+<h4 id="q9-it-is-believed-that-karen-was-taunting-a-fellow-computer-expert-through-a-bash-script-w">Q9 : It is believed that Karen was taunting a fellow computer expert through a bash script within the Documents directory. Who was the expert that Karen was taunting?</h4>
+<h4 id="young">Young</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_013943-ac729052.png" data-alt="Screenshot 2025-07-29 013943.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_013943-ac729052.png" alt="Screenshot 2025-07-29 013943.png" loading="lazy"></button></p>
+<p>Upon examining the script, it includes a series of commands designed to display system information. The commands include:</p>
+<ul>
+<li>Showing the current working directory (<code>pwd</code>).</li>
+<li>Displaying the default network route using <code>ip route</code>.</li>
+<li>Listing network connections associated with port 80 using <code>netstat</code>.</li>
+</ul>
+<p>Toward the end of the script, there is a line that stands out as a taunt:</p>
+<p><code>echo &quot;Heck yeah! I can write bash too Young&quot;</code></p>
+<h4 id="q10-a-user-executed-the-su-command-to-gain-root-access-multiple-times-at-1126.-who-was-the">Q10 : A user executed the <strong>su</strong> command to gain root access multiple times at 11:26. Who was the user?</h4>
+<p>postgres</p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_014759-473f174b.png" data-alt="Screenshot 2025-07-29 014759.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_014759-473f174b.png" alt="Screenshot 2025-07-29 014759.png" loading="lazy"></button></p>
+<p>Analyzing the <strong><code>/var/log/auth.log</code></strong> file shows multiple entries at <code>11:26</code> where the <strong><code>su</strong></code> command was used to switch users. The logs indicate that <strong><code>KarenHacker</code></strong> successfully switched to the <strong><code>postgres</code></strong>account using root privileges. This confirms that the user executing <strong>su</strong> at 11:26 was <strong>postgres</strong>.</p>
+<h4 id="q11-based-on-the-bash-history-what-is-the-current-working-directory">Q11 : Based on the bash history, what is the current working directory?</h4>
+<p>/root/Documents/myfirsthack/</p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_014852-990c7fa6.png" data-alt="Screenshot 2025-07-29 014852.png"><img src="../assets/images/forensics-labsinsider-cyberdefenders-screenshot_2025-07-29_014852-990c7fa6.png" alt="Screenshot 2025-07-29 014852.png" loading="lazy"></button></p>
+<p>Analyzing the <strong><code>.bash_history</code></strong> file shows that the user executed the command <strong><code>cd ../Documents/myfirsthack/</strong>.</code> This indicates that the current working directory is <strong><code>/root/Documents/myfirsthack/</strong>.</code></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#insider-cyberdefenders">Insider (CyberDefenders)</a><a href="#scenario">Scenario</a><a href="#q1-which-linux-distribution-is-being-used-on-this-machine">Q1 : Which Linux distribution is being used on this machine?</a><a href="#kali">kali</a><a href="#q2-what-is-the-md5-hash-of-the-apache-access.log-file">Q2 : What is the MD5 hash of the Apache access.log file?</a><a href="#d41d8cd98f00b204e9800998ecf8427e">d41d8cd98f00b204e9800998ecf8427e</a><a href="#q3-it-is-suspected-that-a-credential-dumping-tool-was-downloaded.-what-is-the-name-of-the-">Q3 : It is suspected that a credential dumping tool was downloaded. What is the name of the downloaded file?</a><a href="#mimikatztrunk.zip">mimikatztrunk.zip</a><a href="#q4-a-super-secret-file-was-created.-what-is-the-absolute-path-to-this-file">Q4: A super-secret file was created. What is the absolute path to this file?</a><a href="#rootdesktopsupersecretfile.txt">/root/Desktop/SuperSecretFile.txt</a><a href="#q5-what-program-used-the-file-didyouthinkwedmakeiteasy.jpg-during-its-execution">Q5 : What program used the file didyouthinkwedmakeiteasy.jpg during its execution?</a><a href="#binwalk">binwalk</a><a href="#q6-what-is-the-third-goal-from-the-checklist-karen-created">Q6 : What is the third goal from the checklist Karen created?</a><a href="#profit">profit</a><a href="#q7-how-many-times-was-apache-run">Q7 : How many times was Apache run?</a><a href="#0">0</a><a href="#q8-this-machine-was-used-to-launch-an-attack-on-another.-which-file-contains-the-evidence-">Q8 : This machine was used to launch an attack on another. Which file contains the evidence for this?</a><a href="#q9-it-is-believed-that-karen-was-taunting-a-fellow-computer-expert-through-a-bash-script-w">Q9 : It is believed that Karen was taunting a fellow computer expert through a bash script within the Documents directory. Who was the expert that Karen was taunting?</a><a href="#young">Young</a><a href="#q10-a-user-executed-the-su-command-to-gain-root-access-multiple-times-at-1126.-who-was-the">Q10 : A user executed the su command to gain root access multiple times at 11:26. Who was the user?</a><a href="#q11-based-on-the-bash-history-what-is-the-current-working-directory">Q11 : Based on the bash history, what is the current working directory?</a></details>
+    </div>
+    
+    <footer class="pager"><a href="romcom-htb.html">← RomCom (HTB)</a><a href="disk-analysis-autopsy-thm.html">Disk Analysis &amp; Autopsy (THM) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

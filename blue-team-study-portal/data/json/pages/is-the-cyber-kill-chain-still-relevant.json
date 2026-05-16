@@ -1,0 +1,61 @@
+{
+  "id": "frameworks/cyber kill chain/is the cyber kill chain still relevant",
+  "title": "Is the Cyber Kill Chain Still Relevant",
+  "slug": "is-the-cyber-kill-chain-still-relevant",
+  "relPath": "Frameworks/Cyber Kill Chain/Is the Cyber Kill Chain Still Relevant.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "frameworks/cyber kill chain",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "frameworks/cyber kill chain"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "frameworks",
+      "title": "Frameworks",
+      "slug": "frameworks"
+    },
+    {
+      "id": "frameworks/cyber kill chain",
+      "title": "Cyber Kill Chain",
+      "slug": "cyber-kill-chain"
+    },
+    {
+      "id": "frameworks/cyber kill chain/is the cyber kill chain still relevant",
+      "title": "Is the Cyber Kill Chain Still Relevant",
+      "slug": "is-the-cyber-kill-chain-still-relevant"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Is the Cyber Kill Chain Still Relevant?"
+    }
+  ],
+  "overview": "Explaining how cyberattacks unfold isn’t always straightforward. The tactics used by threat actors including hackers, nation-state groups, and APTs are constantly evolving, and traditional models like the Cyber Kill Chain don't always reflect these changes accurately. A common criticism from security professionals is that Cyber Kill Chain fails to address in",
+  "study": {
+    "overview": "Explaining how cyberattacks unfold isn’t always straightforward. The tactics used by threat actors including hackers, nation-state groups, and APTs are constantly evolving, and traditional models like the Cyber Kill Chain don't always reflect these changes accurately. A common criticism from security professionals is that Cyber Kill Chain fails to address in",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Is the Cyber Kill Chain Still Relevant?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

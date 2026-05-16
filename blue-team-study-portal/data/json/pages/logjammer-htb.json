@@ -1,0 +1,173 @@
+{
+  "id": "log analysis labs/logjammer (htb)",
+  "title": "LogJammer (HTB)",
+  "slug": "logjammer-htb",
+  "relPath": "Log Analysis Labs/LogJammer (HTB).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/logjammer (htb)",
+      "title": "LogJammer (HTB)",
+      "slug": "logjammer-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "LogJammer (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- When did the cyberjunkie user first successfully log into his computer? (UTC)"
+    },
+    {
+      "level": 3,
+      "text": "27/03/2023 14:37:09"
+    },
+    {
+      "level": 3,
+      "text": "2- The user tampered with firewall settings on the system. Analyze the firewall event logs to find out the Name of the firewall rule added?"
+    },
+    {
+      "level": 3,
+      "text": "Metasploit C2 Bypass"
+    },
+    {
+      "level": 3,
+      "text": "3- Whats the direction of the firewall rule?"
+    },
+    {
+      "level": 3,
+      "text": "Outbound"
+    },
+    {
+      "level": 3,
+      "text": "4- The user changed audit policy of the computer. Whats the Subcategory of this changed policy?"
+    },
+    {
+      "level": 3,
+      "text": "Other Object Access Events"
+    },
+    {
+      "level": 3,
+      "text": "5- The user \"cyberjunkie\" created a scheduled task. Whats the name of this task?"
+    },
+    {
+      "level": 3,
+      "text": "HTB-AUTOMATION"
+    },
+    {
+      "level": 3,
+      "text": "6- Whats the full path of the file which was scheduled for the task?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\CyberJunkie\\Desktop\\Automation-HTB.ps1"
+    },
+    {
+      "level": 3,
+      "text": "7- What are the arguments of the command?"
+    },
+    {
+      "level": 3,
+      "text": "-A cyberjunkie@hackthebox.eu"
+    },
+    {
+      "level": 3,
+      "text": "8- The antivirus running on the system identified a threat and performed actions on it. Which tool was identified as malware by antivirus?"
+    },
+    {
+      "level": 3,
+      "text": "Sharphound"
+    },
+    {
+      "level": 3,
+      "text": "9- Whats the full path of the malware which raised the alert?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\CyberJunkie\\Downloads\\SharpHound-v1.1.0.zip"
+    },
+    {
+      "level": 3,
+      "text": "10- What action was taken by the antivirus?"
+    },
+    {
+      "level": 3,
+      "text": "Quarantine"
+    },
+    {
+      "level": 3,
+      "text": "11- The user used Powershell to execute commands. What command was executed by the user?"
+    },
+    {
+      "level": 3,
+      "text": "Get-FileHash -Algorithm md5 .\\Desktop\\Automation-HTB.ps1"
+    },
+    {
+      "level": 3,
+      "text": "12- We suspect the user deleted some event logs. Which Event log file was cleared?"
+    },
+    {
+      "level": 3,
+      "text": "Microsoft-Windows-Windows Firewall With Advanced Security/Firewall"
+    }
+  ],
+  "overview": "You have been presented with the opportunity to work as a junior DFIR consultant for a big consultancy. However, they have provided a technical assessment for you to complete. The consultancy Forela-Security would like to gauge your Windows Event Log Analysis knowledge. We believe the Cyberjunkie user logged in to his computer and may have taken malicious ac",
+  "study": {
+    "overview": "You have been presented with the opportunity to work as a junior DFIR consultant for a big consultancy. However, they have provided a technical assessment for you to complete. The consultancy Forela-Security would like to gauge your Windows Event Log Analysis knowledge. We believe the Cyberjunkie user logged in to his computer and may have taken malicious ac",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "LogJammer (HTB)",
+      "Scenario",
+      "1- When did the cyberjunkie user first successfully log into his computer? (UTC)",
+      "27/03/2023 14:37:09",
+      "2- The user tampered with firewall settings on the system. Analyze the firewall event logs to find out the Name of the firewall rule added?",
+      "Metasploit C2 Bypass",
+      "3- Whats the direction of the firewall rule?",
+      "Outbound",
+      "4- The user changed audit policy of the computer. Whats the Subcategory of this changed policy?",
+      "Other Object Access Events",
+      "5- The user \"cyberjunkie\" created a scheduled task. Whats the name of this task?",
+      "HTB-AUTOMATION"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

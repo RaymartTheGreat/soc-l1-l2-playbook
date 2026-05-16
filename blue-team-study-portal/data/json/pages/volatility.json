@@ -1,0 +1,55 @@
+{
+  "id": "volatility",
+  "title": "Volatility",
+  "slug": "volatility",
+  "relPath": "Volatility.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "volatility/what is volatility",
+    "volatility/volatility3",
+    "volatility/volatility 2",
+    "volatility/differences between volatility 2 and volatility 3",
+    "volatility/volatility workbench"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "volatility",
+      "title": "Volatility",
+      "slug": "volatility"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Volatility"
+    }
+  ],
+  "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+  "study": {
+    "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Volatility"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

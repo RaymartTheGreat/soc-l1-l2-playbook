@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Threat Hunting Endgame | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-hunting-module.html">Threat Hunting module</a><span>/</span><span>Threat Hunting Endgame</span></div>
+      <h1>Threat Hunting Endgame</h1>
+      <p>This room focuses on the &quot;Actions on Objectives&quot; phase of the Cyber Kill Chain—where attackers execute their final goals such as data exfiltration, data destruction, encryption for ransom, or credential theft. The objective is to implement the threat hunting process to detect and investigate these advanced adversary actions using the MITRE ATT&amp;CK framework a</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag">Lateral Movement</span><span class="tag">C2</span><span class="tag mitre">TA0009</span><span class="tag mitre">TA0010</span><span class="tag mitre">TA0040</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Hunting module</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-module.html"><span>Threat Hunting module</span><em>L2</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-introduction.html"><span>Threat Hunting Introduction</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-foothold.html"><span>Threat Hunting Foothold</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-hunting-pivoting.html"><span>Threat Hunting Pivoting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="threat-hunting-endgame.html"><span>Threat Hunting Endgame</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-i-payment-collectors.html"><span>Hunt Me I Payment Collectors</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hunt-me-ii-typo-squatters.html"><span>Hunt Me II Typo Squatters</span><em>L2</em></a>
+      <b>1</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="summary-report-9541433d.html"><span>Summary Report</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>This room focuses on the &quot;Actions on Objectives&quot; phase of the Cyber Kill Chain—where attackers execute their final goals such as data exfiltration, data destruction, encryption for ransom, or credential theft. The objective is to implement the threat hunting process to detect and investigate these advanced adversary actions using the MITRE ATT&amp;CK framework a</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Threat Hunting: Endgame</li><li>1- Collection (TA0009)</li><li>Definition:</li><li>Commonly Used Techniques :</li><li>Hunting Collection Activities</li><li>Case Example: Hunting Keylogging</li><li>Keylogging Characteristics:</li><li>Hunting Methodology:</li><li>2- Exfiltration (TA0010)</li><li>Definition:</li><li>Examples of Methods:</li><li>Case Example: Data Exfiltration over ICMP</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="threat-hunting-endgame">Threat Hunting: Endgame</h2>
+<p>This room focuses on the &quot;Actions on Objectives&quot; phase of the Cyber Kill Chain—<strong>where attackers execute their final goals such as data exfiltration, data destruction, encryption for ransom, or credential theft.</strong> The objective is to implement the threat hunting process to detect and investigate these advanced adversary actions using the MITRE ATT&amp;CK framework as a guide.</p>
+<hr>
+<h2 id="1-collection-ta0009">1- Collection (TA0009)</h2>
+<h4 id="definition"><strong>Definition:</strong></h4>
+<p>Techniques adversaries use to gather valuable data from target systems. Collected data may be exploited for further compromise, intelligence gathering, monetization, or to facilitate lateral movement and privilege escalation.</p>
+<h4 id="commonly-used-techniques"><strong>Commonly Used Techniques :</strong></h4>
+<ul>
+<li><strong>Network-based Collection:</strong></li>
+<p>Man-in-the-middle attacks, ARP/LLMNR poisoning, SMB relay, DHCP spoofing, hijacking, or traffic dumps.</p>
+<li><strong>Keylogging and Input Capture:</strong></li>
+<p>Recording keystrokes using API calls, hooks, or malicious drivers.</p>
+<li><strong>Data Harvesting from Repositories:</strong></li>
+<p>Collecting data from local files, cloud storage, or databases.</p>
+<li><strong>Other Techniques:</strong></li>
+<p>Capturing screenshots, clipboard data, or system memory dumps.</p>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-screenshot_2025-03-06_064750-8e3744cc.png" data-alt="Screenshot 2025-03-06 064750.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-screenshot_2025-03-06_064750-8e3744cc.png" alt="Screenshot 2025-03-06 064750.png" loading="lazy"></button></p>
+<hr>
+<h3 id="hunting-collection-activities">Hunting Collection Activities</h3>
+<p>The hunt for collection activities involves identifying anomalous data gathering methods, which are closely tied to the attacker’s objectives. One specific case example is hunting for keylogger activity.</p>
+<hr>
+<h4 id="case-example-hunting-keylogging"><strong>Case Example: Hunting Keylogging</strong></h4>
+<p>Keyloggers record keystrokes to capture sensitive information. This example demonstrates a hunting exercise for detecting keylogger activities using API calls and pattern matching.</p>
+<h4 id="keylogging-characteristics">Keylogging Characteristics:</h4>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-926613cc-054b-414f-9e43-e25a0e3622b6-ee7eb0e9.png" data-alt="Screenshot 2025-03-06 064905.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-926613cc-054b-414f-9e43-e25a0e3622b6-ee7eb0e9.png" alt="Screenshot 2025-03-06 064905.png" loading="lazy"></button></p>
+<h4 id="hunting-methodology">Hunting Methodology:</h4>
+<ol>
+<li><strong>Initial Pattern Search:</strong></li>
+<ul>
+<li><strong>Objective:</strong> Identify logs containing suspicious keylogger-related API calls.</li>
+<li><strong>KQL Query Example:</strong></li>
+</ul>
+</ol>
+<p>``<code>jsx <em>GetKeyboardState</em> OR <em>SetWindowsHook</em> OR <em>GetKeyState</em> OR <em>GetAsynKeyState</em> OR <em>VirtualKey</em> OR <em>vKey</em> OR <em>filesCreated</em> OR <em>DrawText</em> </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-a5345d7fd9e24736e520e1fd82a4d136-2dad9b37.png" data-alt="a5345d7fd9e24736e520e1fd82a4d136.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-a5345d7fd9e24736e520e1fd82a4d136-2dad9b37.png" alt="a5345d7fd9e24736e520e1fd82a4d136.png" loading="lazy"></button></p>
+<ol>
+<li><strong>Investigate Suspicious Log Files:</strong></li>
+<ul>
+<li><strong>Data Source:</strong></li>
+</ul>
+</ol>
+<p>Focus on logs from <code>Microsoft-Windows-PowerShell/Operational</code> where keylogger patterns are observed.</p>
+<ul>
+<ul>
+<li><strong>Key Fields to Display:</strong></li>
+</ul>
+</ul>
+<p><code>winlog.channel</code>, <code>winlog.event_data.Path</code>, <code>winlog.event_data.ScriptBlockText</code></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-4343b64b66ab99427c8e9fe7c424a9a5-5155b78a.png" data-alt="4343b64b66ab99427c8e9fe7c424a9a5.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-4343b64b66ab99427c8e9fe7c424a9a5-5155b78a.png" alt="4343b64b66ab99427c8e9fe7c424a9a5.png" loading="lazy"></button></p>
+<ol>
+<li><strong>Correlate Suspicious Script and Database Files:</strong></li>
+<ul>
+<li><strong>Objective:</strong></li>
+</ul>
+</ol>
+<p>Identify suspicious file names such as <code>chrome-update_api.ps1</code> or <code>chrome_local_profile.db</code>.</p>
+<ul>
+<ul>
+<li><strong>KQL Query Example:</strong></li>
+</ul>
+</ul>
+<p>``<code>jsx <em>chrome-update_api.ps1</em> OR <em>chrome_local_profile.db</em> </code>``</p>
+<ul>
+<ul>
+<li><strong>Key Fields to Display:</strong></li>
+</ul>
+</ul>
+<p><code>winlog.channel</code>, <code>winlog.event_data.Path</code>, <code>winlog.event_data.ScriptBlockText</code>, <code>winlog.event_data.CommandLine</code>, <code>winlog.event_data.Data.#text</code></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-fd8b5bb249f99535fbe55fbedbb29bc7-4ac4c510.png" data-alt="fd8b5bb249f99535fbe55fbedbb29bc7.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-fd8b5bb249f99535fbe55fbedbb29bc7-4ac4c510.png" alt="fd8b5bb249f99535fbe55fbedbb29bc7.png" loading="lazy"></button></p>
+<ol>
+<li><strong>Detailed Analysis of the Keylogger Database:</strong></li>
+<ul>
+<li><strong>Objective:</strong></li>
+</ul>
+</ol>
+<p>Examine the contents of the keylogger database file to verify the logging of keystrokes.</p>
+<ul>
+<ul>
+<li><strong>KQL Query Example:</strong></li>
+</ul>
+</ul>
+<p>``<code>jsx winlog.event_data.ScriptBlockText: &quot;<em>chrome_local_profile.db</em>&quot; </code>``</p>
+<ul>
+<ul>
+<li><strong>Key Fields:</strong></li>
+</ul>
+</ul>
+<p><code>winlog.event_data.Path</code>, <code>winlog.event_data.ScriptBlockText</code>, <code>winlog.event_data.Payload</code></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-9b26259a6d30dbd89c056811d795fb62-d37ce964.png" data-alt="9b26259a6d30dbd89c056811d795fb62.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-9b26259a6d30dbd89c056811d795fb62-d37ce964.png" alt="9b26259a6d30dbd89c056811d795fb62.png" loading="lazy"></button></p>
+<ol>
+<li><strong>Event Correlation and Timeline Construction:</strong></li>
+<ul>
+<li><strong>Approach:</strong></li>
+</ul>
+</ol>
+<p>Use the &quot;View surrounding documents&quot; feature to correlate parent-child process relationships and build a timeline from the initial suspicious command execution to subsequent keylogger activity.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-33fdd1ffb5e336586708baec7665a6bb-0a843af9.png" data-alt="33fdd1ffb5e336586708baec7665a6bb.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-33fdd1ffb5e336586708baec7665a6bb-0a843af9.png" alt="33fdd1ffb5e336586708baec7665a6bb.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-8b7d261c-69c1-4c63-b3e7-36a36b10cb21-faa99d0a.png" data-alt="1FaToeeYSXSS4CdzXI3Edqw.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-8b7d261c-69c1-4c63-b3e7-36a36b10cb21-faa99d0a.png" alt="1FaToeeYSXSS4CdzXI3Edqw.webp" loading="lazy"></button></p>
+<hr>
+<hr>
+<h2 id="2-exfiltration-ta0010">2- Exfiltration (TA0010)</h2>
+<h4 id="definition"><strong>Definition:</strong></h4>
+<p>Techniques adversaries use to steal or leak data from a compromised system or network. This phase often employs compression and encryption to maximize data transfer while avoiding detection.</p>
+<h4 id="examples-of-methods"><strong>Examples of Methods:</strong></h4>
+<ul>
+<li><strong>Data Transfer to C2 Servers/Channels:</strong></li>
+<p>Sending stolen data directly to attacker-controlled servers.</p>
+<li><strong>Transfer over Alternative Protocols:</strong></li>
+<p>Using non-standard or less-monitored channels (e.g., Bluetooth, web services, cloud storage).</p>
+<li><strong>Traffic Duplication:</strong></li>
+<p>Duplicating legitimate traffic to embed exfiltrated data.</p>
+<li><strong>Exfiltration via Encrypted/Unencrypted Channels:</strong></li>
+<p>Utilizing encrypted tunnels or even unencrypted paths with strict size limits.</p>
+<li><strong>Exfiltration over Portable Devices:</strong></li>
+<p>Transferring data via removable media.</p>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-screenshot_2025-03-06_084010-f838e5f9.png" data-alt="Screenshot 2025-03-06 084010.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-screenshot_2025-03-06_084010-f838e5f9.png" alt="Screenshot 2025-03-06 084010.png" loading="lazy"></button></p>
+<hr>
+<h2 id="case-example-data-exfiltration-over-icmp">Case Example: Data Exfiltration over ICMP</h2>
+<p>This case demonstrates a hunting exercise focused on detecting data exfiltration over the ICMP protocol using native Windows artifacts. Instead of relying solely on network traffic, this exercise examines system-level events and process executions to reveal exfiltration activity.</p>
+<h3 id="hunting-methodology">Hunting Methodology</h3>
+<h4 id="1.-initial-pattern-search">1. Initial Pattern Search</h4>
+<ul>
+<li><strong>Objective:</strong></li>
+</ul>
+<p>Identify system tool calls that may be used for data transfer.</p>
+<ul>
+<li><strong>Approach:</strong></li>
+</ul>
+<p>Search for process execution logs containing common exfiltration tool keywords.</p>
+<ul>
+<li><strong>KQL Query Example:</strong></li>
+</ul>
+<p>``<code>jsx <em>$ping</em> OR <em>$ipconfig</em> OR <em>$arp</em> OR <em>$route</em> OR <em>$telnet</em> OR <em>$tracert</em> OR <em>$nslookup</em> OR <em>$netstat</em> OR <em>$netsh</em> OR <em>$smb</em> OR <em>$smtp</em> OR <em>$scp</em> OR <em>$ssh</em> OR <em>$wget</em> OR <em>$curl</em> OR <em>$certutil</em> OR <em>$nc</em> OR <em>$ncat</em> OR <em>$netcut</em> OR <em>$socat</em> OR <em>$dnscat</em> OR <em>$ngrok</em> OR <em>$psfile</em> OR <em>$psping</em> OR <em>$tcpvcon</em> OR <em>$tftp</em> OR <em>$socks</em> OR <em>$Invoke-WebRequest</em> OR <em>$server</em> OR <em>$post</em> OR <em>$ssl</em> OR <em>$encod</em> OR <em>$chunk</em> OR <em>$ssl</em> </code>``</p>
+<ul>
+<li><strong>Insight:</strong></li>
+</ul>
+<p>The query yields one hit, indicating a suspicious system tool call potentially related to data exfiltration.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-8a2ce383b028ea8988a28bd31d53ad60_1-e321b10c.png" data-alt="8a2ce383b028ea8988a28bd31d53ad60 (1).png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-8a2ce383b028ea8988a28bd31d53ad60_1-e321b10c.png" alt="8a2ce383b028ea8988a28bd31d53ad60 (1).png" loading="lazy"></button></p>
+<h4 id="2.-focusing-on-suspicious-system-calls">2. Focusing on Suspicious System Calls</h4>
+<ul>
+<li><strong>Objective:</strong></li>
+</ul>
+<p>Narrow down the activity by filtering for specific system calls.</p>
+<ul>
+<li><strong>Approach:</strong></li>
+</ul>
+<p>Run a focused query on system calls related to network information:</p>
+<p><strong>KQL Query Example:</strong></p>
+<p>``<code>jsx System.Net.Networkinformation.ping* </code>``</p>
+<ul>
+<li><strong>Key Field:</strong></li>
+</ul>
+<p><code>winlog.event_data.Path</code></p>
+<ul>
+<li><strong>Insight:</strong></li>
+</ul>
+<p>The result shows a suspicious PowerShell script executing a ping-related call, suggesting the script is transferring files using ICMP packets.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-a81e3a962764c9eec88ad562ff1c1898-a431eb7d.png" data-alt="a81e3a962764c9eec88ad562ff1c1898.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-a81e3a962764c9eec88ad562ff1c1898-a431eb7d.png" alt="a81e3a962764c9eec88ad562ff1c1898.png" loading="lazy"></button></p>
+<h4 id="3.-detailed-analysis-of-the-exfiltration-script">3. Detailed Analysis of the Exfiltration Script</h4>
+<ul>
+<li><strong>Objective:</strong></li>
+</ul>
+<p>Identify the specific exfiltration activity by analyzing script details.</p>
+<ul>
+<li><strong>Approach:</strong></li>
+</ul>
+<p>Filter for the exfiltrating script using a query such as:</p>
+<p><strong>KQL Query Example:</strong></p>
+<p>``<code>jsx icmp4data.ps1* </code>``</p>
+<ul>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>winlog.event_data.Path</code></li>
+<li><code>winlog.event_data.ScriptBlockText</code></li>
+</ul>
+<li><strong>Insight:</strong></li>
+</ul>
+<p>The query returns precise results that identify the exfiltration script, the exfiltrated file, and the upload destination server.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-6ab57de915f573c2ec8195e3acda9745-839b177a.png" data-alt="6ab57de915f573c2ec8195e3acda9745.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-6ab57de915f573c2ec8195e3acda9745-839b177a.png" alt="6ab57de915f573c2ec8195e3acda9745.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-a29637b9-3923-46ae-b248-2e64376c2029-7f4357ef.png" data-alt="14B-fIGlYmW5kulKjWmG3ew.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-a29637b9-3923-46ae-b248-2e64376c2029-7f4357ef.png" alt="14B-fIGlYmW5kulKjWmG3ew.webp" loading="lazy"></button></p>
+<p><strong>Total number of sent ICMP packets</strong></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-29ed39b4-e1b9-4f91-a435-d11f06a6099a-33765e60.png" data-alt="1cMkToSnXJcitcX99b3a3WQ.webp"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-29ed39b4-e1b9-4f91-a435-d11f06a6099a-33765e60.png" alt="1cMkToSnXJcitcX99b3a3WQ.webp" loading="lazy"></button></p>
+<p>Name of the exfiltrated document &amp; the server's IP address</p>
+<hr>
+<hr>
+<h2 id="3-impact-ta0040">3- Impact (TA0040)</h2>
+<h4 id="definition"><strong>Definition:</strong></h4>
+<p>Techniques used by adversaries to disrupt availability, compromise system integrity, or hinder functionality. These techniques include data destruction, data manipulation, ransomware, defacement, and other forms of disruptive actions.</p>
+<h4 id="examples-of-methods"><strong>Examples of Methods:</strong></h4>
+<ul>
+<li><strong>Ransomware:</strong> Encrypting data to extort payment.</li>
+<li><strong>File Destruction and Removal:</strong> Deleting or corrupting critical files.</li>
+<li><strong>Data Manipulation:</strong> Altering data to render it unreliable or unusable.</li>
+<li><strong>Service Disruption:</strong> Disabling or altering system services (e.g., shadow copy deletion).</li>
+<li><strong>Account and Access Manipulation:</strong> Changing permissions to lock out legitimate users.</li>
+<li><strong>System Configuration Changes:</strong> Modifying network settings or boot configurations to disrupt operations.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-screenshot_2025-03-06_095527-7bf640f1.png" data-alt="Screenshot 2025-03-06 095527.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-screenshot_2025-03-06_095527-7bf640f1.png" alt="Screenshot 2025-03-06 095527.png" loading="lazy"></button></p>
+<hr>
+<h3 id="case-example-data-disruptionmanipulation">Case Example: Data Disruption/Manipulation</h3>
+<p>This case example demonstrates a hunting exercise for detecting data disruption and manipulation, focusing on native system processes used for shadow backup removal and corruption of system recovery points—similar to techniques used by advanced persistent threats like the Olympic Destroyer APT group.</p>
+<h3 id="hunting-methodology">Hunting Methodology</h3>
+<h4 id="1.-initial-pattern-search">1. Initial Pattern Search</h4>
+<ul>
+<li><strong>Objective:</strong></li>
+</ul>
+<p>Identify system tool calls that lead to data disruption or manipulation.</p>
+<ul>
+<li><strong>Approach:</strong></li>
+</ul>
+<p>Search for logs with command-line strings that indicate the use of native system utilities which could be used to delete or corrupt data.</p>
+<ul>
+<li><strong>KQL Query Example:</strong></li>
+</ul>
+<p>``<code>jsx <em>del</em> OR <em>rm</em> OR <em>vssadmin</em> OR <em>wbadmin</em> OR <em>bcdedit</em> OR <em>wevutil</em> OR <em>shadow</em> OR <em>recovery</em> OR <em>bootstatuspolicy</em> </code>``</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-3d247645e625840de49588ce8addccf2-994bd299.png" data-alt="3d247645e625840de49588ce8addccf2.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-3d247645e625840de49588ce8addccf2-994bd299.png" alt="3d247645e625840de49588ce8addccf2.png" loading="lazy"></button></p>
+<h4 id="2.-visualizing-log-sources">2. Visualizing Log Sources</h4>
+<ul>
+<li><strong>Objective:</strong></li>
+</ul>
+<p>Determine which log sources are providing the most insight into potential Impact activities.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-4b3582d46feddb0829e14d8066a8e847-86724f3b.png" data-alt="4b3582d46feddb0829e14d8066a8e847.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-4b3582d46feddb0829e14d8066a8e847-86724f3b.png" alt="4b3582d46feddb0829e14d8066a8e847.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Approach:</strong></li>
+</ul>
+<p>Visualize events by filtering on the <code>winlog.channel</code> field and selecting a table format.</p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-1149940b7960eb3e013f3a2f7d3638b3-4ddc037b.png" data-alt="1149940b7960eb3e013f3a2f7d3638b3.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-1149940b7960eb3e013f3a2f7d3638b3-4ddc037b.png" alt="1149940b7960eb3e013f3a2f7d3638b3.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-screenshot_2025-03-06_101028-92f23de0.png" data-alt="Screenshot 2025-03-06 101028.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-screenshot_2025-03-06_101028-92f23de0.png" alt="Screenshot 2025-03-06 101028.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Insight:</strong></li>
+</ul>
+<p>The Security log may provide low-hanging fruit as it records system tool executions and other critical events.</p>
+<h4 id="3.-narrowing-down-to-specific-events">3. Narrowing Down to Specific Events</h4>
+<ul>
+<li><strong>Objective:</strong></li>
+</ul>
+<p>Isolate the starting point of disruptive activity.</p>
+<ul>
+<li><strong>Approach:</strong></li>
+</ul>
+<p>Filter for a specific suspicious event by its Process ID:</p>
+<p>``<code>jsx winlog.event_data.ProcessId: &quot;1972&quot; </code>``</p>
+<ul>
+<ul>
+<li><strong>Key Fields to Display:</strong></li>
+<ul>
+<li><code>winlog.event_data.CommandLine</code></li>
+<li><code>winlog.event_data.ParentProcessName</code></li>
+<li><code>winlog.event_data.ProcessId</code></li>
+<li><code>winlog.event_data.ParentProcessId</code></li>
+<li><code>winlog.event_data.ParentImage</code></li>
+</ul>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-6b65debd327cc755728a8a19a0d5c579-bd07c918.png" data-alt="6b65debd327cc755728a8a19a0d5c579.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-6b65debd327cc755728a8a19a0d5c579-bd07c918.png" alt="6b65debd327cc755728a8a19a0d5c579.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-screenshot_2025-03-06_101242-c4d8a977.png" data-alt="Screenshot 2025-03-06 101242.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-screenshot_2025-03-06_101242-c4d8a977.png" alt="Screenshot 2025-03-06 101242.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Insight:</strong></li>
+</ul>
+<p>This query reveals a clear parent-child process relationship, identifying the primary process that initiated the disruptive actions.</p>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p><button class="image-button" data-src="../assets/images/threat-hunting-modulethreat-hunting-endgame-cd2d4a30-e2a6-4224-b38f-2f8f7aa92e5e-a540f664.png" data-alt="Screenshot 2025-03-06 082135.png"><img src="../assets/images/threat-hunting-modulethreat-hunting-endgame-cd2d4a30-e2a6-4224-b38f-2f8f7aa92e5e-a540f664.png" alt="Screenshot 2025-03-06 082135.png" loading="lazy"></button></p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#threat-hunting-endgame">Threat Hunting: Endgame</a><a href="#1-collection-ta0009">1- Collection (TA0009)</a><a href="#definition">Definition:</a><a href="#commonly-used-techniques">Commonly Used Techniques :</a><a href="#hunting-collection-activities">Hunting Collection Activities</a><a href="#case-example-hunting-keylogging">Case Example: Hunting Keylogging</a><a href="#keylogging-characteristics">Keylogging Characteristics:</a><a href="#hunting-methodology">Hunting Methodology:</a><a href="#2-exfiltration-ta0010">2- Exfiltration (TA0010)</a><a href="#definition">Definition:</a><a href="#examples-of-methods">Examples of Methods:</a><a href="#case-example-data-exfiltration-over-icmp">Case Example: Data Exfiltration over ICMP</a><a href="#hunting-methodology">Hunting Methodology</a><a href="#1.-initial-pattern-search">1. Initial Pattern Search</a><a href="#2.-focusing-on-suspicious-system-calls">2. Focusing on Suspicious System Calls</a><a href="#3.-detailed-analysis-of-the-exfiltration-script">3. Detailed Analysis of the Exfiltration Script</a><a href="#3-impact-ta0040">3- Impact (TA0040)</a><a href="#definition">Definition:</a><a href="#examples-of-methods">Examples of Methods:</a><a href="#case-example-data-disruptionmanipulation">Case Example: Data Disruption/Manipulation</a><a href="#hunting-methodology">Hunting Methodology</a><a href="#1.-initial-pattern-search">1. Initial Pattern Search</a><a href="#2.-visualizing-log-sources">2. Visualizing Log Sources</a><a href="#3.-narrowing-down-to-specific-events">3. Narrowing Down to Specific Events</a><a href="#conclusion">Conclusion</a></details>
+    </div>
+    
+    <footer class="pager"><a href="threat-hunting-pivoting.html">← Threat Hunting Pivoting</a><a href="hunt-me-i-payment-collectors.html">Hunt Me I Payment Collectors →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

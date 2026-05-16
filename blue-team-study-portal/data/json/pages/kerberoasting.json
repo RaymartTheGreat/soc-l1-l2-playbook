@@ -1,0 +1,121 @@
+{
+  "id": "detecting ad attacks/kerberoasting",
+  "title": "Kerberoasting",
+  "slug": "kerberoasting",
+  "relPath": "Detecting AD Attacks/Kerberoasting.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "SIEM",
+    "PowerShell",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Web",
+    "Memory",
+    "Detection",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "T1558.003",
+    "T1558"
+  ],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/kerberoasting",
+      "title": "Kerberoasting",
+      "slug": "kerberoasting"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Kerberoasting"
+    },
+    {
+      "level": 2,
+      "text": "1- How Kerberoasting Works"
+    },
+    {
+      "level": 3,
+      "text": "a. Service Ticket Request"
+    },
+    {
+      "level": 3,
+      "text": "b. Ticket Retrieval and Offline Cracking"
+    },
+    {
+      "level": 2,
+      "text": "2- Attack Impact"
+    },
+    {
+      "level": 2,
+      "text": "3- Key Tools and Techniques"
+    },
+    {
+      "level": 2,
+      "text": "4- Mitigation Strategies"
+    },
+    {
+      "level": 2,
+      "text": "5- Detection and Defensive Strategies"
+    },
+    {
+      "level": 3,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Defensive Strategies"
+    },
+    {
+      "level": 2,
+      "text": "6- Summary"
+    }
+  ],
+  "overview": "Kerberoasting is an attack targeting service accounts within Active Directory by exploiting Service Principal Names (SPNs). In this attack, an adversary requests Kerberos service tickets, extracts the encrypted credential data, and then attempts to crack the ticket offline to recover the plaintext password.",
+  "study": {
+    "overview": "Kerberoasting is an attack targeting service accounts within Active Directory by exploiting Service Principal Names (SPNs). In this attack, an adversary requests Kerberos service tickets, extracts the encrypted credential data, and then attempts to crack the ticket offline to recover the plaintext password.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Kerberoasting",
+      "1- How Kerberoasting Works",
+      "a. Service Ticket Request",
+      "b. Ticket Retrieval and Offline Cracking",
+      "2- Attack Impact",
+      "3- Key Tools and Techniques",
+      "4- Mitigation Strategies",
+      "5- Detection and Defensive Strategies",
+      "Detection",
+      "Defensive Strategies",
+      "6- Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

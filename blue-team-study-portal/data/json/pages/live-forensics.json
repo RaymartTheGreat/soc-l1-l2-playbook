@@ -1,0 +1,69 @@
+{
+  "id": "digital forensics/live forensics",
+  "title": "Live Forensics",
+  "slug": "live-forensics",
+  "relPath": "Digital Forensics/Live Forensics.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Network",
+    "DFIR",
+    "Memory",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "digital forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "digital forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "digital forensics",
+      "title": "Digital Forensics",
+      "slug": "digital-forensics"
+    },
+    {
+      "id": "digital forensics/live forensics",
+      "title": "Live Forensics",
+      "slug": "live-forensics"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Live Forensics"
+    },
+    {
+      "level": 2,
+      "text": "Why Is It Important?"
+    },
+    {
+      "level": 2,
+      "text": "Use Cases and Practical Relevance"
+    }
+  ],
+  "overview": "Live forensics is the practice of collecting digital evidence from systems that are currently powered on and active. Unlike traditional forensic imaging conducted after shutdown, live forensics targets volatile artifacts that disappear the moment a system is powered off—such as RAM contents, running processes, network connections, and decrypted data.",
+  "study": {
+    "overview": "Live forensics is the practice of collecting digital evidence from systems that are currently powered on and active. Unlike traditional forensic imaging conducted after shutdown, live forensics targets volatile artifacts that disappear the moment a system is powered off—such as RAM contents, running processes, network connections, and decrypted data.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Live Forensics",
+      "Why Is It Important?",
+      "Use Cases and Practical Relevance"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>SOC Essentials | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link active" href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>SOC Essentials</span></div>
+      <h1>SOC Essentials</h1>
+      <p>A SOC is a dedicated, usually 24/7 team (and the operational capability supporting it) responsible for protecting an organisation’s digital assets servers, endpoints, networks, cloud, identity systems and data by continuously monitoring, detecting, investigating, and responding to security incidents.</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">SIEM</span><span class="tag">EDR</span><span class="tag">Windows</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Web</span><span class="tag">DFIR</span><span class="tag">Detection</span><span class="tag">Threat Intel</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>SOC Essentials</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="soc-essentials.html"><span>SOC Essentials</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>A SOC is a dedicated, usually 24/7 team (and the operational capability supporting it) responsible for protecting an organisation’s digital assets servers, endpoints, networks, cloud, identity systems and data by continuously monitoring, detecting, investigating, and responding to security incidents.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>SOC Essentials</li><li>What is a SOC (Security Operations Center)?</li><li>Definition</li><li>Main objectives</li><li>The three pillars of a mature SOC</li><li>Who works in a SOC? (roles &amp; responsibilities)</li><li>Analyst Tiers</li><li>Engineering &amp; Specialist Roles</li><li>Cross-functional contacts</li><li>SOC capabilities // reactive vs proactive services</li><li>Reactive services (incident-driven)</li><li>Proactive services (preventative &amp; discovery)</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li><li>EDR</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>Focus runbooks on concepts and steps rather than tool commands.</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="soc-essentials">SOC Essentials</h2>
+<h3 id="what-is-a-soc-security-operations-center">What is a SOC (Security Operations Center)?</h3>
+<h4 id="definition">Definition</h4>
+<p>A SOC is a dedicated, usually 24/7 team (and the operational capability supporting it) responsible for protecting an organisation’s digital assets servers, endpoints, networks, cloud, identity systems and data by continuously monitoring, detecting, investigating, and responding to security incidents.</p>
+<h4 id="main-objectives">Main objectives</h4>
+<ul>
+<li><strong>Detect</strong> suspicious or malicious activity early.</li>
+<li><strong>Respond</strong> to incidents to contain damage and restore safe operations.</li>
+<li><strong>Prevent</strong> repeat incidents through tuning, patching, and improved controls.</li>
+<li><strong>Improve</strong> detection and response capabilities over time.</li>
+</ul>
+<h4 id="the-three-pillars-of-a-mature-soc">The three pillars of a mature SOC</h4>
+<p><strong>People</strong></p>
+<p>Analysts, engineers, threat hunters, managers and subject-matter experts.</p>
+<p><strong>Process</strong></p>
+<p>Documented escalation paths, triage playbooks, incident response steps, SLAs and handover procedures.</p>
+<p><strong>Technology</strong></p>
+<p>Telemetry collectors, detection engines, investigation tools, orchestration/automation and ticketing systems.</p>
+<hr>
+<h3 id="who-works-in-a-soc-roles-responsibilities">Who works in a SOC? (roles &amp; responsibilities)</h3>
+<h4 id="analyst-tiers">Analyst Tiers</h4>
+<ul>
+<li><strong>L1 / Junior Analyst (Triage)</strong></li>
+<ul>
+<li>First to see alerts. Performs enrichment, short investigations and decides whether to close alerts or escalate. Focus: speed and accuracy.</li>
+</ul>
+<li><strong>L2 Analyst</strong></li>
+<ul>
+<li>Deeper investigations: correlates logs across sources, validates malicious activity, recommends containment. May perform more intrusive checks (EDR snapshots, host forensics) per policy.</li>
+</ul>
+<li><strong>L3 / IR / Threat Hunter</strong></li>
+<ul>
+<li>Expert-level investigations, enterprise-wide hunting, forensic analysis, root-cause, and remediation planning.</li>
+</ul>
+</ul>
+<h4 id="engineering-specialist-roles">Engineering &amp; Specialist Roles</h4>
+<ul>
+<li><strong>Security Engineer</strong></li>
+<ul>
+<li>Ensures telemetry collection, log integrity, tool availability and infrastructure for the SOC.</li>
+</ul>
+<li><strong>Detection Engineer</strong></li>
+<ul>
+<li>Designs, tests and tunes detection rules/analytics; measures signal quality.</li>
+</ul>
+<li><strong>Threat Intelligence (TI) Analyst</strong></li>
+<ul>
+<li>Collects, validates, and maintains contextual threat data (IOCs, TTPs, campaigns). Feeds TI into triage and rule development.</li>
+</ul>
+<li><strong>SOAR/Automation Engineer</strong></li>
+<ul>
+<li>Builds and maintains playbooks that automate safe, repeatable tasks.</li>
+</ul>
+<li><strong>SOC Manager / Team Lead</strong></li>
+<ul>
+<li>Operational oversight: staffing, processes, SLAs, reporting to leadership.</li>
+</ul>
+</ul>
+<h4 id="cross-functional-contacts">Cross-functional contacts</h4>
+<ul>
+<li>IT ops, network team, incident response (if separate), legal, HR, communications and business owners.</li>
+</ul>
+<hr>
+<h3 id="soc-capabilities-reactive-vs-proactive-services">SOC capabilities // reactive vs proactive services</h3>
+<h4 id="reactive-services-incident-driven">Reactive services (incident-driven)</h4>
+<ul>
+<li>24/7 monitoring and investigation of alerts.</li>
+<li>Incident response support (containment, eradication, recovery).</li>
+<li>Malware triage and reverse engineering (where available).</li>
+<li>Reporting, compliance documentation and post-incident reviews.</li>
+</ul>
+<h4 id="proactive-services-preventative-discovery">Proactive services (preventative &amp; discovery)</h4>
+<ul>
+<li>Threat hunting to find stealthy intrusions not covered by alerts.</li>
+<li>Threat intelligence ingestion and contextualisation.</li>
+<li>Detection engineering and rule development.</li>
+<li>Vulnerability discovery and coordination with IT for mitigation.</li>
+<li>Purple-team exercises to validate detection coverage.</li>
+</ul>
+<hr>
+<h3 id="why-soc-analysts-matter">Why SOC analysts matter</h3>
+<ul>
+<li>Automated systems generate alerts, but analysts provide context and determine intent.</li>
+<li>Analysts filter out false positives, escalate genuine incidents, and ensure evidence is preserved for incident response or legal investigations.</li>
+<li>A skilled SOC transforms raw data into actionable decisions: who to contact, what to isolate, what to block, and which forensic steps to take.</li>
+</ul>
+<hr>
+<h3 id="common-data-sources">Common data sources</h3>
+<h4 id="endpoint-host">Endpoint &amp; Host</h4>
+<ul>
+<li>Process creation, file writes, service starts/stops, autoruns, registry changes (Windows), process trees, command-lines.</li>
+</ul>
+<h4 id="network-infrastructure">Network &amp; Infrastructure</h4>
+<ul>
+<li>Firewall logs, IDS/IPS alerts, proxy/gateway logs, VPN logs, router/switch logs, NetFlow/connection metadata.</li>
+</ul>
+<h4 id="identity-access">Identity &amp; Access</h4>
+<ul>
+<li>Active Directory/SSO logs, authentication success/failure, privilege changes, token issuance, MFA events.</li>
+</ul>
+<h4 id="server-application">Server &amp; Application</h4>
+<ul>
+<li>Web server logs, application logs, database access logs, mail server logs.</li>
+</ul>
+<h4 id="dns-dhcp">DNS &amp; DHCP</h4>
+<ul>
+<li>DNS query logs (useful for C2 detection), DHCP assignments (device mapping).</li>
+</ul>
+<h4 id="cloud-saas">Cloud &amp; SaaS</h4>
+<ul>
+<li>Cloud provider audit logs, object storage access, administrative API calls, identity provider logs.</li>
+</ul>
+<h4 id="mail-collaboration">Mail &amp; Collaboration</h4>
+<ul>
+<li>Email gateway events, phishing detections, collaboration tool audit logs.</li>
+</ul>
+<h4 id="threat-intelligence">Threat Intelligence</h4>
+<ul>
+<li>Internal and external feeds of IP/domain/hash indicators, campaign context, phishing templates, malware families.</li>
+</ul>
+<h4 id="why-combine-these">Why combine these?</h4>
+<p>Cross-source correlation enables context: identify which user, device and network path were involved and reconstruct a timeline.</p>
+<hr>
+<h3 id="key-tool-categories">Key tool categories</h3>
+<ul>
+<li><strong>Log management / SIEM</strong> — centralize logs and correlate events into alerts and incidents.</li>
+<li><strong>EDR (Endpoint Detection &amp; Response)</strong> — deep endpoint visibility, response actions, and forensic artefacts.</li>
+<li><strong>NDR (Network Detection &amp; Response)</strong> / IDS — detect suspicious lateral movement and network-based anomalies.</li>
+<li><strong>SOAR</strong> — orchestrate and automate enrichment, notifications and safe containment tasks.</li>
+<li><strong>ITSM / Ticketing</strong> — track investigations, evidence, escalations and SLA compliance.</li>
+<li><strong>Threat Intelligence Platform</strong> — manage, score and serve IOCs and context.</li>
+</ul>
+<blockquote><strong>Focus runbooks on concepts and steps rather than tool commands.</strong></blockquote>
+<blockquote></blockquote>
+<hr>
+<h3 id="simple-soc-workflow">Simple SOC workflow</h3>
+<ol>
+<li>Data ingestion (logs/telemetry) → central collector.</li>
+<li>Detection logic (rules/analytics) flag suspicious events → alerts.</li>
+<li>L1 triage: enrichment, quick investigation, verdict (FP/TP), possible escalation.</li>
+<li>L2/L3 investigation or IR: containment, eradication, remediation.</li>
+<li>Lessons learned: update detection logic, patching, and runbooks.</li>
+</ol>
+<hr>
+<h3 id="beginner-l1-checklist">Beginner L1 checklist</h3>
+<ul>
+<li>Know where to find asset &amp; identity info and on-call contacts.</li>
+<li>Read alert fields (time, source, severity, description).</li>
+<li>Assign &amp; mark In-Progress to avoid duplication.</li>
+<li>Enrich (who/what/where) → review surrounding events → form verdict → report/close or escalate.</li>
+</ul>
+<hr>
+<h3 id="from-events-alerts">From events → alerts</h3>
+<ul>
+<li><strong>Event</strong>: low-level single action (login, process start).</li>
+<li><strong>Log</strong>: recorded event shipped to central store.</li>
+<li><strong>Alert</strong>: aggregated/flagged output when rules/analytics detect suspicious patterns across events.</li>
+</ul>
+<h4 id="how-to-think-about-alerts">How to think about alerts</h4>
+<p>Alerts are not incidents — they are starting points. Many alerts are benign; analysis decides which require further action.</p>
+<hr>
+<h3 id="alert-fields-to-read-first">Alert fields to read first</h3>
+<ul>
+<li><strong>Event Time</strong> (when it happened) — use this for timelines.</li>
+<li><strong>Alert Time</strong> (when detection fired).</li>
+<li><strong>Alert Title / Description</strong> (what triggered).</li>
+<li><strong>Severity / Confidence</strong> (how impactful or certain).</li>
+<li><strong>Assignee / Status</strong> (ownership).</li>
+<li><strong>Key Fields</strong>: user, hostname, source IP, destination IP, command-line, filenames, hashes.</li>
+<li><strong>Related Events/Correlations</strong> (if tool shows them).</li>
+</ul>
+<hr>
+<h3 id="prioritization">Prioritization</h3>
+<ol>
+<li><strong>Already assigned?</strong> Skip duplicates.</li>
+<li><strong>Severity &amp; Confidence</strong>: Critical or high-confidence alerts first.</li>
+<li><strong>Impact / Business Criticality</strong>: Alerts affecting finance, production, identity services first.</li>
+<li><strong>Age</strong>: Older unresolved high-priority alerts get immediate attention.</li>
+<li><strong>Multiple corroborating signals</strong>: e.g., alert + EDR execution + outbound connection = higher priority.</li>
+</ol>
+<hr>
+<h3 id="first-actions-in-triage-first-60120-seconds">First actions in triage (first 60–120 seconds)</h3>
+<ul>
+<li>Assign to yourself and mark status.</li>
+<li>Read description and key fields; note timestamps.</li>
+<li>Pull identity and asset context (role, criticality, owner).</li>
+<li>Review immediate surrounding events (±5–30 minutes).</li>
+<li>If runbook exists, follow it; otherwise follow investigation checklist.</li>
+</ul>
+<hr>
+<h3 id="l1-investigation-checklist">L1 Investigation checklist</h3>
+<ol>
+<li><strong>Form quick hypothesis</strong>: e.g., “possible credential theft” or “likely scheduled task.”</li>
+<li><strong>Enrich</strong>: get user role, asset owner, asset classification (prod/non-prod), network zone.</li>
+<li><strong>Timeline</strong>: gather events before and after the main event (logon, process create, file access, network connections).</li>
+<li><strong>Scope</strong>: identify related endpoints, accounts, sessions.</li>
+<li><strong>Threat context</strong>: check internal TI and public TI for source IP/domain/hash.</li>
+<li><strong>Decision</strong>: Close as FP with notes OR escalate as TP. Use the decision matrix in your runbook.</li>
+</ol>
+<hr>
+<h3 id="workbooks-runbooks">Workbooks / Runbooks</h3>
+<h4 id="why-use-runbooks">Why use runbooks?</h4>
+<ul>
+<li>Ensure consistent triage across shifts and analysts.</li>
+<li>Reduce time-to-decision and improve evidence quality.</li>
+<li>Capture lessons learned and common false positives.</li>
+</ul>
+<h4 id="runbook-sections-recommended">Runbook sections (recommended)</h4>
+<ul>
+<li>Title, scope, owner and last updated date.</li>
+<li>Primary lookups &amp; contact links.</li>
+<li>Enrichment checklist.</li>
+<li>Investigation steps (ordered).</li>
+<li>Decision points and verdict options.</li>
+<li>Suggested L1 actions and L2 actions.</li>
+<li>Evidence checklist and attachments.</li>
+<li>Post-action follow-ups and metrics to record.</li>
+</ul>
+<hr>
+<h3 id="generic-runbook-template">Generic runbook template</h3>
+<p><strong>Title:</strong></p>
+<p><strong>Scope / When to use:</strong></p>
+<p><strong>Owner / Last updated:</strong></p>
+<p><strong>Primary lookups:</strong> Identity | Asset | Network diagram | TI | Contacts</p>
+<p><strong>Enrichment:</strong> user profile, device owner, criticality, recent activity window.</p>
+<p><strong>Investigation steps:</strong></p>
+<ol>
+<li>Pull timeline (Event Time ± window).</li>
+<li>Check endpoint process lineage and file writes.</li>
+<li>Check network connections and data flows.</li>
+<li>Check identity/authentication events and recent logons.</li>
+<li>Cross-check TI.</li>
+</ol>
+<p><strong>Decision matrix:</strong></p>
+<ul>
+<li>Expected activity → Close with notes.</li>
+<li>Suspicious but no further indicators → Monitor + watchlist.</li>
+<li>Malicious indicators / follow-on activity → Escalate with priority.</li>
+</ul>
+<p><strong>Actions &amp; Communication:</strong> ticketing, notify contacts, contain recommendations.</p>
+<p><strong>Evidence:</strong> list of logs, screenshots, IOCs.</p>
+<hr>
+<h3 id="example-runbook-phishing">Example runbook — Phishing</h3>
+<h4 id="when-to-use">When to use</h4>
+<ul>
+<li>User reports suspected phishing email, or mail filters flag a malicious message.</li>
+</ul>
+<h4 id="enrichment">Enrichment</h4>
+<ul>
+<li>Identify recipients &amp; original sender.</li>
+<li>Extract headers: sending IP, SPF/DKIM/DMARC status (if available).</li>
+<li>Note attachments and URLs (get filenames and short URLs).</li>
+</ul>
+<h4 id="investigation-steps">Investigation steps</h4>
+<ol>
+<li>Confirm whether the sender is internal (compromised mailbox) or external.</li>
+<li>Check mail gateway logs for delivery path and whether it was quarantined.</li>
+<li>Check endpoint telemetry for clicks or execution events tied to the email time.</li>
+<li>Identify who else received the same message across the company.</li>
+<li>Check TI for the sending IP/domain or attachment hash.</li>
+</ol>
+<h4 id="decision-points">Decision points</h4>
+<ul>
+<li>If sender is trusted and expected behavior → Close as FP (document why).</li>
+<li>If recipient clicked and endpoint shows suspicious activity → escalate as probable compromise.</li>
+<li>If mass-targeting or high-risk recipients involved → escalate to IR and communications.</li>
+</ul>
+<h4 id="actions-remediation">Actions &amp; remediation</h4>
+<ul>
+<li>If compromise suspected: isolate endpoint per policy, reset credentials, and perform forensic capture.</li>
+<li>If phishing campaign: coordinate with communications and IT to warn users and remove messages.</li>
+<li>Document all actions and preserve evidence for possible legal steps.</li>
+</ul>
+<hr>
+<h3 id="example-runbook-unusual-login-location">Example runbook - Unusual Login Location</h3>
+<h4 id="trigger">Trigger</h4>
+<p>SSO/VPN login from new country, suspicious IP or impossible travel.</p>
+<h4 id="enrichment">Enrichment</h4>
+<ul>
+<li>User normal hours and location.</li>
+<li>Device name and last seen activity.</li>
+<li>Source IP &amp; reverse DNS, country.</li>
+</ul>
+<h4 id="investigation">Investigation</h4>
+<ol>
+<li>Confirm Event Time and any related logins.</li>
+<li>Look for follow-on activity (scan, admin tool use, service access).</li>
+<li>Check TI for source IP or domain.</li>
+<li>Contact user by phone (not via suspected compromised channel).</li>
+</ol>
+<h4 id="decision">Decision</h4>
+<ul>
+<li>User confirms travel + no suspicious follow-on → Close FP.</li>
+<li>User denies or follow-on suspicious activity → escalate as TP.</li>
+</ul>
+<h4 id="actions-when-escalating">Actions when escalating</h4>
+<ul>
+<li>Prioritise ticket and attach timeline and evidence.</li>
+<li>Recommend L2 EDR checks and consider isolating host.</li>
+</ul>
+<hr>
+<h3 id="simple-example-alert">Simple example alert</h3>
+<p><strong>Title:</strong> Unusual VPN login — omar@example.com — 2099-06-22 05:23 UTC</p>
+<p><strong>Severity:</strong> High</p>
+<p><strong>Description:</strong> Successful VPN authentication from country X (IP a.b.c.d) followed by internal scanning of DB subnet (ports 1433/3306 seen).</p>
+<p><strong>Key fields:</strong> user, source IP, host, timestamps, observed network connections.</p>
+<hr>
+<h3 id="triage-reporting-ticket-templates">Triage reporting &amp; ticket templates</h3>
+<h4 id="short-ticket-title">Short ticket title</h4>
+<p><code>&lt;AlertType&gt; — &lt;user/host&gt; — &lt;IP/country/date&gt;</code></p>
+<h4 id="one-line-summary">One-line summary</h4>
+<p><code>&lt;what&gt; at &lt;when&gt; — &lt;why suspect&gt; — &lt;action requested&gt;</code></p>
+<h4 id="full-report-5-ws">Full report (5 Ws)</h4>
+<ul>
+<li><strong>Who:</strong> user &amp; role.</li>
+<li><strong>What:</strong> activity and IOCs.</li>
+<li><strong>When:</strong> Event &amp; Alert Times.</li>
+<li><strong>Where:</strong> hostnames, networks, subnets.</li>
+<li><strong>Why / Verdict:</strong> rationale and confidence.</li>
+<li><strong>Evidence:</strong> attached logs, screenshots, timeline.</li>
+<li><strong>Action taken:</strong> isolation, escalation, user contacted, etc.</li>
+</ul>
+<hr>
+<h3 id="escalation-guidelines">Escalation guidelines</h3>
+<h4 id="when-to-escalate">When to escalate</h4>
+<ul>
+<li>Evidence of compromise (persistent backdoors, data exfiltration, ransomware).</li>
+<li>Lateral movement or admin credential abuse.</li>
+<li>Large-scale or high-impact incidents.</li>
+<li>If L1 lacks confidence.</li>
+</ul>
+<h4 id="how-to-escalate">How to escalate</h4>
+<ul>
+<li>Create ticket with evidence and clear summary.</li>
+<li>Notify L2 via primary channel (phone/chat) and include SLA expectations.</li>
+<li>If no response in SLA window, escalate to L3/manager per contact tree.</li>
+</ul>
+<hr>
+<h3 id="communication-best-practices">Communication best practices</h3>
+<ul>
+<li>Avoid alerting users via a possibly compromised channel — call or use alternative.</li>
+<li>Record all communications in the ticket (who, when, what was said).</li>
+<li>For public-facing incidents, coordinate a single comms lead to manage external messaging.</li>
+</ul>
+<hr>
+<h3 id="core-lookup-sources-enrichment">Core lookup sources &amp; enrichment</h3>
+<ul>
+<li><strong>Identity lookup</strong>: account owner, role, typical login times, manager, recent HR changes.</li>
+<li><strong>Asset lookup</strong>: owner, OS, last patch date, EDR presence, criticality.</li>
+<li><strong>Network mapping</strong>: subnet purpose, DMZ vs internal, east-west trust boundaries.</li>
+<li><strong>Threat intelligence lookup</strong>: reputation of IPs/domains/hashes and related campaigns.</li>
+<li><strong>Business/contact list</strong>: phone numbers for IT, HR, legal, executives, comms.</li>
+</ul>
+<hr>
+<h3 id="how-to-design-maintain-workbooks">How to design &amp; maintain workbooks</h3>
+<ul>
+<li><strong>Single-purpose</strong>: one workbook per alert family (Phishing, RDP brute-force, Data Exfil, Unusual Logon, Lateral Movement).</li>
+<li><strong>Short and prescriptive</strong>: each step must be actionable with exact items to check.</li>
+<li><strong>Decision points</strong>: clear yes/no branching with recommended next steps.</li>
+<li><strong>Evidence examples</strong>: show what a “good” evidence set looks like for this alert.</li>
+<li><strong>Review cadence</strong>: quarterly or after major incidents; add common false positives as exclusions.</li>
+</ul>
+<hr>
+<h3 id="additional-runbooks">Additional runbooks</h3>
+<h4 id="rdp-brute-force-detection">RDP / Brute-force detection</h4>
+<p><strong>When to use:</strong> high volume of failed RDP attempts, successful logins after many failures, or unusual source IPs.</p>
+<p><strong>Enrichment:</strong> source IP geolocation, number of failed attempts, username targeted, affected host criticality.</p>
+<p><strong>Investigation:</strong> check successful logins after failures, check for resumed session activity, EDR for suspicious process spawn, check for persistence or new service registration.</p>
+<p><strong>Decision:</strong> if successful login from unusual IP + follow-on suspicious activity → escalate. If failed attempts only and blocked → monitor and consider blocking IP/rate-limiting.</p>
+<p><strong>Actions:</strong> block source IPs at edge if malicious, notify account owner, check for credential stuffing across other accounts.</p>
+<hr>
+<h4 id="data-exfiltration-unusual-outbound-traffic">Data exfiltration / unusual outbound traffic</h4>
+<p><strong>When to use:</strong> sudden large outbound transfers, long-lived encrypted sessions to unknown IPs, or unusual cloud storage writes.</p>
+<p><strong>Enrichment:</strong> destination IP/domain reputation, hostname process initiating traffic, volume and destination path.</p>
+<p><strong>Investigation:</strong> correlate process and network flows, check for staging directories, list of accessed files, check for compression/archiving activity.</p>
+<p><strong>Decision:</strong> if sensitive data movement confirmed → escalate immediately, consider network containment and legal notification.</p>
+<p><strong>Actions:</strong> isolate host, block destination, preserve forensic images, coordinate with legal for potential breach reporting.</p>
+<hr>
+<h3 id="metrics-slas-and-performance">Metrics, SLAs and performance</h3>
+<h4 id="core-metrics">Core metrics</h4>
+<ol>
+<li><strong>MTTD — Mean Time to Detect</strong></li>
+<ul>
+<li>Example: If event occurs at 08:00 and detection occurs at 09:20 (80 minutes), MTTD = 80 min for that incident. Average across incidents gives MTTD.</li>
+</ul>
+<li><strong>MTTA — Mean Time to Acknowledge</strong></li>
+<ul>
+<li>Example: alert created at 09:20, analyst acknowledges at 09:35 → MTTA 15 minutes.</li>
+</ul>
+<li><strong>MTTC — Mean Time to Contain</strong></li>
+<ul>
+<li>Example: from acknowledgement to host isolation time.</li>
+</ul>
+<li><strong>MTTR — Mean Time to Remediate</strong></li>
+<ul>
+<li>Time until systems are restored and validated, or until incident is fully closed.</li>
+</ul>
+<li><strong>False Positive Rate (FPR)</strong></li>
+<ul>
+<li>Track by rule family (which detections produce most FP) and tune.</li>
+</ul>
+<li><strong>Coverage Metric</strong></li>
+<ul>
+<li>Percentage of critical assets reporting expected telemetry (e.g., EDR present and sending logs).</li>
+</ul>
+<li><strong>Analyst Workload</strong></li>
+<ul>
+<li>Alerts per analyst per shift and average time spent per alert.</li>
+</ul>
+</ol>
+<h4 id="suggested-sla-ranges">Suggested SLA ranges</h4>
+<div class="table-wrap"><table><thead><tr><th>Severity</th><th>MTTA</th><th>MTTC</th><th>MTTR</th></tr></thead><tbody><tr><td>Critical</td><td>5–15 min</td><td>1–4 hours</td><td>&lt; 24–72 hours</td></tr><tr><td>High</td><td>15–60 min</td><td>4–12 hours</td><td>24–72 hours</td></tr><tr><td>Medium</td><td>1–4 hours</td><td>1–3 days</td><td>3–7 days</td></tr><tr><td>Low</td><td>4–8 hours</td><td>Monitor</td><td>&gt;7 days</td></tr></tbody></table></div>
+<hr>
+<h3 id="dashboards-reporting">Dashboards &amp; reporting</h3>
+<h4 id="operational-dashboards">Operational dashboards</h4>
+<ul>
+<li><strong>Real-time queue</strong>: active alerts, unacknowledged critical alerts, assignments.</li>
+<li><strong>Analyst load</strong>: alerts per analyst, average handling time.</li>
+<li><strong>Active incidents</strong>: incidents by severity, time in-stage.</li>
+</ul>
+<h4 id="health-detection-dashboards">Health &amp; detection dashboards</h4>
+<ul>
+<li><strong>Telemetry coverage</strong>: percent of servers/workstations reporting.</li>
+<li><strong>Rule health</strong>: top noisy rules, precision by rule family.</li>
+<li><strong>Top detections</strong>: which rule families generate true positives.</li>
+</ul>
+<h4 id="executive-dashboards">Executive dashboards</h4>
+<ul>
+<li><strong>MTTD / MTTA / MTTR trends</strong> (30 / 90 days).</li>
+<li><strong>Incident counts by business unit</strong>.</li>
+<li><strong>Major incidents &amp; status</strong>.</li>
+</ul>
+<hr>
+<h3 id="how-to-improve-soc-metrics">How to improve SOC metrics</h3>
+<h4 id="short-term-days-weeks">Short-term (days → weeks)</h4>
+<ul>
+<li>Triage top noisy rules and either tune, add context or temporarily disable them.</li>
+<li>Create/standardise runbooks for top 10 alert families.</li>
+<li>Automate enrichment fields (identity, asset criticality, last patch date) to save L1 time.</li>
+</ul>
+<h4 id="medium-term-weeks-months">Medium-term (weeks → months)</h4>
+<ul>
+<li>Expand telemetry coverage to critical assets.</li>
+<li>Implement safe SOAR playbooks for routine tasks (enrichment, notifications, low-risk containment).</li>
+<li>Conduct focused hiring/training for peak shift gaps.</li>
+</ul>
+<h4 id="long-term-months-year">Long-term (months → year)</h4>
+<ul>
+<li>Build closed-loop detection engineering: measure detection ROI, decommission low-value rules.</li>
+<li>Conduct regular purple-team exercises to validate detection capabilities and coverage.</li>
+<li>Institutionalize post-incident reviews with measurable action items and owners.</li>
+</ul>
+<hr>
+<h3 id="common-pitfalls-how-to-avoid-them">Common pitfalls &amp; how to avoid them</h3>
+<ul>
+<li><strong>Measuring raw alerts without quality</strong>: track precision/recall, not just counts.</li>
+<li><strong>Blind spots</strong>: if critical services lack telemetry, MTTD is meaningless prioritise coverage.</li>
+<li><strong>Over-automation</strong>: destructive actions must require human approval or multi-factor safety checks.</li>
+<li><strong>Unrealistic SLAs</strong>: align SLAs with staffing and visibility.</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#soc-essentials">SOC Essentials</a><a href="#what-is-a-soc-security-operations-center">What is a SOC (Security Operations Center)?</a><a href="#definition">Definition</a><a href="#main-objectives">Main objectives</a><a href="#the-three-pillars-of-a-mature-soc">The three pillars of a mature SOC</a><a href="#who-works-in-a-soc-roles-responsibilities">Who works in a SOC? (roles &amp; responsibilities)</a><a href="#analyst-tiers">Analyst Tiers</a><a href="#engineering-specialist-roles">Engineering &amp; Specialist Roles</a><a href="#cross-functional-contacts">Cross-functional contacts</a><a href="#soc-capabilities-reactive-vs-proactive-services">SOC capabilities // reactive vs proactive services</a><a href="#reactive-services-incident-driven">Reactive services (incident-driven)</a><a href="#proactive-services-preventative-discovery">Proactive services (preventative &amp; discovery)</a><a href="#why-soc-analysts-matter">Why SOC analysts matter</a><a href="#common-data-sources">Common data sources</a><a href="#endpoint-host">Endpoint &amp; Host</a><a href="#network-infrastructure">Network &amp; Infrastructure</a><a href="#identity-access">Identity &amp; Access</a><a href="#server-application">Server &amp; Application</a><a href="#dns-dhcp">DNS &amp; DHCP</a><a href="#cloud-saas">Cloud &amp; SaaS</a><a href="#mail-collaboration">Mail &amp; Collaboration</a><a href="#threat-intelligence">Threat Intelligence</a><a href="#why-combine-these">Why combine these?</a><a href="#key-tool-categories">Key tool categories</a><a href="#simple-soc-workflow">Simple SOC workflow</a><a href="#beginner-l1-checklist">Beginner L1 checklist</a><a href="#from-events-alerts">From events → alerts</a><a href="#how-to-think-about-alerts">How to think about alerts</a><a href="#alert-fields-to-read-first">Alert fields to read first</a><a href="#prioritization">Prioritization</a><a href="#first-actions-in-triage-first-60120-seconds">First actions in triage (first 60–120 seconds)</a><a href="#l1-investigation-checklist">L1 Investigation checklist</a><a href="#workbooks-runbooks">Workbooks / Runbooks</a><a href="#why-use-runbooks">Why use runbooks?</a><a href="#runbook-sections-recommended">Runbook sections (recommended)</a><a href="#generic-runbook-template">Generic runbook template</a><a href="#example-runbook-phishing">Example runbook — Phishing</a><a href="#when-to-use">When to use</a><a href="#enrichment">Enrichment</a><a href="#investigation-steps">Investigation steps</a></details>
+    </div>
+    
+    <footer class="pager"><a href="command-and-control-c2-evasion-techniques.html">← Command-and-Control (C2) Evasion Techniques</a><a href="cryptography.html">Cryptography →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

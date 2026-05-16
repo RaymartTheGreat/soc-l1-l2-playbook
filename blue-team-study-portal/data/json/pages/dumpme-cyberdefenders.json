@@ -1,0 +1,213 @@
+{
+  "id": "memory forensics labs/dumpme (cyberdefenders)",
+  "title": "DumpMe (CyberDefenders)",
+  "slug": "dumpme-cyberdefenders",
+  "relPath": "Memory Forensics Labs/DumpMe (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/dumpme (cyberdefenders)",
+      "title": "DumpMe (CyberDefenders)",
+      "slug": "dumpme-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "DumpMe (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the SHA1 hash of Triage-Memory.mem (memory dump)?"
+    },
+    {
+      "level": 3,
+      "text": "C95E8CC8C946F95A109EA8E47A6800DE10A27ABD"
+    },
+    {
+      "level": 3,
+      "text": "2- What volatility profile is the most appropriate for this machine? (ex: Win10x8614393)"
+    },
+    {
+      "level": 3,
+      "text": "Win7SP1x64"
+    },
+    {
+      "level": 3,
+      "text": "3- What was the process ID of notepad.exe?"
+    },
+    {
+      "level": 3,
+      "text": "3032"
+    },
+    {
+      "level": 3,
+      "text": "4- Name the child process of wscript.exe."
+    },
+    {
+      "level": 3,
+      "text": "UWkpjFjDzM.exe"
+    },
+    {
+      "level": 3,
+      "text": "5- What was the IP address of the machine at the time the RAM dump was created?"
+    },
+    {
+      "level": 3,
+      "text": "10.0.0.101"
+    },
+    {
+      "level": 3,
+      "text": "6- Based on the answer regarding the infected PID, can you determine the IP of the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "10.0.0.106"
+    },
+    {
+      "level": 3,
+      "text": "7- How many processes are associated with VCRUNTIME140.dll?"
+    },
+    {
+      "level": 3,
+      "text": "5"
+    },
+    {
+      "level": 3,
+      "text": "8- After dumping the infected process, what is its md5 hash?"
+    },
+    {
+      "level": 3,
+      "text": "690ea20bc3bdfb328e23005d9a80c290"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the LM hash of Bob's account?"
+    },
+    {
+      "level": 3,
+      "text": "aad3b435b51404eeaad3b435b51404ee"
+    },
+    {
+      "level": 3,
+      "text": "10- What memory protection constants does the VAD node at 0xfffffa800577ba10 have?"
+    },
+    {
+      "level": 3,
+      "text": "PAGEREADONLY"
+    },
+    {
+      "level": 3,
+      "text": "11- What memory protection did the VAD starting at 0x00000000033c0000 and ending at 0x00000000033dffff have?"
+    },
+    {
+      "level": 3,
+      "text": "PAGENOACCESS"
+    },
+    {
+      "level": 3,
+      "text": "12- There was a VBS script that ran on the machine. What is the name of the script? (submit without file extension)"
+    },
+    {
+      "level": 3,
+      "text": "vhjReUDEuumrX"
+    },
+    {
+      "level": 3,
+      "text": "13- An application was run at 2019-03-07 23:06:58 UTC. What is the name of the program? (Include extension)"
+    },
+    {
+      "level": 3,
+      "text": "Skype.exe"
+    },
+    {
+      "level": 3,
+      "text": "14- What was written in notepad.exe at the time when the memory dump was captured?"
+    },
+    {
+      "level": 3,
+      "text": "flag<REDBULLISLIFE"
+    },
+    {
+      "level": 3,
+      "text": "15- What is the short name of the file at file record 59045?"
+    },
+    {
+      "level": 3,
+      "text": "EMPLOY1.XLS"
+    },
+    {
+      "level": 3,
+      "text": "16- This box was exploited and is running meterpreter. What was the infected PID?"
+    },
+    {
+      "level": 3,
+      "text": "3496"
+    }
+  ],
+  "overview": "A SOC analyst took a memory dump from a machine infected with a meterpreter malware. As a Digital Forensicators, your job is to analyze the dump, extract the available indicators of compromise (IOCs) and answer the provided questions.",
+  "study": {
+    "overview": "A SOC analyst took a memory dump from a machine infected with a meterpreter malware. As a Digital Forensicators, your job is to analyze the dump, extract the available indicators of compromise (IOCs) and answer the provided questions.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "DumpMe (CyberDefenders)",
+      "Scenario",
+      "1- What is the SHA1 hash of Triage-Memory.mem (memory dump)?",
+      "C95E8CC8C946F95A109EA8E47A6800DE10A27ABD",
+      "2- What volatility profile is the most appropriate for this machine? (ex: Win10x8614393)",
+      "Win7SP1x64",
+      "3- What was the process ID of notepad.exe?",
+      "3032",
+      "4- Name the child process of wscript.exe.",
+      "UWkpjFjDzM.exe",
+      "5- What was the IP address of the machine at the time the RAM dump was created?",
+      "10.0.0.101"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Volatility"
+    ],
+    "tips": [
+      "pstree plugin: Displays running processes in a tree view, showing parent–child relationships. Useful for spotting suspicious parent/child process chains.",
+      "netscan plugin: Lists active and closed network connections, sockets, and listening ports from memory. Helps identify malware communications, C2 activity, or unusual network usage.",
+      "dlllist plugin: Lists the DLLs loaded by each process, including their base addresses, load times, and file paths. Useful for detecting injected, missing, or suspicious DLLs.",
+      "procdump plugin: Extracts the full memory image of a process from a memory dump. Useful for analyzing malicious processes, unpacking malware, or retrieving injected code.",
+      "hashdump plugin: Extracts password hashes (typically from the SAM database) stored in memory.",
+      "VAD (Virtual Address Descriptor): Data structure used by Windows to manage a process’s virtual memory regions. In memory forensics, analyzing VADs helps identify injected code, hidden modules, or unusual memory allocations by malware."
+    ]
+  }
+}

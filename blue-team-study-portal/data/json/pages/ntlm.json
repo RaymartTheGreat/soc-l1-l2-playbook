@@ -1,0 +1,87 @@
+{
+  "id": "active directory/ntlm",
+  "title": "NTLM",
+  "slug": "ntlm",
+  "relPath": "Active Directory/NTLM.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Memory",
+    "Detection",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "active directory",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "active directory"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "active directory",
+      "title": "Active Directory",
+      "slug": "active-directory"
+    },
+    {
+      "id": "active directory/ntlm",
+      "title": "NTLM",
+      "slug": "ntlm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "NTLM"
+    },
+    {
+      "level": 2,
+      "text": "How NTLM Works"
+    },
+    {
+      "level": 2,
+      "text": "Security and Legacy Considerations"
+    },
+    {
+      "level": 1,
+      "text": "Brief"
+    },
+    {
+      "level": 3,
+      "text": "What It Is & Its Purpose:"
+    },
+    {
+      "level": 3,
+      "text": "Attackers target NTLM because:"
+    }
+  ],
+  "overview": "NTLM (NT LAN Manager) is a suite of Microsoft authentication protocols that uses a challenge-response mechanism to verify user identities without transmitting passwords in cleartext.",
+  "study": {
+    "overview": "NTLM (NT LAN Manager) is a suite of Microsoft authentication protocols that uses a challenge-response mechanism to verify user identities without transmitting passwords in cleartext.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "NTLM",
+      "How NTLM Works",
+      "Security and Legacy Considerations",
+      "Brief",
+      "What It Is & Its Purpose:",
+      "Attackers target NTLM because:"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

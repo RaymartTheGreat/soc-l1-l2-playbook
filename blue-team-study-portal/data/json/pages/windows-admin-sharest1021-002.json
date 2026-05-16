@@ -1,0 +1,111 @@
+{
+  "id": "hunting lateral movement (mitre ta0008)/windows admin shares(t1021 002)",
+  "title": "Windows Admin Shares(T1021 002)",
+  "slug": "windows-admin-sharest1021-002",
+  "relPath": "Hunting Lateral Movement (MITRE TA0008)/Windows Admin Shares(T1021 002).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Detection",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "T1021",
+    "TA0008",
+    "T1021.002"
+  ],
+  "parentId": "hunting lateral movement (mitre ta0008)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "hunting lateral movement (mitre ta0008)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "hunting lateral movement (mitre ta0008)",
+      "title": "Hunting Lateral Movement (MITRE TA0008)",
+      "slug": "hunting-lateral-movement-mitre-ta0008"
+    },
+    {
+      "id": "hunting lateral movement (mitre ta0008)/windows admin shares(t1021 002)",
+      "title": "Windows Admin Shares(T1021 002)",
+      "slug": "windows-admin-sharest1021-002"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows Admin Shares(T1021.002)"
+    },
+    {
+      "level": 2,
+      "text": "How Attackers Use It"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 2,
+      "text": "Threat Hunting"
+    },
+    {
+      "level": 3,
+      "text": "Splunk Query"
+    },
+    {
+      "level": 3,
+      "text": "Additional Notes"
+    }
+  ],
+  "overview": "Windows Admin Shares (e.g., C$, ADMIN$, IPC$) are built-in network shares that allow administrators to remotely manage systems via the SMB protocol. Although these shares are enabled by default for legitimate administrative tasks, adversaries abuse them to move laterally, stage payloads, and execute remote commands.",
+  "study": {
+    "overview": "Windows Admin Shares (e.g., C$, ADMIN$, IPC$) are built-in network shares that allow administrators to remotely manage systems via the SMB protocol. Although these shares are enabled by default for legitimate administrative tasks, adversaries abuse them to move laterally, stage payloads, and execute remote commands.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows Admin Shares(T1021.002)",
+      "How Attackers Use It",
+      "Detection",
+      "Threat Hunting",
+      "Splunk Query",
+      "Additional Notes"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "python",
+        "code": "index=windows (EventCode=4688 OR EventCode=4648)\n| search CommandLine=\"*net use*\"\n| stats count by Computer, User, CommandLine"
+      },
+      {
+        "language": "python",
+        "code": "index=windows (EventCode=4624 OR EventCode=5140 OR EventCode=5145)\n| search (ShareName=\"ADMIN$\" OR ShareName=\"C$\" OR ShareName=\"IPC$\")\n| stats count by Computer, User, ShareName"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "python",
+        "code": "index=windows (EventCode=4688 OR EventCode=4648)\n| search CommandLine=\"*net use*\"\n| stats count by Computer, User, CommandLine"
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": [
+      "This image shows Windows Event ID 5145, recording how an attacker (using the pbeesly account from 10.0.1.4) accessed the ADMIN$ share to stage a file (python.exe) in C:\\Windows\\Temp for later remote execution after authenticating to the victim’s system"
+    ]
+  }
+}

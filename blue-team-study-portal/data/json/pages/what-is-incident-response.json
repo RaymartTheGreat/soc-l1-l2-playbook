@@ -1,0 +1,111 @@
+{
+  "id": "what is incident response",
+  "title": "What is Incident Response",
+  "slug": "what-is-incident-response",
+  "relPath": "What is Incident Response.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "SIEM",
+    "EDR",
+    "Phishing",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Detection",
+    "Incident Response"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "what is incident response",
+      "title": "What is Incident Response",
+      "slug": "what-is-incident-response"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "What is Incident Response?"
+    },
+    {
+      "level": 2,
+      "text": "Events vs. Incidents"
+    },
+    {
+      "level": 2,
+      "text": "Why IR matters"
+    },
+    {
+      "level": 2,
+      "text": "Typical consequences of a successful attack"
+    },
+    {
+      "level": 2,
+      "text": "The IR lifecycle"
+    },
+    {
+      "level": 3,
+      "text": "1) Preparation"
+    },
+    {
+      "level": 3,
+      "text": "2) Detection & Analysis"
+    },
+    {
+      "level": 3,
+      "text": "3) Containment, Eradication & Recovery"
+    },
+    {
+      "level": 3,
+      "text": "4) Lessons Learned (Post-incident)"
+    },
+    {
+      "level": 2,
+      "text": "Teams & roles"
+    },
+    {
+      "level": 2,
+      "text": "Key metrics"
+    }
+  ],
+  "overview": "Incident response (IR) is the structured process an organization follows to identify, investigate, contain, and recover from a cybersecurity incident. It combines technical actions, decision-making, coordination and documentation to reduce damage, restore services, and learn from what happened.",
+  "study": {
+    "overview": "Incident response (IR) is the structured process an organization follows to identify, investigate, contain, and recover from a cybersecurity incident. It combines technical actions, decision-making, coordination and documentation to reduce damage, restore services, and learn from what happened.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "What is Incident Response?",
+      "Events vs. Incidents",
+      "Why IR matters",
+      "Typical consequences of a successful attack",
+      "The IR lifecycle",
+      "1) Preparation",
+      "2) Detection & Analysis",
+      "3) Containment, Eradication & Recovery",
+      "4) Lessons Learned (Post-incident)",
+      "Teams & roles",
+      "Key metrics"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "EDR"
+    ],
+    "tips": [
+      "an event is an alert; an incident is confirmed impact"
+    ]
+  }
+}

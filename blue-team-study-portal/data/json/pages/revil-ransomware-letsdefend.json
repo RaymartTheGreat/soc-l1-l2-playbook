@@ -1,0 +1,160 @@
+{
+  "id": "memory forensics labs/revil ransomware (letsdefend)",
+  "title": "REvil Ransomware (LetsDefend)",
+  "slug": "revil-ransomware-letsdefend",
+  "relPath": "Memory Forensics Labs/REvil Ransomware (LetsDefend).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "Web",
+    "DFIR",
+    "Memory",
+    "Detection",
+    "Threat Intel",
+    "C2"
+  ],
+  "mitre": [
+    "T1486"
+  ],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/revil ransomware (letsdefend)",
+      "title": "REvil Ransomware (LetsDefend)",
+      "slug": "revil-ransomware-letsdefend"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "REvil Ransomware (LetsDefend)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the Operating System which the Redline image is being collected on?"
+    },
+    {
+      "level": 3,
+      "text": "Windows 7 Professional 7601 Service Pack 1"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the Logged in User while the Redline image is being collected?"
+    },
+    {
+      "level": 3,
+      "text": "securityninja"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the location of the ransomware on the filesystem?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\SecurityNinja\\Downloads\\bad day.exe"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the MD5 of the ransomware?"
+    },
+    {
+      "level": 3,
+      "text": "94d087166651c0020a9e6cc2fdacdc0c"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the extension for the encrypted file on the filesystem?"
+    },
+    {
+      "level": 3,
+      "text": "993ixjlb"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the onion website for paying the ransom?"
+    },
+    {
+      "level": 3,
+      "text": "http://aplebzu47wgazapdqks6vrcv6zcnjppkbxbr6wketf56nf6aq2nmyoyd.onion/4FE49B3286F992CB"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the secondary website for paying the ransom?"
+    },
+    {
+      "level": 3,
+      "text": "http://decoder.re/4FE49B3286F992CB"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the Child Command Line Process being executed after the ransomware being executed?"
+    },
+    {
+      "level": 3,
+      "text": "netsh advfirewall firewall set rule group='Network Discovery' new enable=Yes"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the Mitre ATT&CK Technique ID of this ransomware impact stage?"
+    },
+    {
+      "level": 3,
+      "text": "T1486"
+    },
+    {
+      "level": 3,
+      "text": "10- What is the name of the Ransomware?"
+    },
+    {
+      "level": 3,
+      "text": "revil"
+    }
+  ],
+  "overview": "We have extracted the memory dump from the compromised machine. Find the evidence of the ransomware attack.",
+  "study": {
+    "overview": "We have extracted the memory dump from the compromised machine. Find the evidence of the ransomware attack.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "REvil Ransomware (LetsDefend)",
+      "Scenario",
+      "1- What is the Operating System which the Redline image is being collected on?",
+      "Windows 7 Professional 7601 Service Pack 1",
+      "2- What is the Logged in User while the Redline image is being collected?",
+      "securityninja",
+      "3- What is the location of the ransomware on the filesystem?",
+      "C:\\Users\\SecurityNinja\\Downloads\\bad day.exe",
+      "4- What is the MD5 of the ransomware?",
+      "94d087166651c0020a9e6cc2fdacdc0c",
+      "5- What is the extension for the encrypted file on the filesystem?",
+      "993ixjlb"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "windows forensics/ntfs analysis",
+  "title": "NTFS Analysis",
+  "slug": "ntfs-analysis",
+  "relPath": "Windows Forensics/NTFS Analysis.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [
+    "windows forensics/ntfs analysis/ntfs overview",
+    "windows forensics/ntfs analysis/ntfs components",
+    "windows forensics/ntfs analysis/mft record analysis",
+    "windows forensics/ntfs analysis/ntfs journaling",
+    "windows forensics/ntfs analysis/index allocation attribute ($i30) overview",
+    "windows forensics/ntfs analysis/$logfile",
+    "windows forensics/ntfs analysis/$usnjrnl",
+    "windows forensics/ntfs analysis/ads"
+  ],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/ntfs analysis",
+      "title": "NTFS Analysis",
+      "slug": "ntfs-analysis"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "NTFS Analysis"
+    }
+  ],
+  "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+  "study": {
+    "overview": "Converted from the original Notion export and preserved as part of the Blue Team Study Portal.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "NTFS Analysis"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

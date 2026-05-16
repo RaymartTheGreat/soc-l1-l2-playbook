@@ -1,0 +1,84 @@
+{
+  "id": "frameworks/diamond model",
+  "title": "Diamond Model",
+  "slug": "diamond-model",
+  "relPath": "Frameworks/Diamond Model.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "Phishing",
+    "Threat Intel",
+    "Incident Response",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "frameworks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "frameworks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "frameworks",
+      "title": "Frameworks",
+      "slug": "frameworks"
+    },
+    {
+      "id": "frameworks/diamond model",
+      "title": "Diamond Model",
+      "slug": "diamond-model"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Diamond Model"
+    },
+    {
+      "level": 2,
+      "text": "Overview"
+    },
+    {
+      "level": 2,
+      "text": "Core Components"
+    },
+    {
+      "level": 2,
+      "text": "Optional Enrichment"
+    },
+    {
+      "level": 2,
+      "text": "Use Cases"
+    },
+    {
+      "level": 2,
+      "text": "Real-World Example: Real-World Diamond Model"
+    }
+  ],
+  "overview": "The Diamond Model is a cybersecurity framework used to analyze intrusions by connecting four interrelated elements: Adversary, Infrastructure, Capability, and Victim. These elements form the atomic structure of any cyberattack, arranged as a diamond to emphasize their relationships.",
+  "study": {
+    "overview": "The Diamond Model is a cybersecurity framework used to analyze intrusions by connecting four interrelated elements: Adversary, Infrastructure, Capability, and Victim. These elements form the atomic structure of any cyberattack, arranged as a diamond to emphasize their relationships.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Diamond Model",
+      "Overview",
+      "Core Components",
+      "Optional Enrichment",
+      "Use Cases",
+      "Real-World Example: Real-World Diamond Model"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

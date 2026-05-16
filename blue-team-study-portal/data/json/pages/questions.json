@@ -1,0 +1,230 @@
+{
+  "id": "windows security monitoring/windows logging for soc/questions",
+  "title": "Questions",
+  "slug": "questions",
+  "relPath": "Windows Security Monitoring/Windows Logging for SOC/Questions.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "windows security monitoring/windows logging for soc",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows security monitoring/windows logging for soc"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows security monitoring",
+      "title": "Windows Security Monitoring",
+      "slug": "windows-security-monitoring"
+    },
+    {
+      "id": "windows security monitoring/windows logging for soc",
+      "title": "Windows Logging for SOC",
+      "slug": "windows-logging-for-soc"
+    },
+    {
+      "id": "windows security monitoring/windows logging for soc/questions",
+      "title": "Questions",
+      "slug": "questions"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Questions"
+    },
+    {
+      "level": 3,
+      "text": "1- Open the \"Practice-Security.evtx\" file on the VM's Desktop."
+    },
+    {
+      "level": 3,
+      "text": "Which IP performed a brute force of the THM-PC?"
+    },
+    {
+      "level": 3,
+      "text": "10.10.53.248"
+    },
+    {
+      "level": 3,
+      "text": "2- Which user has been breached as a result of the attack?"
+    },
+    {
+      "level": 3,
+      "text": "Administrator"
+    },
+    {
+      "level": 3,
+      "text": "3- What was the Logon ID of the malicious RDP login?"
+    },
+    {
+      "level": 3,
+      "text": "Note: The login you are looking for has a Logon Type 10."
+    },
+    {
+      "level": 3,
+      "text": "0x183C36D"
+    },
+    {
+      "level": 3,
+      "text": "4- Continue with the \"Practice-Security.evtx\" file on the VM's Desktop."
+    },
+    {
+      "level": 3,
+      "text": "Which user was created by the attacker soon after the RDP login?"
+    },
+    {
+      "level": 3,
+      "text": "svcsysrestore"
+    },
+    {
+      "level": 3,
+      "text": "5- Which two privileged groups was the backdoor user added to?"
+    },
+    {
+      "level": 3,
+      "text": "(Answer in alphabetical order, e.g. \"Administrators, Power Users\")"
+    },
+    {
+      "level": 3,
+      "text": "Backup Operators, Remote Desktop Users"
+    },
+    {
+      "level": 3,
+      "text": "6- Does the Logon ID field match what you saw in the previous task (Yea/Nay)?"
+    },
+    {
+      "level": 3,
+      "text": "Yea"
+    },
+    {
+      "level": 3,
+      "text": "7- Open the \"Practice-Sysmon.evtx\" file on the VM's Desktop."
+    },
+    {
+      "level": 3,
+      "text": "Which web browser does Sarah use to browse the web?"
+    },
+    {
+      "level": 3,
+      "text": "Google Chrome"
+    },
+    {
+      "level": 3,
+      "text": "8- Which file did Sarah download from the browser?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\sarah.miller\\Downloads\\ckjg.exe"
+    },
+    {
+      "level": 3,
+      "text": "9- Which URL was the file downloaded from?"
+    },
+    {
+      "level": 3,
+      "text": "Note: Use other Sysmon events to find out!"
+    },
+    {
+      "level": 3,
+      "text": "http://gettsveriff.com/bgj3/ckjg.exe"
+    },
+    {
+      "level": 3,
+      "text": "10- Continue with the \"Practice-Sysmon.evtx\" file on the VM's Desktop."
+    },
+    {
+      "level": 3,
+      "text": "Which file was created by the downloaded malware to persist on the host?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\sarah.miller\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\DeleteApp.url"
+    },
+    {
+      "level": 3,
+      "text": "11- What is the Command & Control server malware connected to?"
+    },
+    {
+      "level": 3,
+      "text": "193.46.217.4:7777"
+    },
+    {
+      "level": 3,
+      "text": "12- Finally, which domain does the malicious IP correspond to?"
+    },
+    {
+      "level": 3,
+      "text": "hkfasfsafg.click"
+    },
+    {
+      "level": 3,
+      "text": "13- Review the Administrator's PS history on the attached VM."
+    },
+    {
+      "level": 3,
+      "text": "Which PowerShell command was executed first?"
+    },
+    {
+      "level": 3,
+      "text": "Get-ComputerInfo"
+    },
+    {
+      "level": 3,
+      "text": "14- When did the Administrator run the first PS command? (Format: April 18, 2025)"
+    },
+    {
+      "level": 3,
+      "text": "May 18, 2025"
+    },
+    {
+      "level": 3,
+      "text": "15- Can you find the flag stored in the PowerShell history? (Format: THM{...})"
+    },
+    {
+      "level": 3,
+      "text": "THM{itwasme!}"
+    }
+  ],
+  "overview": "1- Open the \"Practice-Security.evtx\" file on the VM's Desktop.",
+  "study": {
+    "overview": "1- Open the \"Practice-Security.evtx\" file on the VM's Desktop.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Questions",
+      "1- Open the \"Practice-Security.evtx\" file on the VM's Desktop.",
+      "Which IP performed a brute force of the THM-PC?",
+      "10.10.53.248",
+      "2- Which user has been breached as a result of the attack?",
+      "Administrator",
+      "3- What was the Logon ID of the malicious RDP login?",
+      "Note: The login you are looking for has a Logon Type 10.",
+      "0x183C36D",
+      "4- Continue with the \"Practice-Security.evtx\" file on the VM's Desktop.",
+      "Which user was created by the attacker soon after the RDP login?",
+      "svcsysrestore"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

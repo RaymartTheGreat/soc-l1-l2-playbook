@@ -1,0 +1,75 @@
+{
+  "id": "network/fundamentals/proxy",
+  "title": "Proxy",
+  "slug": "proxy",
+  "relPath": "Network/Fundamentals/Proxy.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/proxy",
+      "title": "Proxy",
+      "slug": "proxy"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Proxy"
+    },
+    {
+      "level": 3,
+      "text": "Main Proxy Types"
+    },
+    {
+      "level": 3,
+      "text": "Why Use Proxies?"
+    }
+  ],
+  "overview": "Proxy is an intermediary that sits between a client (e.g., your browser or an app) and the Internet (or a server). All requests and responses flow through the proxy, which can inspect, filter, cache, or modify traffic on behalf of the client or server.",
+  "study": {
+    "overview": "Proxy is an intermediary that sits between a client (e.g., your browser or an app) and the Internet (or a server). All requests and responses flow through the proxy, which can inspect, filter, cache, or modify traffic on behalf of the client or server.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Proxy",
+      "Main Proxy Types",
+      "Why Use Proxies?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "Proxy ≠ Gateway",
+      "A gateway simply forwards at lower layers (e.g., NAT at L3); a proxy must understand and mediate application‑layer (L7) traffic."
+    ]
+  }
+}

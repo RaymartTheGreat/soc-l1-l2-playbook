@@ -1,0 +1,114 @@
+{
+  "id": "windows forensics/windows applications forensics/manual inspection scheduled tasks",
+  "title": "Manual Inspection Scheduled Tasks",
+  "slug": "manual-inspection-scheduled-tasks",
+  "relPath": "Windows Forensics/Windows Applications Forensics/Manual Inspection Scheduled Tasks.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "DFIR",
+    "Detection",
+    "Threat Intel",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/windows applications forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/windows applications forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics",
+      "title": "Windows Applications Forensics",
+      "slug": "windows-applications-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics/manual inspection scheduled tasks",
+      "title": "Manual Inspection Scheduled Tasks",
+      "slug": "manual-inspection-scheduled-tasks"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Manual Inspection: Scheduled Tasks"
+    },
+    {
+      "level": 1,
+      "text": "Scenario: Investigating Persistence via Scheduled Tasks"
+    },
+    {
+      "level": 1,
+      "text": "Breaking Down the Scheduled Tasks"
+    },
+    {
+      "level": 1,
+      "text": "Utilising Command Line Utilities"
+    }
+  ],
+  "overview": "As mentioned, analysing through event logs only applies when the advanced audit policies for scheduled task events are enabled. Given this prerequisite, we will proceed with the discussion of analysing scheduled tasks without relying on Windows Event Logs. First, let's leverage the GUI version of Task Scheduler by using CTRL+R (or access the Run dialogue box",
+  "study": {
+    "overview": "As mentioned, analysing through event logs only applies when the advanced audit policies for scheduled task events are enabled. Given this prerequisite, we will proceed with the discussion of analysing scheduled tasks without relying on Windows Event Logs. First, let's leverage the GUI version of Task Scheduler by using CTRL+R (or access the Run dialogue box",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Manual Inspection: Scheduled Tasks",
+      "Scenario: Investigating Persistence via Scheduled Tasks",
+      "Breaking Down the Scheduled Tasks",
+      "Utilising Command Line Utilities"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> Get-ScheduledTask | Where-Object {$_.State —ne \"Disabled\"}"
+      },
+      {
+        "language": "powershell",
+        "code": " # List of all scheduled tasks, sorted by their creation date\nPS C:\\Users\\Administrator> Get-ScheduledTask | Where-Object {$_.Date —ne $null —and $_.State —ne \"Disabled\"} | Sort-Object Date | select Date,TaskName,Author,State,TaskPath | ft"
+      },
+      {
+        "language": "powershell",
+        "code": "# List all enabled scheduled tasks with creation date and command to be executed, sorted by date and printing all additional information\n$tasks = Get-ScheduledTask | Where-Object {$_.Date —ne $null —and $_.State —ne \"Disabled\" —and $_.Actions.Execute —ne $null} | Sort-Object Date\n\nforeach ($task in $tasks) {\n    $taskName = $task.TaskName\n    $taskDate = $task.Date\n    $taskPath = $task.TaskPath\n    $taskAuthor = $task.Author\n    $taskCommand = $task.Actions.Execute\n    $taskArgs = $task.Actions.Arguments\n    $taskRunAs = $task.Principal.UserId\n\n    # Output service information\n    Write-Host \"Task Name: $taskName\"\n    Write-Host \"Task Author: $taskAuthor\"\n    Write-Host \"Creation Date: $taskDate\"\n    Write-Host \"Task Path: $taskPath\"\n    Write-Host \"Command: $taskCommand $taskArgs\"\n    Write-Host \"Run As: $taskRunAs\"\n    Write-Host \"\"\n}"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> Get-ScheduledTask | Where-Object {$_.State —ne \"Disabled\"}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> schtasks.exe /query /fo CSV | findstr /V Disabled"
+      },
+      {
+        "language": "powershell",
+        "code": " # List of all scheduled tasks, sorted by their creation date\nPS C:\\Users\\Administrator> Get-ScheduledTask | Where-Object {$_.Date —ne $null —and $_.State —ne \"Disabled\"} | Sort-Object Date | select Date,TaskName,Author,State,TaskPath | ft"
+      },
+      {
+        "language": "powershell",
+        "code": "# List all enabled scheduled tasks with creation date and command to be executed, sorted by date and printing all additional information\n$tasks = Get-ScheduledTask | Where-Object {$_.Date —ne $null —and $_.State —ne \"Disabled\" —and $_.Actions.Execute —ne $null} | Sort-Object Date\n\nforeach ($task in $tasks) {\n    $taskName = $task.TaskName\n    $taskDate = $task.Date\n    $taskPath = $task.TaskPath\n    $taskAuthor = $task.Author\n    $taskCommand = $task.Actions.Execute\n    $taskArgs = $task.Actions.Arguments\n    $taskRunAs = $task.Principal.UserId\n\n    # Output service information\n    Write-Host \"Task Name: $taskName\"\n    Write-Host \"Task Author: $taskAuthor\"\n    Write-Host \"Creation Date: $taskDate\"\n    Write-Host \"Task Path: $taskPath\"\n    Write-Host \"Command: $taskCommand $taskArgs\"\n    Write-Host \"Run As: $taskRunAs\"\n    Write-Host \"\"\n}"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

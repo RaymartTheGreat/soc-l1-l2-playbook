@@ -1,0 +1,69 @@
+{
+  "id": "windows forensics/data acquisition using kape",
+  "title": "Data Acquisition Using KAPE",
+  "slug": "data-acquisition-using-kape",
+  "relPath": "Windows Forensics/Data Acquisition Using KAPE.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Web",
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/data acquisition using kape",
+      "title": "Data Acquisition Using KAPE",
+      "slug": "data-acquisition-using-kape"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Data Acquisition Using KAPE"
+    },
+    {
+      "level": 2,
+      "text": "Automated Collection Using Batch Mode"
+    }
+  ],
+  "overview": "You can download KAPE for free here – https://www.kroll.com/en/services/cyber-risk/investigate-and-respond/kroll-artifact-parser-extractor-kape",
+  "study": {
+    "overview": "You can download KAPE for free here – https://www.kroll.com/en/services/cyber-risk/investigate-and-respond/kroll-artifact-parser-extractor-kape",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Data Acquisition Using KAPE",
+      "Automated Collection Using Batch Mode"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "python",
+        "code": "-tsource C: --tdest C:\\path\\to\\output --target RegistryHives --scs <server-ip> --scp <port> --scu <username> --scpw <password> --vhdx reg"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

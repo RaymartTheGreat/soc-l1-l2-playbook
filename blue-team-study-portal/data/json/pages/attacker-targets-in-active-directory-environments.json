@@ -1,0 +1,101 @@
+{
+  "id": "detecting ad attacks/attacker targets in active directory environments",
+  "title": "Attacker Targets in Active Directory Environments",
+  "slug": "attacker-targets-in-active-directory-environments",
+  "relPath": "Detecting AD Attacks/Attacker Targets in Active Directory Environments.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Active Directory",
+    "Kerberos",
+    "Memory",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "T1003.001",
+    "T1003.003"
+  ],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/attacker targets in active directory environments",
+      "title": "Attacker Targets in Active Directory Environments",
+      "slug": "attacker-targets-in-active-directory-environments"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Attacker Targets in Active Directory Environments"
+    },
+    {
+      "level": 1,
+      "text": "1- NTDS.dit (AD Database)"
+    },
+    {
+      "level": 1,
+      "text": "2- LSASS Memory (lsass.exe)"
+    },
+    {
+      "level": 1,
+      "text": "3- SAM + SYSTEM Hives"
+    },
+    {
+      "level": 1,
+      "text": "4- Group Policy Preferences (GPP)"
+    },
+    {
+      "level": 1,
+      "text": "5- SYSVOL Share"
+    },
+    {
+      "level": 2,
+      "text": "Summary Comparison"
+    },
+    {
+      "level": 2,
+      "text": "LSASS vs. NTDS.dit"
+    }
+  ],
+  "overview": "The core Active Directory database file on a Domain Controller.",
+  "study": {
+    "overview": "The core Active Directory database file on a Domain Controller.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Attacker Targets in Active Directory Environments",
+      "1- NTDS.dit (AD Database)",
+      "2- LSASS Memory (lsass.exe)",
+      "3- SAM + SYSTEM Hives",
+      "4- Group Policy Preferences (GPP)",
+      "5- SYSVOL Share",
+      "Summary Comparison",
+      "LSASS vs. NTDS.dit"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

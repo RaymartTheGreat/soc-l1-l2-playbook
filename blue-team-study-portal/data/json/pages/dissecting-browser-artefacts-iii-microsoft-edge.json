@@ -1,0 +1,88 @@
+{
+  "id": "windows forensics/windows applications forensics/dissecting browser artefacts iii microsoft edge",
+  "title": "Dissecting Browser Artefacts III Microsoft Edge",
+  "slug": "dissecting-browser-artefacts-iii-microsoft-edge",
+  "relPath": "Windows Forensics/Windows Applications Forensics/Dissecting Browser Artefacts III Microsoft Edge.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Web",
+    "DFIR",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/windows applications forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/windows applications forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics",
+      "title": "Windows Applications Forensics",
+      "slug": "windows-applications-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics/dissecting browser artefacts iii microsoft edge",
+      "title": "Dissecting Browser Artefacts III Microsoft Edge",
+      "slug": "dissecting-browser-artefacts-iii-microsoft-edge"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Dissecting Browser Artefacts III: Microsoft Edge"
+    }
+  ],
+  "overview": "Since Microsoft Edge is built with Chromium, most of Microsoft Edge's browsing metadata files are similar to Google Chrome's structure. These metadata files are stored in the user's AppData\\Local\\Microsoft\\Edge\\User Data\\Default directory. Again, let's enumerate each user directory and see if any Microsoft Edge artefacts are available using the command below",
+  "study": {
+    "overview": "Since Microsoft Edge is built with Chromium, most of Microsoft Edge's browsing metadata files are similar to Google Chrome's structure. These metadata files are stored in the user's AppData\\Local\\Microsoft\\Edge\\User Data\\Default directory. Again, let's enumerate each user directory and see if any Microsoft Edge artefacts are available using the command below",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Dissecting Browser Artefacts III: Microsoft Edge"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> ls C:\\Users\\ | foreach {ls \"C:\\Users\\$_\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\" 2>$null | findstr Directory}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> C:\\Tools\\hindsight_gui.exe\n\n################################################################################\n\n                   _     _           _     _       _     _\n                  | |   (_)         | |   (_)     | |   | |\n                  | |__  _ _ __   __| |___ _  __ _| |__ | |_\n                  | '_ \\| | '_ \\ / _` / __| |/ _` | '_ \\| __|\n                  | | | | | | | | (_| \\__ \\ | (_| | | | | |_\n                  |_| |_|_|_| |_|\\__,_|___/_|\\__, |_| |_|\\__|\n                                              __/ |\n                        by @_RyanBenson      |___/ v2023.03\n\n################################################################################\n\nBottle v0.12.25 server starting up (using WSGIRefServer())...\nListening on http://localhost:8080/\nHit Ctrl-C to quit."
+      },
+      {
+        "language": "powershell",
+        "code": "SELECT timestamp,url,title,visit_duration,visit_count,typed_count FROM 'timeline' WHERE type = 'url' LIMIT 0,30"
+      },
+      {
+        "language": "powershell",
+        "code": "SELECT timestamp,url,title,value FROM timeline WHERE type = 'download' LIMIT 0,30"
+      },
+      {
+        "language": "powershell",
+        "code": "SELECT type,origin,key,value FROM 'storage' LIMIT 0,30"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

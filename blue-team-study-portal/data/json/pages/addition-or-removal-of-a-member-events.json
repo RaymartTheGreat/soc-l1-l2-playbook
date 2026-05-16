@@ -1,0 +1,56 @@
+{
+  "id": "windows event ids/addition or removal of a member events",
+  "title": "Addition or Removal of a Member Events",
+  "slug": "addition-or-removal-of-a-member-events",
+  "relPath": "Windows Event IDs/Addition or Removal of a Member Events.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "Windows"
+  ],
+  "mitre": [],
+  "parentId": "windows event ids",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows event ids"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows event ids",
+      "title": "Windows Event IDs",
+      "slug": "windows-event-ids"
+    },
+    {
+      "id": "windows event ids/addition or removal of a member events",
+      "title": "Addition or Removal of a Member Events",
+      "slug": "addition-or-removal-of-a-member-events"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Addition or Removal of a Member Events"
+    }
+  ],
+  "overview": "| Event ID | Event Name | | --- | --- | | 4728 | A member was added to a security-enabled global group. | | 4729 | A member was removed from a security-enabled global group. | | 4732 | A member was added to a security-enabled local group. | | 4733 | A member was removed from a security-enabled local group. | | 4756 | A member was added to a security-enabled ",
+  "study": {
+    "overview": "| Event ID | Event Name | | --- | --- | | 4728 | A member was added to a security-enabled global group. | | 4729 | A member was removed from a security-enabled global group. | | 4732 | A member was added to a security-enabled local group. | | 4733 | A member was removed from a security-enabled local group. | | 4756 | A member was added to a security-enabled ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Addition or Removal of a Member Events"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

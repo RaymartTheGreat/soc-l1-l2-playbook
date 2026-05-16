@@ -1,0 +1,105 @@
+{
+  "id": "phishing analysis/writing reports after phishing email analysis",
+  "title": "Writing Reports After Phishing Email Analysis",
+  "slug": "writing-reports-after-phishing-email-analysis",
+  "relPath": "Phishing analysis/Writing Reports After Phishing Email Analysis.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-initial-triage",
+  "curriculumSectionTitle": "Initial Triage & Analysis",
+  "tags": [
+    "Phishing",
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "phishing analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "phishing analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "phishing analysis",
+      "title": "Phishing analysis",
+      "slug": "phishing-analysis"
+    },
+    {
+      "id": "phishing analysis/writing reports after phishing email analysis",
+      "title": "Writing Reports After Phishing Email Analysis",
+      "slug": "writing-reports-after-phishing-email-analysis"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Writing Reports After Phishing Email Analysis"
+    },
+    {
+      "level": 2,
+      "text": "Email Header and Artifact Extraction"
+    },
+    {
+      "level": 2,
+      "text": "Email Body Description"
+    },
+    {
+      "level": 2,
+      "text": "Artifact Analysis"
+    },
+    {
+      "level": 3,
+      "text": "Malicious URLs"
+    },
+    {
+      "level": 3,
+      "text": "Malicious Attachments"
+    },
+    {
+      "level": 2,
+      "text": "Defensive Measures"
+    },
+    {
+      "level": 2,
+      "text": "IOC Defanging"
+    },
+    {
+      "level": 2,
+      "text": "Summary"
+    }
+  ],
+  "overview": "When analyzing a suspicious or malicious email, the first step is collecting artifacts (IOCs). These are used to correlate incidents, group emails into campaigns, identify potential threat actors, generate metrics, and monitor trends. Your report must present these clearly and concisely to support threat hunting, IOC sharing, or further investigation.",
+  "study": {
+    "overview": "When analyzing a suspicious or malicious email, the first step is collecting artifacts (IOCs). These are used to correlate incidents, group emails into campaigns, identify potential threat actors, generate metrics, and monitor trends. Your report must present these clearly and concisely to support threat hunting, IOC sharing, or further investigation.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Writing Reports After Phishing Email Analysis",
+      "Email Header and Artifact Extraction",
+      "Email Body Description",
+      "Artifact Analysis",
+      "Malicious URLs",
+      "Malicious Attachments",
+      "Defensive Measures",
+      "IOC Defanging",
+      "Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "Section 1: Email Description and Artefacts Collected\n(Include a brief description of the email, and list any artefacts that have been retrieved, including email‑based, web‑based, and file‑based if applicable)\n\n================================================\n\nSection 2: Artifact Analysis\n(Include what actions have been taken to analyse email, file, and web‑based artefacts, such as the tools and any results)\n\n=================================================\n\nSection 3: Suggested Defensive Measures\n(Consider what actions we need to take to protect the organizations. Also remember if blocking an artifact could have a negative consequence!)\n"
+      }
+    ],
+    "tools": [],
+    "tips": [
+      "The email claims to contain an overdue invoice and asks the recipient to review the file. It mimics the style of Acme’s finance system and includes a malicious Excel file with embedded macros."
+    ]
+  }
+}

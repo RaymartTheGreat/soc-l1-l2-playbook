@@ -1,0 +1,130 @@
+{
+  "id": "threat hunting labs (siem)/itsybitsy (thm)",
+  "title": "ItsyBitsy (THM)",
+  "slug": "itsybitsy-thm",
+  "relPath": "Threat hunting Labs (SIEM)/ItsyBitsy (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "Windows",
+    "Network",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/itsybitsy (thm)",
+      "title": "ItsyBitsy (THM)",
+      "slug": "itsybitsy-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "ItsyBitsy (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- How many events were returned for the month of March 2022?"
+    },
+    {
+      "level": 3,
+      "text": "1482"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the IP associated with the suspected user in the logs?"
+    },
+    {
+      "level": 3,
+      "text": "192.166.65.54"
+    },
+    {
+      "level": 3,
+      "text": "3- The user’s machine used a legit windows binary to download a file from the C2 server. What is the name of the binary?"
+    },
+    {
+      "level": 3,
+      "text": "bitsadmin"
+    },
+    {
+      "level": 3,
+      "text": "4- The infected machine connected with a famous filesharing site in this period, which also acts as a C2 server used by the malware authors to communicate. What is the name of the filesharing site?"
+    },
+    {
+      "level": 3,
+      "text": "pastebin.com"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the full URL of the C2 to which the infected host is connected?"
+    },
+    {
+      "level": 3,
+      "text": "pastebin.com/yTg0Ah6a"
+    },
+    {
+      "level": 3,
+      "text": "6- A file was accessed on the filesharing site. What is the name of the file accessed?"
+    },
+    {
+      "level": 3,
+      "text": "secret.txt"
+    },
+    {
+      "level": 3,
+      "text": "7- The file contains a secret code with the format THM{}."
+    },
+    {
+      "level": 3,
+      "text": "THM{SECRETCODE}"
+    }
+  ],
+  "overview": "During normal SOC monitoring, Analyst John observed an alert on an IDS solution indicating a potential C2 communication from a user Browne from the HR department. A suspicious file was accessed containing a malicious pattern THM:{ }. A week-long HTTP connection logs have been pulled to investigate. Due to limited resources, only the connection logs could be ",
+  "study": {
+    "overview": "During normal SOC monitoring, Analyst John observed an alert on an IDS solution indicating a potential C2 communication from a user Browne from the HR department. A suspicious file was accessed containing a malicious pattern THM:{ }. A week-long HTTP connection logs have been pulled to investigate. Due to limited resources, only the connection logs could be ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "ItsyBitsy (THM)",
+      "Scenario",
+      "1- How many events were returned for the month of March 2022?",
+      "1482",
+      "2- What is the IP associated with the suspected user in the logs?",
+      "192.166.65.54",
+      "3- The user’s machine used a legit windows binary to download a file from the C2 server. What is the name of the binary?",
+      "bitsadmin",
+      "4- The infected machine connected with a famous filesharing site in this period, which also acts as a C2 server used by the malware authors to communicate. What is the name of the filesharing site?",
+      "pastebin.com",
+      "5- What is the full URL of the C2 to which the infected host is connected?",
+      "pastebin.com/yTg0Ah6a"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

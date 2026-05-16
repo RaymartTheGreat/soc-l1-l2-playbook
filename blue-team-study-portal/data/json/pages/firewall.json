@@ -1,0 +1,99 @@
+{
+  "id": "network/fundamentals/firewall",
+  "title": "Firewall",
+  "slug": "firewall",
+  "relPath": "Network/Fundamentals/Firewall.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Windows",
+    "Network",
+    "Web",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/firewall",
+      "title": "Firewall",
+      "slug": "firewall"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Firewall"
+    },
+    {
+      "level": 2,
+      "text": "Why Firewalls Matter"
+    },
+    {
+      "level": 2,
+      "text": "Primary Functions"
+    },
+    {
+      "level": 2,
+      "text": "Firewall Types"
+    },
+    {
+      "level": 2,
+      "text": "Filtering Techniques"
+    },
+    {
+      "level": 2,
+      "text": "Firewall Rules & ACLs"
+    },
+    {
+      "level": 3,
+      "text": "Sample Rules (Cisco‑style ACL)"
+    }
+  ],
+  "overview": "firewall is your network’s gatekeeper / controlling exactly which data flows in and out. By defining rules, an administrator can allow or block traffic based on criteria such as:",
+  "study": {
+    "overview": "firewall is your network’s gatekeeper / controlling exactly which data flows in and out. By defining rules, an administrator can allow or block traffic based on criteria such as:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Firewall",
+      "Why Firewalls Matter",
+      "Primary Functions",
+      "Firewall Types",
+      "Filtering Techniques",
+      "Firewall Rules & ACLs",
+      "Sample Rules (Cisco‑style ACL)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "access-list 101 permit tcp any host 192.168.1.10 eq 80    ! Allow HTTP to web server\naccess-list 101 permit udp any any range 5000 6000       ! Allow UDP high ports\naccess-list 101 deny   ip   any any                      ! Block everything else"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

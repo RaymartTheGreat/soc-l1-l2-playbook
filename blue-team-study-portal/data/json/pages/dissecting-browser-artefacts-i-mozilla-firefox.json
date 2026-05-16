@@ -1,0 +1,88 @@
+{
+  "id": "windows forensics/windows applications forensics/dissecting browser artefacts i mozilla firefox",
+  "title": "Dissecting Browser Artefacts I Mozilla Firefox",
+  "slug": "dissecting-browser-artefacts-i-mozilla-firefox",
+  "relPath": "Windows Forensics/Windows Applications Forensics/Dissecting Browser Artefacts I Mozilla Firefox.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Web",
+    "DFIR",
+    "Incident Response"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/windows applications forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/windows applications forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics",
+      "title": "Windows Applications Forensics",
+      "slug": "windows-applications-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics/dissecting browser artefacts i mozilla firefox",
+      "title": "Dissecting Browser Artefacts I Mozilla Firefox",
+      "slug": "dissecting-browser-artefacts-i-mozilla-firefox"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Dissecting Browser Artefacts I: Mozilla Firefox"
+    },
+    {
+      "level": 1,
+      "text": "Browser Forensics 101"
+    },
+    {
+      "level": 1,
+      "text": "Mozilla Firefox"
+    },
+    {
+      "level": 1,
+      "text": "Scenario: Phishing Link Access"
+    }
+  ],
+  "overview": "Aside from the applications that are prone to threat actors' activities, browser applications are also a treasure trove of information when it comes to digital forensics. This is because most user-targeted attacks nowadays are being delivered through the web.",
+  "study": {
+    "overview": "Aside from the applications that are prone to threat actors' activities, browser applications are also a treasure trove of information when it comes to digital forensics. This is because most user-targeted attacks nowadays are being delivered through the web.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Dissecting Browser Artefacts I: Mozilla Firefox",
+      "Browser Forensics 101",
+      "Mozilla Firefox",
+      "Scenario: Phishing Link Access"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> ls C:\\Users\\ | foreach {ls \"C:\\Users\\$_\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\" 2>$null}"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

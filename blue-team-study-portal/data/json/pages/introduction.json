@@ -1,0 +1,61 @@
+{
+  "id": "frameworks/cyber kill chain/introduction",
+  "title": "Introduction",
+  "slug": "introduction",
+  "relPath": "Frameworks/Cyber Kill Chain/Introduction.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "Threat Intel"
+  ],
+  "mitre": [],
+  "parentId": "frameworks/cyber kill chain",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "frameworks/cyber kill chain"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "frameworks",
+      "title": "Frameworks",
+      "slug": "frameworks"
+    },
+    {
+      "id": "frameworks/cyber kill chain",
+      "title": "Cyber Kill Chain",
+      "slug": "cyber-kill-chain"
+    },
+    {
+      "id": "frameworks/cyber kill chain/introduction",
+      "title": "Introduction",
+      "slug": "introduction"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Introduction"
+    }
+  ],
+  "overview": "Cyber Kill Chain is a strategic framework developed by Lockheed Martin to model the structured progression of cyberattacks. It breaks down a typical attack into distinct stages, from initial reconnaissance to achieving the attacker's final objective.",
+  "study": {
+    "overview": "Cyber Kill Chain is a strategic framework developed by Lockheed Martin to model the structured progression of cyberattacks. It breaks down a typical attack into distinct stages, from initial reconnaissance to achieving the attacker's final objective.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Introduction"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

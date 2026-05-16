@@ -1,0 +1,145 @@
+{
+  "id": "forensics labs/unanttended (thm)",
+  "title": "Unanttended (THM)",
+  "slug": "unanttended-thm",
+  "relPath": "Forensics Labs/Unanttended (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Web",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "forensics labs",
+      "title": "Forensics Labs",
+      "slug": "forensics-labs"
+    },
+    {
+      "id": "forensics labs/unanttended (thm)",
+      "title": "Unanttended (THM)",
+      "slug": "unanttended-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Unanttended (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What file type was searched for using the search bar in Windows Explorer?"
+    },
+    {
+      "level": 3,
+      "text": ".pdf"
+    },
+    {
+      "level": 3,
+      "text": "2- What top-secret keyword was searched for using the search bar in Windows Explorer?"
+    },
+    {
+      "level": 3,
+      "text": "continental"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the name of the downloaded file to the Downloads folder?"
+    },
+    {
+      "level": 3,
+      "text": "7z2201-x64.exe"
+    },
+    {
+      "level": 3,
+      "text": "4- When was the file from the previous question downloaded? (YYYY-MM-DD HH:MM:SS UTC)"
+    },
+    {
+      "level": 3,
+      "text": "2022-11-19 12:09:19 UTC"
+    },
+    {
+      "level": 3,
+      "text": "5- Thanks to the previously downloaded file, a PNG file was opened. When was this file opened? (YYYY-MM-DD HH:MM:SS)"
+    },
+    {
+      "level": 3,
+      "text": "2022-11-19 12:10:21"
+    },
+    {
+      "level": 3,
+      "text": "6- A text file was created in the Desktop folder. How many times was this file opened?"
+    },
+    {
+      "level": 3,
+      "text": "2"
+    },
+    {
+      "level": 3,
+      "text": "7- When was the text file from the previous question last modified? (MM/DD/YYYY HH:MM)"
+    },
+    {
+      "level": 3,
+      "text": "11/19/2022 12:12"
+    },
+    {
+      "level": 3,
+      "text": "8- The contents of the file were exfiltrated to pastebin.com. What is the generated URL of the exfiltrated data?"
+    },
+    {
+      "level": 3,
+      "text": "https://pastebin.com/1FQASAav"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the string that was copied to the pastebin URL?"
+    },
+    {
+      "level": 3,
+      "text": "ne7AIRhi3PdESy9RnOrN"
+    }
+  ],
+  "overview": "Welcome to the team, kid. I have something for you to get your feet wet.",
+  "study": {
+    "overview": "Welcome to the team, kid. I have something for you to get your feet wet.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Unanttended (THM)",
+      "Scenario",
+      "1- What file type was searched for using the search bar in Windows Explorer?",
+      ".pdf",
+      "2- What top-secret keyword was searched for using the search bar in Windows Explorer?",
+      "continental",
+      "3- What is the name of the downloaded file to the Downloads folder?",
+      "7z2201-x64.exe",
+      "4- When was the file from the previous question downloaded? (YYYY-MM-DD HH:MM:SS UTC)",
+      "2022-11-19 12:09:19 UTC",
+      "5- Thanks to the previously downloaded file, a PNG file was opened. When was this file opened? (YYYY-MM-DD HH:MM:SS)",
+      "2022-11-19 12:10:21"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

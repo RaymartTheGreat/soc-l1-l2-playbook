@@ -1,0 +1,679 @@
+{
+  "id": "+100 splunk use cases",
+  "title": "+100 Splunk Use Cases",
+  "slug": "100-splunk-use-cases",
+  "relPath": "+100 Splunk Use Cases.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "Sysmon",
+    "Phishing",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "+100 splunk use cases",
+      "title": "+100 Splunk Use Cases",
+      "slug": "100-splunk-use-cases"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "+100 Splunk Use Cases"
+    },
+    {
+      "level": 1,
+      "text": "Group 1 – Authentication Anomalies"
+    },
+    {
+      "level": 3,
+      "text": "1. Detecting Brute Force Attacks"
+    },
+    {
+      "level": 3,
+      "text": "2. Alternate Brute Force Attack Detection"
+    },
+    {
+      "level": 3,
+      "text": "3. Detection of Brute Force Attacks on Web Applications"
+    },
+    {
+      "level": 3,
+      "text": "4. Failed Admin Login Attempts"
+    },
+    {
+      "level": 3,
+      "text": "5. Unusual Account Lockouts"
+    },
+    {
+      "level": 3,
+      "text": "6. Suspicious Logon Pattern Detection"
+    },
+    {
+      "level": 3,
+      "text": "7. Detecting Interactive Logins from Service Accounts"
+    },
+    {
+      "level": 1,
+      "text": "Group 2 – Privilege Escalation & Credential Dumping"
+    },
+    {
+      "level": 3,
+      "text": "8. Get System Elevation"
+    },
+    {
+      "level": 3,
+      "text": "9. Create Remote Thread into LSASS"
+    },
+    {
+      "level": 3,
+      "text": "10. Abuse of LSASS Dumping via ProcDump"
+    },
+    {
+      "level": 3,
+      "text": "11. Privilege Escalation via Sudo on Linux"
+    },
+    {
+      "level": 3,
+      "text": "12. Kerberoasting Attack Detection"
+    },
+    {
+      "level": 1,
+      "text": "Group 3 – Suspicious PowerShell & Command Execution"
+    },
+    {
+      "level": 3,
+      "text": "13. Suspicious PowerShell Commands"
+    },
+    {
+      "level": 3,
+      "text": "14. Suspicious PowerShell Commands – Mimikatz Detection"
+    },
+    {
+      "level": 3,
+      "text": "15. PowerShell Execution of Base64 Encoded Commands"
+    },
+    {
+      "level": 3,
+      "text": "16. Abnormal PowerShell Script Execution"
+    },
+    {
+      "level": 3,
+      "text": "17. Suspicious Use of Certutil for File Download"
+    },
+    {
+      "level": 3,
+      "text": "18. Search for Malicious Binaries using AMSI.dll"
+    },
+    {
+      "level": 1,
+      "text": "Group 4 – Log Tampering & Audit Logs"
+    },
+    {
+      "level": 3,
+      "text": "19. Windows Audit Log Tampering"
+    },
+    {
+      "level": 3,
+      "text": "20. Clearing Windows Logs with Wevtutil"
+    },
+    {
+      "level": 1,
+      "text": "Group 5 – Malware Detection"
+    },
+    {
+      "level": 3,
+      "text": "21. Detecting Recurring Malware on Host"
+    },
+    {
+      "level": 3,
+      "text": "22. Malware Attack Detection"
+    },
+    {
+      "level": 3,
+      "text": "23. Basic TOR Traffic Detection"
+    },
+    {
+      "level": 1,
+      "text": "Group 6 – Process Anomalies & Injection"
+    },
+    {
+      "level": 3,
+      "text": "24. Unusual Child Process spawned using DDE Exploit"
+    },
+    {
+      "level": 3,
+      "text": "25. Unusual Child Process for Spoolsv.Exe or Connhost.Exe"
+    },
+    {
+      "level": 3,
+      "text": "26. Detecting Process Injection"
+    },
+    {
+      "level": 3,
+      "text": "27. Common Windows Process Masquerading"
+    },
+    {
+      "level": 1,
+      "text": "Group 7 – Lateral Movement & Persistence"
+    },
+    {
+      "level": 3,
+      "text": "28. Create Local Admin Accounts using net.exe"
+    },
+    {
+      "level": 3,
+      "text": "29. Finding New Local Admin Accounts"
+    },
+    {
+      "level": 3,
+      "text": "30. Boot or Logon Initialization Scripts"
+    },
+    {
+      "level": 3,
+      "text": "31. BITS Job Persistence"
+    },
+    {
+      "level": 3,
+      "text": "32. BITSAdmin Download File"
+    },
+    {
+      "level": 3,
+      "text": "33. CertUtil Download With URLCache and Split Arguments"
+    },
+    {
+      "level": 3,
+      "text": "34. CertUtil Download With VerifyCtl and Split Arguments"
+    },
+    {
+      "level": 3,
+      "text": "35. Certutil exe Certificate Extraction"
+    },
+    {
+      "level": 3,
+      "text": "36. CertUtil With Decode Argument"
+    },
+    {
+      "level": 3,
+      "text": "37. Create Service in Suspicious File Path"
+    },
+    {
+      "level": 3,
+      "text": "38. Lateral Movement – WMI Execution"
+    },
+    {
+      "level": 3,
+      "text": "39. Scheduled Task Creation"
+    },
+    {
+      "level": 3,
+      "text": "40. Suspicious Windows Scheduled Task Creation"
+    },
+    {
+      "level": 1,
+      "text": "Group 8 – Network Scanning & Reconnaissance"
+    },
+    {
+      "level": 3,
+      "text": "41. Detecting Network and Port Scanning"
+    },
+    {
+      "level": 3,
+      "text": "42. Identifying Port Scanning Activity"
+    },
+    {
+      "level": 3,
+      "text": "43. Advanced Unusual DNS Query Patterns"
+    },
+    {
+      "level": 1,
+      "text": "Group 9 – DNS & Network Anomalies"
+    },
+    {
+      "level": 3,
+      "text": "44. Rogue DNS Detection"
+    },
+    {
+      "level": 3,
+      "text": "45. DNS Exfiltration Detection"
+    },
+    {
+      "level": 3,
+      "text": "46. Malware Command and Control (C2) Traffic Detection"
+    },
+    {
+      "level": 3,
+      "text": "47. Suspicious SMB Traffic Indicating Lateral Movement"
+    },
+    {
+      "level": 3,
+      "text": "48. Monitoring for Rogue DHCP Servers"
+    },
+    {
+      "level": 3,
+      "text": "49. Anomalous Network Port Utilization"
+    },
+    {
+      "level": 3,
+      "text": "50. Abnormal Network Traffic Volume"
+    },
+    {
+      "level": 3,
+      "text": "51. Botnet Command Traffic Detection"
+    },
+    {
+      "level": 3,
+      "text": "52. Suspicious Beaconing Behavior"
+    },
+    {
+      "level": 3,
+      "text": "53. Anomalous Network Latency Events"
+    },
+    {
+      "level": 3,
+      "text": "54. SMB Data Staging Detection"
+    },
+    {
+      "level": 1,
+      "text": "Group 10 – Web Application Attacks"
+    },
+    {
+      "level": 3,
+      "text": "55. Code Injection Attacks in Web Applications"
+    },
+    {
+      "level": 3,
+      "text": "56. SQL Injection Attempts"
+    },
+    {
+      "level": 3,
+      "text": "57. Cross-Site Scripting (XSS) Attack Detection"
+    },
+    {
+      "level": 1,
+      "text": "Group 11 – Cloud, AD, & Remote Management"
+    },
+    {
+      "level": 3,
+      "text": "58. Active Directory Change Monitoring"
+    },
+    {
+      "level": 2,
+      "text": "59. Detection of Unauthorized Cloud Admin Actions"
+    },
+    {
+      "level": 3,
+      "text": "60. Enumeration of Active Directory Users via LDAP"
+    },
+    {
+      "level": 3,
+      "text": "61. Suspicious Use of Remote Management Tools"
+    },
+    {
+      "level": 3,
+      "text": "62. Suspicious Cross-System Authentication Activity"
+    },
+    {
+      "level": 3,
+      "text": "63. Monitoring Privileged Account Usage"
+    },
+    {
+      "level": 3,
+      "text": "64. High Privilege Account Modifications"
+    },
+    {
+      "level": 1,
+      "text": "Group 12 – System Modifications & Registry Changes"
+    },
+    {
+      "level": 3,
+      "text": "65. Disable UAC"
+    },
+    {
+      "level": 3,
+      "text": "66. Windows Registry Changes Monitoring"
+    },
+    {
+      "level": 3,
+      "text": "67. Monitoring Critical File Changes"
+    },
+    {
+      "level": 3,
+      "text": "68. Suspicious Windows Service Modifications"
+    },
+    {
+      "level": 3,
+      "text": "69. Unusual Service Installations"
+    },
+    {
+      "level": 3,
+      "text": "70. Suspicious Windows User Creation"
+    },
+    {
+      "level": 3,
+      "text": "71. BCDEdit Failure Recovery Modification"
+    },
+    {
+      "level": 3,
+      "text": "72. Detecting Tampering of Windows Defender Command Prompt"
+    },
+    {
+      "level": 1,
+      "text": "Group 13 – File & Process Monitoring"
+    },
+    {
+      "level": 3,
+      "text": "73. Log Volume Trending"
+    },
+    {
+      "level": 3,
+      "text": "74. Identifying Slow Web Content"
+    },
+    {
+      "level": 3,
+      "text": "75. Finding Large Web Uploads"
+    },
+    {
+      "level": 3,
+      "text": "76. Batch File Write to System32"
+    },
+    {
+      "level": 3,
+      "text": "77. Unusually Long Command Line Strings"
+    },
+    {
+      "level": 3,
+      "text": "78. File Execution Monitoring"
+    },
+    {
+      "level": 3,
+      "text": "79. Abnormal Process Execution Duration"
+    },
+    {
+      "level": 3,
+      "text": "80. Suspicious File Integrity Changes"
+    },
+    {
+      "level": 3,
+      "text": "81. Database Query Anomalies"
+    },
+    {
+      "level": 1,
+      "text": "Group 14 – System Performance & Resource Monitoring"
+    },
+    {
+      "level": 3,
+      "text": "82. Measuring Storage I/O Latency"
+    },
+    {
+      "level": 3,
+      "text": "83. Measuring Storage Speed I/O Utilization by Host"
+    },
+    {
+      "level": 3,
+      "text": "84. Measuring Memory Utilization by Host"
+    },
+    {
+      "level": 3,
+      "text": "85. Abnormal CPU Usage"
+    },
+    {
+      "level": 3,
+      "text": "86. Monitoring for Anomalous CPU Spikes"
+    },
+    {
+      "level": 1,
+      "text": "Group 15 – User & Email Anomalies"
+    },
+    {
+      "level": 3,
+      "text": "87. Unusual Access Patterns"
+    },
+    {
+      "level": 3,
+      "text": "88. Identifying Web Users by Country"
+    },
+    {
+      "level": 3,
+      "text": "89. Detecting Unencrypted Web Communications"
+    },
+    {
+      "level": 3,
+      "text": "90. Suspicious Email Activity"
+    },
+    {
+      "level": 3,
+      "text": "91. Suspicious Email Attachment Downloads"
+    },
+    {
+      "level": 3,
+      "text": "92. Detecting Abnormal User Login Times"
+    },
+    {
+      "level": 3,
+      "text": "93. Suspicious Application Login Patterns"
+    },
+    {
+      "level": 1,
+      "text": "Group 16 – Remote Access & VPN"
+    },
+    {
+      "level": 3,
+      "text": "94. Unusual VPN Login Locations"
+    },
+    {
+      "level": 3,
+      "text": "95. Unusual Remote Desktop Logins"
+    },
+    {
+      "level": 3,
+      "text": "96. VPN Account Sharing Detection"
+    },
+    {
+      "level": 1,
+      "text": "Group 17 – Cloud & File Transfer Anomalies"
+    },
+    {
+      "level": 3,
+      "text": "97. Unauthorized Cloud Storage Access"
+    },
+    {
+      "level": 3,
+      "text": "98. Data Exfiltration Over FTP/SFTP"
+    },
+    {
+      "level": 3,
+      "text": "99. Monitoring Large External File Downloads"
+    },
+    {
+      "level": 1,
+      "text": "Group 18 – Miscellaneous User/Process Anomalies"
+    },
+    {
+      "level": 3,
+      "text": "100. Anomalous User Behavior Analytics"
+    },
+    {
+      "level": 3,
+      "text": "101. Unauthorized Application Installations"
+    },
+    {
+      "level": 3,
+      "text": "102. Monitoring Failed File Access Attempts"
+    },
+    {
+      "level": 3,
+      "text": "103. Abnormal Printer Usage"
+    },
+    {
+      "level": 3,
+      "text": "104. Unusual Process Hierarchies"
+    },
+    {
+      "level": 3,
+      "text": "105. Application Crash Pattern Monitoring"
+    },
+    {
+      "level": 3,
+      "text": "106. Suspicious USB Device Insertions"
+    },
+    {
+      "level": 1,
+      "text": "Group 19 – Additional System & Network Anomalies"
+    },
+    {
+      "level": 3,
+      "text": "107. Anomalous Cloud Infrastructure Behavior"
+    },
+    {
+      "level": 3,
+      "text": "108. Unauthorized Software Execution Detection"
+    },
+    {
+      "level": 3,
+      "text": "109. Detection of Unsanctioned System Reboots"
+    },
+    {
+      "level": 3,
+      "text": "110. Detection of Unauthorized Remote Code Execution"
+    },
+    {
+      "level": 1,
+      "text": "Group 20 – Multi-Source Correlation"
+    },
+    {
+      "level": 3,
+      "text": "111. Multi-Source Correlation"
+    },
+    {
+      "level": 1,
+      "text": "Group 21 – Exploit Specific & Advanced Detections"
+    },
+    {
+      "level": 3,
+      "text": "112. Detection of Web Shell Activity"
+    },
+    {
+      "level": 3,
+      "text": "113. Exploitation of CVE-2021-44228 (Log4Shell)"
+    },
+    {
+      "level": 3,
+      "text": "114. NTLM Relay Attack Detection"
+    },
+    {
+      "level": 3,
+      "text": "115. Abuse of Windows Defender Exclusions"
+    },
+    {
+      "level": 3,
+      "text": "116. Exploitation of Windows Print Spooler Vulnerability (PrintNightmare)"
+    },
+    {
+      "level": 3,
+      "text": "117. Potential Ransomware Activity (Mass File Encryption)"
+    },
+    {
+      "level": 1,
+      "text": "Group 22 – Remaining Detections"
+    },
+    {
+      "level": 3,
+      "text": "118. Detecting Shadow Copy Deletion via Vssadmin.exe"
+    },
+    {
+      "level": 3,
+      "text": "119. Webshell-Indicative Process Tree"
+    },
+    {
+      "level": 3,
+      "text": "120. HTTP Traffic Analysis for Active Host Identification"
+    }
+  ],
+  "overview": "These detections focus on brute‐force, login, and account–related anomalies.",
+  "study": {
+    "overview": "These detections focus on brute‐force, login, and account–related anomalies.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "+100 Splunk Use Cases",
+      "Group 1 – Authentication Anomalies",
+      "1. Detecting Brute Force Attacks",
+      "2. Alternate Brute Force Attack Detection",
+      "3. Detection of Brute Force Attacks on Web Applications",
+      "4. Failed Admin Login Attempts",
+      "5. Unusual Account Lockouts",
+      "6. Suspicious Logon Pattern Detection",
+      "7. Detecting Interactive Logins from Service Accounts",
+      "Group 2 – Privilege Escalation & Credential Dumping",
+      "8. Get System Elevation",
+      "9. Create Remote Thread into LSASS"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "jsx",
+        "code": "index=omar sourcetype=winxsecurity user=* user!=\"\"| stats count(eval(action=\"success\")) as successes, count(eval(action=\"failure\")) as failures by user, ComputerName\n| where successes>0 AND failures>100\n\nindex=omar source=\"WinEventLog:Security\" EventCode=4625| bin _time span=5m| stats count by _time, user, host, src, action\n| where count >= 5\n\nindex=omar source=\"/var/log/auth.log\" \"Failed password\"| bin _time span=5m| stats count by _time, user, host, src, action\n| where count >= 5"
+      },
+      {
+        "language": "jsx",
+        "code": "index=omar EventCode=4625| stats count by src_ip, user\n| where count > 10| sort -count\n| table src_ip, user, count"
+      },
+      {
+        "language": "jsx",
+        "code": "index=omar sourcetype=web_auth_logs\n| stats count by user, src_ip\n| where count > 10| sort -count\n| table user, src_ip, count"
+      },
+      {
+        "language": "jsx",
+        "code": "index=omar sourcetype=windows EventCode=4625 user=\"admin*\"| stats count by user, src_ip\n| where count > 5| sort -count\n| table user, src_ip, count"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "jsx",
+        "code": "index=omar source=\"WinEventLog:Microsoft-Windows-PowerShell/Operational\" EventCode=4104AND ((ScriptBlockText=*-noni* *iex* *New-Object*) OR (ScriptBlockText=*-ep* *bypass* *-Enc*) OR\n    (ScriptBlockText=*powershell* *reg* *add* *HKCU\\\\software\\\\microsoft\\\\windows\\\\currentversion\\\\run*) OR\n    (ScriptBlockText=*bypass* *-noprofile* *-windowstyle* *hidden* *new-object* *system.net.webclient* *.download*) OR\n    (ScriptBlockText=*iex* *New-Object* *Net.WebClient* *.Download*))\n| table Computer, ScriptBlockText, UserID"
+      },
+      {
+        "language": "jsx",
+        "code": "index=omar sourcetype=__your__windows__sysmon__sourcetype \n(EventCode=1 OR EventCode=1102) Image=*wevtutil* CommandLine=*cl* (CommandLine=*System* \nOR CommandLine=*Security* OR CommandLine=*Setup* OR CommandLine=*Application*)"
+      },
+      {
+        "language": "jsx",
+        "code": "| tstats count values(Processes.user) as user, values(Processes.parent_process) as parent_process, min(_time) as firstTime, max(_time) as lastTime from datamodel=Endpoint.Processes where (Processes.process_name=net.exe OR Processes.process_name=net1.exe) AND (Processes.process=*localgroup* OR Processes.process=*/add* OR Processes.process=*user*) by Processes.process, Processes.process_name, Processes.dest| `create_local_admin_accounts_using_net_exe_filter`"
+      },
+      {
+        "language": "jsx",
+        "code": "(index=omar EventCode=1 Image=\"C:\\\\Windows\\\\System32\\\\reg.exe\" CommandLine=\"*add*\\\\Environment*UserInitMprLogonScript\")\nOR\n(index=omar (EventCode=12 OR EventCode=14 OR EventCode=13) TargetObject=\"*\\\\Environment*UserInitMprLogonScript\")"
+      },
+      {
+        "language": "jsx",
+        "code": "index=omar EventCode=4688| search CommandLine=\"*wmic*\"| stats count by user, CommandLine\n| table user, CommandLine, count"
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "id": "atomic red team/atomic bird goes purple #1",
+  "title": "Atomic Bird Goes Purple #1",
+  "slug": "atomic-bird-goes-purple-1",
+  "relPath": "Atomic Red Team/Atomic Bird Goes Purple #1.md",
+  "level": "L1.5",
+  "curriculumLevelId": null,
+  "curriculumSectionId": null,
+  "curriculumSectionTitle": null,
+  "tags": [
+    "PowerShell"
+  ],
+  "mitre": [
+    "T0123",
+    "T0004",
+    "T0005",
+    "T0006"
+  ],
+  "parentId": "atomic red team",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "atomic red team"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "atomic red team",
+      "title": "Atomic Red Team",
+      "slug": "atomic-red-team-a3606025"
+    },
+    {
+      "id": "atomic red team/atomic bird goes purple #1",
+      "title": "Atomic Bird Goes Purple #1",
+      "slug": "atomic-bird-goes-purple-1"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Atomic Bird Goes Purple 1"
+    },
+    {
+      "level": 1,
+      "text": "Questions :"
+    },
+    {
+      "level": 3,
+      "text": "1- Use the required PowerShell command to retrieve the flag."
+    },
+    {
+      "level": 3,
+      "text": "What is the flag?"
+    },
+    {
+      "level": 3,
+      "text": "THM{Emulationisfunbutneedsfocusandexploration}"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the required command to clear all generated artefacts and restore the affected files from test T0123-4?"
+    },
+    {
+      "level": 3,
+      "text": "Invoke-AtomicTest T0123-4 -Cleanup"
+    },
+    {
+      "level": 3,
+      "text": "3- Execute test T0004-1 and open the document created on the Desktop."
+    },
+    {
+      "level": 3,
+      "text": "10.0.17763 N/A Build 17763"
+    },
+    {
+      "level": 3,
+      "text": "4- Execute test T0004-2."
+    },
+    {
+      "level": 3,
+      "text": "THM{THMEmulationRoom}"
+    },
+    {
+      "level": 3,
+      "text": "5- Execute test T0004-3."
+    },
+    {
+      "level": 3,
+      "text": "<!bin/bash"
+    },
+    {
+      "level": 3,
+      "text": "6- Navigate the disk and drives, and open the shared folder."
+    },
+    {
+      "level": 3,
+      "text": "3CA9FB42ACF0A347BDFDC78E0435331BC458194E4BC7FBFFB255BC4CF02CDC1A"
+    },
+    {
+      "level": 3,
+      "text": "7- Execute the test T0005-1."
+    },
+    {
+      "level": 3,
+      "text": "626DBB861DCFF600DABEFCE7BF93F2C72C0F6462CC5729B963FC8242D7D43990"
+    },
+    {
+      "level": 3,
+      "text": "8- Execute test T0006-1."
+    },
+    {
+      "level": 3,
+      "text": "THM{THManalyticstoexfiltrationwithNexGenHunt}"
+    },
+    {
+      "level": 3,
+      "text": "9- Execute test T0006-2."
+    },
+    {
+      "level": 3,
+      "text": "THM{NextGenHunt.thm.jhn}"
+    }
+  ],
+  "overview": "1- Use the required PowerShell command to retrieve the flag.",
+  "study": {
+    "overview": "1- Use the required PowerShell command to retrieve the flag.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Atomic Bird Goes Purple 1",
+      "Questions :",
+      "1- Use the required PowerShell command to retrieve the flag.",
+      "What is the flag?",
+      "THM{Emulationisfunbutneedsfocusandexploration}",
+      "2- What is the required command to clear all generated artefacts and restore the affected files from test T0123-4?",
+      "Invoke-AtomicTest T0123-4 -Cleanup",
+      "3- Execute test T0004-1 and open the document created on the Desktop.",
+      "10.0.17763 N/A Build 17763",
+      "4- Execute test T0004-2.",
+      "THM{THMEmulationRoom}",
+      "5- Execute test T0004-3."
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

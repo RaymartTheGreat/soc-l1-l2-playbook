@@ -1,0 +1,163 @@
+{
+  "id": "network analysis labs/warzone 1 (thm)",
+  "title": "Warzone 1 (THM)",
+  "slug": "warzone-1-thm",
+  "relPath": "Network Analysis Labs/Warzone 1 (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/warzone 1 (thm)",
+      "title": "Warzone 1 (THM)",
+      "slug": "warzone-1-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Warzone 1 (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What was the alert signature for Malware Command and Control Activity Detected?"
+    },
+    {
+      "level": 3,
+      "text": "ET Malware MirrorBlast CnC Activity M3"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the source IP address? Enter your answer in a defanged format."
+    },
+    {
+      "level": 3,
+      "text": "172[.]16[.]1[.]102"
+    },
+    {
+      "level": 3,
+      "text": "3- What IP address was the destination IP in the alert? Enter your answer in a defanged format."
+    },
+    {
+      "level": 3,
+      "text": "169[.]239[.]128[.]11"
+    },
+    {
+      "level": 3,
+      "text": "4- Still in VirusTotal, under Community, what threat group is attributed to this IP address?"
+    },
+    {
+      "level": 3,
+      "text": "TA505"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the malware family?"
+    },
+    {
+      "level": 3,
+      "text": "MirrorBlast"
+    },
+    {
+      "level": 3,
+      "text": "6- Do a search in VirusTotal for the domain from question 4. What was the majority file type listed under Communicating Files?"
+    },
+    {
+      "level": 3,
+      "text": "Windows Installer"
+    },
+    {
+      "level": 3,
+      "text": "7- Inspect the web traffic for the flagged IP address; what is the user-agent in the traffic?"
+    },
+    {
+      "level": 3,
+      "text": "REBOL View 2.7.8.3.1"
+    },
+    {
+      "level": 3,
+      "text": "8- Retrace the attack; there were multiple IP addresses associated with this attack. What were two other IP addresses? Enter the IP addressed defanged and in numerical order. (format: IPADDR,IPADDR)"
+    },
+    {
+      "level": 3,
+      "text": "185[.]10[.]68[.]235,192[.]36[.]27[.]92"
+    },
+    {
+      "level": 3,
+      "text": "9- What were the file names of the downloaded files? Enter the answer in the order to the IP addresses from the previous question. (format: file.xyz,file.xyz)"
+    },
+    {
+      "level": 3,
+      "text": "filter.msi,10opd3rload.msi"
+    },
+    {
+      "level": 3,
+      "text": "10- Inspect the traffic for the first downloaded file from the previous question. Two files will be saved to the same directory. What is the full file path of the directory and the name of the two files? (format: C:\\path\\file.xyz,C:\\path\\file.xyz)"
+    },
+    {
+      "level": 3,
+      "text": "C:\\ProgramData\\001\\arab.bin,C:\\ProgramData\\001\\arab.exe"
+    },
+    {
+      "level": 3,
+      "text": "11- Now do the same and inspect the traffic from the second downloaded file. Two files will be saved to the same directory. What is the full file path of the directory and the name of the two files? (format: C:\\path\\file.xyz,C:\\path\\file.xyz)"
+    },
+    {
+      "level": 3,
+      "text": "C:\\ProgramData\\Local\\Google\\rebol-view-278-3-1.exe,C:\\ProgramData\\Local\\Google\\exemple.rb"
+    }
+  ],
+  "overview": "You work as a Tier 1 Security Analyst L1 for a Managed Security Service Provider (MSSP). Today you're tasked with monitoring network alerts.",
+  "study": {
+    "overview": "You work as a Tier 1 Security Analyst L1 for a Managed Security Service Provider (MSSP). Today you're tasked with monitoring network alerts.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Warzone 1 (THM)",
+      "Scenario",
+      "1- What was the alert signature for Malware Command and Control Activity Detected?",
+      "ET Malware MirrorBlast CnC Activity M3",
+      "2- What is the source IP address? Enter your answer in a defanged format.",
+      "172[.]16[.]1[.]102",
+      "3- What IP address was the destination IP in the alert? Enter your answer in a defanged format.",
+      "169[.]239[.]128[.]11",
+      "4- Still in VirusTotal, under Community, what threat group is attributed to this IP address?",
+      "TA505",
+      "5- What is the malware family?",
+      "MirrorBlast"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

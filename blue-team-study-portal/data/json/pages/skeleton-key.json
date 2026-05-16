@@ -1,0 +1,98 @@
+{
+  "id": "detecting ad attacks/skeleton key",
+  "title": "Skeleton Key",
+  "slug": "skeleton-key",
+  "relPath": "Detecting AD Attacks/Skeleton Key.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Active Directory",
+    "DFIR",
+    "Memory",
+    "Detection"
+  ],
+  "mitre": [
+    "T1556.001",
+    "T1556"
+  ],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/skeleton key",
+      "title": "Skeleton Key",
+      "slug": "skeleton-key"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Skeleton Key"
+    },
+    {
+      "level": 2,
+      "text": "Understanding the Attack"
+    },
+    {
+      "level": 2,
+      "text": "Steps of a Skeleton Key Attack"
+    },
+    {
+      "level": 3,
+      "text": "a. Compromise a Domain Controller"
+    },
+    {
+      "level": 3,
+      "text": "b. Implant the Skeleton Key"
+    },
+    {
+      "level": 3,
+      "text": "c. Use the Universal Password"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 2,
+      "text": "Summary"
+    }
+  ],
+  "overview": "A Skeleton Key attack involves implanting a malicious patch into a Windows domain controller’s authentication process—specifically within LSASS (Local Security Authority Subsystem Service). This implant allows an attacker to use a universal \"master\" password (the skeleton key) to authenticate as any user, bypassing the normal password verification without al",
+  "study": {
+    "overview": "A Skeleton Key attack involves implanting a malicious patch into a Windows domain controller’s authentication process—specifically within LSASS (Local Security Authority Subsystem Service). This implant allows an attacker to use a universal \"master\" password (the skeleton key) to authenticate as any user, bypassing the normal password verification without al",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Skeleton Key",
+      "Understanding the Attack",
+      "Steps of a Skeleton Key Attack",
+      "a. Compromise a Domain Controller",
+      "b. Implant the Skeleton Key",
+      "c. Use the Universal Password",
+      "Detection",
+      "Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

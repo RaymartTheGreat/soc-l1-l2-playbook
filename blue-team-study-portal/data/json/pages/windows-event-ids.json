@@ -1,0 +1,73 @@
+{
+  "id": "windows event ids",
+  "title": "Windows Event IDs",
+  "slug": "windows-event-ids",
+  "relPath": "Windows Event IDs.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Active Directory",
+    "Kerberos",
+    "DFIR",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [
+    "windows event ids/sysmon event ids",
+    "windows event ids/logon types",
+    "windows event ids/windows logon failure status and sub-status codes",
+    "windows event ids/failure codes",
+    "windows event ids/account management events",
+    "windows event ids/security group creation and removal events",
+    "windows event ids/addition or removal of a member events",
+    "windows event ids/mahmoud shaker event ids notes",
+    "windows event ids/top 50 windows event ids"
+  ],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "windows event ids",
+      "title": "Windows Event IDs",
+      "slug": "windows-event-ids"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows Event IDs"
+    },
+    {
+      "level": 3,
+      "text": "Most Important Marked with ⭐"
+    }
+  ],
+  "overview": "| Event ID | Description | | --- | --- | | 4625 | Failed account logon (important for detecting brute force or unauthorized attempts). ⭐ | | 4624 | Successful account logon. ⭐ | | 4648 | Logon attempt with explicit credentials (useful for detecting lateral movement or pass-the-hash attack). ⭐ | | 4647 | a user has initiated a logoff, meaning the user has req",
+  "study": {
+    "overview": "| Event ID | Description | | --- | --- | | 4625 | Failed account logon (important for detecting brute force or unauthorized attempts). ⭐ | | 4624 | Successful account logon. ⭐ | | 4648 | Logon attempt with explicit credentials (useful for detecting lateral movement or pass-the-hash attack). ⭐ | | 4647 | a user has initiated a logoff, meaning the user has req",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows Event IDs",
+      "Most Important Marked with ⭐"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Sysmon"
+    ],
+    "tips": []
+  }
+}

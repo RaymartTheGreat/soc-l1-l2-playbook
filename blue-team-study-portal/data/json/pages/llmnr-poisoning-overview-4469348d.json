@@ -1,0 +1,62 @@
+{
+  "id": "network analysis labs/noxious (htb)/llmnr poisoning overview",
+  "title": "LLMNR Poisoning Overview",
+  "slug": "llmnr-poisoning-overview-4469348d",
+  "relPath": "Network Analysis Labs/Noxious (HTB)/LLMNR Poisoning Overview.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs/noxious (htb)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs/noxious (htb)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/noxious (htb)",
+      "title": "Noxious (HTB)",
+      "slug": "noxious-htb"
+    },
+    {
+      "id": "network analysis labs/noxious (htb)/llmnr poisoning overview",
+      "title": "LLMNR Poisoning Overview",
+      "slug": "llmnr-poisoning-overview-4469348d"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "LLMNR Poisoning Overview"
+    }
+  ],
+  "overview": "LLMNR (Link-Local Multicast Name Resolution) is a protocol used by Windows machines to resolve hostnames on a local network when DNS fails. It operates over multicast, meaning a machine broadcasts a query asking “Who has this hostname?” and any machine on the subnet can respond.",
+  "study": {
+    "overview": "LLMNR (Link-Local Multicast Name Resolution) is a protocol used by Windows machines to resolve hostnames on a local network when DNS fails. It operates over multicast, meaning a machine broadcasts a query asking “Who has this hostname?” and any machine on the subnet can respond.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "LLMNR Poisoning Overview"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

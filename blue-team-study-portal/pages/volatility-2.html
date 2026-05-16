@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Volatility 2 | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="volatility.html">Volatility</a><span>/</span><span>Volatility 2</span></div>
+      <h1>Volatility 2</h1>
+      <p>- Dumps an executable file from a specific process.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag">YARA</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Volatility</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="volatility.html"><span>Volatility</span><em>L2</em></a>
+      <b>5</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="what-is-volatility.html"><span>What is Volatility</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="volatility3.html"><span>Volatility3</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="volatility-2.html"><span>Volatility 2</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="differences-between-volatility-2-and-volatility-3.html"><span>Differences Between Volatility 2 and Volatility 3</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="volatility-workbench.html"><span>Volatility Workbench</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>- Dumps an executable file from a specific process.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Volatility 2</li><li>OS Information</li><li>Process Information</li><li>Memory Dumping</li><li>Handles</li><li>DLLs</li><li>Command Line</li><li>Network Information</li><li>Registry Analysis</li><li>File Analysis</li><li>Malware Analysis</li><li>Miscellaneous</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>vol.py -f /path/to/file hashdump</code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>vol.py -f /path/to/file shutdowntime</code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>vol.py -f /path/to/file truecryptpassphrase</code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>vol.py -f /path/to/file ssdt</code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>vol.py -f /path/to/memory_dump --profile=&lt;profile&gt; userassist</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>Volatility</li><li>YARA</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="volatility-2">Volatility 2</h2>
+<p><strong>Setup</strong></p>
+<ul>
+<li><strong>Specify Profile:</strong></li>
+</ul>
+<p>``<code>bash vol.py --profile=Win7SP1x86 -f /path/to/memory.dmp </code>``</p>
+<ul>
+<ul>
+<li>Choose the correct profile for the OS version.</li>
+</ul>
+</ul>
+<h4 id="os-information"><strong>OS Information</strong></h4>
+<ul>
+<li><strong>Image Info:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file imageinfo </code>``</p>
+<ul>
+<ul>
+<li>Detects image profile and basic information.</li>
+</ul>
+</ul>
+<h4 id="process-information"><strong>Process Information</strong></h4>
+<ul>
+<li><strong>List Processes:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file pslist </code>``</p>
+<ul>
+<ul>
+<li>Displays running processes.</li>
+</ul>
+<li><strong>Hidden Processes:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file psscan </code>``</p>
+<ul>
+<ul>
+<li>Finds hidden/unlinked processes.</li>
+</ul>
+<li><strong>Process Tree:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file pstree </code>``</p>
+<ul>
+<ul>
+<li>Shows parent-child process relationships.</li>
+</ul>
+</ul>
+<h4 id="memory-dumping"><strong>Memory Dumping</strong></h4>
+<ul>
+<li><strong>Dump Process Executable:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file procdump -p &lt;PID&gt; -D /path/to/dir </code>``</p>
+<ul>
+<ul>
+<li>Dumps an executable file from a specific process.</li>
+</ul>
+</ul>
+<h4 id="handles"><strong>Handles</strong></h4>
+<ul>
+<li><strong>List Open Handles:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file handles -p &lt;PID&gt; </code>``</p>
+<ul>
+<ul>
+<li>Displays handles (files, registry, etc.) open by a process.</li>
+</ul>
+</ul>
+<h4 id="dlls"><strong>DLLs</strong></h4>
+<ul>
+<li><strong>List DLLs:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file dlllist -p &lt;PID&gt; </code>``</p>
+<ul>
+<ul>
+<li>Shows DLLs loaded by a process.</li>
+</ul>
+</ul>
+<h4 id="command-line"><strong>Command Line</strong></h4>
+<ul>
+<li><strong>Process Command Line:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file cmdline -p &lt;PID&gt; </code>``</p>
+<ul>
+<ul>
+<li>Displays command-line arguments used for a process.</li>
+</ul>
+</ul>
+<h4 id="network-information"><strong>Network Information</strong></h4>
+<ul>
+<li><strong>Connections and Ports:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file netscan </code>``</p>
+<ul>
+<ul>
+<li>Identifies active network connections and listening ports.</li>
+</ul>
+</ul>
+<h4 id="registry-analysis"><strong>Registry Analysis</strong></h4>
+<ul>
+<li><strong>Registry Hives:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file hivelist  #download </code>``</p>
+<ul>
+<ul>
+<li>Lists registry hives.</li>
+</ul>
+<li><strong>Retrieve Registry Key:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file printkey -K &quot;Software\Microsoft\Windows\CurrentVersion&quot; </code>``</p>
+<ul>
+<ul>
+<li>Displays values for a specific registry key.</li>
+</ul>
+</ul>
+<h4 id="file-analysis"><strong>File Analysis</strong></h4>
+<ul>
+<li><strong>File Scan:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file filescan </code>``</p>
+<ul>
+<ul>
+<li>Scans for open file handles.</li>
+</ul>
+<li><strong>Dump File:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file dumpfiles -Q &lt;OFFSET&gt; -D /path/to/dir </code>``</p>
+<ul>
+<ul>
+<li>Dumps files from memory.</li>
+</ul>
+</ul>
+<h4 id="malware-analysis"><strong>Malware Analysis</strong></h4>
+<ul>
+<li><strong>Detect Code Injection:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file malfind -p &lt;PID&gt; </code>``</p>
+<ul>
+<ul>
+<li>Scans for suspicious injected code.</li>
+</ul>
+</ul>
+<h4 id="miscellaneous"><strong>Miscellaneous</strong></h4>
+<ul>
+<li><strong>Yara Scan:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file yarascan -y &quot;rule { strings: $a = 'malicious' condition: $a }&quot; </code>``</p>
+<ul>
+<ul>
+<li>Performs YARA rule matching for malware detection.</li>
+</ul>
+<li><strong>Command Line Arguments (<code>cmdline</code>):</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/memory_dump --profile=&lt;profile&gt; cmdline </code>``</p>
+<ul>
+<ul>
+<li>Extracts command-line arguments for processes running in memory. Useful for identifying executed files and their parameters.</li>
+</ul>
+<li><strong>Console Scan (<code>consoles</code>):</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/memory_dump --profile=&lt;profile&gt; consoles </code>``</p>
+<ul>
+<ul>
+<li>Displays the content of console buffers, including command history and context of open terminals.</li>
+</ul>
+<li><strong>Network Connections Scan (<code>connscan</code>):</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/memory_dump --profile=&lt;profile&gt; connscan </code>``</p>
+<ul>
+<ul>
+<li>Scans for TCP network connections. Helpful for identifying malicious connections initiated by executed files.</li>
+</ul>
+<li><strong>Shim Cache Scan (<code>shimcache</code>):</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/memory_dump --profile=&lt;profile&gt; shimcache </code>``</p>
+<ul>
+<ul>
+<li>Lists recently executed files based on the Application Compatibility Cache, including their paths.</li>
+</ul>
+<li><strong>Handles Scan (<code>handles</code>):</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/memory_dump --profile=&lt;profile&gt; handles </code>``</p>
+<ul>
+<ul>
+<li>Identifies open handles, including file handles, which might reveal file paths or objects used by a process.</li>
+</ul>
+</ul>
+<p><strong><code>Hashdump</code></strong></p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">vol.py -f /path/to/file hashdump</code></pre></div>
+<ul>
+<li>Extracts user account password hashes from a Windows memory image.</li>
+</ul>
+<p><strong><code>Shutdowntime</code></strong></p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">vol.py -f /path/to/file shutdowntime</code></pre></div>
+<ul>
+<li>Retrieves the last system shutdown time from the memory image.</li>
+</ul>
+<p><strong>Truecrypt Passphrase:</strong></p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">vol.py -f /path/to/file truecryptpassphrase</code></pre></div>
+<ul>
+<li>Attempts to recover TrueCrypt passphrases from memory.</li>
+</ul>
+<p><strong>SSDT Plugin:</strong></p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">vol.py -f /path/to/file ssdt</code></pre></div>
+<ul>
+<li>Lists the System Service Descriptor Table (SSDT) hooks, which can indicate rootkits or malicious modifications in a Windows kernel.</li>
+</ul>
+<p><strong>UserAssist (<code>userassist</code>):</strong></p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">vol.py -f /path/to/memory_dump --profile=&lt;profile&gt; userassist</code></pre></div>
+<ul>
+<li>Extracts UserAssist registry keys from memory, which track user activity, such as applications executed.</li>
+</ul>
+<p><strong>Shellbags (<code>shellbags</code>):</strong></p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">vol.py -f /path/to/memory_dump --profile=&lt;profile&gt; shellbags</code></pre></div>
+<ul>
+<li>Retrieves Shellbag artifacts from memory, providing information on directories accessed and file browsing history.</li>
+</ul>
+<p><strong>Environment Variables (<code>envars</code>):</strong></p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">vol.py -f /path/to/memory_dump --profile=&lt;profile&gt; envars</code></pre></div>
+<ul>
+<li>Lists environment variables set in the system, potentially revealing useful information about system configuration or malware execution paths.</li>
+</ul>
+<h4 id="dll-loading-analysis"><strong>DLL Loading Analysis</strong></h4>
+<ul>
+<li><strong>List Loaded Modules with Discrepancies:</strong></li>
+</ul>
+<p>``<code>bash vol.py -f /path/to/file ldrmodules -p &lt;PID&gt; </code>``</p>
+<ul>
+<ul>
+<li>Lists loaded DLLs for a process and compares three lists: <code>LoadOrder</code>, <code>InitOrder</code>, and <code>MemOrder</code>.</li>
+<li>Highlights discrepancies where a DLL is present in memory but not in all lists, which may indicate stealthy code injection or manually mapped DLLs.</li>
+<li>Useful for detecting hidden modules used by malware or rootkits.</li>
+</ul>
+</ul></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#volatility-2">Volatility 2</a><a href="#os-information">OS Information</a><a href="#process-information">Process Information</a><a href="#memory-dumping">Memory Dumping</a><a href="#handles">Handles</a><a href="#dlls">DLLs</a><a href="#command-line">Command Line</a><a href="#network-information">Network Information</a><a href="#registry-analysis">Registry Analysis</a><a href="#file-analysis">File Analysis</a><a href="#malware-analysis">Malware Analysis</a><a href="#miscellaneous">Miscellaneous</a><a href="#dll-loading-analysis">DLL Loading Analysis</a></details>
+    </div>
+    
+    <footer class="pager"><a href="volatility3.html">← Volatility3</a><a href="differences-between-volatility-2-and-volatility-3.html">Differences Between Volatility 2 and Volatility 3 →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

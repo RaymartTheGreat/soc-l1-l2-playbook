@@ -1,0 +1,156 @@
+{
+  "id": "sysinternals",
+  "title": "Sysinternals",
+  "slug": "sysinternals",
+  "relPath": "Sysinternals.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "SIEM",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Web",
+    "DFIR",
+    "Memory",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "sysinternals",
+      "title": "Sysinternals",
+      "slug": "sysinternals"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Sysinternals"
+    },
+    {
+      "level": 1,
+      "text": "How to run"
+    },
+    {
+      "level": 1,
+      "text": "Most-famous Sysinternals tools"
+    },
+    {
+      "level": 3,
+      "text": "Process Explorer (procexp.exe)"
+    },
+    {
+      "level": 3,
+      "text": "Process Monitor (procmon.exe)"
+    },
+    {
+      "level": 3,
+      "text": "Autoruns (Autoruns.exe / Autorunsc)"
+    },
+    {
+      "level": 3,
+      "text": "PsExec (part of PsTools)"
+    },
+    {
+      "level": 3,
+      "text": "Sysmon (sysmon.exe)"
+    },
+    {
+      "level": 3,
+      "text": "ProcDump (procdump.exe)"
+    },
+    {
+      "level": 3,
+      "text": "TCPView / tcpvcon"
+    },
+    {
+      "level": 3,
+      "text": "Sigcheck"
+    },
+    {
+      "level": 3,
+      "text": "Streams"
+    },
+    {
+      "level": 3,
+      "text": "SDelete"
+    },
+    {
+      "level": 3,
+      "text": "Strings"
+    },
+    {
+      "level": 3,
+      "text": "WinObj"
+    },
+    {
+      "level": 3,
+      "text": "BgInfo / RegJump (Misc helpers)"
+    },
+    {
+      "level": 3,
+      "text": "Process Kill (PsKill / pskill.exe)"
+    }
+  ],
+  "overview": "Sysinternals is a collection of advanced Windows utilities (70+ tools) originally created by Mark Russinovich and Bryce Cogswell to help troubleshoot, analyze and manage Windows systems. The suite covers file/disk, networking, process, security, system-info and miscellaneous utilities used by sysadmins, developers and security professionals. (Microsoft Learn",
+  "study": {
+    "overview": "Sysinternals is a collection of advanced Windows utilities (70+ tools) originally created by Mark Russinovich and Bryce Cogswell to help troubleshoot, analyze and manage Windows systems. The suite covers file/disk, networking, process, security, system-info and miscellaneous utilities used by sysadmins, developers and security professionals. (Microsoft Learn",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Sysinternals",
+      "How to run",
+      "Most-famous Sysinternals tools",
+      "Process Explorer (procexp.exe)",
+      "Process Monitor (procmon.exe)",
+      "Autoruns (Autoruns.exe / Autorunsc)",
+      "PsExec (part of PsTools)",
+      "Sysmon (sysmon.exe)",
+      "ProcDump (procdump.exe)",
+      "TCPView / tcpvcon",
+      "Sigcheck",
+      "Streams"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "Autoruns.exe  (GUI)\nautorunsc -accepteula > autoruns.txt  (example CLI export)"
+      },
+      {
+        "language": "bash",
+        "code": "psexec \\\\TARGET -u DOMAIN\\User -p 'P@ssw0rd' cmd.exe"
+      },
+      {
+        "language": "bash",
+        "code": "procdump -ma <PID> C:\\dumps\\process_$(pid).dmp\n# Wait and capture on CPU spike:\nprocdump -c 90 -s 5 -ma <processname>"
+      },
+      {
+        "language": "bash",
+        "code": "sigcheck -u -e C:\\Windows\\System32"
+      },
+      {
+        "language": "bash",
+        "code": "streams.exe -s C:\\path\\to\\file_or_dir"
+      }
+    ],
+    "tools": [
+      "SIEM",
+      "Sysmon"
+    ],
+    "tips": []
+  }
+}

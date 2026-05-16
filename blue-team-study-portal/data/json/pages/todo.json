@@ -1,0 +1,49 @@
+{
+  "id": "todo",
+  "title": "TODO",
+  "slug": "todo",
+  "relPath": "TODO.md",
+  "level": "L1",
+  "curriculumLevelId": null,
+  "curriculumSectionId": null,
+  "curriculumSectionTitle": null,
+  "tags": [],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "todo",
+      "title": "TODO",
+      "slug": "todo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "TODO"
+    }
+  ],
+  "overview": "- malware analysis section + labs - cheatsheet section - SOC interview questions and prep material - more lab writeups - threat emulation with Caldera - Document whatever new things I learn along the way",
+  "study": {
+    "overview": "- malware analysis section + labs - cheatsheet section - SOC interview questions and prep material - more lab writeups - threat emulation with Caldera - Document whatever new things I learn along the way",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "TODO"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "Got suggestions? Feel free to reach out on LinkedIn."
+    ]
+  }
+}

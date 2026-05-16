@@ -1,0 +1,102 @@
+{
+  "id": "network/protocols/email protocols",
+  "title": "Email Protocols",
+  "slug": "email-protocols",
+  "relPath": "Network/Protocols/Email Protocols.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Phishing",
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network/protocols",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/protocols"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/protocols",
+      "title": "Protocols",
+      "slug": "protocols"
+    },
+    {
+      "id": "network/protocols/email protocols",
+      "title": "Email Protocols",
+      "slug": "email-protocols"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Email Protocols"
+    },
+    {
+      "level": 2,
+      "text": "Simple Mail Transfer Protocol (SMTP)"
+    },
+    {
+      "level": 3,
+      "text": "How It Works:"
+    },
+    {
+      "level": 2,
+      "text": "Post Office Protocol v3 (POP3)"
+    },
+    {
+      "level": 3,
+      "text": "Key Characteristics:"
+    },
+    {
+      "level": 2,
+      "text": "Internet Message Access Protocol (IMAP)"
+    },
+    {
+      "level": 3,
+      "text": "Features:"
+    },
+    {
+      "level": 2,
+      "text": "Protocol Interaction Flow Example"
+    }
+  ],
+  "overview": "Email protocols govern how messages are sent, received, and accessed across the internet. Understanding these protocols is key to grasping how email infrastructure functions and where security vulnerabilities might exist.",
+  "study": {
+    "overview": "Email protocols govern how messages are sent, received, and accessed across the internet. Understanding these protocols is key to grasping how email infrastructure functions and where security vulnerabilities might exist.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Email Protocols",
+      "Simple Mail Transfer Protocol (SMTP)",
+      "How It Works:",
+      "Post Office Protocol v3 (POP3)",
+      "Key Characteristics:",
+      "Internet Message Access Protocol (IMAP)",
+      "Features:",
+      "Protocol Interaction Flow Example"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "Port 25 is still used for server-to-server transmission but is often blocked by ISPs for client submission due to spam concerns. Port 587 with STARTTLS is now the recommended standard for authenticated message submission.",
+      "POP3 is best suited for single-device access. It's less ideal in environments where users need access across multiple devices.",
+      "IMAP is widely preferred over POP3 due to its ability to maintain consistent access across desktop, mobile, and web clients."
+    ]
+  }
+}

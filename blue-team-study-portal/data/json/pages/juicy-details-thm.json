@@ -1,0 +1,160 @@
+{
+  "id": "log analysis labs/juicy details (thm)",
+  "title": "Juicy Details (THM)",
+  "slug": "juicy-details-thm",
+  "relPath": "Log Analysis Labs/Juicy Details (THM).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/juicy details (thm)",
+      "title": "Juicy Details (THM)",
+      "slug": "juicy-details-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Juicy Details (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1-What tools did the attacker use? (Order by the occurrence in the log)"
+    },
+    {
+      "level": 3,
+      "text": "nmap, hydra, sqlmap, curl, feroxbuster"
+    },
+    {
+      "level": 3,
+      "text": "2- What endpoint was vulnerable to a brute-force attack?"
+    },
+    {
+      "level": 3,
+      "text": "/rest/user/login"
+    },
+    {
+      "level": 3,
+      "text": "3- What endpoint was vulnerable to SQL injection?"
+    },
+    {
+      "level": 3,
+      "text": "/rest/products/search"
+    },
+    {
+      "level": 3,
+      "text": "4- What parameter was used for the SQL injection?"
+    },
+    {
+      "level": 3,
+      "text": "q"
+    },
+    {
+      "level": 3,
+      "text": "5- What endpoint did the attacker try to use to retrieve files? (Include the /)"
+    },
+    {
+      "level": 3,
+      "text": "/ftp"
+    },
+    {
+      "level": 3,
+      "text": "6- What section of the website did the attacker use to scrape user email addresses?"
+    },
+    {
+      "level": 3,
+      "text": "product reviews"
+    },
+    {
+      "level": 3,
+      "text": "7- Was their brute-force attack successful? If so, what is the timestamp of the successful login? (Yay/Nay, 11/Apr/2021:09:xx:xx +0000)"
+    },
+    {
+      "level": 3,
+      "text": "Yay, 11/Apr/2021:09:16:31 +0000"
+    },
+    {
+      "level": 3,
+      "text": "8- What user information was the attacker able to retrieve from the endpoint vulnerable to SQL injection?"
+    },
+    {
+      "level": 3,
+      "text": "email, password"
+    },
+    {
+      "level": 3,
+      "text": "9- What files did they try to download from the vulnerable endpoint? (endpoint from the previous task, question 5)"
+    },
+    {
+      "level": 3,
+      "text": "coupons2013.md.bak, www-data.bak"
+    },
+    {
+      "level": 3,
+      "text": "10- What service and account name were used to retrieve files from the previous question? (service, username)"
+    },
+    {
+      "level": 3,
+      "text": "ftp, anonymous"
+    },
+    {
+      "level": 3,
+      "text": "11- What service and username were used to gain shell access to the server? (service, username)"
+    },
+    {
+      "level": 3,
+      "text": "ssh, www-data"
+    }
+  ],
+  "overview": "You were hired as a SOC Analyst for one of the biggest Juice Shops in the world and an attacker has made their way into your network.",
+  "study": {
+    "overview": "You were hired as a SOC Analyst for one of the biggest Juice Shops in the world and an attacker has made their way into your network.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Juicy Details (THM)",
+      "Scenario",
+      "1-What tools did the attacker use? (Order by the occurrence in the log)",
+      "nmap, hydra, sqlmap, curl, feroxbuster",
+      "2- What endpoint was vulnerable to a brute-force attack?",
+      "/rest/user/login",
+      "3- What endpoint was vulnerable to SQL injection?",
+      "/rest/products/search",
+      "4- What parameter was used for the SQL injection?",
+      "q",
+      "5- What endpoint did the attacker try to use to retrieve files? (Include the /)",
+      "/ftp"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Pass-the-Hash (PtH) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="detecting-ad-attacks.html">Detecting AD Attacks</a><span>/</span><span>Pass-the-Hash (PtH)</span></div>
+      <h1>Pass-the-Hash (PtH)</h1>
+      <p>The Pass-the-Hash attack is a lateral movement technique used in post-exploitation scenarios within Windows environments. Instead of needing to crack a password, attackers use the hashed representation of a password commonly an NTLM hash to authenticate and move laterally across systems.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Kerberos</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag">Lateral Movement</span><span class="tag mitre">T1550.002</span><span class="tag mitre">T1550</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Detecting AD Attacks</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>L2</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="dcsync.html"><span>DCSync</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="kerberoasting.html"><span>Kerberoasting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="pass-the-hash-pth.html"><span>Pass-the-Hash (PtH)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pass-the-ticket-ptt.html"><span>Pass-the-Ticket (PtT)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="overpass-the-hash.html"><span>Overpass-the-Hash</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="golden-ticket.html"><span>Golden Ticket</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="silver-ticket.html"><span>Silver Ticket</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="dcshadow.html"><span>DCSHADOW</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="as-reproasting.html"><span>AS-REPRoasting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="skeleton-key.html"><span>Skeleton Key</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntlm-relay-attacks.html"><span>NTLM Relay Attacks</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="llmnr-nbt-ns-poisoning.html"><span>LLMNR NBT-NS Poisoning</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="credential-dumping-general.html"><span>Credential Dumping (General)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="attacker-targets-in-active-directory-environments.html"><span>Attacker Targets in Active Directory Environments</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="putting-it-all-together-ad-attack-scenario.html"><span>Putting It All Together AD Attack Scenario</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>The Pass-the-Hash attack is a lateral movement technique used in post-exploitation scenarios within Windows environments. Instead of needing to crack a password, attackers use the hashed representation of a password commonly an NTLM hash to authenticate and move laterally across systems.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Pass-the-Hash (PtH)</li><li>1- Understanding Hash-Based Authentication</li><li>2- Steps of a Pass-the-Hash Attack</li><li>a. Initial Access</li><li>b. Hash Extraction</li><li>c. Pass the Hash</li><li>d. Lateral Movement and Privilege Escalation</li><li>3- Key Tools for PtH Attacks</li><li>4- Example Scenario</li><li>Target Network</li><li>Attack Flow</li><li>5- Detection and Mitigation</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="pass-the-hash-pth">Pass-the-Hash (PtH)</h2>
+<p><strong>The Pass-the-Hash attack</strong> is a lateral movement technique used in post-exploitation scenarios within Windows environments. Instead of needing to crack a password, attackers use the hashed representation of a password commonly an NTLM hash to authenticate and move laterally across systems.</p>
+<p><a class="note-link" href="https://attack.mitre.org/techniques/T1550/002/"><strong>MITRE ATT&amp;amp;CK ID: T1550.002</strong></a></p>
+<p><button class="image-button" data-src="../assets/images/detecting-ad-attackspass-the-hash-pth-image-55678d06.png" data-alt="image.png"><img src="../assets/images/detecting-ad-attackspass-the-hash-pth-image-55678d06.png" alt="image.png" loading="lazy"></button></p>
+<hr>
+<h3 id="1-understanding-hash-based-authentication">1- Understanding Hash-Based Authentication</h3>
+<ul>
+<li><strong>Password Storage:</strong></li>
+</ul>
+<p>Windows systems store passwords as cryptographic hashes rather than plaintext. This design improves security but creates an alternative attack vector.</p>
+<ul>
+<li><strong>Types of Hashes:</strong></li>
+<ul>
+<li><strong>LAN Manager (LM) Hash:</strong></li>
+</ul>
+</ul>
+<p>Obsolete and insecure.</p>
+<ul>
+<ul>
+<li><strong>NTLM Hash:</strong></li>
+</ul>
+</ul>
+<p>Commonly used in Windows environments but vulnerable to PtH attacks.</p>
+<ul>
+<li><strong>Authentication Protocols:</strong></li>
+</ul>
+<p>Windows protocols such as NTLM and Kerberos use these hashes to validate user credentials during login.</p>
+<hr>
+<h3 id="2-steps-of-a-pass-the-hash-attack">2- Steps of a Pass-the-Hash Attack</h3>
+<h4 id="a.-initial-access">a. Initial Access</h4>
+<ul>
+<li><strong>Objective:</strong> Gain entry to a system via methods like phishing, exploiting software vulnerabilities, or brute-forcing weak credentials.</li>
+</ul>
+<h4 id="b.-hash-extraction">b. Hash Extraction</h4>
+<ul>
+<li><strong>Process:</strong></li>
+</ul>
+<p>Once inside the target system, the attacker extracts password hashes stored in memory or on disk.</p>
+<ul>
+<li><strong>Common Tools:</strong></li>
+<ul>
+<li><strong>Mimikatz:</strong> Extracts credentials and hashes from Windows memory.</li>
+</ul>
+</ul>
+<p><em>Example Command:</em></p>
+<p>``<code>jsx mimikatz # sekurlsa::logonpasswords </code>``</p>
+<ul>
+<ul>
+<li><strong>pwdump:</strong> Dumps password hashes from the SAM database.</li>
+<li><strong>LSASS Process Dumping:</strong> Retrieves hashes from the Local Security Authority Subsystem Service.</li>
+</ul>
+</ul>
+<h4 id="c.-pass-the-hash">c. Pass the Hash</h4>
+<ul>
+<li><strong>Method:</strong></li>
+</ul>
+<p>Instead of cracking the hash, the attacker “passes” it directly to authenticate to another system.</p>
+<ul>
+<li><strong>Example Command:</strong></li>
+</ul>
+<p>``<code>jsx pth-winexe -U DOMAIN\\Administrator%aad3b435b51404eeaad3b435b51404ee:&lt;NTLM_HASH&gt; //192.168.1.10 cmd </code>``</p>
+<ul>
+<li><strong>Additional Tools:</strong></li>
+</ul>
+<p>PowerShell scripts and other utilities may also be used to facilitate this step.</p>
+<h4 id="d.-lateral-movement-and-privilege-escalation">d. Lateral Movement and Privilege Escalation</h4>
+<ul>
+<li><strong>Outcome:</strong></li>
+</ul>
+<p>With the authenticated session established via the stolen hash, the attacker can move laterally within the network and escalate privileges to access additional systems or sensitive data.</p>
+<hr>
+<h3 id="3-key-tools-for-pth-attacks">3- Key Tools for PtH Attacks</h3>
+<ol>
+<li><strong>Mimikatz</strong></li>
+<ul>
+<li><strong>Purpose:</strong> Dumps credentials and hashes from Windows memory.</li>
+<li><strong>Command Example:</strong></li>
+</ul>
+</ol>
+<p>``<code>jsx sekurlsa::logonpasswords </code>``</p>
+<ul>
+<ul>
+<li><strong>Resource:</strong> GitHub repository for Mimikatz.</li>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/detecting-ad-attackspass-the-hash-pth-d30e7f8e-6596-4a7e-96ec-9fa0c5a3bd38-210e4bb4.png" data-alt="Screenshot 2025-05-04 031016.png"><img src="../assets/images/detecting-ad-attackspass-the-hash-pth-d30e7f8e-6596-4a7e-96ec-9fa0c5a3bd38-210e4bb4.png" alt="Screenshot 2025-05-04 031016.png" loading="lazy"></button></p>
+<p>Pass-the-hash with Mimikatz</p>
+<ol>
+<li><strong>Impacket Toolkit</strong></li>
+<ul>
+<li><strong>Tools:</strong></li>
+<ul>
+<li><strong>wmiexec.py</strong></li>
+<li><strong>smbexec.py</strong></li>
+<li><strong>psexec.py</strong></li>
+</ul>
+<li><strong>Example Usage:</strong></li>
+</ul>
+</ol>
+<p>``<code>python python wmiexec.py &lt;DOMAIN&gt;/&lt;USERNAME&gt;:&lt;NTLM_HASH&gt;@&lt;TARGET_IP&gt; </code>``</p>
+<ul>
+<ul>
+<li><strong>Alternate Example (psexec.py):</strong></li>
+</ul>
+</ul>
+<p>``<code>python psexec.py domain/user@target_ip -hashes lmhash:nthash </code>``</p>
+<ol>
+<li><strong>Invoke-TheHash (PowerShell)</strong></li>
+<ul>
+<li><strong>Purpose:</strong> Automates hash reuse attacks.</li>
+</ul>
+<li><strong>Metasploit Framework</strong></li>
+<ul>
+<li><strong>Module:</strong></li>
+</ul>
+</ol>
+<p>``<code>jsx exploit/windows/smb/psexec </code>``</p>
+<hr>
+<h3 id="4-example-scenario">4- Example Scenario</h3>
+<h4 id="target-network">Target Network</h4>
+<ul>
+<li><strong>Environment:</strong></li>
+</ul>
+<p>A Windows Active Directory domain with multiple workstations and servers using NTLM for authentication.</p>
+<h4 id="attack-flow">Attack Flow</h4>
+<ol>
+<li><strong>Compromise an Employee's Workstation:</strong></li>
+<ul>
+<li>Methods may include phishing, malware delivery, or exploiting weak Remote Desktop Protocol (RDP) passwords.</li>
+</ul>
+<li><strong>Dump Hashes:</strong></li>
+<ul>
+<li>Using Mimikatz:</li>
+</ul>
+</ol>
+<p>``<code>jsx mimikatz # sekurlsa::logonpasswords </code>``</p>
+<ul>
+<ul>
+<li><em>Extracted Example:</em></li>
+</ul>
+</ul>
+<p>``<code>jsx User: admin NTLM Hash: aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0 </code>``</p>
+<ol>
+<li><strong>Authenticate with the Hash:</strong></li>
+<ul>
+<li>Use pth-winexe (or a similar tool) to access another server:</li>
+</ul>
+</ol>
+<p>``<code>jsx pth-winexe -U DOMAIN\\admin%aad3b435b51404eeaad3b435b51404ee //192.168.1.20 cmd </code>``</p>
+<ol>
+<li><strong>Move Laterally:</strong></li>
+<ul>
+<li>Once a new system is compromised, the attacker repeats the process to infiltrate further into the network.</li>
+</ul>
+</ol>
+<hr>
+<h3 id="5-detection-and-mitigation">5- Detection and Mitigation</h3>
+<h4 id="detection">Detection</h4>
+<ul>
+<li><strong>Logon Events:</strong></li>
+<ul>
+<li><strong>Event ID 4624:</strong> Monitor for NTLM logons with Logon Types 3 (network logon) or 9 (new credentials). Abnormal patterns across devices can be an indicator of PtH activity.</li>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/detecting-ad-attackspass-the-hash-pth-screenshot_2025-05-04_031151-6aec7fbe.png" data-alt="Screenshot 2025-05-04 031151.png"><img src="../assets/images/detecting-ad-attackspass-the-hash-pth-screenshot_2025-05-04_031151-6aec7fbe.png" alt="Screenshot 2025-05-04 031151.png" loading="lazy"></button></p>
+<p><strong>Event 4624</strong> on the host where the pass-the-hash attack was executed</p>
+<ul>
+<li><strong>LogonType 3 or 9</strong> → tells you it’s a network/service logon (typical PtH use)</li>
+<li><strong>SubjectUserSid = S-1-0-0</strong> or impersonation anomalies (real account but with suspicious conditions)</li>
+<li><strong>Authentication Failures:</strong></li>
+<ul>
+<li><strong>Event ID 4776:</strong> Identify repeated NTLM authentications from a single source.</li>
+</ul>
+<li><strong>Other Relevant Event IDs:</strong></li>
+<ul>
+<li>Monitor additional events such as 4672 and 4648 for anomalous behavior.</li>
+</ul>
+</ul>
+<p><button class="image-button" data-src="../assets/images/detecting-ad-attackspass-the-hash-pth-7ee282d2-73f3-4584-8039-8e21ac7d1cba-54736366.png" data-alt="Screenshot 2025-05-04 031312.png"><img src="../assets/images/detecting-ad-attackspass-the-hash-pth-7ee282d2-73f3-4584-8039-8e21ac7d1cba-54736366.png" alt="Screenshot 2025-05-04 031312.png" loading="lazy"></button></p>
+<p><strong>Event 4672</strong> on the host where the pass-the-hash attack was executed</p>
+<h4 id="mitigation-strategies">Mitigation Strategies</h4>
+<ul>
+<li><strong>Use Multi-Factor Authentication (MFA):</strong></li>
+</ul>
+<p>Reduces the risk of compromised credentials being used for lateral movement.</p>
+<ul>
+<li><strong>Apply the Principle of Least Privilege:</strong></li>
+</ul>
+<p>Limit user privileges to reduce the potential impact of a compromised account.</p>
+<ul>
+<li><strong>Regularly Monitor and Audit Logins:</strong></li>
+</ul>
+<p>Use security information and event management (SIEM) systems to detect unusual authentication patterns.</p>
+<ul>
+<li><strong>Disable NTLM Authentication:</strong></li>
+</ul>
+<p>Move to Kerberos-based authentication wherever possible.</p>
+<hr>
+<h3 id="6-summary">6- Summary</h3>
+<ul>
+<li><strong>Protocol Targeted:</strong> NTLM</li>
+<li><strong>Authentication Material:</strong> NTLM hash</li>
+<li><strong>Scope of Attack:</strong> Lateral movement in NTLM-based networks</li>
+<li><strong>Key Tools:</strong> Mimikatz, Impacket Toolkit, Metasploit Framework, and Invoke-TheHash</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#pass-the-hash-pth">Pass-the-Hash (PtH)</a><a href="#1-understanding-hash-based-authentication">1- Understanding Hash-Based Authentication</a><a href="#2-steps-of-a-pass-the-hash-attack">2- Steps of a Pass-the-Hash Attack</a><a href="#a.-initial-access">a. Initial Access</a><a href="#b.-hash-extraction">b. Hash Extraction</a><a href="#c.-pass-the-hash">c. Pass the Hash</a><a href="#d.-lateral-movement-and-privilege-escalation">d. Lateral Movement and Privilege Escalation</a><a href="#3-key-tools-for-pth-attacks">3- Key Tools for PtH Attacks</a><a href="#4-example-scenario">4- Example Scenario</a><a href="#target-network">Target Network</a><a href="#attack-flow">Attack Flow</a><a href="#5-detection-and-mitigation">5- Detection and Mitigation</a><a href="#detection">Detection</a><a href="#mitigation-strategies">Mitigation Strategies</a><a href="#6-summary">6- Summary</a></details>
+    </div>
+    
+    <footer class="pager"><a href="kerberoasting.html">← Kerberoasting</a><a href="pass-the-ticket-ptt.html">Pass-the-Ticket (PtT) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

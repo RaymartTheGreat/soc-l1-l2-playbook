@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Web Fundamentals | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link active" href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Web Fundamentals</span></div>
+      <h1>Web Fundamentals</h1>
+      <p>Before you dig into web servers, HTTP, cookies, or other web concepts, you need two things firmly understood:</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">SIEM</span><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Detection</span><span class="tag">Incident Response</span><span class="tag">C2</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Web Fundamentals</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="web-fundamentals.html"><span>Web Fundamentals</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Before you dig into web servers, HTTP, cookies, or other web concepts, you need two things firmly understood:</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Web Fundamentals</li><li>1- URL anatomy</li><li>2- Before web: DNS</li><li>What DNS actually does</li><li>Domain hierarchy</li><li>Important DNS record types</li><li>dig example</li><li>Common DNS pitfalls &amp; triage tips</li><li>3- How web servers work</li><li>What is a web server?</li><li>Virtual hosts (vhosts)</li><li>How dynamic content is served</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>dig +nocmd +noall +answer shop.acme.local A</code></pre></div><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>shop.acme.local.         300  IN  CNAME  cdn-3.edge.example.net.
+cdn-3.edge.example.net.   60  IN  A      198.51.100.24</code></pre></div><div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code>POST /login HTTP/1.1
+Host: app.example.com
+User-Agent: curl/8.2
+Accept: application/json
+Content-Type: application/json
+Content-Length: 53
+Cookie: session=abc123
+
+{&quot;username&quot;:&quot;alice&quot;,&quot;password&quot;:&quot;p@ssw0rd&quot;}</code></pre></div><div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code>HTTP/1.1 302 Found
+Location: /dashboard
+Set-Cookie: session=abc123; HttpOnly; Secure; SameSite=Lax
+Content-Length: 0</code></pre></div><div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code>Set-Cookie: name=value; Expires=Wed, 09 Jun 2026 10:18:14 GMT; Path=/; Domain=.example.com; Secure; HttpOnly; SameSite=Strict</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="web-fundamentals">Web Fundamentals</h2>
+<p>Before you dig into web servers, HTTP, cookies, or other web concepts, you need two things firmly understood:</p>
+<ol>
+<li><strong>How the internet names and locates services</strong> (DNS &amp; URL anatomy) — without that, you can’t reason about hosts, subdomains, or why assets load from a CDN.</li>
+<li><strong>What components make up a web application</strong> (frontend, backend, DB, CDN, load balancer, WAF) — this helps you reason about where to look when things break or when you hunt for malicious activity.</li>
+</ol>
+<p>Think of the web as multiple layers stacked on each other. Learn the stack from names → routing → transport → application → logs/observability. That’s the order we’ll follow.</p>
+<hr>
+<h3 id="1-url-anatomy">1- URL anatomy</h3>
+<p>A URL is how humans and browsers ask for a resource. Break it down and understand which parts are client-side vs server-side trust boundaries.</p>
+<p><strong>Example URL</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">https://alice:pw123@shop.acme.local:8443/products/view.html?q=socks#reviews</code></pre></div>
+<p>Parts:</p>
+<ul>
+<li><code>https</code> — <strong>scheme</strong> (protocol). Determines the transport and whether TLS is used. Security: prefer <code>https</code> always.</li>
+<li><code>alice:pw123@</code> — <strong>userinfo</strong> (deprecated for browsers; never send secrets in URLs). Treat as untrusted.</li>
+<li><code>shop.acme.local</code> — <strong>host</strong> (domain or IP). Controls virtual-host selection — maps via DNS to an IP.</li>
+<li><code>:8443</code> — <strong>port</strong> (default 443 for HTTPS). Nonstandard ports are allowed and may alter firewall paths.</li>
+<li><code>/products/view.html</code> — <strong>path</strong> (resource locator). Server maps this path to a file or a backend handler.</li>
+<li><code>?q=socks</code> — <strong>query string</strong> (client-controlled input; always treat as untrusted and sanitize).</li>
+<li><code>#reviews</code> — <strong>fragment</strong> (client-side only; not sent to server).</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-05cd9a53-3fbf-478e-a0dd-2b8fb4acbb1c-13f785a0.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-05cd9a53-3fbf-478e-a0dd-2b8fb4acbb1c-13f785a0.png" alt="image.png" loading="lazy"></button></p>
+<p><strong>Why each matters for security</strong></p>
+<ul>
+<li>Query strings often carry user input (SQLi / XSS vectors). Never trust them.</li>
+<li>Host + port determine which virtual host and which certificates are used.</li>
+<li>Fragments are irrelevant to server logs (they’re client-only), but useful for understanding what the browser will render.</li>
+</ul>
+<hr>
+<h3 id="2-before-web-dns">2-  Before web: DNS</h3>
+<p>If web is the application layer, DNS is the naming &amp; routing layer beneath it. Start here — a wrong DNS understanding leads to bad triage, missed subdomains, and confusing origin IPs.</p>
+<h4 id="what-dns-actually-does">What DNS actually does</h4>
+<p>DNS answers one question: <strong>“What IP(s) or resource records are associated with this name?”</strong> When a browser loads <code>shop.acme.local</code>, it asks DNS: “what IP(s) should I connect to?” The resolver returns records (A, AAAA, CNAME, etc.). The browser then connects to the IP and sends an HTTP request with the <code>Host</code> header set to <code>shop.acme.local</code>.</p>
+<h4 id="domain-hierarchy">Domain hierarchy</h4>
+<p>Domain names are read right-to-left for hierarchy:</p>
+<ul>
+<li><code>.</code> — root (implicit)</li>
+<li><code>local</code> — TLD (top-level domain)</li>
+<li><code>acme</code> — second-level domain</li>
+<li><code>shop</code> — subdomain</li>
+</ul>
+<p>So <code>shop.acme.local</code> is a subdomain of <code>acme.local</code>. The authority for each label is delegated: root → TLD → second-level → authoritative name servers.</p>
+<p><strong>Practical example:</strong> if <code>shop.acme.local</code> is a CNAME to <code>cdn-3.edge.example.net</code>, the chain matters: requests resolve to <code>cdn-3.edge.example.net</code> → then that name resolves to one or more A/AAAA addresses. A long CNAME chain can reduce clarity of who hosts the asset and may hide origin IPs.</p>
+<h4 id="important-dns-record-types">Important DNS record types</h4>
+<ul>
+<li><strong>A</strong> — IPv4 address.</li>
+<li><strong>AAAA</strong> — IPv6 address.</li>
+<li><strong>CNAME</strong> — alias: name points to another name (not directly to an IP). Useful for multi-host setups but avoid for zone apex.</li>
+<li><strong>MX</strong> — mail exchangers.</li>
+<li><strong>TXT</strong> — text blobs (SPF, DKIM, verification tokens). <strong>Danger:</strong> people sometimes put secrets here by mistake — check TXT for leaked tokens.</li>
+<li><strong>NS</strong> — authoritative name servers for the domain.</li>
+<li><strong>SOA</strong> — start of authority; contains serial &amp; refresh timings.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-8212c121.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-8212c121.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="dig-example"><code>dig</code> example</h4>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">dig +nocmd +noall +answer shop.acme.local A</code></pre></div>
+<p>Sample output:</p>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">shop.acme.local.         300  IN  CNAME  cdn-3.edge.example.net.
+cdn-3.edge.example.net.   60  IN  A      198.51.100.24</code></pre></div>
+<p>Interpretation:</p>
+<ul>
+<li><code>shop.acme.local</code> is a CNAME pointing to <code>cdn-3.edge.example.net</code>.</li>
+<li>The CDN hostname resolves to IP <code>198.51.100.24</code>.</li>
+<li>TTLs (300, 60) show caching lifetimes /  short TTL means answers change often; long TTL caches longer.</li>
+</ul>
+<p><strong>Why this matters for incident response</strong></p>
+<ul>
+<li>If a subdomain points to a third-party CDN, the origin server may be hidden. Investigate the CNAME chain to find origin or configuration weaknesses.</li>
+<li>Malicious actors sometimes add TXT or CNAME records to route traffic or validate domains  check NS and SOA history where possible.</li>
+</ul>
+<h4 id="common-dns-pitfalls-triage-tips">Common DNS pitfalls &amp; triage tips</h4>
+<ul>
+<li><strong>Hidden origin</strong>: CDN or cloud provider hides the origin IP. Look up the CNAME chain and historical DNS if needed.</li>
+<li><strong>Subdomain takeover</strong>: CNAME points to a service that is no longer configured. If the target is unclaimed, an attacker can claim it and serve content.</li>
+<li><strong>Leaked tokens in TXT</strong>: scan TXT records for API keys or verification tokens.</li>
+<li><strong>Delegation mistakes</strong>: misconfigured NS records can delegate control to an attacker-controlled nameserver.</li>
+</ul>
+<hr>
+<h3 id="3-how-web-servers-work">3-  How web servers work</h3>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-1-fd3928ba.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-1-fd3928ba.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="what-is-a-web-server">What is a web server?</h4>
+<p>A <strong>web server</strong> is software that:</p>
+<ol>
+<li>Listens on a network socket (port 80/443) for incoming TCP/TLS connections.</li>
+<li>Accepts HTTP requests, maps requested paths to local resources or backend handlers.</li>
+<li>Sends HTTP responses back to the client.</li>
+</ol>
+<p>Common web server software:</p>
+<ul>
+<li><strong>Apache</strong> — feature-rich, modular.</li>
+<li><strong>Nginx</strong> — high-performance, event-driven; often used as a reverse proxy.</li>
+<li><strong>IIS</strong> — Microsoft’s web server on Windows.</li>
+<li><strong>Node.js</strong> (Express, Fastify) — application runtime acting as a web server.</li>
+</ul>
+<p><strong>Root directory example (Linux):</strong> <code>/var/www/html/index.html</code> corresponds to <code>http://example.com/index.html</code><strong>Windows IIS default:</strong> <code>C:\inetpub\wwwroot\</code></p>
+<h4 id="virtual-hosts-vhosts">Virtual hosts (vhosts)</h4>
+<p>A single server IP can serve many domain names. The server checks the <code>Host</code> header and maps it to the corresponding vhost config. Each vhost has its own document root, SSL cert, logging, and configuration. Misconfigured default vhosts can leak test pages or debug endpoints.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li><code>one.com</code> → <code>/var/www/one</code></li>
+<li><code>two.com</code> → <code>/var/www/two</code></li>
+<p>If the <code>Host</code> doesn’t match, the server returns the default vhost content.</p>
+</ul>
+<h4 id="how-dynamic-content-is-served">How dynamic content is served</h4>
+<p>Static files are served directly from disk. Dynamic requests hit:</p>
+<ul>
+<li>CGI/FCGI backends (e.g., PHP-FPM), or</li>
+<li>Application servers (Node.js, Python WSGI), or</li>
+<li>Reverse proxy forwards requests to upstream services.</li>
+</ul>
+<p>Dynamic backends often run as different processes and log separately — check both web server logs and application logs during investigations.</p>
+<hr>
+<h3 id="4-supporting-infrastructure-cdn-load-balancer-waf-databases">4- Supporting infrastructure: CDN, Load Balancer, WAF, Databases</h3>
+<h4 id="cdn-content-delivery-network">CDN (Content Delivery Network)</h4>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/616945d482ef350052080da1/room-content/616945d482ef350052080da1-1754461487753.svg">External image reference: A graphical representation of a Content Delivery Network (CDN) in which the central server distributes data to edge servers around the world, which then distribute data to the users.</a></p>
+<p><strong>Function:</strong> cache &amp; serve static assets (images, JS, CSS) from edge nodes close to users. <strong>Benefits:</strong> reduces latency, offloads origin, and provides DDoS mitigation. <strong>Security/triage notes:</strong></p>
+<ul>
+<li>CDN hides origin IP /  makes finding the real server harder.</li>
+<li>CDN configurations (caching rules, rewrite rules) can leak sensitive assets if misconfigured.</li>
+<li>Check CNAMEs and CDN-origin configuration to confirm origin security.</li>
+</ul>
+<h4 id="load-balancer">Load Balancer</h4>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-2-0b1b79e0.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-2-0b1b79e0.png" alt="image.png" loading="lazy"></button></p>
+<p><strong>Function:</strong> distribute incoming traffic to multiple backend servers. <strong>Types:</strong> Layer 4 (TCP) or Layer 7 (HTTP-aware). <strong>Why it matters:</strong> health checks, sticky sessions, and SSL termination can be on the LB / this affects where TLS is terminated and where to inspect traffic. Misconfigured LBs can route traffic to stale or unpatched backends.</p>
+<h4 id="waf-web-application-firewall">WAF (Web Application Firewall)</h4>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/678ecc92c80aa206339f0f23/room-content/678ecc92c80aa206339f0f23-1755125065099.svg">External image reference: The Cloudflare CDN dashboard with the Security panel selected shows the total number of requests the website received in the past 24 hours and all mitigated or blocked requests.</a></p>
+<p><strong>Function:</strong> analyzes HTTP traffic for common attacks (SQLi, XSS, LFI) and rate-limits suspicious behavior. <strong>How it’s placed:</strong> typically between LB/CDN and origin. <strong>Limitations:</strong> WAF rules can be noisy (false positives) and bypassable. Don’t rely on a WAF as the only security control / fix the root cause in the application.</p>
+<h4 id="databases">Databases</h4>
+<p><strong>Function:</strong> persistent storage for application data. RDBMS (MySQL, Postgres, MSSQL) and NoSQL (MongoDB). <strong>Security notes:</strong></p>
+<ul>
+<li>SQL injection targets databases directly - parameterized queries are essential.</li>
+<li>Publicly exposed DB ports are high-severity findings.</li>
+<li>Backups, replicas, and failover nodes may have separate access controls / enumerate all.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-3-a1e7aeee.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-3-a1e7aeee.png" alt="image.png" loading="lazy"></button></p>
+<p>Web Application Architecture</p>
+<hr>
+<h3 id="5-frontend-vs-backend">5- Frontend vs Backend</h3>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-4-836d1eaa.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-4-836d1eaa.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="frontend-client-side">Frontend (client-side)</h4>
+<ul>
+<li><strong>Technologies:</strong> HTML, CSS, JavaScript.</li>
+<li><strong>What it does:</strong> renders UI, executes client-side logic, and makes API calls to the backend.</li>
+<li><strong>Security concerns:</strong> sensitive data in JS, plaintext secrets embedded in HTML/JS, DOM-based XSS, insecure use of <code>eval()</code> or <code>innerHTML</code>.</li>
+</ul>
+<h4 id="backend-server-side">Backend (server-side)</h4>
+<ul>
+<li><strong>Technologies:</strong> Node.js, Python, Ruby, PHP, .NET, Java, etc.</li>
+<li><strong>What it does:</strong> business logic, authentication, database access, rendering dynamic pages, issuing tokens/cookies.</li>
+<li><strong>Security concerns:</strong> SQLi, insecure deserialization, RCE via vulnerable libraries, privilege escalation via broken auth.</li>
+</ul>
+<p><strong>Where issues live:</strong> frontend vulnerabilities expose the user; backend vulnerabilities expose server/data. Both matter for defenders.</p>
+<hr>
+<h3 id="6-html-css-javascript">6- HTML / CSS / JavaScript</h3>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-screenshot_2025-09-09_152859-d0c1d4a9.png" data-alt="Screenshot 2025-09-09 152859.png"><img src="../assets/images/web-fundamentals-screenshot_2025-09-09_152859-d0c1d4a9.png" alt="Screenshot 2025-09-09 152859.png" loading="lazy"></button></p>
+<ul>
+<li><strong>HTML</strong> — structure and semantics of a page. Elements, attributes, forms (<code>&lt;form&gt;</code>), inputs.</li>
+<li><strong>CSS</strong> — presentation. Controls layout; can leak info via <code>:visited</code> timing in older browsers (rare now).</li>
+<li><strong>JavaScript</strong> — behavior. Detect it in the DOM, watch for inline scripts, and for client-side logic that builds requests (useful for hunting).</li>
+</ul>
+<p><strong>Example: insecure pattern</strong></p>
+<div class="code-shell"><div class="code-bar"><span>html</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-html">&lt;!-- Unsafe: directly inserting user input into the DOM --&gt;&lt;div id=&quot;comment&quot;&gt;&lt;/div&gt;&lt;script&gt;  document.getElementById('comment').innerHTML = location.search; // dangerous&lt;/script&gt;</code></pre></div>
+<p>This allows DOM-based XSS if <code>location.search</code> contains <code>&quot;&gt;&lt;script&gt;…&lt;/script&gt;</code>.</p>
+<hr>
+<h3 id="7-logging">7- Logging</h3>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-5-30f1315a.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-5-30f1315a.png" alt="image.png" loading="lazy"></button></p>
+<p>Logs are the single most valuable asset for incident response. Learn formats and fields.</p>
+<p><strong>Common Log Format (combined) — fields:</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">remote_addr - remote_user [time_local] &quot;request_line&quot; status bytes_sent &quot;referer&quot; &quot;user_agent&quot;</code></pre></div>
+<p><strong>Realistic example (benign session):</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">10.10.10.100 - - [08/Sep/2025:12:34:56 +0300] &quot;GET /index.html HTTP/1.1&quot; 200 1024 &quot;https://example.com/&quot; &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36&quot;
+10.10.10.100 - - [08/Sep/2025:12:35:02 +0300] &quot;GET /login.html HTTP/1.1&quot; 200 2048 &quot;https://example.com/index.html&quot; &quot;Mozilla/5.0 ...&quot;
+10.10.10.100 - - [08/Sep/2025:12:35:20 +0300] &quot;POST /login HTTP/1.1&quot; 302 512 &quot;https://example.com/login.html&quot; &quot;Mozilla/5.0 ...&quot;
+10.10.10.100 - - [08/Sep/2025:12:35:25 +0300] &quot;GET /myaccount.html HTTP/1.1&quot; 200 5172 &quot;https://example.com/&quot; &quot;Mozilla/5.0 ...&quot;</code></pre></div>
+<p><strong>How to use these fields:</strong></p>
+<ul>
+<li><code>remote_addr</code> — identify client IP and geo/ASN.</li>
+<li><code>time_local</code> — timeline reconstruction; correlate with firewall and app logs.</li>
+<li><code>request_line</code> — HTTP method, path, and protocol.</li>
+<li><code>status</code> — 200/302/401/403/404/500 — use to filter anomalies.</li>
+<li><code>bytes_sent</code> — detect exfil (sudden large downloads).</li>
+<li><code>referer</code> &amp; <code>user_agent</code> — fingerprint sessions and spot unusual clients.</li>
+</ul>
+<p><strong>Hunting example:</strong> repeated <code>POST /login</code> from many IPs with 401/403 responses → suspect credential stuffing or brute force; watch for account lockouts or unusual successful logins.</p>
+<hr>
+<h3 id="8-http-internals-requests-responses-methods-and-status-codes">8- HTTP internals: requests, responses, methods and status codes</h3>
+<h4 id="http-request-structure">HTTP request structure</h4>
+<p>A client request has three parts:</p>
+<ol>
+<li><strong>Start line</strong> — <code>METHOD path HTTP/x.x</code> (e.g., <code>GET /index.html HTTP/1.1</code>).</li>
+<li><strong>Headers</strong> — <code>Host</code>, <code>User-Agent</code>, <code>Accept</code>, <code>Cookie</code>, <code>Content-Type</code>, etc.</li>
+<li><strong>Body</strong> — optional; used by POST/PUT/PATCH.</li>
+</ol>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5c549500924ec576f953d9fc/room-content/a2117dc267fbb169e38be77c7af44027.png">External image reference: A diagram visualizing how cookies are introduced in http requests to allow storing user information</a></p>
+<p><strong>Example request</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">POST /login HTTP/1.1
+Host: app.example.com
+User-Agent: curl/8.2
+Accept: application/json
+Content-Type: application/json
+Content-Length: 53
+Cookie: session=abc123
+
+{&quot;username&quot;:&quot;alice&quot;,&quot;password&quot;:&quot;p@ssw0rd&quot;}</code></pre></div>
+<h4 id="http-response-structure">HTTP response structure</h4>
+<p>Responses: <code>HTTP/x.x status_code reason</code> + headers + body.</p>
+<p><strong>Example response</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">HTTP/1.1 302 Found
+Location: /dashboard
+Set-Cookie: session=abc123; HttpOnly; Secure; SameSite=Lax
+Content-Length: 0</code></pre></div>
+<div class="code-shell"><div class="code-bar"><span>html</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-html">HTTP/1.1 200 OK             ---&gt; Status Line
+Date: Mon, 09 Sep 2025 10:30:00 GMT
+Server: OmarServer/1.0      ---&gt; Response Header 
+Content-Type: text/html
+Content-Length: 85
+Connection: close
+
+&lt;html&gt;                     ---&gt; Response Body
+  &lt;head&gt;
+    &lt;title&gt;Welcome to Omar's Site&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, Omar!&lt;/h1&gt;
+    &lt;p&gt;This is a sample HTTP response.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+<ul>
+<li><strong>Status Line</strong>: <code>HTTP/1.1 200 OK</code> → protocol version, status code, status message.</li>
+<li><strong>Response Headers</strong>: Provide metadata about the response (like server, content type, length, etc.).</li>
+<li><strong>Response Body</strong>: The actual content sent to the client (HTML in this case).</li>
+</ul>
+<h4 id="methods">Methods</h4>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-6-b508b10a.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-6-b508b10a.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="status-codes">Status codes</h4>
+<ul>
+<li><strong>1xx</strong> — informational.</li>
+<li><strong>2xx</strong> — success (<code>200</code>, <code>201</code>).</li>
+<li><strong>3xx</strong> — redirects (<code>301</code>, <code>302</code>, <code>307</code>, <code>308</code>).</li>
+<li><strong>4xx</strong> — client errors (<code>400</code>, <code>401</code>, <code>403</code>, <code>404</code>, <code>405</code>, <code>429</code>).</li>
+<li><strong>5xx</strong> — server errors (<code>500</code>, <code>502</code>, <code>503</code>, <code>504</code>).</li>
+</ul>
+<p><strong>Threat indicator example:</strong> repeated <code>POST /api/transfer 500</code> with unusual payloads → may indicate an input causing server-side exceptions (possible injection).</p>
+<hr>
+<h3 id="9-headers-cookies">9- Headers &amp; Cookies</h3>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-7-3cba1683.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-7-3cba1683.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="request-headers">Request headers</h4>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-8-54d7dbdc.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-8-54d7dbdc.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li><code>Host</code> — vhost selection; mismatch with TLS CN/SAN causes browser warnings/errors.</li>
+<li><code>User-Agent</code> — spoofable; useful for filtering.</li>
+<li><code>Referer</code> — origin of the request; can be stripped.</li>
+<li><code>Accept</code>, <code>Accept-Encoding</code>, <code>Accept-Language</code> — content negotiation.</li>
+<li><code>Authorization</code> — sensitive (bearer tokens/basic auth).</li>
+</ul>
+<h4 id="response-headers-to-care-about">Response headers to care about</h4>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-9-39ff9e59.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-9-39ff9e59.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li><code>Content-Type</code> — how to parse the body.</li>
+<li><code>Set-Cookie</code> — set cookies; flags below matter.</li>
+<li><code>Cache-Control</code>, <code>Expires</code> — caching behavior.</li>
+<li><code>Location</code> — redirects.</li>
+</ul>
+<h4 id="cookies">Cookies</h4>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-10-b96d10ad.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-10-b96d10ad.png" alt="image.png" loading="lazy"></button></p>
+<p><code>Set-Cookie</code> example:</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">Set-Cookie: name=value; Expires=Wed, 09 Jun 2026 10:18:14 GMT; Path=/; Domain=.example.com; Secure; HttpOnly; SameSite=Strict</code></pre></div>
+<p>Flags:</p>
+<ul>
+<li><strong>HttpOnly</strong> — prevents JS access via <code>document.cookie</code>.</li>
+<li><strong>Secure</strong> — send only over TLS.</li>
+<li><strong>SameSite</strong> — <code>Strict | Lax | None</code> — controls cross-site sending. <code>None</code> must be paired with <code>Secure</code>.</li>
+<li><strong>Domain/Path</strong> — scope of cookie. Prefer host-only cookies where possible.</li>
+<li><strong>Expires / Max-Age</strong> — lifetime.</li>
+</ul>
+<p><strong>Cookie anti-pattern:</strong> embedding user ID or role in cookie plaintext — always avoid; use server-side session mapping.</p>
+<h4 id="debugging-headers-cookies">Debugging headers &amp; cookies</h4>
+<ul>
+<li>Browser DevTools → Network → request → Headers/Cookies tabs.</li>
+<li><code>curl</code> example:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">curl -v -i https://app.example.com/login -d '{&quot;u&quot;:&quot;a&quot;,&quot;p&quot;:&quot;b&quot;}' -H 'Content-Type: application/json'</code></pre></div>
+<ul>
+<li><code>v</code> prints TLS handshake and verbose info; <code>i</code> includes response headers.</li>
+</ul>
+<hr>
+<h3 id="10-security-headers">10- Security headers</h3>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-11-324458ba.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-11-324458ba.png" alt="image.png" loading="lazy"></button></p>
+<p><strong>Strict-Transport-Security (HSTS)</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">Strict-Transport-Security: max-age=31536000; includeSubDomains; preload</code></pre></div>
+<p>Forces browsers to use HTTPS. Test before <code>preload</code>.</p>
+<p><strong>Content-Security-Policy (CSP)</strong> / example:</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.example.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.examplecdn.com; object-src 'none';</code></pre></div>
+<ul>
+<li>Start with <code>report-only</code>:</li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">Content-Security-Policy-Report-Only: &lt;policy&gt;; report-uri /csp-report-endpoint</code></pre></div>
+<p>Browser console shows blocked resources; reports are POSTed to the endpoint if configured.</p>
+<p><strong>X-Frame-Options / frame-ancestors</strong></p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">X-Frame-Options: DENY</code></pre></div>
+<p>Or modern approach:</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">Content-Security-Policy: frame-ancestors 'self';</code></pre></div>
+<ol>
+<li><strong>X-Content-Type-Options: nosniff</strong> — prevent MIME sniffing.</li>
+<li><strong>Referrer-Policy</strong></li>
+</ol>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">Referrer-Policy: no-referrer-when-downgrade</code></pre></div>
+<p>Or stricter: <code>strict-origin-when-cross-origin</code> or <code>no-referrer</code>.</p>
+<ol>
+<li><strong>Permissions-Policy</strong> — control browser features (geolocation, camera).</li>
+<li><strong>Expect-CT</strong> — certificate transparency; advanced.</li>
+</ol>
+<hr>
+<h3 id="11-tls-tls-handshake-certificates">11- TLS / TLS handshake &amp; certificates</h3>
+<h4 id="why-tls-matters">Why TLS matters</h4>
+<p>TLS provides confidentiality, integrity, and server authentication. Without TLS, eavesdropping and MitM attacks are trivial.</p>
+<h4 id="tls-1.2-handshake-simplified">TLS 1.2 handshake (simplified)</h4>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-12-da7f55b3.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-12-da7f55b3.png" alt="image.png" loading="lazy"></button></p>
+<ol>
+<li><strong>ClientHello</strong> (version, ciphers, random, SNI).</li>
+<li><strong>ServerHello</strong> (chosen cipher, random).</li>
+<li><strong>Certificate</strong> (server chain).</li>
+<li><strong>ServerKeyExchange</strong> (if needed).</li>
+<li><strong>ServerHelloDone</strong>.</li>
+<li><strong>ClientKeyExchange</strong> (pre-master secret).</li>
+<li><strong>ChangeCipherSpec + Finished</strong> (switch to encrypted channel).</li>
+</ol>
+<p>After this, data is encrypted.</p>
+<h4 id="tls-1.3-differences">TLS 1.3 differences</h4>
+<ul>
+<li>Fewer round-trips (faster).</li>
+<li>Forward secrecy by default.</li>
+<li>0-RTT option exists (resumption with replay risks).</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-13-eed185ff.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-13-eed185ff.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="certificate-concepts">Certificate concepts</h4>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-14-f27af44f.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-14-f27af44f.png" alt="image.png" loading="lazy"></button></p>
+<p>Think of a certificate like an <strong>official ID card for a website</strong>. It proves that the website is who it says it is. Without it, your browser can’t be sure it’s talking to the real site / someone could be impersonating it.</p>
+<ul>
+<li><strong>CN / SAN</strong> — hostnames covered. Modern clients require SAN.</li>
+<li><strong>Chain of trust</strong> — leaf → intermediates → root.</li>
+<li><strong>OCSP / OCSP stapling</strong> — revocation checks; stapling improves latency/privacy.</li>
+<li><strong>Pinning</strong> — reduces CA risk but is hard to manage.</li>
+</ul>
+<h4 id="inspect-a-certificate">Inspect a certificate</h4>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">openssl s_client -connect app.example.com:443 -servername app.example.com -showcerts</code></pre></div>
+<p>Check:</p>
+<ul>
+<li>Valid From / To (expiry).</li>
+<li>Issuer.</li>
+<li>SANs include the expected host.</li>
+<li>Chain completeness (missing intermediates cause client errors).</li>
+</ul>
+<hr>
+<h3 id="12-http2-http3">12- HTTP/2 &amp; HTTP/3</h3>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-15-f19d6cf9.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-15-f19d6cf9.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="http2">HTTP/2</h4>
+<ul>
+<li><strong>Binary framing</strong> and <strong>multiplexing</strong>: multiple requests/responses on a single TCP connection.</li>
+<li><strong>Header compression (HPACK)</strong> — smaller headers but possible info-leak if bug exists.</li>
+<li><strong>Server push</strong> — server can proactively send resources. Misconfiguration can cause cache issues.</li>
+<li><strong>Observability:</strong> intermediaries and WAFs must parse HTTP/2; older tools may miss attacks.</li>
+</ul>
+<h4 id="http3-quic">HTTP/3 (QUIC)</h4>
+<ul>
+<li>Runs over QUIC (UDP); built-in TLS 1.3; connection migration.</li>
+<li><strong>Observability impact:</strong> network devices must support QUIC to inspect traffic; update WAF/CDN and SIEM parsing as needed.</li>
+</ul>
+<hr>
+<h3 id="13-websockets">13- WebSockets</h3>
+<p><button class="image-button" data-src="../assets/images/web-fundamentals-image-16-714d465c.png" data-alt="image.png"><img src="../assets/images/web-fundamentals-image-16-714d465c.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li><strong>What:</strong> <strong>a</strong> <strong>protocol for full-duplex communication between a client (like your browser) and a server</strong>. Unlike normal HTTP requests:</li>
+<li><strong>HTTP:</strong> Request → Response → Done (stateless, one-way at a time)</li>
+<li><strong>WebSocket:</strong> Continuous two-way connection; both client and server can send messages at any time</li>
+<li><strong>Use cases:</strong></li>
+<ul>
+<li>Chat apps (Slack, WhatsApp Web)</li>
+<li>Live feeds (stock prices, sports scores)</li>
+<li>Multiplayer games</li>
+</ul>
+</ul>
+<hr>
+<h3 id="14-hardening-checklist">14- Hardening checklist</h3>
+<h4 id="web-server-app">Web Server &amp; App</h4>
+<ul>
+<li>Remove default pages; disable directory listing.</li>
+<li>Enforce least privilege for files/dirs; run app process as non-root.</li>
+<li>Use parameterized queries and centralized input validation.</li>
+<li>Implement robust error handling; do not expose stack traces.</li>
+<li>Patch web server &amp; frameworks promptly.</li>
+</ul>
+<h4 id="tls-certificates">TLS &amp; Certificates</h4>
+<ul>
+<li>Enforce TLS 1.2+; prefer TLS 1.3; disable weak ciphers.</li>
+<li>Use HSTS (test in <code>report-only</code> first); enable OCSP stapling.</li>
+<li>Monitor certificate expiry; automate renewals (Let’s Encrypt / ACME).</li>
+</ul>
+<h4 id="cdn-load-balancer">CDN &amp; Load Balancer</h4>
+<ul>
+<li>Restrict origin access to known CDN edge IPs (prevent direct public origin access).</li>
+<li>Ensure LB health checks verify full app health (not just TCP).</li>
+<li>Avoid exposing management APIs on public-facing LB.</li>
+</ul>
+<h4 id="waf-rate-limiting">WAF &amp; Rate Limiting</h4>
+<ul>
+<li>Deploy WAF with tuned rules; use <code>block</code> for high-confidence detections and <code>monitor</code> for suspicious patterns.</li>
+<li>Implement per-IP and per-user rate limits for auth endpoints.</li>
+</ul>
+<h4 id="cookies-session-management">Cookies &amp; Session Management</h4>
+<ul>
+<li>Set <code>HttpOnly</code>, <code>Secure</code>, <code>SameSite</code> appropriately.</li>
+<li>Use short-lived session tokens with refresh workflow; revoke tokens on logout or suspicious activity.</li>
+<li>Rotate session keys periodically.</li>
+</ul>
+<h4 id="logging-detection">Logging &amp; Detection</h4>
+<ul>
+<li>Centralize logs (web, app, WAF, LB) to SIEM with synchronized time (NTP).</li>
+<li>Log request bodies for high-suspicion events (redact PII) and keep appropriate retention policies.</li>
+<li>Build dashboards: 404 spikes, 500s per endpoint, login failure rate, unusual user agents.</li>
+</ul>
+<h4 id="databases-backups">Databases &amp; Backups</h4>
+<ul>
+<li>Do not expose DB ports publicly. Use private networks or SSH tunnels.</li>
+<li>Enforce least privilege DB users; use prepared statements.</li>
+<li>Encrypt backups and test restores.</li>
+</ul>
+<h4 id="devops-cicd">DevOps &amp; CI/CD</h4>
+<ul>
+<li>Scan dependencies for vulnerabilities (Snyk, Dependabot).</li>
+<li>Use IaC with code review; avoid secrets in code or environment files. Use secret managers (Vault, AWS Secrets Manager).</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#web-fundamentals">Web Fundamentals</a><a href="#1-url-anatomy">1- URL anatomy</a><a href="#2-before-web-dns">2- Before web: DNS</a><a href="#what-dns-actually-does">What DNS actually does</a><a href="#domain-hierarchy">Domain hierarchy</a><a href="#important-dns-record-types">Important DNS record types</a><a href="#dig-example">dig example</a><a href="#common-dns-pitfalls-triage-tips">Common DNS pitfalls &amp; triage tips</a><a href="#3-how-web-servers-work">3- How web servers work</a><a href="#what-is-a-web-server">What is a web server?</a><a href="#virtual-hosts-vhosts">Virtual hosts (vhosts)</a><a href="#how-dynamic-content-is-served">How dynamic content is served</a><a href="#4-supporting-infrastructure-cdn-load-balancer-waf-databases">4- Supporting infrastructure: CDN, Load Balancer, WAF, Databases</a><a href="#cdn-content-delivery-network">CDN (Content Delivery Network)</a><a href="#load-balancer">Load Balancer</a><a href="#waf-web-application-firewall">WAF (Web Application Firewall)</a><a href="#databases">Databases</a><a href="#5-frontend-vs-backend">5- Frontend vs Backend</a><a href="#frontend-client-side">Frontend (client-side)</a><a href="#backend-server-side">Backend (server-side)</a><a href="#6-html-css-javascript">6- HTML / CSS / JavaScript</a><a href="#7-logging">7- Logging</a><a href="#8-http-internals-requests-responses-methods-and-status-codes">8- HTTP internals: requests, responses, methods and status codes</a><a href="#http-request-structure">HTTP request structure</a><a href="#http-response-structure">HTTP response structure</a><a href="#methods">Methods</a><a href="#status-codes">Status codes</a><a href="#9-headers-cookies">9- Headers &amp; Cookies</a><a href="#request-headers">Request headers</a><a href="#response-headers-to-care-about">Response headers to care about</a><a href="#cookies">Cookies</a><a href="#debugging-headers-cookies">Debugging headers &amp; cookies</a><a href="#10-security-headers">10- Security headers</a><a href="#11-tls-tls-handshake-certificates">11- TLS / TLS handshake &amp; certificates</a><a href="#why-tls-matters">Why TLS matters</a><a href="#tls-1.2-handshake-simplified">TLS 1.2 handshake (simplified)</a><a href="#tls-1.3-differences">TLS 1.3 differences</a><a href="#certificate-concepts">Certificate concepts</a><a href="#inspect-a-certificate">Inspect a certificate</a><a href="#12-http2-http3">12- HTTP/2 &amp; HTTP/3</a></details>
+    </div>
+    
+    <footer class="pager"><a href="lolbins-living-off-the-land-binaries.html">← LOLBins (living-off-the-land binaries)</a><a href="detecting-web-attacks.html">Detecting Web Attacks →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

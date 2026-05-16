@@ -1,0 +1,56 @@
+{
+  "id": "windows event ids/windows logon failure status and sub-status codes",
+  "title": "Windows Logon Failure Status and Sub-Status Codes",
+  "slug": "windows-logon-failure-status-and-sub-status-codes",
+  "relPath": "Windows Event IDs/Windows Logon Failure Status and Sub-Status Codes.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "Windows"
+  ],
+  "mitre": [],
+  "parentId": "windows event ids",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows event ids"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows event ids",
+      "title": "Windows Event IDs",
+      "slug": "windows-event-ids"
+    },
+    {
+      "id": "windows event ids/windows logon failure status and sub-status codes",
+      "title": "Windows Logon Failure Status and Sub-Status Codes",
+      "slug": "windows-logon-failure-status-and-sub-status-codes"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows Logon Failure Status and Sub-Status Codes"
+    }
+  ],
+  "overview": "| Status/Sub Status Code | Description | | --- | --- | | 0xC000005E | The logon servers are not available to service the logon request. | | 0xC0000064 | The specified user does not exist. | | 0xC000006A | Misspelled or bad password. | | 0xC000006C | Password policy not met | | 0xC000006D | Bad username or authentication information. | | 0xC000006E | The user",
+  "study": {
+    "overview": "| Status/Sub Status Code | Description | | --- | --- | | 0xC000005E | The logon servers are not available to service the logon request. | | 0xC0000064 | The specified user does not exist. | | 0xC000006A | Misspelled or bad password. | | 0xC000006C | Password policy not met | | 0xC000006D | Bad username or authentication information. | | 0xC000006E | The user",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows Logon Failure Status and Sub-Status Codes"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

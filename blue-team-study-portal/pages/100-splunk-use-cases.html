@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>+100 Splunk Use Cases | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link active" href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>+100 Splunk Use Cases</span></div>
+      <h1>+100 Splunk Use Cases</h1>
+      <p>These detections focus on brute‐force, login, and account–related anomalies.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Splunk</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">Sysmon</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Kerberos</span><span class="tag">Web</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>+100 Splunk Use Cases</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>These detections focus on brute‐force, login, and account–related anomalies.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>+100 Splunk Use Cases</li><li>Group 1 – Authentication Anomalies</li><li>1. Detecting Brute Force Attacks</li><li>2. Alternate Brute Force Attack Detection</li><li>3. Detection of Brute Force Attacks on Web Applications</li><li>4. Failed Admin Login Attempts</li><li>5. Unusual Account Lockouts</li><li>6. Suspicious Logon Pattern Detection</li><li>7. Detecting Interactive Logins from Service Accounts</li><li>Group 2 – Privilege Escalation &amp; Credential Dumping</li><li>8. Get System Elevation</li><li>9. Create Remote Thread into LSASS</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=omar sourcetype=winxsecurity user=* user!=&quot;&quot;| stats count(eval(action=&quot;success&quot;)) as successes, count(eval(action=&quot;failure&quot;)) as failures by user, ComputerName
+| where successes&gt;0 AND failures&gt;100
+
+index=omar source=&quot;WinEventLog:Security&quot; EventCode=4625| bin _time span=5m| stats count by _time, user, host, src, action
+| where count &gt;= 5
+
+index=omar source=&quot;/var/log/auth.log&quot; &quot;Failed password&quot;| bin _time span=5m| stats count by _time, user, host, src, action
+| where count &gt;= 5</code></pre></div><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=omar EventCode=4625| stats count by src_ip, user
+| where count &gt; 10| sort -count
+| table src_ip, user, count</code></pre></div><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=omar sourcetype=web_auth_logs
+| stats count by user, src_ip
+| where count &gt; 10| sort -count
+| table user, src_ip, count</code></pre></div><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=omar sourcetype=windows EventCode=4625 user=&quot;admin*&quot;| stats count by user, src_ip
+| where count &gt; 5| sort -count
+| table user, src_ip, count</code></pre></div></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=omar source=&quot;WinEventLog:Microsoft-Windows-PowerShell/Operational&quot; EventCode=4104AND ((ScriptBlockText=*-noni* *iex* *New-Object*) OR (ScriptBlockText=*-ep* *bypass* *-Enc*) OR
+    (ScriptBlockText=*powershell* *reg* *add* *HKCU\\software\\microsoft\\windows\\currentversion\\run*) OR
+    (ScriptBlockText=*bypass* *-noprofile* *-windowstyle* *hidden* *new-object* *system.net.webclient* *.download*) OR
+    (ScriptBlockText=*iex* *New-Object* *Net.WebClient* *.Download*))
+| table Computer, ScriptBlockText, UserID</code></pre></div><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=omar sourcetype=__your__windows__sysmon__sourcetype 
+(EventCode=1 OR EventCode=1102) Image=*wevtutil* CommandLine=*cl* (CommandLine=*System* 
+OR CommandLine=*Security* OR CommandLine=*Setup* OR CommandLine=*Application*)</code></pre></div><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>| tstats count values(Processes.user) as user, values(Processes.parent_process) as parent_process, min(_time) as firstTime, max(_time) as lastTime from datamodel=Endpoint.Processes where (Processes.process_name=net.exe OR Processes.process_name=net1.exe) AND (Processes.process=*localgroup* OR Processes.process=*/add* OR Processes.process=*user*) by Processes.process, Processes.process_name, Processes.dest| `create_local_admin_accounts_using_net_exe_filter`</code></pre></div><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>(index=omar EventCode=1 Image=&quot;C:\\Windows\\System32\\reg.exe&quot; CommandLine=&quot;*add*\\Environment*UserInitMprLogonScript&quot;)
+OR
+(index=omar (EventCode=12 OR EventCode=14 OR EventCode=13) TargetObject=&quot;*\\Environment*UserInitMprLogonScript&quot;)</code></pre></div><div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=omar EventCode=4688| search CommandLine=&quot;*wmic*&quot;| stats count by user, CommandLine
+| table user, CommandLine, count</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>Splunk</li><li>Sysmon</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="100-splunk-use-cases">+100 Splunk Use Cases</h2>
+<h2 id="group-1-authentication-anomalies">Group 1 – Authentication Anomalies</h2>
+<p>These detections focus on brute‐force, login, and account–related anomalies.</p>
+<h4 id="1.-detecting-brute-force-attacks">1. Detecting Brute Force Attacks</h4>
+<p><em>Identify multiple login attempts by an attacker using brute force (includes both Windows and Linux examples).</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=winxsecurity user=* user!=&quot;&quot;| stats count(eval(action=&quot;success&quot;)) as successes, count(eval(action=&quot;failure&quot;)) as failures by user, ComputerName
+| where successes&gt;0 AND failures&gt;100
+
+index=omar source=&quot;WinEventLog:Security&quot; EventCode=4625| bin _time span=5m| stats count by _time, user, host, src, action
+| where count &gt;= 5
+
+index=omar source=&quot;/var/log/auth.log&quot; &quot;Failed password&quot;| bin _time span=5m| stats count by _time, user, host, src, action
+| where count &gt;= 5</code></pre></div>
+<h4 id="2.-alternate-brute-force-attack-detection">2. Alternate Brute Force Attack Detection</h4>
+<p><em>Identifies multiple failed login attempts from the same source IP using a simple threshold.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar EventCode=4625| stats count by src_ip, user
+| where count &gt; 10| sort -count
+| table src_ip, user, count</code></pre></div>
+<h4 id="3.-detection-of-brute-force-attacks-on-web-applications">3. Detection of Brute Force Attacks on Web Applications</h4>
+<p><em>Identify repeated login attempts on web applications, which may indicate brute‐force attacks.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=web_auth_logs
+| stats count by user, src_ip
+| where count &gt; 10| sort -count
+| table user, src_ip, count</code></pre></div>
+<h4 id="4.-failed-admin-login-attempts">4. Failed Admin Login Attempts</h4>
+<p><em>Spot multiple failed logins targeting privileged (admin) accounts.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=windows EventCode=4625 user=&quot;admin*&quot;| stats count by user, src_ip
+| where count &gt; 5| sort -count
+| table user, src_ip, count</code></pre></div>
+<h4 id="5.-unusual-account-lockouts">5. Unusual Account Lockouts</h4>
+<p><em>Monitor for frequent account lockouts which may be a sign of brute force attempts or misconfiguration.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=auth_logs EventCode=4740| stats count by user, host
+| where count &gt; 3| table host, user, count</code></pre></div>
+<h4 id="6.-suspicious-logon-pattern-detection">6. Suspicious Logon Pattern Detection</h4>
+<p><em>Detect users logging in from an unusually high number of distinct IP addresses, which might indicate compromised credentials.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=auth_logs
+| stats dc(src_ip) as unique_ips by user
+| where unique_ips &gt; 3| table user, unique_ips</code></pre></div>
+<h4 id="7.-detecting-interactive-logins-from-service-accounts">7. Detecting Interactive Logins from Service Accounts</h4>
+<p><em>Service accounts typically should not log in interactively; detect any anomalies.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=audit_logs user=svc_*| stats earliest(_time) as earliest, latest(_time) as latest by user, dest
+| eval isOutlier = if(earliest &gt;= relative_time(now(), &quot;-1d@d&quot;), 1, 0)
+| convert ctime(earliest) ctime(latest)</code></pre></div>
+<hr>
+<h2 id="group-2-privilege-escalation-credential-dumping">Group 2 – Privilege Escalation &amp; Credential Dumping</h2>
+<p>These use cases help detect methods adversaries use to escalate privileges and dump credentials.</p>
+<h4 id="8.-get-system-elevation">8. Get System Elevation</h4>
+<p>Detect techniques used to escalate privileges to SYSTEM, including named pipe impersonation and DLL injection.</p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar (ParentImage=&quot;C:\\Windows\\System32\\services.exe&quot; AND Image=&quot;C:\\Windows\\System32\\cmd.exe&quot; AND (CommandLine=&quot;*echo*&quot; AND CommandLine=&quot;*\\pipe\\*&quot;))
+OR (Image=&quot;C:\\Windows\\System32\\rundll32.exe&quot; AND CommandLine=&quot;*,a /p:*&quot;)
+
+index=omar (Image=&quot;C:\\Windows\\System32\\cmd.exe&quot; OR CommandLine=&quot;*%COMSPEC%*&quot;) AND     (CommandLine=&quot;*echo*&quot; AND CommandLine=&quot;*\\pipe\\*&quot;)</code></pre></div>
+<h4 id="9.-create-remote-thread-into-lsass">9. Create Remote Thread into LSASS</h4>
+<p><em>Detect remote threads created in LSASS—a known method for credential dumping.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">`sysmon` EventID=8 TargetImage=*lsass.exe| stats count min(_time) as firstTime, max(_time) as lastTime by Computer, EventCode, TargetImage, TargetProcessId
+| rename Computer as dest</code></pre></div>
+<h4 id="10.-abuse-of-lsass-dumping-via-procdump">10. Abuse of LSASS Dumping via ProcDump</h4>
+<p><em>Detect attempts to dump LSASS memory using ProcDump, a common technique for credential theft.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_eventlog EventCode=4688| search CommandLine=&quot;*procdump* -ma*&quot;| stats count by user, host, CommandLine
+| table user, host, CommandLine, count</code></pre></div>
+<h4 id="11.-privilege-escalation-via-sudo-on-linux">11. Privilege Escalation via Sudo on Linux</h4>
+<p><em>Detect unusual usage of sudo commands on Linux systems that may indicate privilege escalation attempts.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=syslog &quot;sudo:&quot;| stats count by user, host, command
+| where count &gt; 10| table host, user, command, count</code></pre></div>
+<h4 id="12.-kerberoasting-attack-detection">12. Kerberoasting Attack Detection</h4>
+<p><em>Detect adversaries requesting Kerberos TGS tickets for accounts with SPNs, which is a sign of Kerberoasting.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_eventlog EventCode=4769| where Ticket_Encryption_Type=&quot;0x17&quot; 
+OR Ticket_Encryption_Type=&quot;0x12&quot;| stats count by user, src_ip
+| table user, src_ip, count</code></pre></div>
+<hr>
+<h2 id="group-3-suspicious-powershell-command-execution">Group 3 – Suspicious PowerShell &amp; Command Execution</h2>
+<p>These detections focus on abnormal or obfuscated script and command activity.</p>
+<h4 id="13.-suspicious-powershell-commands">13. Suspicious PowerShell Commands</h4>
+<p><em>Detect potential abuse of PowerShell that might download external scripts or bypass restrictions.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar source=&quot;WinEventLog:Microsoft-Windows-PowerShell/Operational&quot; EventCode=4104AND ((ScriptBlockText=*-noni* *iex* *New-Object*) OR (ScriptBlockText=*-ep* *bypass* *-Enc*) OR
+    (ScriptBlockText=*powershell* *reg* *add* *HKCU\\software\\microsoft\\windows\\currentversion\\run*) OR
+    (ScriptBlockText=*bypass* *-noprofile* *-windowstyle* *hidden* *new-object* *system.net.webclient* *.download*) OR
+    (ScriptBlockText=*iex* *New-Object* *Net.WebClient* *.Download*))
+| table Computer, ScriptBlockText, UserID</code></pre></div>
+<h4 id="14.-suspicious-powershell-commands-mimikatz-detection">14. Suspicious PowerShell Commands – Mimikatz Detection</h4>
+<p><em>Search for the use of Mimikatz in PowerShell event logs, a common post‑exploitation tool.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar EventCode=4104 CommandLine=&quot;*Invoke-Mimikatz*&quot;| table _time, user, CommandLine</code></pre></div>
+<h4 id="15.-powershell-execution-of-base64-encoded-commands">15. PowerShell Execution of Base64 Encoded Commands</h4>
+<p><em>Identify obfuscated PowerShell scripts executed using Base64 encoding.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=powershell_logs
+| search CommandLine=&quot;* -enc *&quot;| stats count by user, host, CommandLine
+| table user, host, CommandLine, count</code></pre></div>
+<h4 id="16.-abnormal-powershell-script-execution">16. Abnormal PowerShell Script Execution</h4>
+<p><em>Identify PowerShell scripts executing unusual or potentially malicious commands.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=powershell_logs
+| search CommandLine=&quot;*Invoke-WebRequest*&quot; OR CommandLine=&quot;*IEX*&quot;| stats count by user, host, CommandLine
+| table user, host, CommandLine, count</code></pre></div>
+<h4 id="17.-suspicious-use-of-certutil-for-file-download">17. Suspicious Use of Certutil for File Download</h4>
+<p><em>Identify threat actors using <code>certutil</code> to download remote payloads.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_eventlog EventCode=4688| search CommandLine=&quot;*certutil* -urlcache*&quot;| stats count by user, host, CommandLine
+| table user, host, CommandLine, count</code></pre></div>
+<h4 id="18.-search-for-malicious-binaries-using-amsi.dll">18. Search for Malicious Binaries using AMSI.dll</h4>
+<p><em>Detects execution involving AMSI.dll, which might be hooked or bypassed by malware.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar Image=&quot;*amsi.dll*&quot;| table _time, host, user, Image, CommandLine</code></pre></div>
+<hr>
+<h2 id="group-4-log-tampering-audit-logs">Group 4 – Log Tampering &amp; Audit Logs</h2>
+<p>Focuses on detecting modifications or erasures in audit logging.</p>
+<h4 id="19.-windows-audit-log-tampering">19. Windows Audit Log Tampering</h4>
+<p><em>Detect changes to Windows audit logs which may indicate tampering.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar (sourcetype=wineventlog AND (EventCode=1102 OR EventCode=1100)) OR (sourcetype=wineventlog AND EventCode=104)
+| stats count by _time, EventCode, Message, sourcetype, host</code></pre></div>
+<h4 id="20.-clearing-windows-logs-with-wevtutil">20. Clearing Windows Logs with Wevtutil</h4>
+<p><em>Detect attempts to clear Windows event logs using wevtutil, which might indicate a cover‑up.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=__your__windows__sysmon__sourcetype 
+(EventCode=1 OR EventCode=1102) Image=*wevtutil* CommandLine=*cl* (CommandLine=*System* 
+OR CommandLine=*Security* OR CommandLine=*Setup* OR CommandLine=*Application*)</code></pre></div>
+<hr>
+<h2 id="group-5-malware-detection">Group 5 – Malware Detection</h2>
+<p>Catches signs of recurring infections or malicious activity.</p>
+<h4 id="21.-detecting-recurring-malware-on-host">21. Detecting Recurring Malware on Host</h4>
+<p><em>Using antivirus logs to determine if malware recurs on a host after removal.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=symantec:*| stats count, range(_time) as TimeRange by Risk_Name, Computer_Name
+| where TimeRange &gt; 1800| eval TimeRange_In_Hours = round(TimeRange/3600,2), TimeRange_In_Days = round(TimeRange/3600/24,2)</code></pre></div>
+<h4 id="22.-malware-attack-detection">22. Malware Attack Detection</h4>
+<p><em>Count infection signatures from malware attack events to detect potential compromise.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| from datamodel:&quot;Malware&quot;.&quot;Malware_Attacks&quot;| stats dc(&quot;signature&quot;) as infection_count by dest
+| where infection_count &gt; 1</code></pre></div>
+<h4 id="23.-basic-tor-traffic-detection">23. Basic TOR Traffic Detection</h4>
+<p><em>Identify potential TOR traffic on your network, which may indicate anonymized communications.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=firewall_data app=tor src_ip=*| table _time, src_ip, src_port, dest_ip, dest_port, bytes, app</code></pre></div>
+<hr>
+<h2 id="group-6-process-anomalies-injection">Group 6 – Process Anomalies &amp; Injection</h2>
+<p>Focus on unusual process behavior and potential injection attacks.</p>
+<h4 id="24.-unusual-child-process-spawned-using-dde-exploit">24. Unusual Child Process spawned using DDE Exploit</h4>
+<p><em>Detect DDE-based child processes that could be used to execute malicious commands.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar (ParentImage=&quot;*excel.exe&quot; OR ParentImage=&quot;*word.exe&quot; OR ParentImage=&quot;*outlook.exe&quot;) Image=&quot;*.exe&quot;</code></pre></div>
+<h4 id="25.-unusual-child-process-for-spoolsv.exe-or-connhost.exe">25. Unusual Child Process for Spoolsv.Exe or Connhost.Exe</h4>
+<p><em>Detect suspicious child processes spawned by spoolsv.exe or conhost.exe used for privilege escalation.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">(index=omar EventCode=1) (Image=&quot;C:\\Windows\\System32\\spoolsv.exe*&quot; OR Image=&quot;C:\\Windows\\System32\\conhost.exe&quot;) ParentImage=&quot;C:\\Windows\\System32\\cmd.exe&quot;</code></pre></div>
+<h4 id="26.-detecting-process-injection">26. Detecting Process Injection</h4>
+<p><em>Detect potential process injection attempts by monitoring rundll32.exe events with specific event codes.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar (EventCode=10 OR EventCode=11) Image=&quot;*rundll32.exe*&quot;| table _time, user, Image, CommandLine</code></pre></div>
+<h4 id="27.-common-windows-process-masquerading">27. Common Windows Process Masquerading</h4>
+<p><em>Detect when malicious executables masquerade as legitimate Windows processes.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar source=&quot;XmlWinEventLog:Microsoft-Windows-Sysmon/Operational&quot; AND (
+  (process_name=svchost.exe AND NOT (process_path=&quot;C:\\Windows\\System32\\svchost.exe&quot; 
+  OR process_path=&quot;C:\\Windows\\SysWow64\\svchost.exe&quot;))
+  OR (process_name=smss.exe AND NOT process_path=&quot;C:\\Windows\\System32\\smss.exe&quot;)
+  OR (process_name=wininit.exe AND NOT process_path=&quot;C:\\Windows\\System32\\wininit.exe&quot;)
+  OR (process_name=taskhost.exe AND NOT process_path=&quot;C:\\Windows\\System32\\taskhost.exe&quot;)
+  OR (process_name=lasass.exe AND NOT process_path=&quot;C:\\Windows\\System32\\lsass.exe&quot;)
+  OR (process_name=winlogon.exe AND NOT process_path=&quot;C:\\Windows\\System32\\winlogon.exe&quot;)
+  OR (process_name=csrss.exe AND NOT process_path=&quot;C:\\Windows\\System32\\csrss.exe&quot;)
+  OR (process_name=services.exe AND NOT process_path=&quot;C:\\Windows\\System32\\services.exe&quot;)
+  OR (process_name=lsm.exe AND NOT process_path=&quot;C:\\Windows\\System32\\lsm.exe&quot;)
+  OR (process_name=explorer.exe AND NOT process_path=&quot;C:\\Windows\\explorer.exe&quot;)
+)</code></pre></div>
+<hr>
+<h2 id="group-7-lateral-movement-persistence">Group 7 – Lateral Movement &amp; Persistence</h2>
+<p>These detections focus on tactics used for lateral movement and establishing persistence.</p>
+<h4 id="28.-create-local-admin-accounts-using-net.exe">28. Create Local Admin Accounts using net.exe</h4>
+<p><em>Detect creation of local administrator accounts via net.exe commands—a sign of potential privilege escalation.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| tstats count values(Processes.user) as user, values(Processes.parent_process) as parent_process, min(_time) as firstTime, max(_time) as lastTime from datamodel=Endpoint.Processes where (Processes.process_name=net.exe OR Processes.process_name=net1.exe) AND (Processes.process=*localgroup* OR Processes.process=*/add* OR Processes.process=*user*) by Processes.process, Processes.process_name, Processes.dest| `create_local_admin_accounts_using_net_exe_filter`</code></pre></div>
+<h4 id="29.-finding-new-local-admin-accounts">29. Finding New Local Admin Accounts</h4>
+<p><em>Detect creation of new local administrator accounts—a common tactic in lateral movement.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=windows:security EventCode=4720 OR (EventCode=4732 Administrators)
+| transaction Security_ID maxspan=180m| search EventCode=4720 EventCode=4732
+| table _time, EventCode, Recurity_ID, SamAccountName</code></pre></div>
+<h4 id="30.-boot-or-logon-initialization-scripts">30. Boot or Logon Initialization Scripts</h4>
+<p><em>Adversaries can persist by scheduling programs at logon via the registry key <code>HKEY_CURRENT_USER\EnvironmentUserInitMprLogonScript</code>.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">(index=omar EventCode=1 Image=&quot;C:\\Windows\\System32\\reg.exe&quot; CommandLine=&quot;*add*\\Environment*UserInitMprLogonScript&quot;)
+OR
+(index=omar (EventCode=12 OR EventCode=14 OR EventCode=13) TargetObject=&quot;*\\Environment*UserInitMprLogonScript&quot;)</code></pre></div>
+<h4 id="31.-bits-job-persistence">31. BITS Job Persistence</h4>
+<p><em>Detect scheduling of persistent BITS jobs that could indicate malicious file upload activity.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| tstats count min(_time) as firstTime, max(_time) as lastTime from datamodel=Endpoint.Processes where Processes.process_name=bitsadmin.exe AND Processes.process IN (*create*, *addfile*, *setnotifyflags*, *setnotifycmdline*, *setminretrydelay*, *setcustomheaders*, *resume*) by Processes.dest, Processes.user, Processes.parent_process, Processes.process_name, Processes.process, Processes.process_id, Processes.parent_process_id</code></pre></div>
+<h4 id="32.-bitsadmin-download-file">32. BITSAdmin Download File</h4>
+<p><em>Identify BITSAdmin usage with the transfer parameter to download remote objects—a tactic often used in malware drop operations.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| tstats count min(_time) as firstTime, max(_time) as lastTime from datamodel=Endpoint.Processes where Processes.process_name=bitsadmin.exe AND Processes.process=*transfer* by Processes.dest, Processes.user, Processes.parent_process, Processes.process_name, Processes.process, Processes.process_id, Processes.parent_process_id</code></pre></div>
+<h4 id="33.-certutil-download-with-urlcache-and-split-arguments">33. CertUtil Download With URLCache and Split Arguments</h4>
+<p><em>Monitor certutil.exe downloads using URLCache and split arguments, which is unusual for legitimate operations.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| tstats count min(_time) as firstTime, max(_time) as lastTime from datamodel=Endpoint.Processes where Processes.process_name=certutil.exe AND Processes.process=*urlcache* AND Processes.process=*split* by Processes.dest, Processes.user, Processes.parent_process, Processes.process_name, Processes.process, Processes.process_id, Processes.parent_process_id</code></pre></div>
+<h4 id="34.-certutil-download-with-verifyctl-and-split-arguments">34. CertUtil Download With VerifyCtl and Split Arguments</h4>
+<p><em>Flags downloads using VerifyCtl with split arguments for further review.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| tstats count min(_time) as firstTime, max(_time) as lastTime from datamodel=Endpoint.Processes where Processes.process_name=certutil.exe AND Processes.process=*verifyctl* AND Processes.process=*split* by Processes.dest, Processes.user, Processes.parent_process, Processes.process_name, Processes.process, Processes.process_id, Processes.parent_process_id</code></pre></div>
+<h4 id="35.-certutil-exe-certificate-extraction">35. Certutil exe Certificate Extraction</h4>
+<p><em>Detect extraction of certificates via certutil.exe which may be abused for forging authentication tokens.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| tstats count min(_time) as firstTime, values(Processes.process) as process, max(_time) as lastTime from datamodel=Endpoint.Processes where Processes.process_name=certutil.exe AND Processes.process=&quot;* -exportPFX *&quot; by Processes.parent_process, Processes.process_name, Processes.process, Processes.user</code></pre></div>
+<h4 id="36.-certutil-with-decode-argument">36. CertUtil With Decode Argument</h4>
+<p><em>Spot instances where certutil.exe is used to decode data – often a step in processing malicious payloads.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| tstats count min(_time) as firstTime, max(_time) as lastTime from datamodel=Endpoint.Processes where Processes.process_name=certutil.exe AND Processes.process=*decode* by Processes.dest, Processes.user, Processes.parent_process, Processes.process_name, Processes.process, Processes.process_id, Processes.parent_process_id</code></pre></div>
+<h4 id="37.-create-service-in-suspicious-file-path">37. Create Service in Suspicious File Path</h4>
+<p><em>Flag services created in unusual locations that may indicate malicious intent.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">`wineventlog_system` EventCode=7045 Service_File_Name=&quot;*.exe&quot; NOT (Service_File_Name IN (&quot;C:\\Windows\\*&quot;, &quot;C:\\Program File*&quot;, &quot;C:\\Programdata\\*&quot;, &quot;%systemroot%\\*&quot;)) Service_Type=&quot;user mode service&quot;| stats count min(_time) as firstTime, max(_time) as lastTime by EventCode, Service_File_Name, Service_Name, Service_Start_Type, Service_Type</code></pre></div>
+<h4 id="38.-lateral-movement-wmi-execution">38. Lateral Movement – WMI Execution</h4>
+<p><em>Detects lateral movement using WMI execution by searching for the term “wmic” in process command lines.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar EventCode=4688| search CommandLine=&quot;*wmic*&quot;| stats count by user, CommandLine
+| table user, CommandLine, count</code></pre></div>
+<h4 id="39.-scheduled-task-creation">39. Scheduled Task Creation</h4>
+<p><em>Identifies the creation of scheduled tasks, which are often used for persistence by threat actors.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar (EventCode=4698 OR EventCode=106)
+| table _time, user, TaskName, CommandLine</code></pre></div>
+<h4 id="40.-suspicious-windows-scheduled-task-creation">40. Suspicious Windows Scheduled Task Creation</h4>
+<p><em>Identify attackers using scheduled tasks for persistence.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_eventlog EventCode=4698| stats count by user, task_name, host
+| table user, task_name, host, count</code></pre></div>
+<hr>
+<h2 id="group-8-network-scanning-reconnaissance">Group 8 – Network Scanning &amp; Reconnaissance</h2>
+<p>Focuses on detecting scanning and reconnaissance activity.</p>
+<h4 id="41.-detecting-network-and-port-scanning">41. Detecting Network and Port Scanning</h4>
+<p><em>Identify port scanning behavior that could indicate lateral movement or network reconnaissance.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| from datamodel:&quot;Network_Traffic&quot;.&quot;All_Traffic&quot;| stats dc(dest_port) as dc_dest_port by src, dest
+| where dc_dest_port &gt; 10-- OR alternatively --index=omar sourcetype=firewall*| stats dc(dest_port) as num_dest_port, dc(dest_ip) as num_dest_ip by src_ip
+| where num_dest_port &gt; 500 OR num_dest_ip &gt; 500</code></pre></div>
+<h4 id="42.-identifying-port-scanning-activity">42. Identifying Port Scanning Activity</h4>
+<p><em>Detect internal port scanning indicative of lateral movement.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">sourcetype='firewall_logs' dest_ip='internal_subnet'| stats dc(dest_port) as pcount by src_ip
+| where pcount &gt; 5</code></pre></div>
+<h4 id="43.-advanced-unusual-dns-query-patterns">43. Advanced Unusual DNS Query Patterns</h4>
+<p><em>Identify abnormal DNS query volumes from a single source compared to its average behavior.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=dns_logs
+| stats count by query, src_ip
+| eventstats avg(count) as avg_query by src_ip
+| where count &gt; 3 * avg_query
+| table src_ip, query, count, avg_query</code></pre></div>
+<hr>
+<h2 id="group-9-dns-network-anomalies">Group 9 – DNS &amp; Network Anomalies</h2>
+<p>These detections reveal anomalous DNS behavior and network traffic issues.</p>
+<h4 id="44.-rogue-dns-detection">44. Rogue DNS Detection</h4>
+<p><em>Detect DNS requests that bypass the designated DNS server, which may be used for malicious activity.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=cp_log src_ip != 192.168.14.10 dest_ip != 192.168.14.10 protocol=53 action != Drop
+| where dest_ip=&quot;192.168.0.0/16&quot; AND src_ip=&quot;192.168.0.0/16&quot;| stats count, values(dest_ip) by src_ip</code></pre></div>
+<h4 id="45.-dns-exfiltration-detection">45. DNS Exfiltration Detection</h4>
+<p><em>Identifies a high volume of DNS queries that could indicate data exfiltration over DNS channels.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=stream:dns
+| stats count by query, src
+| where count &gt; 50| table query, src, count</code></pre></div>
+<h4 id="46.-malware-command-and-control-c2-traffic-detection">46. Malware Command and Control (C2) Traffic Detection</h4>
+<p><em>Identify network traffic that matches known C2 signatures or patterns indicative of C2 communications.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=network_traffic dest_port IN (80,443,53)
+| search (dest_ip=&quot;known_bad_ip&quot; OR signature=&quot;C2&quot;)
+| stats count by src_ip, dest_ip, dest_port
+| table src_ip, dest_ip, dest_port, count</code></pre></div>
+<h4 id="47.-suspicious-smb-traffic-indicating-lateral-movement">47. Suspicious SMB Traffic Indicating Lateral Movement</h4>
+<p><em>Detect abnormal SMB traffic that may indicate lateral movement within the network.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=network_traffic protocol=smb
+| stats count by src_ip, dest_ip
+| where count &gt; 10| table src_ip, dest_ip, count</code></pre></div>
+<h4 id="48.-monitoring-for-rogue-dhcp-servers">48. Monitoring for Rogue DHCP Servers</h4>
+<p><em>Detect unauthorized DHCP servers that could be used for MITM attacks.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=network_traffic protocol=dhcp
+| stats count by src_ip
+| where count &gt; 1| table src_ip, count</code></pre></div>
+<h4 id="49.-anomalous-network-port-utilization">49. Anomalous Network Port Utilization</h4>
+<p><em>Identify usage of non‑standard network ports that could indicate covert communications or scanning activities.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=network_traffic
+| stats count by dest_port, host
+| where dest_port NOT IN (80, 443, 53, 25)
+| sort -count
+| table host, dest_port, count</code></pre></div>
+<h4 id="50.-abnormal-network-traffic-volume">50. Abnormal Network Traffic Volume</h4>
+<p><em>Detect hosts generating an unusually high volume of network traffic, which could indicate exfiltration or compromise.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=network_traffic
+| stats sum(bytes) as total_bytes by host
+| where total_bytes &gt; 1000000000| table host, total_bytes</code></pre></div>
+<h4 id="51.-botnet-command-traffic-detection">51. Botnet Command Traffic Detection</h4>
+<p><em>Identify network traffic that may correspond with botnet command and control (C2) activity.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=network_traffic
+| search signature=&quot;botnet&quot; OR CommandLine=&quot;*beacon*&quot;| stats count by src_ip, dest_ip, signature
+| table src_ip, dest_ip, signature, count</code></pre></div>
+<h4 id="52.-suspicious-beaconing-behavior">52. Suspicious Beaconing Behavior</h4>
+<p><em>Detect hosts communicating with external IPs at regular intervals, a common sign of malware beaconing.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=network_traffic
+| bin _time span=5m| stats count by src_ip, dest_ip, _time
+| eventstats avg(count) as avg_count by src_ip, dest_ip
+| where count &gt; 3 * avg_count
+| table src_ip, dest_ip, count</code></pre></div>
+<h4 id="53.-anomalous-network-latency-events">53. Anomalous Network Latency Events</h4>
+<p><em>Identify hosts experiencing unusually high network latency that could signal DDoS attacks or network issues.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=network_latency
+| timechart avg(latency) as avg_latency by host
+| where avg_latency &gt; 500| table host, avg_latency</code></pre></div>
+<h4 id="54.-smb-data-staging-detection">54. SMB Data Staging Detection</h4>
+<p><em>Identifies large SMB data transfers which may indicate data staging prior to exfiltration.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=stream:smb
+| stats count, sum(bytes_in) as total_bytes_in, sum(bytes_out) as total_bytes_out by src_ip, dest_ip, filename
+| where total_bytes_out &gt; 10000000| table src_ip, dest_ip, filename, total_bytes_out</code></pre></div>
+<hr>
+<h2 id="group-10-web-application-attacks">Group 10 – Web Application Attacks</h2>
+<p>Focus on injection and other web‑related attack vectors.</p>
+<h4 id="55.-code-injection-attacks-in-web-applications">55. Code Injection Attacks in Web Applications</h4>
+<p><em>Search web logs for common injection patterns (e.g. SQL injection or OS command injection) that may lead to code injection.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=web_logs
+| search &quot;UNION SELECT&quot; OR &quot;DROP TABLE&quot; OR &quot;1=1&quot;| stats count by uri, clientip
+| table uri, clientip, count</code></pre></div>
+<h4 id="56.-sql-injection-attempts">56. SQL Injection Attempts</h4>
+<p><em>Detect SQL injection attempts by looking for common injection keywords or patterns in query strings.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=web_logs
+| regex uri=&quot;(?i)(union.*select|select.*from|or\s+1=1)&quot;| stats count by clientip, uri
+| where count &gt; 5| table clientip, uri, count</code></pre></div>
+<h4 id="57.-cross-site-scripting-xss-attack-detection">57. Cross-Site Scripting (XSS) Attack Detection</h4>
+<p><em>Identify potential XSS attack attempts by searching for script tags or encoded script fragments in URLs or queries.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=web_logs
+| regex query=&quot;(?i)(&lt;script&gt;|%3Cscript)&quot;| stats count by clientip, uri
+| table clientip, uri, count</code></pre></div>
+<hr>
+<h2 id="group-11-cloud-ad-remote-management">Group 11 – Cloud, AD, &amp; Remote Management</h2>
+<p>Targets changes in cloud/AD environments and remote tool usage.</p>
+<h4 id="58.-active-directory-change-monitoring">58. Active Directory Change Monitoring</h4>
+<p><em>Track modifications in Active Directory to quickly identify unauthorized changes to user accounts or groups.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=activedirectory
+| stats count by event_type, user, target_object
+| where event_type IN (&quot;Modify&quot;, &quot;Delete&quot;, &quot;Create&quot;)
+| table user, target_object, event_type, count</code></pre></div>
+<h3 id="59.-detection-of-unauthorized-cloud-admin-actions">59. Detection of Unauthorized Cloud Admin Actions</h3>
+<p><em>Identify privileged actions performed in cloud environments that may indicate account compromise or misuse.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=cloud_admin_actions
+| search action IN (&quot;CreateUser&quot;, &quot;AttachPolicy&quot;, &quot;DeleteUser&quot;, &quot;ChangeRole&quot;)
+| stats count by user, action, resource
+| table user, action, resource, count</code></pre></div>
+<h4 id="60.-enumeration-of-active-directory-users-via-ldap">60. Enumeration of Active Directory Users via LDAP</h4>
+<p><em>Detect attackers using LDAP queries to enumerate AD users.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=ldap_logs
+| search operation=&quot;searchRequest&quot;| stats count by user, src_ip
+| where count &gt; 10| table user, src_ip, count</code></pre></div>
+<h4 id="61.-suspicious-use-of-remote-management-tools">61. Suspicious Use of Remote Management Tools</h4>
+<p><em>Detect usage of remote management tools (e.g., psexec, wmic) during off-hours or outside expected parameters.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_eventlog
+| search CommandLine=&quot;*psexec*&quot; OR CommandLine=&quot;*wmic*&quot;| stats count by user, host, 
+ CommandLine
+| table host, user, CommandLine, count</code></pre></div>
+<h4 id="62.-suspicious-cross-system-authentication-activity">62. Suspicious Cross-System Authentication Activity</h4>
+<p><em>Correlate login events across multiple hosts to identify users logging into an unusually high number of systems.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=auth_logs
+| stats dc(host) as distinct_hosts, values(host) as host_list by user
+| where distinct_hosts &gt; 5| table user, distinct_hosts, host_list</code></pre></div>
+<h4 id="63.-monitoring-privileged-account-usage">63. Monitoring Privileged Account Usage</h4>
+<p><em>Monitor authentication and command events associated with privileged accounts for signs of misuse.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=auth_logs user IN (&quot;admin*&quot;, &quot;svc_*&quot;)
+| stats count by user, host, action
+| table user, host, action, count</code></pre></div>
+<h4 id="64.-high-privilege-account-modifications">64. High Privilege Account Modifications</h4>
+<p><em>Detect modifications to privileged groups (e.g., Administrators, Domain Admins) through specific event codes.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar EventCode=4728 OR EventCode=4732 OR EventCode=4756| table _time, user, TargetUser, GroupName</code></pre></div>
+<hr>
+<h2 id="group-12-system-modifications-registry-changes">Group 12 – System Modifications &amp; Registry Changes</h2>
+<p>Monitors changes that could alter system behavior or hide activity.</p>
+<h4 id="65.-disable-uac">65. Disable UAC</h4>
+<p><em>Detect registry modifications via reg.exe that disable User Account Control (UAC).</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">sourcetype=omar ParentImage=&quot;C:\\Windows\\System32\\cmd.exe&quot; | where like(CommandLine, &quot;reg.exe%HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System%REG_DWORD /d 0%&quot;)</code></pre></div>
+<h4 id="66.-windows-registry-changes-monitoring">66. Windows Registry Changes Monitoring</h4>
+<p><em>Track changes in the Windows registry to detect modifications that could alter system behavior or security settings.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_registry
+| stats count by host, user, registry_key
+| where count &gt; 5| table host, user, registry_key, count</code></pre></div>
+<h4 id="67.-monitoring-critical-file-changes">67. Monitoring Critical File Changes</h4>
+<p><em>Keep track of changes to highly sensitive system files to quickly flag unauthorized modifications.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=file_monitor
+| stats count by file, host, user, change_type
+| where file IN (&quot;/etc/passwd&quot;, &quot;/etc/shadow&quot;, &quot;C:\\Windows\\System32\\config\\SAM&quot;)
+| table host, user, file, change_type, count</code></pre></div>
+<h4 id="68.-suspicious-windows-service-modifications">68. Suspicious Windows Service Modifications</h4>
+<p><em>Monitor for unexpected changes to Windows services which could indicate persistence mechanisms or system compromise.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_service_changes
+| stats count by host, service_name, change_type
+| where change_type=&quot;modified&quot; AND count &gt; 2| table host, service_name, change_type,count</code></pre></div>
+<h4 id="69.-unusual-service-installations">69. Unusual Service Installations</h4>
+<p><em>Detect adversaries installing rogue services to maintain persistence.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_eventlog EventCode=7045| stats count by service_name, host,user
+| where count &gt; 1| table host, user, service_name, count</code></pre></div>
+<h4 id="70.-suspicious-windows-user-creation">70. Suspicious Windows User Creation</h4>
+<p><em>Detect new user accounts being created that could indicate persistence mechanisms.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_eventlog EventCode=4720| stats count by user, created_user,host
+| table host, user, created_user, count</code></pre></div>
+<h4 id="71.-bcdedit-failure-recovery-modification">71. BCDEdit Failure Recovery Modification</h4>
+<p><em>Identify modifications to Windows boot configurations that could be used by ransomware to disable recovery options.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| tstats count min(_time) as firstTime, max(_time) as lastTime from datamodel=Endpoint.Processes where Processes.process_name = bcdedit.exe AND Processes.process=&quot;*recoveryenabled*&quot; AND Processes.process=&quot;* no*&quot; by Processes.process_name, Processes.process, Processes.parent_process_name, Processes.dest, Processes.user</code></pre></div>
+<h4 id="72.-detecting-tampering-of-windows-defender-command-prompt">72. Detecting Tampering of Windows Defender Command Prompt</h4>
+<p><em>Identify attempts to manipulate Windows Defender using command-line tools (e.g. sc.exe).</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar EventCode=1 Image=&quot;C:\\Windows\\System32\\sc.exe&quot; | regex CommandLine=&quot;^sc\s*(config|stop|query)\sWinDefend$&quot;</code></pre></div>
+<hr>
+<h2 id="group-13-file-process-monitoring">Group 13 – File &amp; Process Monitoring</h2>
+<p>Tracks process behavior, command lengths, and file changes.</p>
+<h4 id="73.-log-volume-trending">73. Log Volume Trending</h4>
+<p><em>Monitor event volume over time to detect anomalies in logging behavior.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| tstats prestats=t count WHERE index=omar by host _time span=1m| timechart partial=f span=1m count by host limit=0</code></pre></div>
+<h4 id="74.-identifying-slow-web-content">74. Identifying Slow Web Content</h4>
+<p><em>Measure response times of web pages to pinpoint performance issues that affect user experience and SEO.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=ms:iis:auto OR sourcetype=apache:access
+| stats avg(response_time) as art by uri_path
+| eval &quot;Average Response Time&quot; = round(art, 2)
+| sort -&quot;Average Response Time&quot;| table uri_path, &quot;Average Response Time&quot;</code></pre></div>
+<h4 id="75.-finding-large-web-uploads">75. Finding Large Web Uploads</h4>
+<p><em>Spot unusually large file uploads that could indicate data exfiltration attempts.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=websense*| where bytes_out &gt; 35000000| table _time, src_ip, bytes*, uri</code></pre></div>
+<h4 id="76.-batch-file-write-to-system32">76. Batch File Write to System32</h4>
+<p><em>Detect suspicious creation of batch files in the system directory, which is uncommon post‑OS installation.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| tstats count min(_time) as firstTime, max(_time) as lastTime, values(Filesystem.dest) as dest, values(Filesystem.file_name) as file_name, values(Filesystem.user) as user from datamodel=Endpoint.Filesystem by Filesystem.file_path| rex field=file_name &quot;(?&lt;file_extension&gt;\.[^\.]+)$&quot;| search file_path=*system32* AND file_extension=.bat</code></pre></div>
+<h4 id="77.-unusually-long-command-line-strings">77. Unusually Long Command Line Strings</h4>
+<p><em>Find commands with abnormally long command line strings that may be malicious.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=&quot;xmlwineventlog&quot; EventCode=4688| eval cmd_len = len(CommandLine)
+| eventstats avg(cmd_len) as avg by host
+| stats max(cmd_len) as maxlen, values(avg) as avgperhost by host, CommandLine
+| where maxlen &gt; 10 * avgperhost</code></pre></div>
+<h4 id="78.-file-execution-monitoring">78. File Execution Monitoring</h4>
+<p><em>Tracks executed processes on Windows machines to detect suspicious process executions.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar EventCode=4688| stats count by user, New_Process_Name
+| sort -count
+| table user, New_Process_Name, count</code></pre></div>
+<h4 id="79.-abnormal-process-execution-duration">79. Abnormal Process Execution Duration</h4>
+<p><em>Detect processes that run significantly longer than their average duration, which may indicate a hang or malicious activity.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=process_duration
+| eval duration = end_time - start_time
+| stats avg(duration) as avg_duration, max(duration) as max_duration by process_name, host
+| where max_duration &gt; 2 * avg_duration
+| table host, process_name, avg_duration, max_duration</code></pre></div>
+<h4 id="80.-suspicious-file-integrity-changes">80. Suspicious File Integrity Changes</h4>
+<p><em>Monitor critical files for frequent or unusual modifications that may signal tampering.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=file_integrity
+| stats count by file, host, change_type
+| where change_type=&quot;modified&quot; AND count &gt; 5| table host, file, change_type, count</code></pre></div>
+<h4 id="81.-database-query-anomalies">81. Database Query Anomalies</h4>
+<p><em>Identify abnormal query volumes or unusual queries in database logs that could indicate exploitation attempts.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=db_logs
+| stats count by query, user, host
+| where count &gt; 100| sort -count
+| table host, user, query, count</code></pre></div>
+<hr>
+<h2 id="group-14-system-performance-resource-monitoring">Group 14 – System Performance &amp; Resource Monitoring</h2>
+<p>Monitors key system metrics that could indicate compromise or resource abuse.</p>
+<h4 id="82.-measuring-storage-io-latency">82. Measuring Storage I/O Latency</h4>
+<p><em>Identify I/O bottlenecks by tracking average latency per host.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=iostat
+| timechart avg(latency) by host</code></pre></div>
+<h4 id="83.-measuring-storage-speed-io-utilization-by-host">83. Measuring Storage Speed I/O Utilization by Host</h4>
+<p><em>Track disk I/O operations to spot potential storage performance issues.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=iostat
+| eval hostdevice = host . &quot;:&quot; . Device| timechart avg(total_ops) by hostdevice</code></pre></div>
+<h4 id="84.-measuring-memory-utilization-by-host">84. Measuring Memory Utilization by Host</h4>
+<p><em>Monitor memory usage and flag hosts exceeding a critical threshold (e.g., 80%).</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=vmstat
+| stats max(memUsedPct) as memused by host
+| where memused &gt; 80</code></pre></div>
+<h4 id="85.-abnormal-cpu-usage">85. Abnormal CPU Usage</h4>
+<p><em>Spot hosts with sustained high CPU usage which may indicate resource abuse or compromise.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=perfmon:cpu
+| timechart avg(cpu_usage) as avg_cpu by host
+| where avg_cpu &gt; 90| table host, avg_cpu</code></pre></div>
+<h4 id="86.-monitoring-for-anomalous-cpu-spikes">86. Monitoring for Anomalous CPU Spikes</h4>
+<p><em>Spot abrupt CPU usage spikes on hosts that could indicate malicious processes or DDoS activity.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=perfmon:cpu
+| timechart avg(cpu_usage) as avg_cpu by host
+| where avg_cpu &gt; 95| table host, avg_cpu</code></pre></div>
+<hr>
+<h2 id="group-15-user-email-anomalies">Group 15 – User &amp; Email Anomalies</h2>
+<p>Focus on irregular user behaviors and email activities.</p>
+<h4 id="87.-unusual-access-patterns">87. Unusual Access Patterns</h4>
+<p><em>Spot multiple failed login attempts even when a successful login occurs, indicating possible credential abuse.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">| from datamodel:&quot;Authentication&quot;.&quot;Authentication&quot;| where like(app,&quot;ssh&quot;)
+| stats list(action) as Attempts, count(eval(match(action,&quot;failure&quot;))) as Failed, count(eval(match(action,&quot;success&quot;))) as Success by user, src, dest, app
+| where mvcount(Attempts) &gt;= 6 AND Success &gt; 0 AND Failed &gt;= 5</code></pre></div>
+<h4 id="88.-identifying-web-users-by-country">88. Identifying Web Users by Country</h4>
+<p><em>Geolocate IP addresses to determine user distribution by country.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=access_combined
+| iplocation clientip
+| geostats dc(clientip) by Country</code></pre></div>
+<h4 id="89.-detecting-unencrypted-web-communications">89. Detecting Unencrypted Web Communications</h4>
+<p><em>Spot unencrypted web traffic that might be leaking sensitive data.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=firewall_data dest_port != 443 app=workday*| table _time, user, app, bytes*, src_ip, dest_ip, dest_port</code></pre></div>
+<h4 id="90.-suspicious-email-activity">90. Suspicious Email Activity</h4>
+<p><em>Detect anomalous email traffic that might be associated with phishing or other malicious campaigns.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=email_logs
+| stats count by sender, recipient, subject
+| where count &gt; 20| sort -count
+| table sender, recipient, subject, count</code></pre></div>
+<h4 id="91.-suspicious-email-attachment-downloads">91. Suspicious Email Attachment Downloads</h4>
+<p><em>Detect the download of potentially dangerous attachments from emails (e.g., executables, compressed archives).</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=email_logs attachment_name=*.exe OR attachment_name=*.zip| stats count by sender, recipient, attachment_name
+| where count &gt; 5| table sender, recipient, attachment_name, count</code></pre></div>
+<h4 id="92.-detecting-abnormal-user-login-times">92. Detecting Abnormal User Login Times</h4>
+<p><em>Identify logins occurring during off-hours that may indicate compromised accounts or unauthorized access.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=auth_logs
+| eval hour=strftime(_time, &quot;%H&quot;)
+| stats count by user, hour
+| where hour &lt; 6 OR hour &gt; 20| table user, hour, count</code></pre></div>
+<h4 id="93.-suspicious-application-login-patterns">93. Suspicious Application Login Patterns</h4>
+<p><em>Detect unusual login patterns to critical applications that could indicate account compromise or abuse.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=app_login
+| stats count by user, application, host
+| where count &gt; 5| table host, user, application, count</code></pre></div>
+<hr>
+<h2 id="group-16-remote-access-vpn">Group 16 – Remote Access &amp; VPN</h2>
+<p>Detect anomalies in remote access and VPN usage.</p>
+<h4 id="94.-unusual-vpn-login-locations">94. Unusual VPN Login Locations</h4>
+<p><em>Detect VPN logins from unexpected geolocations (e.g. outside an organization’s typical country).</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=stream:vpns
+| iplocation src_ip
+| stats count by src_ip, Country
+| where Country!=&quot;YourExpectedCountry&quot;| sort -count
+| table src_ip, Country, count</code></pre></div>
+<h4 id="95.-unusual-remote-desktop-logins">95. Unusual Remote Desktop Logins</h4>
+<p><em>Identify abnormal RDP login attempts by flagging users with excessive or off‑hour connections.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=rdp_logs
+| stats count by user, src_ip
+| where count &gt; 5| sort -count
+| table user, src_ip, count</code></pre></div>
+<h4 id="96.-vpn-account-sharing-detection">96. VPN Account Sharing Detection</h4>
+<p><em>Identify VPN accounts used from multiple source IPs concurrently, which might suggest account sharing or compromise.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=vpns
+| stats dc(src_ip) as unique_ips by user
+| where unique_ips &gt; 3| table user, unique_ips</code></pre></div>
+<hr>
+<h2 id="group-17-cloud-file-transfer-anomalies">Group 17 – Cloud &amp; File Transfer Anomalies</h2>
+<p>Monitors file transfer and cloud storage activities.</p>
+<h4 id="97.-unauthorized-cloud-storage-access">97. Unauthorized Cloud Storage Access</h4>
+<p><em>Identify unusual file uploads/downloads in cloud storage activity that may indicate data exfiltration.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=cloud:activity (action=&quot;file_download&quot; OR action=&quot;file_upload&quot;)
+| stats count by user, app, action
+| where count &gt; 50| sort -count
+| table user, app, action, count</code></pre></div>
+<h4 id="98.-data-exfiltration-over-ftpsftp">98. Data Exfiltration Over FTP/SFTP</h4>
+<p><em>Identify large data transfers over FTP/SFTP that could be indicative of data exfiltration.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar (sourcetype=ftp OR sourcetype=sftp)
+| stats sum(bytes) as total_bytes by user, src_ip, dest_ip
+| where total_bytes &gt; 100000000| table user, src_ip, dest_ip, total_bytes</code></pre></div>
+<h4 id="99.-monitoring-large-external-file-downloads">99. Monitoring Large External File Downloads</h4>
+<p><em>Identify unusually large file downloads from the internet which might signal malicious activity.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=web_downloads
+| stats sum(bytes) as total_bytes by user, url
+| where total_bytes &gt; 50000000| table user, url, total_bytes</code></pre></div>
+<hr>
+<h2 id="group-18-miscellaneous-userprocess-anomalies">Group 18 – Miscellaneous User/Process Anomalies</h2>
+<p>Additional detections for odd user or process behaviors.</p>
+<h4 id="100.-anomalous-user-behavior-analytics">100. Anomalous User Behavior Analytics</h4>
+<p><em>Identify users whose activity deviates significantly from the norm across various activity types.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=user_activity
+| stats count by user, activity_type
+| eventstats avg(count) as avg_count by activity_type
+| where count &gt; 2 * avg_count
+| table user, activity_type, count, avg_count</code></pre></div>
+<h4 id="101.-unauthorized-application-installations">101. Unauthorized Application Installations</h4>
+<p><em>Detect installations of software that may not be sanctioned, which can be an indicator of potential security risks.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=app_installation_logs
+| stats count by user, application, host
+| where count &gt; 1| sort -count
+| table host, user, application, count</code></pre></div>
+<h4 id="102.-monitoring-failed-file-access-attempts">102. Monitoring Failed File Access Attempts</h4>
+<p><em>Detect repeated denied attempts to access critical files, potentially indicating an insider threat or attempted data theft.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=file_access
+| stats count by user, file, host, action
+| where action=&quot;denied&quot; AND count &gt; 5| table host, user, file, count</code></pre></div>
+<h4 id="103.-abnormal-printer-usage">103. Abnormal Printer Usage</h4>
+<p><em>Identify unusual printer activity that may signal misuse or an attempt to access sensitive documents.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=printer_logs
+| stats count by user, printer, host
+| where count &gt; 10| table host, user, printer, count</code></pre></div>
+<h4 id="104.-unusual-process-hierarchies">104. Unusual Process Hierarchies</h4>
+<p><em>Identify abnormal parent–child process relationships that could indicate process injection or masquerading.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=process_logs
+| stats count by parent_process, child_process, host
+| where count &gt; 5| table host, parent_process, child_process, count</code></pre></div>
+<h4 id="105.-application-crash-pattern-monitoring">105. Application Crash Pattern Monitoring</h4>
+<p><em>Detect repetitive crashes of specific applications that might indicate exploitation attempts or malware interference.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=app_crash
+| stats count by application, host
+| where count &gt; 3| table host, application, count</code></pre></div>
+<h4 id="106.-suspicious-usb-device-insertions">106. Suspicious USB Device Insertions</h4>
+<p><em>Monitor events for frequent USB device insertions, which might be used for data theft or malware introduction.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=usb_logs
+| stats count by host, user, device_name
+| where count &gt; 3| table host, user, device_name, count</code></pre></div>
+<hr>
+<h2 id="group-19-additional-system-network-anomalies">Group 19 – Additional System &amp; Network Anomalies</h2>
+<p>Other detections that indicate broader system or network issues.</p>
+<h4 id="107.-anomalous-cloud-infrastructure-behavior">107. Anomalous Cloud Infrastructure Behavior</h4>
+<p><em>Monitor cloud API calls for unexpected errors or unusual endpoints that may signal misuse of cloud services.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=cloud_api_logs
+| stats count by user, api_endpoint, status
+| where status != 200| table user, api_endpoint, status, count</code></pre></div>
+<h4 id="108.-unauthorized-software-execution-detection">108. Unauthorized Software Execution Detection</h4>
+<p><em>Detect execution of programs not on an approved list (using a lookup of allowed software).</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=process_logs
+| search NOT [ | inputlookup approved_software.csv | fields process_name ]
+| stats count by process_name, user, host
+| where count &gt; 5| table host, user, process_name, count</code></pre></div>
+<h4 id="109.-detection-of-unsanctioned-system-reboots">109. Detection of Unsanctioned System Reboots</h4>
+<p><em>Detect system reboots occurring outside of planned maintenance windows, which may indicate instability or tampering.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=syslog (&quot;shutdown&quot; OR &quot;reboot&quot;)
+| eval hour=strftime(_time, &quot;%H&quot;)
+| where hour &lt; 2 OR hour &gt; 4| stats count by host, user
+| table host, user, count</code></pre></div>
+<h4 id="110.-detection-of-unauthorized-remote-code-execution">110. Detection of Unauthorized Remote Code Execution</h4>
+<p><em>Search for command patterns that might lead to remote code execution, such as dangerous shell commands.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=exec_logs
+| search CommandLine=&quot;*rm -rf*&quot; OR CommandLine=&quot;*curl*http*|sh*&quot;| stats count by host, user, CommandLine
+| table host, user, CommandLine, count</code></pre></div>
+<hr>
+<h2 id="group-20-multi-source-correlation">Group 20 – Multi-Source Correlation</h2>
+<p>Cross-correlate disparate data for advanced threat detection.</p>
+<h4 id="111.-multi-source-correlation">111. Multi-Source Correlation</h4>
+<p><em>Correlate data across endpoints, network, and cloud logs to identify multi-stage attacks or advanced persistent threats.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar (
+    [ search index=omar sourcetype=auth_logs &quot;failed login&quot; | fields user ]
+    OR [ search index=omar sourcetype=network_traffic signature=&quot;C2&quot; | fields src_ip ]
+    OR [ search index=omar sourcetype=process_logs &quot;suspicious&quot; | fields process_name ]
+)
+| stats count by user, src_ip, process_name
+| where count &gt; 1| table user, src_ip, process_name, count</code></pre></div>
+<hr>
+<h2 id="group-21-exploit-specific-advanced-detections">Group 21 – Exploit Specific &amp; Advanced Detections</h2>
+<p>Detect specific exploits, advanced persistence, and sophisticated attack methods.</p>
+<h4 id="112.-detection-of-web-shell-activity">112. Detection of Web Shell Activity</h4>
+<p><em>Identify web shells by detecting unusual command execution patterns from web server logs.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=web_logs
+| search uri IN (&quot;cmd.exe&quot;, &quot;powershell.exe&quot;, &quot;bash&quot;, &quot;sh&quot;)
+| stats count by clientip, uri, method
+| where count &gt; 5| table clientip, uri, method, count</code></pre></div>
+<h4 id="113.-exploitation-of-cve-2021-44228-log4shell">113. Exploitation of CVE-2021-44228 (Log4Shell)</h4>
+<p><em>Detect Log4Shell exploitation attempts in web server logs.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=web_logs
+| search uri=&quot;*jndi:ldap*&quot;| stats count by clientip, uri
+| table clientip, uri, count</code></pre></div>
+<h4 id="114.-ntlm-relay-attack-detection">114. NTLM Relay Attack Detection</h4>
+<p><em>Detect NTLM relay attacks by identifying authentication attempts to unusual systems.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_eventlog EventCode=4624 LogonType=3| stats count by user, src_ip, dest_ip
+| where count &gt; 5| table user, src_ip, dest_ip, count</code></pre></div>
+<h4 id="115.-abuse-of-windows-defender-exclusions">115. Abuse of Windows Defender Exclusions</h4>
+<p><em>Detect attackers modifying Windows Defender exclusions to disable AV protection.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_eventlog EventCode=4703| search CommandLine=&quot;*MpPreference* -ExclusionPath*&quot;| stats count by user, host, CommandLine
+| table user, host, CommandLine, count</code></pre></div>
+<h4 id="116.-exploitation-of-windows-print-spooler-vulnerability-printnightmare">116. Exploitation of Windows Print Spooler Vulnerability (PrintNightmare)</h4>
+<p><em>Identify suspicious attempts to exploit the Windows Print Spooler service.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=win_eventlog EventCode=5145 ObjectName=&quot;*spoolsv.exe*&quot;| stats count by user, src_ip
+| table user, src_ip, count</code></pre></div>
+<h4 id="117.-potential-ransomware-activity-mass-file-encryption">117. Potential Ransomware Activity (Mass File Encryption)</h4>
+<p><em>Detect mass file encryption that may indicate ransomware execution.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=file_activity
+| stats count by file_extension, user, host
+| where count &gt; 100| table host, user, file_extension, count</code></pre></div>
+<hr>
+<h2 id="group-22-remaining-detections">Group 22 – Remaining Detections</h2>
+<p>A few additional detections that round out the portfolio.</p>
+<h4 id="118.-detecting-shadow-copy-deletion-via-vssadmin.exe">118. Detecting Shadow Copy Deletion via Vssadmin.exe</h4>
+<p><em>Identify deletion of shadow copies—a tactic often used before ransomware encryption.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar EventType=4688 CommandLine:&quot;delete&quot; OriginalFileName:&quot;VSSADMIN.EXE&quot;</code></pre></div>
+<h4 id="119.-webshell-indicative-process-tree">119. Webshell-Indicative Process Tree</h4>
+<p><em>Detect process trees that may indicate webshell activity on a compromised web server.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar (ParentImage=&quot;C:\\Windows\\System32\\services.exe&quot; AND Image=&quot;C:\\Windows\\System32\\cmd.exe&quot; AND (CommandLine=&quot;*echo*&quot; AND CommandLine=&quot;*\\pipe\\*&quot;))
+OR (Image=&quot;C:\\Windows\\System32\\rundll32.exe&quot; AND CommandLine=&quot;*,a /p:*&quot;)</code></pre></div>
+<h4 id="120.-http-traffic-analysis-for-active-host-identification">120. HTTP Traffic Analysis for Active Host Identification</h4>
+<p><em>Identifies active hosts by tracking HTTP traffic between source and destination IPs while summing data transfer volumes.</em></p>
+<div class="code-shell"><div class="code-bar"><span>jsx</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-jsx">index=omar sourcetype=stream:http
+| stats count, dc(uri_path) as distinct_paths, sum(bytes_in) as total_bytes_in, sum(bytes_out) as total_bytes_out by src_ip, dest_ip
+| eval total_bytes = total_bytes_in + total_bytes_out
+| sort -count
+| table src_ip, dest_ip, count, distinct_paths, total_bytes_in, total_bytes_out, total_bytes</code></pre></div>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#100-splunk-use-cases">+100 Splunk Use Cases</a><a href="#group-1-authentication-anomalies">Group 1 – Authentication Anomalies</a><a href="#1.-detecting-brute-force-attacks">1. Detecting Brute Force Attacks</a><a href="#2.-alternate-brute-force-attack-detection">2. Alternate Brute Force Attack Detection</a><a href="#3.-detection-of-brute-force-attacks-on-web-applications">3. Detection of Brute Force Attacks on Web Applications</a><a href="#4.-failed-admin-login-attempts">4. Failed Admin Login Attempts</a><a href="#5.-unusual-account-lockouts">5. Unusual Account Lockouts</a><a href="#6.-suspicious-logon-pattern-detection">6. Suspicious Logon Pattern Detection</a><a href="#7.-detecting-interactive-logins-from-service-accounts">7. Detecting Interactive Logins from Service Accounts</a><a href="#group-2-privilege-escalation-credential-dumping">Group 2 – Privilege Escalation &amp; Credential Dumping</a><a href="#8.-get-system-elevation">8. Get System Elevation</a><a href="#9.-create-remote-thread-into-lsass">9. Create Remote Thread into LSASS</a><a href="#10.-abuse-of-lsass-dumping-via-procdump">10. Abuse of LSASS Dumping via ProcDump</a><a href="#11.-privilege-escalation-via-sudo-on-linux">11. Privilege Escalation via Sudo on Linux</a><a href="#12.-kerberoasting-attack-detection">12. Kerberoasting Attack Detection</a><a href="#group-3-suspicious-powershell-command-execution">Group 3 – Suspicious PowerShell &amp; Command Execution</a><a href="#13.-suspicious-powershell-commands">13. Suspicious PowerShell Commands</a><a href="#14.-suspicious-powershell-commands-mimikatz-detection">14. Suspicious PowerShell Commands – Mimikatz Detection</a><a href="#15.-powershell-execution-of-base64-encoded-commands">15. PowerShell Execution of Base64 Encoded Commands</a><a href="#16.-abnormal-powershell-script-execution">16. Abnormal PowerShell Script Execution</a><a href="#17.-suspicious-use-of-certutil-for-file-download">17. Suspicious Use of Certutil for File Download</a><a href="#18.-search-for-malicious-binaries-using-amsi.dll">18. Search for Malicious Binaries using AMSI.dll</a><a href="#group-4-log-tampering-audit-logs">Group 4 – Log Tampering &amp; Audit Logs</a><a href="#19.-windows-audit-log-tampering">19. Windows Audit Log Tampering</a><a href="#20.-clearing-windows-logs-with-wevtutil">20. Clearing Windows Logs with Wevtutil</a><a href="#group-5-malware-detection">Group 5 – Malware Detection</a><a href="#21.-detecting-recurring-malware-on-host">21. Detecting Recurring Malware on Host</a><a href="#22.-malware-attack-detection">22. Malware Attack Detection</a><a href="#23.-basic-tor-traffic-detection">23. Basic TOR Traffic Detection</a><a href="#group-6-process-anomalies-injection">Group 6 – Process Anomalies &amp; Injection</a><a href="#24.-unusual-child-process-spawned-using-dde-exploit">24. Unusual Child Process spawned using DDE Exploit</a><a href="#25.-unusual-child-process-for-spoolsv.exe-or-connhost.exe">25. Unusual Child Process for Spoolsv.Exe or Connhost.Exe</a><a href="#26.-detecting-process-injection">26. Detecting Process Injection</a><a href="#27.-common-windows-process-masquerading">27. Common Windows Process Masquerading</a><a href="#group-7-lateral-movement-persistence">Group 7 – Lateral Movement &amp; Persistence</a><a href="#28.-create-local-admin-accounts-using-net.exe">28. Create Local Admin Accounts using net.exe</a><a href="#29.-finding-new-local-admin-accounts">29. Finding New Local Admin Accounts</a><a href="#30.-boot-or-logon-initialization-scripts">30. Boot or Logon Initialization Scripts</a><a href="#31.-bits-job-persistence">31. BITS Job Persistence</a><a href="#32.-bitsadmin-download-file">32. BITSAdmin Download File</a></details>
+    </div>
+    
+    <footer class="pager"><a href="todo.html">← TODO</a><a href="windows-event-ids.html">Windows Event IDs →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

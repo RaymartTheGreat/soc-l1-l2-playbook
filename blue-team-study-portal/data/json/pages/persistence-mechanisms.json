@@ -1,0 +1,105 @@
+{
+  "id": "linux artifacts & forensic evidence collection/persistence mechanisms",
+  "title": "Persistence Mechanisms",
+  "slug": "persistence-mechanisms",
+  "relPath": "Linux Artifacts & Forensic Evidence Collection/Persistence Mechanisms.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Linux",
+    "DFIR",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": "linux artifacts & forensic evidence collection",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "linux artifacts & forensic evidence collection"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "linux artifacts & forensic evidence collection",
+      "title": "Linux Artifacts & Forensic Evidence Collection",
+      "slug": "linux-artifacts-forensic-evidence-collection"
+    },
+    {
+      "id": "linux artifacts & forensic evidence collection/persistence mechanisms",
+      "title": "Persistence Mechanisms",
+      "slug": "persistence-mechanisms"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Persistence Mechanisms"
+    },
+    {
+      "level": 2,
+      "text": "Cron Jobs"
+    },
+    {
+      "level": 3,
+      "text": "/etc/crontab"
+    },
+    {
+      "level": 2,
+      "text": "Service Initialization Scripts"
+    },
+    {
+      "level": 3,
+      "text": "/etc/init.d/"
+    },
+    {
+      "level": 2,
+      "text": ".bashrc as Persistence"
+    },
+    {
+      "level": 3,
+      "text": "/.bashrc"
+    }
+  ],
+  "overview": "Cron jobs are scheduled tasks that execute commands at predefined times. The /etc/crontab file manages system-wide cron jobs and can be abused to maintain persistence.",
+  "study": {
+    "overview": "Cron jobs are scheduled tasks that execute commands at predefined times. The /etc/crontab file manages system-wide cron jobs and can be abused to maintain persistence.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Persistence Mechanisms",
+      "Cron Jobs",
+      "/etc/crontab",
+      "Service Initialization Scripts",
+      "/etc/init.d/",
+      ".bashrc as Persistence",
+      "/.bashrc"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "25 6 * * * root /path/to/script.sh"
+      },
+      {
+        "language": "bash",
+        "code": "cat /etc/crontab"
+      },
+      {
+        "language": "bash",
+        "code": "ls /etc/init.d/"
+      },
+      {
+        "language": "bash",
+        "code": "cat ~/.bashrc"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

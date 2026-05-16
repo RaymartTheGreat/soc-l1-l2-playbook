@@ -1,0 +1,205 @@
+{
+  "id": "forensics labs/investigating windows (thm)",
+  "title": "Investigating Windows (THM)",
+  "slug": "investigating-windows-thm",
+  "relPath": "Forensics Labs/Investigating Windows (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Web",
+    "DFIR",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "forensics labs",
+      "title": "Forensics Labs",
+      "slug": "forensics-labs"
+    },
+    {
+      "id": "forensics labs/investigating windows (thm)",
+      "title": "Investigating Windows (THM)",
+      "slug": "investigating-windows-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Investigating Windows (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Whats the version and year of the windows machine?"
+    },
+    {
+      "level": 3,
+      "text": "Windows Server 2016"
+    },
+    {
+      "level": 3,
+      "text": "2- Which user logged in last?"
+    },
+    {
+      "level": 3,
+      "text": "Administrator"
+    },
+    {
+      "level": 3,
+      "text": "3- When did John log onto the system last?"
+    },
+    {
+      "level": 3,
+      "text": "03/02/2019 5:48:32 PM"
+    },
+    {
+      "level": 3,
+      "text": "4- What IP does the system connect to when it first starts?"
+    },
+    {
+      "level": 3,
+      "text": "10.34.2.3"
+    },
+    {
+      "level": 3,
+      "text": "5- What two accounts had administrative privileges (other than the Administrator user)?"
+    },
+    {
+      "level": 3,
+      "text": "Guest, Jenny"
+    },
+    {
+      "level": 3,
+      "text": "6- Whats the name of the scheduled task that is malicous."
+    },
+    {
+      "level": 3,
+      "text": "Clean file system"
+    },
+    {
+      "level": 3,
+      "text": "7- What file was the task trying to run daily?"
+    },
+    {
+      "level": 3,
+      "text": "nc.ps1"
+    },
+    {
+      "level": 3,
+      "text": "8- What port did this file listen locally for?"
+    },
+    {
+      "level": 3,
+      "text": "1348"
+    },
+    {
+      "level": 3,
+      "text": "9- When did Jenny last logon?"
+    },
+    {
+      "level": 3,
+      "text": "Never"
+    },
+    {
+      "level": 3,
+      "text": "10- At what date did the compromise take place?"
+    },
+    {
+      "level": 3,
+      "text": "03/02/2019"
+    },
+    {
+      "level": 3,
+      "text": "11- During the compromise, at what time did Windows first assign special privileges to a new logon?"
+    },
+    {
+      "level": 3,
+      "text": "03/02/2019 4:04:49 PM"
+    },
+    {
+      "level": 3,
+      "text": "12- What tool was used to get Windows passwords?"
+    },
+    {
+      "level": 3,
+      "text": "Mimikatz"
+    },
+    {
+      "level": 3,
+      "text": "13- What was the attackers external control and command servers IP?"
+    },
+    {
+      "level": 3,
+      "text": "76.32.97.132"
+    },
+    {
+      "level": 3,
+      "text": "14- What was the extension name of the shell uploaded via the servers website?"
+    },
+    {
+      "level": 3,
+      "text": ".jsp"
+    },
+    {
+      "level": 3,
+      "text": "15- What was the last port the attacker opened?"
+    },
+    {
+      "level": 3,
+      "text": "1337"
+    },
+    {
+      "level": 3,
+      "text": "16- Check for DNS poisoning, what site was targeted?"
+    },
+    {
+      "level": 3,
+      "text": "google.com"
+    }
+  ],
+  "overview": "A windows machine has been hacked, its your job to go investigate this windows machine and find clues to what the hacker might have done.",
+  "study": {
+    "overview": "A windows machine has been hacked, its your job to go investigate this windows machine and find clues to what the hacker might have done.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Investigating Windows (THM)",
+      "Scenario",
+      "1- Whats the version and year of the windows machine?",
+      "Windows Server 2016",
+      "2- Which user logged in last?",
+      "Administrator",
+      "3- When did John log onto the system last?",
+      "03/02/2019 5:48:32 PM",
+      "4- What IP does the system connect to when it first starts?",
+      "10.34.2.3",
+      "5- What two accounts had administrative privileges (other than the Administrator user)?",
+      "Guest, Jenny"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

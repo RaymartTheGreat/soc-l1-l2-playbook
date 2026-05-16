@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Splunk | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link active" href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Splunk</span></div>
+      <h1>Splunk</h1>
+      <p>Splunk is one of the leading SIEM solutions in the market that provides the ability to collect, analyze and correlate the network and machine logs</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">Splunk</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">Sysmon</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Detection</span><span class="tag">C2</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Splunk</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="splunk.html"><span>Splunk</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Splunk is one of the leading SIEM solutions in the market that provides the ability to collect, analyze and correlate the network and machine logs</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Splunk</li><li>Simple flow:</li><li>Core components</li><li>Splunk Forwarder</li><li>Indexer</li><li>Search Head</li><li>Home UI</li><li>Creating dashboards</li><li>workflow</li><li>Panel best practices</li><li>Suggested SOC dashboard panels</li><li>Creating alerts</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=Omar sourcetype=WinEventLog:Security EventCode=4625 earliest=-5m
+| stats count by Account_Name, src_ip
+| where count &gt; 5</code></pre></div><div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code>index=firewall OR index=Omar
+| bin _time span=1m
+| stats dc(dest_port) as ports by src_ip, _time
+| where ports &gt; 20</code></pre></div></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>Splunk</li><li>SIEM</li><li>Sysmon</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>pick an accurate sourcetype early / it prevents parsing issues later.</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="splunk">Splunk</h2>
+<p><strong>Splunk</strong> is one of the leading SIEM solutions in the market that provides the ability to collect, analyze and correlate the network and machine logs</p>
+<p>Splunk ingests machine data (logs, events, metrics), parses and indexes it, and makes it searchable so analysts can monitor, detect, investigate, and report incidents.</p>
+<p><button class="image-button" data-src="../assets/images/splunk-image-fc60978a.png" data-alt="image.png"><img src="../assets/images/splunk-image-fc60978a.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="simple-flow"><strong>Simple flow:</strong></h4>
+<p><strong>Forwarder (agent) → Indexer (parse &amp; store) → Search Head (run SPL, build dashboards/alerts) → Outputs/Actions (email, webhook, ticket).</strong></p>
+<p><button class="image-button" data-src="../assets/images/splunk-image-1-a1ad981c.png" data-alt="image.png"><img src="../assets/images/splunk-image-1-a1ad981c.png" alt="image.png" loading="lazy"></button></p>
+<hr>
+<h2 id="core-components">Core components</h2>
+<h4 id="splunk-forwarder">Splunk Forwarder</h4>
+<p><button class="image-button" data-src="../assets/images/splunk-image-2-449fecba.png" data-alt="image.png"><img src="../assets/images/splunk-image-2-449fecba.png" alt="image.png" loading="lazy"></button></p>
+<p>A lightweight agent installed on endpoints to collect and forward data to Splunk. It’s low overhead and recommended for production ingestion.</p>
+<p>Common sources:</p>
+<ul>
+<li>Web servers (HTTP logs)</li>
+<li>Windows machines (Event Logs, PowerShell, Sysmon)</li>
+<li>Linux hosts (syslog, application logs)</li>
+<li>Databases (connection logs, errors)</li>
+</ul>
+<hr>
+<h4 id="indexer">Indexer</h4>
+<p>Parses incoming data (timestamps, line breaking), normalizes into field-value pairs, and stores events in indexes (hot → warm → cold → frozen). Indexers also answer search requests.</p>
+<hr>
+<h4 id="search-head">Search Head</h4>
+<p>The UI and search orchestration layer where analysts run SPL, save searches/reports, create dashboards and alerts. In distributed setups the SH distributes searches to indexers (or uses an SHC).</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/0f7738f88ca807d1edf2ac7d84f6951c.png">External image reference: Image showing Splunk Search Head</a></p>
+<hr>
+<h2 id="home-ui">Home UI</h2>
+<p><button class="image-button" data-src="../assets/images/splunk-image-3-323c3506.png" data-alt="image.png"><img src="../assets/images/splunk-image-3-323c3506.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Apps panel (left)</strong> — installed apps (Search &amp; Reporting is default). Apps scope saved objects (dashboards, reports, lookups).</li>
+</ul>
+<p>[PHOTO: Apps panel placeholder]</p>
+<ul>
+<li><strong>Splunk Bar (top)</strong> — global navigation: Messages, Settings, Activity (jobs), Help, Find, Apps switcher.</li>
+</ul>
+<p>[PHOTO: Splunk Bar placeholder]</p>
+<ul>
+<li><strong>Explore / Add Data</strong> — quick links for onboarding data, installing apps, reading docs.</li>
+</ul>
+<p>[PHOTO: Explore Splunk placeholder]</p>
+<ul>
+<li><strong>Home Dashboard</strong> — optional default dashboard shown on login (useful SOC “single-pane” overview).</li>
+</ul>
+<p><a class="external-asset" href="https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/53ffff45072bc2577442f1621d2602cec1d6ac13fe47d006f40ecd3afa5c7623bc11baef5665cc4f724572d3e85f.png">External image reference: https://d2y9h8w1ydnujs.cloudfront.net/uploads/content/images/53ffff45072bc2577442f1621d2602cec1d6ac13fe47d006f40ecd3afa5c7623bc11baef5665cc4f724572d3e85f.png</a></p>
+<hr>
+<h2 id="creating-dashboards">Creating dashboards</h2>
+<p><strong>Dashboards = collection of panels (each panel = a saved report or an inline search).</strong></p>
+<h4 id="workflow">workflow</h4>
+<ol>
+<li>Search &amp; Reporting → Dashboards → Create Dashboard.</li>
+<li>Fill Title / ID / Description; set Permissions (Private until tested).</li>
+<li>Open dashboard → Edit → Add Panel → New from Search (paste SPL) or New from Report.</li>
+<li>Choose visualization (line, column, pie, table, single value, map).</li>
+<li>Add inputs (tokens) for interactivity (dropdowns, timepicker).</li>
+<li>Save; optionally set as Home Dashboard.</li>
+</ol>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/61306d87a330ed00419e22e7/room-content/be9345e83d098e24621dc980759e89c0.png">External image reference: A screenshot of the Create New Dashboard option in Splunk</a></p>
+<h4 id="panel-best-practices">Panel best practices</h4>
+<ul>
+<li>One question per panel.</li>
+<li>Precompute expensive queries (joins/transactions) with scheduled searches; store results in summary index or lookup.</li>
+<li>Limit default time range (e.g., 24h) to keep panels snappy.</li>
+<li>Use meaningful titles and descriptions.</li>
+</ul>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/61306d87a330ed00419e22e7/room-content/ae3bf1188ee513d8a5327da9d15d9932.png">External image reference: A screenshot of the Create New Dashboard menu of Splunk with the details filled in</a></p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/61306d87a330ed00419e22e7/room-content/8494ef44f7c6e667640b50cdc3c2e3e7.png">External image reference: A screenshot focusing on the Add Panel option in the Dashboard edit menu in Splunk</a></p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/61306d87a330ed00419e22e7/room-content/0d4636314e99375e15ff798c886fc460.png">External image reference: A screenshot of a splunk dashboard with the column chart visualization applied</a></p>
+<h4 id="suggested-soc-dashboard-panels">Suggested SOC dashboard panels</h4>
+<ul>
+<li>Total open alerts / incidents (table or KPI)</li>
+<li>Alerts opened vs closed (24h) — efficiency gauge</li>
+<li>Failed login trends (timechart / heatmap)</li>
+<li>Top external destinations per host (table)</li>
+<li>New / rare processes (table)</li>
+<li>Event volume per collector (single value / timechart)</li>
+<li>Attack map (geo visualization for source IPs)</li>
+</ul>
+<hr>
+<h2 id="creating-alerts">Creating alerts</h2>
+<p><strong>Alerts = saved search + schedule (or real-time) + trigger conditions + actions.</strong></p>
+<h4 id="high-level-process">High-level process</h4>
+<ol>
+<li><strong>Search Query</strong> — define what to detect (signatures or behavior).</li>
+<li><strong>Search Timing</strong> — scheduled (recommended) or real-time (resource-heavy).</li>
+<li><strong>Alert Trigger</strong> — threshold, number of results, custom condition. Use time windows.</li>
+<li><strong>Alert Action</strong> — index the alert, add to Triggered Alerts, send email, webhook, run script, or create ticket.</li>
+</ol>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/61306d87a330ed00419e22e7/room-content/9960a9f78306e77c708469cf9f4ff582.png">External image reference: A screenshot of the Save As Alert menu with the details filled in</a></p>
+<h3 id="steps-to-create-an-alert">Steps to create an alert</h3>
+<ol>
+<li>Build and test the search in Search &amp; Reporting.</li>
+<li>Click <strong>Save As → Alert</strong>.</li>
+<li>Fill metadata: Title, Description, Permissions (Private / Shared in App).</li>
+<li>Choose <strong>Alert Type</strong>: Scheduled (every N minutes/hours) or Real-time (use sparingly).</li>
+<li>Set <strong>Trigger Conditions</strong>: number of results or custom condition (<code>where count &gt; X</code>).</li>
+<li>Configure <strong>Trigger Window</strong> (e.g., <code>earliest=-10m latest=now()</code>).</li>
+<li>Configure <strong>Throttle</strong>: e.g., suppress alerts for the same user for 60 minutes.</li>
+<li>Choose <strong>Trigger Actions</strong>: index + webhook/ticketing (recommended SOC flow); email for urgent contacts.</li>
+<li>Save and <strong>test</strong> with historical or synthetic data.</li>
+</ol>
+<h4 id="example-alerts">Example alerts</h4>
+<p><strong>Failed-login threshold</strong>  user &gt;5 failed logins within 5 minutes:</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">index=Omar sourcetype=WinEventLog:Security EventCode=4625 earliest=-5m
+| stats count by Account_Name, src_ip
+| where count &gt; 5</code></pre></div>
+<p>Schedule: every 5 minutes. Throttle: 60 min per <code>Account_Name</code>.</p>
+<p><strong>Port scan detection</strong> many destination ports probed by same IP:</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">index=firewall OR index=Omar
+| bin _time span=1m
+| stats dc(dest_port) as ports by src_ip, _time
+| where ports &gt; 20</code></pre></div>
+<p>Schedule: every 1–5 minutes.</p>
+<hr>
+<h2 id="data-onboarding">Data onboarding</h2>
+<p>When adding data (Upload / Forward / API / Syslog / DB), Splunk processes it in stages:</p>
+<ol>
+<li><strong>Select source</strong> — file, network, API, or host.</li>
+<li><strong>Choose sourcetype</strong> — critical; drives parsing &amp; field extraction.</li>
+<li><strong>Input settings</strong> — select <code>index</code>, define <code>host</code>, set source metadata.</li>
+<li><strong>Review parsing</strong> — confirm timestamp extraction, line breaking, event boundaries.</li>
+<li><strong>Done &amp; monitor</strong> — verify ingestion (check <code>_internal</code>, index volume, <code>index=_internal sourcetype=splunkd</code>).</li>
+</ol>
+<blockquote>pick an accurate <code>sourcetype</code> early /  it prevents parsing issues later.</blockquote>
+<blockquote></blockquote>
+<hr>
+<h2 id="injecting-data">Injecting data</h2>
+<h4 id="universal-forwarder-production-recommended">Universal Forwarder (production / recommended)</h4>
+<p>Ask Ops to install UF and provide:</p>
+<ul>
+<li><code>inputs.conf</code> monitor stanzas or Windows event channels.</li>
+<li>Target <code>index</code> name (e.g., <code>vpn_logs</code>).</li>
+<li>Desired <code>sourcetype</code> (e.g., <code>vpn:openvpn</code>, <code>WinEventLog:Security</code>).</li>
+</ul>
+<p>Example <code>inputs.conf</code>:</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">[monitor:///var/log/openvpn.log]
+disabled = false
+index = vpn_logs
+sourcetype = vpn:openvpn</code></pre></div>
+<p>Example <code>outputs.conf</code> (forwarder → indexers):</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">[tcpout]
+defaultGroup = indexers
+
+[tcpout:indexers]
+server = indexer1.example.com:9997</code></pre></div>
+<h4 id="heavy-forwarder-preprocess-filter-route">Heavy Forwarder (preprocess / filter / route)</h4>
+<p>Use when you must parse, drop, or route events before indexing.</p>
+<p>Example <code>transforms.conf</code> + <code>props.conf</code> to drop heartbeat events:</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python"># transforms.conf
+[drop_heartbeat]
+REGEX = heartbeat
+DEST_KEY = queue
+FORMAT = nullQueue
+
+# props.conf
+[your_sourcetype]
+TRANSFORMS-null = drop_heartbeat</code></pre></div>
+<h4 id="upload-via-splunk-web">Upload via Splunk Web</h4>
+<p>Splunk Home → Add Data → Upload → choose file → set sourcetype &amp; index → Review → Submit. Good for one-off files only.</p>
+<p>[PHOTO: Add Data / Upload placeholder]</p>
+<p><strong>Key ingestion concepts (analyst focus):</strong></p>
+<ul>
+<li><strong>Index</strong> — logical store for events (retention per index).</li>
+<li><strong>Sourcetype</strong> — defines parsing rules; set correctly.</li>
+<li><strong>_time</strong> — event timestamp; always validate during investigations.</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#splunk">Splunk</a><a href="#simple-flow">Simple flow:</a><a href="#core-components">Core components</a><a href="#splunk-forwarder">Splunk Forwarder</a><a href="#indexer">Indexer</a><a href="#search-head">Search Head</a><a href="#home-ui">Home UI</a><a href="#creating-dashboards">Creating dashboards</a><a href="#workflow">workflow</a><a href="#panel-best-practices">Panel best practices</a><a href="#suggested-soc-dashboard-panels">Suggested SOC dashboard panels</a><a href="#creating-alerts">Creating alerts</a><a href="#high-level-process">High-level process</a><a href="#steps-to-create-an-alert">Steps to create an alert</a><a href="#example-alerts">Example alerts</a><a href="#data-onboarding">Data onboarding</a><a href="#injecting-data">Injecting data</a><a href="#universal-forwarder-production-recommended">Universal Forwarder (production / recommended)</a><a href="#heavy-forwarder-preprocess-filter-route">Heavy Forwarder (preprocess / filter / route)</a><a href="#upload-via-splunk-web">Upload via Splunk Web</a></details>
+    </div>
+    
+    <footer class="pager"><a href="siem.html">← SIEM</a><a href="splunk-filters.html">Splunk Filters →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

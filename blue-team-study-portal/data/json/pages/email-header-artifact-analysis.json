@@ -1,0 +1,176 @@
+{
+  "id": "phishing analysis/email header & artifact analysis",
+  "title": "Email Header & Artifact Analysis",
+  "slug": "email-header-artifact-analysis",
+  "relPath": "Phishing analysis/Email Header & Artifact Analysis.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-initial-triage",
+  "curriculumSectionTitle": "Initial Triage & Analysis",
+  "tags": [
+    "Phishing"
+  ],
+  "mitre": [],
+  "parentId": "phishing analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "phishing analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "phishing analysis",
+      "title": "Phishing analysis",
+      "slug": "phishing-analysis"
+    },
+    {
+      "id": "phishing analysis/email header & artifact analysis",
+      "title": "Email Header & Artifact Analysis",
+      "slug": "email-header-artifact-analysis"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Email Header & Artifact Analysis"
+    },
+    {
+      "level": 2,
+      "text": "1- Received Chain (Server Hops)"
+    },
+    {
+      "level": 2,
+      "text": "2- Sender Identity Headers"
+    },
+    {
+      "level": 3,
+      "text": "From"
+    },
+    {
+      "level": 3,
+      "text": "Reply-To"
+    },
+    {
+      "level": 3,
+      "text": "Return-Path"
+    },
+    {
+      "level": 2,
+      "text": "3- Recipient Context"
+    },
+    {
+      "level": 3,
+      "text": "To / Cc"
+    },
+    {
+      "level": 3,
+      "text": "BCC (Not visible in headers)"
+    },
+    {
+      "level": 2,
+      "text": "4- Message Fingerprints"
+    },
+    {
+      "level": 3,
+      "text": "Message-ID"
+    },
+    {
+      "level": 3,
+      "text": "Date"
+    },
+    {
+      "level": 3,
+      "text": "Thread-Index"
+    },
+    {
+      "level": 2,
+      "text": "5- Authentication Results"
+    },
+    {
+      "level": 3,
+      "text": "Authentication-Results"
+    },
+    {
+      "level": 3,
+      "text": "DKIM-Signature"
+    },
+    {
+      "level": 3,
+      "text": "Received-SPF"
+    },
+    {
+      "level": 2,
+      "text": "6- Infrastructure & Origin"
+    },
+    {
+      "level": 3,
+      "text": "X-Originating-IP"
+    },
+    {
+      "level": 3,
+      "text": "X-Mailer"
+    },
+    {
+      "level": 3,
+      "text": "X-Received"
+    },
+    {
+      "level": 2,
+      "text": "7- Content Insights"
+    },
+    {
+      "level": 3,
+      "text": "Content-Type"
+    },
+    {
+      "level": 3,
+      "text": "Risk Flags:"
+    },
+    {
+      "level": 2,
+      "text": "8- Spam & Filtering Metadata"
+    },
+    {
+      "level": 3,
+      "text": "X-Spam-Status / X-Spam-Score"
+    },
+    {
+      "level": 2,
+      "text": "Investigation Checklist"
+    }
+  ],
+  "overview": "Understanding email headers and related metadata is crucial for analyzing phishing, spoofing, and malware delivery. Below is a streamlined reference for analysts and responders.",
+  "study": {
+    "overview": "Understanding email headers and related metadata is crucial for analyzing phishing, spoofing, and malware delivery. Below is a streamlined reference for analysts and responders.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Email Header & Artifact Analysis",
+      "1- Received Chain (Server Hops)",
+      "2- Sender Identity Headers",
+      "From",
+      "Reply-To",
+      "Return-Path",
+      "3- Recipient Context",
+      "To / Cc",
+      "BCC (Not visible in headers)",
+      "4- Message Fingerprints",
+      "Message-ID",
+      "Date"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "Received: from attacker-mail[.]net (123.45.67.89) by mail.gateway.com"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": "detecting ad attacks/llmnr nbt-ns poisoning",
+  "title": "LLMNR NBT-NS Poisoning",
+  "slug": "llmnr-nbt-ns-poisoning",
+  "relPath": "Detecting AD Attacks/LLMNR NBT-NS Poisoning.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network",
+    "DFIR",
+    "Detection",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "T1557.001",
+    "T1557"
+  ],
+  "parentId": "detecting ad attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting ad attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting ad attacks",
+      "title": "Detecting AD Attacks",
+      "slug": "detecting-ad-attacks"
+    },
+    {
+      "id": "detecting ad attacks/llmnr nbt-ns poisoning",
+      "title": "LLMNR NBT-NS Poisoning",
+      "slug": "llmnr-nbt-ns-poisoning"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "LLMNR / NBT-NS Poisoning"
+    },
+    {
+      "level": 2,
+      "text": "1- Quick facts"
+    },
+    {
+      "level": 2,
+      "text": "2- How the attack flows"
+    },
+    {
+      "level": 2,
+      "text": "3- What you see in network captures (Wireshark / PCAP)"
+    },
+    {
+      "level": 2,
+      "text": "4- Detection & hunting"
+    },
+    {
+      "level": 2,
+      "text": "5- Impact"
+    },
+    {
+      "level": 2,
+      "text": "6- Mitigation & hardening"
+    },
+    {
+      "level": 2,
+      "text": "7- Summary"
+    }
+  ],
+  "overview": "LLMNR (Link-Local Multicast Name Resolution) and NBT-NS (NetBIOS Name Service) are fallback name-resolution protocols used by Windows when DNS fails. Poisoning those requests means an attacker answers the broadcasted name lookup, impersonates the requested host, and causes the victim to attempt authentication—leaking NTLM/Negotiate authentication data (chall",
+  "study": {
+    "overview": "LLMNR (Link-Local Multicast Name Resolution) and NBT-NS (NetBIOS Name Service) are fallback name-resolution protocols used by Windows when DNS fails. Poisoning those requests means an attacker answers the broadcasted name lookup, impersonates the requested host, and causes the victim to attempt authentication—leaking NTLM/Negotiate authentication data (chall",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "LLMNR / NBT-NS Poisoning",
+      "1- Quick facts",
+      "2- How the attack flows",
+      "3- What you see in network captures (Wireshark / PCAP)",
+      "4- Detection & hunting",
+      "5- Impact",
+      "6- Mitigation & hardening",
+      "7- Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

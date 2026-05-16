@@ -1,0 +1,133 @@
+{
+  "id": "memory forensics labs/redline (cyberdefenders)",
+  "title": "RedLine (CyberDefenders)",
+  "slug": "redline-cyberdefenders",
+  "relPath": "Memory Forensics Labs/RedLine (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/redline (cyberdefenders)",
+      "title": "RedLine (CyberDefenders)",
+      "slug": "redline-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "RedLine (CyberDefenders)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the name of the suspicious process?"
+    },
+    {
+      "level": 3,
+      "text": "oneetx.exe"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the child process name of the suspicious process?"
+    },
+    {
+      "level": 3,
+      "text": "rundll32.exe"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the memory protection applied to the suspicious process memory region?"
+    },
+    {
+      "level": 3,
+      "text": "PAGEEXECUTEREADWRITE"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the name of the process responsible for the VPN connection?"
+    },
+    {
+      "level": 3,
+      "text": "outline.exe"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the attacker's IP address?"
+    },
+    {
+      "level": 3,
+      "text": "77.91.124.20"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the full URL of the PHP file that the attacker visited?"
+    },
+    {
+      "level": 3,
+      "text": "http://77.91.124.20/store/games/index.php"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the full path of the malicious executable?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\Tammam\\AppData\\Local\\Temp\\c3912af058\\oneetx.exe"
+    }
+  ],
+  "overview": "As a member of the Security Blue team, your assignment is to analyze a memory dump using Redline and Volatility tools. Your goal is to trace the steps taken by the attacker on the compromised machine and determine how they managed to bypass the Network Intrusion Detection System (NIDS). Your investigation will identify the specific malware family employed in",
+  "study": {
+    "overview": "As a member of the Security Blue team, your assignment is to analyze a memory dump using Redline and Volatility tools. Your goal is to trace the steps taken by the attacker on the compromised machine and determine how they managed to bypass the Network Intrusion Detection System (NIDS). Your investigation will identify the specific malware family employed in",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "RedLine (CyberDefenders)",
+      "Scenario",
+      "1- What is the name of the suspicious process?",
+      "oneetx.exe",
+      "2- What is the child process name of the suspicious process?",
+      "rundll32.exe",
+      "3- What is the memory protection applied to the suspicious process memory region?",
+      "PAGEEXECUTEREADWRITE",
+      "4- What is the name of the process responsible for the VPN connection?",
+      "outline.exe",
+      "5- What is the attacker's IP address?",
+      "77.91.124.20"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

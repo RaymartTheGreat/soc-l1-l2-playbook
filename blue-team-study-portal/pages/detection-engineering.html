@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Detection Engineering | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link active" href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Detection Engineering</span></div>
+      <h1>Detection Engineering</h1>
+      <p>Detection Engineering is the backbone of modern security operations. As threats become more advanced and frequent, reactive security is no longer sufficient. Detection engineering shifts the approach: from generic alerting to precision-crafted, validated detection logic that targets adversarial behavior in context.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Splunk</span><span class="tag">SIEM</span><span class="tag">EDR</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag">Threat Intel</span><span class="tag">Persistence</span><span class="tag mitre">T1105</span><span class="tag mitre">T1059</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Detection Engineering</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="detection-engineering.html"><span>Detection Engineering</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Detection Engineering is the backbone of modern security operations. As threats become more advanced and frequent, reactive security is no longer sufficient. Detection engineering shifts the approach: from generic alerting to precision-crafted, validated detection logic that targets adversarial behavior in context.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Detection Engineering</li><li>What is Detection Engineering?</li><li>What Makes a Good Detection?</li><li>Detection Types</li><li>Environment-Based Detections</li><li>Configuration Detection</li><li>Modeling-Based Detection</li><li>Threat-Based Detections</li><li>Indicator-Based Detection (IOCs)</li><li>Baseline-Based Detection</li><li>Threat Behavior Detection</li><li>Explanation of Each Layer</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>Splunk</li><li>SIEM</li><li>EDR</li><li>PowerShell</li><li>YARA</li><li>Sigma</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="detection-engineering">Detection Engineering</h2>
+<p><strong>Detection Engineering</strong> is the backbone of modern security operations. As threats become more advanced and frequent, reactive security is no longer sufficient. Detection engineering shifts the approach: from generic alerting to precision-crafted, validated detection logic that targets adversarial behavior in context.</p>
+<p><button class="image-button" data-src="../assets/images/detection-engineering-detectionengineering-informational_flow_ink_soc16_9_whitebackground-1-c5d8501d.png" data-alt="DetectionEngineering-InformationalFlowinkSOC169WhiteBackground-1.png"><img src="../assets/images/detection-engineering-detectionengineering-informational_flow_ink_soc16_9_whitebackground-1-c5d8501d.png" alt="DetectionEngineering-InformationalFlowinkSOC169WhiteBackground-1.png" loading="lazy"></button></p>
+<hr>
+<h2 id="what-is-detection-engineering">What is Detection Engineering?</h2>
+<p>Detection engineering is the continuous process of designing, building, testing, and maintaining detections that identify signs of adversary activity or security misconfigurations. This work bridges intelligence, operations, and engineering disciplines to ensure threat visibility is accurate, actionable, and sustainable.</p>
+<p>It isn’t just about writing rules. It’s about understanding threats, mapping them to available data, and producing alert logic that’s resilient to evasion and scalable to change. It also requires a culture shift—security teams must work like developers: versioning rules, testing logic, automating pipelines, and continuously improving.</p>
+<p><button class="image-button" data-src="../assets/images/detection-engineering-1_h_enpjtm3iu_dgfnmuspca-b3269301.png" data-alt="1hEnpjtm3iuDGfNMusPcA.png"><img src="../assets/images/detection-engineering-1_h_enpjtm3iu_dgfnmuspca-b3269301.png" alt="1hEnpjtm3iuDGfNMusPcA.png" loading="lazy"></button></p>
+<hr>
+<h3 id="what-makes-a-good-detection">What Makes a Good Detection?</h3>
+<p>A good detection rule is not just one that &quot;fires&quot;; it’s one that contributes meaningfully to defense with clarity, reliability, and actionability. Below are the key factors that define an effective detection:</p>
+<div class="table-wrap"><table><thead><tr><th>Criteria</th><th>Description</th></tr></thead><tbody><tr><td><strong>Response Feedback</strong></td><td>Does the alert provide enough context for the response team to act? Is it missing key fields or logic?</td></tr><tr><td><strong>False Positive Ratio / Fidelity</strong></td><td>Does the rule trigger too often on benign behavior? For example, 2 true positives out of 100 alerts indicates poor fidelity.</td></tr><tr><td><strong>Timeliness</strong></td><td>Will the alert trigger in time for IR to respond and contain the activity before damage spreads?</td></tr><tr><td><strong>Specificity</strong></td><td>Is the rule too broad? Does it alert on unrelated or noisy activities? Specificity helps reduce fatigue and improve triage.</td></tr><tr><td><strong>Testability</strong></td><td>Can the alert logic be tested using simulated or known inputs? This is essential for validation and tuning.</td></tr><tr><td><strong>Compensating Controls</strong></td><td>If detection gaps exist, can this alert fill them by targeting visibility blind spots or tooling limitations?</td></tr></tbody></table></div>
+<hr>
+<p><button class="image-button" data-src="../assets/images/detection-engineering-screenshot_2025-07-10_064932-8433b8d7.png" data-alt="Screenshot 2025-07-10 064932.png"><img src="../assets/images/detection-engineering-screenshot_2025-07-10_064932-8433b8d7.png" alt="Screenshot 2025-07-10 064932.png" loading="lazy"></button></p>
+<hr>
+<h3 id="detection-types">Detection Types</h3>
+<p>Detection logic generally falls into one of two categories: <strong>environment-based</strong> or <strong>threat-based</strong>. Each serves a different function and complements the others.</p>
+<hr>
+<h4 id="environment-based-detections">Environment-Based Detections</h4>
+<p>These rely on understanding the structure, configuration, and behavior of the internal environment—what is normal, and what isn’t.</p>
+<h4 id="configuration-detection">Configuration Detection</h4>
+<p>This form of detection evaluates current system, network, identity, or policy configurations against what is expected or compliant.</p>
+<ul>
+<li>Best suited for static or well-defined environments.</li>
+<li>Can quickly identify misalignments or insecure changes.</li>
+<li>Challenges arise when configurations are undocumented or frequently changing, increasing false positives.</li>
+</ul>
+<p>Configuration-based detections are especially useful when combined with other signals (e.g., combining misconfigured privileges with unusual process execution).</p>
+<hr>
+<h4 id="modeling-based-detection">Modeling-Based Detection</h4>
+<p>Modeling-based detection relies on building behavioral baselines—tracking how systems, users, and services normally behave—and identifying outliers.</p>
+<ul>
+<li>Good at detecting previously unknown threats without needing prior indicators.</li>
+<li>Requires careful baseline curation to avoid learning malicious behaviors as “normal.”</li>
+<li>Not context-rich on its own; often needs support from IR or threat intel for interpretation.</li>
+</ul>
+<p>Ideal in stable environments where routine patterns are consistent and deviations are more suspicious by nature.</p>
+<hr>
+<h4 id="threat-based-detections">Threat-Based Detections</h4>
+<p>These focus directly on adversarial activity—matching specific indicators or behaviors associated with known tactics, tools, and procedures (TTPs).</p>
+<h4 id="indicator-based-detection-iocs">Indicator-Based Detection (IOCs)</h4>
+<p>This involves using threat intelligence indicators—such as malicious domains, file hashes, or IP addresses—to trigger alerts.</p>
+<ul>
+<li>Easy to create and deploy.</li>
+<li>Useful in retrospective analysis and scoping post-breach.</li>
+<li>Highly dependent on the freshness and context of the IOCs.</li>
+<li>Often reactive—requires the threat to be observed first.</li>
+</ul>
+<p>Example: Flagging outbound connections to a known C2 IP.</p>
+<hr>
+<h4 id="baseline-based-detection"><strong>Baseline-Based Detection</strong></h4>
+<p>Baseline-based detection focuses on spotting deviations from normal activity patterns within a given environment—such as typical user logon hours, process usage, or network behavior.</p>
+<ul>
+<li>Works well in stable environments where behavior is predictable.</li>
+<li>Useful for identifying insider threats or compromised accounts.</li>
+<li>Must be tuned regularly to prevent alert fatigue from normal fluctuations.</li>
+<li>Often supports behavior-based rules by helping define “normal.”</li>
+</ul>
+<p>Example: Alerting when a user logs in from an unusual location or outside normal business hours.</p>
+<hr>
+<h4 id="threat-behavior-detection">Threat Behavior Detection</h4>
+<p>Rather than matching specific indicators, this detection type focuses on broader patterns of attacker behavior—based on tactics and techniques like credential dumping, lateral movement, or privilege escalation.</p>
+<ul>
+<li>More resilient to changes in tools or infrastructure.</li>
+<li>Lower false positive rates when designed well.</li>
+<li>Requires more initial effort, baseline tuning, and context mapping.</li>
+</ul>
+<p>Example: Detecting a parent-child relationship between <code>winword.exe</code> → <code>powershell.exe</code> regardless of the specific command.</p>
+<hr>
+<h4 id="explanation-of-each-layer">Explanation of Each Layer</h4>
+<div class="table-wrap"><table><thead><tr><th>Layer</th><th>Focus</th><th>Strengths</th><th>Weaknesses</th></tr></thead><tbody><tr><td><strong>IOC-Based</strong></td><td>Known bad IPs, hashes, domains</td><td>Quick, simple to deploy</td><td>Reactive, easy to evade</td></tr><tr><td><strong>Baseline-Based</strong></td><td>Detects deviation from “normal”</td><td>Good for insider threats, unknown TTPs</td><td>Needs tuning, risk of false positives</td></tr><tr><td><strong>Behavior-Based</strong></td><td>Captures tactics like credential dumping or lateral movement</td><td>Resilient to tooling changes, more durable</td><td>Complex, higher dev time</td></tr></tbody></table></div>
+<hr>
+<p><button class="image-button" data-src="../assets/images/detection-engineering-screenshot_2025-07-10_065212-24f1e7a1.png" data-alt="Screenshot 2025-07-10 065212.png"><img src="../assets/images/detection-engineering-screenshot_2025-07-10_065212-24f1e7a1.png" alt="Screenshot 2025-07-10 065212.png" loading="lazy"></button></p>
+<hr>
+<h2 id="detection-engineering-in-practice">Detection Engineering in Practice</h2>
+<hr>
+<h3 id="detection-as-code-dac">Detection as Code (DaC)</h3>
+<p>Detection as Code is the practice of managing detections using software engineering principles—treating them like code rather than isolated configurations.</p>
+<p>Instead of writing detections ad-hoc in the SIEM UI, engineers define them as versioned, testable artifacts in files (e.g., YAML, TOML). These files are stored in Git, tested via pipelines, and deployed through automation. This improves reproducibility, auditability, and team collaboration.</p>
+<p>DaC practices typically include:</p>
+<ul>
+<li><strong>Version control</strong> of detection rules (e.g., via GitHub or GitLab)</li>
+<li><strong>CI/CD pipelines</strong> to test and validate rules before pushing to production</li>
+<li><strong>Vendor-agnostic formats</strong> like Sigma or YARA for portability</li>
+<li><strong>Reusable logic patterns</strong> to avoid duplication</li>
+</ul>
+<p>DaC shifts detections from reactive operations to structured, predictable workflows—just like software development.</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">    A[Threat Modeling or Request] --&gt; B[Write Detection Rule]
+    B --&gt; C[Store in Git / Version Control]
+    C --&gt; D[CI Pipeline: Lint + Test]
+    D --&gt; E[Validation in Lab or Simulated Attacks]
+    E --&gt; F[Deploy to Production]
+    F --&gt; G[Monitor + Tune + Review]
+    G --&gt; B</code></pre></div>
+<hr>
+<h3 id="detection-gap-analysis">Detection Gap Analysis</h3>
+<p>Gap analysis is a structured method for identifying what detection coverage is missing—before attackers do.</p>
+<p>There are two ways to approach it:</p>
+<ul>
+<li><strong>Reactive</strong>:</li>
+</ul>
+<p>After an incident, examine what was missed and adjust detections accordingly.</p>
+<ul>
+<li><strong>Proactive</strong>:</li>
+</ul>
+<p>Use frameworks like MITRE ATT&amp;CK to map likely attacker techniques and assess if telemetry and rules exist for each.</p>
+<p>This helps prioritize new detections based on actual threat relevance and closes the gap between assumed and real visibility.</p>
+<hr>
+<h3 id="baseline-creation">Baseline Creation</h3>
+<p>A baseline is a documented profile of what &quot;normal&quot; looks like for systems, users, and services. Good baselining enables behavior-based detection and reduces alert fatigue.</p>
+<p><strong>Types of Baselines:</strong></p>
+<ul>
+<li><strong>High-Level Baselines</strong>:</li>
+</ul>
+<p>Policy-driven, platform-agnostic expectations.</p>
+<p>Example: All endpoints must have EDR installed, MFA must be enabled.</p>
+<ul>
+<li><strong>Technical Baselines</strong>:</li>
+</ul>
+<p>Detailed, system-specific configuration and activity patterns.</p>
+<p>Example: Windows hosts normally generate 4624 logins from the helpdesk subnet, but never from random external IPs.</p>
+<p>Baselines must evolve with the environment. Collaboration across departments is key—IT, security, and operations must contribute.</p>
+<hr>
+<h3 id="rule-writing">Rule Writing</h3>
+<p>At the core of detection engineering is writing rules that identify malicious or suspicious activity in logs.</p>
+<ul>
+<li>Match behaviors or conditions in log data</li>
+<li>Avoid unnecessary noise (false positives)</li>
+<li>Include context for response</li>
+</ul>
+<h4 id="example-rule-approaches">Example Rule Approaches:</h4>
+<ul>
+<li><strong>Sigma</strong>: Write in a generic format, then convert to Splunk, Elastic, or other platforms</li>
+<li><strong>YARA</strong>: Detect patterns in binary or memory artifacts</li>
+<li><strong>Snort/Suricata</strong>: Focus on packet-level network detection</li>
+</ul>
+<p>A good detection rule typically includes:</p>
+<ul>
+<li>Clear description of what it detects</li>
+<li>Log source and required fields</li>
+<li>Condition logic</li>
+<li>Known false positive patterns</li>
+<li>Assigned severity or priority</li>
+</ul>
+<h4 id="example">Example:</h4>
+<p>Sigma Rule: Detecting <code>certutil.exe</code> File Downloads</p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">title: Certutil Downloading File
+id: 8a1b3c4d-5e6f-7a8b-9c0d-1e2f3a4b5c6d
+status: stable
+description: Detects the use of certutil.exe to download files from the internet, which is a common technique used by attackers to retrieve malicious payloads.
+author: SigmaHQ
+date: 2021/05/15
+references:
+  - https://attack.mitre.org/techniques/T1105/
+tags:
+  - attack.command_and_control
+  - attack.t1105
+logsource:
+  product: windows
+  category: process_creation
+detection:
+  selection:
+    Image|endswith: '\certutil.exe'
+    CommandLine|contains:
+      - 'http'
+      - '-urlcache'
+      - '-split'
+  condition: selection
+falsepositives:
+  - Legitimate use of certutil for certificate management
+level: medium</code></pre></div>
+<hr>
+<h3 id="validation-and-testing">Validation and Testing</h3>
+<p>Detection logic must be verified in a test or lab environment before production use. The goal is to confirm that:</p>
+<ul>
+<li>The rule triggers when it should</li>
+<li>It avoids false positives</li>
+<li>It’s resilient to slight changes in attacker behavior</li>
+</ul>
+<h4 id="example-methods">Example Methods:</h4>
+<ul>
+<li>Use Atomic Red Team or Caldera to simulate known TTPs</li>
+<li>Manually replay logs or events</li>
+<li>Review triggered logs and validate fields</li>
+<li>Maintain unit-test cases for new and existing rules</li>
+</ul>
+<p>Detection validation should be repeatable and integrated into the CI/CD process when Detection as Code is used.</p>
+<hr>
+<h3 id="deployment-automation-and-tuning">Deployment, Automation, and Tuning</h3>
+<p>After validation, detections are deployed in production with continuous monitoring. This phase is not a one-time operation—it’s iterative.</p>
+<ul>
+<li>Monitor alert volume and quality</li>
+<li>Tune thresholds or add filters to reduce false positives</li>
+<li>Adjust logic as threat behavior changes</li>
+<li>Review detections periodically for gaps or decay</li>
+</ul>
+<p>Good engineering practices like logging coverage metrics and tagging detections (e.g., <code>ATT&amp;CK.T1059</code>) help teams manage complexity at scale.</p>
+<hr>
+<h2 id="detection-strategies">Detection Strategies</h2>
+<hr>
+<h3 id="implementing-tripwires-and-honeypots">Implementing Tripwires and Honeypots</h3>
+<p><strong>Tripwires</strong> are deliberately placed artifacts or configurations designed to catch adversary activity early—especially when normal defenses fail or when behavior isn't otherwise suspicious.</p>
+<h4 id="common-tripwire-types">Common Tripwire Types:</h4>
+<ul>
+<li><strong>Honeypots</strong>: Decoy services or hosts that no legitimate user should touch. Any activity is likely malicious.</li>
+<li><strong>Hidden Files and Folders</strong>: Planted in known crawl paths. If touched, signals malware or automated scanning.</li>
+<li><strong>Object Access Auditing</strong>: Windows Event ID 4663 logs access to sensitive files; if access is unexpected, alerts can be generated.</li>
+</ul>
+<p>These are not substitutes for regular detection—they are supplementary mechanisms for catching unknown techniques or attacker curiosity.</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">    A[Decoy File Accessed] --&gt; B[Windows Audit Policy Logs Event ID 4663]
+    B --&gt; C[Log Forwarded to SIEM]
+    C --&gt; D[SIEM Rule Matches Trigger]
+    D --&gt; E[Alert Sent to Analysts]</code></pre></div>
+<hr>
+<h3 id="ioc-transformation-using-sigma">IOC Transformation Using Sigma</h3>
+<p>When incident responders identify IOCs (e.g., malicious domains, file hashes), detection engineers can quickly convert them into actionable detection rules.</p>
+<p>Instead of pasting IOCs into search queries, Sigma lets you write portable rules like this:</p>
+<div class="code-shell"><div class="code-bar"><span>yaml</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-yaml">title: Executable Download from Suspicious Domains
+logsource:
+  category: proxy
+detection:
+  selection:
+    c-uri-extension: ['exe']
+    r-dns:
+      - 'bad3xe69connection.io'
+      - 'kind4bad.com'
+  condition: selection</code></pre></div>
+<p>This rule can be automatically converted to Elastic or Splunk syntax using tools like <a class="note-link" href="https://uncoder.io/">Uncoder</a>.</p>
+<p>Only use IOC-based rules when you have contextual intel and expiry plans—they degrade fast.</p>
+<hr>
+<h3 id="using-public-sigma-repositories-and-uncoder">Using Public Sigma Repositories and Uncoder</h3>
+<p>Instead of starting from scratch, detection engineers can leverage public Sigma rules submitted by the community—especially for 0-days.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Follina (CVE-2022-30190)</strong> – Microsoft Office remote code execution</li>
+<li><strong>Log4Shell (CVE-2021-44228)</strong> – Java-based remote shell exploitation</li>
+</ul>
+<p>These rules are available from:</p>
+<ul>
+<li><a class="note-link" href="https://github.com/SigmaHQ/sigma">SigmaHQ GitHub</a></li>
+<li>Vendor-specific detection libraries</li>
+<li>Shared threat intel platforms</li>
+</ul>
+<p>Uncoder allows direct translation from Sigma to SIEM queries (Elastic, Splunk, etc), but results should always be tested and refined in-house.</p>
+<p><button class="image-button" data-src="../assets/images/detection-engineering-sigma-55e441a5.gif" data-alt="Sigma.gif"><img src="../assets/images/detection-engineering-sigma-55e441a5.gif" alt="Sigma.gif" loading="lazy"></button></p>
+<hr>
+<h3 id="alerting-detection-strategy-ads-framework">Alerting &amp; Detection Strategy (ADS Framework)</h3>
+<p>Palantir’s <strong>ADS Framework</strong> is a structured template for designing, documenting, and validating detection rules.</p>
+<p>Key components:</p>
+<p><button class="image-button" data-src="../assets/images/detection-engineering-image-d9c4cfa4.png" data-alt="image.png"><img src="../assets/images/detection-engineering-image-d9c4cfa4.png" alt="image.png" loading="lazy"></button></p>
+<ol>
+<li><strong>Goal</strong> – What behavior is the alert designed to detect?</li>
+<li><strong>Categorization</strong> – Mapped to MITRE ATT&amp;CK or other frameworks</li>
+<li><strong>Strategy Abstract</strong> – Overview of logic, log source, enrichment</li>
+<li><strong>Technical Context</strong> – Infra-specific details (platforms, versions)</li>
+<li><strong>Blind Spots</strong> – Where the alert could fail</li>
+<li><strong>False Positives</strong> – Expected and how to handle them</li>
+<li><strong>Validation</strong> – Method to test and trigger a real alert</li>
+<li><strong>Priority</strong> – Alert severity and urgency</li>
+<li><strong>Response</strong> – Analyst guidance for triage</li>
+</ol>
+<p>The framework improves alert consistency and avoids duplicated or shallow detections.</p>
+<hr>
+<h3 id="detection-maturity-level-dml">Detection Maturity Level (DML)</h3>
+<p>The <strong>Detection Maturity Level (DML)</strong> model by Ryan Stillions measures how advanced an organization’s detections are—ranging from simple IOC matches to identifying attacker strategy.</p>
+<h4 id="simplified-dml-levels">Simplified DML Levels:</h4>
+<div class="table-wrap"><table><thead><tr><th><strong>Level</strong></th><th><strong>Detection Capability</strong></th></tr></thead><tbody><tr><td><strong>DML-0</strong></td><td>No detection at all</td></tr><tr><td><strong>DML-1</strong></td><td>Atomic indicators (e.g., IPs, hashes)</td></tr><tr><td><strong>DML-2</strong></td><td>Host/network artifacts (e.g., file paths, registry keys)</td></tr><tr><td><strong>DML-3</strong></td><td>Tool identification (e.g., PsExec, Cobalt Strike)</td></tr><tr><td><strong>DML-4</strong></td><td>Adversary procedures (e.g., multi-step sequences)</td></tr><tr><td><strong>DML-5</strong></td><td>Techniques (e.g., credential dumping, lateral movement)</td></tr><tr><td><strong>DML-6</strong></td><td>Tactics (e.g., persistence, privilege escalation)</td></tr><tr><td><strong>DML-7</strong></td><td>Adversary strategy and planning</td></tr><tr><td><strong>DML-8</strong></td><td>Adversary goals and mission intent</td></tr></tbody></table></div>
+<p>Aim to raise the maturity of your detections progressively—moving from reactive IOC matches to context-aware behavior-based rules</p>
+<div class="code-shell"><div class="code-bar"><span>python</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-python">    A[DML-0: No Detection] --&gt; B[DML-1: Atomic Indicators]
+    B --&gt; C[DML-2: Host/Network Artifacts]
+    C --&gt; D[DML-3: Tool Detection]
+    D --&gt; E[DML-4: Procedures]
+    E --&gt; F[DML-5: Techniques]
+    F --&gt; G[DML-6: Tactics]
+    G --&gt; H[DML-7: Strategy]
+    H --&gt; I[DML-8: Goals]</code></pre></div>
+<hr>
+<h3 id="tools-and-resources">Tools and Resources</h3>
+<p><button class="image-button" data-src="../assets/images/detection-engineering-image-1-0276960a.png" data-alt="image.png"><img src="../assets/images/detection-engineering-image-1-0276960a.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="rule-development-translation">Rule Development &amp; Translation</h4>
+<ul>
+<li><strong>Sigma HQ</strong> – Sigma rules repo</li>
+</ul>
+<p><a class="note-link" href="https://github.com/SigmaHQ/sigma">https://github.com/SigmaHQ/sigma</a></p>
+<ul>
+<li><strong>YARA</strong> – File and binary pattern detection</li>
+</ul>
+<p><a class="note-link" href="https://virustotal.github.io/yara/">https://virustotal.github.io/yara/</a></p>
+<ul>
+<li><strong>Uncoder</strong> – Convert Sigma to Elastic/Splunk/etc</li>
+</ul>
+<p><a class="note-link" href="https://uncoder.io/">https://uncoder.io</a></p>
+<h4 id="testing-simulation">Testing &amp; Simulation</h4>
+<ul>
+<li><strong>Atomic Red Team</strong> – Manual or automated test cases</li>
+</ul>
+<p><a class="note-link" href="https://github.com/redcanaryco/atomic-red-team">https://github.com/redcanaryco/atomic-red-team</a></p>
+<ul>
+<li><strong>MITRE Caldera</strong> – Automated adversary emulation</li>
+</ul>
+<p><a class="note-link" href="https://github.com/mitre/caldera">https://github.com/mitre/caldera</a></p>
+<h4 id="frameworks-for-mapping-analysis">Frameworks (for mapping &amp; analysis)</h4>
+<ul>
+<li><strong>MITRE ATT&amp;CK</strong></li>
+</ul>
+<p><a class="note-link" href="https://attack.mitre.org/">https://attack.mitre.org</a></p>
+<ul>
+<li><strong>CAR (Cyber Analytics Repository)</strong></li>
+</ul>
+<p><a class="note-link" href="https://car.mitre.org/">https://car.mitre.org</a></p>
+<ul>
+<li><strong>Cyber Kill Chain</strong></li>
+</ul>
+<p><a class="note-link" href="https://lockheedmartin.com/cyber/cyber-kill-chain.html">https://lockheedmartin.com/cyber/cyber-kill-chain.html</a></p>
+<hr>
+<h3 id="summary">Summary</h3>
+<div class="table-wrap"><table><thead><tr><th>Phase</th><th>Description</th></tr></thead><tbody><tr><td><strong>Threat Modeling</strong></td><td>Identify likely threats, TTPs, and infrastructure exposure</td></tr><tr><td><strong>Data Inventory</strong></td><td>Map log sources to coverage requirements</td></tr><tr><td><strong>Baselining</strong></td><td>Define expected behaviors and configurations</td></tr><tr><td><strong>Rule Development</strong></td><td>Use Sigma/YARA/regex to build threat-aware detection logic</td></tr><tr><td><strong>Validation</strong></td><td>Test detections using simulated or historical attack data</td></tr><tr><td><strong>Tuning</strong></td><td>Refine to reduce noise, increase fidelity</td></tr><tr><td><strong>Deployment</strong></td><td>Move to production with docs and response steps</td></tr><tr><td><strong>Review &amp; Iterate</strong></td><td>Continuously improve based on threat evolution and feedback</td></tr></tbody></table></div>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#detection-engineering">Detection Engineering</a><a href="#what-is-detection-engineering">What is Detection Engineering?</a><a href="#what-makes-a-good-detection">What Makes a Good Detection?</a><a href="#detection-types">Detection Types</a><a href="#environment-based-detections">Environment-Based Detections</a><a href="#configuration-detection">Configuration Detection</a><a href="#modeling-based-detection">Modeling-Based Detection</a><a href="#threat-based-detections">Threat-Based Detections</a><a href="#indicator-based-detection-iocs">Indicator-Based Detection (IOCs)</a><a href="#baseline-based-detection">Baseline-Based Detection</a><a href="#threat-behavior-detection">Threat Behavior Detection</a><a href="#explanation-of-each-layer">Explanation of Each Layer</a><a href="#detection-engineering-in-practice">Detection Engineering in Practice</a><a href="#detection-as-code-dac">Detection as Code (DaC)</a><a href="#detection-gap-analysis">Detection Gap Analysis</a><a href="#baseline-creation">Baseline Creation</a><a href="#rule-writing">Rule Writing</a><a href="#example-rule-approaches">Example Rule Approaches:</a><a href="#example">Example:</a><a href="#validation-and-testing">Validation and Testing</a><a href="#example-methods">Example Methods:</a><a href="#deployment-automation-and-tuning">Deployment, Automation, and Tuning</a><a href="#detection-strategies">Detection Strategies</a><a href="#implementing-tripwires-and-honeypots">Implementing Tripwires and Honeypots</a><a href="#common-tripwire-types">Common Tripwire Types:</a><a href="#ioc-transformation-using-sigma">IOC Transformation Using Sigma</a><a href="#using-public-sigma-repositories-and-uncoder">Using Public Sigma Repositories and Uncoder</a><a href="#alerting-detection-strategy-ads-framework">Alerting &amp; Detection Strategy (ADS Framework)</a><a href="#detection-maturity-level-dml">Detection Maturity Level (DML)</a><a href="#simplified-dml-levels">Simplified DML Levels:</a><a href="#tools-and-resources">Tools and Resources</a><a href="#rule-development-translation">Rule Development &amp; Translation</a><a href="#testing-simulation">Testing &amp; Simulation</a><a href="#frameworks-for-mapping-analysis">Frameworks (for mapping &amp; analysis)</a><a href="#summary">Summary</a></details>
+    </div>
+    
+    <footer class="pager"><a href="powershell-logs.html">← PowerShell Logs</a><a href="sigma-0592b140.html">Sigma →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

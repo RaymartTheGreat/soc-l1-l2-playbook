@@ -1,0 +1,112 @@
+{
+  "id": "network/protocols/server message block (smb)",
+  "title": "Server Message Block (SMB)",
+  "slug": "server-message-block-smb",
+  "relPath": "Network/Protocols/Server Message Block (SMB).md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Windows",
+    "Linux",
+    "Network",
+    "Active Directory",
+    "Kerberos"
+  ],
+  "mitre": [],
+  "parentId": "network/protocols",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/protocols"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/protocols",
+      "title": "Protocols",
+      "slug": "protocols"
+    },
+    {
+      "id": "network/protocols/server message block (smb)",
+      "title": "Server Message Block (SMB)",
+      "slug": "server-message-block-smb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Server Message Block (SMB)"
+    },
+    {
+      "level": 2,
+      "text": "Common SMB Use Cases"
+    },
+    {
+      "level": 2,
+      "text": "Authentication in SMB"
+    },
+    {
+      "level": 3,
+      "text": "1. NTLM (NT LAN Manager)"
+    },
+    {
+      "level": 3,
+      "text": "2. Kerberos"
+    },
+    {
+      "level": 2,
+      "text": "NTLM Authentication Flow in SMB"
+    },
+    {
+      "level": 3,
+      "text": "NTLM Security Considerations"
+    },
+    {
+      "level": 2,
+      "text": "Kerberos Authentication Flow in SMB"
+    },
+    {
+      "level": 2,
+      "text": "SMB: NTLM vs Kerberos"
+    },
+    {
+      "level": 2,
+      "text": "Where to Observe This in Wireshark"
+    }
+  ],
+  "overview": "SMB is a network protocol used to provide shared access to files, folders, printers, and other resources over a network. It's primarily used in Windows environments, but Linux systems can interact with SMB using tools like Samba.",
+  "study": {
+    "overview": "SMB is a network protocol used to provide shared access to files, folders, printers, and other resources over a network. It's primarily used in Windows environments, but Linux systems can interact with SMB using tools like Samba.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Server Message Block (SMB)",
+      "Common SMB Use Cases",
+      "Authentication in SMB",
+      "1. NTLM (NT LAN Manager)",
+      "2. Kerberos",
+      "NTLM Authentication Flow in SMB",
+      "NTLM Security Considerations",
+      "Kerberos Authentication Flow in SMB",
+      "SMB: NTLM vs Kerberos",
+      "Where to Observe This in Wireshark"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

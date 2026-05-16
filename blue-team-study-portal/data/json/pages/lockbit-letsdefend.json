@@ -1,0 +1,133 @@
+{
+  "id": "memory forensics labs/lockbit (letsdefend)",
+  "title": "LockBit (LetsDefend)",
+  "slug": "lockbit-letsdefend",
+  "relPath": "Memory Forensics Labs/LockBit (LetsDefend).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "DFIR",
+    "Memory",
+    "Incident Response",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [
+    "T1543"
+  ],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/lockbit (letsdefend)",
+      "title": "LockBit (LetsDefend)",
+      "slug": "lockbit-letsdefend"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "LockBit (LetsDefend)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Can you determine the date and time that the device was infected with the malware? (UTC, format: YYYY-MM-DD hh:mm:ss)"
+    },
+    {
+      "level": 3,
+      "text": "2023-04-13 10:06:45"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the name of the ransomware family responsible for the attack?"
+    },
+    {
+      "level": 3,
+      "text": "lockbit"
+    },
+    {
+      "level": 3,
+      "text": "3- What file extension is appended to the encrypted files by the ransomware?"
+    },
+    {
+      "level": 3,
+      "text": ".lockbit"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the TLSH (Trend Micro Locality Sensitive Hash) of the ransomware?"
+    },
+    {
+      "level": 3,
+      "text": "T119E3163DB459E165C8CF04B57E2516BAD671F83C037989F3EBD38C299420EE86626B07"
+    },
+    {
+      "level": 3,
+      "text": "5- Which MITRE ATT&CK technique ID was used by the ransomware to perform privilege escalation?"
+    },
+    {
+      "level": 3,
+      "text": "T1543"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the SHA256 hash of the ransom note dropped by the malware?"
+    },
+    {
+      "level": 3,
+      "text": "67c6784a5296658ac4d633f4e8c0914ecc783b1cf2f6431818c4e2f3cdcce91f"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the name of the registry key edited by the ransomware during the attack to apply persistence on the infected system?"
+    },
+    {
+      "level": 3,
+      "text": "XO1XADpO01"
+    }
+  ],
+  "overview": "You are a Digital Forensics and Incident Response (DFIR) analyst tasked with investigating a ransomware attack that has affected a company's system. The attack has resulted in file encryption, and the attackers are demanding payment for the decryption of the affected files. You have been given a memory dump of the affected system to analyze and provide answe",
+  "study": {
+    "overview": "You are a Digital Forensics and Incident Response (DFIR) analyst tasked with investigating a ransomware attack that has affected a company's system. The attack has resulted in file encryption, and the attackers are demanding payment for the decryption of the affected files. You have been given a memory dump of the affected system to analyze and provide answe",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "LockBit (LetsDefend)",
+      "Scenario",
+      "1- Can you determine the date and time that the device was infected with the malware? (UTC, format: YYYY-MM-DD hh:mm:ss)",
+      "2023-04-13 10:06:45",
+      "2- What is the name of the ransomware family responsible for the attack?",
+      "lockbit",
+      "3- What file extension is appended to the encrypted files by the ransomware?",
+      ".lockbit",
+      "4- What is the TLSH (Trend Micro Locality Sensitive Hash) of the ransomware?",
+      "T119E3163DB459E165C8CF04B57E2516BAD671F83C037989F3EBD38C299420EE86626B07",
+      "5- Which MITRE ATT&CK technique ID was used by the ransomware to perform privilege escalation?",
+      "T1543"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

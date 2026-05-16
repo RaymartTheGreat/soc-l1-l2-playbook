@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Windows Registry | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="windows-forensics.html">Windows Forensics</a><span>/</span><span>Windows Registry</span></div>
+      <h1>Windows Registry</h1>
+      <p>The Windows Registry is a hierarchical database critical to Windows operation, storing OS, hardware, and application configurations in a tree of keys and values. The registry functions similarly to a file system:</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">DFIR</span><span class="tag">Persistence</span><span class="tag mitre">TA0003</span><span class="tag mitre">T1547</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Windows Forensics</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-forensics.html"><span>Windows Forensics</span><em>L2</em></a>
+      <b>22</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="active" href="windows-registry.html"><span>Windows Registry</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="lnk-files-shortcut-files-f0f1ba89.html"><span>LNK Files (Shortcut Files)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="user-activity-analysis.html"><span>User Activity Analysis</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="data-acquisition-using-kape.html"><span>Data Acquisition Using KAPE</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="regripper.html"><span>RegRipper</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="eric-zimmerman-tools.html"><span>Eric Zimmerman Tools</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="recycle-bin-forensics.html"><span>Recycle Bin Forensics</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hard-disk-ntfs-layout.html"><span>Hard Disk &amp; NTFS Layout</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntfs-analysis.html"><span>NTFS Analysis</span><em>L2</em></a>
+      <b>8</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="ntfs-overview.html"><span>NTFS Overview</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ntfs-components.html"><span>NTFS Components</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="mft-record-analysis.html"><span>MFT Record Analysis</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ntfs-journaling.html"><span>NTFS Journaling</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="index-allocation-attribute-i30-overview.html"><span>Index Allocation Attribute ($I30) Overview</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="logfile.html"><span>$LogFile</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="usnjrnl.html"><span>$UsnJrnl</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ads.html"><span>ADS</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="master-file-table-mft.html"><span>Master File Table (MFT)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="usb-forensics.html"><span>USB forensics</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="jump-list.html"><span>Jump list</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="prefetch-files.html"><span>Prefetch Files</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="bam-background-activity-moderator.html"><span>BAM (Background Activity Moderator)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="shimcache-appcompatcache.html"><span>ShimCache (AppCompatCache)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="amcache.html"><span>AmCache</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-browser-artifacts.html"><span>Windows Browser Artifacts</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="srum-system-resource-usage-monitor.html"><span>SRUM (System Resource Usage Monitor)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-disk-forensics-artifacts.html"><span>Windows Disk Forensics Artifacts</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="data-acquisition-considerations-ftk-imager.html"><span>Data Acquisition Considerations (FTK Imager)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-applications-forensics.html"><span>Windows Applications Forensics</span><em>L2</em></a>
+      <b>10</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="log-insights-scheduled-tasks-and-services.html"><span>Log Insights Scheduled Tasks and Services</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="manual-inspection-scheduled-tasks.html"><span>Manual Inspection Scheduled Tasks</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="manual-inspection-ii-services.html"><span>Manual Inspection II Services</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="dissecting-browser-artefacts-i-mozilla-firefox.html"><span>Dissecting Browser Artefacts I Mozilla Firefox</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="dissecting-browser-artefacts-ii-google-chrome.html"><span>Dissecting Browser Artefacts II Google Chrome</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="dissecting-browser-artefacts-iii-microsoft-edge.html"><span>Dissecting Browser Artefacts III Microsoft Edge</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="deep-diving-on-office-applications-i-microsoft-out.html"><span>Deep-diving on Office Applications I Microsoft Out</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="deep-diving-on-office-applications-ii-microsoft-te.html"><span>Deep-diving on Office Applications II Microsoft Te</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="deep-diving-on-office-applications-iii-microsoft-o.html"><span>Deep-diving on Office Applications III Microsoft O</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="conclusion-37026a40.html"><span>Conclusion</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="windows-user-account-forensics.html"><span>Windows User Account Forensics</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>The Windows Registry is a hierarchical database critical to Windows operation, storing OS, hardware, and application configurations in a tree of keys and values. The registry functions similarly to a file system:</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Windows Registry</li><li>1- What Is the Windows Registry?</li><li>2- Registry Structure and Terminology</li><li>2-1 Root Keys (Predefined Hives)</li><li>2-2 Hive Mounting and Transaction Logs</li><li>Dirty Hives and Transaction Logs</li><li>3- Expanded Forensically Valuable Artifacts</li><li>3-1 System &amp; Configuration</li><li>3-2 Software &amp; Install</li><li>3-3 User Activity</li><li>3-4 Devices &amp; Connectivity</li><li>3-5 Execution Artifacts</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code>C:\Users\Administrator\Desktop\EZTools\RECmd&gt;RECmd.exe -f c:\Users\Administrator\Desktop\collection\c\windows\System32\config\SAM --sk administrator 
+RECmd version 2.0.0.0
+
+Author: Eric Zimmerman (saericzimmerman@gmail.com)
+https://github.com/EricZimmerman/RECmd
+
+Note: Enclose all strings containing spaces (and all RegEx) with double quotes
+
+Command line: -f c:\Users\Administrator\Desktop\collection\c\windows\System32\config\SAM --sk administrator 
+Processing hive c:\Users\Administrator\Desktop\collection\c\windows\System32\config\SAM
+
+        Found 4 search hits in c:\Users\Administrator\Desktop\collection\c\windows\System32\config\SAM
+        Key: SAM\Domains\Account\Users\Names\Administrator
+        Key: SAM\Domains\Builtin\Aliases\Names\Administrators
+        Key: SAM\Domains\Builtin\Aliases\Names\Hyper-V Administrators
+        Key: SAM\Domains\Builtin\Aliases\Names\Storage Replica Administrators
+
+C:\Users\Administrator\Desktop\EZTools\RECmd&gt;  </code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>C:\Users\Administrator\Desktop\EZTools\RECmd&gt;RECmd.exe -f c:\Users\Administrator\Desktop\collection\c\windows\System32\config\SAM --kn SAM\Domains\Account\Users\Names\Administrator</code></pre></div><div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code>rr.exe -H C:\hives\NTUSER.DAT -o ntuser_report.txt
+rip.exe -r C:\hives\NTUSER.DAT -p userassist &gt; userassist.txt</code></pre></div><div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code>kape.exe --tsource C:\ --tdest D:\out --target RegistryHives --module !EZParser</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>Understanding these building blocks is essential for spotting how attackers abuse registry components for persistence (e.g., Run keys, Scheduled Tasks, ShellBags).</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="windows-registry">Windows Registry</h2>
+<hr>
+<h3 id="1-what-is-the-windows-registry">1- What Is the Windows Registry?</h3>
+<p>The Windows Registry is a hierarchical database critical to Windows operation, storing OS, hardware, and application configurations in a tree of keys and values. The registry functions similarly to a file system:</p>
+<ul>
+<li><strong>Keys &amp; Subkeys</strong> (folders) and <strong>Values</strong> (files) form the basic structure for storing settings.</li>
+<li><strong>Lists of Subkeys</strong>, <strong>Keys with Multiple Values</strong>, and <strong>Multi‑Line Values</strong> represent registry lists in different forms.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-screenshot_2025-02-11_164326-e4a4ddaf.png" data-alt="Screenshot 2025-02-11 164326.png"><img src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-screenshot_2025-02-11_164326-e4a4ddaf.png" alt="Screenshot 2025-02-11 164326.png" loading="lazy"></button></p>
+<p><strong>  Registry terminology example</strong></p>
+<p><button class="image-button" data-src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-screenshot_2025-02-11_164410-abc84353.png" data-alt="Screenshot 2025-02-11 164410.png"><img src="../assets/images/hunting-persistence-mitre-ta0003persistence-in-the-windows-registryt1547-001-screenshot_2025-02-11_164410-abc84353.png" alt="Screenshot 2025-02-11 164410.png" loading="lazy"></button></p>
+<p><strong>List of values in the Run Key</strong></p>
+<blockquote>Understanding these building blocks is essential for spotting how attackers abuse registry components for persistence (e.g., Run keys, Scheduled Tasks, ShellBags).</blockquote>
+<blockquote></blockquote>
+<hr>
+<h3 id="2-registry-structure-and-terminology">2- Registry Structure and Terminology</h3>
+<h4 id="2-1-root-keys-predefined-hives">2-1 Root Keys (Predefined Hives)</h4>
+<div class="table-wrap"><table><thead><tr><th>Hive (Abbrev.)</th><th>Description</th></tr></thead><tbody><tr><td><strong>HKEY_CURRENT_USER (HKCU)</strong></td><td>Contains the configuration for the user currently logged on</td></tr><tr><td><strong>HKEY_USERS (HKU)</strong></td><td>Holds all actively loaded user profile hives. Each user’s NTUSER.DAT is mounted here under their security identifier (SID).</td></tr><tr><td><strong>HKEY_LOCAL_MACHINE (HKLM)</strong></td><td>Stores machine‑wide configuration for all users: hardware drivers, services, software installs, security policies, and lower‑level components.               On‑disk hives SYSTEM, SOFTWARE, SAM, and SECURITY all mount under HKLM.</td></tr><tr><td><strong>HKEY_CLASSES_ROOT (HKCR)</strong></td><td>File type associations &amp; COM registrations</td></tr><tr><td><strong>HKEY_CURRENT_CONFIG (HKCC)</strong></td><td>Contains information about the hardware profile used at system startup, drawn from HKLM\SYSTEM\CurrentControlSet\Hardware Profiles.</td></tr></tbody></table></div>
+<p>The Windows Registry lives in hive files under <code>%SystemRoot%\System32\config</code> and in each user’s profile: System Hives (<code>%SystemRoot%\System32\config</code>)</p>
+<ul>
+<li><code>SAM</code>: Security Account Manager. Stores security information related to user accounts and security policies. In the Live System, this Hive is mapped into HKLM\Local_Machine\SAM.</li>
+<li><code>SECURITY</code>: Holds security-related configuration data, including user authentication and permissions.</li>
+<li><code>SYSTEM</code>: System configuration. Stores system-related configuration data, including hardware, device drivers, and startup settings.</li>
+<li><code>SOFTWARE</code>: Contains configuration information for installed software and system-wide settings.</li>
+<li><code>DEFAULT</code>: Acts as a template for creating new user profiles, providing default settings for user-specific configuration.</li>
+</ul>
+<p>Additionally, there are two main user-related Hives :</p>
+<ul>
+<li><code>NTUSER.DAT</code>:</li>
+<ul>
+<li>User-specific settings for each user profile. Contains information about user preferences and specific configurations.</li>
+<li>Located at <code>%USERPROFILE%\NTUSER.dat</code></li>
+<li>Mapped into HKCU in the Live Registry.</li>
+</ul>
+<li><code>USRCLASS.DAT</code>:</li>
+<ul>
+<li>User-specific class settings. Stores information about Explorer's settings and interaction.</li>
+<li>Located at <code>%USERPROFILE%\AppData\Local\Microsoft\Windows\UsrClass.dat</code></li>
+<li>Mapped into HKCU\Software\Class.</li>
+</ul>
+</ul>
+<p><strong>Execution Metadata</strong></p>
+<ul>
+<li><code>C:\Windows\AppCompat\Programs\Amcache.hve</code> → Amcache (file execution history)</li>
+</ul>
+<h4 id="2-2-hive-mounting-and-transaction-logs">2-2 Hive Mounting and Transaction Logs</h4>
+<ul>
+<li>When a hive is loaded, its LOG1 and LOG2 transaction logs replay at load time to present a consistent view.</li>
+<li>For analysis, tools often create a “clean” hive by merging logs, yielding filename_clean.</li>
+<li>You can optionally load both clean and “dirty” (original) hives side by side for comparison.</li>
+<li><strong>\Windows\System32\config</strong>: contains DEFAULT, SAM, SECURITY, SOFTWARE, SYSTEM hives.</li>
+<li><strong>%USERPROFILE%\NTUSER.DAT</strong> and <strong>USRCLASS.DAT</strong>: per-user settings and classes.</li>
+<li><strong>Amcache.hve</strong> in AppCompat folder: execution metadata (file path, hash, timestamps).</li>
+</ul>
+<h4 id="dirty-hives-and-transaction-logs">Dirty Hives and Transaction Logs</h4>
+<p>Transaction logs are records of changes made to a database over time, while dirty Hives are parts of the Windows registry that haven't been properly closed after changes. Both are important in forensics for understanding system activity and potential security issues.</p>
+<p>Sometimes, when your computer shuts down unexpectedly, or the Registry gets messed up, the Hive files can become &quot;dirty,&quot; meaning they're inconsistent. To prevent corruption, Windows uses transaction logs. These logs track changes to the registry Hives, allowing Windows to roll back changes if something goes wrong.</p>
+<p>The transaction logs are stored in the <code>C:\Windows\system32\config</code> directory alongside the Hive files. They have names like <code>SYSTEM.LOG1</code>, <code>SYSTEM.LOG2</code>, and so on.</p>
+<p>Transaction logs are usually hidden files. One of the ways to view them is to open the terminal and run the command <code>dir /a</code> to display all the files present in the folder, including the hidden files</p>
+<hr>
+<h3 id="3-expanded-forensically-valuable-artifacts">3- Expanded Forensically Valuable Artifacts</h3>
+<p>Use this cheat‑sheet to guide targeted parsing or searches.</p>
+<p><button class="image-button" data-src="../assets/images/windows-forensicswindows-registry-windows_forensics_cheatsheet_page-0001-e3f5a215.jpg" data-alt="Windows Forensics Cheatsheetpage-0001.jpg"><img src="../assets/images/windows-forensicswindows-registry-windows_forensics_cheatsheet_page-0001-e3f5a215.jpg" alt="Windows Forensics Cheatsheetpage-0001.jpg" loading="lazy"></button></p>
+<h4 id="3-1-system-configuration">3-1 System &amp; Configuration</h4>
+<div class="table-wrap"><table><thead><tr><th>Artifact</th><th>Key Path</th><th>Data</th><th>Notes</th></tr></thead><tbody><tr><td>Time Zone</td><td>HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation</td><td>Time zone name and bias</td><td>Determines system timezone settings.</td></tr><tr><td>Computer Name</td><td>HKLM\SYSTEM\CurrentControlSet\Control\ComputerName\ActiveComputerName</td><td>Hostname</td><td>Last-known computer name at boot.</td></tr><tr><td>Services &amp; Drivers</td><td>HKLM\SYSTEM\CurrentControlSet\Services</td><td>Service parameters</td><td>Persistence and load order of drivers.</td></tr><tr><td>Boot Configuration</td><td>HKLM\SYSTEM\CurrentControlSet\Control\BootStatusPolicy</td><td>Boot policy parameters</td><td>Boot recovery and policy details.</td></tr></tbody></table></div>
+<h4 id="3-2-software-install">3-2 Software &amp; Install</h4>
+<div class="table-wrap"><table><thead><tr><th>Artifact</th><th>Key Path</th><th>Notes</th></tr></thead><tbody><tr><td>OS Version</td><td>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion</td><td>Build number, install date</td></tr><tr><td>Installed Apps</td><td>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall</td><td>Application names and dates</td></tr><tr><td>AutoStart Entries</td><td>HKLM...\Run, HKLM...\RunOnce; HKCU...\Run, HKCU...\RunOnce</td><td>Programs set to start automatically</td></tr></tbody></table></div>
+<h4 id="3-3-user-activity">3-3 User Activity</h4>
+<div class="table-wrap"><table><thead><tr><th>Artifact</th><th>Key Path</th><th>Notes</th></tr></thead><tbody><tr><td>Recent Documents</td><td>HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs</td><td>List of recently opened files</td></tr><tr><td>Typed Paths</td><td>HKCU...\Explorer\TypedPaths</td><td>Explorer address-bar history</td></tr><tr><td>Run History</td><td>HKCU...\Explorer\RunMRU</td><td>Commands run via Start→Run dialog</td></tr><tr><td>UserAssist</td><td>HKCU...\Explorer\UserAssist{GUID}</td><td>Execution counts for Explorer-run programs</td></tr><tr><td>ShellBags</td><td>HKCU\Software\Microsoft\Windows\Shell\BagMRU and USRCLASS.DAT...\BagMRU</td><td>Folder view history</td></tr></tbody></table></div>
+<h4 id="3-4-devices-connectivity">3-4 Devices &amp; Connectivity</h4>
+<div class="table-wrap"><table><thead><tr><th>Artifact</th><th>Key Path</th><th>Notes</th></tr></thead><tbody><tr><td>USB History</td><td>HKLM\SYSTEM\CurrentControlSet\Enum\USBSTOR</td><td>Connected USB devices history</td></tr><tr><td>Network Profiles</td><td>HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\NetworkList\Profiles</td><td>Known Wi‑Fi networks</td></tr><tr><td>Mount Points</td><td>HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\MountPoints2</td><td>Mounted volumes and labels</td></tr></tbody></table></div>
+<h4 id="3-5-execution-artifacts">3-5 Execution Artifacts</h4>
+<div class="table-wrap"><table><thead><tr><th>Artifact</th><th>Location</th><th>Notes</th></tr></thead><tbody><tr><td>ShimCache</td><td>HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache</td><td>Execution history cache</td></tr><tr><td>Amcache</td><td>Amcache.hve file</td><td>File metadata (hash, path, time)</td></tr></tbody></table></div>
+<hr>
+<h3 id="4-acquisition-methods-with-kape-and-traditional-approaches">4- Acquisition Methods with KAPE and Traditional Approaches</h3>
+<h4 id="4-1-cold-offline-acquisition">4-1 Cold (Offline) Acquisition</h4>
+<ol>
+<li>Attach suspect disk via write‑blocker to a forensic workstation.</li>
+<li>Image the disk with FTK Imager or <code>dd</code> to create an E01/RAW file.</li>
+<li>Mount the forensic image read‑only and extract hive files from system and user directories.</li>
+</ol>
+<h4 id="4-2-live-acquisition-via-kape-triaging-parsing">4-2 Live Acquisition via KAPE (Triaging &amp; Parsing)</h4>
+<ol>
+<li>Open KAPE (GUI or CLI).</li>
+<li>Select <strong>RegistryHives</strong> target; specify source and output directories.</li>
+<li>Choose <strong>!EZParser</strong> module to parse and normalize registry artifacts.</li>
+<li>Run KAPE: it collects hives, replays transaction logs, and generates CSV files by category.</li>
+<li>Review CSV outputs (e.g., KnownNetworks.csv, USBSTOR.csv) in your analysis tool.</li>
+</ol>
+<h4 id="4-3-live-acquisition-via-reg-save-ftk-imager">4-3 Live Acquisition via reg save / FTK Imager</h4>
+<ul>
+<li>Use <code>reg save HKLM\SYSTEM system.hive</code> to export the live SYSTEM hive; repeat for other hives.</li>
+<li>FTK Imager can likewise export hives without command line.</li>
+</ul>
+<hr>
+<h3 id="5-indepth-tool-walkthroughs">5- In‑Depth Tool Walkthroughs</h3>
+<h4 id="5-1-registry-explorer">5-1 Registry Explorer</h4>
+<p>Registry Explorer loads hives and transaction logs, provides a bookmarks pane of key artifacts, and allows deep inspection.</p>
+<p><strong>Steps:</strong> Load hive → integrate LOG1/LOG2 → view Available Bookmarks → navigate or export.</p>
+<p><button class="image-button" data-src="../assets/images/windows-forensicswindows-registry-image-f94a4063.png" data-alt="image.png"><img src="../assets/images/windows-forensicswindows-registry-image-f94a4063.png" alt="image.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-forensicswindows-registry-image-1-509789a7.png" data-alt="image.png"><img src="../assets/images/windows-forensicswindows-registry-image-1-509789a7.png" alt="image.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-forensicswindows-registry-image-2-e76451c1.png" data-alt="image.png"><img src="../assets/images/windows-forensicswindows-registry-image-2-e76451c1.png" alt="image.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-forensicswindows-registry-image-3-8046b64a.png" data-alt="image.png"><img src="../assets/images/windows-forensicswindows-registry-image-3-8046b64a.png" alt="image.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-forensicswindows-registry-image-4-aed4f4bf.png" data-alt="image.png"><img src="../assets/images/windows-forensicswindows-registry-image-4-aed4f4bf.png" alt="image.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-forensicswindows-registry-image-5-acf36c7e.png" data-alt="image.png"><img src="../assets/images/windows-forensicswindows-registry-image-5-acf36c7e.png" alt="image.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/windows-forensicswindows-registry-image-6-47e1892d.png" data-alt="image.png"><img src="../assets/images/windows-forensicswindows-registry-image-6-47e1892d.png" alt="image.png" loading="lazy"></button></p>
+<hr>
+<h4 id="5-2-recmd-cli">5-2 RECmd (CLI)</h4>
+<p>RECmd is a command‑line utility for recursive registry hive analysis. It can:</p>
+<ul>
+<li>Traverse directories or individual hive files, automatically replay transaction logs and load multiple hives.</li>
+<li>Extract specified keys or values, or search for strings in key names, value names, or data.</li>
+<li>Support searches in BASE64, Unicode, ASCII, or via regular expressions.</li>
+<li>Recover deleted keys and values if remnants remain in the hive.</li>
+<li>Export results in CSV or JSON for easy ingestion into analysis tools.</li>
+</ul>
+<p><strong>Example: Search for the keyword ‘administrator’ in the SAM hive and output CSV:</strong></p>
+<div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-powershell">C:\Users\Administrator\Desktop\EZTools\RECmd&gt;RECmd.exe -f c:\Users\Administrator\Desktop\collection\c\windows\System32\config\SAM --sk administrator 
+RECmd version 2.0.0.0
+
+Author: Eric Zimmerman (saericzimmerman@gmail.com)
+https://github.com/EricZimmerman/RECmd
+
+Note: Enclose all strings containing spaces (and all RegEx) with double quotes
+
+Command line: -f c:\Users\Administrator\Desktop\collection\c\windows\System32\config\SAM --sk administrator 
+Processing hive c:\Users\Administrator\Desktop\collection\c\windows\System32\config\SAM
+
+        Found 4 search hits in c:\Users\Administrator\Desktop\collection\c\windows\System32\config\SAM
+        Key: SAM\Domains\Account\Users\Names\Administrator
+        Key: SAM\Domains\Builtin\Aliases\Names\Administrators
+        Key: SAM\Domains\Builtin\Aliases\Names\Hyper-V Administrators
+        Key: SAM\Domains\Builtin\Aliases\Names\Storage Replica Administrators
+
+C:\Users\Administrator\Desktop\EZTools\RECmd&gt;  </code></pre></div>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">C:\Users\Administrator\Desktop\EZTools\RECmd&gt;RECmd.exe -f c:\Users\Administrator\Desktop\collection\c\windows\System32\config\SAM --kn SAM\Domains\Account\Users\Names\Administrator</code></pre></div>
+<hr>
+<h4 id="5-3-regripper">5-3 RegRipper</h4>
+<p>RegRipper uses plugins to parse specific artifacts from a clean hive.</p>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">rr.exe -H C:\hives\NTUSER.DAT -o ntuser_report.txt
+rip.exe -r C:\hives\NTUSER.DAT -p userassist &gt; userassist.txt</code></pre></div>
+<p><strong>Note:</strong> clean hive first via Registry Explorer to include transaction logs.</p>
+<hr>
+<h4 id="5-4-kape-ezparser">5-4 KAPE + !EZParser</h4>
+<p>One‑step collection and parsing:</p>
+<div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-powershell">kape.exe --tsource C:\ --tdest D:\out --target RegistryHives --module !EZParser</code></pre></div>
+<p>Outputs normalized CSVs for all key artifacts, ideal for rapid triage.</p>
+<p><button class="image-button" data-src="../assets/images/windows-forensicswindows-registry-image-7-48c94e46.png" data-alt="image.png"><img src="../assets/images/windows-forensicswindows-registry-image-7-48c94e46.png" alt="image.png" loading="lazy"></button></p>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#windows-registry">Windows Registry</a><a href="#1-what-is-the-windows-registry">1- What Is the Windows Registry?</a><a href="#2-registry-structure-and-terminology">2- Registry Structure and Terminology</a><a href="#2-1-root-keys-predefined-hives">2-1 Root Keys (Predefined Hives)</a><a href="#2-2-hive-mounting-and-transaction-logs">2-2 Hive Mounting and Transaction Logs</a><a href="#dirty-hives-and-transaction-logs">Dirty Hives and Transaction Logs</a><a href="#3-expanded-forensically-valuable-artifacts">3- Expanded Forensically Valuable Artifacts</a><a href="#3-1-system-configuration">3-1 System &amp; Configuration</a><a href="#3-2-software-install">3-2 Software &amp; Install</a><a href="#3-3-user-activity">3-3 User Activity</a><a href="#3-4-devices-connectivity">3-4 Devices &amp; Connectivity</a><a href="#3-5-execution-artifacts">3-5 Execution Artifacts</a><a href="#4-acquisition-methods-with-kape-and-traditional-approaches">4- Acquisition Methods with KAPE and Traditional Approaches</a><a href="#4-1-cold-offline-acquisition">4-1 Cold (Offline) Acquisition</a><a href="#4-2-live-acquisition-via-kape-triaging-parsing">4-2 Live Acquisition via KAPE (Triaging &amp; Parsing)</a><a href="#4-3-live-acquisition-via-reg-save-ftk-imager">4-3 Live Acquisition via reg save / FTK Imager</a><a href="#5-indepth-tool-walkthroughs">5- In‑Depth Tool Walkthroughs</a><a href="#5-1-registry-explorer">5-1 Registry Explorer</a><a href="#5-2-recmd-cli">5-2 RECmd (CLI)</a><a href="#5-3-regripper">5-3 RegRipper</a><a href="#5-4-kape-ezparser">5-4 KAPE + !EZParser</a></details>
+    </div>
+    
+    <footer class="pager"><a href="windows-forensics.html">← Windows Forensics</a><a href="lnk-files-shortcut-files-f0f1ba89.html">LNK Files (Shortcut Files) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

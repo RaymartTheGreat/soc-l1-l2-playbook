@@ -1,0 +1,159 @@
+{
+  "id": "threat hunting labs (siem)/middlemayhem (btlo)",
+  "title": "MiddleMayhem (BTLO)",
+  "slug": "middlemayhem-btlo",
+  "relPath": "Threat hunting Labs (SIEM)/MiddleMayhem (BTLO).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "Network",
+    "Web",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/middlemayhem (btlo)",
+      "title": "MiddleMayhem (BTLO)",
+      "slug": "middlemayhem-btlo"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "MiddleMayhem (BTLO)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Access the Website in the browser, present it in the bookmark, and identify the JavaScript framework and version used."
+    },
+    {
+      "level": 3,
+      "text": "Next.js, 15.0.0"
+    },
+    {
+      "level": 3,
+      "text": "2- Using Splunk, Find the attacker’s IP address"
+    },
+    {
+      "level": 3,
+      "text": "218.92.0.204"
+    },
+    {
+      "level": 3,
+      "text": "3- Analyze the SIEM logs to determine how many unique URIs were accessed by the attacker."
+    },
+    {
+      "level": 3,
+      "text": "9930"
+    },
+    {
+      "level": 3,
+      "text": "4- Explore the site and identify two specific locations that could reveal internal structures or potential access points not meant for public eyes. Provide the two relative URLs."
+    },
+    {
+      "level": 3,
+      "text": "/admin, /admin/file-upload"
+    },
+    {
+      "level": 3,
+      "text": "5- Based on the Framework and Version, what recent CVE could be used to bypass authorization?"
+    },
+    {
+      "level": 3,
+      "text": "CVE-2025–29927"
+    },
+    {
+      "level": 3,
+      "text": "6- Find the relevant HTTP header in the SIEM logs that indicates CVE exploitation. Provide the header name."
+    },
+    {
+      "level": 3,
+      "text": "x-middleware-subrequest"
+    },
+    {
+      "level": 3,
+      "text": "7- What interesting URI did the attacker access after exploiting the CVE?"
+    },
+    {
+      "level": 3,
+      "text": "/api/upload"
+    },
+    {
+      "level": 3,
+      "text": "8- The attacker tried uploading a reverse shell. Find out the IP and port to which the target would connect once the connection is established."
+    },
+    {
+      "level": 3,
+      "text": "113.89.232.157:31337"
+    },
+    {
+      "level": 3,
+      "text": "9- After compromising the WebApp server, the attacker attempted lateral movement. Identify the technique used, as recorded in the SIEM logs."
+    },
+    {
+      "level": 3,
+      "text": "ssh bruteforce"
+    },
+    {
+      "level": 3,
+      "text": "10- Identify the user account that achieved successful lateral movement to another server."
+    },
+    {
+      "level": 3,
+      "text": "dbserv"
+    }
+  ],
+  "overview": "The security team at MiddleMayhem Inc. has detected unusual network traffic to their admin portal, but no security breaches have been confirmed. Your SOC team has been provided with SIEM logs from the incident. Analyze the attack pattern to determine how attackers bypassed authentication, gained remote code execution, and moved laterally through the network.",
+  "study": {
+    "overview": "The security team at MiddleMayhem Inc. has detected unusual network traffic to their admin portal, but no security breaches have been confirmed. Your SOC team has been provided with SIEM logs from the incident. Analyze the attack pattern to determine how attackers bypassed authentication, gained remote code execution, and moved laterally through the network.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "MiddleMayhem (BTLO)",
+      "Scenario",
+      "1- Access the Website in the browser, present it in the bookmark, and identify the JavaScript framework and version used.",
+      "Next.js, 15.0.0",
+      "2- Using Splunk, Find the attacker’s IP address",
+      "218.92.0.204",
+      "3- Analyze the SIEM logs to determine how many unique URIs were accessed by the attacker.",
+      "9930",
+      "4- Explore the site and identify two specific locations that could reveal internal structures or potential access points not meant for public eyes. Provide the two relative URLs.",
+      "/admin, /admin/file-upload",
+      "5- Based on the Framework and Version, what recent CVE could be used to bypass authorization?",
+      "CVE-2025–29927"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM"
+    ],
+    "tips": []
+  }
+}

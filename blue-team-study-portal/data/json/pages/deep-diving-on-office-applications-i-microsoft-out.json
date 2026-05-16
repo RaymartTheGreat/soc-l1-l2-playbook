@@ -1,0 +1,103 @@
+{
+  "id": "windows forensics/windows applications forensics/deep-diving on office applications i microsoft out",
+  "title": "Deep-diving on Office Applications I Microsoft Out",
+  "slug": "deep-diving-on-office-applications-i-microsoft-out",
+  "relPath": "Windows Forensics/Windows Applications Forensics/Deep-diving on Office Applications I Microsoft Out.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "EDR",
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Web",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/windows applications forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/windows applications forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics",
+      "title": "Windows Applications Forensics",
+      "slug": "windows-applications-forensics"
+    },
+    {
+      "id": "windows forensics/windows applications forensics/deep-diving on office applications i microsoft out",
+      "title": "Deep-diving on Office Applications I Microsoft Out",
+      "slug": "deep-diving-on-office-applications-i-microsoft-out"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Deep-diving on Office Applications I: Microsoft Outlook"
+    },
+    {
+      "level": 1,
+      "text": "Microsoft Outlook Analysis"
+    },
+    {
+      "level": 1,
+      "text": "Scenario: Phishing Emails"
+    },
+    {
+      "level": 3,
+      "text": "Email with file attachments"
+    },
+    {
+      "level": 3,
+      "text": "Email with links"
+    },
+    {
+      "level": 3,
+      "text": "Reviewing email headers"
+    }
+  ],
+  "overview": "Deep-diving on Office Applications I: Microsoft Outlook",
+  "study": {
+    "overview": "Deep-diving on Office Applications I: Microsoft Outlook",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Deep-diving on Office Applications I: Microsoft Outlook",
+      "Microsoft Outlook Analysis",
+      "Scenario: Phishing Emails",
+      "Email with file attachments",
+      "Email with links",
+      "Reviewing email headers"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> ls C:\\Users\\ | foreach {ls \"C:\\Users\\$_\\AppData\\Local\\Microsoft\\Outlook\\\" 2>$null | findstr Directory}"
+      },
+      {
+        "language": "powershell",
+        "code": "PS C:\\Users\\Administrator> ls -rec C:\\Users\\jane.adams\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\n\n    Directory: C:\\Users\\jane.adams\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\n\nMode                LastWriteTime         Length Name\n----                -------------         ------ ----\nd-----        2/29/2024   6:59 PM                3PMB1RPU\n\n    Directory: C:\\Users\\jane.adams\\AppData\\Local\\Microsoft\\Windows\\INetCache\\Content.Outlook\\3PMB1RPU\n\nMode                LastWriteTime         Length Name\n----                -------------         ------ ----\n-a----        2/29/2024   6:59 PM           6271 survey_results_updated (002).zip\n--r---        2/29/2024   6:59 PM           6271 survey_results_updated.zip"
+      }
+    ],
+    "tools": [
+      "EDR",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

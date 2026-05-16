@@ -1,0 +1,88 @@
+{
+  "id": "windows forensics/windows browser artifacts",
+  "title": "Windows Browser Artifacts",
+  "slug": "windows-browser-artifacts",
+  "relPath": "Windows Forensics/Windows Browser Artifacts.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Web",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/windows browser artifacts",
+      "title": "Windows Browser Artifacts",
+      "slug": "windows-browser-artifacts"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Windows Browser Artifacts"
+    },
+    {
+      "level": 2,
+      "text": "Why It Matters"
+    },
+    {
+      "level": 2,
+      "text": "Collection Methods"
+    },
+    {
+      "level": 3,
+      "text": "1- KAPE Browser Targets"
+    },
+    {
+      "level": 3,
+      "text": "2- Browser History Capturer (BHC) + Browser History Viewer (BHV)"
+    },
+    {
+      "level": 2,
+      "text": "Artifacts by Browser"
+    },
+    {
+      "level": 2,
+      "text": "Tools"
+    }
+  ],
+  "overview": "Browser artifacts are valuable in digital forensics, especially during user activity analysis, timeline creation, and malware investigation. They capture web browsing behavior, cached data, download logs, and session traces across modern browsers like Chrome, Firefox, and Edge.",
+  "study": {
+    "overview": "Browser artifacts are valuable in digital forensics, especially during user activity analysis, timeline creation, and malware investigation. They capture web browsing behavior, cached data, download logs, and session traces across modern browsers like Chrome, Firefox, and Edge.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Windows Browser Artifacts",
+      "Why It Matters",
+      "Collection Methods",
+      "1- KAPE Browser Targets",
+      "2- Browser History Capturer (BHC) + Browser History Viewer (BHV)",
+      "Artifacts by Browser",
+      "Tools"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

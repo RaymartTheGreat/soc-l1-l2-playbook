@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Overpass-the-Hash | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="detecting-ad-attacks.html">Detecting AD Attacks</a><span>/</span><span>Overpass-the-Hash</span></div>
+      <h1>Overpass-the-Hash</h1>
+      <p>Overpass-the-Hash is a credential misuse technique that bridges Pass-the-Hash and Pass-the-Ticket attacks. It allows attackers to leverage an NTLM hash to request a Kerberos Ticket-Granting Ticket (TGT) from the Key Distribution Center (KDC) in an Active Directory environment, effectively converting NTLM credentials into Kerberos credentials without needing </p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">SIEM</span><span class="tag">EDR</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Kerberos</span><span class="tag">Memory</span><span class="tag">Detection</span><span class="tag mitre">T1550.002</span><span class="tag mitre">T1550</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Detecting AD Attacks</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>L2</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="dcsync.html"><span>DCSync</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="kerberoasting.html"><span>Kerberoasting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pass-the-hash-pth.html"><span>Pass-the-Hash (PtH)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pass-the-ticket-ptt.html"><span>Pass-the-Ticket (PtT)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="overpass-the-hash.html"><span>Overpass-the-Hash</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="golden-ticket.html"><span>Golden Ticket</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="silver-ticket.html"><span>Silver Ticket</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="dcshadow.html"><span>DCSHADOW</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="as-reproasting.html"><span>AS-REPRoasting</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="skeleton-key.html"><span>Skeleton Key</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntlm-relay-attacks.html"><span>NTLM Relay Attacks</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="llmnr-nbt-ns-poisoning.html"><span>LLMNR NBT-NS Poisoning</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="credential-dumping-general.html"><span>Credential Dumping (General)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="attacker-targets-in-active-directory-environments.html"><span>Attacker Targets in Active Directory Environments</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="putting-it-all-together-ad-attack-scenario.html"><span>Putting It All Together AD Attack Scenario</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Overpass-the-Hash is a credential misuse technique that bridges Pass-the-Hash and Pass-the-Ticket attacks. It allows attackers to leverage an NTLM hash to request a Kerberos Ticket-Granting Ticket (TGT) from the Key Distribution Center (KDC) in an Active Directory environment, effectively converting NTLM credentials into Kerberos credentials without needing </p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Overpass-the-Hash</li><li>1- Understanding the Attack</li><li>2- Steps of an Overpass-the-Hash Attack</li><li>a. Initial Access and Hash Extraction</li><li>b. Converting NTLM Hash to a Kerberos Ticket</li><li>c. Verifying and Using the Kerberos Ticket</li><li>3- Key Tools</li><li>4- Example Scenario</li><li>Target Environment</li><li>Attack Flow</li><li>5- Detection and Defensive Strategies</li><li>Detection</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li><li>EDR</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="overpass-the-hash">Overpass-the-Hash</h2>
+<p><strong>Overpass-the-Hash</strong> is a credential misuse technique that bridges Pass-the-Hash and Pass-the-Ticket attacks. It allows attackers to leverage an NTLM hash to request a Kerberos Ticket-Granting Ticket (TGT) from the Key Distribution Center (KDC) in an Active Directory environment, effectively converting NTLM credentials into Kerberos credentials without needing the plaintext password.</p>
+<p><a class="note-link" href="https://attack.mitre.org/techniques/T1550/002/"><strong>MITRE ATT&amp;amp;CK ID: T1550.002</strong></a></p>
+<hr>
+<h3 id="1-understanding-the-attack">1- Understanding the Attack</h3>
+<ul>
+<li><strong>Credential Source:</strong></li>
+</ul>
+<p>NTLM hashes obtained from compromised systems (e.g., via memory dumping or tools like Mimikatz).</p>
+<ul>
+<li><strong>Authentication Mechanism:</strong></li>
+</ul>
+<p>Uses the NTLM hash to request a Kerberos TGT from the KDC, leveraging the compatibility between NTLM and Kerberos protocols in Windows environments.</p>
+<ul>
+<li><strong>Result:</strong></li>
+</ul>
+<p>Once a TGT is obtained, the attacker can request Service Tickets (STs) to access network resources without the need for the actual password.</p>
+<hr>
+<h3 id="2-steps-of-an-overpass-the-hash-attack">2- Steps of an Overpass-the-Hash Attack</h3>
+<h4 id="a.-initial-access-and-hash-extraction">a. Initial Access and Hash Extraction</h4>
+<ul>
+<li><strong>Objective:</strong></li>
+</ul>
+<p>Gain access to a target system and extract NTLM hashes.</p>
+<ul>
+<li><strong>Example Tool:</strong></li>
+</ul>
+<p>Mimikatz</p>
+<p><em>Example Command:</em></p>
+<p>``<code>jsx mimikatz # sekurlsa::logonpasswords </code>``</p>
+<p><em>Output Example:</em></p>
+<p>``<code>jsx Username : admin NTLM     : 5d41402abc4b2a76b9719d911017c592 </code>``</p>
+<h4 id="b.-converting-ntlm-hash-to-a-kerberos-ticket">b. Converting NTLM Hash to a Kerberos Ticket</h4>
+<ul>
+<li><strong>Process:</strong></li>
+</ul>
+<p>Inject the extracted NTLM hash into the Kerberos authentication process to request a TGT.</p>
+<ul>
+<li><strong>Tool and Example Command:</strong></li>
+</ul>
+<p>Mimikatz</p>
+<p>``<code>jsx mimikatz # sekurlsa::pth /user:admin /domain:example.com /ntlm:5d41402abc4b2a76b9719d911017c592 </code>``</p>
+<ul>
+<ul>
+<li>This command uses the NTLM hash to request and inject a TGT into the current session.</li>
+</ul>
+</ul>
+<h4 id="c.-verifying-and-using-the-kerberos-ticket">c. Verifying and Using the Kerberos Ticket</h4>
+<ul>
+<li><strong>Verification:</strong></li>
+</ul>
+<p>Check for the injected ticket using:</p>
+<p>``<code>jsx mimikatz # kerberos::list </code>``</p>
+<ul>
+<li><strong>Utilization:</strong></li>
+</ul>
+<p>With the valid TGT, the attacker can now obtain Service Tickets and access domain resources (e.g., network shares, databases) to move laterally or escalate privileges.</p>
+<hr>
+<h3 id="3-key-tools">3- Key Tools</h3>
+<ol>
+<li><strong>Mimikatz</strong></li>
+<ul>
+<li><strong>Usage:</strong></li>
+</ul>
+</ol>
+<p>Dumping NTLM hashes and performing the Overpass-the-Hash injection.</p>
+<ul>
+<ul>
+<li><strong>Example Command:</strong></li>
+</ul>
+</ul>
+<p>``` sekurlsa::pth /user:&lt;username&gt; /domain:&lt;domain&gt; /ntlm:&lt;hash&gt;</p>
+<p>```</p>
+<ol>
+<li><strong>Impacket Toolkit</strong></li>
+<ul>
+<li><strong>Usage:</strong></li>
+</ul>
+</ol>
+<p>Tools like psexec.py and wmiexec.py can utilize NTLM hashes for lateral movement.</p>
+<ol>
+<li><strong>PowerShell Empire</strong></li>
+<ul>
+<li><strong>Usage:</strong></li>
+</ul>
+</ol>
+<p>Provides modules to automate Overpass-the-Hash attacks.</p>
+<hr>
+<h3 id="4-example-scenario">4- Example Scenario</h3>
+<h4 id="target-environment">Target Environment</h4>
+<ul>
+<li><strong>Setup:</strong></li>
+</ul>
+<p>An Active Directory domain using both NTLM and Kerberos for authentication.</p>
+<h4 id="attack-flow">Attack Flow</h4>
+<ol>
+<li><strong>Compromise a Machine:</strong></li>
+<ul>
+<li>Use phishing or exploit vulnerabilities to gain access and dump NTLM hashes from LSASS.</li>
+</ul>
+<li><strong>Perform Overpass-the-Hash:</strong></li>
+<ul>
+<li>Inject the NTLM hash to request a Kerberos TGT using Mimikatz:</li>
+</ul>
+</ol>
+<p>``<code>jsx mimikatz # sekurlsa::pth /user:admin /domain:example.com /ntlm:5d41402abc4b2a76b9719d911017c592 </code>``</p>
+<ol>
+<li><strong>Access Network Resources:</strong></li>
+<ul>
+<li>Verify the TGT and then use it to request Service Tickets, allowing lateral movement and privilege escalation.</li>
+</ul>
+</ol>
+<hr>
+<h3 id="5-detection-and-defensive-strategies">5- Detection and Defensive Strategies</h3>
+<h4 id="detection">Detection</h4>
+<ul>
+<li><strong>Event Sequences:</strong></li>
+</ul>
+<p>Overpass-the-Hash often leaves a trail where NTLM authentication (Event ID 4776) is followed immediately by Kerberos TGT requests (4768). This unusual sequence can signal an attacker pivoting from NTLM hashes to Kerberos tickets.</p>
+<ul>
+<li><strong>Ticket Anomalies:</strong></li>
+</ul>
+<p>Pay close attention to Kerberos TGT (4768) and TGS (4769) events that involve privileged accounts. Certain encryption types or ticket flags — especially when inconsistent with normal traffic can indicate forged requests.</p>
+<p>Likewise, Kerberos logons (4624) tied to the same account, logon GUID, and IP address appearing repeatedly may point to replayed or forged tickets.</p>
+<ul>
+<li><strong>Monitoring Tools:</strong></li>
+</ul>
+<p>SIEM and EDR platforms can help correlate these events and highlight anomalies. Alerting on unusual combinations of ticket options, encryption types, and account names is especially useful.</p>
+<ul>
+<li><strong>Example Queries:</strong></li>
+</ul>
+<p>These queries illustrate how detection might be implemented in a SIEM:</p>
+<ul>
+<ul>
+<li>Detect a TGT request for <em>Administrator</em> with unusual encryption and ticket flags:</li>
+</ul>
+</ul>
+<p>``<code>jsx event.code: 4768 AND winlog.event_data.TargetUserName: &quot;Administrator&quot; AND winlog.event_data.TicketEncryptionType: &quot;0x17&quot; AND winlog.event_data.TicketOptions: &quot;0x40800010&quot; </code>``</p>
+<ul>
+<ul>
+<li>Spot a suspicious TGS request tied to a forged TGT from a specific IP:</li>
+</ul>
+</ul>
+<p>``<code>jsx event.code: 4769 AND winlog.event_data.TargetUserName: &quot;Administrator@CORP.LOCAL&quot; AND winlog.event_data.IpAddress: &quot;::ffff:192.168.0.28&quot; AND winlog.event_data.TicketEncryptionType: &quot;0x12&quot; </code>``</p>
+<ul>
+<ul>
+<li>Identify Kerberos logons using replayed/forged tickets:</li>
+</ul>
+</ul>
+<p>``<code>jsx event.code: 4624 AND winlog.event_data.LogonGuid: &quot;{e11813f7-f0e8-1275-8ee8-725ffd1c69cc}&quot; AND winlog.event_data.TargetUserName: &quot;Administrator&quot; AND winlog.event_data.IpAddress: &quot;192.168.0.28&quot; </code>``</p>
+<h4 id="defensive-strategies">Defensive Strategies</h4>
+<ul>
+<li><strong>Secure LSASS:</strong></li>
+</ul>
+<p>Enable Credential Guard or LSASS Protection to prevent attackers from extracting hashes.</p>
+<p>``<code>powershell reg add HKLM\SYSTEM\CurrentControlSet\Control\Lsa /v RunAsPPL /t REG_DWORD /d 1 /f </code>``</p>
+<ul>
+<li><strong>Restrict NTLM Usage:</strong></li>
+</ul>
+<p>Use Group Policy to disable or restrict NTLM (e.g., <em>Network Security: Restrict NTLM</em>).</p>
+<ul>
+<li><strong>Strengthen Authentication:</strong></li>
+</ul>
+<p>Enforce multi-factor authentication (MFA) and rotate privileged account credentials frequently.</p>
+<ul>
+<li><strong>Monitor Authentication Events:</strong></li>
+</ul>
+<p>Configure SIEM rules to raise alerts when NTLM and Kerberos activity appears in suspicious combinations.</p>
+<hr>
+<h3 id="6-summary">6- Summary</h3>
+<ul>
+<li><strong>Protocol Targeted:</strong> Kerberos (leveraging NTLM credentials)</li>
+<li><strong>Authentication Material:</strong> NTLM hash converted into a Kerberos Ticket-Granting Ticket (TGT)</li>
+<li><strong>Scope of Attack:</strong> Credential misuse enabling lateral movement and privilege escalation within an Active Directory environment</li>
+<li><strong>Key Tools:</strong> Mimikatz, Impacket Toolkit, PowerShell Empire</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#overpass-the-hash">Overpass-the-Hash</a><a href="#1-understanding-the-attack">1- Understanding the Attack</a><a href="#2-steps-of-an-overpass-the-hash-attack">2- Steps of an Overpass-the-Hash Attack</a><a href="#a.-initial-access-and-hash-extraction">a. Initial Access and Hash Extraction</a><a href="#b.-converting-ntlm-hash-to-a-kerberos-ticket">b. Converting NTLM Hash to a Kerberos Ticket</a><a href="#c.-verifying-and-using-the-kerberos-ticket">c. Verifying and Using the Kerberos Ticket</a><a href="#3-key-tools">3- Key Tools</a><a href="#4-example-scenario">4- Example Scenario</a><a href="#target-environment">Target Environment</a><a href="#attack-flow">Attack Flow</a><a href="#5-detection-and-defensive-strategies">5- Detection and Defensive Strategies</a><a href="#detection">Detection</a><a href="#defensive-strategies">Defensive Strategies</a><a href="#6-summary">6- Summary</a></details>
+    </div>
+    
+    <footer class="pager"><a href="pass-the-ticket-ptt.html">← Pass-the-Ticket (PtT)</a><a href="golden-ticket.html">Golden Ticket →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

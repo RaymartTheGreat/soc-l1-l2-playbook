@@ -1,0 +1,181 @@
+{
+  "id": "log analysis labs/smartypants (htb)",
+  "title": "SmartyPants (HTB)",
+  "slug": "smartypants-htb",
+  "relPath": "Log Analysis Labs/SmartyPants (HTB).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Web",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/smartypants (htb)",
+      "title": "SmartyPants (HTB)",
+      "slug": "smartypants-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "SmartyPants (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "What SmartScreen does"
+    },
+    {
+      "level": 3,
+      "text": "Why SmartScreen Debug logs are useful in investigations"
+    },
+    {
+      "level": 3,
+      "text": "How SmartScreen fits with other artifacts"
+    },
+    {
+      "level": 3,
+      "text": "Advantages of SmartScreen Debug logs"
+    },
+    {
+      "level": 3,
+      "text": "Limitation to note"
+    },
+    {
+      "level": 3,
+      "text": "1- The attacker logged in to the machine where Dutch saves critical files, via RDP on 24th January 2025. Please determine the timestamp of this login."
+    },
+    {
+      "level": 3,
+      "text": "2025-01-24 10:15:14"
+    },
+    {
+      "level": 3,
+      "text": "2- The attacker downloaded a few utilities that aided them for their sabotage and extortion operation. What was the first tool they downloaded and installed?"
+    },
+    {
+      "level": 3,
+      "text": "WinRAR"
+    },
+    {
+      "level": 3,
+      "text": "3- They then proceeded to download and then execute the portable version of a tool that could be used to search for files on the machine quickly and efficiently. What was the full path of the executable?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\Dutch\\Downloads\\Everything.exe"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the execution time of the tool from task 3?"
+    },
+    {
+      "level": 3,
+      "text": "2025-01-24 10:17:33"
+    },
+    {
+      "level": 3,
+      "text": "5- The utility was used to search for critical and confidential documents stored on the host, which the attacker could steal and extort the victim. What was the first document that the attacker got their hands on and breached the confidentiality of that document?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\Dutch\\Documents\\2025- Board of directors Documents\\Ministry Of Defense Audit.pdf"
+    },
+    {
+      "level": 3,
+      "text": "6- Find the name and path of second stolen document as well."
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\Dutch\\Documents\\2025- Board of directors Documents\\2025-BUDGET-ALLOCATION-CONFIDENTIAL.pdf"
+    },
+    {
+      "level": 3,
+      "text": "7- The attacker installed a Cloud utility as well to steal and exfiltrate the documents. What is name of the cloud utility?"
+    },
+    {
+      "level": 3,
+      "text": "MEGAsync"
+    },
+    {
+      "level": 3,
+      "text": "8- When was this utility executed?"
+    },
+    {
+      "level": 3,
+      "text": "2025-01-24 10:22:19"
+    },
+    {
+      "level": 3,
+      "text": "9- The Attacker also proceeded to destroy the data on the host so it is unrecoverable. What utility was used to achieve this?"
+    },
+    {
+      "level": 3,
+      "text": "File Shredder"
+    },
+    {
+      "level": 3,
+      "text": "10- The attacker cleared 2 important logs, thinking they covered all their tracks. When was the security log cleared?"
+    },
+    {
+      "level": 3,
+      "text": "2025-01-24 10:28:41"
+    }
+  ],
+  "overview": "Forela's CTO, Dutch, stores important files on a separate Windows system because the domain environment at Forela is frequently breached due to its exposure across various industries. On 24 January 2025, our worst fears were realised when an intruder accessed the fileserver, installed utilities to aid their actions, stole critical files, and then deleted the",
+  "study": {
+    "overview": "Forela's CTO, Dutch, stores important files on a separate Windows system because the domain environment at Forela is frequently breached due to its exposure across various industries. On 24 January 2025, our worst fears were realised when an intruder accessed the fileserver, installed utilities to aid their actions, stole critical files, and then deleted the",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "SmartyPants (HTB)",
+      "Scenario",
+      "What SmartScreen does",
+      "Why SmartScreen Debug logs are useful in investigations",
+      "How SmartScreen fits with other artifacts",
+      "Advantages of SmartScreen Debug logs",
+      "Limitation to note",
+      "1- The attacker logged in to the machine where Dutch saves critical files, via RDP on 24th January 2025. Please determine the timestamp of this login.",
+      "2025-01-24 10:15:14",
+      "2- The attacker downloaded a few utilities that aided them for their sabotage and extortion operation. What was the first tool they downloaded and installed?",
+      "WinRAR",
+      "3- They then proceeded to download and then execute the portable version of a tool that could be used to search for files on the machine quickly and efficiently. What was the full path of the executable?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "SIEM",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

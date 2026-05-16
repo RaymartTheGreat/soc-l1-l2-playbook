@@ -1,0 +1,146 @@
+{
+  "id": "threat hunting labs (siem)/xdr operation global dagger 2 (thm)",
+  "title": "XDR Operation Global Dagger 2 (THM)",
+  "slug": "xdr-operation-global-dagger-2-thm",
+  "relPath": "Threat hunting Labs (SIEM)/XDR Operation Global Dagger 2 (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "Windows"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [
+    "threat hunting labs (siem)/xdr operation global dagger (thm)"
+  ],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/xdr operation global dagger 2 (thm)",
+      "title": "XDR Operation Global Dagger 2 (THM)",
+      "slug": "xdr-operation-global-dagger-2-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "XDR: Operation Global Dagger 2 (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the name of the alert generated due to persistent activities that was terminated by the system?"
+    },
+    {
+      "level": 3,
+      "text": "Suspicious service registration"
+    },
+    {
+      "level": 3,
+      "text": "2- How many suspicious evidence entities were found for the alert from question 1?"
+    },
+    {
+      "level": 3,
+      "text": "3"
+    },
+    {
+      "level": 3,
+      "text": "3- What Registry operation did the attacker perform in the alert from question 1?"
+    },
+    {
+      "level": 3,
+      "text": "RegistryModification"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the object MD5 value of the initiation process from the alert in question 1?"
+    },
+    {
+      "level": 3,
+      "text": "cdb58d0bcabe76afc60428f364834463"
+    },
+    {
+      "level": 3,
+      "text": "5- Find the alert Attempt to turn off Microsoft Defender Antivirus protection which has the \"true positive\" classification set. What is the Disabled setting value?"
+    },
+    {
+      "level": 3,
+      "text": "DisableRealtimeMonitoring"
+    },
+    {
+      "level": 3,
+      "text": "6- What command was used by the attacker to initiate the process in the alert from question 5?"
+    },
+    {
+      "level": 3,
+      "text": "reg add \"HKLM\\Software\\Policies\\Microsoft\\Windows Defender\\Real-Time Protection\" /v \"DisableRealtimeMonitoring\" /t REGDWORD /d \"1\" /f"
+    },
+    {
+      "level": 3,
+      "text": "7- Find the alert Suspicious behavior by cmd.exe was observed which has a classification set. What is the evidence entity name that has the process ID 2232?"
+    },
+    {
+      "level": 3,
+      "text": "WMIC.exe"
+    },
+    {
+      "level": 3,
+      "text": "8- What are the MITRE tactics related to the alert in question 7? (Answer in alphabetical order)"
+    },
+    {
+      "level": 3,
+      "text": "Discovery, Execution"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the flag found in the alert from question 7?"
+    },
+    {
+      "level": 3,
+      "text": "THM{PZ874JC89DR5NZ1DAF6MS2KH}"
+    }
+  ],
+  "overview": "Continuing to investigate the incident from Operation Global Dagger 1, we need to investigate more unusual user and machine behaviours, some persistent activities, malicious executions, and attempts by an attacker to disable the organisation's security solution.",
+  "study": {
+    "overview": "Continuing to investigate the incident from Operation Global Dagger 1, we need to investigate more unusual user and machine behaviours, some persistent activities, malicious executions, and attempts by an attacker to disable the organisation's security solution.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "XDR: Operation Global Dagger 2 (THM)",
+      "Scenario",
+      "1- What is the name of the alert generated due to persistent activities that was terminated by the system?",
+      "Suspicious service registration",
+      "2- How many suspicious evidence entities were found for the alert from question 1?",
+      "3",
+      "3- What Registry operation did the attacker perform in the alert from question 1?",
+      "RegistryModification",
+      "4- What is the object MD5 value of the initiation process from the alert in question 1?",
+      "cdb58d0bcabe76afc60428f364834463",
+      "5- Find the alert Attempt to turn off Microsoft Defender Antivirus protection which has the \"true positive\" classification set. What is the Disabled setting value?",
+      "DisableRealtimeMonitoring"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

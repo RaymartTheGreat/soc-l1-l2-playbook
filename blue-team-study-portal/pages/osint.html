@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>OSINT | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link active" href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>OSINT</span></div>
+      <h1>OSINT</h1>
+      <p>Open‑Source Intelligence (OSINT) is the methodical collection and analysis of publicly accessible information to support decision‑making. Sources include:</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Web</span><span class="tag">OSINT</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>OSINT</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="osint.html"><span>OSINT</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Open‑Source Intelligence (OSINT) is the methodical collection and analysis of publicly accessible information to support decision‑making. Sources include:</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>OSINT</li><li>OSINT</li><li>Tool Catalog</li><li>Recon Frameworks</li><li>Search &amp; Enumeration</li><li>Imaging &amp; Metadata</li><li>ID &amp; Credential Discovery</li><li>Social &amp; People Search</li><li>Infrastructure &amp; Domain Info</li><li>Business Data</li><li>Miscellaneous</li><li>Defensive Controls &amp; Mitigations</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="osint">OSINT</h2>
+<h3 id="osint">OSINT</h3>
+<p>Open‑Source Intelligence (OSINT) is the methodical collection and analysis of publicly accessible information to support decision‑making. Sources include:</p>
+<ul>
+<li><strong>Websites &amp; Blogs</strong>: Company pages, technical forums, news sites</li>
+<li><strong>Social Media</strong>: Profiles, posts, images, metadata</li>
+<li><strong>Public Records &amp; Databases</strong>: Corporate registries, patents, court filings</li>
+<li><strong>Multimedia</strong>: Photos, videos, podcasts</li>
+</ul>
+<p><strong>Red Teams</strong> benefit by discovering target infrastructure, technologies, and personnel profiles ahead of active engagements enabling precise attack planning without triggering alerts.</p>
+<p><strong>Blue Teams</strong> gain visibility into exposed assets, public data leaks, and employee footprints, empowering proactive hardening, policy enforcement, and targeted awareness training.</p>
+<hr>
+<h3 id="tool-catalog">Tool Catalog</h3>
+<h4 id="recon-frameworks">Recon Frameworks</h4>
+<ul>
+<li><a class="note-link" href="https://github.com/laramies/theHarvester">theHarvester</a>: email, domain, username harvest</li>
+<li><a class="note-link" href="https://github.com/lanmaster53/recon-ng">Recon-ng</a>: modular web reconnaissance</li>
+<li><a class="note-link" href="https://github.com/smicallef/spiderfoot">SpiderFoot</a>: automated OSINT</li>
+<li><a class="note-link" href="https://github.com/laramies/metagoofil">Metagoofil</a>: metadata extraction</li>
+</ul>
+<h4 id="search-enumeration">Search &amp; Enumeration</h4>
+<ul>
+<li><strong>Search Operators</strong>: Google Advanced (<a class="note-link" href="https://www.googleguide.com/print/adv_op_ref.pdf">reference</a>), Bing dorks</li>
+<li><strong>Subdomains</strong>: <a class="note-link" href="https://crt.sh/">crt.sh</a>, <a class="note-link" href="https://github.com/OWASP/Amass">Amass</a>, <a class="note-link" href="https://github.com/projectdiscovery/subfinder">Subfinder</a></li>
+<li><strong>Web Tech</strong>: <a class="note-link" href="https://builtwith.com/">BuiltWith</a>, <a class="note-link" href="https://www.wappalyzer.com/">Wappalyzer</a></li>
+</ul>
+<h4 id="imaging-metadata">Imaging &amp; Metadata</h4>
+<ul>
+<li><strong>Reverse Image</strong>: <a class="note-link" href="https://images.google.com/">Google Images</a>, <a class="note-link" href="https://tineye.com/">TinEye</a>, <a class="note-link" href="https://yandex.com/images">Yandex Images</a></li>
+<li><strong>EXIF Tools</strong>: exiftool, <a class="note-link" href="https://exifdata.com/">ExifData.com</a></li>
+</ul>
+<h4 id="id-credential-discovery">ID &amp; Credential Discovery</h4>
+<ul>
+<li><strong>Emails</strong>: <a class="note-link" href="https://hunter.io/">Hunter.io</a>, <a class="note-link" href="https://www.voilanorbert.com/">VoilaNorbert</a>, <a class="note-link" href="https://tools.emailhippo.com/">EmailHippo</a></li>
+<li><strong>Usernames</strong>: <a class="note-link" href="https://github.com/sherlock-project/sherlock">Sherlock</a>, <a class="note-link" href="https://github.com/WebBreacher/WhatsMyName">WhatsMyName</a></li>
+<li><strong>Breaches</strong>: <a class="note-link" href="https://haveibeenpwned.com/">HaveIBeenPwned</a>, <a class="note-link" href="https://dehashed.com/">DeHashed</a>, <a class="note-link" href="https://leakcheck.io/">LeakCheck</a></li>
+</ul>
+<h4 id="social-people-search">Social &amp; People Search</h4>
+<ul>
+<li><strong>People</strong>: <a class="note-link" href="https://www.whitepages.com/">Whitepages</a>, <a class="note-link" href="https://www.peekyou.com/">PeekYou</a></li>
+<li><strong>Social</strong>: Twitter (<a class="note-link" href="https://www.twitonomy.com/">Twitonomy</a>), Facebook (<a class="note-link" href="https://www.sowsearch.info/">Sowsearch</a>)</li>
+</ul>
+<h4 id="infrastructure-domain-info">Infrastructure &amp; Domain Info</h4>
+<ul>
+<li><strong>Shodan</strong> (<a class="note-link" href="https://www.shodan.io/">shodan.io</a>), <strong>Censys</strong> (<a class="note-link" href="https://censys.io/">censys.io</a>), <strong>DNSlytics</strong></li>
+<li><strong>Archives</strong>: <a class="note-link" href="https://web.archive.org/">Wayback Machine</a></li>
+</ul>
+<h4 id="business-data">Business Data</h4>
+<ul>
+<li><a class="note-link" href="https://opencorporates.com/">OpenCorporates</a>, <a class="note-link" href="https://www.aihitdata.com/">AIHit Data</a></li>
+</ul>
+<h4 id="miscellaneous">Miscellaneous</h4>
+<ul>
+<li><strong>Wireless</strong>: <a class="note-link" href="https://wigle.net/">WiGLE</a></li>
+<li><strong>GeoGuessing</strong>: <a class="note-link" href="https://www.geoguessr.com/">GeoGuessr</a></li>
+</ul>
+<hr>
+<h3 id="defensive-controls-mitigations">Defensive Controls &amp; Mitigations</h3>
+<ul>
+<li><strong>Remove Indexed Data</strong>: <code>robots.txt</code>, Google URL removal API</li>
+<li><strong>Geofencing &amp; Whitelisting</strong>: restrict by IP or region</li>
+<li><strong>Asset Hardening</strong>: retire unused endpoints, patch management</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#osint">OSINT</a><a href="#osint">OSINT</a><a href="#tool-catalog">Tool Catalog</a><a href="#recon-frameworks">Recon Frameworks</a><a href="#search-enumeration">Search &amp; Enumeration</a><a href="#imaging-metadata">Imaging &amp; Metadata</a><a href="#id-credential-discovery">ID &amp; Credential Discovery</a><a href="#social-people-search">Social &amp; People Search</a><a href="#infrastructure-domain-info">Infrastructure &amp; Domain Info</a><a href="#business-data">Business Data</a><a href="#miscellaneous">Miscellaneous</a><a href="#defensive-controls-mitigations">Defensive Controls &amp; Mitigations</a></details>
+    </div>
+    
+    <footer class="pager"><a href="stenography.html">← Stenography</a><a href="edr-endpoint-detection-and-response.html">EDR (Endpoint Detection and Response) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

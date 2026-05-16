@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Unanttended (THM) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="forensics-labs.html">Forensics Labs</a><span>/</span><span>Unanttended (THM)</span></div>
+      <h1>Unanttended (THM)</h1>
+      <p>Welcome to the team, kid. I have something for you to get your feet wet.</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Windows</span><span class="tag">Web</span><span class="tag">DFIR</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Forensics Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="forensics-labs.html"><span>Forensics Labs</span><em>L2</em></a>
+      <b>15</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="countdown-btlo.html"><span>CountDown (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="bft-htb.html"><span>BFT (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="romcom-htb.html"><span>RomCom (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="insider-cyberdefenders.html"><span>Insider (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="disk-analysis-autopsy-thm.html"><span>Disk Analysis &amp; Autopsy (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="hireme-cyberdefenders.html"><span>HireMe (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="unanttended-thm.html"><span>Unanttended (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="secret-recipe-thm.html"><span>Secret Recipe (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="disgruntled-thm.html"><span>Disgruntled (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="investigating-windows-thm.html"><span>Investigating Windows (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="browser-forensics-btlo.html"><span>Browser Forensics (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="suspicious-usb-stick-btlo.html"><span>Suspicious USB Stick (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="ntfs-forensics-letsdefend.html"><span>NTFS Forensics (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="sysinternals-cyberdefenders.html"><span>Sysinternals (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="meteorhit.html"><span>MeteorHit</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Welcome to the team, kid. I have something for you to get your feet wet.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Unanttended (THM)</li><li>Scenario</li><li>1- What file type was searched for using the search bar in Windows Explorer?</li><li>.pdf</li><li>2- What top-secret keyword was searched for using the search bar in Windows Explorer?</li><li>continental</li><li>3- What is the name of the downloaded file to the Downloads folder?</li><li>7z2201-x64.exe</li><li>4- When was the file from the previous question downloaded? (YYYY-MM-DD HH:MM:SS UTC)</li><li>2022-11-19 12:09:19 UTC</li><li>5- Thanks to the previously downloaded file, a PNG file was opened. When was this file opened? (YYYY-MM-DD HH:MM:SS)</li><li>2022-11-19 12:10:21</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="unanttended-thm">Unanttended (THM)</h2>
+<h3 id="scenario">Scenario</h3>
+<p><strong>Welcome to the team, kid. I have something for you to get your feet wet.</strong></p>
+<p><strong>Our client has a newly hired employee who saw a suspicious-looking janitor exiting his office as he was about to return from lunch.</strong></p>
+<p><strong>I want you to investigate if there was user activity while the user was away between 12:05 PM to 12:45 PM on the 19th of November 2022. If there are, figure out what files were accessed and exfiltrated externally.</strong></p>
+<p><strong>You'll be accessing a live system, but use the disk image already exported to the <code>C:\Users\THM-RFedora\Desktop\kape-results\C</code> directory for your investigation. The link to the tools that you'll need is in <code>C:\Users\THM-RFedora\Desktop\tools</code></strong></p>
+<p><a class="note-link" href="https://tryhackme.com/room/unattended">https://tryhackme.com/room/unattended</a></p>
+<hr>
+<h4 id="1-what-file-type-was-searched-for-using-the-search-bar-in-windows-explorer"><strong>1- What file type was searched for using the search bar in Windows Explorer?</strong></h4>
+<h4 id=".pdf">.pdf</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_221652-d0d947b9.png" data-alt="Screenshot 2025-07-20 221652.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_221652-d0d947b9.png" alt="Screenshot 2025-07-20 221652.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_224912-de68e233.png" data-alt="Screenshot 2025-07-20 224912.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_224912-de68e233.png" alt="Screenshot 2025-07-20 224912.png" loading="lazy"></button></p>
+<p>WordWheelQuery Records search terms entered into File Explorer’s search box</p>
+<p>right click data interpreter to look at details and you got the answer for the 2 questions</p>
+<h4 id="2-what-top-secret-keyword-was-searched-for-using-the-search-bar-in-windows-explorer">2- What top-secret keyword was searched for using the search bar in Windows Explorer?</h4>
+<h4 id="continental">continental</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_224922-f9e1f647.png" data-alt="Screenshot 2025-07-20 224922.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_224922-f9e1f647.png" alt="Screenshot 2025-07-20 224922.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_232813-4d07eab0.png" data-alt="Screenshot 2025-07-20 232813.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_232813-4d07eab0.png" alt="Screenshot 2025-07-20 232813.png" loading="lazy"></button></p>
+<h4 id="3-what-is-the-name-of-the-downloaded-file-to-the-downloads-folder">3- What is the name of the downloaded file to the Downloads folder?</h4>
+<h4 id="7z2201-x64.exe">7z2201-x64.exe</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233056-d3eeff91.png" data-alt="Screenshot 2025-07-20 233056.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233056-d3eeff91.png" alt="Screenshot 2025-07-20 233056.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233314-f5550df4.png" data-alt="Screenshot 2025-07-20 233314.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233314-f5550df4.png" alt="Screenshot 2025-07-20 233314.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233357-f8545d16.png" data-alt="Screenshot 2025-07-20 233357.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233357-f8545d16.png" alt="Screenshot 2025-07-20 233357.png" loading="lazy"></button></p>
+<p>look at web downloads and focus on the user thm-rfedora</p>
+<h4 id="4-when-was-the-file-from-the-previous-question-downloaded-yyyy-mm-dd-hhmmss-utc">4- When was the file from the previous question downloaded? (YYYY-MM-DD HH:MM:SS UTC)</h4>
+<h4 id="2022-11-19-120919-utc">2022-11-19 12:09:19 UTC</h4>
+<p>you can see the answer from data access column or you can right click properties</p>
+<h4 id="5-thanks-to-the-previously-downloaded-file-a-png-file-was-opened.-when-was-this-file-opene">5- Thanks to the previously downloaded file, a PNG file was opened. When was this file opened? (YYYY-MM-DD HH:MM:SS)</h4>
+<h4 id="2022-11-19-121021">2022-11-19 12:10:21</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233616-0c34682c.png" data-alt="Screenshot 2025-07-20 233616.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233616-0c34682c.png" alt="Screenshot 2025-07-20 233616.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233651-e827b23d.png" data-alt="Screenshot 2025-07-20 233651.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233651-e827b23d.png" alt="Screenshot 2025-07-20 233651.png" loading="lazy"></button></p>
+<p>take a look at RecentDocs in the bookmarks it Lists recently opened documents (files of any extension).</p>
+<h4 id="6-a-text-file-was-created-in-the-desktop-folder.-how-many-times-was-this-file-opened">6- A text file was created in the Desktop folder. How many times was this file opened?</h4>
+<h4 id="2">2</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233836-5ea366ab.png" data-alt="Screenshot 2025-07-20 233836.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_233836-5ea366ab.png" alt="Screenshot 2025-07-20 233836.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234112-cc37997a.png" data-alt="Screenshot 2025-07-20 234112.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234112-cc37997a.png" alt="Screenshot 2025-07-20 234112.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234349-13070355.png" data-alt="Screenshot 2025-07-20 234349.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234349-13070355.png" alt="Screenshot 2025-07-20 234349.png" loading="lazy"></button></p>
+<p>will need to investigate Jump Lists it store recently or frequently accessed items per application ,documents, websites, or tasks.</p>
+<p>will use JLECmd</p>
+<p>can see the answer in Interaction count</p>
+<h4 id="7-when-was-the-text-file-from-the-previous-question-last-modified-mmddyyyy-hhmm">7- When was the text file from the previous question last modified? (MM/DD/YYYY HH:MM)</h4>
+<h4 id="11192022-1212">11/19/2022 12:12</h4>
+<p>from the previous output</p>
+<h4 id="8-the-contents-of-the-file-were-exfiltrated-to-pastebin.com.-what-is-the-generated-url-of-">8- The contents of the file were exfiltrated to pastebin.com. What is the generated URL of the exfiltrated data?</h4>
+<h4 id="httpspastebin.com1fqasaav">https://pastebin.com/1FQASAav</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234423-4734d66e.png" data-alt="Screenshot 2025-07-20 234423.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234423-4734d66e.png" alt="Screenshot 2025-07-20 234423.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234549-98db10fc.png" data-alt="Screenshot 2025-07-20 234549.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234549-98db10fc.png" alt="Screenshot 2025-07-20 234549.png" loading="lazy"></button></p>
+<p>will take a look at web history considering the timeline we were given in the scenario</p>
+<h4 id="9-what-is-the-string-that-was-copied-to-the-pastebin-url">9- What is the string that was copied to the pastebin URL?</h4>
+<h4 id="ne7airhi3pdesy9rnorn">ne7AIRhi3PdESy9RnOrN</h4>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234626-21e053c2.png" data-alt="Screenshot 2025-07-20 234626.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234626-21e053c2.png" alt="Screenshot 2025-07-20 234626.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234635-54e73698.png" data-alt="Screenshot 2025-07-20 234635.png"><img src="../assets/images/forensics-labsunanttended-thm-screenshot_2025-07-20_234635-54e73698.png" alt="Screenshot 2025-07-20 234635.png" loading="lazy"></button></p>
+<p>you can find the string by opening the properties in autopsy or visit the url</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#unanttended-thm">Unanttended (THM)</a><a href="#scenario">Scenario</a><a href="#1-what-file-type-was-searched-for-using-the-search-bar-in-windows-explorer">1- What file type was searched for using the search bar in Windows Explorer?</a><a href="#.pdf">.pdf</a><a href="#2-what-top-secret-keyword-was-searched-for-using-the-search-bar-in-windows-explorer">2- What top-secret keyword was searched for using the search bar in Windows Explorer?</a><a href="#continental">continental</a><a href="#3-what-is-the-name-of-the-downloaded-file-to-the-downloads-folder">3- What is the name of the downloaded file to the Downloads folder?</a><a href="#7z2201-x64.exe">7z2201-x64.exe</a><a href="#4-when-was-the-file-from-the-previous-question-downloaded-yyyy-mm-dd-hhmmss-utc">4- When was the file from the previous question downloaded? (YYYY-MM-DD HH:MM:SS UTC)</a><a href="#2022-11-19-120919-utc">2022-11-19 12:09:19 UTC</a><a href="#5-thanks-to-the-previously-downloaded-file-a-png-file-was-opened.-when-was-this-file-opene">5- Thanks to the previously downloaded file, a PNG file was opened. When was this file opened? (YYYY-MM-DD HH:MM:SS)</a><a href="#2022-11-19-121021">2022-11-19 12:10:21</a><a href="#6-a-text-file-was-created-in-the-desktop-folder.-how-many-times-was-this-file-opened">6- A text file was created in the Desktop folder. How many times was this file opened?</a><a href="#2">2</a><a href="#7-when-was-the-text-file-from-the-previous-question-last-modified-mmddyyyy-hhmm">7- When was the text file from the previous question last modified? (MM/DD/YYYY HH:MM)</a><a href="#11192022-1212">11/19/2022 12:12</a><a href="#8-the-contents-of-the-file-were-exfiltrated-to-pastebin.com.-what-is-the-generated-url-of-">8- The contents of the file were exfiltrated to pastebin.com. What is the generated URL of the exfiltrated data?</a><a href="#httpspastebin.com1fqasaav">https://pastebin.com/1FQASAav</a><a href="#9-what-is-the-string-that-was-copied-to-the-pastebin-url">9- What is the string that was copied to the pastebin URL?</a><a href="#ne7airhi3pdesy9rnorn">ne7AIRhi3PdESy9RnOrN</a></details>
+    </div>
+    
+    <footer class="pager"><a href="hireme-cyberdefenders.html">← HireMe (CyberDefenders)</a><a href="secret-recipe-thm.html">Secret Recipe (THM) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

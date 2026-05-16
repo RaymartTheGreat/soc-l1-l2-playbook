@@ -1,0 +1,167 @@
+{
+  "id": "splunk filters",
+  "title": "Splunk Filters",
+  "slug": "splunk-filters",
+  "relPath": "Splunk Filters.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "Memory",
+    "Detection",
+    "Persistence",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "splunk filters",
+      "title": "Splunk Filters",
+      "slug": "splunk-filters"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Splunk Filters"
+    },
+    {
+      "level": 2,
+      "text": "Basic Commands & Functions"
+    },
+    {
+      "level": 2,
+      "text": "Field Operations"
+    },
+    {
+      "level": 2,
+      "text": "Common Fields for Investigation"
+    },
+    {
+      "level": 2,
+      "text": "Common stats functions in Splunk:"
+    },
+    {
+      "level": 2,
+      "text": "Useful Splunk Functions :"
+    },
+    {
+      "level": 2,
+      "text": "Time-based Commands"
+    },
+    {
+      "level": 2,
+      "text": "Useful Queries"
+    },
+    {
+      "level": 3,
+      "text": "1. HTTP Traffic Analysis"
+    },
+    {
+      "level": 3,
+      "text": "2. Brute Force Attack Detection"
+    },
+    {
+      "level": 3,
+      "text": "3. File Execution Monitoring"
+    },
+    {
+      "level": 3,
+      "text": "4. Suspicious PowerShell Commands"
+    },
+    {
+      "level": 3,
+      "text": "5. Lateral Movement - WMI Execution"
+    },
+    {
+      "level": 3,
+      "text": "6. Scheduled Task Creation"
+    },
+    {
+      "level": 3,
+      "text": "7. DNS Exfiltration Detection"
+    },
+    {
+      "level": 3,
+      "text": "8. Log Cleansing & Deletion Attempts"
+    },
+    {
+      "level": 3,
+      "text": "9. High Privilege Account Modifications"
+    },
+    {
+      "level": 3,
+      "text": "10. SMB Data Staging Detection"
+    },
+    {
+      "level": 3,
+      "text": "Additional Threat Hunting Techniques"
+    },
+    {
+      "level": 3,
+      "text": "Final Notes"
+    }
+  ],
+  "overview": "- | eventcount summarize=false index=→ see the available indexes. - | eventcount summarize=false index= | stats sum(count) as eventcount by index | sort - eventcount → Displays the number of events in each index, sorted in descending order. - index=whatever → Searches the whatever Splunk logs. - | metadata type=sourcetypes → Retrieves a list of all sourcetyp",
+  "study": {
+    "overview": "- | eventcount summarize=false index=→ see the available indexes. - | eventcount summarize=false index= | stats sum(count) as eventcount by index | sort - eventcount → Displays the number of events in each index, sorted in descending order. - index=whatever → Searches the whatever Splunk logs. - | metadata type=sourcetypes → Retrieves a list of all sourcetyp",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Splunk Filters",
+      "Basic Commands & Functions",
+      "Field Operations",
+      "Common Fields for Investigation",
+      "Common stats functions in Splunk:",
+      "Useful Splunk Functions :",
+      "Time-based Commands",
+      "Useful Queries",
+      "1. HTTP Traffic Analysis",
+      "2. Brute Force Attack Detection",
+      "3. File Execution Monitoring",
+      "4. Suspicious PowerShell Commands"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "jsx",
+        "code": "sourcetype=stream:http\n| stats count dc(uri_path) as distinct_paths sum(bytes_in) as total_bytes_in sum(bytes_out) as total_bytes_out by src_ip, dest_ip\n| eval total_bytes=total_bytes_in+total_bytes_out\n| sort -count\n| table src_ip, dest_ip, count, distinct_paths, total_bytes_in, total_bytes_out, total_bytes"
+      },
+      {
+        "language": "jsx",
+        "code": "index=security EventCode=4625\n| stats count by src_ip, user\n| where count > 10\n| sort -count\n| table src_ip, user, count"
+      },
+      {
+        "language": "jsx",
+        "code": "index=windows EventCode=4688\n| stats count by user, New_Process_Name\n| sort -count\n| table user, New_Process_Name, count"
+      },
+      {
+        "language": "jsx",
+        "code": "index=windows EventCode=4104 CommandLine=\"*Invoke-Mimikatz*\"\n| table _time, user, CommandLine"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "jsx",
+        "code": "index=windows EventCode=4688\n| search CommandLine=\"*wmic*\"\n| stats count by user, CommandLine\n| table user, CommandLine, count"
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

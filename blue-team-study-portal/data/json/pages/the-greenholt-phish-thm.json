@@ -1,0 +1,167 @@
+{
+  "id": "phishing analysis labs/the greenholt phish (thm)",
+  "title": "The Greenholt Phish (THM)",
+  "slug": "the-greenholt-phish-thm",
+  "relPath": "Phishing Analysis Labs/The Greenholt Phish (THM).md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-initial-triage",
+  "curriculumSectionTitle": "Initial Triage & Analysis",
+  "tags": [
+    "Phishing"
+  ],
+  "mitre": [],
+  "parentId": "phishing analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "phishing analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "phishing analysis labs",
+      "title": "Phishing Analysis Labs",
+      "slug": "phishing-analysis-labs"
+    },
+    {
+      "id": "phishing analysis labs/the greenholt phish (thm)",
+      "title": "The Greenholt Phish (THM)",
+      "slug": "the-greenholt-phish-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "The Greenholt Phish (THM)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the Transfer Reference Number listed in the email's Subject?"
+    },
+    {
+      "level": 3,
+      "text": "09674321"
+    },
+    {
+      "level": 3,
+      "text": "2- Who is the email from?"
+    },
+    {
+      "level": 3,
+      "text": "Mr. James Jackson"
+    },
+    {
+      "level": 3,
+      "text": "3- What is his email address?"
+    },
+    {
+      "level": 3,
+      "text": "info@mutawamarine.com"
+    },
+    {
+      "level": 3,
+      "text": "4- What email address will receive a reply to this email?"
+    },
+    {
+      "level": 3,
+      "text": "info.mutawamarine@mail.com"
+    },
+    {
+      "level": 3,
+      "text": "5- What is the Originating IP?"
+    },
+    {
+      "level": 3,
+      "text": "192.119.71.157"
+    },
+    {
+      "level": 3,
+      "text": "6- Who is the owner of the Originating IP? (Do not include the \".\" in your answer.)"
+    },
+    {
+      "level": 3,
+      "text": "Hostwinds LLC"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the SPF record for the Return-Path domain?"
+    },
+    {
+      "level": 3,
+      "text": "v=spf1 include:spf.protection.outlook.com -all"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the DMARC record for the Return-Path domain?"
+    },
+    {
+      "level": 3,
+      "text": "v=DMARC1; p=quarantine; fo=1"
+    },
+    {
+      "level": 3,
+      "text": "9- What is the name of the attachment?"
+    },
+    {
+      "level": 3,
+      "text": "SWT09674321PDF.CAB"
+    },
+    {
+      "level": 3,
+      "text": "10- What is the SHA256 hash of the file attachment?"
+    },
+    {
+      "level": 3,
+      "text": "2e91c533615a9bb8929ac4bb76707b2444597ce063d84a4b33525e25074fff3f"
+    },
+    {
+      "level": 3,
+      "text": "11- What is the attachments file size? (Don't forget to add \"KB\" to your answer, NUM KB)"
+    },
+    {
+      "level": 3,
+      "text": "400.26 KB"
+    },
+    {
+      "level": 3,
+      "text": "12- What is the actual file extension of the attachment?"
+    },
+    {
+      "level": 3,
+      "text": "RAR"
+    }
+  ],
+  "overview": "A Sales Executive at Greenholt PLC received an email that he didn't expect to receive from a customer. He claims that the customer never uses generic greetings such as \"Good day\" and didn't expect any amount of money to be transferred to his account. The email also contains an attachment that he never requested. He forwarded the email to the SOC (Security Op",
+  "study": {
+    "overview": "A Sales Executive at Greenholt PLC received an email that he didn't expect to receive from a customer. He claims that the customer never uses generic greetings such as \"Good day\" and didn't expect any amount of money to be transferred to his account. The email also contains an attachment that he never requested. He forwarded the email to the SOC (Security Op",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "The Greenholt Phish (THM)",
+      "Scenario",
+      "1- What is the Transfer Reference Number listed in the email's Subject?",
+      "09674321",
+      "2- Who is the email from?",
+      "Mr. James Jackson",
+      "3- What is his email address?",
+      "info@mutawamarine.com",
+      "4- What email address will receive a reply to this email?",
+      "info.mutawamarine@mail.com",
+      "5- What is the Originating IP?",
+      "192.119.71.157"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

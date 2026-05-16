@@ -1,0 +1,206 @@
+{
+  "id": "command‑and‑control (c2)",
+  "title": "Command‑and‑Control (C2)",
+  "slug": "commandandcontrol-c2",
+  "relPath": "Command‑and‑Control (C2).md",
+  "level": "L1.5",
+  "curriculumLevelId": null,
+  "curriculumSectionId": null,
+  "curriculumSectionTitle": null,
+  "tags": [
+    "Splunk",
+    "EDR",
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Web",
+    "Memory",
+    "Detection",
+    "Lateral Movement"
+  ],
+  "mitre": [
+    "T1071",
+    "T1090",
+    "T1102",
+    "T1071.001",
+    "T1071.004",
+    "T1090.003",
+    "T1095"
+  ],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "command‑and‑control (c2)",
+      "title": "Command‑and‑Control (C2)",
+      "slug": "commandandcontrol-c2"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Command‑and‑Control (C2)"
+    },
+    {
+      "level": 2,
+      "text": "1- Overview"
+    },
+    {
+      "level": 2,
+      "text": "2- Core Components"
+    },
+    {
+      "level": 3,
+      "text": "2-1 C2 Server"
+    },
+    {
+      "level": 3,
+      "text": "2-2 Agent / Payload"
+    },
+    {
+      "level": 3,
+      "text": "2-3 Listener"
+    },
+    {
+      "level": 3,
+      "text": "2-4 Beacon"
+    },
+    {
+      "level": 2,
+      "text": "3- Common C2 Communication Channels"
+    },
+    {
+      "level": 3,
+      "text": "3-1 HTTP / HTTPS"
+    },
+    {
+      "level": 3,
+      "text": "3-2 DNS Tunneling"
+    },
+    {
+      "level": 3,
+      "text": "3-3 ICMP (Ping)"
+    },
+    {
+      "level": 3,
+      "text": "3-4 Peer‑to‑Peer (P2P)"
+    },
+    {
+      "level": 3,
+      "text": "3-5 Cloud Services & Social Media"
+    },
+    {
+      "level": 2,
+      "text": "4- Obfuscation & Evasion"
+    },
+    {
+      "level": 3,
+      "text": "4-1 Sleep Timers & Jitter"
+    },
+    {
+      "level": 3,
+      "text": "4-2 Fast‑Flux DNS"
+    },
+    {
+      "level": 3,
+      "text": "4-3 Domain Fronting"
+    },
+    {
+      "level": 3,
+      "text": "4-4 C2 Profiles & Reverse Proxies"
+    },
+    {
+      "level": 2,
+      "text": "5- Payload Types & Formats"
+    },
+    {
+      "level": 3,
+      "text": "5-1 Stageless"
+    },
+    {
+      "level": 3,
+      "text": "5-2 Staged"
+    },
+    {
+      "level": 3,
+      "text": "5-3 Payload Formats"
+    },
+    {
+      "level": 2,
+      "text": "6- Modules & Post‑Exploitation"
+    },
+    {
+      "level": 2,
+      "text": "7- Detection & Hunting"
+    },
+    {
+      "level": 3,
+      "text": "7-1 Network‑Based"
+    },
+    {
+      "level": 3,
+      "text": "7-2 Endpoint‑Based"
+    },
+    {
+      "level": 3,
+      "text": "7-3 Splunk Queries"
+    },
+    {
+      "level": 2,
+      "text": "8- Common C2 Frameworks"
+    }
+  ],
+  "overview": "A C2 server is attacker‑controlled infrastructure—often a public IP or domain name—hosting listeners that compromised machines (“agents” or “beacons”) call back to. It functions like a multi‑user Netcat listener, but with advanced payload management, tasking, and data collection. Common C2 frameworks include Cobalt Strike, Metasploit, Empire, Sliver, and Bru",
+  "study": {
+    "overview": "A C2 server is attacker‑controlled infrastructure—often a public IP or domain name—hosting listeners that compromised machines (“agents” or “beacons”) call back to. It functions like a multi‑user Netcat listener, but with advanced payload management, tasking, and data collection. Common C2 frameworks include Cobalt Strike, Metasploit, Empire, Sliver, and Bru",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Command‑and‑Control (C2)",
+      "1- Overview",
+      "2- Core Components",
+      "2-1 C2 Server",
+      "2-2 Agent / Payload",
+      "2-3 Listener",
+      "2-4 Beacon",
+      "3- Common C2 Communication Channels",
+      "3-1 HTTP / HTTPS",
+      "3-2 DNS Tunneling",
+      "3-3 ICMP (Ping)",
+      "3-4 Peer‑to‑Peer (P2P)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "jsx",
+        "code": "index=network*\n| bin _time span=1m\n| stats count by src_ip, _time\n| streamstats window=5 stdev(count) as sd mean(count) as mu by src_ip\n| where sd<5 AND mu>10"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "powershell",
+        "code": "[Victim] → runs stager → [C2 Server] → delivers stage2 → [Victim loads full agent]"
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "EDR",
+      "Sysmon",
+      "PowerShell",
+      "Zeek"
+    ],
+    "tips": [
+      "Why it matters:",
+      "- Avoid signature‑based detection: randomized patterns defeat static IOCs.",
+      "- Bypass behavioral analytics: mimic normal user/network activity.",
+      "- Delay discovery and response: longer dwell time means deeper compromise."
+    ]
+  }
+}

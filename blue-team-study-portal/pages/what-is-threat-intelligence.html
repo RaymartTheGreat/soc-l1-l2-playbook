@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>What is Threat Intelligence | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-intelligence.html">Threat Intelligence</a><span>/</span><span>What is Threat Intelligence</span></div>
+      <h1>What is Threat Intelligence</h1>
+      <p>Threat Intelligence (TI) is the process of collecting, analyzing, and applying knowledge about potential and active cyber threats. This knowledge helps defenders detect, prevent, and respond to attacks more effectively / especially from sophisticated actors like APTs, criminal groups, or state-sponsored campaigns.</p>
+      <div class="tag-row"><span class="tag level">L1.5</span><span class="tag">SIEM</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Detection</span><span class="tag">Threat Intel</span><span class="tag">OSINT</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Intelligence</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-intelligence.html"><span>Threat Intelligence</span><em>L1.5</em></a>
+      <b>6</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="active" href="what-is-threat-intelligence.html"><span>What is Threat Intelligence</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="applying-threat-intelligence-in-soc-operations.html"><span>Applying Threat Intelligence in SOC Operations</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-intelligence-for-red-teamers.html"><span>Threat Intelligence for Red Teamers</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="misp-malware-information-sharing-platform.html"><span>MISP (Malware Information Sharing Platform)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="what-is-an-advanced-persistent-threat-apt.html"><span>What is an Advanced Persistent Threat (APT)</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="apt-naming-conventions.html"><span>APT Naming Conventions</span><em>L1.5</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Threat Intelligence (TI) is the process of collecting, analyzing, and applying knowledge about potential and active cyber threats. This knowledge helps defenders detect, prevent, and respond to attacks more effectively / especially from sophisticated actors like APTs, criminal groups, or state-sponsored campaigns.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>What is Threat Intelligence?</li><li>From Raw Data to Intelligence</li><li>The Threat Intelligence Lifecycle</li><li>1- Direction</li><li>2- Collection</li><li>3- Processing</li><li>4- Analysis</li><li>5- Dissemination</li><li>6- Feedback</li><li>Why Threat Intelligence Matters</li><li>Risk Context</li><li>Prioritization</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><ul><li>SIEM</li></ul></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="what-is-threat-intelligence">What is Threat Intelligence?</h2>
+<p><strong>Threat Intelligence (TI)</strong> is the process of collecting, analyzing, and applying knowledge about potential and active cyber threats. This knowledge helps defenders detect, prevent, and respond to attacks more effectively /  especially from sophisticated actors like APTs, criminal groups, or state-sponsored campaigns.</p>
+<p>It’s not just about knowing what happened it’s about understanding who did it, why, how, and what to do next.</p>
+<hr>
+<h3 id="from-raw-data-to-intelligence"><strong>From Raw Data to Intelligence</strong></h3>
+<p>Most threat intel starts as messy, disconnected information - IPs, URLs, logs, or file hashes. That raw data is only valuable when it’s processed, contextualized, and tied to a threat scenario.</p>
+<ul>
+<li><strong>Raw Data</strong>: One piece of info (e.g., <code>45.77.33.9</code> made 1000 SSH attempts)</li>
+<li><strong>Processed Info</strong>: That IP is part of a known brute-force botnet</li>
+<li><strong>Intelligence</strong>: The same botnet recently targeted your industry; you’re likely on a scan list. Add firewall rules and monitor credentials.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/threat-intelligencewhat-is-threat-intelligence-image-4535a61b.png" data-alt="image.png"><img src="../assets/images/threat-intelligencewhat-is-threat-intelligence-image-4535a61b.png" alt="image.png" loading="lazy"></button></p>
+<p>This transformation is the core of cyber threat intelligence.</p>
+<hr>
+<h3 id="the-threat-intelligence-lifecycle"><strong>The Threat Intelligence Lifecycle</strong></h3>
+<p><button class="image-button" data-src="../assets/images/threat-intelligencewhat-is-threat-intelligence-image-1-a4dfb475.png" data-alt="image.png"><img src="../assets/images/threat-intelligencewhat-is-threat-intelligence-image-1-a4dfb475.png" alt="image.png" loading="lazy"></button></p>
+<h4 id="1-direction"><strong>1- Direction</strong></h4>
+<p>Define the goals. What should we focus on? Is the priority actor tracking, vulnerability analysis, brand monitoring, or phishing IOCs?</p>
+<h4 id="2-collection"><strong>2- Collection</strong></h4>
+<p>Gather raw data from relevant sources:</p>
+<ul>
+<li>OSINT (forums, GitHub, social media)</li>
+<li>Threat feeds (free or paid)</li>
+<li>Dark web monitoring</li>
+<li>Internal logs, SIEM, malware sandboxes</li>
+</ul>
+<h4 id="3-processing"><strong>3- Processing</strong></h4>
+<p>Clean, parse, and convert raw inputs into usable formats. Translate foreign-language posts, normalize data, and tag it with context.</p>
+<h4 id="4-analysis"><strong>4- Analysis</strong></h4>
+<p>Turn processed info into insights:</p>
+<ul>
+<li>Who is behind the activity?</li>
+<li>What are their TTPs?</li>
+<li>Is this related to known campaigns?</li>
+</ul>
+<p>Output should be tailored to the audience — technical detail for the SOC, business risk framing for executives.</p>
+<h4 id="5-dissemination"><strong>5- Dissemination</strong></h4>
+<p>Share findings:</p>
+<ul>
+<li>IOC feeds → SIEM/SOAR tools</li>
+<li>Threat reports → Blue teams, execs</li>
+<li>Actor profiles → Red teams or CTI platforms</li>
+</ul>
+<h4 id="6-feedback"><strong>6- Feedback</strong></h4>
+<p>Get responses from intel consumers:</p>
+<ul>
+<li>Was this actionable?</li>
+<li>Was the format right?</li>
+<li>Do we need to change focus?</li>
+</ul>
+<p>This loop keeps the cycle aligned with the organization’s goals.</p>
+<hr>
+<h3 id="why-threat-intelligence-matters"><strong>Why Threat Intelligence Matters</strong></h3>
+<h4 id="risk-context"><strong>Risk Context</strong></h4>
+<p>TI adds real-world relevance to vulnerabilities or risks. Instead of “this vuln has a CVSS 9.8,” you get “this vuln was used by FIN7 against three banks this week.”</p>
+<h4 id="prioritization"><strong>Prioritization</strong></h4>
+<p>Two simultaneous alerts? TI helps choose. If one is linked to an active APT and the other is random scanning, responders know where to focus.</p>
+<h4 id="investigation-enrichment"><strong>Investigation Enrichment</strong></h4>
+<p>Intel transforms an IP from “just noise” into “known APT infrastructure,” giving weight to what would otherwise be ignored.</p>
+<h4 id="information-sharing"><strong>Information Sharing</strong></h4>
+<p>Exchanging IOCs and TTPs with trusted partners helps stop attacks earlier — ideally before they reach your network.</p>
+<hr>
+<h3 id="core-categories-of-threat-intelligence"><strong>Core Categories of Threat Intelligence</strong></h3>
+<p>Instead of formal &quot;types,&quot; most organizations structure intelligence like this:</p>
+<ul>
+<li><strong>Strategic</strong> – High-level threat trends, geopolitical risks, and business impact. Used by executives to set priorities and budgets.</li>
+<li><strong>Operational</strong> – Insights into active campaigns and attacker motivations. Useful for red teams and TI analysts.</li>
+<li><strong>Tactical</strong> – TTPs and behaviors mapped to frameworks like MITRE ATT&amp;CK. Guides defensive engineering and detection rules.</li>
+<li><strong>Technical</strong> – Artifacts like hashes, domains, and malware signatures. Shared with SOCs and automated defense tools.</li>
+</ul>
+<p>These layers work together — technical feeds alert SOCs, while operational and strategic intel shape overall defense planning.</p>
+<hr>
+<h3 id="sources-of-threat-intelligence"><strong>Sources of Threat Intelligence</strong></h3>
+<div class="table-wrap"><table><thead><tr><th>Source Type</th><th>Examples</th></tr></thead><tbody><tr><td><strong>Internal</strong></td><td>Logs, alerts, vulnerability scans, IR reports</td></tr><tr><td><strong>Community</strong></td><td>OSINT, dark web, industry ISACs</td></tr><tr><td><strong>External</strong></td><td>Vendor threat feeds, commercial intel platforms</td></tr></tbody></table></div>
+<hr>
+<h3 id="applications-of-threat-intelligence"><strong>Applications of Threat Intelligence</strong></h3>
+<h4 id="threat-actor-profiling"><strong>Threat Actor Profiling</strong></h4>
+<p>Helps track attackers’ behavior over time / what tools they use, their targets, infrastructure, and motivations. Red and blue teams can use this to simulate or prepare for specific actors.</p>
+<h4 id="proactive-defense"><strong>Proactive Defense</strong></h4>
+<p>By knowing what attackers are doing <em>before</em> they reach your network based on underground chatter, malware campaign telemetry, or shared IOCs  you can patch, block, or monitor more effectively.</p>
+<h4 id="risk-based-defense"><strong>Risk-Based Defense</strong></h4>
+<p>Add real-world adversary context to risk assessments and patch prioritization.</p>
+<h4 id="incident-prioritization"><strong>Incident Prioritization</strong></h4>
+<p>Rank simultaneous alerts or intrusions by likely threat actor, potential impact, or known campaigns.</p>
+<h4 id="investigation-enrichment"><strong>Investigation Enrichment</strong></h4>
+<p>Use IOCs and TTPs to expand from one artifact (e.g., IP) to full attack context (e.g., actor, campaign, payloads).</p>
+<h4 id="information-sharing"><strong>Information Sharing</strong></h4>
+<p>TI is collaborative. Organizations share:</p>
+<ul>
+<li>Indicators (IPs, hashes, URLs)</li>
+<li>Tactics and malware trends</li>
+<li>Precursor activity</li>
+</ul>
+<hr>
+<h3 id="frameworks-standards"><strong>Frameworks &amp; Standards</strong></h3>
+<ul>
+<li><strong>MITRE ATT&amp;CK</strong> – Standardized TTP framework</li>
+<li><strong>STIX/TAXII</strong> – Structured sharing and transport standards</li>
+<li><strong>Cyber Kill Chain</strong> – Linear model of attack progression</li>
+<li><strong>The Diamond Model</strong> – Emphasizes relationships: Adversary ↔ Infrastructure ↔ Victim ↔ Capabilities</li>
+</ul>
+<hr>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#what-is-threat-intelligence">What is Threat Intelligence?</a><a href="#from-raw-data-to-intelligence">From Raw Data to Intelligence</a><a href="#the-threat-intelligence-lifecycle">The Threat Intelligence Lifecycle</a><a href="#1-direction">1- Direction</a><a href="#2-collection">2- Collection</a><a href="#3-processing">3- Processing</a><a href="#4-analysis">4- Analysis</a><a href="#5-dissemination">5- Dissemination</a><a href="#6-feedback">6- Feedback</a><a href="#why-threat-intelligence-matters">Why Threat Intelligence Matters</a><a href="#risk-context">Risk Context</a><a href="#prioritization">Prioritization</a><a href="#investigation-enrichment">Investigation Enrichment</a><a href="#information-sharing">Information Sharing</a><a href="#core-categories-of-threat-intelligence">Core Categories of Threat Intelligence</a><a href="#sources-of-threat-intelligence">Sources of Threat Intelligence</a><a href="#applications-of-threat-intelligence">Applications of Threat Intelligence</a><a href="#threat-actor-profiling">Threat Actor Profiling</a><a href="#proactive-defense">Proactive Defense</a><a href="#risk-based-defense">Risk-Based Defense</a><a href="#incident-prioritization">Incident Prioritization</a><a href="#investigation-enrichment">Investigation Enrichment</a><a href="#information-sharing">Information Sharing</a><a href="#frameworks-standards">Frameworks &amp; Standards</a></details>
+    </div>
+    
+    <footer class="pager"><a href="threat-intelligence.html">← Threat Intelligence</a><a href="applying-threat-intelligence-in-soc-operations.html">Applying Threat Intelligence in SOC Operations →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+{
+  "id": "network analysis labs/web investigation (cyberdefenders)",
+  "title": "Web Investigation (CyberDefenders)",
+  "slug": "web-investigation-cyberdefenders",
+  "relPath": "Network Analysis Labs/Web Investigation (CyberDefenders).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Network",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/web investigation (cyberdefenders)",
+      "title": "Web Investigation (CyberDefenders)",
+      "slug": "web-investigation-cyberdefenders"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Web Investigation (CyberDefenders)"
+    },
+    {
+      "level": 1,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Q1: By knowing the attacker's IP, we can analyze all logs and actions related to that IP and determine the extent of the attack, the duration of the attack, and the techniques used. Can you provide the attacker's IP?"
+    },
+    {
+      "level": 3,
+      "text": "111.224.250.131"
+    },
+    {
+      "level": 3,
+      "text": "Q2: If the geographical origin of an IP address is known to be from a region that has no business or expected traffic with our network, this can be an indicator of a targeted attack. Can you determine the origin city of the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "Shijiazhuang"
+    },
+    {
+      "level": 3,
+      "text": "Q3: Identifying the exploited script allows security teams to understand exactly which vulnerability was used in the attack. This knowledge is critical for finding the appropriate patch or workaround to close the security gap and prevent future exploitation. Can you provide the vulnerable PHP script name?"
+    },
+    {
+      "level": 3,
+      "text": "search.php"
+    },
+    {
+      "level": 3,
+      "text": "Q4: Establishing the timeline of an attack, starting from the initial exploitation attempt, What's the complete request URI of the first SQLi attempt by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "/search.php?search=book and 1=1; -- -"
+    },
+    {
+      "level": 3,
+      "text": "Q5: Can you provide the complete request URI that was used to read the web server's available databases? (Note: Don't Decode the Value)"
+    },
+    {
+      "level": 3,
+      "text": "/search.php?search=book' UNION ALL SELECT NULL,CONCAT(0x7178766271,JSONARRAYAGG(CONCATWS(0x7a76676a636b,schemaname)),0x7176706a71) FROM INFORMATIONSCHEMA.SCHEMATA-- -"
+    },
+    {
+      "level": 3,
+      "text": "Q6: Assessing the impact of the breach and data access is crucial, including the potential harm to the organization's reputation. What's the table name containing the website users data?"
+    },
+    {
+      "level": 3,
+      "text": "customers"
+    },
+    {
+      "level": 3,
+      "text": "Q7: The website directories hidden from the public could serve as an unauthorized access point or contain sensitive functionalities not intended for public access. Can you provide the name of the directory discovered by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "/admin/"
+    },
+    {
+      "level": 3,
+      "text": "Q8: Knowing which credentials were used allows us to determine the extent of account compromise. What are the credentials used by the attacker for logging in?"
+    },
+    {
+      "level": 3,
+      "text": "admin:admin123!"
+    },
+    {
+      "level": 3,
+      "text": "Q9: We need to determine if the attacker gained further access or control of our web server. What's the name of the malicious script uploaded by the attacker?"
+    },
+    {
+      "level": 3,
+      "text": "NVri2vhp.php"
+    }
+  ],
+  "overview": "You are a cybersecurity analyst working in the Security Operations Center (SOC) of BookWorld, an expansive online bookstore renowned for its vast selection of literature. BookWorld prides itself on providing a seamless and secure shopping experience for book enthusiasts around the globe. Recently, you've been tasked with reinforcing the company's cybersecuri",
+  "study": {
+    "overview": "You are a cybersecurity analyst working in the Security Operations Center (SOC) of BookWorld, an expansive online bookstore renowned for its vast selection of literature. BookWorld prides itself on providing a seamless and secure shopping experience for book enthusiasts around the globe. Recently, you've been tasked with reinforcing the company's cybersecuri",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Web Investigation (CyberDefenders)",
+      "Scenario",
+      "Q1: By knowing the attacker's IP, we can analyze all logs and actions related to that IP and determine the extent of the attack, the duration of the attack, and the techniques used. Can you provide the attacker's IP?",
+      "111.224.250.131",
+      "Q2: If the geographical origin of an IP address is known to be from a region that has no business or expected traffic with our network, this can be an indicator of a targeted attack. Can you determine the origin city of the attacker?",
+      "Shijiazhuang",
+      "Q3: Identifying the exploited script allows security teams to understand exactly which vulnerability was used in the attack. This knowledge is critical for finding the appropriate patch or workaround to close the security gap and prevent future exploitation. Can you provide the vulnerable PHP script name?",
+      "search.php",
+      "Q4: Establishing the timeline of an attack, starting from the initial exploitation attempt, What's the complete request URI of the first SQLi attempt by the attacker?",
+      "/search.php?search=book and 1=1; -- -",
+      "Q5: Can you provide the complete request URI that was used to read the web server's available databases? (Note: Don't Decode the Value)",
+      "/search.php?search=book' UNION ALL SELECT NULL,CONCAT(0x7178766271,JSONARRAYAGG(CONCATWS(0x7a76676a636b,schemaname)),0x7176706a71) FROM INFORMATIONSCHEMA.SCHEMATA-- -"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

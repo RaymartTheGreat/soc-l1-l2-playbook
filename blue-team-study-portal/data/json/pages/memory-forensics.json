@@ -1,0 +1,160 @@
+{
+  "id": "memory forensics/memory forensics",
+  "title": "Memory Forensics",
+  "slug": "memory-forensics",
+  "relPath": "Memory forensics/Memory Forensics.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Detection",
+    "Persistence",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [
+    "T1003",
+    "T1071",
+    "T1086",
+    "T1053.005",
+    "T1543.003",
+    "T1547.001",
+    "T1021.002",
+    "T1021.006",
+    "T1059.001",
+    "T1047"
+  ],
+  "parentId": "memory forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics",
+      "title": "Memory forensics",
+      "slug": "memory-forensics-2c39b2e1"
+    },
+    {
+      "id": "memory forensics/memory forensics",
+      "title": "Memory Forensics",
+      "slug": "memory-forensics"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Memory Forensics"
+    },
+    {
+      "level": 2,
+      "text": "What is Memory?"
+    },
+    {
+      "level": 2,
+      "text": "What is Memory Forensics?"
+    },
+    {
+      "level": 2,
+      "text": "What is a Memory Dump?"
+    },
+    {
+      "level": 2,
+      "text": "Why Memory Forensics Matters"
+    },
+    {
+      "level": 2,
+      "text": "Memory Hierarchy Overview"
+    },
+    {
+      "level": 2,
+      "text": "RAM Structure (Forensics Focus)"
+    },
+    {
+      "level": 3,
+      "text": "Kernel Space"
+    },
+    {
+      "level": 3,
+      "text": "User Space"
+    },
+    {
+      "level": 2,
+      "text": "Forensic Artifacts in RAM"
+    },
+    {
+      "level": 2,
+      "text": "Memory Dump Types & Use Cases"
+    },
+    {
+      "level": 2,
+      "text": "Memory Dump Formats & Compatibility"
+    },
+    {
+      "level": 2,
+      "text": "Memory Acquisition Techniques"
+    },
+    {
+      "level": 2,
+      "text": "Tooling for Memory Acquisition"
+    },
+    {
+      "level": 3,
+      "text": "Tool Selection Considerations"
+    },
+    {
+      "level": 2,
+      "text": "MITRE ATT&CK in Memory"
+    },
+    {
+      "level": 2,
+      "text": "Persistence Artifacts in RAM"
+    },
+    {
+      "level": 2,
+      "text": "Lateral Movement Evidence in RAM"
+    }
+  ],
+  "overview": "Memory forensics is a critical component of digital investigations. It allows analysts to capture and examine volatile system state information that disappears on shutdown. This guide covers RAM architecture, acquisition strategies, memory dump formats, anti-forensics, and threat detection techniques aligned with MITRE ATT&CK.",
+  "study": {
+    "overview": "Memory forensics is a critical component of digital investigations. It allows analysts to capture and examine volatile system state information that disappears on shutdown. This guide covers RAM architecture, acquisition strategies, memory dump formats, anti-forensics, and threat detection techniques aligned with MITRE ATT&CK.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Memory Forensics",
+      "What is Memory?",
+      "What is Memory Forensics?",
+      "What is a Memory Dump?",
+      "Why Memory Forensics Matters",
+      "Memory Hierarchy Overview",
+      "RAM Structure (Forensics Focus)",
+      "Kernel Space",
+      "User Space",
+      "Forensic Artifacts in RAM",
+      "Memory Dump Types & Use Cases",
+      "Memory Dump Formats & Compatibility"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell",
+      "Volatility"
+    ],
+    "tips": [
+      "Encryption keys often live on the heap; shell commands may reside on the stack."
+    ]
+  }
+}

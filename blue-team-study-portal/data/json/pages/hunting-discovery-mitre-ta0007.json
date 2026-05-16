@@ -1,0 +1,265 @@
+{
+  "id": "hunting discovery (mitre ta0007)",
+  "title": "Hunting Discovery (MITRE TA0007)",
+  "slug": "hunting-discovery-mitre-ta0007",
+  "relPath": "Hunting Discovery (MITRE TA0007).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "Sysmon",
+    "Network",
+    "Active Directory",
+    "Web",
+    "Memory",
+    "Detection"
+  ],
+  "mitre": [
+    "TA0007"
+  ],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "hunting discovery (mitre ta0007)",
+      "title": "Hunting Discovery (MITRE TA0007)",
+      "slug": "hunting-discovery-mitre-ta0007"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Hunting Discovery (MITRE TA0007)"
+    },
+    {
+      "level": 1,
+      "text": "Windows / Active Directory discovery commands"
+    },
+    {
+      "level": 2,
+      "text": "Host / system / identity"
+    },
+    {
+      "level": 2,
+      "text": "Accounts & groups"
+    },
+    {
+      "level": 2,
+      "text": "Processes, services & installed apps"
+    },
+    {
+      "level": 2,
+      "text": "PowerShell / WMI / AD discovery"
+    },
+    {
+      "level": 2,
+      "text": "Native AD / domain discovery tools"
+    },
+    {
+      "level": 1,
+      "text": "Linux discovery commands"
+    },
+    {
+      "level": 2,
+      "text": "Host / identity"
+    },
+    {
+      "level": 2,
+      "text": "Users & sessions"
+    },
+    {
+      "level": 2,
+      "text": "Processes & services"
+    },
+    {
+      "level": 2,
+      "text": "Network & sockets"
+    },
+    {
+      "level": 2,
+      "text": "Filesystem, creds & SSH"
+    },
+    {
+      "level": 2,
+      "text": "Package & privilege checks"
+    },
+    {
+      "level": 2,
+      "text": "Cloud & logs"
+    },
+    {
+      "level": 1,
+      "text": "Network & Shares (DNS, SMB, LDAP, SNMP, scans)"
+    },
+    {
+      "level": 2,
+      "text": "DNS"
+    },
+    {
+      "level": 2,
+      "text": "SMB / NetBIOS"
+    },
+    {
+      "level": 2,
+      "text": "LDAP / Active Directory"
+    },
+    {
+      "level": 2,
+      "text": "SNMP"
+    },
+    {
+      "level": 2,
+      "text": "ICMP/ARP/Layer2 host discovery"
+    },
+    {
+      "level": 2,
+      "text": "Port scanning & banner grabbing"
+    },
+    {
+      "level": 2,
+      "text": "Why network & shares matter"
+    },
+    {
+      "level": 1,
+      "text": "Famous tools"
+    },
+    {
+      "level": 1,
+      "text": "Detection"
+    },
+    {
+      "level": 2,
+      "text": "Key detection principles"
+    },
+    {
+      "level": 2,
+      "text": "Examples of suspicious sequences"
+    },
+    {
+      "level": 2,
+      "text": "False positives & tuning"
+    },
+    {
+      "level": 1,
+      "text": "Windows Events & Sysmon"
+    },
+    {
+      "level": 3,
+      "text": "Windows Security events"
+    },
+    {
+      "level": 3,
+      "text": "Sysmon"
+    },
+    {
+      "level": 3,
+      "text": "Linux detection signals"
+    },
+    {
+      "level": 2,
+      "text": "Example Splunk hunts"
+    },
+    {
+      "level": 3,
+      "text": "1) Detect native Windows discovery commands"
+    },
+    {
+      "level": 3,
+      "text": "2) PowerShell / BloodHound / SharpHound detection"
+    },
+    {
+      "level": 3,
+      "text": "3) High-volume LDAP/SMB scanning (SharpHound-style)"
+    },
+    {
+      "level": 3,
+      "text": "4) Internal port-scan / many distinct targets (netflow/suricata)"
+    },
+    {
+      "level": 3,
+      "text": "5) Linux local enumeration via auditd"
+    },
+    {
+      "level": 3,
+      "text": "6) Net share enumeration then file access"
+    },
+    {
+      "level": 3,
+      "text": "7) Sequence detection: whoami → net user → net localgroup"
+    }
+  ],
+  "overview": "Discovery (MITRE ATT&CK TA0007) is the set of actions an adversary takes after gaining a foothold to learn the target environment and find the best paths to achieve objectives (privilege escalation, lateral movement, credential access, data access/exfiltration). Discovery includes enumerating users, groups, computers, services, network configuration, shares,",
+  "study": {
+    "overview": "Discovery (MITRE ATT&CK TA0007) is the set of actions an adversary takes after gaining a foothold to learn the target environment and find the best paths to achieve objectives (privilege escalation, lateral movement, credential access, data access/exfiltration). Discovery includes enumerating users, groups, computers, services, network configuration, shares,",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Hunting Discovery (MITRE TA0007)",
+      "Windows / Active Directory discovery commands",
+      "Host / system / identity",
+      "Accounts & groups",
+      "Processes, services & installed apps",
+      "PowerShell / WMI / AD discovery",
+      "Native AD / domain discovery tools",
+      "Linux discovery commands",
+      "Host / identity",
+      "Users & sessions",
+      "Processes & services",
+      "Network & sockets"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [
+      {
+        "language": "jsx",
+        "code": "index=wineventlog (EventCode=4688 OR EventCode=1)\n| where like(CommandLine, \"%whoami%\") OR like(CommandLine, \"%net user%\") OR like(CommandLine, \"%net localgroup%\")\n  OR like(CommandLine, \"%systeminfo%\") OR like(CommandLine, \"%ipconfig%\")\n  OR like(CommandLine, \"%wmic qfe%\") OR like(CommandLine, \"%netstat%\")\n| bin _time span=1m\n| stats count values(CommandLine) as cmds earliest(_time) as firstSeen by host, user, _time\n| where count >= 3\n| sort - count desc"
+      },
+      {
+        "language": "jsx",
+        "code": "index=wineventlog OR index=sysmon (EventCode=4688 OR EventCode=1 OR sourcetype=\"WinEventLog:PowerShell\")\n| where like(CommandLine, \"%SharpHound%\") OR like(CommandLine, \"%Invoke-BloodHound%\")\n  OR like(CommandLine, \"%Get-NetUser%\") OR like(CommandLine, \"%Invoke-ShareFinder%\")\n| table _time host user CommandLine ParentImage"
+      },
+      {
+        "language": "jsx",
+        "code": "index=sysmon EventID=3 (DestinationPort=389 OR DestinationPort=636 OR DestinationPort=445)\n| stats dc(ProcessId) as distinctProcesses count BY src_ip, DestinationIp, DestinationPort\n| where count > 50 OR distinctProcesses > 5\n| sort - count"
+      },
+      {
+        "language": "jsx",
+        "code": "index=network sourcetype=netflow OR index=suricata\n| stats dc(dst_ip) AS unique_targets, count AS attempts BY src_ip\n| where unique_targets > 20 AND attempts > 50\n| sort - unique_targets"
+      }
+    ],
+    "importantCommands": [
+      {
+        "language": "jsx",
+        "code": "index=wineventlog (EventCode=4688 OR EventCode=1)\n| where like(CommandLine, \"%whoami%\") OR like(CommandLine, \"%net user%\") OR like(CommandLine, \"%net localgroup%\")\n  OR like(CommandLine, \"%systeminfo%\") OR like(CommandLine, \"%ipconfig%\")\n  OR like(CommandLine, \"%wmic qfe%\") OR like(CommandLine, \"%netstat%\")\n| bin _time span=1m\n| stats count values(CommandLine) as cmds earliest(_time) as firstSeen by host, user, _time\n| where count >= 3\n| sort - count desc"
+      },
+      {
+        "language": "jsx",
+        "code": "index=wineventlog OR index=sysmon (EventCode=4688 OR EventCode=1 OR sourcetype=\"WinEventLog:PowerShell\")\n| where like(CommandLine, \"%SharpHound%\") OR like(CommandLine, \"%Invoke-BloodHound%\")\n  OR like(CommandLine, \"%Get-NetUser%\") OR like(CommandLine, \"%Invoke-ShareFinder%\")\n| table _time host user CommandLine ParentImage"
+      },
+      {
+        "language": "jsx",
+        "code": "index=wineventlog (EventCode=4688 OR EventCode=5140)\n| transaction host user startswith=(CommandLine=\"*net use*\" OR CommandLine=\"*net view*\" OR EventCode=5140) endswith=EventCode=5140 maxspan=10m\n| search CommandLine=\"*net use*\" OR CommandLine=\"*net view*\" OR FileName=*\n| table _time host user CommandLine FileName"
+      },
+      {
+        "language": "jsx",
+        "code": "index=wineventlog (EventCode=4688 OR EventCode=1)\n| eval cmd=lower(CommandLine)\n| streamstats window=10 values(cmd) as recent_cmds by host,user\n| where mvfind(recent_cmds,\"*whoami*\")>=0 AND mvfind(recent_cmds,\"*net user*\")>=0 AND mvfind(recent_cmds,\"*net localgroup*\")>=0\n| table _time host user recent_cmds"
+      }
+    ],
+    "tools": [
+      "Splunk",
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "osquery",
+  "title": "Osquery",
+  "slug": "osquery",
+  "relPath": "Osquery.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-scripting-tooling",
+  "curriculumSectionTitle": "Advanced Scripting & Analysis Tooling",
+  "tags": [
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "Network",
+    "Memory",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "osquery",
+      "title": "Osquery",
+      "slug": "osquery"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Osquery"
+    },
+    {
+      "level": 2,
+      "text": "Quick interaction"
+    },
+    {
+      "level": 2,
+      "text": "Core tables"
+    },
+    {
+      "level": 2,
+      "text": "Why SOCs & IR teams use osquery"
+    },
+    {
+      "level": 2,
+      "text": "Example queries"
+    }
+  ],
+  "overview": "osquery (open-source, originally developed at Facebook, 2014) exposes an endpoint’s runtime state as queryable tables (a relational view of OS artifacts). You use SQL-like SELECT queries to retrieve structured endpoint data — processes, users, network sockets, installed software, registry/startup entries, files and hashes, etc. It runs on Windows, Linux, mac",
+  "study": {
+    "overview": "osquery (open-source, originally developed at Facebook, 2014) exposes an endpoint’s runtime state as queryable tables (a relational view of OS artifacts). You use SQL-like SELECT queries to retrieve structured endpoint data — processes, users, network sockets, installed software, registry/startup entries, files and hashes, etc. It runs on Windows, Linux, mac",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Osquery",
+      "Quick interaction",
+      "Core tables",
+      "Why SOCs & IR teams use osquery",
+      "Example queries"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "PowerShell",
+      "Osquery"
+    ],
+    "tips": []
+  }
+}

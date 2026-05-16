@@ -1,0 +1,80 @@
+{
+  "id": "windows forensics/srum (system resource usage monitor)",
+  "title": "SRUM (System Resource Usage Monitor)",
+  "slug": "srum-system-resource-usage-monitor",
+  "relPath": "Windows Forensics/SRUM (System Resource Usage Monitor).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Network",
+    "DFIR",
+    "Memory",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/srum (system resource usage monitor)",
+      "title": "SRUM (System Resource Usage Monitor)",
+      "slug": "srum-system-resource-usage-monitor"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "SRUM (System Resource Usage Monitor)"
+    },
+    {
+      "level": 3,
+      "text": "Location"
+    },
+    {
+      "level": 3,
+      "text": "Overview"
+    },
+    {
+      "level": 3,
+      "text": "Forensic Value"
+    },
+    {
+      "level": 3,
+      "text": "Tools"
+    }
+  ],
+  "overview": "SRUM (System Resource Usage Monitor) is a built-in Windows feature that tracks detailed system activity including application usage, network traffic, and user interaction. It stores up to 30–60 days of historical data and is valuable in both DFIR and behavior analysis.",
+  "study": {
+    "overview": "SRUM (System Resource Usage Monitor) is a built-in Windows feature that tracks detailed system activity including application usage, network traffic, and user interaction. It stores up to 30–60 days of historical data and is valuable in both DFIR and behavior analysis.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "SRUM (System Resource Usage Monitor)",
+      "Location",
+      "Overview",
+      "Forensic Value",
+      "Tools"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

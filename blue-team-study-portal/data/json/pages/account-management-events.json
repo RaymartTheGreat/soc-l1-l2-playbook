@@ -1,0 +1,56 @@
+{
+  "id": "windows event ids/account management events",
+  "title": "Account Management Events",
+  "slug": "account-management-events",
+  "relPath": "Windows Event IDs/Account Management Events.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "Windows"
+  ],
+  "mitre": [],
+  "parentId": "windows event ids",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows event ids"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows event ids",
+      "title": "Windows Event IDs",
+      "slug": "windows-event-ids"
+    },
+    {
+      "id": "windows event ids/account management events",
+      "title": "Account Management Events",
+      "slug": "account-management-events"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Account Management Events"
+    }
+  ],
+  "overview": "| Event ID | Event Name | | --- | --- | | 4720 | A user account was created. | | 4722 | A user account was enabled. | | 4723 | An attempt was made to change an account's password. | | 4724 | An attempt was made to reset an account's password. | | 4725 | A user account was disabled. | | 4726 | A user account was deleted. | | 4738 | A user account was changed.",
+  "study": {
+    "overview": "| Event ID | Event Name | | --- | --- | | 4720 | A user account was created. | | 4722 | A user account was enabled. | | 4723 | An attempt was made to change an account's password. | | 4724 | An attempt was made to reset an account's password. | | 4725 | A user account was disabled. | | 4726 | A user account was deleted. | | 4738 | A user account was changed.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Account Management Events"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

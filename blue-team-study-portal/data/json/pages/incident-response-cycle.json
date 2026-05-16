@@ -1,0 +1,204 @@
+{
+  "id": "incident response cycle",
+  "title": "Incident Response Cycle",
+  "slug": "incident-response-cycle",
+  "relPath": "Incident Response Cycle.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "SIEM",
+    "EDR",
+    "Windows",
+    "Phishing",
+    "Network",
+    "Web",
+    "DFIR",
+    "Detection",
+    "Threat Intel",
+    "OSINT"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "incident response cycle",
+      "title": "Incident Response Cycle",
+      "slug": "incident-response-cycle"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Incident Response Cycle"
+    },
+    {
+      "level": 1,
+      "text": "1- Preparation & Prevention Phase"
+    },
+    {
+      "level": 3,
+      "text": "Core program elements"
+    },
+    {
+      "level": 3,
+      "text": "Preventive controls"
+    },
+    {
+      "level": 3,
+      "text": "People, training & culture"
+    },
+    {
+      "level": 2,
+      "text": "Automation, intelligence & metrics"
+    },
+    {
+      "level": 1,
+      "text": "2- Identification & Scoping Phase"
+    },
+    {
+      "level": 3,
+      "text": "Identification"
+    },
+    {
+      "level": 3,
+      "text": "Scoping Tools for Effective Response"
+    },
+    {
+      "level": 3,
+      "text": "Iterative Feedback Loop in Identification & Scoping"
+    },
+    {
+      "level": 1,
+      "text": "3- Threat Intel & Containment"
+    },
+    {
+      "level": 2,
+      "text": "Threat Intelligence Gathering"
+    },
+    {
+      "level": 3,
+      "text": "TTPs: Understanding the Adversary"
+    },
+    {
+      "level": 2,
+      "text": "Containment Strategies"
+    },
+    {
+      "level": 3,
+      "text": "1. Isolation (Aggressive Approach)"
+    },
+    {
+      "level": 3,
+      "text": "2. Controlled Isolation (Stealth Approach)"
+    },
+    {
+      "level": 2,
+      "text": "Threat Intelligence Platforms"
+    },
+    {
+      "level": 3,
+      "text": "The End Goal of Containment"
+    },
+    {
+      "level": 1,
+      "text": "4,5- Eradication, Remediation, and Recovery"
+    },
+    {
+      "level": 3,
+      "text": "1. Eradication"
+    },
+    {
+      "level": 3,
+      "text": "2. Remediation"
+    },
+    {
+      "level": 3,
+      "text": "3. Recovery"
+    },
+    {
+      "level": 1,
+      "text": "6- Lessons Learned: Post-Incident Analysis"
+    },
+    {
+      "level": 2,
+      "text": "Technical Overview"
+    },
+    {
+      "level": 3,
+      "text": "Key Elements:"
+    },
+    {
+      "level": 2,
+      "text": "Executive Summary"
+    },
+    {
+      "level": 3,
+      "text": "Key Sections:"
+    },
+    {
+      "level": 3,
+      "text": "1. Incident Impact"
+    },
+    {
+      "level": 3,
+      "text": "2. Root Cause Analysis"
+    },
+    {
+      "level": 3,
+      "text": "3. Response Actions & Future Prevention"
+    },
+    {
+      "level": 2,
+      "text": "Next Steps for Long-Term Security Improvement"
+    },
+    {
+      "level": 3,
+      "text": "1. Continuous Security Testing"
+    },
+    {
+      "level": 3,
+      "text": "2. Employee Awareness & Cyber Hygiene"
+    },
+    {
+      "level": 3,
+      "text": "3. Strengthening Security Policies"
+    }
+  ],
+  "overview": "Incident Response (IR) refers to the processes and technologies an organization employs to detect and react to cyber threats, security breaches, or cyber attacks. Implementing a formal incident response plan empowers cyber security teams to mitigate or prevent damage effectively.",
+  "study": {
+    "overview": "Incident Response (IR) refers to the processes and technologies an organization employs to detect and react to cyber threats, security breaches, or cyber attacks. Implementing a formal incident response plan empowers cyber security teams to mitigate or prevent damage effectively.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Incident Response Cycle",
+      "1- Preparation & Prevention Phase",
+      "Core program elements",
+      "Preventive controls",
+      "People, training & culture",
+      "Automation, intelligence & metrics",
+      "2- Identification & Scoping Phase",
+      "Identification",
+      "Scoping Tools for Effective Response",
+      "Iterative Feedback Loop in Identification & Scoping",
+      "3- Threat Intel & Containment",
+      "Threat Intelligence Gathering"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "EDR"
+    ],
+    "tips": []
+  }
+}

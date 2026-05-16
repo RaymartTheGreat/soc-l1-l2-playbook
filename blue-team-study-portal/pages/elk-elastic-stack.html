@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>ELK (Elastic Stack) | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link active" href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>ELK (Elastic Stack)</span></div>
+      <h1>ELK (Elastic Stack)</h1>
+      <p>Elastic Stack (ELK) is a lightweight SIEM foundation Beats collect, Logstash parses, Elasticsearch indexes, Kibana hunts &amp; dashboards.</p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Splunk</span><span class="tag">SIEM</span><span class="tag">PowerShell</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Detection</span><span class="tag">Persistence</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>ELK (Elastic Stack)</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Elastic Stack (ELK) is a lightweight SIEM foundation Beats collect, Logstash parses, Elasticsearch indexes, Kibana hunts &amp; dashboards.</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>ELK (Elastic Stack)</li><li>Architecture</li><li>Components</li><li>Elasticsearch</li><li>Logstash</li><li>Beats (Filebeat / Winlogbeat / Packetbeat / Metricbeat)</li><li>Kibana</li><li>How they work together :</li><li>Kibana // Discover Tab</li><li>Time Filter</li><li>Timeline</li><li>Index Pattern</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>process.name : &quot;powershell.exe&quot; and process.command_line : &quot;*-EncodedCommand*&quot;</code></pre></div><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>process.name : &quot;powershell.exe&quot; and (process.command_line : &quot;*Invoke-WebRequest*&quot; OR process.command_line : &quot;*Invoke-RestMethod*&quot; OR process.command_line : &quot;*WebClient*&quot;)</code></pre></div><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>process.parent.name : (&quot;winword.exe&quot; or &quot;excel.exe&quot; or &quot;outlook.exe&quot;) and process.name : (&quot;cmd.exe&quot; or &quot;powershell.exe&quot;)</code></pre></div><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>event.category : &quot;registry&quot; and (registry.path : &quot;*\\Software\\Microsoft\\Windows\\CurrentVersion\\Run*&quot; OR registry.path : &quot;*\\RunOnce*&quot;)</code></pre></div><div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code>agent.name : &quot;Omar-Amir-01&quot; and @timestamp &gt;= &quot;2099-05-11T18:45:00&quot; and @timestamp &lt;= &quot;2099-05-11T19:01:00&quot;</code></pre></div></article>
+    <article><h2>Tools Used</h2><ul><li>Splunk</li><li>SIEM</li><li>PowerShell</li></ul></article>
+    <article><h2>Notes/Tips</h2><ul><li>Note: some Splunk fields may have different names depending on ingestion. .</li></ul></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="elk-elastic-stack">ELK (Elastic Stack)</h2>
+<p><strong>Elastic Stack (ELK)</strong> is a lightweight SIEM foundation Beats collect, Logstash parses, Elasticsearch indexes, Kibana hunts &amp; dashboards.</p>
+<hr>
+<h2 id="architecture">Architecture</h2>
+<p><code>[Beats (Filebeat / Winlogbeat / Packetbeat)] → [Logstash (optional parsing/enrichment)] → [Elasticsearch (index/store/analytics)] → [Kibana (Discover / Visualize / Dashboards / Alerts)]</code></p>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-74dbeec1.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-74dbeec1.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li><strong>Beats</strong> — lightweight shippers on endpoints (low overhead).</li>
+<li><strong>Logstash</strong> — use when you need heavy parsing, grok, enrichment, or multi-output routing.</li>
+<li><strong>Elasticsearch</strong> — fast, distributed full-text and analytics store for JSON documents.</li>
+<li><strong>Kibana</strong> — interactive UI for searching, visualizing, alerting, and saving investigations.</li>
+</ul>
+<hr>
+<h2 id="components">Components</h2>
+<h3 id="elasticsearch">Elasticsearch</h3>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-1-f59fa39f.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-1-f59fa39f.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li>Distributed index and search engine built on Lucene.</li>
+<li>Stores JSON documents, supports full-text search, aggregations, and analytics.</li>
+<li>SOC use-case: pivot on IOCs, run high-speed searches across time windows.</li>
+</ul>
+<h3 id="logstash">Logstash</h3>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-2-f1e00b5e.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-2-f1e00b5e.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li>Pipeline pattern: <code>input { } → filter { } → output { }</code>.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-3-60110a51.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-3-60110a51.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li>Powerful plugins: <code>grok</code>, <code>json</code>, <code>date</code>, <code>geoip</code>, <code>mutate</code>, <code>useragent</code>.</li>
+<li>SOC use-case: normalize heterogeneous vendor logs into consistent fields.</li>
+</ul>
+<h3 id="beats-filebeat-winlogbeat-packetbeat-metricbeat">Beats (Filebeat / Winlogbeat / Packetbeat / Metricbeat)</h3>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-4-ddb2f565.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-4-ddb2f565.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li>Single-purpose, lightweight shippers installed on hosts.</li>
+<li>Winlogbeat → Windows Event Logs, Filebeat → app logs, Packetbeat → network flows.</li>
+</ul>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-5-c7ccd8d5.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-5-c7ccd8d5.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li>SOC use-case: reliable data collection with small footprint.</li>
+</ul>
+<h3 id="kibana">Kibana</h3>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-6-e1f8961f.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-6-e1f8961f.png" alt="image.png" loading="lazy"></button></p>
+<ul>
+<li>Web UI: Discover, Visualize, Dashboard, Alerts/Rules, Lens, Maps.</li>
+<li>Use it for interactive hunts, timelines, saved searches, and incident reports.</li>
+</ul>
+<h4 id="how-they-work-together">How they work together :</h4>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-7-3819df50.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-7-3819df50.png" alt="image.png" loading="lazy"></button></p>
+<hr>
+<h2 id="kibana-discover-tab">Kibana // Discover Tab</h2>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-8-17907a8b.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-8-17907a8b.png" alt="image.png" loading="lazy"></button></p>
+<p>Some important elements you’ll typically find in a dashboard interface include:</p>
+<ol>
+<li><strong>Logs (Documents):</strong> Each log represents a document that stores details about an event, showing different fields and their corresponding values.</li>
+<li><strong>Fields Panel:</strong> Located on the left side, this panel displays all the fields extracted from the logs. Users can click on a field to add it as a filter or remove it from the current search.</li>
+<li><strong>Index Pattern:</strong> Allows users to pick an index pattern from the available list to define which data is being queried.</li>
+<li><strong>Search Bar:</strong> The area where users can type search queries or apply filters to refine results.</li>
+<li><strong>Time Filter:</strong> Provides options to limit results to a specific time range, offering multiple presets and custom ranges.</li>
+<li><strong>Time Interval:</strong> A chart visualization that shows how event counts change over time.</li>
+<li><strong>Top Bar:</strong> Contains various controls, such as saving a search, opening previously saved searches, sharing, and other related actions.</li>
+</ol>
+<h3 id="time-filter"><strong>Time Filter</strong></h3>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-9-9a47b70b.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-9-9a47b70b.png" alt="image.png" loading="lazy"></button></p>
+<h3 id="timeline"><strong>Timeline</strong></h3>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-10-2e345737.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-10-2e345737.png" alt="image.png" loading="lazy"></button></p>
+<h3 id="index-pattern"><strong>Index Pattern</strong></h3>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-11-e1d8daca.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-11-e1d8daca.png" alt="image.png" loading="lazy"></button></p>
+<h3 id="adding-a-filter">Adding a Filter</h3>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/f8f4399d7fbfc14c0a6659da697af1db.gif">External image reference: Shows steps to add filter to the search</a></p>
+<h3 id="creating-a-table">Creating a table</h3>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/ed538dabafffd64020b51f88fabce8f9.gif">External image reference: Shows steps to create table by selecting fields and remove noise</a></p>
+<hr>
+<h2 id="key-fields">Key fields</h2>
+<p><strong>Core ECS fields</strong></p>
+<ul>
+<li><code>@timestamp</code> — event time</li>
+<li><code>agent.name</code> / <code>host.name</code> — host that generated the event</li>
+<li><code>user.name</code> / <code>related.user</code> — account involved</li>
+<li><code>process.name</code>, <code>process.executable</code>, <code>process.command_line</code>, <code>process.parent.name</code> — process activity</li>
+<li><code>event.action</code>, <code>event.category</code>, <code>event.module</code> — event metadata</li>
+<li><code>source.ip</code>, <code>destination.ip</code>, <code>user_agent</code> — network context</li>
+<li><code>file.path</code>, <code>file.hash.*</code> — file artifacts</li>
+</ul>
+<p><strong>Splunk → ECS quick mapping</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Splunk-style name</th><th>ECS equivalent</th></tr></thead><tbody><tr><td>Hashes</td><td><code>file.hash.*</code></td></tr><tr><td>CommandLine</td><td><code>process.command_line</code></td></tr><tr><td>EventCode</td><td><code>event.code</code> or <code>event.action</code> / <code>event.category</code>)</td></tr><tr><td>TargetImage / Image</td><td><code>process.executable</code> / <code>process.name</code></td></tr><tr><td>host</td><td><code>host.name</code> / <code>agent.name</code></td></tr><tr><td>CurrentDirectory</td><td><code>process.working_directory</code></td></tr><tr><td>ImageLoaded</td><td><code>dll.name</code> <code>process.image_loaded</code></td></tr><tr><td>TaskCategory</td><td><code>event.category</code></td></tr><tr><td>DestinationIp</td><td><code>destination.ip</code></td></tr><tr><td>ParentCommandLine</td><td><code>process.parent.command_line</code></td></tr><tr><td>form_data</td><td><code>http.request.body</code></td></tr><tr><td>OriginalFileName</td><td><code>file.original</code> or <code>file.name</code></td></tr></tbody></table></div>
+<blockquote>Note: some Splunk fields may have different names depending on ingestion. .</blockquote>
+<blockquote></blockquote>
+<hr>
+<h2 id="kql">KQL</h2>
+<ul>
+<li><strong>Encoded PowerShell:</strong></li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">process.name : &quot;powershell.exe&quot; and process.command_line : &quot;*-EncodedCommand*&quot;</code></pre></div>
+<ul>
+<li><strong>PowerShell invoking web downloads:</strong></li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">process.name : &quot;powershell.exe&quot; and (process.command_line : &quot;*Invoke-WebRequest*&quot; OR process.command_line : &quot;*Invoke-RestMethod*&quot; OR process.command_line : &quot;*WebClient*&quot;)</code></pre></div>
+<ul>
+<li><strong>Office apps spawning shells:</strong></li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">process.parent.name : (&quot;winword.exe&quot; or &quot;excel.exe&quot; or &quot;outlook.exe&quot;) and process.name : (&quot;cmd.exe&quot; or &quot;powershell.exe&quot;)</code></pre></div>
+<ul>
+<li><strong>New autorun registry activity (if the registry events are ingested):</strong></li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">event.category : &quot;registry&quot; and (registry.path : &quot;*\\Software\\Microsoft\\Windows\\CurrentVersion\\Run*&quot; OR registry.path : &quot;*\\RunOnce*&quot;)</code></pre></div>
+<ul>
+<li><strong>Filter host+time:</strong></li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>text</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-text">agent.name : &quot;Omar-Amir-01&quot; and @timestamp &gt;= &quot;2099-05-11T18:45:00&quot; and @timestamp &lt;= &quot;2099-05-11T19:01:00&quot;</code></pre></div>
+<hr>
+<h2 id="dashboards-visualizations">Dashboards &amp; Visualizations</h2>
+<h3 id="dashboard-goals">Dashboard goals</h3>
+<ol>
+<li>Detection overview (alerts, top sources, recent suspicious commands).</li>
+<li>Endpoint activity (process creates, parent→child mapping).</li>
+<li>Authentication &amp; VPN (failed/successful auths, top IPs).</li>
+<li>Network anomalies (top dest IPs, unusual ports).</li>
+<li>Persistence &amp; changes (services, autoruns, account changes).</li>
+</ol>
+<h3 id="example-visualizations">Example visualizations</h3>
+<ul>
+<li><strong>Top 10 source countries</strong> (Pie / Bar) — <code>source.geo.country_name</code>.</li>
+<li><strong>Failed logins table</strong> — saved search with <code>@timestamp, user.name, source.ip, destination.ip, message</code>.</li>
+<li><strong>PowerShell execution timeline</strong> — line chart of <code>process.name:&quot;powershell.exe&quot;</code>.</li>
+<li><strong>Parent→child mapping</strong> — Lens: <code>process.parent.name</code> vs <code>process.name</code>.</li>
+<li><strong>Recent suspicious commands</strong> — data table showing <code>process.command_line</code> for last 24h with filter for suspicious keywords.</li>
+</ul>
+<h3 id="create-visualization"><strong>Create Visualization</strong></h3>
+<p>There are a few ways to navigate to the visualization tab. One way is to click on any field in the discover tab and click on the visualization as shown below.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/334ed7c0a1e727de35844174434fd4fc.gif">External image reference: Shows Visualization tab overview</a></p>
+<p>We can create multiple visualizations by selecting options like tables, pie charts, etc.</p>
+<h3 id="correlation-option"><strong>Correlation Option</strong></h3>
+<p>Often, we require creating correlations between multiple fields. Dragging the required field in the middle will create a correlation tab in the visualization tab. Here we selected the Source_Country as the second field to show a correlation among the client Source_IP.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/e5f27f38815a495499935f5a373728a6.png">External image reference: Pie-chart for TOP 5 SourceCountry</a></p>
+<p>We can also create a table to show the values of the selected fields as columns, as shown below.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/819d71befcd64675b9450ee16d0b3d59.png">External image reference: Table with IPs VS country Count</a></p>
+<p>The most important step in creating these visualizations is to save them. Click on the <strong>save Option</strong> on the right side and fill in the descriptive values below. We can add these visualizations to the already existing dashboard, or we can create a new one as well.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/432f67edc84fff2cb9e6fc7bb6243b1b.png">External image reference: Button to save Visualization</a></p>
+<p>Steps to take after creating Visualizations:</p>
+<ul>
+<li>Create a visualization and Click on the Save button at the top right corner.</li>
+<li>Add the title and description to the visualization.</li>
+<li>We can add the visualization to any existing Dashboard or a new dashboard.</li>
+<li>Click <strong>Save and add to the library</strong> when it's done.</li>
+</ul>
+<h3 id="failed-connection-attempts"><strong>Failed Connection Attempts</strong></h3>
+<p>We will utilize the knowledge gained above to create a table to display the user and the IP address involved in failed attempts.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5e8dd9a4a45e18443162feab/room-content/93e9aebb89efb58df9ab5a52eeb0177c.gif">External image reference: How to create visualization for failed Attempts</a></p>
+<hr>
+<h2 id="kibana-alerts-rules-examples-playbook-snippets">Kibana Alerts (Rules) //  examples &amp; playbook snippets</h2>
+<h4 id="alert-encoded-powershell-high">Alert: Encoded PowerShell (High)</h4>
+<ul>
+<li><strong>KQL:</strong> <code>process.name : &quot;powershell.exe&quot; and process.command_line : &quot;<em>-EncodedCommand</em>&quot;</code></li>
+<li><strong>Trigger:</strong> any hit in last 5 min.</li>
+<li><strong>Actions:</strong> create Kibana Case, send webhook to SOAR, notify Slack/Email.</li>
+<li><strong>Webhook payload (example):</strong></li>
+</ul>
+<div class="code-shell"><div class="code-bar"><span>json</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-json">{
+  &quot;title&quot;: &quot;Encoded PowerShell detected&quot;,
+  &quot;severity&quot;: &quot;high&quot;,
+  &quot;host&quot;: &quot;{{context.host.name}}&quot;,
+  &quot;user&quot;: &quot;{{context.user.name}}&quot;,
+  &quot;timestamp&quot;: &quot;{{context.alert_time}}&quot;,
+  &quot;query&quot;: &quot;process.name : \&quot;powershell.exe\&quot; and process.command_line : \&quot;*-EncodedCommand*\&quot;&quot;
+}</code></pre></div>
+<h4 id="alert-office-spawning-a-shell">Alert: Office spawning a shell</h4>
+<ul>
+<li><strong>KQL:</strong> <code>process.parent.name : (&quot;winword.exe&quot; or &quot;excel.exe&quot; or &quot;outlook.exe&quot;) and process.name : (&quot;cmd.exe&quot; or &quot;powershell.exe&quot;)</code></li>
+<li><strong>Action:</strong> auto-tag <code>phish-suspect</code>, create case, notify SOC on-call.</li>
+</ul>
+<h4 id="alert-new-service-creation">Alert: New Service Creation</h4>
+<ul>
+<li><strong>KQL:</strong> <code>event.action : &quot;service_created&quot; OR (process.name : &quot;sc.exe&quot; AND process.command_line : &quot;<em>create</em>&quot;)</code></li>
+<li><strong>Action:</strong> run enrichment (hash reputation), add to case, trigger host isolation playbook.</li>
+</ul>
+<h4 id="alert-excessive-failed-logons">Alert: Excessive failed logons</h4>
+<ul>
+<li><strong>KQL (count rule):</strong> <code>event.action : &quot;authentication_failure&quot;</code></li>
+<li><strong>Trigger:</strong> count &gt; X in Y minutes per <code>source.ip</code> or <code>user.name</code> (tune threshold).</li>
+<li><strong>Action:</strong> add to watchlist, throttle noise, escalate if persistent.</li>
+</ul>
+<hr>
+<h2 id="installation-concise-steps">Installation // concise steps</h2>
+<h3 id="1-install-configure-elasticsearch-ubuntu">1) Install &amp; configure Elasticsearch (Ubuntu)</h3>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+sudo apt-get install apt-transport-https
+echo &quot;deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/9.x/apt stable main&quot; | sudo tee /etc/apt/sources.list.d/elastic-9.x.list
+sudo apt-get update &amp;&amp; sudo apt-get install elasticsearch
+# edit /etc/elasticsearch/elasticsearch.yml:
+# network.host: 0.0.0.0
+# http.port: 9200
+# discovery.type: single-node
+sudo systemctl enable --now elasticsearch
+sudo systemctl status elasticsearch</code></pre></div>
+<p><button class="image-button" data-src="../assets/images/elk-elastic-stack-image-12-d609a796.png" data-alt="image.png"><img src="../assets/images/elk-elastic-stack-image-12-d609a796.png" alt="image.png" loading="lazy"></button></p>
+<p><strong>When installing for the first time, security configuration will be displayed, including the default password for the elastic user</strong></p>
+<p><strong>Note:</strong> Elasticsearch &amp; Kibana versions must match.</p>
+<h3 id="2-install-configure-kibana">2) Install &amp; configure Kibana</h3>
+<div class="code-shell"><div class="code-bar"><span>bash</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-bash">sudo apt install kibana
+# edit /etc/kibana/kibana.yml:
+# server.host: &quot;0.0.0.0&quot;
+# server.port: 5601
+# elasticsearch.hosts: [&quot;http://localhost:9200&quot;]
+sudo systemctl enable --now kibana
+# browse to http://&lt;IP&gt;:5601 to finish setup (enrollment token / initial config as needed)</code></pre></div>
+<h3 id="3-install-winlogbeat-windows-host">3) Install Winlogbeat (Windows host)</h3>
+<ol>
+<li>Download and extract Winlogbeat (match ES version).</li>
+<li>Edit <code>winlogbeat.yml</code> — configure <code>winlogbeat.event_logs</code> and <code>output.logstash</code> or <code>output.elasticsearch</code>.</li>
+<li>Install as service (PowerShell):</li>
+</ol>
+<div class="code-shell"><div class="code-bar"><span>powershell</span><button class="copy-code" type="button">Copy</button></div><pre><code class="language-powershell">cd 'C:\Program Files\winlogbeat'
+.\install-service-winlogbeat.ps1
+Start-Service winlogbeat
+Get-Service winlogbeat</code></pre></div>
+<ol>
+<li>Verify the <code>winlogbeat-*</code> index appears in Kibana Discover.</li>
+</ol>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#elk-elastic-stack">ELK (Elastic Stack)</a><a href="#architecture">Architecture</a><a href="#components">Components</a><a href="#elasticsearch">Elasticsearch</a><a href="#logstash">Logstash</a><a href="#beats-filebeat-winlogbeat-packetbeat-metricbeat">Beats (Filebeat / Winlogbeat / Packetbeat / Metricbeat)</a><a href="#kibana">Kibana</a><a href="#how-they-work-together">How they work together :</a><a href="#kibana-discover-tab">Kibana // Discover Tab</a><a href="#time-filter">Time Filter</a><a href="#timeline">Timeline</a><a href="#index-pattern">Index Pattern</a><a href="#adding-a-filter">Adding a Filter</a><a href="#creating-a-table">Creating a table</a><a href="#key-fields">Key fields</a><a href="#kql">KQL</a><a href="#dashboards-visualizations">Dashboards &amp; Visualizations</a><a href="#dashboard-goals">Dashboard goals</a><a href="#example-visualizations">Example visualizations</a><a href="#create-visualization">Create Visualization</a><a href="#correlation-option">Correlation Option</a><a href="#failed-connection-attempts">Failed Connection Attempts</a><a href="#kibana-alerts-rules-examples-playbook-snippets">Kibana Alerts (Rules) // examples &amp; playbook snippets</a><a href="#alert-encoded-powershell-high">Alert: Encoded PowerShell (High)</a><a href="#alert-office-spawning-a-shell">Alert: Office spawning a shell</a><a href="#alert-new-service-creation">Alert: New Service Creation</a><a href="#alert-excessive-failed-logons">Alert: Excessive failed logons</a><a href="#installation-concise-steps">Installation // concise steps</a><a href="#1-install-configure-elasticsearch-ubuntu">1) Install &amp; configure Elasticsearch (Ubuntu)</a><a href="#2-install-configure-kibana">2) Install &amp; configure Kibana</a><a href="#3-install-winlogbeat-windows-host">3) Install Winlogbeat (Windows host)</a></details>
+    </div>
+    
+    <footer class="pager"><a href="meteorhit.html">← MeteorHit</a><a href="active-directory.html">Active Directory →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

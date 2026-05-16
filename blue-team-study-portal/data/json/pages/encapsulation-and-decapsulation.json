@@ -1,0 +1,95 @@
+{
+  "id": "network/fundamentals/encapsulation and decapsulation",
+  "title": "Encapsulation and Decapsulation",
+  "slug": "encapsulation-and-decapsulation",
+  "relPath": "Network/Fundamentals/Encapsulation and Decapsulation.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network",
+    "Web",
+    "Detection"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/encapsulation and decapsulation",
+      "title": "Encapsulation and Decapsulation",
+      "slug": "encapsulation-and-decapsulation"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Encapsulation and Decapsulation"
+    },
+    {
+      "level": 2,
+      "text": "Encapsulation"
+    },
+    {
+      "level": 3,
+      "text": "Protocol Data Units (PDUs)"
+    },
+    {
+      "level": 3,
+      "text": "Step‑by‑Step Encapsulation"
+    },
+    {
+      "level": 2,
+      "text": "Decapsulation"
+    },
+    {
+      "level": 3,
+      "text": "Example: Fetching a Web Page"
+    },
+    {
+      "level": 3,
+      "text": "Why It Matters"
+    }
+  ],
+  "overview": "Encapsulation is the process where each protocol layer “wraps” the data it receives with its own header (and sometimes a trailer) before handing it to the layer below. This modular approach lets each layer focus solely on its responsibility—port addressing, routing, framing, error checks, etc. without worrying about the rest of the stack.",
+  "study": {
+    "overview": "Encapsulation is the process where each protocol layer “wraps” the data it receives with its own header (and sometimes a trailer) before handing it to the layer below. This modular approach lets each layer focus solely on its responsibility—port addressing, routing, framing, error checks, etc. without worrying about the rest of the stack.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Encapsulation and Decapsulation",
+      "Encapsulation",
+      "Protocol Data Units (PDUs)",
+      "Step‑by‑Step Encapsulation",
+      "Decapsulation",
+      "Example: Fetching a Web Page",
+      "Why It Matters"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "Note: Frames often include both a header (addresses, type) and a trailer (error‑check sequence)."
+    ]
+  }
+}

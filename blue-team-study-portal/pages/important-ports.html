@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Important ports | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="network.html">Network</a><span>/</span><span>Important ports</span></div>
+      <h1>Important ports</h1>
+      <p>| Port(s) | Protocol/Service | Description | | --- | --- | --- | | 20, 21 | FTP | File Transfer Protocol (20=data, 21=control) | | 22 | SSH | Secure Shell for remote access | | 23 | Telnet | Unencrypted remote access (deprecated) | | 25 | SMTP | Simple Mail Transfer Protocol (email transmission) | | 53 | DNS | Domain Name System for resolving domain names | </p>
+      <div class="tag-row"><span class="tag level">L1</span><span class="tag">Windows</span><span class="tag">Network</span><span class="tag">Active Directory</span><span class="tag">Kerberos</span><span class="tag">Web</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Network</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="network.html"><span>Network</span><em>L1</em></a>
+      <b>4</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="fundamentals.html"><span>Fundamentals</span><em>L1</em></a>
+      <b>22</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="what-is-a-network.html"><span>What Is a Network</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="topologies.html"><span>Topologies</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="router-vs-switch.html"><span>Router VS Switch</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="public-vs-private-ip.html"><span>Public vs Private IP</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="subnetting.html"><span>Subnetting</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="virtual-lan-vlan.html"><span>Virtual LAN (VLAN)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="osi-model.html"><span>OSI Model</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="tcp-ip-model.html"><span>TCP IP Model</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="tcp-the-three-way-handshake.html"><span>TCP (The Three-Way Handshake)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="user-datagram-protocol-udp.html"><span>User Datagram Protocol (UDP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="encapsulation-and-decapsulation.html"><span>Encapsulation and Decapsulation</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="vpn.html"><span>VPN</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="firewall.html"><span>Firewall</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="routing.html"><span>Routing</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="nat.html"><span>NAT</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="segmentation.html"><span>Segmentation</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ipv4-vs-ipv6.html"><span>IPv4 vs IPv6</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="broadcast-vs-unicast-vs-multicast.html"><span>Broadcast vs Unicast vs Multicast</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="proxy.html"><span>Proxy</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="network-devices.html"><span>Network Devices</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="network-toolkit.html"><span>Network Toolkit</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="how-to-observe-network-traffic.html"><span>How to Observe Network Traffic</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="protocols.html"><span>Protocols</span><em>L1</em></a>
+      <b>13</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" >
+    <summary>
+      <a class="" href="server-message-block-smb.html"><span>Server Message Block (SMB)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="address-resolution-protocol-arp.html"><span>Address Resolution Protocol (ARP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="domain-name-system-dns.html"><span>Domain Name System (DNS)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="dynamic-host-configuration-protocol-dhcp.html"><span>Dynamic Host Configuration Protocol (DHCP )</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="internet-control-message-protocol-icmp.html"><span>Internet Control Message Protocol (ICMP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="file-transfer-protocol-ftp.html"><span>File Transfer Protocol (FTP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="telnet.html"><span>Telnet</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="ssh-secure-shell-protocol.html"><span>SSH (Secure Shell Protocol)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="http-and-https.html"><span>HTTP and HTTPS</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="email-protocols.html"><span>Email Protocols</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="kerberos-authentication-0276e639.html"><span>Kerberos authentication</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="lightweight-directory-access-protocol-ldap.html"><span>Lightweight Directory Access Protocol (LDAP)</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" >
+    <summary>
+      <a class="" href="protocols-quick-reminder.html"><span>Protocols Quick Reminder</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="important-ports.html"><span>Important ports</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="packet-structure.html"><span>Packet structure</span><em>L1</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>| Port(s) | Protocol/Service | Description | | --- | --- | --- | | 20, 21 | FTP | File Transfer Protocol (20=data, 21=control) | | 22 | SSH | Secure Shell for remote access | | 23 | Telnet | Unencrypted remote access (deprecated) | | 25 | SMTP | Simple Mail Transfer Protocol (email transmission) | | 53 | DNS | Domain Name System for resolving domain names | </p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Important ports</li><li>1- Common Ports for Protocols and Services</li><li>2- Security-Specific Ports</li><li>3- Malicious/Attack Ports (Often Monitored)</li><li>4- Active Directory-Related Ports</li><li>5- Email and Proxy Ports</li><li>6- Cloud and Web-Related Ports</li><li>Consolidated Ports Table</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="important-ports">Important ports</h2>
+<hr>
+<h2 id="1-common-ports-for-protocols-and-services">1- Common Ports for Protocols and Services</h2>
+<div class="table-wrap"><table><thead><tr><th><strong>Port(s)</strong></th><th><strong>Protocol/Service</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>20, 21</td><td>FTP</td><td>File Transfer Protocol (20=data, 21=control)</td></tr><tr><td>22</td><td>SSH</td><td>Secure Shell for remote access</td></tr><tr><td>23</td><td>Telnet</td><td>Unencrypted remote access (deprecated)</td></tr><tr><td>25</td><td>SMTP</td><td>Simple Mail Transfer Protocol (email transmission)</td></tr><tr><td>53</td><td>DNS</td><td>Domain Name System for resolving domain names</td></tr><tr><td>67, 68</td><td>DHCP</td><td>Dynamic Host Configuration Protocol (server/client)</td></tr><tr><td>69</td><td>TFTP</td><td>Trivial File Transfer Protocol (lightweight, unencrypted)</td></tr><tr><td>80</td><td>HTTP</td><td>HyperText Transfer Protocol for web browsing</td></tr><tr><td>110</td><td>POP3</td><td>Post Office Protocol for email retrieval (unencrypted)</td></tr><tr><td>123</td><td>NTP</td><td>Network Time Protocol for time synchronization</td></tr><tr><td>143</td><td>IMAP</td><td>Internet Message Access Protocol for email retrieval</td></tr><tr><td>161, 162</td><td>SNMP</td><td>Simple Network Management Protocol for monitoring</td></tr><tr><td>389</td><td>LDAP</td><td>Lightweight Directory Access Protocol</td></tr><tr><td>443</td><td>HTTPS</td><td>Secure HTTP for encrypted web browsing</td></tr><tr><td>445</td><td>SMB</td><td>Server Message Block for file sharing (Windows)</td></tr><tr><td>514</td><td>Syslog</td><td>System logging protocol (typically UDP)</td></tr><tr><td>636</td><td>LDAPS</td><td>Secure LDAP for encrypted directory access</td></tr><tr><td>989, 990</td><td>FTPS</td><td>FTP Secure – encrypted file transfers</td></tr><tr><td>1433</td><td>MSSQL</td><td>Microsoft SQL Server database service</td></tr><tr><td>1521</td><td>Oracle DB</td><td>Oracle Database protocol</td></tr><tr><td>3306</td><td>MySQL</td><td>MySQL Database protocol</td></tr><tr><td>3389</td><td>RDP</td><td>Remote Desktop Protocol for GUI-based remote sessions</td></tr><tr><td>8080</td><td>HTTP Alternate/Proxy</td><td>Alternate HTTP port, often used by proxies</td></tr></tbody></table></div>
+<hr>
+<h2 id="2-security-specific-ports">2- Security-Specific Ports</h2>
+<div class="table-wrap"><table><thead><tr><th><strong>Port(s)</strong></th><th><strong>Protocol/Service</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>137–139</td><td>NetBIOS</td><td>Windows file/printer sharing (name resolution and data sharing)</td></tr><tr><td>514</td><td>Syslog / RSH</td><td>Syslog for logging (UDP) and RSH for remote shell (TCP; less common)</td></tr><tr><td>1812, 1813</td><td>RADIUS</td><td>Authentication and accounting protocol for network access</td></tr><tr><td>500</td><td>IKE/IPSec</td><td>Internet Key Exchange for setting up VPNs</td></tr><tr><td>5060, 5061</td><td>SIP</td><td>Session Initiation Protocol used in VoIP communications</td></tr><tr><td>5900</td><td>VNC</td><td>Virtual Network Computing for remote desktop control</td></tr><tr><td>1194</td><td>OpenVPN</td><td>VPN protocol for secure remote connectivity</td></tr></tbody></table></div>
+<hr>
+<h2 id="3-maliciousattack-ports-often-monitored">3- Malicious/Attack Ports (Often Monitored)</h2>
+<div class="table-wrap"><table><thead><tr><th><strong>Port</strong></th><th><strong>Service/Usage</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>4444</td><td>Metasploit (default)</td><td>Commonly used as a reverse shell port in penetration testing scenarios</td></tr><tr><td>135</td><td>DCOM</td><td>Often targeted by worms (e.g., MSBlast) for Distributed Component Object Model vulnerabilities</td></tr><tr><td>1434</td><td>SQL Slammer</td><td>Known for exploitation attempts against Microsoft SQL Server</td></tr><tr><td>445</td><td>EternalBlue Exploit</td><td>SMB vulnerability exploited by malware (e.g., WannaCry)</td></tr><tr><td>69</td><td>TFTP (Insecure)</td><td>Due to its lack of security, sometimes used for unauthorized file transfers</td></tr></tbody></table></div>
+<hr>
+<h2 id="4-active-directory-related-ports">4- Active Directory-Related Ports</h2>
+<div class="table-wrap"><table><thead><tr><th><strong>Port(s)</strong></th><th><strong>Protocol/Service</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>389</td><td>LDAP</td><td>Standard LDAP for directory queries</td></tr><tr><td>636</td><td>LDAPS</td><td>Secure LDAP for encrypted directory access</td></tr><tr><td>88</td><td>Kerberos</td><td>Authentication service critical for AD environments</td></tr><tr><td>445</td><td>SMB</td><td>Used for AD replication and file sharing in Windows networks</td></tr><tr><td>3268, 3269</td><td>Global Catalog</td><td>LDAP queries across domains in AD environments (unencrypted/secure)</td></tr></tbody></table></div>
+<hr>
+<h2 id="5-email-and-proxy-ports">5- Email and Proxy Ports</h2>
+<div class="table-wrap"><table><thead><tr><th><strong>Port(s)</strong></th><th><strong>Protocol/Service</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>25</td><td>SMTP</td><td>Standard email transmission</td></tr><tr><td>465</td><td>SMTPS</td><td>Secure SMTP for encrypted email sending</td></tr><tr><td>587</td><td>SMTP Submission</td><td>SMTP Submission port used with TLS encryption</td></tr><tr><td>110</td><td>POP3</td><td>Email retrieval (unencrypted)</td></tr><tr><td>995</td><td>POP3S</td><td>Secure POP3 for encrypted email retrieval</td></tr><tr><td>143</td><td>IMAP</td><td>Email retrieval from server (unencrypted)</td></tr><tr><td>993</td><td>IMAPS</td><td>Secure IMAP for encrypted email retrieval</td></tr></tbody></table></div>
+<hr>
+<h2 id="6-cloud-and-web-related-ports">6- Cloud and Web-Related Ports</h2>
+<div class="table-wrap"><table><thead><tr><th><strong>Port(s)</strong></th><th><strong>Protocol/Service</strong></th><th><strong>Description</strong></th></tr></thead><tbody><tr><td>8080</td><td>HTTP Proxy</td><td>Alternate port for HTTP services; often used by web proxies</td></tr><tr><td>8443</td><td>HTTPS Proxy</td><td>Secure proxy connections on an alternate HTTPS port</td></tr><tr><td>1433</td><td>MSSQL / SQL over TCP</td><td>Microsoft SQL Server communication (often used in cloud-hosted databases)</td></tr><tr><td>27017</td><td>MongoDB</td><td>Default port for MongoDB NoSQL database services</td></tr></tbody></table></div>
+<hr>
+<h2 id="consolidated-ports-table">Consolidated Ports Table</h2>
+<div class="table-wrap"><table><thead><tr><th><strong>Service/Protocol</strong></th><th><strong>Port(s)</strong></th><th><strong>Description</strong></th><th><strong>Category</strong></th></tr></thead><tbody><tr><td>TCP</td><td>6</td><td>Core transmission protocol offering reliable, connection‐oriented communication</td><td>Core Protocol</td></tr><tr><td>UDP</td><td>17</td><td>Core transmission protocol offering fast, connectionless communication</td><td>Core Protocol</td></tr><tr><td>FTP (Data)</td><td>20</td><td>File transfer (data channel)</td><td>File Transfer</td></tr><tr><td>FTP (Control)</td><td>21</td><td>File transfer (control channel)</td><td>File Transfer</td></tr><tr><td>SSH</td><td>22</td><td>Secure remote access</td><td>Remote Access</td></tr><tr><td>Telnet</td><td>23</td><td>Remote access (unencrypted)</td><td>Remote Access</td></tr><tr><td>SMTP</td><td>25</td><td>Email transmission</td><td>Email</td></tr><tr><td>DNS</td><td>53</td><td>Domain Name System – resolves domain names to IP addresses</td><td>Network</td></tr><tr><td>DHCP</td><td>67 (server), 68 (client)</td><td>Dynamic Host Configuration Protocol – assigns IP addresses dynamically</td><td>Network</td></tr><tr><td>TFTP</td><td>69</td><td>Trivial File Transfer Protocol – unencrypted file transfers</td><td>File Transfer</td></tr><tr><td>HTTP</td><td>80</td><td>Web browsing (HyperText Transfer Protocol)</td><td>Web</td></tr><tr><td>Kerberos</td><td>88</td><td>Authentication service, commonly used in Active Directory environments</td><td>Security / Directory</td></tr><tr><td>POP3</td><td>110</td><td>Retrieves email (unencrypted)</td><td>Email</td></tr><tr><td>NTP</td><td>123</td><td>Network Time Protocol – synchronizes time across network devices</td><td>Network</td></tr><tr><td>DCOM</td><td>135</td><td>Distributed Component Object Model – common target for exploits</td><td>Miscellaneous / Security</td></tr><tr><td>NetBIOS</td><td>137–139</td><td>Windows networking – name resolution and file/printer sharing</td><td>Network / Windows Networking</td></tr><tr><td>IMAP</td><td>143</td><td>Email retrieval from server (unencrypted)</td><td>Email</td></tr><tr><td>SNMP</td><td>161, 162</td><td>Simple Network Management Protocol – used for network monitoring and management</td><td>Network Management</td></tr><tr><td>LDAP</td><td>389</td><td>Directory services – queries for directory information</td><td>Directory</td></tr><tr><td>HTTPS</td><td>443</td><td>Secure web browsing (HTTP over TLS/SSL)</td><td>Web</td></tr><tr><td>SMB</td><td>445</td><td>Server Message Block – file sharing on Windows</td><td>File Sharing / Active Directory</td></tr><tr><td>SMTPS</td><td>465</td><td>Secure SMTP – encrypted email sending</td><td>Email</td></tr><tr><td>IKE/IPSec</td><td>500</td><td>Internet Key Exchange – used for VPNs (IPSec)</td><td>VPN / Security</td></tr><tr><td>Syslog / RSH</td><td>514</td><td><strong>Syslog (UDP):</strong> System logging protocol<strong>RSH (TCP):</strong> Remote shell (less common)</td><td>Network Management / Remote Access</td></tr><tr><td>SMTP Submission</td><td>587</td><td>Email submission over TLS</td><td>Email</td></tr><tr><td>LDAPS</td><td>636</td><td>Secure LDAP – encrypted directory access</td><td>Directory</td></tr><tr><td>FTPS</td><td>989–990</td><td>Secure FTP – encrypted file transfer</td><td>File Transfer</td></tr><tr><td>OpenVPN</td><td>1194</td><td>VPN protocol for secure remote access</td><td>VPN</td></tr><tr><td>MSSQL</td><td>1433</td><td>Microsoft SQL Server database service</td><td>Database</td></tr><tr><td>SQL Slammer (Attack Usage)</td><td>1434</td><td>Port exploited by SQL Slammer worm (commonly monitored)</td><td>Malicious/Attack</td></tr><tr><td>Oracle DB</td><td>1521</td><td>Oracle Database – database protocol</td><td>Database</td></tr><tr><td>Global Catalog</td><td>3268–3269</td><td>LDAP global catalog – used in Active Directory for cross-domain queries</td><td>Directory / Active Directory</td></tr><tr><td>MySQL</td><td>3306</td><td>MySQL Database Protocol</td><td>Database</td></tr><tr><td>RDP</td><td>3389</td><td>Remote Desktop Protocol – remote GUI access</td><td>Remote Access</td></tr><tr><td>Metasploit (Attack Usage)</td><td>4444</td><td>Commonly used default port for reverse shells in Metasploit</td><td>Malicious/Attack</td></tr><tr><td>SIP</td><td>5060–5061</td><td>Session Initiation Protocol – used in VoIP communications</td><td>VoIP</td></tr><tr><td>VNC</td><td>5900</td><td>Virtual Network Computing – remote desktop sharing</td><td>Remote Access</td></tr><tr><td>WinRM</td><td>5985, 5986</td><td>Windows Remote Management – remote management via HTTP/HTTPS</td><td>Remote Management</td></tr><tr><td>HTTP Alternate / Proxy</td><td>8080</td><td>Alternate port for HTTP services and web proxies</td><td>Web / Proxy</td></tr><tr><td>HTTPS Proxy</td><td>8443</td><td>Secure proxy connections (HTTPS over an alternate port)</td><td>Web / Proxy</td></tr><tr><td>MongoDB</td><td>27017</td><td>NoSQL database service</td><td>Database</td></tr></tbody></table></div></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#important-ports">Important ports</a><a href="#1-common-ports-for-protocols-and-services">1- Common Ports for Protocols and Services</a><a href="#2-security-specific-ports">2- Security-Specific Ports</a><a href="#3-maliciousattack-ports-often-monitored">3- Malicious/Attack Ports (Often Monitored)</a><a href="#4-active-directory-related-ports">4- Active Directory-Related Ports</a><a href="#5-email-and-proxy-ports">5- Email and Proxy Ports</a><a href="#6-cloud-and-web-related-ports">6- Cloud and Web-Related Ports</a><a href="#consolidated-ports-table">Consolidated Ports Table</a></details>
+    </div>
+    
+    <footer class="pager"><a href="protocols-quick-reminder.html">← Protocols Quick Reminder</a><a href="packet-structure.html">Packet structure →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

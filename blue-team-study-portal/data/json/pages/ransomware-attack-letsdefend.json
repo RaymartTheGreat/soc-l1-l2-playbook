@@ -1,0 +1,121 @@
+{
+  "id": "memory forensics labs/ransomware attack (letsdefend)",
+  "title": "Ransomware Attack (LetsDefend)",
+  "slug": "ransomware-attack-letsdefend",
+  "relPath": "Memory Forensics Labs/Ransomware Attack (LetsDefend).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "Active Directory",
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "memory forensics labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "memory forensics labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "memory forensics labs",
+      "title": "Memory Forensics Labs",
+      "slug": "memory-forensics-labs"
+    },
+    {
+      "id": "memory forensics labs/ransomware attack (letsdefend)",
+      "title": "Ransomware Attack (LetsDefend)",
+      "slug": "ransomware-attack-letsdefend"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Ransomware Attack (LetsDefend)"
+    },
+    {
+      "level": 3,
+      "text": "1- Please you find the dropped dll, include the whole path including the dll file"
+    },
+    {
+      "level": 3,
+      "text": "C:\\users\\charles\\appdata\\local\\temp\\mpsvc.dll"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the MD5 hash for the dll?"
+    },
+    {
+      "level": 3,
+      "text": "040818b1b3c9b1bf8245f5bcb4eebbbc"
+    },
+    {
+      "level": 3,
+      "text": "3- What i s the name of ransomware note that got dropped?"
+    },
+    {
+      "level": 3,
+      "text": "2s6lc-readme"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the URL that the initial payload was downloaded from? (Include the whole URL with the payload)"
+    },
+    {
+      "level": 3,
+      "text": "http://192.168.75.129:8111/documents/lsass"
+    },
+    {
+      "level": 3,
+      "text": "5- The ransomware drops the copy of the legitimate application into the Temp folder. Please provide the filename including the extension"
+    },
+    {
+      "level": 3,
+      "text": "msmpeng.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- What is name of the ransomware?"
+    },
+    {
+      "level": 3,
+      "text": "sodinokibi"
+    }
+  ],
+  "overview": "https://app.letsdefend.io/challenge/ransomware-attack",
+  "study": {
+    "overview": "https://app.letsdefend.io/challenge/ransomware-attack",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Ransomware Attack (LetsDefend)",
+      "1- Please you find the dropped dll, include the whole path including the dll file",
+      "C:\\users\\charles\\appdata\\local\\temp\\mpsvc.dll",
+      "2- What is the MD5 hash for the dll?",
+      "040818b1b3c9b1bf8245f5bcb4eebbbc",
+      "3- What i s the name of ransomware note that got dropped?",
+      "2s6lc-readme",
+      "4- What is the URL that the initial payload was downloaded from? (Include the whole URL with the payload)",
+      "http://192.168.75.129:8111/documents/lsass",
+      "5- The ransomware drops the copy of the legitimate application into the Temp folder. Please provide the filename including the extension",
+      "msmpeng.exe",
+      "6- What is name of the ransomware?"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": [
+      "DLL side-loading: an attacker places a malicious DLL in the same directory as a trusted executable so when that executable runs it loads the attacker’s DLL instead of the real one. Windows searches for required DLLs starting in the executable’s current directory before consulting system folders; a signed or legitimate EXE copied into Temp (or a similarly writable folder) will happily load any DLL found there. In this case the attacker dropped a genuineMsMpEng.exeinto Temp and paired it withMpsVc.dllso the trusted EXE would load the malicious DLL and execute the payload without needing to tamper with system binaries.",
+      "lsass.exe is Local Security Authority Subsystem Service in Windows which Handles authentication, password changes, access tokens, and Active Directory logins its location should be C:\\Windows\\System32\\lsass.exe attackers often use a similarly named file in Downloads to blend in"
+    ]
+  }
+}

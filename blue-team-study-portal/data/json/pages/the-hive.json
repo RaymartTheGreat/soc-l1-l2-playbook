@@ -1,0 +1,91 @@
+{
+  "id": "the hive",
+  "title": "The Hive",
+  "slug": "the-hive",
+  "relPath": "The Hive.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "SIEM",
+    "Phishing",
+    "Web",
+    "Incident Response",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "the hive",
+      "title": "The Hive",
+      "slug": "the-hive"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "The Hive"
+    },
+    {
+      "level": 2,
+      "text": "Core capabilities"
+    },
+    {
+      "level": 2,
+      "text": "Typical integrations"
+    },
+    {
+      "level": 2,
+      "text": "Roles & permissions"
+    },
+    {
+      "level": 2,
+      "text": "Notes"
+    },
+    {
+      "level": 2,
+      "text": "Operational guidance"
+    },
+    {
+      "level": 2,
+      "text": "Example workflows"
+    },
+    {
+      "level": 2,
+      "text": "Benefits for a SOC"
+    }
+  ],
+  "overview": "TheHive is an open-source Security Incident Response Platform (SIRP) designed to centralize incident investigations and case management for SOCs, CSIRTs and CERTs. It enables teams to collect alerts, create investigations (cases), track actions with tasks, enrich observables, and collaborate in real time.",
+  "study": {
+    "overview": "TheHive is an open-source Security Incident Response Platform (SIRP) designed to centralize incident investigations and case management for SOCs, CSIRTs and CERTs. It enables teams to collect alerts, create investigations (cases), track actions with tasks, enrich observables, and collaborate in real time.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "The Hive",
+      "Core capabilities",
+      "Typical integrations",
+      "Roles & permissions",
+      "Notes",
+      "Operational guidance",
+      "Example workflows",
+      "Benefits for a SOC"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "TheHive"
+    ],
+    "tips": []
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "id": "network defenses",
+  "title": "Network Defenses",
+  "slug": "network-defenses",
+  "relPath": "Network Defenses.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "SIEM",
+    "Phishing",
+    "Network",
+    "Web",
+    "Detection",
+    "Threat Intel",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "network defenses",
+      "title": "Network Defenses",
+      "slug": "network-defenses"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Network Defenses"
+    },
+    {
+      "level": 1,
+      "text": "Network Intrusion Detection"
+    },
+    {
+      "level": 2,
+      "text": "Popular Network Intrusion Detection Tools"
+    },
+    {
+      "level": 1,
+      "text": "Network Intrusion Prevention"
+    },
+    {
+      "level": 2,
+      "text": "NIPS Solutions"
+    },
+    {
+      "level": 1,
+      "text": "Firewalls"
+    },
+    {
+      "level": 2,
+      "text": "Packet-Filtering Firewalls (Layer 3 – Network Layer)"
+    },
+    {
+      "level": 2,
+      "text": "Stateful Inspection Firewalls (Layer 3 & 4 – Network & Transport Layers)"
+    },
+    {
+      "level": 2,
+      "text": "Application-Level Gateways / Proxy Firewalls (Layer 7 – Application Layer)"
+    },
+    {
+      "level": 2,
+      "text": "Next-Generation Firewalls (NGFWs) (Multiple Layers, incl. Layer 7)"
+    },
+    {
+      "level": 2,
+      "text": "Web Application Firewalls (WAFs) (Layer 7 – Application Layer)"
+    },
+    {
+      "level": 2,
+      "text": "Cloud Firewalls (Virtual Firewalls)"
+    },
+    {
+      "level": 1,
+      "text": "Event Monitoring"
+    },
+    {
+      "level": 3,
+      "text": "Web Proxy Logs"
+    },
+    {
+      "level": 3,
+      "text": "Perimeter Firewall Logs"
+    },
+    {
+      "level": 3,
+      "text": "Intrusion Detection/Prevention Logs (IDS/IPS)"
+    },
+    {
+      "level": 3,
+      "text": "VPN and Remote Access Logs"
+    },
+    {
+      "level": 3,
+      "text": "Switches, Routers, and Network Infrastructure Logs"
+    },
+    {
+      "level": 1,
+      "text": "Network Access Control (NAC)"
+    },
+    {
+      "level": 2,
+      "text": "Pre-Admission Control"
+    },
+    {
+      "level": 2,
+      "text": "Post-Admission Control"
+    },
+    {
+      "level": 2,
+      "text": "Why NAC Matters"
+    },
+    {
+      "level": 1,
+      "text": "Web Proxy"
+    },
+    {
+      "level": 2,
+      "text": "How Web Proxies Work"
+    },
+    {
+      "level": 2,
+      "text": "Security Benefits of Web Proxies"
+    },
+    {
+      "level": 2,
+      "text": "Example Scenario"
+    },
+    {
+      "level": 2,
+      "text": "Types of Web Proxies"
+    }
+  ],
+  "overview": "Network Intrusion Detection System (NIDS) is either a piece of software or a dedicated appliance that inspects network traffic and raises alerts when suspicious or malicious behavior is detected. These alerts are passed on to security analysts for investigation.",
+  "study": {
+    "overview": "Network Intrusion Detection System (NIDS) is either a piece of software or a dedicated appliance that inspects network traffic and raises alerts when suspicious or malicious behavior is detected. These alerts are passed on to security analysts for investigation.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Network Defenses",
+      "Network Intrusion Detection",
+      "Popular Network Intrusion Detection Tools",
+      "Network Intrusion Prevention",
+      "NIPS Solutions",
+      "Firewalls",
+      "Packet-Filtering Firewalls (Layer 3 – Network Layer)",
+      "Stateful Inspection Firewalls (Layer 3 & 4 – Network & Transport Layers)",
+      "Application-Level Gateways / Proxy Firewalls (Layer 7 – Application Layer)",
+      "Next-Generation Firewalls (NGFWs) (Multiple Layers, incl. Layer 7)",
+      "Web Application Firewalls (WAFs) (Layer 7 – Application Layer)",
+      "Cloud Firewalls (Virtual Firewalls)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "Zeek"
+    ],
+    "tips": [
+      "By collecting and correlating all these logs, analysts can detect early warning signs of attacks, such as scanning, data exfiltration, or lateral movement, and respond before major damage occurs."
+    ]
+  }
+}

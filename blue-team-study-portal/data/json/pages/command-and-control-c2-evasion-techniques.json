@@ -1,0 +1,87 @@
+{
+  "id": "command-and-control (c2) evasion techniques",
+  "title": "Command-and-Control (C2) Evasion Techniques",
+  "slug": "command-and-control-c2-evasion-techniques",
+  "relPath": "Command-and-Control (C2) Evasion Techniques.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Network",
+    "Web",
+    "Detection",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "command-and-control (c2) evasion techniques",
+      "title": "Command-and-Control (C2) Evasion Techniques",
+      "slug": "command-and-control-c2-evasion-techniques"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Command-and-Control (C2) Evasion Techniques"
+    },
+    {
+      "level": 3,
+      "text": "1- Domain Generation Algorithms (DGAs)"
+    },
+    {
+      "level": 3,
+      "text": "2- Fast Flux"
+    },
+    {
+      "level": 3,
+      "text": "3- Domain Fronting"
+    },
+    {
+      "level": 3,
+      "text": "4- Peer-to-Peer (P2P) Botnets"
+    },
+    {
+      "level": 3,
+      "text": "5- DNS Tunneling"
+    },
+    {
+      "level": 3,
+      "text": "6- Using Legitimate Services"
+    },
+    {
+      "level": 3,
+      "text": "7- Tor & Onion Routing"
+    }
+  ],
+  "overview": "Think of a “command-and-control” (C2) server as the central headquarters of an espionage network. If the malware consistently invoked the same domain or phone number, security teams could quickly identify and neutralize it. To avoid detection, threat actors employ various techniques to ensure their C2 infrastructure does not present as a single, static targe",
+  "study": {
+    "overview": "Think of a “command-and-control” (C2) server as the central headquarters of an espionage network. If the malware consistently invoked the same domain or phone number, security teams could quickly identify and neutralize it. To avoid detection, threat actors employ various techniques to ensure their C2 infrastructure does not present as a single, static targe",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Command-and-Control (C2) Evasion Techniques",
+      "1- Domain Generation Algorithms (DGAs)",
+      "2- Fast Flux",
+      "3- Domain Fronting",
+      "4- Peer-to-Peer (P2P) Botnets",
+      "5- DNS Tunneling",
+      "6- Using Legitimate Services",
+      "7- Tor & Onion Routing"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

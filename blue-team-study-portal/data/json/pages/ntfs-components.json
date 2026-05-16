@@ -1,0 +1,102 @@
+{
+  "id": "windows forensics/ntfs analysis/ntfs components",
+  "title": "NTFS Components",
+  "slug": "ntfs-components",
+  "relPath": "Windows Forensics/NTFS Analysis/NTFS Components.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics/ntfs analysis",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics/ntfs analysis"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/ntfs analysis",
+      "title": "NTFS Analysis",
+      "slug": "ntfs-analysis"
+    },
+    {
+      "id": "windows forensics/ntfs analysis/ntfs components",
+      "title": "NTFS Components",
+      "slug": "ntfs-components"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "NTFS Components"
+    },
+    {
+      "level": 2,
+      "text": "Partition Boot Sector (PBS)"
+    },
+    {
+      "level": 2,
+      "text": "Master File Table (MFT)"
+    },
+    {
+      "level": 2,
+      "text": "$MFTMirr"
+    },
+    {
+      "level": 2,
+      "text": "System Files"
+    },
+    {
+      "level": 2,
+      "text": "File Data Area"
+    },
+    {
+      "level": 2,
+      "text": "Alternate Data Stream"
+    },
+    {
+      "level": 2,
+      "text": "Identifying the Artifacts"
+    },
+    {
+      "level": 2,
+      "text": "Collecting the Artifacts"
+    }
+  ],
+  "overview": "Before diving into the details of NTFS, it is important to understand how the NTFS disk is actually structured and what are the main components of NTFS.",
+  "study": {
+    "overview": "Before diving into the details of NTFS, it is important to understand how the NTFS disk is actually structured and what are the main components of NTFS.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "NTFS Components",
+      "Partition Boot Sector (PBS)",
+      "Master File Table (MFT)",
+      "$MFTMirr",
+      "System Files",
+      "File Data Area",
+      "Alternate Data Stream",
+      "Identifying the Artifacts",
+      "Collecting the Artifacts"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

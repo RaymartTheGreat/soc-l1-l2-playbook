@@ -1,0 +1,157 @@
+{
+  "id": "threat hunting labs (siem)/ps eclipse (thm)",
+  "title": "PS Eclipse (THM)",
+  "slug": "ps-eclipse-thm",
+  "relPath": "Threat hunting Labs (SIEM)/PS Eclipse (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "Splunk",
+    "SIEM",
+    "PowerShell",
+    "Windows"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/ps eclipse (thm)",
+      "title": "PS Eclipse (THM)",
+      "slug": "ps-eclipse-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "PS Eclipse (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- A suspicious binary was downloaded to the endpoint. What was the name of the binary?"
+    },
+    {
+      "level": 3,
+      "text": "OUTSTANDINGGUTTER.exe"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the address the binary was downloaded from? Add http:// to your answer & defang the URL."
+    },
+    {
+      "level": 3,
+      "text": "hxxp[://]886e-181-215-214-32[.]ngrok[.]io"
+    },
+    {
+      "level": 3,
+      "text": "3- What Windows executable was used to download the suspicious binary? Enter full path."
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    },
+    {
+      "level": 3,
+      "text": "4- What command was executed to configure the suspicious binary to run with elevated privileges?"
+    },
+    {
+      "level": 3,
+      "text": "\"C:\\Windows\\system32\\schtasks.exe\" /Create /TN OUTSTANDINGGUTTER.exe /TR C:\\Windows\\Temp\\COUTSTANDINGGUTTER.exe /SC ONEVENT /EC Application /MO [System/EventID=777] /RU SYSTEM /f"
+    },
+    {
+      "level": 3,
+      "text": "5- What permissions will the suspicious binary run as? What was the command to run the binary with elevated privileges? (Format: User + ; + CommandLine)"
+    },
+    {
+      "level": 3,
+      "text": "NT AUTHORITY\\SYSTEM;\"C:\\Windows\\system32\\schtasks.exe\" /Run /TN OUTSTANDINGGUTTER.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- The suspicious binary connected to a remote server. What address did it connect to? Add http:// to your answer & defang the URL."
+    },
+    {
+      "level": 3,
+      "text": "hxxp[://]9030-181-215-214-32[.]ngrok[.]io"
+    },
+    {
+      "level": 3,
+      "text": "7- A PowerShell script was downloaded to the same location as the suspicious binary. What was the name of the file?"
+    },
+    {
+      "level": 3,
+      "text": "script.ps1"
+    },
+    {
+      "level": 3,
+      "text": "8- The malicious script was flagged as malicious. What do you think was the actual name of the malicious script?"
+    },
+    {
+      "level": 3,
+      "text": "BlackSun.ps1"
+    },
+    {
+      "level": 3,
+      "text": "9- A ransomware note was saved to disk, which can serve as an IOC. What is the full path to which the ransom note was saved?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\keegan\\Downloads\\vasg6b0wmw029hd\\BlackSunREADME.txt"
+    },
+    {
+      "level": 3,
+      "text": "10- The script saved an image file to disk to replace the user's desktop wallpaper, which can also serve as an IOC. What is the full path of the image?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\Public\\Pictures\\blacksun.jpg"
+    }
+  ],
+  "overview": "You are a SOC Analyst for an MSSP (Managed Security Service Provider) company called TryNotHackMe .",
+  "study": {
+    "overview": "You are a SOC Analyst for an MSSP (Managed Security Service Provider) company called TryNotHackMe .",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "PS Eclipse (THM)",
+      "Scenario",
+      "1- A suspicious binary was downloaded to the endpoint. What was the name of the binary?",
+      "OUTSTANDINGGUTTER.exe",
+      "2- What is the address the binary was downloaded from? Add http:// to your answer & defang the URL.",
+      "hxxp[://]886e-181-215-214-32[.]ngrok[.]io",
+      "3- What Windows executable was used to download the suspicious binary? Enter full path.",
+      "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "4- What command was executed to configure the suspicious binary to run with elevated privileges?",
+      "\"C:\\Windows\\system32\\schtasks.exe\" /Create /TN OUTSTANDINGGUTTER.exe /TR C:\\Windows\\Temp\\COUTSTANDINGGUTTER.exe /SC ONEVENT /EC Application /MO [System/EventID=777] /RU SYSTEM /f",
+      "5- What permissions will the suspicious binary run as? What was the command to run the binary with elevated privileges? (Format: User + ; + CommandLine)",
+      "NT AUTHORITY\\SYSTEM;\"C:\\Windows\\system32\\schtasks.exe\" /Run /TN OUTSTANDINGGUTTER.exe"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

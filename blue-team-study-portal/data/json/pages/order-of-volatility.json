@@ -1,0 +1,87 @@
+{
+  "id": "digital forensics/order of volatility",
+  "title": "Order of Volatility",
+  "slug": "order-of-volatility",
+  "relPath": "Digital Forensics/Order of Volatility.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "SIEM",
+    "Network",
+    "DFIR",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "digital forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "digital forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "digital forensics",
+      "title": "Digital Forensics",
+      "slug": "digital-forensics"
+    },
+    {
+      "id": "digital forensics/order of volatility",
+      "title": "Order of Volatility",
+      "slug": "order-of-volatility"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Order of Volatility"
+    },
+    {
+      "level": 3,
+      "text": "1- Registers and Cache"
+    },
+    {
+      "level": 3,
+      "text": "2- System Memory (RAM)"
+    },
+    {
+      "level": 3,
+      "text": "3- Persistent Storage (HDDs and SSDs)"
+    },
+    {
+      "level": 3,
+      "text": "4- Remote Logs and Monitoring Systems"
+    },
+    {
+      "level": 3,
+      "text": "5- Physical Configuration, Network Topology, and Archival Media"
+    }
+  ],
+  "overview": "Order of volatility refers to the sequence in which data should be collected from a system based on how likely it is to change or disappear. Investigators must prioritize the most volatile sources first to avoid losing critical evidence.",
+  "study": {
+    "overview": "Order of volatility refers to the sequence in which data should be collected from a system based on how likely it is to change or disappear. Investigators must prioritize the most volatile sources first to avoid losing critical evidence.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Order of Volatility",
+      "1- Registers and Cache",
+      "2- System Memory (RAM)",
+      "3- Persistent Storage (HDDs and SSDs)",
+      "4- Remote Logs and Monitoring Systems",
+      "5- Physical Configuration, Network Topology, and Archival Media"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "Volatility"
+    ],
+    "tips": []
+  }
+}

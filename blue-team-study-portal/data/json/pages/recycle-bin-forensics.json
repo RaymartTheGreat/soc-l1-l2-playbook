@@ -1,0 +1,118 @@
+{
+  "id": "windows forensics/recycle bin forensics",
+  "title": "Recycle Bin Forensics",
+  "slug": "recycle-bin-forensics",
+  "relPath": "Windows Forensics/Recycle Bin Forensics.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Windows",
+    "DFIR"
+  ],
+  "mitre": [],
+  "parentId": "windows forensics",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows forensics"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows forensics",
+      "title": "Windows Forensics",
+      "slug": "windows-forensics"
+    },
+    {
+      "id": "windows forensics/recycle bin forensics",
+      "title": "Recycle Bin Forensics",
+      "slug": "recycle-bin-forensics"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Recycle Bin Forensics"
+    },
+    {
+      "level": 3,
+      "text": "Artifact Path"
+    },
+    {
+      "level": 3,
+      "text": "Why It Matters"
+    },
+    {
+      "level": 3,
+      "text": "How It Works"
+    },
+    {
+      "level": 3,
+      "text": "Analysis Workflow"
+    },
+    {
+      "level": 3,
+      "text": "1- View Hidden Content"
+    },
+    {
+      "level": 3,
+      "text": "2- Tool-Based Analysis"
+    },
+    {
+      "level": 3,
+      "text": "Example Scenario"
+    },
+    {
+      "level": 3,
+      "text": "Bulk SID Analysis"
+    }
+  ],
+  "overview": "Windows Recycle Bin temporarily stores deleted files before permanent removal. For forensic analysts, it reveals user intent, potential anti-forensics behavior, and remnants of deleted content.",
+  "study": {
+    "overview": "Windows Recycle Bin temporarily stores deleted files before permanent removal. For forensic analysts, it reveals user intent, potential anti-forensics behavior, and remnants of deleted content.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Recycle Bin Forensics",
+      "Artifact Path",
+      "Why It Matters",
+      "How It Works",
+      "Analysis Workflow",
+      "1- View Hidden Content",
+      "2- Tool-Based Analysis",
+      "Example Scenario",
+      "Bulk SID Analysis"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "dir /a C:\\$Recycle.Bin"
+      },
+      {
+        "language": "bash",
+        "code": "wmic useraccount get name,SID"
+      },
+      {
+        "language": "bash",
+        "code": "RBCmd.exe -f $IXXXXXXX"
+      },
+      {
+        "language": "bash",
+        "code": "RBCmd.exe -d . --csv C:\\Output\\RBCmd"
+      },
+      {
+        "language": "bash",
+        "code": "RBCmd.exe -d C:\\$Recycle.Bin --csv C:\\Output\\AllRecycle"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "id": "cryptography",
+  "title": "Cryptography",
+  "slug": "cryptography",
+  "relPath": "Cryptography.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-scripting-tooling",
+  "curriculumSectionTitle": "Advanced Scripting & Analysis Tooling",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Linux",
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "cryptography",
+      "title": "Cryptography",
+      "slug": "cryptography"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Cryptography"
+    },
+    {
+      "level": 1,
+      "text": "What is Cryptography?"
+    },
+    {
+      "level": 1,
+      "text": "Key Terms"
+    },
+    {
+      "level": 1,
+      "text": "Encoding vs Encryption vs Hashing"
+    },
+    {
+      "level": 1,
+      "text": "Historical Ciphers"
+    },
+    {
+      "level": 1,
+      "text": "Mathematical Building Blocks"
+    },
+    {
+      "level": 1,
+      "text": "Hashing"
+    },
+    {
+      "level": 1,
+      "text": "Symmetric Cryptography"
+    },
+    {
+      "level": 1,
+      "text": "Asymmetric Cryptography"
+    },
+    {
+      "level": 1,
+      "text": "Diffie-Hellman Key Exchange"
+    },
+    {
+      "level": 1,
+      "text": "Public Key Infrastructure (PKI)"
+    },
+    {
+      "level": 1,
+      "text": "SSL/TLS"
+    },
+    {
+      "level": 1,
+      "text": "Obfuscation"
+    },
+    {
+      "level": 3,
+      "text": "Obfuscation Examples"
+    },
+    {
+      "level": 1,
+      "text": "Cryptographic Attacks"
+    },
+    {
+      "level": 1,
+      "text": "HMAC (Hash-Based Message Authentication Code)"
+    },
+    {
+      "level": 1,
+      "text": "Blockchain"
+    },
+    {
+      "level": 1,
+      "text": "Quantum Computing & Cryptography"
+    }
+  ],
+  "overview": "The science of protecting information so adversaries can’t read or alter it.",
+  "study": {
+    "overview": "The science of protecting information so adversaries can’t read or alter it.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Cryptography",
+      "What is Cryptography?",
+      "Key Terms",
+      "Encoding vs Encryption vs Hashing",
+      "Historical Ciphers",
+      "Mathematical Building Blocks",
+      "Hashing",
+      "Symmetric Cryptography",
+      "Asymmetric Cryptography",
+      "Diffie-Hellman Key Exchange",
+      "Public Key Infrastructure (PKI)",
+      "SSL/TLS"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "echo -n \"hello\" | md5sum\n# 5d41402abc4b2a76b9719d911017c592\n\necho -n \"hello\" | sha256sum\n# 2cf24dba5fb0a30e26e83b2ac5b9e29e..."
+      },
+      {
+        "language": "bash",
+        "code": "hashcat -m 1000 -a 0 hash.txt rockyou.txt   # NTLM\njohn --format=raw-md5 --wordlist=rockyou.txt hash.txt"
+      },
+      {
+        "language": "bash",
+        "code": "sha256sum file.iso   # compare with official checksum"
+      },
+      {
+        "language": "bash",
+        "code": "openssl enc -aes-256-cbc -in secret.txt -out secret.enc -k mypassword\nopenssl enc -d -aes-256-cbc -in secret.enc -out secret.txt -k mypassword"
+      },
+      {
+        "language": "bash",
+        "code": "openssl genrsa -out private.pem 2048\nopenssl rsa -in private.pem -pubout -out public.pem\nopenssl rsautl -encrypt -inkey public.pem -pubin -in secret.txt -out secret.enc\nopenssl rsautl -decrypt -inkey private.pem -in secret.enc -out secret.txt"
+      }
+    ],
+    "tools": [
+      "PowerShell",
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

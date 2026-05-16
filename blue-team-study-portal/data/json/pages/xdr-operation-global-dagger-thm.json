@@ -1,0 +1,159 @@
+{
+  "id": "threat hunting labs (siem)/xdr operation global dagger (thm)",
+  "title": "XDR Operation Global Dagger (THM)",
+  "slug": "xdr-operation-global-dagger-thm",
+  "relPath": "Threat hunting Labs (SIEM)/XDR Operation Global Dagger (THM).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "SIEM",
+    "PowerShell",
+    "Windows",
+    "Detection",
+    "Threat Intel",
+    "Lateral Movement"
+  ],
+  "mitre": [],
+  "parentId": "threat hunting labs (siem)",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting labs (siem)/xdr operation global dagger 2 (thm)",
+    "threat hunting labs (siem)"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting labs (siem)",
+      "title": "Threat hunting Labs (SIEM)",
+      "slug": "threat-hunting-labs-siem"
+    },
+    {
+      "id": "threat hunting labs (siem)/xdr operation global dagger (thm)",
+      "title": "XDR Operation Global Dagger (THM)",
+      "slug": "xdr-operation-global-dagger-thm"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "XDR: Operation Global Dagger (THM)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the name of the threat found on the PowerSploit post-exploitation tool alert?"
+    },
+    {
+      "level": 3,
+      "text": "HackTool:PowerShell/PowerSploit.F"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the remediation action result for the alert from question 1?"
+    },
+    {
+      "level": 3,
+      "text": "Success"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the name of the threat you found in the alert An active 'DumpLsass' hacktool in a command line was prevented from executing?"
+    },
+    {
+      "level": 3,
+      "text": "HackTool:Win32/DumpLsass.R"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the detection status for the alert from question 3?"
+    },
+    {
+      "level": 3,
+      "text": "Blocked"
+    },
+    {
+      "level": 3,
+      "text": "5- What was the initiating process for the alert from question 3?"
+    },
+    {
+      "level": 3,
+      "text": "powershell.exe"
+    },
+    {
+      "level": 3,
+      "text": "6- What is the name of the privilege escalation alert found by Defender XDR?"
+    },
+    {
+      "level": 3,
+      "text": "UAC bypass was detected"
+    },
+    {
+      "level": 3,
+      "text": "7- What is the location of the set value data for the alert from question 6?"
+    },
+    {
+      "level": 3,
+      "text": "c:\\windows\\System32\\{payload}"
+    },
+    {
+      "level": 3,
+      "text": "8- What is the file path of the image of the alert from question 6?"
+    },
+    {
+      "level": 3,
+      "text": "C:\\Windows\\System32\\reg.exe"
+    },
+    {
+      "level": 3,
+      "text": "9- Which lateral movement alert is associated with a high severity?"
+    },
+    {
+      "level": 3,
+      "text": "Compromised account conducting hands-on-keyboard attack"
+    },
+    {
+      "level": 3,
+      "text": "10- What is the command-line query used to execute the attack for the alert from question 9?"
+    },
+    {
+      "level": 3,
+      "text": "\"ie4uinit.exe\" -UserConfig"
+    }
+  ],
+  "overview": "Today, your organisation's threat intelligence (TI) team received classified briefings regarding an ongoing nation-state threat campaign - Operation Global Dagger. Global Dagger has targeted hundreds of global corporations using compromised software updates, remote code execution, credential theft, and cloud-based exfiltration on devices. The security team h",
+  "study": {
+    "overview": "Today, your organisation's threat intelligence (TI) team received classified briefings regarding an ongoing nation-state threat campaign - Operation Global Dagger. Global Dagger has targeted hundreds of global corporations using compromised software updates, remote code execution, credential theft, and cloud-based exfiltration on devices. The security team h",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "XDR: Operation Global Dagger (THM)",
+      "Scenario",
+      "1- What is the name of the threat found on the PowerSploit post-exploitation tool alert?",
+      "HackTool:PowerShell/PowerSploit.F",
+      "2- What is the remediation action result for the alert from question 1?",
+      "Success",
+      "3- What is the name of the threat you found in the alert An active 'DumpLsass' hacktool in a command line was prevented from executing?",
+      "HackTool:Win32/DumpLsass.R",
+      "4- What is the detection status for the alert from question 3?",
+      "Blocked",
+      "5- What was the initiating process for the alert from question 3?",
+      "powershell.exe"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

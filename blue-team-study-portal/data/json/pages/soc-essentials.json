@@ -1,0 +1,366 @@
+{
+  "id": "soc essentials",
+  "title": "SOC Essentials",
+  "slug": "soc-essentials",
+  "relPath": "SOC Essentials.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "SIEM",
+    "EDR",
+    "Windows",
+    "Phishing",
+    "Network",
+    "Active Directory",
+    "Web",
+    "DFIR",
+    "Detection",
+    "Threat Intel"
+  ],
+  "mitre": [],
+  "parentId": null,
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [],
+  "breadcrumbs": [
+    {
+      "id": "soc essentials",
+      "title": "SOC Essentials",
+      "slug": "soc-essentials"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "SOC Essentials"
+    },
+    {
+      "level": 2,
+      "text": "What is a SOC (Security Operations Center)?"
+    },
+    {
+      "level": 3,
+      "text": "Definition"
+    },
+    {
+      "level": 3,
+      "text": "Main objectives"
+    },
+    {
+      "level": 3,
+      "text": "The three pillars of a mature SOC"
+    },
+    {
+      "level": 2,
+      "text": "Who works in a SOC? (roles & responsibilities)"
+    },
+    {
+      "level": 3,
+      "text": "Analyst Tiers"
+    },
+    {
+      "level": 3,
+      "text": "Engineering & Specialist Roles"
+    },
+    {
+      "level": 3,
+      "text": "Cross-functional contacts"
+    },
+    {
+      "level": 2,
+      "text": "SOC capabilities // reactive vs proactive services"
+    },
+    {
+      "level": 3,
+      "text": "Reactive services (incident-driven)"
+    },
+    {
+      "level": 3,
+      "text": "Proactive services (preventative & discovery)"
+    },
+    {
+      "level": 2,
+      "text": "Why SOC analysts matter"
+    },
+    {
+      "level": 2,
+      "text": "Common data sources"
+    },
+    {
+      "level": 3,
+      "text": "Endpoint & Host"
+    },
+    {
+      "level": 3,
+      "text": "Network & Infrastructure"
+    },
+    {
+      "level": 3,
+      "text": "Identity & Access"
+    },
+    {
+      "level": 3,
+      "text": "Server & Application"
+    },
+    {
+      "level": 3,
+      "text": "DNS & DHCP"
+    },
+    {
+      "level": 3,
+      "text": "Cloud & SaaS"
+    },
+    {
+      "level": 3,
+      "text": "Mail & Collaboration"
+    },
+    {
+      "level": 3,
+      "text": "Threat Intelligence"
+    },
+    {
+      "level": 3,
+      "text": "Why combine these?"
+    },
+    {
+      "level": 2,
+      "text": "Key tool categories"
+    },
+    {
+      "level": 2,
+      "text": "Simple SOC workflow"
+    },
+    {
+      "level": 2,
+      "text": "Beginner L1 checklist"
+    },
+    {
+      "level": 2,
+      "text": "From events → alerts"
+    },
+    {
+      "level": 3,
+      "text": "How to think about alerts"
+    },
+    {
+      "level": 2,
+      "text": "Alert fields to read first"
+    },
+    {
+      "level": 2,
+      "text": "Prioritization"
+    },
+    {
+      "level": 2,
+      "text": "First actions in triage (first 60–120 seconds)"
+    },
+    {
+      "level": 2,
+      "text": "L1 Investigation checklist"
+    },
+    {
+      "level": 2,
+      "text": "Workbooks / Runbooks"
+    },
+    {
+      "level": 3,
+      "text": "Why use runbooks?"
+    },
+    {
+      "level": 3,
+      "text": "Runbook sections (recommended)"
+    },
+    {
+      "level": 2,
+      "text": "Generic runbook template"
+    },
+    {
+      "level": 2,
+      "text": "Example runbook — Phishing"
+    },
+    {
+      "level": 3,
+      "text": "When to use"
+    },
+    {
+      "level": 3,
+      "text": "Enrichment"
+    },
+    {
+      "level": 3,
+      "text": "Investigation steps"
+    },
+    {
+      "level": 3,
+      "text": "Decision points"
+    },
+    {
+      "level": 3,
+      "text": "Actions & remediation"
+    },
+    {
+      "level": 2,
+      "text": "Example runbook - Unusual Login Location"
+    },
+    {
+      "level": 3,
+      "text": "Trigger"
+    },
+    {
+      "level": 3,
+      "text": "Enrichment"
+    },
+    {
+      "level": 3,
+      "text": "Investigation"
+    },
+    {
+      "level": 3,
+      "text": "Decision"
+    },
+    {
+      "level": 3,
+      "text": "Actions when escalating"
+    },
+    {
+      "level": 2,
+      "text": "Simple example alert"
+    },
+    {
+      "level": 2,
+      "text": "Triage reporting & ticket templates"
+    },
+    {
+      "level": 3,
+      "text": "Short ticket title"
+    },
+    {
+      "level": 3,
+      "text": "One-line summary"
+    },
+    {
+      "level": 3,
+      "text": "Full report (5 Ws)"
+    },
+    {
+      "level": 2,
+      "text": "Escalation guidelines"
+    },
+    {
+      "level": 3,
+      "text": "When to escalate"
+    },
+    {
+      "level": 3,
+      "text": "How to escalate"
+    },
+    {
+      "level": 2,
+      "text": "Communication best practices"
+    },
+    {
+      "level": 2,
+      "text": "Core lookup sources & enrichment"
+    },
+    {
+      "level": 2,
+      "text": "How to design & maintain workbooks"
+    },
+    {
+      "level": 2,
+      "text": "Additional runbooks"
+    },
+    {
+      "level": 3,
+      "text": "RDP / Brute-force detection"
+    },
+    {
+      "level": 3,
+      "text": "Data exfiltration / unusual outbound traffic"
+    },
+    {
+      "level": 2,
+      "text": "Metrics, SLAs and performance"
+    },
+    {
+      "level": 3,
+      "text": "Core metrics"
+    },
+    {
+      "level": 3,
+      "text": "Suggested SLA ranges"
+    },
+    {
+      "level": 2,
+      "text": "Dashboards & reporting"
+    },
+    {
+      "level": 3,
+      "text": "Operational dashboards"
+    },
+    {
+      "level": 3,
+      "text": "Health & detection dashboards"
+    },
+    {
+      "level": 3,
+      "text": "Executive dashboards"
+    },
+    {
+      "level": 2,
+      "text": "How to improve SOC metrics"
+    },
+    {
+      "level": 3,
+      "text": "Short-term (days → weeks)"
+    },
+    {
+      "level": 3,
+      "text": "Medium-term (weeks → months)"
+    },
+    {
+      "level": 3,
+      "text": "Long-term (months → year)"
+    },
+    {
+      "level": 2,
+      "text": "Common pitfalls & how to avoid them"
+    }
+  ],
+  "overview": "A SOC is a dedicated, usually 24/7 team (and the operational capability supporting it) responsible for protecting an organisation’s digital assets servers, endpoints, networks, cloud, identity systems and data by continuously monitoring, detecting, investigating, and responding to security incidents.",
+  "study": {
+    "overview": "A SOC is a dedicated, usually 24/7 team (and the operational capability supporting it) responsible for protecting an organisation’s digital assets servers, endpoints, networks, cloud, identity systems and data by continuously monitoring, detecting, investigating, and responding to security incidents.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "SOC Essentials",
+      "What is a SOC (Security Operations Center)?",
+      "Definition",
+      "Main objectives",
+      "The three pillars of a mature SOC",
+      "Who works in a SOC? (roles & responsibilities)",
+      "Analyst Tiers",
+      "Engineering & Specialist Roles",
+      "Cross-functional contacts",
+      "SOC capabilities // reactive vs proactive services",
+      "Reactive services (incident-driven)",
+      "Proactive services (preventative & discovery)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "SIEM",
+      "EDR"
+    ],
+    "tips": [
+      "Focus runbooks on concepts and steps rather than tool commands."
+    ]
+  }
+}

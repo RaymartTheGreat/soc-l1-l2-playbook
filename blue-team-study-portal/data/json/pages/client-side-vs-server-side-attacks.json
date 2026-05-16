@@ -1,0 +1,91 @@
+{
+  "id": "detecting web attacks/client-side vs server-side attacks",
+  "title": "Client-side vs Server-side attacks",
+  "slug": "client-side-vs-server-side-attacks",
+  "relPath": "Detecting Web Attacks/Client-side vs Server-side attacks.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "EDR",
+    "Network",
+    "Web",
+    "DFIR",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": "detecting web attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting web attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting web attacks",
+      "title": "Detecting Web Attacks",
+      "slug": "detecting-web-attacks"
+    },
+    {
+      "id": "detecting web attacks/client-side vs server-side attacks",
+      "title": "Client-side vs Server-side attacks",
+      "slug": "client-side-vs-server-side-attacks"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Client-side vs Server-side attacks"
+    },
+    {
+      "level": 1,
+      "text": "Client-side attacks"
+    },
+    {
+      "level": 1,
+      "text": "Server-side attacks"
+    },
+    {
+      "level": 1,
+      "text": "Visibility & Detection"
+    },
+    {
+      "level": 2,
+      "text": "Logs & network captures"
+    },
+    {
+      "level": 2,
+      "text": "WAFs"
+    }
+  ],
+  "overview": "Client-side attacks exploit the user’s browser/device or their actions. The attacker runs malicious code in the user’s environment to steal sessions, credentials, or data that lives on the endpoint.",
+  "study": {
+    "overview": "Client-side attacks exploit the user’s browser/device or their actions. The attacker runs malicious code in the user’s environment to steal sessions, credentials, or data that lives on the endpoint.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Client-side vs Server-side attacks",
+      "Client-side attacks",
+      "Server-side attacks",
+      "Visibility & Detection",
+      "Logs & network captures",
+      "WAFs"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "EDR",
+      "Wireshark"
+    ],
+    "tips": [
+      "WAFs are strong first-line mitigations but can be evaded by crafted payloads, custom tools, or encrypted traffic if TLS is not inspected. Use WAFs with secure coding, input validation, and proper logging."
+    ]
+  }
+}

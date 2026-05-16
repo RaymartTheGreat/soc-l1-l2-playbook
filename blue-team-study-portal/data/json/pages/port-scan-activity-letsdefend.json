@@ -1,0 +1,94 @@
+{
+  "id": "network analysis labs/port scan activity (letsdefend)",
+  "title": "Port Scan Activity (LetsDefend)",
+  "slug": "port-scan-activity-letsdefend",
+  "relPath": "Network Analysis Labs/Port Scan Activity (LetsDefend).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "Windows",
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/port scan activity (letsdefend)",
+      "title": "Port Scan Activity (LetsDefend)",
+      "slug": "port-scan-activity-letsdefend"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Port Scan Activity (LetsDefend)"
+    },
+    {
+      "level": 3,
+      "text": "1- What is the IP address scanning the environment?"
+    },
+    {
+      "level": 3,
+      "text": "10.42.42.253"
+    },
+    {
+      "level": 3,
+      "text": "2- What is the IP address found as a result of the scan?"
+    },
+    {
+      "level": 3,
+      "text": "10.42.42.50"
+    },
+    {
+      "level": 3,
+      "text": "3- What is the MAC address of the Apple system it finds?"
+    },
+    {
+      "level": 3,
+      "text": "4- What is the IP address of the detected Windows system?"
+    },
+    {
+      "level": 3,
+      "text": "10.42.42.50"
+    }
+  ],
+  "overview": "https://app.letsdefend.io/challenge/port-scan-activity",
+  "study": {
+    "overview": "https://app.letsdefend.io/challenge/port-scan-activity",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Port Scan Activity (LetsDefend)",
+      "1- What is the IP address scanning the environment?",
+      "10.42.42.253",
+      "2- What is the IP address found as a result of the scan?",
+      "10.42.42.50",
+      "3- What is the MAC address of the Apple system it finds?",
+      "4- What is the IP address of the detected Windows system?",
+      "10.42.42.50"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

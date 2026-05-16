@@ -1,0 +1,197 @@
+{
+  "id": "threat hunting module/threat hunting pivoting",
+  "title": "Threat Hunting Pivoting",
+  "slug": "threat-hunting-pivoting",
+  "relPath": "Threat Hunting module/Threat Hunting Pivoting.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-threat-hunting",
+  "curriculumSectionTitle": "Proactive Threat Hunting",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Sysmon",
+    "Network",
+    "Active Directory",
+    "Lateral Movement",
+    "C2"
+  ],
+  "mitre": [
+    "TA0007",
+    "TA0004",
+    "TA0006",
+    "TA0008"
+  ],
+  "parentId": "threat hunting module",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat hunting module"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat hunting module",
+      "title": "Threat Hunting module",
+      "slug": "threat-hunting-module"
+    },
+    {
+      "id": "threat hunting module/threat hunting pivoting",
+      "title": "Threat Hunting Pivoting",
+      "slug": "threat-hunting-pivoting"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Threat Hunting: Pivoting"
+    },
+    {
+      "level": 1,
+      "text": "1- Discovery (TA0007)"
+    },
+    {
+      "level": 3,
+      "text": "Definition:"
+    },
+    {
+      "level": 3,
+      "text": "Examples of Methods:"
+    },
+    {
+      "level": 2,
+      "text": "Hunting Discovery"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 1: Host Reconnaissance Activity"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 2: Internal Network Scanning"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 3: Active Directory Enumeration"
+    },
+    {
+      "level": 1,
+      "text": "2- Privilege Escalation (TA0004)"
+    },
+    {
+      "level": 3,
+      "text": "Definition:"
+    },
+    {
+      "level": 3,
+      "text": "Examples of Methods:"
+    },
+    {
+      "level": 2,
+      "text": "Hunting Privilege Escalation"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 1: Abusing SeImpersonatePrivilege"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 2: Excessive Service Permission Abuse"
+    },
+    {
+      "level": 1,
+      "text": "3- Credential Access (TA0006)"
+    },
+    {
+      "level": 3,
+      "text": "Definition:"
+    },
+    {
+      "level": 3,
+      "text": "Examples of Methods:"
+    },
+    {
+      "level": 2,
+      "text": "Hunting Credential Access"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 1: LSASS Credential Dumping"
+    },
+    {
+      "level": 3,
+      "text": "Hunting Mimikatz Execution"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 2: LSASS Process Dumping"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 3: Credential Harvesting via DCSync"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 4: Brute-Forcing Accounts"
+    },
+    {
+      "level": 1,
+      "text": "4- Lateral Movement (TA0008)"
+    },
+    {
+      "level": 3,
+      "text": "Definition:"
+    },
+    {
+      "level": 3,
+      "text": "Examples of Methods:"
+    },
+    {
+      "level": 2,
+      "text": "Hunting Lateral Movement"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 1: Lateral Movement via WMI"
+    },
+    {
+      "level": 2,
+      "text": "Scenario 2: Authentication via Pass-the-Hash"
+    },
+    {
+      "level": 1,
+      "text": "Conclusion"
+    }
+  ],
+  "overview": "This section focuses on hunting malicious activity that indicates potential internal network pivoting after an initial foothold has been achieved. It covers the attacker's mindset when moving laterally within a network, correlating subsequent actions, and distinguishing benign from suspicious internal reconnaissance activities.",
+  "study": {
+    "overview": "This section focuses on hunting malicious activity that indicates potential internal network pivoting after an initial foothold has been achieved. It covers the attacker's mindset when moving laterally within a network, correlating subsequent actions, and distinguishing benign from suspicious internal reconnaissance activities.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Threat Hunting: Pivoting",
+      "1- Discovery (TA0007)",
+      "Definition:",
+      "Examples of Methods:",
+      "Hunting Discovery",
+      "Scenario 1: Host Reconnaissance Activity",
+      "Scenario 2: Internal Network Scanning",
+      "Scenario 3: Active Directory Enumeration",
+      "2- Privilege Escalation (TA0004)",
+      "Definition:",
+      "Examples of Methods:",
+      "Hunting Privilege Escalation"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Sysmon",
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Command-and-Control (C2) Evasion Techniques | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link active" href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><span>Command-and-Control (C2) Evasion Techniques</span></div>
+      <h1>Command-and-Control (C2) Evasion Techniques</h1>
+      <p>Think of a “command-and-control” (C2) server as the central headquarters of an espionage network. If the malware consistently invoked the same domain or phone number, security teams could quickly identify and neutralize it. To avoid detection, threat actors employ various techniques to ensure their C2 infrastructure does not present as a single, static targe</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Network</span><span class="tag">Web</span><span class="tag">Detection</span><span class="tag">C2</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Command-and-Control (C2) Evasion Techniques</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="active" href="command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>Think of a “command-and-control” (C2) server as the central headquarters of an espionage network. If the malware consistently invoked the same domain or phone number, security teams could quickly identify and neutralize it. To avoid detection, threat actors employ various techniques to ensure their C2 infrastructure does not present as a single, static targe</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>Command-and-Control (C2) Evasion Techniques</li><li>1- Domain Generation Algorithms (DGAs)</li><li>2- Fast Flux</li><li>3- Domain Fronting</li><li>4- Peer-to-Peer (P2P) Botnets</li><li>5- DNS Tunneling</li><li>6- Using Legitimate Services</li><li>7- Tor &amp; Onion Routing</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="command-and-control-c2-evasion-techniques">Command-and-Control (C2) Evasion Techniques</h2>
+<p><strong>Think of a “command-and-control” (C2) server as the central headquarters of an espionage network. If the malware consistently invoked the same domain or phone number, security teams could quickly identify and neutralize it. To avoid detection, threat actors employ various techniques to ensure their C2 infrastructure does not present as a single, static target.</strong></p>
+<p><strong>Below are several of the most common evasion methods:</strong></p>
+<hr>
+<h4 id="1-domain-generation-algorithms-dgas">1- Domain Generation Algorithms (DGAs)</h4>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Imagine you have a magic recipe that, each night, spits out 50,000 made-up website names, like:</li>
+<ul>
+<li><code>blue-cloud-183.com</code></li>
+<li><code>rainy-elephant-742.net</code></li>
+<li><code>sunny-forest-009.org</code></li>
+</ul>
+<li>Both the malware and the attacker know the recipe. But the attacker only bothers to register (buy) about 500–1,000 of those names—the ones they can afford.</li>
+<li>When the malware wants to check in, it runs the recipe and tries each name in turn until it finds one that’s actually registered and live.</li>
+</ul>
+<p><strong>Example in action:</strong></p>
+<ol>
+<li>On Monday, the malware generates the full list of 50,000 names.</li>
+<li>It tries them one by one. The first 10 are unregistered. The 11th—<code>sunny-forest-009.org</code>—is active. It connects there.</li>
+<li>Tuesday morning, security shuts down that domain.</li>
+<li>That night, the malware makes the same 50,000-name list but finds that <code>sunny-forest-009.org</code> is gone. It then tries the next registered one, say <code>rainy-elephant-742.net</code>, and reconnects seamlessly.</li>
+</ol>
+<p><strong>Why it helps:</strong></p>
+<ul>
+<li>Security teams can’t block all 50,000 made-up names. They’d be chasing ghosts.</li>
+<li>Even if they shut down one domain, the malware just uses the next one.</li>
+</ul>
+<hr>
+<h4 id="2-fast-flux">2- Fast Flux</h4>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Picture a website address (e.g. <code>weather-update.com</code>) that, instead of pointing to a single server, points to hundreds or thousands of different home-computer “proxies” scattered around the world.</li>
+<li>Every few minutes, whoever controls the network changes which set of proxies are active under that name.</li>
+<li>Behind those proxies sits the real C2 server—hidden and never directly exposed.</li>
+</ul>
+<p><strong>Example in action:</strong></p>
+<ol>
+<li>At 12:00 PM UTC, <code>weather-update.com</code> might point to IP addresses:</li>
+<ul>
+<li>192.0.2.101 (an infected webcam)</li>
+<li>198.51.100.22 (an infected router)</li>
+<li>203.0.113.5 (an infected smart fridge)</li>
+</ul>
+<li>At 12:05 PM UTC, the attacker updates the DNS so that the domain now points to a totally different batch of 300 proxies.</li>
+<li>If defenders block one proxy IP, the malware/client will simply connect to a different IP from the domain’s current list.</li>
+</ol>
+<p><strong>Why it helps:</strong></p>
+<ul>
+<li>Defenders can’t block the single “true” C2 address, because it’s never shown directly.</li>
+<li>Even shutting down hundreds of proxies doesn’t stop the communication—new proxies cycle in.</li>
+</ul>
+<hr>
+<h4 id="3-domain-fronting">3- Domain Fronting</h4>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Think of it like sending a secret letter inside an envelope addressed to a big company everyone trusts (e.g. <code>cdn.bigcorp.com</code>).</li>
+<li>The malware makes its HTTPS request look like it’s going to that trusted company.</li>
+<li>Hidden inside the encrypted “envelope” is a request for the real C2 server (e.g. <code>evil.c2-server.net</code>).</li>
+</ul>
+<p><strong>Example in action:</strong></p>
+<ol>
+<li>Malware connects to <code>cdn.bigcorp.com</code> over HTTPS.</li>
+<li>The “Host” header inside the encrypted TLS session actually says <code>evil.c2-server.net</code>.</li>
+<li>The request rides through the CDN’s network, reaching the attacker’s infrastructure at <code>evil.c2-server.net</code>.</li>
+</ol>
+<p><strong>Why it helps:</strong></p>
+<ul>
+<li>Blocking the CDN domain would break tons of legitimate services.</li>
+<li>Deep inspection of encrypted traffic is hard, so the hidden C2 calls go unnoticed.</li>
+</ul>
+<hr>
+<h4 id="4-peer-to-peer-p2p-botnets">4- Peer-to-Peer (P2P) Botnets</h4>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Instead of one boss server, every infected machine talks to other infected machines in a “mesh.”</li>
+<li>Each peer can share commands it received from any other peer.</li>
+</ul>
+<p><strong>Example in action:</strong></p>
+<ol>
+<li>Machine A wakes up and asks a random peer, Machine B, “Got any new instructions?”</li>
+<li>If B is offline or cleaned up, A tries Machine C or D.</li>
+<li>Once A gets a command, it can forward it to Machine E and F, spreading instructions without a central point.</li>
+</ol>
+<p><strong>Why it helps:</strong></p>
+<ul>
+<li>There’s no single server to find and take down.</li>
+<li>Even if many peers go offline, the network heals itself by connecting to other peers.</li>
+</ul>
+<hr>
+<h4 id="5-dns-tunneling">5- DNS Tunneling</h4>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>DNS is used for “phone book” lookups, so it’s almost never blocked.</li>
+<li>Malware stuffs data (commands or stolen info) into DNS queries and responses.</li>
+</ul>
+<p><strong>Example in action:</strong></p>
+<ol>
+<li>Malware encodes a command like <code>RUN_STEP2</code> into a DNS query for <code>Uk5VX1NFUFAy.evildomain.com</code>.</li>
+<li>The attacker’s DNS server decodes the subdomain and replies with a specially crafted TXT record.</li>
+<li>The malware reads the TXT record to get its next instruction.</li>
+</ol>
+<p><strong>Why it helps:</strong></p>
+<ul>
+<li>DNS traffic is allowed almost everywhere, so it bypasses firewalls.</li>
+<li>It looks like harmless name resolution to anyone watching.</li>
+</ul>
+<hr>
+<h4 id="6-using-legitimate-services">6- Using Legitimate Services</h4>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Attackers hide their C2 messages inside services everyone uses—like Twitter, GitHub, or Pastebin.</li>
+<li>The malware just fetches a public page or file and reads hidden instructions.</li>
+</ul>
+<p><strong>Example in action:</strong></p>
+<ol>
+<li>Attacker posts a “harmless” tweet containing base64-encoded instructions.</li>
+<li>Malware polls that tweet’s URL every hour.</li>
+<li>It decodes the tweet text to get its new commands.</li>
+</ol>
+<p><strong>Why it helps:</strong></p>
+<ul>
+<li>Blocking major platforms would disrupt business and everyday use.</li>
+<li>Traffic to sites like Twitter or GitHub looks normal.</li>
+</ul>
+<hr>
+<h4 id="7-tor-onion-routing">7- Tor &amp; Onion Routing</h4>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Tor hides where you’re really going by bouncing your traffic through multiple encrypted relays.</li>
+<li>The malware includes a small Tor client and connects to a hidden “.onion” address.</li>
+</ul>
+<p><strong>Example in action:</strong></p>
+<ol>
+<li>Malware boots up its Tor client.</li>
+<li>It looks up the hidden service address, e.g. <code>xf23ab4cdefgh.onion</code>.</li>
+<li>All communication is routed through at least three Tor relays before hitting the attacker’s server.</li>
+</ol>
+<p><strong>Why it helps:</strong></p>
+<ul>
+<li>You can’t easily trace back or block an onion address without disrupting all Tor traffic.</li>
+<li>The C2 server’s real IP is never revealed.</li>
+</ul>
+<hr></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#command-and-control-c2-evasion-techniques">Command-and-Control (C2) Evasion Techniques</a><a href="#1-domain-generation-algorithms-dgas">1- Domain Generation Algorithms (DGAs)</a><a href="#2-fast-flux">2- Fast Flux</a><a href="#3-domain-fronting">3- Domain Fronting</a><a href="#4-peer-to-peer-p2p-botnets">4- Peer-to-Peer (P2P) Botnets</a><a href="#5-dns-tunneling">5- DNS Tunneling</a><a href="#6-using-legitimate-services">6- Using Legitimate Services</a><a href="#7-tor-onion-routing">7- Tor &amp; Onion Routing</a></details>
+    </div>
+    
+    <footer class="pager"><a href="commandandcontrol-c2.html">← Command‑and‑Control (C2)</a><a href="soc-essentials.html">SOC Essentials →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

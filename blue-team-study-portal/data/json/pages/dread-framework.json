@@ -1,0 +1,86 @@
+{
+  "id": "threat modelling/dread framework",
+  "title": "DREAD Framework",
+  "slug": "dread-framework",
+  "relPath": "Threat Modelling/DREAD Framework.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-detection-engineering",
+  "curriculumSectionTitle": "Detection Engineering & Automation",
+  "tags": [
+    "Web"
+  ],
+  "mitre": [],
+  "parentId": "threat modelling",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "threat modelling"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "threat modelling",
+      "title": "Threat Modelling",
+      "slug": "threat-modelling"
+    },
+    {
+      "id": "threat modelling/dread framework",
+      "title": "DREAD Framework",
+      "slug": "dread-framework"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "DREAD Framework"
+    },
+    {
+      "level": 1,
+      "text": "What is the DREAD Framework?"
+    },
+    {
+      "level": 1,
+      "text": "DREAD Framework Guidelines"
+    },
+    {
+      "level": 1,
+      "text": "Qualitative Analysis Using DREAD Framework"
+    },
+    {
+      "level": 3,
+      "text": "Unauthenticated Remote Code Execution (Score: 8)"
+    },
+    {
+      "level": 3,
+      "text": "Insecure Direct Object References (IDOR) in User Profiles (Score: 6.5)"
+    },
+    {
+      "level": 3,
+      "text": "Server Misconfiguration Leading to Information Disclosure (Score: 5)"
+    }
+  ],
+  "overview": "The DREAD framework is a risk assessment model developed by Microsoft to evaluate and prioritise security threats and vulnerabilities. It is an acronym that stands for:",
+  "study": {
+    "overview": "The DREAD framework is a risk assessment model developed by Microsoft to evaluate and prioritise security threats and vulnerabilities. It is an acronym that stands for:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "DREAD Framework",
+      "What is the DREAD Framework?",
+      "DREAD Framework Guidelines",
+      "Qualitative Analysis Using DREAD Framework",
+      "Unauthenticated Remote Code Execution (Score: 8)",
+      "Insecure Direct Object References (IDOR) in User Profiles (Score: 6.5)",
+      "Server Misconfiguration Leading to Information Disclosure (Score: 5)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

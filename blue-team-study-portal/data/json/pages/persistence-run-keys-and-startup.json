@@ -1,0 +1,92 @@
+{
+  "id": "windows security monitoring/windows threat detection 3/persistence run keys and startup",
+  "title": "Persistence Run Keys and Startup",
+  "slug": "persistence-run-keys-and-startup",
+  "relPath": "Windows Security Monitoring/Windows Threat Detection 3/Persistence Run Keys and Startup.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-endpoint-os",
+  "curriculumSectionTitle": "Endpoint & OS Investigation",
+  "tags": [
+    "Windows",
+    "Sysmon",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [
+    "T1547"
+  ],
+  "parentId": "windows security monitoring/windows threat detection 3",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "windows security monitoring/windows threat detection 3"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "windows security monitoring",
+      "title": "Windows Security Monitoring",
+      "slug": "windows-security-monitoring"
+    },
+    {
+      "id": "windows security monitoring/windows threat detection 3",
+      "title": "Windows Threat Detection 3",
+      "slug": "windows-threat-detection-3"
+    },
+    {
+      "id": "windows security monitoring/windows threat detection 3/persistence run keys and startup",
+      "title": "Persistence Run Keys and Startup",
+      "slug": "persistence-run-keys-and-startup"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Persistence: Run Keys and Startup"
+    },
+    {
+      "level": 2,
+      "text": "Run Keys and Startup"
+    },
+    {
+      "level": 2,
+      "text": "Detecting Startup"
+    },
+    {
+      "level": 2,
+      "text": "Detecting Run Keys"
+    }
+  ],
+  "overview": "Services and scheduled tasks are typically run on system boot and require administrative privileges to configure. However, what if a program has to run only when a specific user logs in? For such cases, Windows provides a few per-user persistence methods that are actively used by both legitimate tools and malware:",
+  "study": {
+    "overview": "Services and scheduled tasks are typically run on system boot and require administrative privileges to configure. However, what if a program has to run only when a specific user logs in? For such cases, Windows provides a few per-user persistence methods that are actively used by both legitimate tools and malware:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Persistence: Run Keys and Startup",
+      "Run Keys and Startup",
+      "Detecting Startup",
+      "Detecting Run Keys"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "C:\\Users\\<USER>\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\\nOr for all users: C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp"
+      },
+      {
+        "language": "text",
+        "code": "**HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run**\nOr for all users: **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run**"
+      }
+    ],
+    "tools": [
+      "Sysmon"
+    ],
+    "tips": []
+  }
+}

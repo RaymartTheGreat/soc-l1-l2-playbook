@@ -1,0 +1,134 @@
+{
+  "id": "log analysis labs/crownjewel-1 (htb)",
+  "title": "CrownJewel-1 (HTB)",
+  "slug": "crownjewel-1-htb",
+  "relPath": "Log Analysis Labs/CrownJewel-1 (HTB).md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-advanced-querying",
+  "curriculumSectionTitle": "Advanced Querying",
+  "tags": [
+    "Splunk",
+    "Windows",
+    "Active Directory",
+    "Kerberos",
+    "Detection",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "log analysis labs",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "log analysis labs"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "log analysis labs",
+      "title": "Log Analysis Labs",
+      "slug": "log-analysis-labs"
+    },
+    {
+      "id": "log analysis labs/crownjewel-1 (htb)",
+      "title": "CrownJewel-1 (HTB)",
+      "slug": "crownjewel-1-htb"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "CrownJewel-1 (HTB)"
+    },
+    {
+      "level": 2,
+      "text": "Scenario"
+    },
+    {
+      "level": 3,
+      "text": "1- Attackers can abuse the vssadmin utility to create volume shadow snapshots and then extract sensitive files like NTDS.dit to bypass security mechanisms. Identify the time when the Volume Shadow Copy service entered a running state."
+    },
+    {
+      "level": 3,
+      "text": "2024-05-14 03:42:16"
+    },
+    {
+      "level": 3,
+      "text": "2- When a volume shadow snapshot is created, the Volume shadow copy service validates the privileges using the Machine account and enumerates User groups. Find the two user groups the volume shadow copy process queries and the machine account that did it."
+    },
+    {
+      "level": 3,
+      "text": "Administrators, Backup Operators, DC01$"
+    },
+    {
+      "level": 3,
+      "text": "3- Identify the Process ID (in Decimal) of the volume shadow copy service process."
+    },
+    {
+      "level": 3,
+      "text": "4496"
+    },
+    {
+      "level": 3,
+      "text": "4- Find the assigned Volume ID/GUID value to the Shadow copy snapshot when it was mounted."
+    },
+    {
+      "level": 3,
+      "text": "{06c4a997-cca8-11ed-a90f-000c295644f9}"
+    },
+    {
+      "level": 3,
+      "text": "5- Identify the full path of the dumped NTDS database on disk."
+    },
+    {
+      "level": 3,
+      "text": "C:\\Users\\Administrator\\Documents\\backupsyncDc\\Ntds.dit"
+    },
+    {
+      "level": 3,
+      "text": "6- When was newly dumped ntds.dit created on disk?"
+    },
+    {
+      "level": 3,
+      "text": "2024-05-14 03:44:22"
+    },
+    {
+      "level": 3,
+      "text": "7- A registry hive was also dumped alongside the NTDS database. Which registry hive was dumped and what is its file size in bytes?"
+    },
+    {
+      "level": 3,
+      "text": "SYSTEM, 17563648"
+    }
+  ],
+  "overview": "Forela's domain controller is under attack. The Domain Administrator account is believed to be compromised, and it is suspected that the threat actor dumped the NTDS.dit database on the DC. We just received an alert of vssadmin being used on the DC, since this is not part of the routine schedule we have good reason to believe that the attacker abused this LO",
+  "study": {
+    "overview": "Forela's domain controller is under attack. The Domain Administrator account is believed to be compromised, and it is suspected that the threat actor dumped the NTDS.dit database on the DC. We just received an alert of vssadmin being used on the DC, since this is not part of the routine schedule we have good reason to believe that the attacker abused this LO",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "CrownJewel-1 (HTB)",
+      "Scenario",
+      "1- Attackers can abuse the vssadmin utility to create volume shadow snapshots and then extract sensitive files like NTDS.dit to bypass security mechanisms. Identify the time when the Volume Shadow Copy service entered a running state.",
+      "2024-05-14 03:42:16",
+      "2- When a volume shadow snapshot is created, the Volume shadow copy service validates the privileges using the Machine account and enumerates User groups. Find the two user groups the volume shadow copy process queries and the machine account that did it.",
+      "Administrators, Backup Operators, DC01$",
+      "3- Identify the Process ID (in Decimal) of the volume shadow copy service process.",
+      "4496",
+      "4- Find the assigned Volume ID/GUID value to the Shadow copy snapshot when it was mounted.",
+      "{06c4a997-cca8-11ed-a90f-000c295644f9}",
+      "5- Identify the full path of the dumped NTDS database on disk.",
+      "C:\\Users\\Administrator\\Documents\\backupsyncDc\\Ntds.dit"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "Splunk"
+    ],
+    "tips": []
+  }
+}

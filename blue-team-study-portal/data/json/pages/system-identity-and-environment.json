@@ -1,0 +1,120 @@
+{
+  "id": "linux artifacts & forensic evidence collection/system identity and environment",
+  "title": "System Identity and Environment",
+  "slug": "system-identity-and-environment",
+  "relPath": "Linux Artifacts & Forensic Evidence Collection/System Identity and Environment.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-dfir",
+  "curriculumSectionTitle": "Digital Forensics (DFIR)",
+  "tags": [
+    "Linux",
+    "Network",
+    "DFIR",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": "linux artifacts & forensic evidence collection",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "linux artifacts & forensic evidence collection"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "linux artifacts & forensic evidence collection",
+      "title": "Linux Artifacts & Forensic Evidence Collection",
+      "slug": "linux-artifacts-forensic-evidence-collection"
+    },
+    {
+      "id": "linux artifacts & forensic evidence collection/system identity and environment",
+      "title": "System Identity and Environment",
+      "slug": "system-identity-and-environment"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "System Identity and Environment"
+    },
+    {
+      "level": 2,
+      "text": "Hostname and OS Information"
+    },
+    {
+      "level": 3,
+      "text": "/etc/hostname"
+    },
+    {
+      "level": 3,
+      "text": "/etc/os-release"
+    },
+    {
+      "level": 2,
+      "text": "Timezone Configuration"
+    },
+    {
+      "level": 3,
+      "text": "/etc/timezone"
+    },
+    {
+      "level": 2,
+      "text": "Shell Environment Configuration"
+    },
+    {
+      "level": 3,
+      "text": "/.bashrc"
+    },
+    {
+      "level": 3,
+      "text": "/etc/bash.bashrc and /etc/profile"
+    }
+  ],
+  "overview": "This file stores the system's hostname — the name by which the machine identifies itself on a network. It’s a single-line file and is readable using:",
+  "study": {
+    "overview": "This file stores the system's hostname — the name by which the machine identifies itself on a network. It’s a single-line file and is readable using:",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "System Identity and Environment",
+      "Hostname and OS Information",
+      "/etc/hostname",
+      "/etc/os-release",
+      "Timezone Configuration",
+      "/etc/timezone",
+      "Shell Environment Configuration",
+      "/.bashrc",
+      "/etc/bash.bashrc and /etc/profile"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "bash",
+        "code": "cat /etc/hostname"
+      },
+      {
+        "language": "bash",
+        "code": "cat /etc/os-release"
+      },
+      {
+        "language": "bash",
+        "code": "NAME=\"Ubuntu\"\nVERSION=\"20.04.6 LTS (Focal Fossa)\"\nID=ubuntu\n..."
+      },
+      {
+        "language": "bash",
+        "code": "cat /etc/timezone"
+      },
+      {
+        "language": "bash",
+        "code": "/home/username/.bashrc"
+      }
+    ],
+    "tools": [],
+    "tips": []
+  }
+}

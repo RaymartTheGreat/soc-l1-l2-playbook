@@ -1,0 +1,117 @@
+{
+  "id": "detecting web attacks/command injection os injection",
+  "title": "Command Injection OS Injection",
+  "slug": "command-injection-os-injection",
+  "relPath": "Detecting Web Attacks/Command Injection OS Injection.md",
+  "level": "L2",
+  "curriculumLevelId": "l2",
+  "curriculumSectionId": "l2-attack-vectors",
+  "curriculumSectionTitle": "Advanced Attack Vectors & Internals",
+  "tags": [
+    "PowerShell",
+    "Network",
+    "Web",
+    "Detection",
+    "Persistence"
+  ],
+  "mitre": [],
+  "parentId": "detecting web attacks",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "detecting web attacks"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "detecting web attacks",
+      "title": "Detecting Web Attacks",
+      "slug": "detecting-web-attacks"
+    },
+    {
+      "id": "detecting web attacks/command injection os injection",
+      "title": "Command Injection OS Injection",
+      "slug": "command-injection-os-injection"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Command Injection / OS Injection"
+    },
+    {
+      "level": 3,
+      "text": "Tiny shell primer"
+    },
+    {
+      "level": 3,
+      "text": "How it works"
+    },
+    {
+      "level": 3,
+      "text": "What attackers can gain"
+    },
+    {
+      "level": 2,
+      "text": "Detection"
+    },
+    {
+      "level": 3,
+      "text": "Where to look"
+    },
+    {
+      "level": 3,
+      "text": "What to search for (decoded)"
+    },
+    {
+      "level": 3,
+      "text": "Common URL / percent encoding"
+    },
+    {
+      "level": 3,
+      "text": "Example HTTP request"
+    },
+    {
+      "level": 3,
+      "text": "Quick checks to run after spotting suspicious payloads"
+    },
+    {
+      "level": 3,
+      "text": "Prevention / developer guidance"
+    }
+  ],
+  "overview": "Command injection happens when untrusted data is passed into an OS shell (or any command interpreter) and the attacker is able to run system commands. The app runs those commands with the web service’s privileges — so impact ranges from data theft to full server takeover.",
+  "study": {
+    "overview": "Command injection happens when untrusted data is passed into an OS shell (or any command interpreter) and the attacker is able to run system commands. The app runs those commands with the web service’s privileges — so impact ranges from data theft to full server takeover.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Command Injection / OS Injection",
+      "Tiny shell primer",
+      "How it works",
+      "What attackers can gain",
+      "Detection",
+      "Where to look",
+      "What to search for (decoded)",
+      "Common URL / percent encoding",
+      "Example HTTP request",
+      "Quick checks to run after spotting suspicious payloads",
+      "Prevention / developer guidance"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [
+      {
+        "language": "text",
+        "code": "GET / HTTP/1.1\nHost: yourcompany.com\nUser-Agent: () { :; }; echo \"NS:\" $(</etc/passwd)\nAccept: ...\nConnection: close"
+      }
+    ],
+    "tools": [
+      "PowerShell"
+    ],
+    "tips": []
+  }
+}

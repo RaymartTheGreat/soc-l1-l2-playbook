@@ -1,0 +1,92 @@
+{
+  "id": "network/fundamentals/routing",
+  "title": "Routing",
+  "slug": "routing",
+  "relPath": "Network/Fundamentals/Routing.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network",
+    "Memory"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/routing",
+      "title": "Routing",
+      "slug": "routing"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Routing"
+    },
+    {
+      "level": 2,
+      "text": "Why Routing Matters"
+    },
+    {
+      "level": 2,
+      "text": "Core Routing Functions"
+    },
+    {
+      "level": 2,
+      "text": "Routing Table Basics"
+    },
+    {
+      "level": 2,
+      "text": "Static vs. Dynamic Routing"
+    },
+    {
+      "level": 2,
+      "text": "Common Routing Protocols"
+    },
+    {
+      "level": 2,
+      "text": "How a Packet Finds Its Path"
+    }
+  ],
+  "overview": "Routing is the process that directs traffic between different IP networks, ensuring packets find their way from a source subnet to a destination subnet—no matter how many hops or intermediate routers lie in between. In essence, routers build and consult a routing table to make forwarding decisions, much like a GPS chooses the best roads to reach a destinatio",
+  "study": {
+    "overview": "Routing is the process that directs traffic between different IP networks, ensuring packets find their way from a source subnet to a destination subnet—no matter how many hops or intermediate routers lie in between. In essence, routers build and consult a routing table to make forwarding decisions, much like a GPS chooses the best roads to reach a destinatio",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Routing",
+      "Why Routing Matters",
+      "Core Routing Functions",
+      "Routing Table Basics",
+      "Static vs. Dynamic Routing",
+      "Common Routing Protocols",
+      "How a Packet Finds Its Path"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

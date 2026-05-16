@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>STRIDE Framework | Blue Team Study Portal</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased">
+  <div class="app-shell">
+    <aside class="sidebar">
+    <a class="brand" href="../index.html"><span>BT</span><strong>Blue Team Study Portal</strong></a>
+    <button class="command-button" type="button" id="openCommand">Search / Quick jump <kbd>Ctrl K</kbd></button>
+    <label class="search-box"><span>Search notes</span><input id="globalSearch" type="search" placeholder="Search MITRE, commands, topics"></label>
+    <div id="searchResults" class="search-results" hidden></div>
+    <nav><details class="side-level" open><summary><strong>L1</strong><span>Initial Triage &amp; Fundamentals</span></summary><details class="side-section"><summary>SOC &amp; Incident Response Basics<span>5</span></summary><a class="side-link " href="../pages/soc-essentials.html"><span>SOC Essentials</span><em>0 nodes</em></a><a class="side-link " href="../pages/what-is-incident-response.html"><span>What is Incident Response?</span><em>0 nodes</em></a><a class="side-link " href="../pages/incident-response-cycle.html"><span>Incident Response Cycle</span><em>0 nodes</em></a><a class="side-link " href="../pages/frameworks.html"><span>Frameworks</span><em>5 nodes</em></a><a class="side-link " href="../pages/the-hive.html"><span>The Hive</span><em>0 nodes</em></a></details><details class="side-section"><summary>Operating System &amp; Command Line Basics<span>4</span></summary><a class="side-link " href="../pages/important-windows-directories.html"><span>Important Windows Directories</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-command-line-tools.html"><span>Windows command-line &amp; tools</span><em>0 nodes</em></a><a class="side-link " href="../pages/intro-to-powershell.html"><span>Intro to PowerShell</span><em>0 nodes</em></a><a class="side-link " href="../pages/linux-cheatsheet.html"><span>Linux CheatSheet</span><em>0 nodes</em></a></details><details class="side-section"><summary>Networking &amp; Web Basics<span>3</span></summary><a class="side-link " href="../pages/network.html"><span>Network</span><em>4 nodes</em></a><a class="side-link " href="../pages/network-defenses.html"><span>Network Defenses</span><em>0 nodes</em></a><a class="side-link " href="../pages/web-fundamentals.html"><span>Web Fundamentals</span><em>0 nodes</em></a></details><details class="side-section"><summary>Initial Triage &amp; Analysis<span>3</span></summary><a class="side-link " href="../pages/phishing-analysis.html"><span>Phishing analysis</span><em>14 nodes</em></a><a class="side-link " href="../pages/phishing-analysis-labs.html"><span>Phishing Analysis Labs</span><em>13 nodes</em></a><a class="side-link " href="../pages/osint.html"><span>OSINT</span><em>0 nodes</em></a></details><details class="side-section"><summary>Tool Familiarity<span>3</span></summary><a class="side-link " href="../pages/logging-fundamentals.html"><span>Logging Fundamentals</span><em>0 nodes</em></a><a class="side-link " href="../pages/siem.html"><span>SIEM</span><em>0 nodes</em></a><a class="side-link " href="../pages/elk-elastic-stack.html"><span>ELK (Elastic Stack)</span><em>0 nodes</em></a></details></details><details class="side-level" ><summary><strong>L1.5</strong><span>Advanced Investigation &amp; Contextualization</span></summary><details class="side-section"><summary>Endpoint &amp; OS Investigation<span>5</span></summary><a class="side-link " href="../pages/windows-event-ids.html"><span>Windows Event IDs</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-processes.html"><span>Windows processes</span><em>0 nodes</em></a><a class="side-link " href="../pages/windows-security-monitoring.html"><span>Windows Security Monitoring</span><em>4 nodes</em></a><a class="side-link " href="../pages/sysinternals.html"><span>Sysinternals</span><em>0 nodes</em></a><a class="side-link " href="../pages/edr-endpoint-detection-and-response.html"><span>EDR (Endpoint Detection and Response)</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Querying<span>4</span></summary><a class="side-link " href="../pages/splunk.html"><span>Splunk</span><em>0 nodes</em></a><a class="side-link " href="../pages/splunk-filters.html"><span>Splunk Filters</span><em>0 nodes</em></a><a class="side-link " href="../pages/log-analysis-labs.html"><span>Log Analysis Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/regex.html"><span>Regex</span><em>0 nodes</em></a></details><details class="side-section"><summary>Contextualizing Threats<span>3</span></summary><a class="side-link " href="../pages/threat-intelligence.html"><span>Threat Intelligence</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-labs.html"><span>Threat Intelligence Labs</span><em>18 nodes</em></a><a class="side-link " href="../pages/threat-intelligence-toolkit.html"><span>Threat Intelligence Toolkit</span><em>1 nodes</em></a></details><details class="side-section"><summary>Network Investigation<span>1</span></summary><a class="side-link " href="../pages/network-analysis-tools.html"><span>Network Analysis Tools</span><em>3 nodes</em></a></details></details><details class="side-level" ><summary><strong>L2</strong><span>DFIR, Threat Hunting &amp; Engineering</span></summary><details class="side-section"><summary>Proactive Threat Hunting<span>6</span></summary><a class="side-link " href="../pages/hunting-persistence-mitre-ta0003.html"><span>Hunting Persistence (MITRE TA0003)</span><em>11 nodes</em></a><a class="side-link " href="../pages/hunting-lateral-movement-mitre-ta0008.html"><span>Hunting Lateral Movement (MITRE TA0008)</span><em>4 nodes</em></a><a class="side-link " href="../pages/hunting-discovery-mitre-ta0007.html"><span>Hunting Discovery (MITRE TA0007)</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-hunting-module.html"><span>Threat Hunting module</span><em>6 nodes</em></a><a class="side-link " href="../pages/threat-hunting-labs-siem.html"><span>Threat hunting Labs (SIEM)</span><em>27 nodes</em></a><a class="side-link " href="../pages/100-splunk-use-cases.html"><span>+100 Splunk Use Cases</span><em>0 nodes</em></a></details><details class="side-section"><summary>Digital Forensics (DFIR)<span>8</span></summary><a class="side-link " href="../pages/digital-forensics.html"><span>Digital Forensics</span><em>9 nodes</em></a><a class="side-link " href="../pages/windows-forensics.html"><span>Windows Forensics</span><em>22 nodes</em></a><a class="side-link " href="../pages/forensics-labs.html"><span>Forensics Labs</span><em>15 nodes</em></a><a class="side-link " href="../pages/memory-forensics.html"><span>Memory forensics</span><em>0 nodes</em></a><a class="side-link " href="../pages/memory-forensics-labs.html"><span>Memory Forensics Labs</span><em>19 nodes</em></a><a class="side-link " href="../pages/volatility.html"><span>Volatility</span><em>5 nodes</em></a><a class="side-link " href="../pages/linux-artifacts-forensic-evidence-collection.html"><span>Linux Artifacts &amp; Forensic Evidence Collection</span><em>7 nodes</em></a><a class="side-link " href="../pages/stenography.html"><span>Stenography</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Attack Vectors &amp; Internals<span>9</span></summary><a class="side-link " href="../pages/active-directory.html"><span>Active Directory</span><em>7 nodes</em></a><a class="side-link " href="../pages/kerberos-authentication.html"><span>Kerberos authentication</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-ad-attacks.html"><span>Detecting AD Attacks</span><em>15 nodes</em></a><a class="side-link " href="../pages/detecting-active-directory-attacks-htb.html"><span>Detecting Active Directory Attacks / HTB</span><em>6 nodes</em></a><a class="side-link " href="../pages/windows-internals.html"><span>Windows Internals</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control.html"><span>Command-and-Control (C2)</span><em>0 nodes</em></a><a class="side-link " href="../pages/command-and-control-c2-evasion-techniques.html"><span>Command-and-Control (C2) Evasion Techniques</span><em>0 nodes</em></a><a class="side-link " href="../pages/detecting-web-attacks.html"><span>Detecting Web Attacks</span><em>8 nodes</em></a><a class="side-link " href="../pages/network-analysis-labs.html"><span>Network Analysis Labs</span><em>28 nodes</em></a></details><details class="side-section"><summary>Detection Engineering &amp; Automation<span>6</span></summary><a class="side-link " href="../pages/detection-engineering.html"><span>Detection Engineering</span><em>0 nodes</em></a><a class="side-link " href="../pages/sigma.html"><span>Sigma</span><em>0 nodes</em></a><a class="side-link " href="../pages/yara.html"><span>Yara</span><em>0 nodes</em></a><a class="side-link " href="../pages/atomic-red-team.html"><span>Atomic Red Team</span><em>0 nodes</em></a><a class="side-link " href="../pages/threat-modelling.html"><span>Threat Modelling</span><em>5 nodes</em></a><a class="side-link " href="../pages/ad-hardening.html"><span>AD Hardening</span><em>0 nodes</em></a></details><details class="side-section"><summary>Advanced Scripting &amp; Analysis Tooling<span>6</span></summary><a class="side-link " href="../pages/powershell-for-incident-response.html"><span>PowerShell for Incident Response</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-detection.html"><span>Powershell Detection</span><em>0 nodes</em></a><a class="side-link " href="../pages/powershell-logs.html"><span>PowerShell Logs</span><em>0 nodes</em></a><a class="side-link " href="../pages/lolbins-living-off-the-land-binaries.html"><span>LOLBins (living-off-the-land binaries)</span><em>0 nodes</em></a><a class="side-link " href="../pages/osquery.html"><span>Osquery</span><em>0 nodes</em></a><a class="side-link " href="../pages/cryptography.html"><span>Cryptography</span><em>0 nodes</em></a></details></details></nav>
+  </aside>
+    <main class="content"><header class="topic-hero">
+      <div class="breadcrumbs"><a href="../index.html">Home</a><span>/</span><a href="threat-modelling.html">Threat Modelling</a><span>/</span><span>STRIDE Framework</span></div>
+      <h1>STRIDE Framework</h1>
+      <p>The STRIDE framework is a threat modelling methodology also developed by Microsoft, which helps identify and categories potential security threats in software development and system design. The acronym STRIDE is based on six categories of threats, namely:</p>
+      <div class="tag-row"><span class="tag level">L2</span><span class="tag">Phishing</span><span class="tag">Network</span><span class="tag">Web</span></div>
+    </header>
+    <div class="reader-layout">
+      <aside class="secondary-nav">
+        <div class="secondary-heading"><span>Current Tree</span><strong>Threat Modelling</strong></div>
+        <details class="tree-node" open>
+    <summary>
+      <a class="" href="threat-modelling.html"><span>Threat Modelling</span><em>L2</em></a>
+      <b>5</b>
+    </summary>
+    <div class="tree-children"><details class="tree-node" open>
+    <summary>
+      <a class="" href="mitre-attck-navigator.html"><span>MITRE ATT&amp;CK Navigator</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="dread-framework.html"><span>DREAD Framework</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="active" href="stride-framework.html"><span>STRIDE Framework</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="pasta-framework.html"><span>PASTA Framework</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details><details class="tree-node" open>
+    <summary>
+      <a class="" href="conclusion.html"><span>Conclusion</span><em>L2</em></a>
+      
+    </summary>
+    
+  </details></div>
+  </details>
+      </aside>
+      <article class="reader">
+        
+        <section class="study-grid">
+    <article><h2>Overview</h2><p>The STRIDE framework is a threat modelling methodology also developed by Microsoft, which helps identify and categories potential security threats in software development and system design. The acronym STRIDE is based on six categories of threats, namely:</p></article>
+    <article><h2>Why It Matters In SOC</h2><p>Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.</p></article>
+    <article><h2>Key Concepts</h2><ul><li>STRIDE Framework</li><li>What is the STRIDE Framework?</li><li>Threat Modelling With STRIDE</li></ul></article>
+    <article><h2>Analyst Workflow</h2><ul><li>Identify the user, host, process, network flow, or identity object involved.</li><li>Collect the highest-value logs first and preserve timestamps and assumptions.</li><li>Pivot through related notes, telemetry sources, and MITRE references.</li><li>Document findings, gaps, containment options, and detection improvements.</li></ul></article>
+    <article><h2>Splunk/SIEM Examples</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Important Commands</h2><p class="muted">No direct examples extracted.</p></article>
+    <article><h2>Tools Used</h2><p class="muted">No extracted items for this section.</p></article>
+    <article><h2>Notes/Tips</h2><p class="muted">No extracted items for this section.</p></article>
+  </section>
+        <section class="source-note"><h2>Original Notes</h2><h2 id="stride-framework">STRIDE Framework</h2>
+<h2 id="what-is-the-stride-framework">What is the STRIDE Framework?</h2>
+<p>The STRIDE framework is a threat modelling methodology also developed by Microsoft, which helps identify and categories potential security threats in software development and system design. The acronym STRIDE is based on six categories of threats, namely:</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Category</strong></th><th><strong>Definition</strong></th><th><strong>Policy Violated</strong></th></tr></thead><tbody><tr><td><strong>Spoofing</strong></td><td>Unauthorized access or impersonation of a user or system.</td><td>Authentication</td></tr><tr><td><strong>Tampering</strong></td><td>Unauthorized modification or manipulation of data or code.</td><td>Integrity</td></tr><tr><td><strong>Repudiation</strong></td><td>Ability to deny having acted, typically due to insufficient auditing or logging.</td><td>Non-repudiation</td></tr><tr><td><strong>Information Disclosure</strong></td><td>Unauthorized access to sensitive information, such as personal or financial data.</td><td>Confidentiality</td></tr><tr><td><strong>Denial of Service</strong></td><td>Disruption of the system's availability, preventing legitimate users from accessing it.</td><td>Availability</td></tr><tr><td><strong>Elevation of Privilege</strong></td><td>Unauthorized elevation of access privileges, allowing threat actors to perform unintended actions.</td><td>Authorization</td></tr></tbody></table></div>
+<p>As you can see, the table above also provides what component of the CIA triad is violated. The STRIDE framework is built upon this foundational information security concept.</p>
+<p>By systematically analyzing these six categories of threats, organizations can proactively identify and address potential vulnerabilities in their systems, applications, or infrastructure, enhancing their overall security posture.</p>
+<p><a class="external-asset" href="https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/8b7b10f1edb15a96ecb21c4edd6389b9.png">External image reference: https://tryhackme-images.s3.amazonaws.com/user-uploads/5dbea226085ab6182a2ee0f7/room-content/8b7b10f1edb15a96ecb21c4edd6389b9.png</a></p>
+<p>To understand the framework better, let's deep-dive into each category and discuss some examples.</p>
+<ul>
+<li><strong>Spoofing</strong></li>
+<ul>
+<li>Sending an email as another user.</li>
+<li>Creating a phishing website mimicking a legitimate one to harvest user credentials.</li>
+</ul>
+<li><strong>Tampering</strong></li>
+<ul>
+<li>Updating the password of another user.</li>
+<li>Installing system-wide backdoors using an elevated access.</li>
+</ul>
+<li><strong>Repudiation</strong></li>
+<ul>
+<li>Denying unauthorised money-transfer transactions, wherein the system lacks auditing.</li>
+<li>Denying sending an offensive message to another person, wherein the person lacks proof of receiving one.</li>
+</ul>
+<li><strong>Information Disclosure</strong></li>
+<ul>
+<li>Unauthenticated access to a misconfigured database that contains sensitive customer information.</li>
+<li>Accessing public cloud storage that handles sensitive documents.</li>
+</ul>
+<li><strong>Denial of Service</strong></li>
+<ul>
+<li>Flooding a web server with many requests, overwhelming its resources, and making it unavailable to legitimate users.</li>
+<li>Deploying a ransomware that encrypts all system data that prevents other systems from accessing the resources the compromised server needs.</li>
+</ul>
+<li><strong>Elevation of Privilege</strong></li>
+<ul>
+<li>Creating a regular user but being able to access the administrator console.</li>
+<li>Gaining local administrator privileges on a machine by abusing unpatched systems.</li>
+</ul>
+</ul>
+<p>The examples above illustrate various scenarios in which the categories can occur, emphasizing the importance of implementing robust security measures to protect against these threats.</p>
+<p>A typical representation of results after using the STRIDE framework is via a checklist table, wherein each use case is marked based on what STRIDE component affects it. In addition, some scenarios may cover multiple STRIDE components.</p>
+<div class="table-wrap"><table><thead><tr><th><strong>Scenario</strong></th><th><strong>Spoofing</strong></th><th><strong>Tampering</strong></th><th><strong>Repudiation</strong></th><th><strong>Information Disclosure</strong></th><th><strong>Denial of Service</strong></th><th><strong>Elevation of Privilege</strong></th></tr></thead><tbody><tr><td><strong>Sending a spoofed email, wherein the mail gateway lacks email security and logging configuration.</strong></td><td><strong>✔</strong></td><td></td><td><strong>✔</strong></td><td></td><td></td><td></td></tr><tr><td><strong>Flooding a web server with many requests that lack load-balancing capabilities.</strong></td><td></td><td></td><td></td><td></td><td><strong>✔</strong></td><td></td></tr><tr><td><strong>Abusing an SQL injection vulnerability.</strong></td><td></td><td><strong>✔</strong></td><td></td><td><strong>✔</strong></td><td></td><td></td></tr><tr><td><strong>Accessing public cloud storage (such as AWS S3 bucket or Azure blob) that handles customer data</strong>.</td><td></td><td></td><td></td><td><strong>✔</strong></td><td></td><td></td></tr><tr><td><strong>Exploiting a local privilege escalation vulnerability due to the lack of system updates and modifying system configuration for a persistent backdoor.</strong></td><td></td><td><strong>✔</strong></td><td></td><td></td><td></td><td><strong>✔</strong></td></tr></tbody></table></div>
+<h2 id="threat-modelling-with-stride">Threat Modelling With STRIDE</h2>
+<p>To implement the STRIDE framework in threat modelling, it is essential to integrate the six threat categories into a systematic process that effectively identifies, assesses, and mitigates security risks. Here is a high-level approach to incorporating STRIDE in the threat modelling methodologies we discussed.</p>
+<ol>
+<li><strong>System Decomposition</strong></li>
+</ol>
+<p>Break down all accounted systems into components, such as applications, networks, and data flows. Understand the architecture, trust boundaries, and potential attack surfaces.</p>
+<ol>
+<li><strong>Apply STRIDE Categories</strong></li>
+</ol>
+<p>For each component, analyse its exposure to the six STRIDE threat categories. Identify potential threats and vulnerabilities related to each category.</p>
+<ol>
+<li><strong>Threat Assessment</strong></li>
+</ol>
+<p>Evaluate the impact and likelihood of each identified threat. Consider the potential consequences and the ease of exploitation and prioritise threats based on their overall risk level.</p>
+<ol>
+<li><strong>Develop Countermeasures</strong></li>
+</ol>
+<p>Design and implement security controls to address the identified threats tailored to each STRIDE category. For example, to enhance email security and mitigate spoofing threats, implement DMARC, DKIM, and SPF, which are email authentication and validation mechanisms that help prevent email spoofing, phishing, and spamming.</p>
+<ol>
+<li><strong>Validation and Verification</strong></li>
+</ol>
+<p>Test the effectiveness of the implemented countermeasures to ensure they effectively mitigate the identified threats. If possible, conduct penetration testing, code reviews, or security audits.</p>
+<ol>
+<li><strong>Continuous Improvement</strong></li>
+</ol>
+<p>Regularly review and update the threat model as the system evolves and new threats emerge. Monitor the effective countermeasures and update them as needed.</p>
+<p>By following this approach, you can effectively incorporate the STRIDE framework into your threat modelling process, ensuring a comprehensive analysis of potential security threats.</p></section>
+      </article>
+      <details class="toc" open><summary>Table of contents</summary><a href="#stride-framework">STRIDE Framework</a><a href="#what-is-the-stride-framework">What is the STRIDE Framework?</a><a href="#threat-modelling-with-stride">Threat Modelling With STRIDE</a></details>
+    </div>
+    
+    <footer class="pager"><a href="dread-framework.html">← DREAD Framework</a><a href="pasta-framework.html">PASTA Framework →</a></footer></main>
+  </div>
+  <div class="lightbox" id="lightbox" hidden><button type="button" aria-label="Close image">×</button><img alt=""></div>
+  <div class="command-palette" id="commandPalette" hidden>
+    <div class="command-panel">
+      <div class="command-head"><strong>Quick jump</strong><button type="button" id="closeCommand">Close</button></div>
+      <input id="commandInput" type="search" placeholder="Search any note, tag, command, or MITRE ID">
+      <div id="commandResults" class="command-results"></div>
+    </div>
+  </div>
+  <script src="../data/json/search-index.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

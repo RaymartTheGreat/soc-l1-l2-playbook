@@ -1,0 +1,168 @@
+{
+  "id": "network analysis tools/wireshark",
+  "title": "Wireshark",
+  "slug": "wireshark",
+  "relPath": "Network Analysis Tools/Wireshark.md",
+  "level": "L1.5",
+  "curriculumLevelId": "l15",
+  "curriculumSectionId": "l15-network-investigation",
+  "curriculumSectionTitle": "Network Investigation",
+  "tags": [
+    "PowerShell",
+    "Network",
+    "Kerberos",
+    "Detection",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "network analysis tools",
+  "children": [
+    "network analysis tools/wireshark/osi layers in wireshark"
+  ],
+  "relatedLinks": [],
+  "backlinks": [
+    "network analysis tools"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network analysis tools",
+      "title": "Network Analysis Tools",
+      "slug": "network-analysis-tools"
+    },
+    {
+      "id": "network analysis tools/wireshark",
+      "title": "Wireshark",
+      "slug": "wireshark"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Wireshark"
+    },
+    {
+      "level": 3,
+      "text": "Logical Operators"
+    },
+    {
+      "level": 2,
+      "text": "Important Statistics to Check"
+    },
+    {
+      "level": 2,
+      "text": "Filters"
+    },
+    {
+      "level": 3,
+      "text": "IP Address Filters"
+    },
+    {
+      "level": 3,
+      "text": "Port Filters"
+    },
+    {
+      "level": 3,
+      "text": "HTTP"
+    },
+    {
+      "level": 3,
+      "text": "MAC Address Filter"
+    },
+    {
+      "level": 3,
+      "text": "TCP Flag Filters"
+    },
+    {
+      "level": 3,
+      "text": "TCP 3-Way Handshake :"
+    },
+    {
+      "level": 3,
+      "text": "DNS Filters"
+    },
+    {
+      "level": 3,
+      "text": "FTP Filters"
+    },
+    {
+      "level": 3,
+      "text": "SMB Filters"
+    },
+    {
+      "level": 3,
+      "text": "TCP Filters"
+    },
+    {
+      "level": 3,
+      "text": "ARP Filters"
+    },
+    {
+      "level": 3,
+      "text": "Investigating ARP / Man-in-the-Middle"
+    },
+    {
+      "level": 3,
+      "text": "SSH Filters"
+    },
+    {
+      "level": 3,
+      "text": "ICMP Filters"
+    },
+    {
+      "level": 3,
+      "text": "Kerberos Filters"
+    },
+    {
+      "level": 3,
+      "text": "LDAP Filters"
+    },
+    {
+      "level": 3,
+      "text": "DHCP / BOOTP Filters"
+    },
+    {
+      "level": 3,
+      "text": "NTLMSSP Messages (NTLM authentication)"
+    },
+    {
+      "level": 3,
+      "text": "Advanced Filters"
+    },
+    {
+      "level": 3,
+      "text": "Additional Tip"
+    }
+  ],
+  "overview": "- and / && – Logical AND - or / || – Logical OR - eq / == – Equal to - ne / != – Not equal to - gt / – Greater than - gt / – Greater than - lt / < – Less than - not / ! – Logical NOT",
+  "study": {
+    "overview": "- and / && – Logical AND - or / || – Logical OR - eq / == – Equal to - ne / != – Not equal to - gt / – Greater than - gt / – Greater than - lt / < – Less than - not / ! – Logical NOT",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Wireshark",
+      "Logical Operators",
+      "Important Statistics to Check",
+      "Filters",
+      "IP Address Filters",
+      "Port Filters",
+      "HTTP",
+      "MAC Address Filter",
+      "TCP Flag Filters",
+      "TCP 3-Way Handshake :",
+      "DNS Filters",
+      "FTP Filters"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [
+      "PowerShell",
+      "Wireshark"
+    ],
+    "tips": []
+  }
+}

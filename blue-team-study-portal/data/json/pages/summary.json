@@ -1,0 +1,64 @@
+{
+  "id": "frameworks/cyber kill chain/summary",
+  "title": "Summary",
+  "slug": "summary",
+  "relPath": "Frameworks/Cyber Kill Chain/Summary.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-soc-ir-basics",
+  "curriculumSectionTitle": "SOC & Incident Response Basics",
+  "tags": [
+    "Phishing",
+    "OSINT",
+    "Persistence",
+    "C2"
+  ],
+  "mitre": [],
+  "parentId": "frameworks/cyber kill chain",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "frameworks/cyber kill chain"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "frameworks",
+      "title": "Frameworks",
+      "slug": "frameworks"
+    },
+    {
+      "id": "frameworks/cyber kill chain",
+      "title": "Cyber Kill Chain",
+      "slug": "cyber-kill-chain"
+    },
+    {
+      "id": "frameworks/cyber kill chain/summary",
+      "title": "Summary",
+      "slug": "summary"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Summary"
+    }
+  ],
+  "overview": "| Stage | Purpose | | --- | --- | | 1. Reconnaissance | Gather intelligence on the target using OSINT, scanning, or social profiling. | | 2. Weaponization | Craft a deliverable by pairing malware with an exploit tailored to the victim. | | 3. Delivery | Transmit the payload via phishing, USB drops, watering holes, etc. | | 4. Exploitation | Trigger the explo",
+  "study": {
+    "overview": "| Stage | Purpose | | --- | --- | | 1. Reconnaissance | Gather intelligence on the target using OSINT, scanning, or social profiling. | | 2. Weaponization | Craft a deliverable by pairing malware with an exploit tailored to the victim. | | 3. Delivery | Transmit the payload via phishing, USB drops, watering holes, etc. | | 4. Exploitation | Trigger the explo",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Summary"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}

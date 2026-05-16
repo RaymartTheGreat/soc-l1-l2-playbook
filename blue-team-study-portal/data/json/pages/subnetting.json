@@ -1,0 +1,91 @@
+{
+  "id": "network/fundamentals/subnetting",
+  "title": "Subnetting",
+  "slug": "subnetting",
+  "relPath": "Network/Fundamentals/Subnetting.md",
+  "level": "L1",
+  "curriculumLevelId": "l1",
+  "curriculumSectionId": "l1-network-web",
+  "curriculumSectionTitle": "Networking & Web Basics",
+  "tags": [
+    "Network"
+  ],
+  "mitre": [],
+  "parentId": "network/fundamentals",
+  "children": [],
+  "relatedLinks": [],
+  "backlinks": [
+    "network/fundamentals"
+  ],
+  "breadcrumbs": [
+    {
+      "id": "network",
+      "title": "Network",
+      "slug": "network"
+    },
+    {
+      "id": "network/fundamentals",
+      "title": "Fundamentals",
+      "slug": "fundamentals"
+    },
+    {
+      "id": "network/fundamentals/subnetting",
+      "title": "Subnetting",
+      "slug": "subnetting"
+    }
+  ],
+  "headings": [
+    {
+      "level": 1,
+      "text": "Subnetting"
+    },
+    {
+      "level": 2,
+      "text": "Subnetting"
+    },
+    {
+      "level": 3,
+      "text": "Why Subnet?"
+    },
+    {
+      "level": 3,
+      "text": "Key Concepts"
+    },
+    {
+      "level": 3,
+      "text": "How to Subnet: Step by Step"
+    },
+    {
+      "level": 3,
+      "text": "Common Subnet Masks & Capacities"
+    },
+    {
+      "level": 3,
+      "text": "Variable Length Subnet Mask (VLSM)"
+    }
+  ],
+  "overview": "Dividing a larger IP network into smaller, more manageable segments is called subnetting / think of it like cutting a big cake into precise slices so each department or group gets exactly what they need.",
+  "study": {
+    "overview": "Dividing a larger IP network into smaller, more manageable segments is called subnetting / think of it like cutting a big cake into precise slices so each department or group gets exactly what they need.",
+    "whySoc": "Use this note as an analyst reference: understand the concept, identify the relevant telemetry, pivot through evidence, and document the decision path clearly.",
+    "keyConcepts": [
+      "Subnetting",
+      "Subnetting",
+      "Why Subnet?",
+      "Key Concepts",
+      "How to Subnet: Step by Step",
+      "Common Subnet Masks & Capacities",
+      "Variable Length Subnet Mask (VLSM)"
+    ],
+    "workflow": [
+      "Identify the user, host, process, network flow, or identity object involved.",
+      "Collect the highest-value logs first and preserve timestamps and assumptions.",
+      "Pivot through related notes, telemetry sources, and MITRE references.",
+      "Document findings, gaps, containment options, and detection improvements."
+    ],
+    "splunkExamples": [],
+    "importantCommands": [],
+    "tools": [],
+    "tips": []
+  }
+}
